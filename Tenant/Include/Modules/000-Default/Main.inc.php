@@ -205,39 +205,6 @@
 	
 	System::$Modules[] = new Module("net.Objectify.Default", array
 	(
-		new ModulePage("", function($path)
-		{
-			if (IsAuthenticated())
-			{
-				$tenant = Tenant::GetCurrent();
-				$tobjUser = $tenant->GetObject("User");
-				$instUser = $tobjUser->GetMethod("GetCurrentUser")->Execute();
-				
-				$propStartPage = $tobjUser->GetInstanceProperty("StartPage");
-				
-				$startPageSet = $instUser->HasPropertyValue($propStartPage);
-				$startPage = $instUser->GetPropertyValue($propStartPage);
-				
-				if ($startPageSet)
-				{
-					/*
-					$spi = $startPage->Instance;
-					$spio = $startPage->Instance->ParentObject;
-					$startPage = $spi->GetPropertyValue($spio->GetProperty("Value"));
-					*/
-					System::Redirect($startPage);
-				}
-				else
-				{
-					System::Redirect("~/dashboard");
-				}
-				return true;
-			}
-			
-			$page = new MainPage();
-			$page->Render();
-			return true;
-		}),
 		new ModulePage("dashboard", function($path)
 		{
 			$page = new DashboardPage();
