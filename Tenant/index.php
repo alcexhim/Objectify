@@ -1,6 +1,6 @@
 <?php
 	// =============================================================================
-	// WebFX bootstrapper - loads the application modules and executes WebFX
+	// Phast bootstrapper - loads the application modules and executes Phast
 	// Copyright (C) 2013-2014  Mike Becker
     // 
 	// This program is free software: you can redistribute it and/or modify
@@ -23,22 +23,22 @@
 	$RootPath = dirname(__FILE__);
 	
 	// Now that we have defined the root path, load the WebFX content (which also
-	// include_once's the modules and other WebFX-specific stuff)
+	// include_once's the modules and other Phast-specific stuff)
 	require_once("WebFX/WebFX.inc.php");
 	require_once("Include/UUID.inc.php");
 	
-	// Bring in the WebFX\System and WebFX\IncludeFile classes so we can simply refer
+	// Bring in the Phast\System and Phast\IncludeFile classes so we can simply refer
 	// to them (in this file only) as "System" and "IncludeFile", respectively, from
 	// now on
-	use WebFX\System;
-	use WebFX\IncludeFile;
+	use Phast\System;
+	use Phast\IncludeFile;
 	
-	// Tell WebFX that this is a tenanted hosting application. This will allow us to
+	// Tell Phast that this is a tenanted hosting application. This will allow us to
 	// control much of the application through Tenant Manager rather than having to
 	// continually push out code updates.
 	System::$EnableTenantedHosting = true;
 	
-	// Tell WebFX that we are ready to launch the application. This cycles through
+	// Tell Phast that we are ready to launch the application. This cycles through
 	// all of the modules (usually you will define your main application content in
 	// 000-Default) and executes the first module page that corresponds to the path
 	// the user is GETting.

@@ -1,8 +1,16 @@
 <?php
 	namespace Objectify\Objects;
-	use WebFX\System;
+	use Phast\System;
+	use Phast\Enumeration;
+	use Phast\Data\DataSystem;
 	
-	\Enum::Create("Objectify\\Objects\\TenantStatus", "Enabled", "Disabled");
+	use PDO;
+		
+	abstract class TenantStatus extends Enumeration
+	{
+		const Disabled = 0;
+		const Enabled = 1;
+	}
 	
 	class Tenant
 	{
@@ -110,14 +118,18 @@
 		}
 		public static function Get($max = null)
 		{
-			global $MySQL;
-			$query = "SELECT * FROM " . System::$Configuration["Database.TablePrefix"] . "Tenants";
-			$result = $MySQL->query($query);
-			$count = $result->num_rows;
+			$pdo = DataSystem::GetPDO();
+			$query = "SELECT * FROM :tablename";
+			$statement = $pdo->prepare($query);
+			$statement->execute(array
+			(
+				":tablename" => System::GetConfigurationValue("Database.TablePrefix") . "Tenants"
+			));
+			$count = $statement->rowCount();
 			$retval = array();
 			for ($i = 0; $i < $count; $i++)
 			{
-				$values = $result->fetch_assoc();
+				$values = $statement->fetch(PDO::FETCH_ASSOC);
 				$retval[] = Tenant::GetByAssoc($values);
 			}
 			return $retval;
