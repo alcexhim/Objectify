@@ -1,0 +1,15 @@
+<Website>
+	<Pages>
+		<Page FileName="" MasterPageFileName="Blank">
+			<wfx:ButtonGroup ID="btng1">
+				<Items>
+					<wfx:ButtonGroupButton ID="btnDataCenters" Title="Data Centers" TargetURL="~/DataCenters" ImageURL="~/Images/Buttons/DataCenters.png" />
+					<wfx:ButtonGroupButton ID="btnDataTypes" Title="Data Types" TargetURL="~/DataTypes" ImageURL="~/Images/Buttons/DataTypes.png" />
+					<wfx:ButtonGroupButton ID="btnTenantTypes" Title="Tenant Types" TargetURL="~/TenantTypes" ImageURL="~/Images/Buttons/TenantTypes.png" />
+					<wfx:ButtonGroupButton ID="btnTenants" Title="Tenants" TargetURL="~/Tenants" ImageURL="~/Images/Buttons/Tenants.png" />
+					<wfx:ButtonGroupButton ID="btnModules" Title="Modules" TargetURL="~/Modules" ImageURL="~/Images/Buttons/Modules.png" />
+				</Items>
+			</wfx:ButtonGroup>
+		</Page>
+	</Pages>
+</Website>

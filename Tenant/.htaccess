@@ -8,3 +8,5 @@ RewriteRule ^StyleSheets/(.*)\.css$ lessc.php?filename=$1 [PT,L,QSA]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php?virtualpath=$1 [PT,L,QSA]
+
+Header set "X-Powered-By" "Phast/1.0"

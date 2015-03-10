@@ -1,7 +1,7 @@
 <?php
 	namespace Objectify\Objects;
 	
-	use WebFX\System;
+	use Phast\System;
 	
 	class TenantObjectInstance
 	{

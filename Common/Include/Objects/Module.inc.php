@@ -1,6 +1,6 @@
 <?php
 	namespace Objectify\Objects;
-	use WebFX\System;
+	use Phast\System;
 	
 	// \Enum::Create("Objectify\\Objects\\ModuleStatus", "Enabled", "Disabled");
 	

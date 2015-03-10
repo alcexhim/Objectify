@@ -1,10 +1,8 @@
 <?php
-	use WebFX\System;
-	use WebFX\Module;
-	use WebFX\ModulePage;
+	use Phast\System;
 	
-	use WebFX\Controls\ButtonGroup;
-	use WebFX\Controls\ButtonGroupButton;
+	use Phast\WebControls\ButtonGroup;
+	use Phast\WebControls\ButtonGroupButton;
 	
 	use Objectify\Tenant\MasterPages\WebPage;
 	
@@ -62,14 +60,14 @@
 	
 	function CheckCredentials($admun, $admpw)
 	{
-		return ($admun == System::GetConfigurationValue("Administration.UserName") && $admpw == System::GetConfigurationValue("Administration.Password"));
+		// TODO: implement this
 	}
 	function IsAdministrator()
 	{
-		if (!isset($_SESSION["admun"]) || !isset($_SESSION["admpw"])) return false;
+		if (!isset($_SESSION["Authentication.UserName"]) || !isset($_SESSION["Authentication.Password"])) return false;
 		
-		$admun = $_SESSION["admun"];
-		$admpw = $_SESSION["admpw"];
+		$admun = $_SESSION["Authentication.UserName"];
+		$admpw = $_SESSION["Authentication.Password"];
 		
 		return CheckCredentials($admun, $admpw);
 	}
@@ -87,7 +85,7 @@
 			$path1 = implode("/", $path);
 			$_SESSION["LoginRedirectURL"] = "~/" . $path1;
 			
-			System::Redirect("~/account/login.page");
+			System::RedirectToLoginPage();
 			return true;
 		}
 		return true;
@@ -95,212 +93,8 @@
 	
 	System::$Modules[] = new Module("net.Objectify.TenantManager.Default", array
 	(
-		new ModulePage("", function($path)
-		{
-			$page = new WebPage();
-			$page->BeginContent();
-			
-			$btng = new ButtonGroup("btng1");
-			$btng->Items[] = new ButtonGroupButton("btnDataCenters", "Data Centers", null, "~/Images/Buttons/DataCenters.png", "~/datacenter");
-			$btng->Items[] = new ButtonGroupButton("btnDataTypes", "Data Types", null, "~/Images/Buttons/DataTypes.png", "~/datatype");
-			$btng->Items[] = new ButtonGroupButton("btnTenantTypes", "Tenant Types", null, "~/Images/Buttons/TenantTypes.png", "~/tenanttype");
-			$btng->Items[] = new ButtonGroupButton("btnTenants", "Tenants", null, "~/Images/Buttons/Tenants.png", "~/tenant");
-			$btng->Items[] = new ButtonGroupButton("btnModules", "Modules", null, "~/Images/Buttons/Modules.png", "~/module");
-			$btng->Render();
-			
-			$page->EndContent();
-		}),
-		new ModulePage("debug", function($path)
-		{
-			global $MySQL;
-			
-			$page = new WebPage();
-			$page->BeginContent();
-			if (is_numeric($path[0]))
-			{
-				if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["action"] == "delete")
-				{
-					$query = "DELETE FROM " . System::GetConfigurationValue("Database.TablePrefix") . "DebugMessages WHERE message_ID = " . $path[0];
-					$result = $MySQL->query($query);
-					System::Redirect("~/debug");
-				}
-				else
-				{
-					$query = "SELECT * FROM " . System::$Configuration["Database.TablePrefix"] . "DebugMessages WHERE message_ID = " . $path[0];
-					$result = $MySQL->query($query);
-					$values = $result->fetch_assoc();
-					
-					echo("<h1>Error Details</h1>");
-					echo("<p>" . $values["message_Content"] . "</p>");
-					
-					echo("<h2>Parameters</h2>");
-					echo("<table class=\"ListView\">");
-					$query1 = "SELECT * FROM " . System::$Configuration["Database.TablePrefix"] . "DebugMessageParameters WHERE mp_MessageID = " . $values["message_ID"];
-					$result1 = $MySQL->query($query1);
-					$count1 = $result1->num_rows;
-					echo("<tr>");
-					echo("<th>Name</th>");
-					echo("<th>Value</th>");
-					echo("</tr>");
-					for ($j = 0; $j < $count1; $j++)
-					{
-						$values1 = $result1->fetch_assoc();
-						echo("<tr>");
-						echo("<td>");
-						echo($values1["mp_Name"]);
-						echo("</td>");
-						echo("<td>");
-						echo($values1["mp_Value"]);
-						echo("</td>");
-						echo("</tr>");
-					}
-					echo("</table>");
-					
-					echo("<h2>Backtrace</h2>");
-					echo("<table class=\"ListView\">");
-					$query1 = "SELECT * FROM " . System::$Configuration["Database.TablePrefix"] . "DebugMessageBacktraces WHERE bt_MessageID = " . $values["message_ID"];
-					$result1 = $MySQL->query($query1);
-					$count1 = $result1->num_rows;
-					echo("<tr>");
-					echo("<th>File name</th>");
-					echo("<th>Line number</th>");
-					echo("</tr>");
-					for ($j = 0; $j < $count1; $j++)
-					{
-						$values1 = $result1->fetch_assoc();
-						echo("<tr>");
-						echo("<td>");
-						echo($values1["bt_FileName"]);
-						echo("</td>");
-						echo("<td>");
-						echo($values1["bt_LineNumber"]);
-						echo("</td>");
-						echo("</tr>");
-					}
-					echo("</table>");
-					echo("<div class=\"Buttons\">");
-					echo("<form method=\"post\">");
-					echo("<input type=\"hidden\" name=\"action\" value=\"delete\" />");
-					echo("<input type=\"submit\" value=\"Delete Message\" />");
-					echo("<a class=\"Button\" href=\"" . System::ExpandRelativePath("~/debug") . "\">Back to Messages</a>");
-					echo("</form>");
-					echo("</div>");
-				}
-			}
-			else
-			{
-				if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["action"] == "delete")
-				{
-					$query = "DELETE FROM " . System::GetConfigurationValue("Database.TablePrefix") . "DebugMessages";
-					$result = $MySQL->query($query);
-					System::Redirect("~/debug");
-				}
-				else
-				{
-					echo("<form method=\"post\">");
-					echo("<input type=\"hidden\" name=\"action\" value=\"delete\" />");
-					echo("<input type=\"submit\" value=\"Clear Messages\" />");
-					echo("</form>");
-					
-					echo("<table class=\"ListView\">");
-					echo("<tr>");
-					echo("<th>Tenant</th>");
-					echo("<th>Severity</th>");
-					echo("<th>Message</th>");
-					echo("<th>Timestamp</th>");
-					echo("<th>IP Address</th>");
-					echo("</tr>");
-					
-					$query = "SELECT * FROM " . System::$Configuration["Database.TablePrefix"] . "DebugMessages";
-					$result = $MySQL->query($query);
-					$count = $result->num_rows;
-					for ($i = 0; $i < $count; $i++)
-					{
-						$values = $result->fetch_assoc();
-						echo("<tr>");
-						echo("<td>");
-						$tenant = Tenant::GetByID($values["message_TenantID"]);
-						if ($tenant != null)
-						{
-							echo("<a href=\"" . System::ExpandRelativePath("~/tenant/manage/" . $tenant->URL . "/") . "\">" . $tenant->URL . "</a>");
-						}
-						echo("</td>");
-						echo("<td>");
-						switch ($values["message_SeverityID"])
-						{
-						}
-						echo("</td>");
-						echo("<td>");
-						echo("<a href=\"" . System::ExpandRelativePath("~/debug/" . $values["message_ID"]) . "\">");
-						echo($values["message_Content"]);
-						echo("</a>");
-						echo("</td>");
-						echo("<td>");
-						echo($values["message_Timestamp"]);
-						echo("</td>");
-						echo("<td>");
-						echo($values["message_IPAddress"]);
-						echo("</td>");
-						echo("</tr>");
-					}
-					echo("</table>");
-				}
-			}
-			$page->EndContent();
-			return true;
-		}),
-		new ModulePage("account", array
-		(
-			new ModulePage("login.page", function($path)
-			{
-				$page = new LoginPage();
-				if ($_SERVER["REQUEST_METHOD"] == "POST")
-				{
-					if (isset($_POST["user_LoginID"]) && isset($_POST["user_Password"]))
-					{
-						$admun = $_POST["user_LoginID"];
-						$admpw = $_POST["user_Password"];
-						
-						if (CheckCredentials($admun, $admpw))
-						{
-							$_SESSION["admun"] = $admun;
-							$_SESSION["admpw"] = $admpw;
-							
-							if (isset($_SESSION["LoginRedirectURL"]))
-							{
-								System::Redirect($_SESSION["LoginRedirectURL"]);
-							}
-							else
-							{
-								System::Redirect("~/");
-							}
-							return true;
-						}
-						else
-						{
-							$page->InvalidCredentials = true;
-						}
-					}
-				}
-				$page->Render();
-				return true;
-			}),
-			new ModulePage("logout.page", function($path)
-			{
-				$_SESSION["admun"] = null;
-				$_SESSION["admpw"] = null;
-				System::Redirect("~/");
-				return true;
-			})
-		)),
 		new ModulePage("tenant", array
 		(
-			new ModulePage("", function($path)
-			{
-				$page = new MainPage();
-				$page->Render();
-				return true;
-			}),
 			new ModulePage("create", function($path)
 			{
 				if ($_SERVER["REQUEST_METHOD"] === "POST")
