@@ -6,24 +6,30 @@
 					<div class="Wrapper">
 						<html:Heading Level="1">Authentication Required</html:Heading>
 						<html:Paragraph>You must log in to view this page.</html:Paragraph>
-						<html:Form Method="POST">
-							<wfx:Alert ID="alertInvalidCredentials" Type="Failure" Title="Incorrect user name or password" EnableRender="false">
-								Please ensure your CAPS LOCK and NUM LOCK keys are inactive and try again.
-							</wfx:Alert>
-							<wfx:Panel>
-								<ContentControls>
-									<wfx:FormView ID="fv">
-										<Items>
-											<wfx:FormViewItemText ID="txtUserName" Title="User name" Name="user_LoginID" />
-											<wfx:FormViewItemPassword ID="txtPassword" Title="Password" Name="user_Password" />
-										</Items>
-									</wfx:FormView>
-								</ContentControls>
-								<FooterControls>
-									<wfx:Button ID="cmdSubmit" Text="Continue" UseSubmitBehavior="true" />
-								</FooterControls>
-							</wfx:Panel>
-						</html:Form>
+						<wfx:Panel>
+							<ContentControls>
+								<div class="LoginCredentials">
+									<html:Form Method="POST">
+										<wfx:Alert ID="alertInvalidCredentials" Type="Failure" Title="Incorrect user name or password" EnableRender="false">
+											Please ensure your CAPS LOCK and NUM LOCK keys are inactive and try again.
+										</wfx:Alert>
+										<wfx:FormView ID="fv">
+											<Items>
+												<wfx:FormViewItemText ID="txtUserName" Title="User name" Name="user_LoginID" />
+												<wfx:FormViewItemPassword ID="txtPassword" Title="Password" Name="user_Password" />
+											</Items>
+										</wfx:FormView>
+									</html:Form>
+								</div>
+								<div class="LoginBranding">
+									<div class="LoginBrandingLogo"><html:Image ImageURL="~/Images/Header.png" /></div>
+									<div class="LoginBrandingText"><html:Literal Value="$(Configuration:LoginBrandingText)" /></div>
+								</div>
+							</ContentControls>
+							<FooterControls>
+								<wfx:Button ID="cmdSubmit" Text="Continue" UseSubmitBehavior="true" />
+							</FooterControls>
+						</wfx:Panel>
 					</div>
 				</wfx:Section>
 			</Content>
