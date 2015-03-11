@@ -1,12 +1,14 @@
 <?php
 	namespace Objectify\Tenant\Pages;
 	
+	use Phast\CancelEventArgs;
 	use Phast\System;
+	
+	use Phast\Parser\PhastPage;
 	
 	use Objectify\Tenant\MasterPages\WebPage;
 	use Objectify\Objects\Tenant;
-	use Phast\Parser\PhastPage;
-	use Phast\CancelEventArgs;
+	use Objectify\Objects\User;
 	
 	class LoginPage extends PhastPage
 	{
@@ -16,13 +18,18 @@
 			{
 				if (isset($_POST["user_LoginID"]) && isset($_POST["user_Password"]))
 				{
-					$admun = $_POST["user_LoginID"];
-					$admpw = $_POST["user_Password"];
-			
-					if (CheckCredentials($admun, $admpw))
+					$username = $_POST["user_LoginID"];
+					$password = $_POST["user_Password"];
+					
+					$user = User::GetByCredentials($username, $password);
+					if ($user != null)
 					{
-						$_SESSION["Authentication.UserName"] = $admun;
-						$_SESSION["Authentication.Password"] = $admpw;
+						if (!$user->RequestLoginToken())
+						{
+							$e->RenderingPage->GetControlByID("fv")->GetItemByID("txtUserName")->Value = $_POST["user_LoginID"];
+							$e->RenderingPage->GetControlByID("alertInvalidCredentials")->EnableRender = true;
+							return true;
+						}
 						
 						if (isset($_SESSION["LoginRedirectURL"]))
 						{
@@ -36,7 +43,8 @@
 					}
 					else
 					{
-						$this->Page->GetControlByID("alertInvalidCredentials")->EnableRender = true;
+						$e->RenderingPage->GetControlByID("fv")->GetItemByID("txtUserName")->Value = $_POST["user_LoginID"];
+						$e->RenderingPage->GetControlByID("alertInvalidCredentials")->EnableRender = true;
 					}
 				}
 			}
@@ -46,8 +54,7 @@
 	{
 		public function OnInitializing(CancelEventArgs $e)
 		{
-			$_SESSION["Authentication.UserName"] = null;
-			$_SESSION["Authentication.Password"] = null;
+			User::ReleaseLoginToken();
 			System::Redirect("~/");
 		}
 	}
