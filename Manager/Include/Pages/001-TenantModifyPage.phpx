@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Website>
+	<Pages>
+		<Page FileName="tenants/modify/$(tenantID)" CodeBehindClassName="Objectify\Tenant\Pages\TenantModifyPage" MasterPageFileName="Default">
+			<Content>
+				<wfx:Section PlaceholderID="Content">
+					<html:Heading Level="1">Edit Tenant Configuration</html:Heading>
+					<wfx:TabContainer ID="tbsTabs">
+						<TabPages>
+							<wfx:TabPage ID="tabCustomProperties" Text="Custom Properties">
+								<wfx:ListView ID="lvCustomProperties" Width="100%" EnableAddRemoveRows="true">
+									<Columns>
+										<wfx:ListViewColumn ID="lvcPropertyName" Title="Property" Width="256px" />
+										<wfx:ListViewColumn ID="lvcPropertyDescription" Title="Description" />
+										<wfx:ListViewColumn ID="lvcPropertyValue" Title="Value" Width="256px" />
+									</Columns>
+								</wfx:ListView>
+							</wfx:TabPage>
+							<wfx:TabPage ID="tabEnabledModules" Text="Enabled Modules">
+								<html:Paragraph>Click on a module name to configure the module on this tenant.</html:Paragraph>
+								<wfx:ListView ID="lvEnabledModules" EnableRowCheckBoxes="true">
+									<Columns>
+										<wfx:ListViewColumn ID="lvcModule" Title="Module" Width="128px" />
+										<wfx:ListViewColumn ID="lvcDescription" Title="Description" />
+									</Columns>
+								</wfx:ListView>
+							</wfx:TabPage>
+							<wfx:TabPage ID="tabGlobalObjects" Text="Global Objects">
+								<html:Paragraph>Lists all of the objects that are available on this tenant that are not associated with a particular Module.</html:Paragraph>
+								<wfx:ListView ID="lvGlobalObjects">
+									<Columns>
+										<wfx:ListViewColumn ID="lvcObject" Title="Object" Width="128px" />
+										<wfx:ListViewColumn ID="lvcDescription" Title="Description" />
+										<wfx:ListViewColumn ID="lvcInstances" Title="Instances" />
+									</Columns>
+								</wfx:ListView>
+							</wfx:TabPage>
+						</TabPages>
+					</wfx:TabContainer>
+				</wfx:Section>
+			</Content>
+		</Page>
+	</Pages>
+</Website>
