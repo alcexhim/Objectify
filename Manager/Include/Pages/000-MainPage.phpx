@@ -7,7 +7,7 @@
 					<html:Heading Level="1">Tenant Management</html:Heading>
 					<html:Paragraph>There are <html:Literal ID="lblTenantCountTotal" Value="0" /> tenants in total.</html:Paragraph>
 					
-					<html:Anchor CssClass="Button" TargetURL="~/Tenants/Create">Create New Tenant</html:Anchor>
+					<html:Anchor CssClass="Button" TargetURL="~/tenants/create">Create New Tenant</html:Anchor>
 					
 					<html:Heading Level="2">Active Tenants (<html:Literal ID="lblTenantCountActive" />)</html:Heading>
 					<wfx:ListView ID="lvTenantsActive">
