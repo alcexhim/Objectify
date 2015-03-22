@@ -7,7 +7,7 @@
 				<Reference TagPrefix="html" NamespacePath="Phast\HTMLControls" />
 			</References>
 			<StyleSheets>
-				<StyleSheet FileName="$(Configuration:System.StaticPath)/StyleSheets/Workday/Main.css" />
+				<StyleSheet FileName="$(Configuration:System.StaticPath)/StyleSheets/$(Configuration:Application.ThemeName)/Main.css" />
 			</StyleSheets>
 			<Content>
 				<wfx:SectionPlaceholder ID="Content" />
