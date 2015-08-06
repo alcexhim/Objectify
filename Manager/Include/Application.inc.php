@@ -37,6 +37,7 @@
 	use Objectify\Objects\TenantStatus;
 	use Objectify\Objects\TenantType;
 	use Objectify\Objects\TenantObjectMethodParameterValue;
+use Phast\Data\DataSystem;
 	
 	function IsConfigured()
 	{
@@ -51,10 +52,15 @@
 			return false;
 		}
 		
-		global $MySQL;
+		$pdo = DataSystem::GetPDO() or null;
+		if ($pdo == null) return false;
+		
 		$query = "SHOW TABLES LIKE '" . System::$Configuration["Database.TablePrefix"] . "Tenants'";
-		$result = $MySQL->query($query);
-		if ($result->num_rows < 1) return false;
+		$statement = $pdo->prepare($query);
+		$result = $statement->execute(array());
+		if ($result === false) return false;
+		
+		if ($statement->rowCount() < 1) return false;
 		return true;
 	}
 	
@@ -91,6 +97,7 @@
 		return true;
 	};
 	
+	/*
 	System::$Modules[] = new Module("net.Objectify.TenantManager.Default", array
 	(
 		new ModulePage("tenant", array
@@ -456,4 +463,5 @@
 			})
 		))
 	));
+	*/
 ?>

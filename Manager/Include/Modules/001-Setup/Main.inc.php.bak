@@ -277,55 +277,6 @@
 			$page = new WebPage();
 			$page->BeginContent();
 ?>
-<div style="text-align: center;">
-	<img src="<?php echo(System::ExpandRelativePath("~/Images/Logo.png")); ?>" style="height: 200px;" />
-</div>
-<p style="text-align: center;">
-	Please provide some information about your server to create the initial <?php echo(System::$Configuration["Application.Name"]); ?> tenant. Other
-	tenants may be created and removed at any time by entering the Administrator Control Panel.
-</p>
-<form method="POST">
-	<table style="width: 400px; margin-left: auto; margin-right: auto;">
-		<tr>
-			<td style="width: 128px;"><label for="txtServerName">Server name:</label></td>
-			<td><input type="text" id="txtServerName" name="database_servername" style="width: 100%;" value="<?php echo(System::GetConfigurationValue("Database.ServerName", "localhost")); ?>" />
-		</tr>
-		<tr>
-			<td><label for="txtDatabaseName">Database name:</label></td>
-			<td><input type="text" id="txtDatabaseName" name="database_databasename" style="width: 100%;" value="<?php echo(System::GetConfigurationValue("Database.DatabaseName", "Objectify")); ?>" /></td>
-		</tr>
-		<tr>
-			<td><label for="txtUserName">User name:</label></td>
-			<td><input type="text" id="txtUserName" name="database_username" style="width: 100%;" value="<?php echo(System::GetConfigurationValue("Database.UserName", "Objectify")); ?>" /></td>
-		</tr>
-		<tr>
-			<td><label for="txtPassword">Password:</label></td>
-			<td><input type="password" id="txtPassword" name="database_password" value="" style="width: 100%;" /></td>
-		</tr>
-		<tr>
-			<td><label for="txtTablePrefix">Table prefix:</label></td>
-			<td><input type="text" id="txtTablePrefix" name="database_tableprefix" value="<?php echo(System::GetConfigurationValue("Database.TablePrefix", "phoenix_")); ?>" style="width: 100%;" /></td>
-		</tr>
-		<tr>
-			<td colspan="2"><hr /></td>
-		</tr>
-		<tr>
-			<td><label for="txtAdministratorUserName">Administrator user name:</label></td>
-			<td><input type="text" id="txtAdministratorUserName" name="TenantManager_UserName" /></td>
-		</tr>
-		<tr>
-			<td><label for="txtAdministratorPassword">Administrator password:</label></td>
-			<td><input type="password" id="txtAdministratorPassword" name="TenantManager_Password" /></td>
-		</tr>
-		<tr>
-			<td><label for="txtDefaultTenant">Initial tenant:</label></td>
-			<td><input type="text" id="txtDefaultTenant" name="Application_DefaultTenant" value="default" /></td>
-		</tr>
-		<tr>
-			<td colspan="2" style="text-align: center;"><input type="submit" value="Continue" /></td>
-		</tr>
-	</table>
-</form>
 <?php
 			$page->EndContent();
 			return true;

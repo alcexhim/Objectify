@@ -1,0 +1,43 @@
+<Website>
+	<Pages>
+		<Page FileName="setup" MasterPageFileName="Blank">
+			<Content>
+				<wfx:Section PlaceholderID="Content">
+					<div style="text-align: center;">
+						<html:Image ImageUrl="~/Images/Logo.png" Width="90%" />
+					</div>
+					<p style="text-align: center;">
+						Please provide some information about your server to create the initial <html:Literal Value="$(Configuration:Application.Name)" /> tenant. Other
+						tenants may be created and removed at any time by entering the Administrator Control Panel.
+					</p>
+					<form method="POST">
+						<div class="ColumnContainer TwoColumn">
+							<div class="Column">
+								<wfx:FormView ID="fv1">
+									<Items>
+										<wfx:FormViewItemText ID="txtDatabaseServerName" Name="database_ServerName" Title="Server name" Value="$(Configuration:Database.ServerName|localhost)" />
+										<wfx:FormViewItemText ID="txtDatabaseDatabaseName" Name="database_DatabaseName" Title="Database name" Value="$(Configuration:Database.DatabaseName|Objectify)" />
+										<wfx:FormViewItemText ID="txtDatabaseUserName" Name="database_UserName" Title="User name" Value="$(Configuration:Database.UserName|Objectify)" />
+										<wfx:FormViewItemPassword ID="txtDatabasePassword" Name="database_Password" Title="Password" />
+										<wfx:FormViewItemText ID="txtDatabaseTablePrefix" Name="database_TablePrefix" Title="Table prefix" Value="$(Configuration:Database.TablePrefix|ofx_)" />
+									</Items>
+								</wfx:FormView>
+							</div>
+							<div class="Column">
+								<wfx:FormView ID="fv2">
+									<Items>
+										<wfx:FormViewItemText ID="txtAdministratorUserName" Name="manager_UserName" Title="Administrator user name" Value="admin" />
+										<wfx:FormViewItemPassword ID="txtAdministratorPassword" Name="manager_Password" Title="Administrator password" Value="" />
+									</Items>
+								</wfx:FormView>
+							</div>
+						</div>
+						<div class="PageFooter">
+							<wfx:Button ID="cmdContinue" CssClass="Primary" Text="Continue" />
+						</div>
+					</form>
+				</wfx:Section>
+			</Content>
+		</Page>
+	</Pages>
+</Website>

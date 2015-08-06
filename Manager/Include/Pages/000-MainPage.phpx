@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Website>
 	<Pages>
-		<Page FileName="" CodeBehindClassName="Objectify\Tenant\Pages\MainPage" MasterPageFileName="Default">
+		<Page FileName="tenants" CodeBehindClassName="Objectify\Tenant\Pages\MainPage" MasterPageFileName="Default">
 			<Content>
 				<wfx:Section PlaceholderID="Content">
 					<html:Heading Level="1">Tenant Management</html:Heading>

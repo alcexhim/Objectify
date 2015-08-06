@@ -17,13 +17,8 @@
 	// along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	// =============================================================================
 	
-	// We need to get the root path of the Web site. It's usually something like
-	// /var/www/yourdomain.com.
-	global $RootPath;
-	$RootPath = dirname(__FILE__);
-	
-	// Now that we have defined the root path, load the Phast content (which also
-	// include_once's the modules and other Phast-specific stuff)
+	// Load the Phast content (which also include_once's the system modules and
+	// other Phast-specific stuff)
 	require_once("Phast/System.inc.php");
 	
 	// Bring in the Phast\System and Phast\IncludeFile classes so we can simply refer
@@ -32,9 +27,13 @@
 	use Phast\System;
 	use Phast\IncludeFile;
 	
-	// Tell Phast that we are ready to launch the application. This cycles through
-	// all of the modules (usually you will define your main application content in
-	// 000-Default) and executes the first module page that corresponds to the path
-	// the user is GETting.
+	// We need to set the root path of the Web site. It's usually something like
+	// /var/www/yourdomain.com.
+	System::SetApplicationPath(dirname(__FILE__));
+	
+	// Tell Phast that we are ready to launch the application. This searches the entire
+	// directory hierarchy for Phast files, loading *.phpx files as Phast XML files and
+	// *.phpx.php files as PHP code-behind files. We may decide to use the *.ctlx extension
+	// (and its associated *.ctlx.php) for PHPX controls.
 	System::Launch();
 ?>
