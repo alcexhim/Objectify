@@ -28,7 +28,7 @@
 									</div>
 								</ContentControls>
 								<FooterControls>
-									<wfx:Button ID="cmdSubmit" Text="Continue" UseSubmitBehavior="true" />
+									<wfx:Button CssClass="Primary" ID="cmdSubmit" Text="Continue" UseSubmitBehavior="true" />
 								</FooterControls>
 							</wfx:Panel>
 						</div>
