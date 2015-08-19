@@ -41,12 +41,11 @@ use Phast\Data\DataSystem;
 	
 	function IsConfigured()
 	{
-		if (!(
-			isset(System::$Configuration["Database.ServerName"]) &&
-			isset(System::$Configuration["Database.DatabaseName"]) &&
-			isset(System::$Configuration["Database.UserName"]) &&
-			isset(System::$Configuration["Database.Password"]) &&
-			isset(System::$Configuration["Database.TablePrefix"])
+		if (!(System::HasConfigurationValue("Database.ServerName") &&
+			System::HasConfigurationValue("Database.DatabaseName") &&
+			System::HasConfigurationValue("Database.UserName") &&
+			System::HasConfigurationValue("Database.Password") &&
+			System::HasConfigurationValue("Database.TablePrefix")
 		))
 		{
 			return false;
@@ -55,7 +54,7 @@ use Phast\Data\DataSystem;
 		$pdo = DataSystem::GetPDO() or null;
 		if ($pdo == null) return false;
 		
-		$query = "SHOW TABLES LIKE '" . System::$Configuration["Database.TablePrefix"] . "Tenants'";
+		$query = "SHOW TABLES LIKE '" . System::GetConfigurationValue("Database.TablePrefix") . "Tenants'";
 		$statement = $pdo->prepare($query);
 		$result = $statement->execute(array());
 		if ($result === false) return false;
