@@ -1,10 +1,14 @@
 <?php
-	use DataFX\DataFX;
-	use DataFX\Table;
-	use DataFX\Column;
-	use DataFX\ColumnValue;
-	use DataFX\Record;
-	use DataFX\RecordColumn;
+	use Phast\Data\Table;
+	use Phast\Data\Column;
+	use Phast\Data\ColumnValue;
+	use Phast\Data\Record;
+	use Phast\Data\RecordColumn;
+	use Phast\Data\TableKey;
+	use Phast\Data\TableKeyColumn;
+	use Phast\Data\TableForeignKey;
+	use Phast\Data\TableForeignKeyColumn;
+	use Phast\Data\TableForeignKeyReferenceOption;
 	
 	$tblDataTypes = new Table("DataTypes", "datatype_", array
 	(

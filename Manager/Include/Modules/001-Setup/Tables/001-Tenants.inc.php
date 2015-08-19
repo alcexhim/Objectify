@@ -1,14 +1,14 @@
 <?php
-	use DataFX\DataFX;
-	use DataFX\Table;
-	use DataFX\Column;
-	use DataFX\ColumnValue;
-	use DataFX\Record;
-	use DataFX\RecordColumn;
-	use DataFX\TableKey;
-	use DataFX\TableKeyColumn;
-	use DataFX\TableForeignKey;
-	use DataFX\TableForeignKeyColumn;
+	use Phast\Data\Table;
+	use Phast\Data\Column;
+	use Phast\Data\ColumnValue;
+	use Phast\Data\Record;
+	use Phast\Data\RecordColumn;
+	use Phast\Data\TableKey;
+	use Phast\Data\TableKeyColumn;
+	use Phast\Data\TableForeignKey;
+	use Phast\Data\TableForeignKeyColumn;
+	use Phast\Data\TableForeignKeyReferenceOption;
 	
 	$tblTenants = new Table("Tenants", "tenant_", array
 	(
@@ -63,16 +63,4 @@
 		new TableForeignKey("PropertyID", new TableForeignKeyColumn($tblTenantProperties, "ID"))
 	);
 	$tables[] = $tblTenantPropertyValues;
-	
-	$tblTenantModules = new Table("TenantModules", "tenantmodule_", array
-	(
-		// 			$name, $dataType, $size, $value, $allowNull, $primaryKey, $autoIncrement
-		new Column("TenantID", "INT", null, null, false),
-		new Column("ModuleID", "INT", null, null, false)
-	));
-	$tblTenantModules->ForeignKeys = array
-	(
-		new TableForeignKey("TenantID", new TableForeignKeyColumn($tblTenants, "ID"))
-	);
-	$tables[] = $tblTenantModules;
 ?>

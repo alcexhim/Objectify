@@ -1,6 +1,6 @@
 <Website>
 	<Pages>
-		<Page FileName="setup" MasterPageFileName="Blank">
+		<Page FileName="setup" MasterPageFileName="Blank" CodeBehindClassName="Objectify\Manager\Pages\SetupPage">
 			<Content>
 				<wfx:Section PlaceholderID="Content">
 					<div style="text-align: center;">

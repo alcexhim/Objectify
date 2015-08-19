@@ -57,6 +57,7 @@ use Phast\Data\DataSystem;
 		$query = "SHOW TABLES LIKE '" . System::GetConfigurationValue("Database.TablePrefix") . "Tenants'";
 		$statement = $pdo->prepare($query);
 		$result = $statement->execute(array());
+		
 		if ($result === false) return false;
 		
 		if ($statement->rowCount() < 1) return false;

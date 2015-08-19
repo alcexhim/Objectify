@@ -1,10 +1,6 @@
 <?php
-	use DataFX\DataFX;
-	use DataFX\Table;
-	use DataFX\Column;
-	use DataFX\ColumnValue;
-	use DataFX\Record;
-	use DataFX\RecordColumn;
+	use Phast\Data\Table;
+	use Phast\Data\Column;
 	
 	$tables[] = new Table("Users", "user_", array
 	(

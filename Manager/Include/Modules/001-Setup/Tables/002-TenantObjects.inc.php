@@ -1,28 +1,26 @@
 <?php
-	use DataFX\DataFX;
-	use DataFX\Table;
-	use DataFX\Column;
-	use DataFX\ColumnValue;
-	use DataFX\Record;
-	use DataFX\RecordColumn;
-	use DataFX\TableKey;
-	use DataFX\TableKeyColumn;
-	use DataFX\TableForeignKey;
-	use DataFX\TableForeignKeyColumn;
+	use Phast\Data\Table;
+	use Phast\Data\Column;
+	use Phast\Data\ColumnValue;
+	use Phast\Data\Record;
+	use Phast\Data\RecordColumn;
+	use Phast\Data\TableKey;
+	use Phast\Data\TableKeyColumn;
+	use Phast\Data\TableForeignKey;
+	use Phast\Data\TableForeignKeyColumn;
+	use Phast\Data\TableForeignKeyReferenceOption;
 	
 	$tblTenantObjects = new Table("TenantObjects", "object_", array
 	(
 		// 			$name, $dataType, $size, $value, $allowNull, $primaryKey, $autoIncrement
 		new Column("ID", "INT", null, null, false, true, true),
 		new Column("TenantID", "INT", null, null, true), // if set, object is only visible/referencable within specified tenant
-		new Column("ModuleID", "INT", null, null, true), // if set, object is only visible/referencable when specified module is enabled
 		new Column("ParentObjectID", "INT", null, null, true), // if set, object inherits its permissions, properties, and other attributes from given object
 		new Column("Name", "VARCHAR", 256, null, false)
 	));
 	$tblTenantObjects->ForeignKeys = array
 	(
 		new TableForeignKey("TenantID", new TableForeignKeyColumn($tblTenants, $tblTenants->GetColumnByName("ID"))),
-		new TableForeignKey("ModuleID", new TableForeignKeyColumn($tblModules, $tblModules->GetColumnByName("ID"))),
 		new TableForeignKey("ParentObjectID", new TableForeignKeyColumn($tblTenantObjects, $tblTenantObjects->GetColumnByName("ID")))
 	);
 	$tables[] = $tblTenantObjects;

@@ -1,10 +1,9 @@
 <?php
-	use DataFX\DataFX;
-	use DataFX\Table;
-	use DataFX\Column;
-	use DataFX\ColumnValue;
-	use DataFX\Record;
-	use DataFX\RecordColumn;
+	use Phast\Data\Table;
+	use Phast\Data\Column;
+	use Phast\Data\ColumnValue;
+	use Phast\Data\Record;
+	use Phast\Data\RecordColumn;
 	
 	$tables[] = new Table("PaymentPlans", "paymentplan_", array
 	(
