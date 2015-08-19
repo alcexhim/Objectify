@@ -86,7 +86,7 @@ use Phast\Data\DataSystem;
 			return true;
 		}
 		
-		if (!IsAdministrator() && (!($path[0] == "account" && $path[1] == "login.page")) && (!($path[0] == "setup")) && (!($path[0] == "favicon.ico")))
+		if (!IsAdministrator() && (!($path[0] == "account" && $path[1] == "login")) && (!($path[0] == "setup")) && (!($path[0] == "favicon.ico")))
 		{
 			$path1 = implode("/", $path);
 			$_SESSION["LoginRedirectURL"] = "~/" . $path1;
