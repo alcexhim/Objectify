@@ -99,32 +99,14 @@
 			$item->PaymentPlan = PaymentPlan::GetByID($values["tenant_PaymentPlanID"]);
 			$item->BeginTimestamp = $values["tenant_BeginTimestamp"];
 			$item->EndTimestamp = $values["tenant_EndTimestamp"];
-			
-			
-			// get the data centers associated with this tenant
-			global $MySQL;
-			$query = "SELECT " . System::$Configuration["Database.TablePrefix"] . "DataCenters.* FROM " . System::$Configuration["Database.TablePrefix"] . "DataCenters, " . System::$Configuration["Database.TablePrefix"] . "TenantDataCenters WHERE " . System::$Configuration["Database.TablePrefix"] . "TenantDataCenters.tdc_TenantID = " . $item->ID . " AND " . System::$Configuration["Database.TablePrefix"] . "TenantDataCenters.tdc_DataCenterID = " . System::$Configuration["Database.TablePrefix"] . "DataCenters.datacenter_ID";
-			$result = $MySQL->query($query);
-			$count = $result->num_rows;
-			$retval = array();
-			for ($i = 0; $i < $count; $i++)
-			{
-				$values = $result->fetch_assoc();
-				$retval[] = DataCenter::GetByAssoc($values);
-			}
-			$item->DataCenters->Items = $retval;
-			
 			return $item;
 		}
 		public static function Get($max = null)
 		{
 			$pdo = DataSystem::GetPDO();
-			$query = "SELECT * FROM :tablename";
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Tenants";
 			$statement = $pdo->prepare($query);
-			$statement->execute(array
-			(
-				":tablename" => System::GetConfigurationValue("Database.TablePrefix") . "Tenants"
-			));
+			$statement->execute();
 			$count = $statement->rowCount();
 			$retval = array();
 			for ($i = 0; $i < $count; $i++)
@@ -175,6 +157,28 @@
 		{
 			if (System::$TenantName == "") return null;
 			return Tenant::GetByURL(System::$TenantName);
+		}
+		
+		public function GetDataCenters()
+		{
+			$pdo = DataSystem::GetPDO();
+			$query = "SELECT " . System::$Configuration["Database.TablePrefix"] . "DataCenters.* FROM " . System::$Configuration["Database.TablePrefix"] . "DataCenters, " . System::$Configuration["Database.TablePrefix"] . "TenantDataCenters WHERE " . System::$Configuration["Database.TablePrefix"] . "TenantDataCenters.tdc_TenantID = :tdc_TenantID AND " . System::$Configuration["Database.TablePrefix"] . "TenantDataCenters.tdc_DataCenterID = " . System::$Configuration["Database.TablePrefix"] . "DataCenters.datacenter_ID";
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				":tdc_TenantID" => $this->ID
+			));
+			
+			$retval = array();
+			if ($result === false) return $retval;
+			
+			$count = $statement->rowCount();
+			for ($i = 0; $i < $count; $i++)
+			{
+				$values = $statement->fetch(PDO::FETCH_ASSOC);
+				$retval[] = DataCenter::GetByAssoc($values);
+			}
+			return $retval;
 		}
 		
 		public function Update()
