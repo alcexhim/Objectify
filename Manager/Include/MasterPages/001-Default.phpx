@@ -10,6 +10,21 @@
 				<StyleSheet FileName="$(Configuration:System.StaticPath)/StyleSheets/$(Configuration:Application.ThemeName|Workday)/Main.css" />
 			</StyleSheets>
 			<Content>
+				
+				<wfx:Window ID="wndCreateTenant" Title="Create Tenant">
+					<ContentControls>
+						<wfx:FormView ID="fvCreateTenant">
+							<Items>
+								<wfx:FormViewItemText ID="txtTenantName" Title="Tenant name" />
+							</Items>
+						</wfx:FormView>
+					</ContentControls>
+					<FooterControls>
+						<wfx:Button ID="cmdCreate" Text="Create" OnClientClick="wndCreateTenant.Hide();" />
+						<wfx:Button ID="cmdClose" Text="Close" OnClientClick="wndCreateTenant.Hide();" />
+					</FooterControls>
+				</wfx:Window>
+				
 				<wfx:SectionPlaceholder ID="Content" />
 			</Content>
 		</MasterPage>
