@@ -4,21 +4,29 @@
 	use Phast\CancelEventArgs;
 	
 	use Objectify\Objects\Tenant;
+	use Objectify\Objects\TenantObject;
 	
 	use Phast\WebControls\ListViewItem;
 	use Phast\WebControls\ListViewItemColumn;
-				
+					
 	class TenantModifyPage
 	{
 		public function OnInitializing(CancelEventArgs $e)
 		{
 			$page = $e->RenderingPage;
-			return true;
 			
 			$tenant = null;
-			if ($page->HasPathVariable("tenantID"))
+			if ($page->HasPathVariable("tenantName"))
 			{
-				$tenant = Tenant::GetByID($page->GetPathVariableValue("tenantID"));
+				$tenantName = $page->GetPathVariableValue("tenantName");
+				if (is_numeric($tenantName))
+				{
+					$tenant = Tenant::GetByID($tenantName);
+				}
+				else
+				{
+					$tenant = Tenant::GetByURL($tenantName);
+				}
 			}
 			
 			if ($tenant != null)
@@ -39,6 +47,7 @@
 					$lv->Items[] = $lvi;
 				}
 				
+				/*
 				$lv = $page->GetControlByID("lvEnabledModules");
 				$modules = Module::Get(null, $this->Tenant);
 				foreach ($modules as $module)
@@ -50,6 +59,7 @@
 					));
 					$lvModules->Items[] = $lvi;
 				}
+				*/
 				
 				$lv = $page->GetControlByID("lvGlobalObjects");
 				$objects = TenantObject::Get(null, $this->Tenant);
@@ -65,3 +75,4 @@
 			}
 		}
 	}
+?>

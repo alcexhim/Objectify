@@ -120,36 +120,48 @@
 		{
 			if (!is_numeric($id)) return null;
 			
-			global $MySQL;
-			$query = "SELECT * FROM " . System::$Configuration["Database.TablePrefix"] . "Tenants WHERE tenant_ID = " . $id;
-			$result = $MySQL->query($query);
-			$count = $result->num_rows;
+			$pdo = DataSystem::GetPDO();
+			$query = "SELECT * FROM " . System::$Configuration["Database.TablePrefix"] . "Tenants WHERE tenant_ID = :tenant_ID";
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				":tenant_ID" => $id
+			));
+			$count = $statement->rowCount();
 			if ($count == 0) return null;
 			
-			$values = $result->fetch_assoc();
+			$values = $statement->fetch(PDO::FETCH_ASSOC);
 			return Tenant::GetByAssoc($values);
 		}
 		public static function GetByURL($url)
 		{
-			global $MySQL;
-			$query = "SELECT * FROM " . System::$Configuration["Database.TablePrefix"] . "Tenants WHERE tenant_URL = '" . $MySQL->real_escape_string($url) . "'";
-			$result = $MySQL->query($query);
+			$pdo = DataSystem::GetPDO();
+			$query = "SELECT * FROM " . System::$Configuration["Database.TablePrefix"] . "Tenants WHERE tenant_URL = :tenant_URL";
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				":tenant_URL" => $url
+			));
+			
 			if ($result === false)
 			{
 				echo("<html><head><title>Initialization Failure</title></head><body><h1>Initialization Failure</h1><p>A fatal error occurred when attempting to initialize the Objectify runtime.  Please make sure Objectify has been installed correctly on the server.</p><p>The Objectify runtime cannot be loaded (1001). Please contact the Web site administrator to inform them of this problem.</p><hr /><h3>System information</h3><table><tr><td>Tenant:</td><td>" . $url . "</td></tr><tr><td>Server: </td><td>" . $_SERVER["HTTP_HOST"] . "</td></tr></table></body></html>");
 				die();
 				return null;
 			}
-			
-			$count = $result->num_rows;
+
+			$count = $statement->rowCount();
+			if ($count == 0) return null;
+			/*
 			if ($count == 0)
 			{
 				echo("<html><head><title>Initialization Failure</title></head><body><h1>Initialization Failure</h1><p>A fatal error occurred when attempting to initialize the Objectify runtime.  Please make sure Objectify has been installed correctly on the server.</p><p>The Objectify runtime cannot find the requested tenant (1002). Please contact the Web site administrator to inform them of this problem.</p><hr /><h3>System information</h3><table><tr><td>Tenant:</td><td>" . $url . "</td></tr><tr><td>Server: </td><td>" . $_SERVER["HTTP_HOST"] . "</td></tr></table></body></html>");
 				die();
 				return null;
 			}
+			*/
 			
-			$values = $result->fetch_assoc();
+			$values = $statement->fetch(PDO::FETCH_ASSOC);
 			return Tenant::GetByAssoc($values);
 		}
 		
@@ -347,15 +359,22 @@
 		
 		public function GetProperties()
 		{
-			global $MySQL;
+			$pdo = DataSystem::GetPDO();
 			
 			$retval = array();
-			$query = "SELECT * FROM " . System::$Configuration["Database.TablePrefix"] . "TenantProperties WHERE (property_TenantID = " . $this->ID . " OR property_TenantID IS NULL)";
-			$result = $MySQL->query($query);
-			$count = $result->num_rows;
+			$query = "SELECT * FROM " . System::$Configuration["Database.TablePrefix"] . "TenantProperties WHERE (property_TenantID = :property_TenantID OR property_TenantID IS NULL)";
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				":property_TenantID" => $this->ID
+			));
+			
+			if ($result === false) return $retval;
+			
+			$count = $statement->rowCount();
 			for ($i = 0; $i < $count; $i++)
 			{
-				$values = $result->fetch_assoc();
+				$values = $statement->fetch(PDO::FETCH_ASSOC);
 				$retval[] = TenantProperty::GetByAssoc($values);
 			}
 			return $retval;
