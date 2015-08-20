@@ -31,6 +31,10 @@
 			
 			if ($tenant != null)
 			{
+				$fv = $page->GetControlByID("tbsTabs")->GetTabByID("tabGeneralInformation")->GetControlByID("fvGeneralInformation");
+				$txtTenantName = $fv->GetItemByID("txtTenantName");
+				$txtTenantName->Value = $tenant->URL;
+				
 				$lv = $page->GetControlByID("lvCustomProperties");
 				$properties = $tenant->GetProperties();
 				foreach ($properties as $property)
@@ -62,7 +66,7 @@
 				*/
 				
 				$lv = $page->GetControlByID("lvGlobalObjects");
-				$objects = TenantObject::Get(null, $this->Tenant);
+				$objects = TenantObject::Get(null, $tenant);
 				foreach ($objects as $object)
 				{
 					$lvi = new ListViewItem(array

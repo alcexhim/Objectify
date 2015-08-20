@@ -10,7 +10,7 @@
 							<wfx:TabPage ID="tabGeneralInformation" Title="General Information">
 								<wfx:FormView ID="fvGeneralInformation">
 									<Items>
-										<wfx:FormViewItemText Title="Tenant name: " />
+										<wfx:FormViewItemText ID="txtTenantName" Title="Tenant name: " />
 									</Items>
 								</wfx:FormView>
 							</wfx:TabPage>
