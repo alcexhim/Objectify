@@ -26,6 +26,10 @@
 				</wfx:Window>
 				
 				<wfx:SectionPlaceholder ID="Content" />
+				
+				<footer>
+					Powered by Objectify &bull; Copyright &copy; 2015 Mike Becker's Software
+				</footer>
 			</Content>
 		</MasterPage>
 	</MasterPages>
