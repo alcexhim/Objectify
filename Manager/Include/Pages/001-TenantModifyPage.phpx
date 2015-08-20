@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Website>
 	<Pages>
-		<Page FileName="tenants/$(action)/$(tenantID)" CodeBehindClassName="Objectify\Tenant\Pages\TenantModifyPage" MasterPageFileName="Default">
+		<Page FileName="tenants/modify/$(tenantName)" CodeBehindClassName="Objectify\Tenant\Pages\TenantModifyPage" MasterPageFileName="Default">
 			<Content>
 				<wfx:Section PlaceholderID="Content">
 					<html:Heading Level="1">Edit Tenant Configuration</html:Heading>
