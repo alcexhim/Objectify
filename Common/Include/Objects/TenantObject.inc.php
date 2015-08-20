@@ -1,6 +1,7 @@
 <?php
 	namespace Objectify\Objects;
 	use Phast\System;
+	use Phast\Data\DataSystem;
 	
 	class TenantObject
 	{
@@ -25,22 +26,27 @@
 		
 		public static function Get($max = null, $tenant = null)
 		{
-			global $MySQL;
+			$pdo = DataSystem::GetPDO();
 			
 			$retval = array();
 			if ($tenant == null) $tenant = Tenant::GetCurrent();
 			if ($tenant == null) return $retval;
 			
-			$query = "SELECT * FROM " . System::$Configuration["Database.TablePrefix"] . "TenantObjects WHERE object_TenantID = " . $tenant->ID;
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjects WHERE object_TenantID = :object_TenantID";
 			if (is_numeric($max)) $query .= " LIMIT " . $max;
+
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				":object_TenantID" => $tenant->ID
+			));
 			
-			$result = $MySQL->query($query);
 			if ($result === false) return $retval;
 			
-			$count = $result->num_rows;
+			$count = $statement->rowCount();
 			for ($i = 0; $i < $count; $i++)
 			{
-				$values = $result->fetch_assoc();
+				$values = $statement->fetch(PDO::FETCH_ASSOC);
 				$retval[] = TenantObject::GetByAssoc($values);
 			}
 			return $retval;
