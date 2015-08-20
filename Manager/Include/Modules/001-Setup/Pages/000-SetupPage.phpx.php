@@ -5,7 +5,9 @@
 	use Phast\Parser\PhastPage;
 	use Phast\Data\DataSystem;
 	use Phast\System;
-		
+	use Phast\RandomStringGenerator;
+	use Phast\RandomStringGeneratorCharacterSets;
+	
 	class SetupPage extends PhastPage
 	{
 		public function OnInitializing(CancelEventArgs $e)
@@ -90,6 +92,23 @@
 				}
 				else
 				{
+					// create the initial user
+					$Administrator_PasswordSalt = RandomStringGenerator::Generate(RandomStringGeneratorCharacterSets::AlphaNumericMixedCase, 32);
+					$Administrator_PasswordHash = hash("sha512", $Administrator_Password . $Administrator_PasswordSalt);
+					
+					$statement = $pdo->prepare("INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "Users (user_LoginID, user_PasswordHash, user_PasswordSalt) VALUES (:user_LoginID, :user_PasswordHash, :user_PasswordSalt)");
+					$result = $statement->execute(array
+					(
+						":user_LoginID" => $Administrator_UserName,
+						":user_PasswordHash" => $Administrator_PasswordHash,
+						":user_PasswordSalt" => $Administrator_PasswordSalt
+					));
+					
+					if ($result === false)
+					{
+						
+					}
+					
 					echo("{");
 					echo("\"Result\": \"Success\"");
 					echo("}");

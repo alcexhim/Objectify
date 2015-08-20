@@ -1,5 +1,7 @@
 <?php
 	use Phast\System;
+
+	use Phast\Data\DataSystem;
 	
 	use Phast\WebControls\ButtonGroup;
 	use Phast\WebControls\ButtonGroupButton;
@@ -37,7 +39,7 @@
 	use Objectify\Objects\TenantStatus;
 	use Objectify\Objects\TenantType;
 	use Objectify\Objects\TenantObjectMethodParameterValue;
-use Phast\Data\DataSystem;
+	use Objectify\Objects\User;
 	
 	function IsConfigured()
 	{
@@ -64,18 +66,14 @@ use Phast\Data\DataSystem;
 		return true;
 	}
 	
-	function CheckCredentials($admun, $admpw)
-	{
-		// TODO: implement this
-	}
 	function IsAdministrator()
 	{
-		if (!isset($_SESSION["Authentication.UserName"]) || !isset($_SESSION["Authentication.Password"])) return false;
+		if (!isset($_SESSION["Authentication.LoginToken"])) return false;
 		
-		$admun = $_SESSION["Authentication.UserName"];
-		$admpw = $_SESSION["Authentication.Password"];
+		$user = User::GetCurrent();
+		if ($user == null) return false;
 		
-		return CheckCredentials($admun, $admpw);
+		return true;
 	}
 	
 	System::$BeforeLaunchEventHandler = function($path)

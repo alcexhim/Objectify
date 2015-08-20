@@ -51,7 +51,7 @@
 		{
 			$pdo = DataSystem::GetPDO();
 			
-			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Users WHERE user_LoginName = :user_LoginName AND (:user_PasswordHash IS NULL OR (user_PasswordHash = :user_PasswordHash))";
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Users WHERE user_LoginID = :user_LoginID AND (:user_PasswordHash IS NULL OR (user_PasswordHash = :user_PasswordHash))";
 			$statement = $pdo->prepare($query);
 			
 			$user_PasswordHash = null;
@@ -59,11 +59,11 @@
 			
 			if ($password != null)
 			{
-				$query1 = "SELECT user_PasswordSalt FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Users WHERE user_LoginName = :user_LoginName";
+				$query1 = "SELECT user_PasswordSalt FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Users WHERE user_LoginID = :user_LoginID";
 				$statement1 = $pdo->prepare($query1);
 				$statement1->execute(array
 				(
-					":user_LoginName" => $username
+					":user_LoginID" => $username
 				));
 				
 				$count = $statement1->rowCount();
@@ -72,12 +72,12 @@
 				$values = $statement1->fetch(PDO::FETCH_ASSOC);
 				
 				$user_PasswordSalt = $values["user_PasswordSalt"];
-				$user_PasswordHash = hash("sha512", $user_PasswordSalt . $password);
+				$user_PasswordHash = hash("sha512", $password . $user_PasswordSalt);
 			}
 			
 			$statement->execute(array
 			(
-				":user_LoginName" => $username,
+				":user_LoginID" => $username,
 				":user_PasswordHash" => $user_PasswordHash
 			));
 			

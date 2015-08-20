@@ -22,6 +22,7 @@
 					$password = $_POST["user_Password"];
 					
 					$user = User::GetByCredentials($username, $password);
+					
 					if ($user != null)
 					{
 						if (!$user->RequestLoginToken())
