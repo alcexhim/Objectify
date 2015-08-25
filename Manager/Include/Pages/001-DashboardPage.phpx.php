@@ -19,11 +19,13 @@
 			$lvTenantsActive = $this->Page->GetControlByID("lvTenantsActive");
 			$lvTenantsInactive = $this->Page->GetControlByID("lvTenantsInactive");
 			
-			$lblTenantCountTotal = $this->Page->GetControlByID("lblTenantCountTotal");
-			$lblTenantCountActive = $this->Page->GetControlByID("lblTenantCountActive");
-			$lblTenantCountInactive = $this->Page->GetControlByID("lblTenantCountInactive");
+			// $lblTenantCountTotal = $this->Page->GetControlByID("lblTenantCountTotal");
+			// $lblTenantCountActive = $this->Page->GetControlByID("lblTenantCountActive");
+			// $lblTenantCountInactive = $this->Page->GetControlByID("lblTenantCountInactive");
+			$dscActiveTenants = $this->Page->GetControlByID("dscActiveTenants");
+			$dscInactiveTenants = $this->Page->GetControlByID("dscInactiveTenants");
 			
-			$lblTenantCountTotal->Value = count($tenants);
+			$lblTenantCountTotal = count($tenants);
 			
 			$countActive = 0;
 			$countInactive = 0;
@@ -62,8 +64,8 @@
 				}
 			}
 			
-			$lblTenantCountActive->Value = $countActive;
-			$lblTenantCountInactive->Value = $countInactive;
+			$dscActiveTenants->Title = "Active Tenants (" . $countActive . ")";
+			$dscInactiveTenants->Title = "Inactive Tenants (" . $countInactive . ")";
 		}
 	}
 ?>

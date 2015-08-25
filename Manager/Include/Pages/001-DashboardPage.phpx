@@ -8,33 +8,34 @@
 						<div class="Column">
 							<wfx:Panel CssClass="Primary" Title="Tenants">
 								<ContentControls>
-									<html:Heading Level="2">Active Tenants (<html:Literal ID="lblTenantCountActive" />)</html:Heading>
-									<wfx:ListView ID="lvTenantsActive" Width="100%">
-										<Columns>
-											<wfx:ListViewColumn ID="lvcTenantName" Title="Tenant name" />
-											<wfx:ListViewColumn ID="lvcTenantType" Title="Tenant type" />
-											<wfx:ListViewColumn ID="lvcDataCenters" Title="Data centers" />
-											<wfx:ListViewColumn ID="lvcPaymentPlan" Title="Payment plan" />
-											<wfx:ListViewColumn ID="lvcActivationDate" Title="Activation date" />
-											<wfx:ListViewColumn ID="lvcTerminationDate" Title="Termination date" />
-											<wfx:ListViewColumn ID="lvcDescription" Title="Description" />
-											<wfx:ListViewColumn ID="lvcActions" Title="Actions" />
-										</Columns>
-									</wfx:ListView>
-									
-									<html:Heading Level="2">Inactive Tenants (<html:Literal ID="lblTenantCountInactive" />)</html:Heading>
-									<wfx:ListView ID="lvTenantsInactive" Width="100%">
-										<Columns>
-											<wfx:ListViewColumn ID="lvcTenantName" Title="Tenant name" />
-											<wfx:ListViewColumn ID="lvcTenantType" Title="Tenant type" />
-											<wfx:ListViewColumn ID="lvcDataCenters" Title="Data centers" />
-											<wfx:ListViewColumn ID="lvcPaymentPlan" Title="Payment plan" />
-											<wfx:ListViewColumn ID="lvcActivationDate" Title="Activation date" />
-											<wfx:ListViewColumn ID="lvcTerminationDate" Title="Termination date" />
-											<wfx:ListViewColumn ID="lvcDescription" Title="Description" />
-											<wfx:ListViewColumn ID="lvcActions" Title="Actions" />
-										</Columns>
-									</wfx:ListView>
+									<wfx:Disclosure ID="dscActiveTenants" Title="Active Tenants (0)" Expanded="true">
+										<wfx:ListView ID="lvTenantsActive" Width="100%">
+											<Columns>
+												<wfx:ListViewColumn ID="lvcTenantName" Title="Tenant name" />
+												<wfx:ListViewColumn ID="lvcTenantType" Title="Tenant type" />
+												<wfx:ListViewColumn ID="lvcDataCenters" Title="Data centers" />
+												<wfx:ListViewColumn ID="lvcPaymentPlan" Title="Payment plan" />
+												<wfx:ListViewColumn ID="lvcActivationDate" Title="Activation date" />
+												<wfx:ListViewColumn ID="lvcTerminationDate" Title="Termination date" />
+												<wfx:ListViewColumn ID="lvcDescription" Title="Description" />
+												<wfx:ListViewColumn ID="lvcActions" Title="Actions" />
+											</Columns>
+										</wfx:ListView>
+									</wfx:Disclosure>
+									<wfx:Disclosure ID="dscInactiveTenants" Title="Inactive Tenants (0)">
+										<wfx:ListView ID="lvTenantsInactive" Width="100%">
+											<Columns>
+												<wfx:ListViewColumn ID="lvcTenantName" Title="Tenant name" />
+												<wfx:ListViewColumn ID="lvcTenantType" Title="Tenant type" />
+												<wfx:ListViewColumn ID="lvcDataCenters" Title="Data centers" />
+												<wfx:ListViewColumn ID="lvcPaymentPlan" Title="Payment plan" />
+												<wfx:ListViewColumn ID="lvcActivationDate" Title="Activation date" />
+												<wfx:ListViewColumn ID="lvcTerminationDate" Title="Termination date" />
+												<wfx:ListViewColumn ID="lvcDescription" Title="Description" />
+												<wfx:ListViewColumn ID="lvcActions" Title="Actions" />
+											</Columns>
+										</wfx:ListView>
+									</wfx:Disclosure>
 								</ContentControls>
 								<FooterControls>
 									<wfx:Button ID="cmdNewTenant" Text="New Tenant" TargetURL="~/tenants/create" TargetScript="wndCreateTenant.ShowDialog(); return false;" />
