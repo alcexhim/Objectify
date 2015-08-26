@@ -1,0 +1,5 @@
+<Website>
+	<Pages>
+		<Page FileName="api/tenant" CodeBehindClassName="Objectify\Tenant\API\TenantAPI" />
+	</Pages>
+</Website>

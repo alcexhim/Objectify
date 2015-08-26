@@ -1,5 +1,6 @@
 <?php
 	namespace Objectify\Objects;
+	
 	use Phast\System;
 	use Phast\Enumeration;
 	use Phast\Data\DataSystem;
@@ -133,6 +134,11 @@
 			$values = $statement->fetch(PDO::FETCH_ASSOC);
 			return Tenant::GetByAssoc($values);
 		}
+		
+		public static function ExistsByURL($url)
+		{
+			return (self::GetByURL($url) != null);
+		}
 		public static function GetByURL($url)
 		{
 			$pdo = DataSystem::GetPDO();
@@ -195,44 +201,64 @@
 		
 		public function Update()
 		{
-			global $MySQL;
+			$pdo = DataSystem::GetPDO();
+			
 			if ($this->ID != null)
 			{
-				$query = "UPDATE " . System::$Configuration["Database.TablePrefix"] . "Tenants SET ";
-				$query .= "tenant_URL = '" . $MySQL->real_escape_string($this->URL) . "', ";
-				$query .= "tenant_Description = '" . $MySQL->real_escape_string($this->Description) . "', ";
-				$query .= "tenant_Status = " . ($this->Status == TenantStatus::Enabled ? "1" : "0") . ", ";
-				$query .= "tenant_TypeID = " . ($this->Type != null ? $this->Type->ID : "NULL") . ", ";
-				$query .= "tenant_PaymentPlanID = " . ($this->PaymentPlan != null ? $this->PaymentPlan->ID : "NULL") . ", ";
-				$query .= "tenant_BeginTimestamp = " . ($this->BeginTimestamp != null ? ("'" . $this->BeginTimestamp . "'") : "NULL") . ", ";
-				$query .= "tenant_EndTimestamp = " . ($this->EndTimestamp != null ? ("'" . $this->EndTimestamp . "'") : "NULL");
-				$query .= " WHERE tenant_ID = " . $this->ID;
+				$query = "UPDATE " . System::GetConfigurationValue("Database.TablePrefix") . "Tenants SET ";
+				$query .= "tenant_URL = :tenant_URL, ";
+				$query .= "tenant_Description = :tenant_Description, ";
+				$query .= "tenant_Status = :tenant_Status, ";
+				$query .= "tenant_TypeID = :tenant_TypeID, ";
+				$query .= "tenant_PaymentPlanID = :tenant_PaymentPlanID, ";
+				$query .= "tenant_BeginTimestamp = :tenant_BeginTimestamp, ";
+				$query .= "tenant_EndTimestamp = :tenant_EndTimestamp, ";
+				$query .= " WHERE tenant_ID = :tenant_ID";
 			}
 			else
 			{
-				$query = "INSERT INTO " . System::$Configuration["Database.TablePrefix"] . "Tenants (tenant_URL, tenant_Description, tenant_Status, tenant_TypeID, tenant_PaymentPlanID, tenant_BeginTimestamp, tenant_EndTimestamp) VALUES (";
-				$query .= "'" . $MySQL->real_escape_string($this->URL) . "', ";
-				$query .= "'" . $MySQL->real_escape_string($this->Description) . "', ";
-				$query .= ($this->Status == TenantStatus::Enabled ? "1" : "0") . ", ";
-				$query .= ($this->Type != null ? $this->Type->ID : "NULL") . ", ";
-				$query .= ($this->PaymentPlan != null ? $this->PaymentPlan->ID : "NULL") . ", ";
-				$query .= ($this->BeginTimestamp != null ? ("'" . $this->BeginTimestamp . "'") : "NULL") . ", ";
-				$query .= ($this->EndTimestamp != null ? ("'" . $this->EndTimestamp . "'") : "NULL");
+				$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "Tenants (tenant_URL, tenant_Description, tenant_Status, tenant_TypeID, tenant_PaymentPlanID, tenant_BeginTimestamp, tenant_EndTimestamp) VALUES (";
+				$query .= ":tenant_URL, ";
+				$query .= ":tenant_Description, ";
+				$query .= ":tenant_Status, ";
+				$query .= ":tenant_TypeID, ";
+				$query .= ":tenant_PaymentPlanID, ";
+				$query .= ":tenant_BeginTimestamp, ";
+				$query .= ":tenant_EndTimestamp";
 				$query .= ")";
 			}
+
+			$array = array
+			(
+				":tenant_URL" => $this->URL,
+				":tenant_Description" => $this->Description,
+				":tenant_Status" => ($this->Status == TenantStatus::Enabled ? "1" : "0"),
+				":tenant_TypeID" => ($this->Type != null ? $this->Type->ID : "NULL"),
+				":tenant_PaymentPlanID" => ($this->PaymentPlan != null ? $this->PaymentPlan->ID : "NULL"),
+				":tenant_BeginTimestamp" => ($this->BeginTimestamp != null ? ($this->BeginTimestamp) : "NULL"),
+				":tenant_EndTimestamp" => ($this->EndTimestamp != null ? ($this->EndTimestamp) : "NULL")
+			);
+			if ($this->ID != null) $array[":tenant_ID"] = $this->ID;
 			
-			$result = $MySQL->query($query);
-			if ($MySQL->errno != 0) return false;
+			$statement = $pdo->prepare($query);
+			
+			$result = $statement->execute($array);
+			
+			if ($result === false) return false;
 			
 			if ($this->ID == null)
 			{
-				$this->ID = $MySQL->insert_id;
+				$this->ID = $pdo->lastInsertId();
 			}
 			
 			// clearing the data centers
 			$query = "DELETE FROM " . System::$Configuration["Database.TablePrefix"] . "TenantDataCenters WHERE tdc_TenantID = " . $this->ID;
-			$result = $MySQL->query($query);
-			if ($MySQL->errno != 0) return false;
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				
+			));
+			if ($result === false) return false;
 			
 			// inserting the data centers
 			foreach ($this->DataCenters->Items as $item)

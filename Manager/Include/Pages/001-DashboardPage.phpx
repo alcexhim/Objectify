@@ -4,6 +4,20 @@
 		<Page FileName="dashboard" CodeBehindClassName="Objectify\Tenant\Pages\DashboardPage" MasterPageFileName="Default">
 			<Content>
 				<wfx:Section PlaceholderID="Content">
+					<wfx:Window ID="wndCreateTenant" Title="Create Tenant">
+						<ContentControls>
+							<wfx:FormView ID="fvCreateTenant">
+								<Items>
+									<wfx:FormViewItemText ID="txtTenantName" Title="Tenant name" />
+								</Items>
+							</wfx:FormView>
+						</ContentControls>
+						<FooterControls>
+							<wfx:Button ID="cmdCreate" CssClass="Primary" Text="Create" OnClientClick="return wndCreateTenant_cmdCreate_Click();" />
+							<wfx:Button ID="cmdClose" Text="Close" OnClientClick="wndCreateTenant.Hide(); return false;" />
+						</FooterControls>
+					</wfx:Window>
+					
 					<div class="ColumnContainer TwoColumn">
 						<div class="Column">
 							<wfx:Panel CssClass="Primary" Title="Tenants">
