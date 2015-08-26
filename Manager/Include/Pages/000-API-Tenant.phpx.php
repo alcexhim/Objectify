@@ -19,8 +19,12 @@
 				return;
 			}
 			
-			Tenant::Create($_POST["tenant_URL"]);
-			
+			$retval = Tenant::Create($_POST["tenant_URL"]);
+			if ($retval === false)
+			{
+				echo ("{ \"Result\": \"Failure\", \"Message\": \"Unknown error occurred\" }");
+				return;
+			}
 			echo ("{ \"Result\": \"Success\" }");
 		}
 		
