@@ -243,8 +243,18 @@
 			$statement = $pdo->prepare($query);
 			
 			$result = $statement->execute($array);
-			
+
 			if ($result === false) return false;
+			
+			$error = $statement->errorInfo();
+			$errorCode = $error[0];
+			$errorDescription = $error[2];
+			
+			if ($errorCode != "00000")
+			{
+				trigger_error("Tenant::Update - " . $errorDescription . " [" . $errorCode . "]");
+				return false;
+			}
 			
 			if ($this->ID == null)
 			{
