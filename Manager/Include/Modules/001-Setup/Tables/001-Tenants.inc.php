@@ -14,8 +14,8 @@
 	(
 		// 			$name, $dataType, $size, $value, $allowNull, $primaryKey, $autoIncrement
 		new Column("ID", "INT", null, null, false, true, true),
-		new Column("URL", "VARCHAR", 30, null, true),
-		new Column("Description", "LONGTEXT", null, null, false),
+		new Column("URL", "VARCHAR", 30, null, false),
+		new Column("Description", "LONGTEXT", null, null, true),
 		new Column("Status", "INT", null, null, true),
 		new Column("TypeID", "INT", null, null, true),
 		new Column("PaymentPlanID", "INT", null, null, true),
