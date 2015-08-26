@@ -11,6 +11,7 @@
 								<wfx:FormView ID="fvGeneralInformation">
 									<Items>
 										<wfx:FormViewItemText ID="txtTenantName" Title="Tenant name: " />
+										<wfx:FormViewItemMemo ID="txtTenantDescription" Title="Description: " />
 									</Items>
 								</wfx:FormView>
 							</wfx:TabPage>

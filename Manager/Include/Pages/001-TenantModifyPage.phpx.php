@@ -8,7 +8,9 @@
 	
 	use Phast\WebControls\ListViewItem;
 	use Phast\WebControls\ListViewItemColumn;
-					
+	
+	use Phast\WebControls\TextBox;
+	
 	class TenantModifyPage
 	{
 		public function OnInitializing(CancelEventArgs $e)
@@ -31,11 +33,27 @@
 			
 			if ($tenant != null)
 			{
-				$fv = $page->GetControlByID("tbsTabs")->GetTabByID("tabGeneralInformation")->GetControlByID("fvGeneralInformation");
-				$txtTenantName = $fv->GetItemByID("txtTenantName");
-				$txtTenantName->Value = $tenant->URL;
+				$tbsTabs = $page->GetControlByID("tbsTabs");
 				
-				$lv = $page->GetControlByID("lvCustomProperties");
+				$tabGeneralInformation = $tbsTabs->GetTabByID("tabGeneralInformation");
+				$fv = $tabGeneralInformation->GetControlByID("fvGeneralInformation");
+				
+				$txtTenantName = $fv->GetItemByID("txtTenantName");
+				$txtTenantDescription = $fv->GetItemByID("txtTenantDescription");
+				
+				$txtTenantName->Value = $tenant->URL;
+				$txtTenantDescription->Value = $tenant->Description;
+
+				$tabCustomProperties = $tbsTabs->GetTabByID("tabCustomProperties");
+				$lv = $tabCustomProperties->GetControlByID("lvCustomProperties");
+				
+				$lvcPropertyName = $lv->GetColumnByID("lvcPropertyName");
+				$lvcPropertyName->Template = function()
+				{
+					$txt = new TextBox();
+					$txt->Render();
+				};
+				
 				$properties = $tenant->GetProperties();
 				foreach ($properties as $property)
 				{
@@ -65,7 +83,8 @@
 				}
 				*/
 				
-				$lv = $page->GetControlByID("lvGlobalObjects");
+				$tabGlobalObjects = $tbsTabs->GetTabByID("tabGlobalObjects");
+				$lv = $tabGlobalObjects->GetControlByID("lvGlobalObjects");
 				$objects = TenantObject::Get(null, $tenant);
 				foreach ($objects as $object)
 				{
