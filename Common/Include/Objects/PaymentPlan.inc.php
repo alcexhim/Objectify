@@ -1,6 +1,8 @@
 <?php
 	namespace Objectify\Objects;
 	use Phast\System;
+	use Phast\Data\DataSystem;
+	use PDO;
 	
 	class PaymentPlan
 	{
@@ -18,14 +20,15 @@
 		}
 		public static function Get($max = null)
 		{
-			global $MySQL;
-			$query = "SELECT * FROM " . System::$Configuration["Database.TablePrefix"] . "PaymentPlans";
-			$result = $MySQL->query($query);
-			$count = $result->num_rows;
+			$pdo = DataSystem::GetPDO();
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "PaymentPlans";
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute();
+			$count = $statement->rowCount();
 			$retval = array();
 			for ($i = 0; $i < $count; $i++)
 			{
-				$values = $result->fetch_assoc();
+				$values = $statement->fetch(PDO::FETCH_ASSOC);
 				$retval[] = PaymentPlan::GetByAssoc($values);
 			}
 			return $retval;
@@ -34,13 +37,17 @@
 		{
 			if (!is_numeric($id)) return null;
 			
-			global $MySQL;
-			$query = "SELECT * FROM " . System::$Configuration["Database.TablePrefix"] . "PaymentPlans WHERE paymentplan_ID = " . $id;
-			$result = $MySQL->query($query);
-			$count = $result->num_rows;
+			$pdo = DataSystem::GetPDO();
+			$query = "SELECT * FROM " . System::$Configuration["Database.TablePrefix"] . "PaymentPlans WHERE paymentplan_ID = :paymentplan_ID";
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				":paymentplan_ID" => $id
+			));
+			$count = $statement->rowCount();
 			if ($count == 0) return null;
 			
-			$values = $result->fetch_assoc();
+			$values = $statement->fetch(PDO::FETCH_ASSOC);
 			return PaymentPlan::GetByAssoc($values);
 		}
 		

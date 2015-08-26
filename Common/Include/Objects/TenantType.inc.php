@@ -1,7 +1,9 @@
 <?php
 	namespace Objectify\Objects;
 	use Phast\System;
-	
+	use Phast\Data\DataSystem;
+	use PDO;
+		
 	class TenantType
 	{
 		public $ID;
@@ -18,14 +20,16 @@
 		}
 		public static function Get($max = null)
 		{
-			global $MySQL;
-			$query = "SELECT * FROM " . System::$Configuration["Database.TablePrefix"] . "TenantTypes";
-			$result = $MySQL->query($query);
-			$count = $result->num_rows;
+			$pdo = DataSystem::GetPDO();
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantTypes";
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute();
+			
+			$count = $statement->rowCount();
 			$retval = array();
 			for ($i = 0; $i < $count; $i++)
 			{
-				$values = $result->fetch_assoc();
+				$values = $statement->fetch(PDO::FETCH_ASSOC);
 				$retval[] = TenantType::GetByAssoc($values);
 			}
 			return $retval;
@@ -34,13 +38,19 @@
 		{
 			if (!is_numeric($id)) return null;
 			
-			global $MySQL;
-			$query = "SELECT * FROM " . System::$Configuration["Database.TablePrefix"] . "TenantTypes WHERE tenanttype_ID = " . $id;
-			$result = $MySQL->query($query);
-			$count = $result->num_rows;
+			$pdo = DataSystem::GetPDO();
+			$query = "SELECT * FROM " . System::$Configuration["Database.TablePrefix"] . "TenantTypes WHERE tenanttype_ID = :tenanttype_ID";
+			$statement = $pdo->prepare($query);
+			
+			$result = $statement->execute(array
+			(
+				":tenanttype_ID" => $id
+			));
+			
+			$count = $statement->rowCount();
 			if ($count == 0) return null;
 			
-			$values = $result->fetch_assoc();
+			$values = $statement->fetch(PDO::FETCH_ASSOC);
 			return TenantType::GetByAssoc($values);
 		}
 		
