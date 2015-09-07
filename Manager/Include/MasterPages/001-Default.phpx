@@ -6,6 +6,9 @@
 				<Reference TagPrefix="wfx" NamespacePath="Phast\WebControls" />
 				<Reference TagPrefix="html" NamespacePath="Phast\HTMLControls" />
 			</References>
+			<Scripts>
+				<Script ContentType="text/javascript" FileName="~/Scripts/Objects/Tenant.js" />
+			</Scripts>
 			<StyleSheets>
 				<StyleSheet FileName="$(Configuration:System.StaticPath)/StyleSheets/$(Configuration:Application.ThemeName|Workday)/Main.css" />
 			</StyleSheets>
@@ -13,7 +16,9 @@
 				<wfx:SectionPlaceholder ID="Content" />
 				
 				<footer>
-					Powered by Objectify &bull; Copyright &copy; 2015 Mike Becker's Software
+					Powered by Objectify<br />
+					Copyright &copy; 2015 Mike Becker's Software<br />
+					<br />
 				</footer>
 			</Content>
 		</MasterPage>

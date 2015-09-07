@@ -212,7 +212,7 @@
 				$query .= "tenant_TypeID = :tenant_TypeID, ";
 				$query .= "tenant_PaymentPlanID = :tenant_PaymentPlanID, ";
 				$query .= "tenant_BeginTimestamp = :tenant_BeginTimestamp, ";
-				$query .= "tenant_EndTimestamp = :tenant_EndTimestamp, ";
+				$query .= "tenant_EndTimestamp = :tenant_EndTimestamp";
 				$query .= " WHERE tenant_ID = :tenant_ID";
 			}
 			else
@@ -261,8 +261,9 @@
 				$this->ID = $pdo->lastInsertId();
 			}
 			
+			/*
 			// clearing the data centers
-			$query = "DELETE FROM " . System::$Configuration["Database.TablePrefix"] . "TenantDataCenters WHERE tdc_TenantID = " . $this->ID;
+			$query = "DELETE FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantDataCenters WHERE tdc_TenantID = " . $this->ID;
 			$statement = $pdo->prepare($query);
 			$result = $statement->execute(array
 			(
@@ -273,7 +274,7 @@
 			// inserting the data centers
 			foreach ($this->DataCenters->Items as $item)
 			{
-				$query = "INSERT INTO " . System::$Configuration["Database.TablePrefix"] . "TenantDataCenters (tdc_TenantID, tdc_DataCenterID) VALUES (";
+				$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "TenantDataCenters (tdc_TenantID, tdc_DataCenterID) VALUES (";
 				$query .= $this->ID . ", ";
 				$query .= $item->ID;
 				$query .= ")";
@@ -281,6 +282,7 @@
 				$result = $MySQL->query($query);
 				if ($MySQL->errno != 0) return false;
 			}
+			*/
 			
 			return true;
 		}
