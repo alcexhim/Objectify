@@ -4,6 +4,29 @@
 		<Page FileName="tenants/modify/$(tenantName)" CodeBehindClassName="Objectify\Manager\Pages\TenantModifyPage" MasterPageFileName="Default">
 			<Content>
 				<wfx:Section PlaceholderID="Content">
+					<wfx:Window ID="wndPropertyDetails" Title="Property Details">
+						<ContentControls>
+							<wfx:FormView ID="fvPropertyDetails">
+								<Items>
+									<wfx:FormViewItemText ID="txtPropertyName" Title="Name" />
+									<wfx:FormViewItemChoice ID="txtPropertyDataType" Title="Data type" RequireSelectionFromChoices="true">
+										<Items>
+											<wfx:FormViewItemChoiceValue Title="Text" Value="Text" />
+											<wfx:FormViewItemChoiceValue Title="Text (translatable)" Value="TranslatableText" />
+											<wfx:FormViewItemChoiceValue Title="Single instance" Value="SingleInstance" />
+											<wfx:FormViewItemChoiceValue Title="Multiple instance" Value="MultipleInstance" />
+										</Items>
+									</wfx:FormViewItemChoice>
+									<wfx:FormViewItemText ID="txtPropertyValue" Title="Value" />
+								</Items>
+							</wfx:FormView>
+						</ContentControls>
+						<FooterControls>
+							<wfx:Button ID="wndPropertyDetails_cmdSaveChanges" CssClass="Primary" Text="Save Changes" />
+							<wfx:Button ID="wndPropertyDetails_cmdDiscardChanges" Text="Discard Changes" />
+						</FooterControls>
+					</wfx:Window>
+					
 					<html:Heading Level="1">Edit Tenant Configuration</html:Heading>
 					<div class="Content">
 						<wfx:TabContainer ID="tbsTabs" SelectedTabID="tabGeneralInformation">
@@ -17,7 +40,8 @@
 									</wfx:FormView>
 								</wfx:TabPage>
 								<wfx:TabPage ID="tabCustomProperties" Title="Custom Properties">
-									<wfx:ListView ID="lvCustomProperties" Width="100%" EnableAddRemoveRows="true">
+									<wfx:Button ID="cmdCustomPropertiesAdd" Text="Add Property" />
+									<wfx:ListView ID="lvCustomProperties" Width="100%">
 										<Columns>
 											<wfx:ListViewColumn ID="lvcPropertyName" Title="Property" Width="256px" />
 											<wfx:ListViewColumn ID="lvcPropertyDescription" Title="Description" />

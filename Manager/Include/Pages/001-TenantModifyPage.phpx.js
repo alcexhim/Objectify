@@ -1,5 +1,23 @@
 window.addEventListener("load", function()
 {
+	var cmdCustomPropertiesAdd = document.getElementById("cmdCustomPropertiesAdd");
+	cmdCustomPropertiesAdd.addEventListener("click", function(e)
+	{
+		wndPropertyDetails.ShowDialog();
+	});
+	
+	var wndPropertyDetails_cmdSaveChanges = document.getElementById("wndPropertyDetails_cmdSaveChanges");
+	wndPropertyDetails_cmdSaveChanges.addEventListener("click", function(e)
+	{
+		wndPropertyDetails.Hide();
+	});
+
+	var wndPropertyDetails_cmdDiscardChanges = document.getElementById("wndPropertyDetails_cmdDiscardChanges");
+	wndPropertyDetails_cmdDiscardChanges.addEventListener("click", function(e)
+	{
+		wndPropertyDetails.Hide();
+	});
+	
 	var cmdSaveChanges = document.getElementById("cmdSaveChanges");
 	cmdSaveChanges.addEventListener("click", function(e)
 	{
