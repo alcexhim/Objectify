@@ -54,6 +54,20 @@
 					$txt->Render();
 				};
 				
+				$lvcPropertyDescription = $lv->GetColumnByID("lvcPropertyDescription");
+				$lvcPropertyDescription->Template = function()
+				{
+					$txt = new TextBox();
+					$txt->Render();
+				};
+				
+				$lvcPropertyValue = $lv->GetColumnByID("lvcPropertyValue");
+				$lvcPropertyValue->Template = function()
+				{
+					$txt = new TextBox();
+					$txt->Render();
+				};
+				
 				$properties = $tenant->GetProperties();
 				foreach ($properties as $property)
 				{
