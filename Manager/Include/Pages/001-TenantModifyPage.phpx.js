@@ -18,6 +18,31 @@ window.addEventListener("load", function()
 		wndPropertyDetails.Hide();
 	});
 	
+	var txtPropertyDataType = document.getElementById("txtPropertyDataType").NativeObject;
+	txtPropertyDataType.EventHandlers.SelectionChanged.Add(function(sender, e)
+	{
+		var value = txtPropertyDataType.GetSelectedItems()[0].Value;
+		switch (value)
+		{
+			case "Text":
+			{
+				break;
+			}
+			case "TranslatableText":
+			{
+				break;
+			}
+			case "SingleInstance":
+			{
+				break;
+			}
+			case "MultipleInstance":
+			{
+				break;
+			}
+		}
+	});
+	
 	var cmdSaveChanges = document.getElementById("cmdSaveChanges");
 	cmdSaveChanges.addEventListener("click", function(e)
 	{
