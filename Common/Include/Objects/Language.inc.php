@@ -2,7 +2,10 @@
 	namespace Objectify\Objects;
 	
 	use Phast\System;
-	
+
+	use Phast\Data\DataSystem;
+	use PDO;
+		
 	class Language
 	{
 		public $ID;
@@ -17,16 +20,19 @@
 		}
 		public static function Get()
 		{
-			global $MySQL;
-			$query = "SELECT * FROM " . System::$Configuration["Database.TablePrefix"] . "Languages";
-			$result = $MySQL->query($query);
-			$retval = array();
-			if ($result === false) return $retval;
+			$pdo = DataSystem::GetPDO();
 			
-			$count = $result->num_rows;
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Languages";
+			$statement = $pdo->prepare($query);
+			$statement->execute();
+			
+			$retval = array();
+			// if ($result === false) return $retval;
+			
+			$count = $statement->rowCount();
 			for ($i = 0; $i < $count; $i++)
 			{
-				$values = $result->fetch_assoc();
+				$values = $statement->fetch(PDO::FETCH_ASSOC);
 				$item = Language::GetByAssoc($values);
 				if ($item != null) $retval[] = $item;
 			}
@@ -36,15 +42,19 @@
 		{
 			if (!is_numeric($id)) return null;
 			
-			global $MySQL;
-			$query = "SELECT * FROM " . System::$Configuration["Database.TablePrefix"] . "Languages WHERE language_ID = " . $id;
-			$result = $MySQL->query($query);
-			if ($result === false) return null;
+			$pdo = DataSystem::GetPDO();
 			
-			$count = $result->num_rows;
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Languages WHERE language_ID = :language_ID";
+			$statement = $pdo->prepare($query);
+			
+			$statement->execute(array
+			(
+				":language_ID" => $id
+			));
+			$count = $statement->rowCount();
 			if ($count < 1) return null;
 			
-			$values = $result->fetch_assoc();
+			$values = $statement->fetch(PDO::FETCH_ASSOC);
 			return Language::GetByAssoc($values);
 		}
 		public static function GetCurrent()

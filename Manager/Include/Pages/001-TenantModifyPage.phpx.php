@@ -2,14 +2,15 @@
 	namespace Objectify\Manager\Pages;
 	
 	use Phast\CancelEventArgs;
-	
-	use Objectify\Objects\Tenant;
-	use Objectify\Objects\TenantObject;
+	use Phast\System;
 	
 	use Phast\WebControls\ListViewItem;
 	use Phast\WebControls\ListViewItemColumn;
 	
 	use Phast\WebControls\TextBox;
+
+	use Objectify\Objects\Tenant;
+	use Objectify\Objects\TenantObject;
 	
 	class TenantModifyPage
 	{
@@ -98,6 +99,20 @@
 				*/
 				
 				$tabGlobalObjects = $tbsTabs->GetTabByID("tabGlobalObjects");
+				
+				$lv = $tabGlobalObjects->GetControlByID("lvInheritedObjects");
+				$objects = TenantObject::Get(null, null);
+				foreach ($objects as $object)
+				{
+					$lvi = new ListViewItem(array
+					(
+						new ListViewItemColumn("lvcObject", $object->Name, "<a href=\"" . System::ExpandRelativePath("~/tenant/manage/" . $tenant->URL . "/objects/" . $object->ID) . "\">" . $object->Name . "</a>"),
+						new ListViewItemColumn("lvcDescription", $object->GetDescription()),
+						new ListViewItemColumn("lvcInstances", $object->CountInstances(), "<a href=\"" . System::ExpandRelativePath("~/tenant/manage/" . $tenant->URL . "/objects/" . $object->ID . "/instances") . "\">" . $object->CountInstances() . "</a>")
+					));
+					$lv->Items[] = $lvi;
+				}
+				
 				$lv = $tabGlobalObjects->GetControlByID("lvGlobalObjects");
 				$objects = TenantObject::Get(null, $tenant);
 				foreach ($objects as $object)
@@ -105,7 +120,7 @@
 					$lvi = new ListViewItem(array
 					(
 						new ListViewItemColumn("lvcObject", $object->Name, "<a href=\"" . System::ExpandRelativePath("~/tenant/manage/" . $tenant->URL . "/objects/" . $object->ID) . "\">" . $object->Name . "</a>"),
-						new ListViewItemColumn("lvcDescription", $object->Description),
+						new ListViewItemColumn("lvcDescription", $object->GetDescription()),
 						new ListViewItemColumn("lvcInstances", $object->CountInstances(), "<a href=\"" . System::ExpandRelativePath("~/tenant/manage/" . $tenant->URL . "/objects/" . $object->ID . "/instances") . "\">" . $object->CountInstances() . "</a>")
 					));
 				}

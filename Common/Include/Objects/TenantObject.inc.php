@@ -1,7 +1,10 @@
 <?php
 	namespace Objectify\Objects;
+	
 	use Phast\System;
 	use Phast\Data\DataSystem;
+	
+	use PDO;
 	
 	class TenantObject
 	{
@@ -29,10 +32,9 @@
 			$pdo = DataSystem::GetPDO();
 			
 			$retval = array();
-			if ($tenant == null) $tenant = Tenant::GetCurrent();
-			if ($tenant == null) return $retval;
 			
-			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjects WHERE object_TenantID = :object_TenantID";
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjects";
+			if ($tenant != null) $query .= " WHERE object_TenantID = :object_TenantID";
 			if (is_numeric($max)) $query .= " LIMIT " . $max;
 
 			$statement = $pdo->prepare($query);
@@ -369,15 +371,19 @@
 		
 		public function CountInstances($max = null)
 		{
-			global $MySQL;
-			$query = "SELECT COUNT(instance_ID) FROM " . System::$Configuration["Database.TablePrefix"] . "TenantObjectInstances WHERE instance_ObjectID = " . $this->ID;
-			$result = $MySQL->query($query);
+			$pdo = DataSystem::GetPDO();
+			$query = "SELECT COUNT(instance_ID) FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances WHERE instance_ObjectID = :instance_ObjectID";
+			$statement = $pdo->prepare($query);
+			$statement->execute(array
+			(
+				":instance_ObjectID" => $this->ID
+			));
 			
 			if ($result === false) return 0;
-			$count = $result->num_rows;
+			$count = $statement->rowCount();
 			if ($count == 0) return 0;
 			
-			$values = $result->fetch_array();
+			$values = $statement->fetch(PDO::FETCH_NUM);
 			return $values[0];
 		}
 		
@@ -508,17 +514,21 @@
 		}
 		public function GetDescription($language = null)
 		{
-			if ($language == null) return Language::GetCurrent();
+			if ($language == null) $language = Language::GetCurrent();
 			
-			global $MySQL;
-			$query = "SELECT * FROM " . System::$Configuration["Database.TablePrefix"] . "TenantObjectDescriptions WHERE entry_LanguageID = " . $language->ID . " AND entry_ObjectID = " . $this->ID;
-			$result = $MySQL->query($query);
-			if ($result === false) return null;
+			$pdo = DataSystem::GetPDO();
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectDescriptions WHERE entry_LanguageID = :entry_LanguageID AND entry_ObjectID = :entry_ObjectID";
+			$statement = $pdo->prepare($query);
 			
-			$count = $result->num_rows;
+			$statement->execute(array
+			(
+				":entry_LanguageID" => $language->ID,
+				":entry_ObjectID" => $this->ID
+			));
+			$count = $statement->rowCount();
 			if ($count == 0) return null;
 			
-			$values = $result->fetch_assoc();
+			$values = $statement->fetch(PDO::FETCH_ASSOC);
 			return $values["entry_Value"];
 		}
 		public function SetDescription($language, $value)

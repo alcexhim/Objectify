@@ -5,6 +5,7 @@
 			<References>
 				<Reference TagPrefix="wfx" NamespacePath="Phast\WebControls" />
 				<Reference TagPrefix="html" NamespacePath="Phast\HTMLControls" />
+				<Reference TagPrefix="ofx" NamespacePath="Objectify\WebControls" />
 			</References>
 			<Scripts>
 				<Script ContentType="text/javascript" FileName="~/Scripts/Objects/Tenant.js" />
