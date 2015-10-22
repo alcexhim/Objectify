@@ -20,6 +20,12 @@
 		 * @var TenantObjectInstance[]
 		 */
 		public $SelectedInstances;
+
+		/**
+		 * Determines if more than one TenantObjectInstance may be selected from this InstanceBrowser.
+		 * @var boolean
+		 */
+		public $MultiSelect;
 		
 		public function __construct()
 		{

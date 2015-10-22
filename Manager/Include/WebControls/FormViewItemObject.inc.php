@@ -4,24 +4,17 @@
 	use Phast\WebControls\FormViewItem;
 	use Objectify\Objects\TenantObject;
 	
-	class FormViewItemInstance extends FormViewItem
+	class FormViewItemObject extends FormViewItem
 	{
 		/**
-		 * The TenantObjects whose instances are allowed to be selected from this InstanceBrowser. 
-		 * @var TenantObject[]
-		 */
-		public $ObjectTypes;
-		
-		/**
-		 * Determines if more than one TenantObjectInstance may be selected from this InstanceBrowser.
+		 * Determines if more than one TenantObject may be selected from this ObjectBrowser.
 		 * @var boolean
 		 */
 		public $MultiSelect;
 		
 		protected function CreateControlInternal()
 		{
-			$elem = new InstanceBrowser();
-			$elem->ObjectTypes = $this->ObjectTypes;
+			$elem = new ObjectBrowser();
 			$elem->MultiSelect = $this->MultiSelect;
 			
 			$elem->ID = $this->ID;
