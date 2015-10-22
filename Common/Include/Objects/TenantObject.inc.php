@@ -34,13 +34,19 @@
 			$retval = array();
 			
 			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjects";
-			if ($tenant != null) $query .= " WHERE object_TenantID = :object_TenantID";
+			
+			$tenantID = null;
+			if ($tenant != null)
+			{
+				$query .= " WHERE object_TenantID = :object_TenantID";
+				$tenantID = $tenant->ID;
+			}
 			if (is_numeric($max)) $query .= " LIMIT " . $max;
 
 			$statement = $pdo->prepare($query);
 			$result = $statement->execute(array
 			(
-				":object_TenantID" => $tenant->ID
+				":object_TenantID" => $tenantID
 			));
 			
 			if ($result === false) return $retval;
@@ -49,7 +55,9 @@
 			for ($i = 0; $i < $count; $i++)
 			{
 				$values = $statement->fetch(PDO::FETCH_ASSOC);
-				$retval[] = TenantObject::GetByAssoc($values);
+				$item = TenantObject::GetByAssoc($values);
+				if ($item == null) continue;
+				$retval[] = $item;
 			}
 			return $retval;
 		}
@@ -468,17 +476,21 @@
 		
 		public function GetTitle($language = null)
 		{
-			if ($language == null) return Language::GetCurrent();
+			if ($language == null) $language = Language::GetCurrent();
 			
-			global $MySQL;
-			$query = "SELECT * FROM " . System::$Configuration["Database.TablePrefix"] . "TenantObjectTitles WHERE entry_LanguageID = " . $language->ID . " AND entry_ObjectID = " . $this->ID;
-			$result = $MySQL->query($query);
-			if ($result === false) return null;
+			$pdo = DataSystem::GetPDO();
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectTitles WHERE entry_LanguageID = :entry_LanguageID AND entry_ObjectID = :entry_ObjectID";
+			$statement = $pdo->prepare($query);
+			$statement->execute(array
+			(
+				":entry_LanguageID" => $language->ID,
+				":entry_ObjectID" => $this->ID
+			));
 			
-			$count = $result->num_rows;
+			$count = $statement->rowCount();
 			if ($count == 0) return null;
 			
-			$values = $result->fetch_assoc();
+			$values = $statement->fetch(PDO::FETCH_ASSOC);
 			return $values["entry_Value"];
 		}
 		public function SetTitle($language, $value)
