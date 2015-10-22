@@ -17,7 +17,11 @@
 											<wfx:FormViewItemChoiceValue Title="Multiple instance" Value="MultipleInstance" />
 										</Items>
 									</wfx:FormViewItemChoice>
+									
+									<!-- for SingleInstance and MultipleInstance property types -->
+									<ofx:FormViewItemObject ID="objAllowedObjects" Title="Allowed objects" />
 									<ofx:FormViewItemInstance ID="instSelectedInstances" Title="Value" />
+									
 									<wfx:FormViewItemText ID="txtPropertyValue" Title="Value" />
 								</Items>
 							</wfx:FormView>
