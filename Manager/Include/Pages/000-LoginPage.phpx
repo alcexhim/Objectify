@@ -3,36 +3,29 @@
 		<Page FileName="account/login" CodeBehindClassName="Objectify\Tenant\Pages\LoginPage" MasterPageFileName="Blank" CssClass="LoginPage">
 			<Content>
 				<wfx:Section PlaceholderID="Content">
-					<form method="POST">
-						<div class="Wrapper">
-							<html:Heading Level="1">Authentication Required</html:Heading>
-							<html:Paragraph>You must log in to view this page.</html:Paragraph>
-							<wfx:Panel>
-								<ContentControls>
-									<div class="LoginCredentials">
-										<html:Form Method="POST">
-											<wfx:Alert ID="alertInvalidCredentials" Type="Failure" Title="Incorrect user name or password" EnableRender="false">
-												Please ensure your CAPS LOCK and NUM LOCK keys are inactive and try again.
-											</wfx:Alert>
-											<wfx:FormView ID="fv">
-												<Items>
-													<wfx:FormViewItemText ID="txtUserName" Title="User name" Name="user_LoginID" />
-													<wfx:FormViewItemPassword ID="txtPassword" Title="Password" Name="user_Password" />
-												</Items>
-											</wfx:FormView>
-										</html:Form>
-									</div>
-									<div class="LoginBranding">
-										<div class="LoginBrandingLogo"><html:Image ImageURL="~/Images/Header.png" /></div>
-										<div class="LoginBrandingText"><html:Literal Value="$(Configuration:LoginBrandingText)" /></div>
-									</div>
-								</ContentControls>
-								<FooterControls>
-									<wfx:Button CssClass="Primary" ID="cmdSubmit" Text="Continue" UseSubmitBehavior="true" />
-								</FooterControls>
-							</wfx:Panel>
-						</div>
-					</form>
+					<html:Image ImageUrl="~/Images/Header.png" />
+					<wfx:Panel>
+						<ContentControls>
+							<html:Heading Level="4">Please sign in to access this feature</html:Heading>
+							<html:Form Method="POST">
+								<wfx:Alert ID="alertInvalidCredentials" Type="Failure" Title="Incorrect user name or password" EnableRender="false">
+									Please ensure your CAPS LOCK and NUM LOCK keys are inactive and try again.
+								</wfx:Alert>
+								<wfx:FormView ID="fv">
+									<Items>
+										<wfx:FormViewItemText ID="txtUserName" Title="User name" Name="user_LoginID" />
+										<wfx:FormViewItemPassword ID="txtPassword" Title="Password" Name="user_Password" />
+									</Items>
+								</wfx:FormView>
+							</html:Form>
+							<html:Paragraph>
+								<html:Literal Value="$(Configuration:LoginBrandingText)" />
+							</html:Paragraph>
+						</ContentControls>
+						<FooterControls>
+							<wfx:Button CssClass="Primary" ID="cmdSubmit" Text="Continue" UseSubmitBehavior="true" />
+						</FooterControls>
+					</wfx:Panel>
 				</wfx:Section>
 			</Content>
 		</Page>
