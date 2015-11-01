@@ -4,10 +4,10 @@
 			<Content>
 				<wfx:Section PlaceholderID="Content">
 					<html:Image ImageUrl="~/Images/Header.png" />
-					<wfx:Panel>
-						<ContentControls>
-							<html:Heading Level="4">Please sign in to access this feature</html:Heading>
-							<html:Form Method="POST">
+					<html:Form Method="POST">
+						<wfx:Panel>
+							<ContentControls>
+								<html:Heading Level="4">Please sign in to access this feature</html:Heading>
 								<wfx:Alert ID="alertInvalidCredentials" Type="Failure" Title="Incorrect user name or password" EnableRender="false">
 									Please ensure your CAPS LOCK and NUM LOCK keys are inactive and try again.
 								</wfx:Alert>
@@ -17,15 +17,15 @@
 										<wfx:FormViewItemPassword ID="txtPassword" Title="Password" Name="user_Password" />
 									</Items>
 								</wfx:FormView>
-							</html:Form>
-							<html:Paragraph>
-								<html:Literal Value="$(Configuration:LoginBrandingText)" />
-							</html:Paragraph>
-						</ContentControls>
-						<FooterControls>
-							<wfx:Button CssClass="Primary" ID="cmdSubmit" Text="Continue" UseSubmitBehavior="true" />
-						</FooterControls>
-					</wfx:Panel>
+								<html:Paragraph>
+									<html:Literal Value="$(Configuration:LoginBrandingText)" />
+								</html:Paragraph>
+							</ContentControls>
+							<FooterControls>
+								<wfx:Button CssClass="Primary" ID="cmdSubmit" Text="Continue" UseSubmitBehavior="true" />
+							</FooterControls>
+						</wfx:Panel>
+					</html:Form>
 				</wfx:Section>
 			</Content>
 		</Page>
