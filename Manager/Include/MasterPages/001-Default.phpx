@@ -11,7 +11,7 @@
 				<Script ContentType="text/javascript" FileName="~/Scripts/Objects/Tenant.js" />
 			</Scripts>
 			<StyleSheets>
-				<StyleSheet FileName="$(Configuration:System.StaticPath)/StyleSheets/$(Configuration:Application.ThemeName|Workday)/Main.css" />
+				<StyleSheet FileName="$(Configuration:System.StaticPath)/StyleSheets/$(Configuration:Application.ThemeName|Slate)/Main.css" />
 			</StyleSheets>
 			<Content>
 				<wfx:SectionPlaceholder ID="Content" />

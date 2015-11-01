@@ -5,10 +5,10 @@
 				<wfx:Section PlaceholderID="Content">
 					<html:Image ImageUrl="~/Images/Header.png" />
 					<html:Form Method="POST">
-						<wfx:Panel>
+						<wfx:Panel CssClass="Primary">
 							<ContentControls>
 								<html:Heading Level="4">Please sign in to access this feature</html:Heading>
-								<wfx:Alert ID="alertInvalidCredentials" Type="Failure" Title="Incorrect user name or password" EnableRender="false">
+								<wfx:Alert ID="alertInvalidCredentials" CssClass="color-Danger" Title="Incorrect user name or password" EnableRender="false">
 									Please ensure your CAPS LOCK and NUM LOCK keys are inactive and try again.
 								</wfx:Alert>
 								<wfx:FormView ID="fv">
