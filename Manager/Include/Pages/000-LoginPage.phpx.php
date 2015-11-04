@@ -56,6 +56,8 @@
 		public function OnInitializing(CancelEventArgs $e)
 		{
 			User::ReleaseLoginToken();
+			
+			unset($_SESSION["LoginRedirectURL"]);
 			System::Redirect("~/");
 		}
 	}
