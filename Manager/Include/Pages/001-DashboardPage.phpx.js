@@ -1,5 +1,12 @@
 function wndCreateTenant_cmdCreate_Click()
 {
+	var txtTenantName = document.getElementById("txtTenantName");
+	if (txtTenantName.value == "")
+	{
+		Window.ShowDialog("Tenant name cannot be blank", "Error", null, "Danger");
+		return;
+	}
+	
 	var xhr = new XMLHttpRequest();
 	xhr.open('POST', System.ExpandRelativePath('~/api/tenant'), true);
 	xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
@@ -23,8 +30,6 @@ function wndCreateTenant_cmdCreate_Click()
 			}
 		}
 	};
-	
-	var txtTenantName = document.getElementById("txtTenantName");
 	
 	var values =
 	[
