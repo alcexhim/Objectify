@@ -65,24 +65,28 @@
 								</wfx:TabPage>
 								<wfx:TabPage ID="tabGlobalObjects" Title="Global Objects">
 									<html:Paragraph>Lists all of the objects that are available on this tenant that are not associated with a particular Module.</html:Paragraph>
-									<wfx:Disclosure Title="Inherited Objects">
-										<wfx:ListView ID="lvInheritedObjects" Width="100%">
-											<Columns>
-												<wfx:ListViewColumn ID="lvcObject" Title="Object" Width="128px" />
-												<wfx:ListViewColumn ID="lvcDescription" Title="Description" />
-												<wfx:ListViewColumn ID="lvcInstances" Title="Instances" />
-											</Columns>
-										</wfx:ListView>
-									</wfx:Disclosure>
-									<wfx:Disclosure Expanded="true" Title="Domestic Objects">
-										<wfx:ListView ID="lvGlobalObjects" Width="100%">
-											<Columns>
-												<wfx:ListViewColumn ID="lvcObject" Title="Object" Width="128px" />
-												<wfx:ListViewColumn ID="lvcDescription" Title="Description" />
-												<wfx:ListViewColumn ID="lvcInstances" Title="Instances" />
-											</Columns>
-										</wfx:ListView>
-									</wfx:Disclosure>
+									<wfx:Panel Title="Inherited Objects" Collapsible="true" Expanded="false">
+										<ContentControls>
+											<wfx:ListView ID="lvInheritedObjects" Width="100%">
+												<Columns>
+													<wfx:ListViewColumn ID="lvcObject" Title="Object" Width="128px" />
+													<wfx:ListViewColumn ID="lvcDescription" Title="Description" />
+													<wfx:ListViewColumn ID="lvcInstances" Title="Instances" />
+												</Columns>
+											</wfx:ListView>
+										</ContentControls>
+									</wfx:Panel>
+									<wfx:Panel Title="Domestic Objects" Collapsible="true">
+										<ContentControls>
+											<wfx:ListView ID="lvGlobalObjects" Width="100%">
+												<Columns>
+													<wfx:ListViewColumn ID="lvcObject" Title="Object" Width="128px" />
+													<wfx:ListViewColumn ID="lvcDescription" Title="Description" />
+													<wfx:ListViewColumn ID="lvcInstances" Title="Instances" />
+												</Columns>
+											</wfx:ListView>
+										</ContentControls>
+									</wfx:Panel>
 								</wfx:TabPage>
 							</TabPages>
 						</wfx:TabContainer>
