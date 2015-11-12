@@ -1,3 +1,42 @@
+==================================================================
+New Tenant
+==================================================================
+
+	Tenant base name:	[ servicesdemo ]
+	
+	Number of tenants:	[ 18 ]
+	
+==================================================================
+												[Cancel]	[OK]
+==================================================================
+
+
+If number of tenants = 1, tenant 'servicesdemo' will be created
+If number of tenants > 1, < 10, tenant 'servicesdemo1', 'servicesdemo2', etc. will be created
+If number of tenants > 10, < 100, tenant 'servicesdemo01', 'servicesdemo02', etc. will be created
+
+<Objectify>
+	<Objects>
+		<Object ID={Task}>
+			<Instances>
+				<!-- the "Create Tenant" Task instance -->
+				<Instance ID=...>
+					<Properties>
+						<Property ID={Name} DataType="TranslatableText" Value="Create Tenant" />
+						<Property ID={Parameters} DataType="MultipleInstance">
+							<Values>
+								
+							</Values>
+						</Property>
+					</Properties>
+				</Instance>
+			</Instances>
+		</Object>
+	</Objects>
+</Objectify>
+
+
+
 Create an object (if user has permissions):
 http://hosted1.universaleditor.com/default/o/create
 View an object:
