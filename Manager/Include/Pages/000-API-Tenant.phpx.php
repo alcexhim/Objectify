@@ -36,18 +36,32 @@
 				else
 				{
 					// create a new tenant
-					
-					if (Tenant::ExistsByURL($_POST["tenant_URL"]))
+					$count = 1;
+					if (isset($_POST["tenant_Count"]))
 					{
-						echo ("{ \"Result\": \"Failure\", \"Message\": \"The tenant already exists\" }");
-						return;
+						$count = $_POST["tenant_Count"];
 					}
 					
-					$retval = Tenant::Create($_POST["tenant_URL"]);
-					if ($retval === false)
+					for ($i = 0; $i < $count; $i++)
 					{
-						echo ("{ \"Result\": \"Failure\", \"Message\": \"Unknown error occurred\" }");
-						return;
+						$tenantName = $_POST["tenant_URL"];
+						if ($count > 1)
+						{
+							$tenantName .= str_pad(($i + 1), strlen($count), "0", STR_PAD_LEFT);
+						}
+						
+						if (Tenant::ExistsByURL($tenantName))
+						{
+							echo ("{ \"Result\": \"Failure\", \"Message\": \"The tenant already exists\" }");
+							return;
+						}
+						
+						$retval = Tenant::Create($tenantName);
+						if ($retval === false)
+						{
+							echo ("{ \"Result\": \"Failure\", \"Message\": \"Unknown error occurred\" }");
+							return;
+						}
 					}
 					echo ("{ \"Result\": \"Success\" }");
 				}

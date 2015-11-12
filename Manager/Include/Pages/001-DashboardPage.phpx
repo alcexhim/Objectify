@@ -8,7 +8,8 @@
 						<ContentControls>
 							<wfx:FormView ID="fvCreateTenant">
 								<Items>
-									<wfx:FormViewItemText ID="txtTenantName" Title="Tenant name" />
+									<wfx:FormViewItemText ID="txtTenantName" Title="Tenant base name" />
+									<wfx:FormViewItemNumber ID="txtTenantCount" Title="Number of tenants" MinimumValue="1" DefaultValue="1" />
 								</Items>
 							</wfx:FormView>
 						</ContentControls>

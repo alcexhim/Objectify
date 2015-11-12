@@ -7,6 +7,8 @@ function wndCreateTenant_cmdCreate_Click()
 		return;
 	}
 	
+	var txtTenantCount = document.getElementById("txtTenantCount");
+	
 	var xhr = new XMLHttpRequest();
 	xhr.open('POST', System.ExpandRelativePath('~/api/tenant'), true);
 	xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
@@ -40,6 +42,10 @@ function wndCreateTenant_cmdCreate_Click()
 	 	{
 	 		"Name": "tenant_URL",
 	 		"Value": txtTenantName.value
+	 	},
+	 	{
+	 		"Name": "tenant_Count",
+	 		"Value": txtTenantCount.value
 	 	}
 	];
 	
