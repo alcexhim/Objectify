@@ -20,7 +20,6 @@
 		public $Description;
 		public $Status;
 		public $Type;
-		public $PaymentPlan;
 		public $BeginTimestamp;
 		public $EndTimestamp;
 		
@@ -51,14 +50,13 @@
 			return (!(($dateBegin == null || $dateBegin <= $date) && ($dateEnd == null || $dateEnd >= $date)));
 		}
 		
-		public static function Create($url, $description = null, $status = TenantStatus::Enabled, $type = null, $paymentPlan = null, $beginTimestamp = null, $endTimestamp = null)
+		public static function Create($url, $description = null, $status = TenantStatus::Enabled, $type = null, $beginTimestamp = null, $endTimestamp = null)
 		{
 			$item = new Tenant();
 			$item->URL = $url;
 			$item->Description = $description;
 			$item->Status = $status;
 			$item->Type = $type;
-			$item->PaymentPlan = $paymentPlan;
 			$item->BeginTimestamp = $beginTimestamp;
 			$item->EndTimestamp = $endTimestamp;
 			
@@ -89,7 +87,6 @@
 				}
 			}
 			$item->Type = TenantType::GetByID($values["tenant_TypeID"]);
-			$item->PaymentPlan = PaymentPlan::GetByID($values["tenant_PaymentPlanID"]);
 			$item->BeginTimestamp = $values["tenant_BeginTimestamp"];
 			$item->EndTimestamp = $values["tenant_EndTimestamp"];
 			return $item;
@@ -180,19 +177,17 @@
 				$query .= "tenant_Description = :tenant_Description, ";
 				$query .= "tenant_Status = :tenant_Status, ";
 				$query .= "tenant_TypeID = :tenant_TypeID, ";
-				$query .= "tenant_PaymentPlanID = :tenant_PaymentPlanID, ";
 				$query .= "tenant_BeginTimestamp = :tenant_BeginTimestamp, ";
 				$query .= "tenant_EndTimestamp = :tenant_EndTimestamp";
 				$query .= " WHERE tenant_ID = :tenant_ID";
 			}
 			else
 			{
-				$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "Tenants (tenant_URL, tenant_Description, tenant_Status, tenant_TypeID, tenant_PaymentPlanID, tenant_BeginTimestamp, tenant_EndTimestamp) VALUES (";
+				$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "Tenants (tenant_URL, tenant_Description, tenant_Status, tenant_TypeID, tenant_BeginTimestamp, tenant_EndTimestamp) VALUES (";
 				$query .= ":tenant_URL, ";
 				$query .= ":tenant_Description, ";
 				$query .= ":tenant_Status, ";
 				$query .= ":tenant_TypeID, ";
-				$query .= ":tenant_PaymentPlanID, ";
 				$query .= ":tenant_BeginTimestamp, ";
 				$query .= ":tenant_EndTimestamp";
 				$query .= ")";
@@ -204,7 +199,6 @@
 				":tenant_Description" => $this->Description,
 				":tenant_Status" => ($this->Status == TenantStatus::Enabled ? "1" : "0"),
 				":tenant_TypeID" => ($this->Type != null ? $this->Type->ID : "NULL"),
-				":tenant_PaymentPlanID" => ($this->PaymentPlan != null ? $this->PaymentPlan->ID : "NULL"),
 				":tenant_BeginTimestamp" => ($this->BeginTimestamp != null ? ($this->BeginTimestamp) : "NULL"),
 				":tenant_EndTimestamp" => ($this->EndTimestamp != null ? ($this->EndTimestamp) : "NULL")
 			);
@@ -463,12 +457,11 @@
 			echo("{");
 			echo("\"ID\":" . $this->ID . ",");
 			echo("\"URL\":\"" . $this->URL . "\",");
-			echo("\"Description\":\"" . $this->Description . "\"");
-			echo("\"Status\":\"" . $this->Status . "\"");
-			echo("\"Type\":" . $this->Type->ToJSON() . "");
-			echo("\"PaymentPlan\":" . $this->PaymentPlan->ToJSON() . "");
-			echo("\"BeginTimestamp\":\"" . $this->BeginTimestamp . "\"");
-			echo("\"EndTimestamp\":\"" . $this->EndTimestamp . "\"");
+			echo("\"Description\":\"" . $this->Description . "\",");
+			echo("\"Status\":\"" . $this->Status . "\",");
+			echo("\"Type\":" . $this->Type->ToJSON() . ",");
+			echo("\"BeginTimestamp\":\"" . $this->BeginTimestamp . "\",");
+			echo("\"EndTimestamp\":\"" . $this->EndTimestamp . "\",");
 			echo("}");
 		}
 	}

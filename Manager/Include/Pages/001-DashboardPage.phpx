@@ -29,7 +29,6 @@
 												<wfx:ListViewColumn ID="lvcTenantName" Title="Tenant name" />
 												<!--
 													<wfx:ListViewColumn ID="lvcTenantType" Title="Tenant type" />
-													<wfx:ListViewColumn ID="lvcPaymentPlan" Title="Payment plan" />
 												 -->
 												<wfx:ListViewColumn ID="lvcActivationDate" Title="Activation date" />
 												<wfx:ListViewColumn ID="lvcTerminationDate" Title="Termination date" />
@@ -46,7 +45,6 @@
 												<wfx:ListViewColumn ID="lvcTenantName" Title="Tenant name" />
 												<!--
 													<wfx:ListViewColumn ID="lvcTenantType" Title="Tenant type" />
-													<wfx:ListViewColumn ID="lvcPaymentPlan" Title="Payment plan" />
 												-->
 												<wfx:ListViewColumn ID="lvcActivationDate" Title="Activation date" />
 												<wfx:ListViewColumn ID="lvcTerminationDate" Title="Termination date" />

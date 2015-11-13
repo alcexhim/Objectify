@@ -5,7 +5,6 @@
 	
 	use Objectify\Tenant\MasterPages\WebPage;
 	
-	use Objectify\Objects\PaymentPlan;
 	use Objectify\Objects\Tenant;
 	use Objectify\Objects\TenantStatus;
 	use Objectify\Objects\TenantType;

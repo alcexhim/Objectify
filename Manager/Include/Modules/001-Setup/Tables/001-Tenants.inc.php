@@ -18,7 +18,6 @@
 		new Column("Description", "LONGTEXT", null, null, true),
 		new Column("Status", "INT", null, null, true),
 		new Column("TypeID", "INT", null, null, true),
-		new Column("PaymentPlanID", "INT", null, null, true),
 		new Column("BeginTimestamp", "DATETIME", null, null, true),
 		new Column("EndTimestamp", "DATETIME", null, null, true)
 	),

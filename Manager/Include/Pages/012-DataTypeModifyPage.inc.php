@@ -1,26 +1,25 @@
 <?php
 	namespace Objectify\Tenant\Pages;
 	
-	use WebFX\ModulePage;
+	use Phast\ModulePage;
 	
-	use WebFX\System;
+	use Phast\System;
 	
-	use WebFX\WebScript;
-	use WebFX\WebStyleSheet;
+	use Phast\WebScript;
+	use Phast\WebStyleSheet;
 	
-	use WebFX\Controls\FormView;
-	use WebFX\Controls\FormViewItem;
-	use WebFX\Controls\FormViewItemText;
-	use WebFX\Controls\FormViewItemMemo;
+	use Phast\Controls\FormView;
+	use Phast\Controls\FormViewItem;
+	use Phast\Controls\FormViewItemText;
+	use Phast\Controls\FormViewItemMemo;
 	
-	use WebFX\Controls\TabContainer;
-	use WebFX\Controls\TabPage;
+	use Phast\Controls\TabContainer;
+	use Phast\Controls\TabPage;
 	
 	use Objectify\Tenant\MasterPages\WebPage;
 	
 	use Objectify\Objects\DataType;
 	use Objectify\Objects\Module;
-	use Objectify\Objects\PaymentPlan;
 	use Objectify\Objects\Tenant;
 	use Objectify\Objects\TenantObject;
 	use Objectify\Objects\TenantProperty;

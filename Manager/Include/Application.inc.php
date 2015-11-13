@@ -26,7 +26,6 @@
 	use Objectify\Tenant\Pages\ConfirmOperationPage;
 	
 	use Objectify\Objects\DataType;
-	use Objectify\Objects\PaymentPlan;
 	use Objectify\Objects\Tenant;
 	use Objectify\Objects\TenantObject;
 	use Objectify\Objects\TenantObjectMethod;
@@ -104,11 +103,10 @@
 					$tenant_Description = $_POST["tenant_Description"];
 					$tenant_Status = ($_POST["tenant_Status"] == 1 ? TenantStatus::Enabled : TenantStatus::Disabled);
 					$tenant_Type = TenantType::GetByID($_POST["tenant_TypeID"]);
-					$tenant_PaymentPlan = PaymentPlan::GetByID($_POST["tenant_PaymentPlanID"]);
 					$tenant_BeginTimestamp = ($_POST["tenant_BeginTimestampValid"] == "1" ? null : $_POST["tenant_BeginTimestamp"]);
 					$tenant_EndTimestamp = ($_POST["tenant_EndTimestampValid"] == "1" ? null : $_POST["tenant_EndTimestamp"]);
 					
-					$retval = Tenant::Create($tenant_URL, $tenant_Description, $tenant_Status, $tenant_Type, $tenant_PaymentPlan, $tenant_BeginTimestamp, $tenant_EndTimestamp);
+					$retval = Tenant::Create($tenant_URL, $tenant_Description, $tenant_Status, $tenant_Type, $tenant_BeginTimestamp, $tenant_EndTimestamp);
 					
 					if ($retval == null)
 					{
@@ -139,7 +137,6 @@
 					$tenant->Description = $_POST["tenant_Description"];
 					$tenant->Status = ($_POST["tenant_Status"] == 1 ? TenantStatus::Enabled : TenantStatus::Disabled);
 					$tenant->Type = TenantType::GetByID($_POST["tenant_TypeID"]);
-					$tenant->PaymentPlan = PaymentPlan::GetByID($_POST["tenant_PaymentPlanID"]);
 					$tenant->BeginTimestamp = ($_POST["tenant_BeginTimestampValid"] == "1" ? null : $_POST["tenant_BeginTimestamp"]);
 					$tenant->EndTimestamp = ($_POST["tenant_EndTimestampValid"] == "1" ? null : $_POST["tenant_EndTimestamp"]);
 					
@@ -172,11 +169,10 @@
 					$tenant_Description = $_POST["tenant_Description"];
 					$tenant_Status = ($_POST["tenant_Status"] == 1 ? TenantStatus::Enabled : TenantStatus::Disabled);
 					$tenant_Type = TenantType::GetByID($_POST["tenant_TypeID"]);
-					$tenant_PaymentPlan = PaymentPlan::GetByID($_POST["tenant_PaymentPlanID"]);
 					$tenant_BeginTimestamp = ($_POST["tenant_BeginTimestampValid"] == "1" ? null : $_POST["tenant_BeginTimestamp"]);
 					$tenant_EndTimestamp = ($_POST["tenant_EndTimestampValid"] == "1" ? null : $_POST["tenant_EndTimestamp"]);
 					
-					$retval = Tenant::Create($tenant_URL, $tenant_Description, $tenant_Status, $tenant_Type, $tenant_PaymentPlan, $tenant_BeginTimestamp, $tenant_EndTimestamp);
+					$retval = Tenant::Create($tenant_URL, $tenant_Description, $tenant_Status, $tenant_Type, $tenant_BeginTimestamp, $tenant_EndTimestamp);
 					
 					if ($retval == null)
 					{

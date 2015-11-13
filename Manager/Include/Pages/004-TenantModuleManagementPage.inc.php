@@ -6,7 +6,6 @@
 	use Objectify\Tenant\MasterPages\WebPage;
 	
 	use Objectify\Objects\Module;
-	use Objectify\Objects\PaymentPlan;
 	use Objectify\Objects\Tenant;
 	use Objectify\Objects\TenantProperty;
 	use Objectify\Objects\TenantPropertyValue;

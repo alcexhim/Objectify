@@ -5,7 +5,6 @@
 	
 	use Objectify\Tenant\MasterPages\WebPage;
 	
-	use Objectify\Objects\PaymentPlan;
 	use Objectify\Objects\Tenant;
 	use Objectify\Objects\TenantStatus;
 	use Objectify\Objects\TenantType;
@@ -45,20 +44,6 @@
 								foreach ($tenanttypes as $tenanttype)
 								{
 									?><option<?php if ($this->Tenant != null && $this->Tenant->Type != null && $tenanttype->ID == $this->Tenant->Type->ID) { echo(" selected=\"selected\""); } ?> value="<?php echo($tenanttype->ID); ?>"><?php echo($tenanttype->Title); ?></option><?php
-								}
-							?>
-							</select>
-						</td>
-					</tr>
-					<tr>
-						<td><label for="cboPaymentPlan">Payment plan:</label></td>
-						<td colspan="2">
-							<select id="cboPaymentPlan" name="tenant_PaymentPlanID">
-							<?php
-								$paymentplans = PaymentPlan::Get();
-								foreach ($paymentplans as $paymentplan)
-								{
-									?><option<?php if ($this->Tenant != null && $this->Tenant->PaymentPlan != null && $paymentplan->ID == $this->Tenant->PaymentPlan->ID) { echo(" selected=\"selected\""); } ?> value="<?php echo($paymentplan->ID); ?>"><?php echo($paymentplan->Title); ?></option><?php
 								}
 							?>
 							</select>
