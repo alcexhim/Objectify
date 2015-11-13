@@ -1,3 +1,64 @@
+object Object
+{
+	object Language
+	{
+		property Name type Text
+		property Title type SingleInstance:TranslatableText
+		
+		instance
+		{
+			property Name value 'English'
+			property Title value SingleInstance:TranslatableText
+			{
+				property Values value SingleInstance:TranslatableValue
+				{
+				}
+			}
+		}
+	}
+	object DataType
+	{
+		object SingleInstance
+		{
+		}
+		object Text
+		{
+		}
+		object TranslatableText
+		{
+			property 'Values' type SingleInstance:TranslatableValue
+		}
+	}
+	object Task
+	{
+		property Tasks type MultipleInstance:Task				// child tasks
+		
+	}
+	object Tenant
+	{
+		property Tasks type MultipleInstance:Task
+		instance
+		{
+		}
+	}
+	object TranslatableValue
+	{
+		property Language type SingleInstance:Language
+		property Value type Text
+	}
+	object Property
+	{
+		property Name type Text									// the name used in code to identify this property
+		property Title type SingleInstance:TranslatableText		// the display name of this property
+		
+		object TenantProperty
+		{
+		}
+	}
+}
+
+
+
 ==================================================================
 New Tenant
 ==================================================================
