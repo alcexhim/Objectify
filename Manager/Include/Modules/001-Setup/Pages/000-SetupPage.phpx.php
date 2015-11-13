@@ -8,6 +8,9 @@
 	use Phast\RandomStringGenerator;
 	use Phast\RandomStringGeneratorCharacterSets;
 	
+	use Objectify\Objects\TenantObject;
+	use Objectify\Objects\TenantObjectInstancePropertyValue;
+	
 	class SetupPage extends PhastPage
 	{
 		public function OnInitializing(CancelEventArgs $e)
@@ -95,6 +98,51 @@
 					// create the initial user
 					$Administrator_PasswordSalt = RandomStringGenerator::Generate(RandomStringGeneratorCharacterSets::AlphaNumericMixedCase, 32);
 					$Administrator_PasswordHash = hash("sha512", $Administrator_Password . $Administrator_PasswordSalt);
+					
+					// create a new global (non-tenanted) instance of the User object
+					// this can be set by User property IsGlobal - USE SPARINGLY!!!
+					
+					// Create the tenanted objects required before anything else takes place
+					$objUser = TenantObject::Create("User");
+					// $objUser->CreateProperty("UserName");
+					// $objUser->CreateProperty("PasswordHash");
+					// $objUser->CreateProperty("PasswordSalt");
+					// $objUser->CreateProperty("IsGlobal");
+					
+					$objTenant = TenantObject::Create("Tenant");
+					
+					// $objSecurityGroup = TenantObject::GetByName("SecurityGroup");
+					// $instTenantManager = $objSecurityGroup->GetInstance(15); // Tenant Manager
+					
+					$instUser = $objUser->CreateInstance(array
+					(
+						new TenantObjectInstancePropertyValue
+						(
+							$objUser->GetProperty("UserName"),
+							$Administrator_UserName
+						),
+						new TenantObjectInstancePropertyValue
+						(
+							$objUser->GetProperty("PasswordHash"),
+							$Administrator_PasswordHash
+						),
+						new TenantObjectInstancePropertyValue
+						(
+							$objUser->GetProperty("PasswordSalt"),
+							$Administrator_PasswordSalt
+						),
+						new TenantObjectInstancePropertyValue
+						(
+							$objUser->GetProperty("IsGlobal"),
+							true
+						)
+					));
+					
+					// $instUser->SetPropertyValue($objUser->GetInstanceProperty("SecurityGroups"), array
+					// (
+					//		$instTenantManager
+					//		... multiple instances go here
+					// ));
 					
 					$statement = $pdo->prepare("INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "Users (user_LoginID, user_PasswordHash, user_PasswordSalt) VALUES (:user_LoginID, :user_PasswordHash, :user_PasswordSalt)");
 					$result = $statement->execute(array
