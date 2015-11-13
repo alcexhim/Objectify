@@ -49,6 +49,8 @@
 					(
 						new MenuItemCommand("Tenant", null, null, null, array
 						(
+							// Modify Tenant (101) : for Instance (1332) : of Tenant (15724)
+							// ~/o/15724/i/1332/t/101
 							new MenuItemCommand("Modify", "~/tenants/modify/" . $tenant->URL),
 							new MenuItemCommand("Clone", "~/tenants/clone/" . $tenant->URL),
 							new MenuItemCommand("Delete", "~/tenants/delete/" . $tenant->URL)
