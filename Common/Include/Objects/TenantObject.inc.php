@@ -78,6 +78,53 @@
 			return TenantObject::GetByAssoc($values);
 		}
 		
+		public static function GetByName($name)
+		{
+			$pdo = DataSystem::GetPDO();
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjects WHERE object_Name = :object_Name";
+			$statement = $pdo->prepare($query);
+			
+			$result = $statement->execute(array
+			(
+				":object_Name" => $name
+			));
+			
+			if ($result === false) return null;
+			
+			$count = $statement->rowCount();
+			if ($count == 0) return null;
+			
+			$values = $statement->fetch(PDO::FETCH_ASSOC);
+			return TenantObject::GetByAssoc($values);
+		}
+		
+		/**
+		 * Creates a TenantObject.
+		 * @param string $name
+		 * @return TenantObject
+		 */
+		public static function Create($name)
+		{
+			$pdo = DataSystem::GetPDO();
+			
+			$retval = array();
+			
+			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjects (";
+			$query .= "object_Name";
+			$query .= ") VALUES (";
+			$query .= ":object_Name";
+			$query .= ")";
+			
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				":object_Name" => $name
+			));
+			
+			if ($result === false) return null;
+			return TenantObject::GetByName($name);
+		}
+		
 		/// <summary>
 		/// Creates an instance of this Objectify object with the specified properties.
 		/// </summary>
