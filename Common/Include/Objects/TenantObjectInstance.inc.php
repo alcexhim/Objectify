@@ -2,6 +2,9 @@
 	namespace Objectify\Objects;
 	
 	use Phast\System;
+	use Phast\Data\DataSystem;
+	
+	use PDO;
 	
 	class TenantObjectInstance
 	{
@@ -56,7 +59,7 @@
 		}
 		public function SetPropertyValue($property, $value)
 		{
-			global $MySQL;
+			$pdo = DataSystem::GetPDO();
 			
 			if (is_string($property))
 			{
@@ -64,16 +67,19 @@
 			}
 			if ($property == null) return false;
 			
-			$query = "INSERT INTO " . System::$Configuration["Database.TablePrefix"] . "TenantObjectInstancePropertyValues (propval_InstanceID, propval_PropertyID, propval_Value) VALUES (";
-			$query .= $this->ID . ", ";
-			$query .= $property->ID . ", ";
-			$query .= "'" . $MySQL->real_escape_string($property->Encode($value)) . "'";
-			$query .= ")";
+			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstancePropertyValues (propval_InstanceID, propval_PropertyID, propval_Value) VALUES (:propval_InstanceID, :propval_PropertyID, :propval_Value)";
 			$query .= " ON DUPLICATE KEY UPDATE ";
 			$query .= "propval_PropertyID = values(propval_PropertyID), ";
 			$query .= "propval_Value = values(propval_Value)";
 			
-			$result = $MySQL->query($query);
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+					":propval_InstanceID" => $this->ID,
+					":propval_PropertyID" => $property->ID,
+					":propval_Value" => $property->Encode($value)
+			));
+			
 			if ($result === false) return false;
 			
 			return true;
@@ -98,25 +104,27 @@
 		
 		public function Update()
 		{
-			global $MySQL;
+			$pdo = DataSystem::GetPDO();
 			if ($this->ID == null)
 			{
-				$query = "INSERT INTO " . System::$Configuration["Database.TablePrefix"] . "TenantObjectInstances (instance_ObjectID) VALUES (";
-				$query .= $this->ParentObject->ID;
-				$query .= ")";
+				$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances (instance_ObjectID) VALUES (:instance_ObjectID)";
 			}
 			else
 			{
-				$query = "UPDATE " . System::$Configuration["Database.TablePrefix"] . "TenantObjectInstances SET ";
-				$query .= "instance_ObjectID = " . $this->ParentObject->ID;
-				$query .= " WHERE instance_ID = " . $this->ID;
+				$query = "UPDATE " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances SET instance_ObjectID = :instance_ObjectID WHERE instance_ID = :instance_ID";
 			}
-			$result = $MySQL->query($query);
+			
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				":instance_ID" => $this->ID,
+				":instance_ObjectID" => $this->ParentObject->ID
+			));
 			if ($result === false) return false;
 			
 			if ($this->ID == null)
 			{
-				$this->ID = $MySQL->insert_id;
+				$this->ID = $pdo->lastInsertId();
 			}
 			return true;
 		}

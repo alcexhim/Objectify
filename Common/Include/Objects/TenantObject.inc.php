@@ -241,14 +241,19 @@
 		
 		public function GetProperty($propertyName)
 		{
-			global $MySQL;
-			$query = "SELECT * FROM " . System::$Configuration["Database.TablePrefix"] . "TenantObjectProperties WHERE property_ObjectID = " . $this->ID . " AND property_Name = '" . $MySQL->real_escape_string($propertyName) . "'";
-			$result = $MySQL->query($query);
+			$pdo = DataSystem::GetPDO();
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectProperties WHERE property_ObjectID = :property_ObjectID AND property_Name = :property_Name";
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				":property_ObjectID" => $this->ID,
+				":property_Name" => $propertyName
+			));
 			if ($result === false) return null;
-			$count = $result->num_rows;
+			$count = $statement->rowCount();
 			if ($count == 0) return null;
 			
-			$values = $result->fetch_assoc();
+			$values = $statement->fetch(PDO::FETCH_ASSOC);
 			return TenantObjectProperty::GetByAssoc($values);
 		}
 		public function GetProperties($max = null)
