@@ -20,14 +20,12 @@
 		public $Description;
 		public $Status;
 		public $Type;
-		public $DataCenters;
 		public $PaymentPlan;
 		public $BeginTimestamp;
 		public $EndTimestamp;
 		
 		public function __construct()
 		{
-			$this->DataCenters = new DataCenterCollection();
 		}
 		
 		public function IsExpired()
@@ -53,7 +51,7 @@
 			return (!(($dateBegin == null || $dateBegin <= $date) && ($dateEnd == null || $dateEnd >= $date)));
 		}
 		
-		public static function Create($url, $description = null, $status = TenantStatus::Enabled, $type = null, $paymentPlan = null, $beginTimestamp = null, $endTimestamp = null, $dataCenters = null)
+		public static function Create($url, $description = null, $status = TenantStatus::Enabled, $type = null, $paymentPlan = null, $beginTimestamp = null, $endTimestamp = null)
 		{
 			$item = new Tenant();
 			$item->URL = $url;
@@ -63,12 +61,6 @@
 			$item->PaymentPlan = $paymentPlan;
 			$item->BeginTimestamp = $beginTimestamp;
 			$item->EndTimestamp = $endTimestamp;
-			
-			if ($dataCenters == null) $dataCenters = array();
-			foreach ($dataCenters as $datacenter)
-			{
-				$item->DataCenters->Add($datacenter);
-			}
 			
 			if ($item->Update())
 			{
@@ -177,28 +169,6 @@
 			return Tenant::GetByURL(System::$TenantName);
 		}
 		
-		public function GetDataCenters()
-		{
-			$pdo = DataSystem::GetPDO();
-			$query = "SELECT " . System::$Configuration["Database.TablePrefix"] . "DataCenters.* FROM " . System::$Configuration["Database.TablePrefix"] . "DataCenters, " . System::$Configuration["Database.TablePrefix"] . "TenantDataCenters WHERE " . System::$Configuration["Database.TablePrefix"] . "TenantDataCenters.tdc_TenantID = :tdc_TenantID AND " . System::$Configuration["Database.TablePrefix"] . "TenantDataCenters.tdc_DataCenterID = " . System::$Configuration["Database.TablePrefix"] . "DataCenters.datacenter_ID";
-			$statement = $pdo->prepare($query);
-			$result = $statement->execute(array
-			(
-				":tdc_TenantID" => $this->ID
-			));
-			
-			$retval = array();
-			if ($result === false) return $retval;
-			
-			$count = $statement->rowCount();
-			for ($i = 0; $i < $count; $i++)
-			{
-				$values = $statement->fetch(PDO::FETCH_ASSOC);
-				$retval[] = DataCenter::GetByAssoc($values);
-			}
-			return $retval;
-		}
-		
 		public function Update()
 		{
 			$pdo = DataSystem::GetPDO();
@@ -260,29 +230,6 @@
 			{
 				$this->ID = $pdo->lastInsertId();
 			}
-			
-			/*
-			// clearing the data centers
-			$query = "DELETE FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantDataCenters WHERE tdc_TenantID = " . $this->ID;
-			$statement = $pdo->prepare($query);
-			$result = $statement->execute(array
-			(
-				
-			));
-			if ($result === false) return false;
-			
-			// inserting the data centers
-			foreach ($this->DataCenters->Items as $item)
-			{
-				$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "TenantDataCenters (tdc_TenantID, tdc_DataCenterID) VALUES (";
-				$query .= $this->ID . ", ";
-				$query .= $item->ID;
-				$query .= ")";
-			
-				$result = $MySQL->query($query);
-				if ($MySQL->errno != 0) return false;
-			}
-			*/
 			
 			return true;
 		}

@@ -1,11 +1,10 @@
 <?php
 	namespace Objectify\Tenant\Pages;
 	
-	use WebFX\System;
+	use Phast\System;
 	
 	use Objectify\Tenant\MasterPages\WebPage;
 	
-	// use Objectify\Objects\DataCenter;
 	use Objectify\Objects\Module;
 	use Objectify\Objects\PaymentPlan;
 	use Objectify\Objects\Tenant;

@@ -21,14 +21,10 @@
 	
 	use Objectify\Tenant\Pages\TenantObjectInstanceBrowsePage;
 	
-	use Objectify\Tenant\Pages\DataCenterMainPage;
-	use Objectify\Tenant\Pages\DataCenterManagementPage;
-	
 	use Objectify\Tenant\Pages\TenantObjectMethodManagementPage;
 	
 	use Objectify\Tenant\Pages\ConfirmOperationPage;
 	
-	use Objectify\Objects\DataCenter;
 	use Objectify\Objects\DataType;
 	use Objectify\Objects\PaymentPlan;
 	use Objectify\Objects\Tenant;
@@ -78,7 +74,7 @@
 	
 	System::$BeforeLaunchEventHandler = function($path)
 	{
-		if (!IsConfigured() && (!($path[0] == "setup")))
+		if (!IsConfigured() && (!($path[0] == "setup")) && (!($path[0] == "Images")))
 		{
 			System::Redirect("~/setup");
 			return true;
@@ -106,24 +102,13 @@
 				{
 					$tenant_URL = $_POST["tenant_URL"];
 					$tenant_Description = $_POST["tenant_Description"];
-					
-					$tenant_DataCenters = array();
-					foreach ($_POST as $key => $value)
-					{
-						if (substr($key, 0, strlen("tenant_DataCenter_")) == "tenant_DataCenter_")
-						{
-							$id = substr($key, strlen("tenant_DataCenter_") + 1);
-							$tenant_DataCenters[] = DataCenter::GetByID($id);
-						}
-					}
-					
 					$tenant_Status = ($_POST["tenant_Status"] == 1 ? TenantStatus::Enabled : TenantStatus::Disabled);
 					$tenant_Type = TenantType::GetByID($_POST["tenant_TypeID"]);
 					$tenant_PaymentPlan = PaymentPlan::GetByID($_POST["tenant_PaymentPlanID"]);
 					$tenant_BeginTimestamp = ($_POST["tenant_BeginTimestampValid"] == "1" ? null : $_POST["tenant_BeginTimestamp"]);
 					$tenant_EndTimestamp = ($_POST["tenant_EndTimestampValid"] == "1" ? null : $_POST["tenant_EndTimestamp"]);
 					
-					$retval = Tenant::Create($tenant_URL, $tenant_Description, $tenant_Status, $tenant_Type, $tenant_PaymentPlan, $tenant_BeginTimestamp, $tenant_EndTimestamp, $tenant_DataCenters);
+					$retval = Tenant::Create($tenant_URL, $tenant_Description, $tenant_Status, $tenant_Type, $tenant_PaymentPlan, $tenant_BeginTimestamp, $tenant_EndTimestamp);
 					
 					if ($retval == null)
 					{
@@ -380,7 +365,7 @@
 			new ModulePage("launch", function($path)
 			{
 				$tenant = Tenant::GetByURL($path[0]);
-				header("Location: http://" . $tenant->DataCenters->Items[0]->HostName . "/" . $tenant->URL);
+				header("Location: /" . $tenant->URL);
 			})
 		)),
 		new ModulePage("module", array
@@ -406,55 +391,6 @@
 				{
 					$page = new ModuleManagementPage();
 					$page->Module = $module;
-					$page->Render();
-				}
-				return true;
-			})
-		)),
-		new ModulePage("datacenter", array
-		(
-			new ModulePage("", function($path)
-			{
-				$page = new DataCenterMainPage();
-				$page->Render();
-				return true;
-			}),
-			new ModulePage("create", function($path)
-			{
-				$datacenter = new DataCenter();
-				if ($_SERVER["REQUEST_METHOD"] == "POST")
-				{
-					$datacenter->Title = $_POST["datacenter_Title"];
-					$datacenter->Description = $_POST["datacenter_Description"];
-					$datacenter->HostName = $_POST["datacenter_HostName"];
-					$datacenter->Update();
-					
-					System::Redirect("~/datacenter");
-				}
-				else
-				{
-					$page = new DataCenterManagementPage();
-					$page->DataCenter = null;
-					$page->Render();
-				}
-				return true;
-			}),
-			new ModulePage("modify", function($path)
-			{
-				$datacenter = DataCenter::GetByID($path[0]);
-				if ($_SERVER["REQUEST_METHOD"] == "POST")
-				{
-					$datacenter->Title = $_POST["datacenter_Title"];
-					$datacenter->Description = $_POST["datacenter_Description"];
-					$datacenter->HostName = $_POST["datacenter_HostName"];
-					$datacenter->Update();
-					
-					System::Redirect("~/datacenter/modify/" . $path[0]);
-				}
-				else
-				{
-					$page = new DataCenterManagementPage();
-					$page->DataCenter = $datacenter;
 					$page->Render();
 				}
 				return true;

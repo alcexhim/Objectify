@@ -72,12 +72,6 @@
 				
 				$str = "";
 				$strPlain = "";
-				foreach ($tenant->DataCenters->Items as $item)
-				{
-					$str .= "<a href=\"http://" . $item->HostName . "/" . $tenant->URL . "\">" . $item->Title . " (" . $item->HostName . ")</a><br />";
-					$strPlain .= $item->Title . " ";
-				}
-				$lvi->Columns[] = new ListViewItemColumn("lvcDataCenters", $str, $strPlain);
 				$lvi->Columns[] = new ListViewItemColumn("lvcPaymentPlan", $tenant->PaymentPlan == null ? "" : $tenant->PaymentPlan->Title);
 				$lvi->Columns[] = new ListViewItemColumn("lvcActivationDate", $tenant->BeginTimestamp == null ? "(indefinite)" : $tenant->BeginTimestamp);
 				$lvi->Columns[] = new ListViewItemColumn("lvcTerminationDate", $tenant->EndTimestamp == null ? "(indefinite)" : $tenant->EndTimestamp);

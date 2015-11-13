@@ -1,11 +1,10 @@
 <?php
 	namespace Objectify\Tenant\Pages;
 	
-	use WebFX\System;
+	use Phast\System;
 	
 	use Objectify\Tenant\MasterPages\WebPage;
 	
-	use Objectify\Objects\DataCenter;
 	use Objectify\Objects\PaymentPlan;
 	use Objectify\Objects\Tenant;
 	use Objectify\Objects\TenantStatus;
@@ -46,19 +45,6 @@
 								foreach ($tenanttypes as $tenanttype)
 								{
 									?><option<?php if ($this->Tenant != null && $this->Tenant->Type != null && $tenanttype->ID == $this->Tenant->Type->ID) { echo(" selected=\"selected\""); } ?> value="<?php echo($tenanttype->ID); ?>"><?php echo($tenanttype->Title); ?></option><?php
-								}
-							?>
-							</select>
-						</td>
-					</tr>
-					<tr>
-						<td><label for="cboDataCenter">Data center:</label></td>
-						<td colspan="2">
-							<?php
-								$datacenters = DataCenter::Get();
-								foreach ($datacenters as $datacenter)
-								{
-									?><div><input type="checkbox" value="1" <?php if ($this->Tenant != null && $this->Tenant->DataCenters->Contains($datacenter)) { echo(" checked=\"checked\""); } ?> name="tenant_DataCenter_<?php echo($datacenter->ID); ?>" id="txtTenantDataCenter_<?php echo($datacenter->ID); ?>" /><label for="txtTenantDataCenter_<?php echo($datacenter->ID); ?>"><?php echo($datacenter->Title); ?></label><?php
 								}
 							?>
 							</select>

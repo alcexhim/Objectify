@@ -1,14 +1,13 @@
 <?php
 	namespace Objectify\Tenant\Pages;
 	
-	use WebFX\System;
+	use Phast\System;
 	
-	use WebFX\Controls\TabContainer;
-	use WebFX\Controls\TabPage;
+	use Phast\Controls\TabContainer;
+	use Phast\Controls\TabPage;
 	
 	use Objectify\Tenant\MasterPages\WebPage;
 	
-	// use Objectify\Objects\DataCenter;
 	use Objectify\Objects\Module;
 	use Objectify\Objects\PaymentPlan;
 	use Objectify\Objects\Tenant;
