@@ -115,12 +115,18 @@
 			}
 			
 			$statement = $pdo->prepare($query);
-			$result = $statement->execute(array
+			$paramz = array
 			(
-				":instance_ID" => $this->ID,
 				":instance_ObjectID" => $this->ParentObject->ID
-			));
-			if ($result === false) return false;
+			);
+			if ($this->ID != null) $paramz[":instance_ID"] = $this->ID;
+			$result = $statement->execute($paramz);
+			if ($result === false)
+			{
+				$ei = $statement->errorInfo();
+				trigger_error("TenantObjectInstance->Update (" . $ei[1] . "): " . $ei[2]);
+				return false;
+			}
 			
 			if ($this->ID == null)
 			{
