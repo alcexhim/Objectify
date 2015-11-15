@@ -1,6 +1,9 @@
 <?php
 	namespace Objectify\Objects;
+	
 	use Phast\System;
+	use Phast\Data\DataSystem;
+	use PDO;
 	
 	class TenantObjectMethod
 	{
@@ -23,18 +26,21 @@
 
 		public function AddNamespaceReference($value)
 		{
-			global $MySQL;
-			$query = "INSERT INTO " . System::$Configuration["Database.TablePrefix"] . "TenantObjectMethodNamespaceReferences (ns_MethodID, ns_Value) VALUES (";
-			$query .= $this->ID . ", ";
-			$query .= "'" . $MySQL->real_escape_string($value) . "'";
-			$query .= ")";
+			$pdo = DataSystem::GetPDO();
+			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectMethodNamespaceReferences (ns_MethodID, ns_Value) VALUES (:ns_MethodID, :ns_Value)";
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				":ns_MethodID" => $this->ID,
+				":ns_Value" => $value
+			));
 			
-			$result = $MySQL->query($query);
 			if ($result === false)
 			{
+				$ei = $pdo->errorInfo();
 				Objectify::Log("Database error when trying to add a namespace reference to the specified object method.", array
 				(
-					"DatabaseError" => $MySQL->error . " (" . $MySQL->errno . ")",
+					"DatabaseError" => $ei[2] . " (" . $ei[1] . ")",
 					"Query" => $query,
 					"Method" => $this->Name,
 					"Object" => $this->ParentObject == null ? "(null)" : $this->ParentObject->Name
@@ -194,15 +200,19 @@
 		{
 			if (!is_numeric($id)) return null;
 			
-			global $MySQL;
-			$query = "SELECT * FROM " . System::$Configuration["Database.TablePrefix"] . "TenantObjectInstanceMethods WHERE method_ID = " . $id;
-			$result = $MySQL->query($query);
+			$pdo = DataSystem::GetPDO();
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstanceMethods WHERE method_ID = :method_ID";
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				":method_ID" => $id
+			));
 			if ($result === false) return null;
 			
-			$count = $result->num_rows;
+			$count = $statement->rowCount();
 			if ($count == 0) return null;
 			
-			$values = $result->fetch_assoc();
+			$values = $statement->fetch(PDO::FETCH_ASSOC);
 			return TenantObjectInstanceMethod::GetByAssoc($values);
 		}
 

@@ -267,28 +267,31 @@
 			}
 			return $method;
 		}
-		public function CreateInstanceMethod($name, $parameters, $codeblob, $description = null, $namespaceReferences = null)
+		public function CreateInstanceMethod($name, $parameters, $codeblob, $namespaceReferences = null)
 		{
-			global $MySQL;
+			$pdo = DataSystem::GetPDO();
 			
-			$query = "INSERT INTO " . System::$Configuration["Database.TablePrefix"] . "TenantObjectInstanceMethods (method_ObjectID, method_Name, method_Description, method_CodeBlob) VALUES (";
-			$query .= $this->ID . ", ";
-			$query .= "'" . $MySQL->real_escape_string($name) . "', ";
-			$query .= ($description == null ? "NULL" : ("'" . $MySQL->real_escape_string($description) . "'")) . ", ";
-			$query .= "'" . $MySQL->real_escape_string($codeblob) . "'";
-			$query .= ")";
-			$result = $MySQL->query($query);
+			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstanceMethods (method_ObjectID, method_Name, method_CodeBlob) VALUES (:method_ObjectID, :method_Name, :method_CodeBlob)";
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				":method_ObjectID" => $this->ID,
+				":method_Name" => $name,
+				":method_CodeBlob" => $codeblob
+			));
+			
 			if ($result === false)
 			{
+				$ei = $pdo->errorInfo();
 				Objectify::Log("Database error when trying to create an instance method for the specified tenant object.", array
 				(
-					"DatabaseError" => $MySQL->error . " (" . $MySQL->errno . ")",
+					"DatabaseError" => $ei[2] . " (" . $ei[1] . ")",
 					"Query" => $query
 				));
 				return false;
 			}
 			
-			$method = TenantObjectInstanceMethod::GetByID($MySQL->insert_id);
+			$method = TenantObjectInstanceMethod::GetByID($pdo->lastInsertId());
 			
 			if (is_array($namespaceReferences))
 			{
