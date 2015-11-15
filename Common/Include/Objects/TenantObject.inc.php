@@ -66,15 +66,19 @@
 		{
 			if (!is_numeric($id)) return null;
 			
-			global $MySQL;
-			$query = "SELECT * FROM " . System::$Configuration["Database.TablePrefix"] . "TenantObjects WHERE object_ID = " . $id;
-			$result = $MySQL->query($query);
+			$pdo = DataSystem::GetPDO();
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjects WHERE object_ID = :object_ID";
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				":object_ID" => $id
+			));
 			if ($result === false) return null;
 			
-			$count = $result->num_rows;
+			$count = $statement->rowCount();
 			if ($count == 0) return null;
 			
-			$values = $result->fetch_assoc();
+			$values = $statement->fetch(PDO::FETCH_ASSOC);
 			return TenantObject::GetByAssoc($values);
 		}
 		
@@ -196,26 +200,36 @@
 		}
 		
 		
-		public function CreateInstanceProperty($property)
+		public function CreateInstanceProperty($propertyName, $dataType, $defaultValue = null, $isRequired = false)
 		{
-			global $MySQL;
+			$pdo = DataSystem::GetPDO();
 			
-			$query = "INSERT INTO " . System::$Configuration["Database.TablePrefix"] . "TenantObjectInstanceProperties (property_ObjectID, property_Name, property_Description, property_DataTypeID, property_DefaultValue, property_IsRequired) VALUES (";
-			$query .= $this->ID . ", ";
-			$query .= "'" . $MySQL->real_escape_string($property->Name) . "', ";
-			$query .= "'" . $MySQL->real_escape_string($property->Description) . "', ";
-			$query .= ($property->DataType == null ? "NULL" : $property->DataType->ID) . ", ";
-			$query .= "'" . $MySQL->real_escape_string($property->Encode($property->DefaultValue)) . "', ";
-			$query .= ($property->Required ? "1" : "0");
-			$query .= ")";
-			$result = $MySQL->query($query);
+			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstanceProperties "
+			. "(property_ObjectID, property_Name, property_DataTypeID, property_DefaultValue, property_IsRequired)"
+			. " VALUES "
+			. "(:property_ObjectID, :property_Name, :property_DataTypeID, :property_DefaultValue, :property_IsRequired)";
+			
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				":property_ObjectID" => $this->ID,
+				":property_Name" => $propertyName,
+				":property_DataTypeID" => $dataType->ID,
+				":property_DefaultValue" => $dataType->Encode($defaultValue),
+				":property_IsRequired" => $isRequired
+			));
+			
 			if ($result === false)
 			{
+				$ei = $statement->errorInfo();
+				trigger_error("TenantObject->CreateInstanceProperty - " . $ei[1] . ": " . $ei[2]);
+				/*
 				Objectify::Log("Database error when trying to create an instance property for the specified tenant object.", array
 				(
-					"DatabaseError" => $MySQL->error . " (" . $MySQL->errno . ")",
+					"DatabaseError" => $ei[2] . " (" . $ei[1] . ")",
 					"Query" => $query
 				));
+				*/
 				return false;
 			}
 		}
@@ -325,13 +339,18 @@
 		}
 		public function GetInstanceProperty($propertyName)
 		{
-			global $MySQL;
+			$pdo = DataSystem::GetPDO();
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstanceProperties WHERE property_ObjectID = :property_ObjectID AND property_Name = :property_Name";
+			$statement = $pdo->prepare($query);
 			
-			$query = "SELECT * FROM " . System::$Configuration["Database.TablePrefix"] . "TenantObjectInstanceProperties WHERE property_ObjectID = " . $this->ID . " AND property_Name = '" . $MySQL->real_escape_string($propertyName) . "'";
+			$result = $statement->execute(array
+			(
+				":property_ObjectID" => $this->ID,
+				":property_Name" => $propertyName
+			));
 			
-			$result = $MySQL->query($query);
 			if ($result === false) return null;
-			$count = $result->num_rows;
+			$count = $statement->rowCount();
 			if ($count == 0)
 			{
 				Objectify::Log("Could not fetch the specified instance property on the object.", array
@@ -342,7 +361,7 @@
 				return null;
 			}
 			
-			$values = $result->fetch_assoc();
+			$values = $statement->fetch(PDO::FETCH_ASSOC);
 			
 			return TenantObjectInstanceProperty::GetByAssoc($values);
 		}

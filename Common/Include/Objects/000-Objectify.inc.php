@@ -1,7 +1,8 @@
 <?php
 	namespace Objectify\Objects;
 	use WebFX\System;
-	
+	use Phast\Data\DataSystem;
+		
 	\Enum::Create("Objectify\\Objects\\LogMessageSeverity", "Notice", "Warning", "Error");
 	
 	class Objectify
@@ -12,29 +13,40 @@
 			
 			if ($params == null) $params = array();
 			
-			global $MySQL;
+			$pdo = DataSystem::GetPDO();
 			
 			$tenant = Tenant::GetCurrent();
 			
-			$query = "INSERT INTO " . System::$Configuration["Database.TablePrefix"] . "DebugMessages (message_TenantID, message_Content, message_SeverityID, message_Timestamp, message_IPAddress) VALUES (";
-			$query .= ($tenant == null ? "NULL" : $tenant->ID) . ", ";
-			$query .= "'" . $MySQL->real_escape_string($message) . "', ";
-			$query .= $severity . ", ";
-			$query .= "NOW(), ";
-			$query .= "'" . $MySQL->real_escape_string($_SERVER["REMOTE_ADDR"]) . "'";
-			$query .= ")";
-			$MySQL->query($query);
+			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "DebugMessages "
+				. "(message_TenantID, message_Content, message_SeverityID, message_Timestamp, message_IPAddress)"
+				. " VALUES "
+				. "(:message_TenantID, :message_Content, :message_SeverityID, NOW(), :message_IPAddress)";
 			
-			$msgid = $MySQL->insert_id;
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				":message_TenantID" => ($tenant == null ? null : $tenant->ID),
+				":message_Content" => $message,
+				":message_SeverityID" => $severity,
+				":message_IPAddress" => $_SERVER["REMOTE_ADDR"]
+			));
+			
+			$msgid = $pdo->lastInsertId();
 			
 			foreach ($bt as $bti)
 			{
-				$query = "INSERT INTO " . System::$Configuration["Database.TablePrefix"] . "DebugMessageBacktraces (bt_MessageID, bt_FileName, bt_LineNumber) VALUES (";
-				$query .= $msgid . ", ";
-				$query .= "'" . $MySQL->real_escape_string($bti["file"]) . "', ";
-				$query .= $bti["line"];
-				$query .= ")";
-				$MySQL->query($query);
+				$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "DebugMessageBacktraces "
+				. "(bt_MessageID, bt_FileName, bt_LineNumber)"
+				. " VALUES "
+				. "(:bt_MessageID, :bt_FileName, :bt_LineNumber)";
+				
+				$statement = $pdo->prepare($query);
+				$result = $statement->execute(array
+				(
+					":bt_MessageID" => $msgid,
+					":bt_FileName" => $bti["file"],
+					":bt_LineNumber" => $bti["line"]
+				));
 			}
 			
 			foreach ($params as $key => $value)
