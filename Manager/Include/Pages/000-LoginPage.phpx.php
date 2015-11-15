@@ -21,6 +21,32 @@
 					$username = $_POST["user_LoginID"];
 					$password = $_POST["user_Password"];
 					
+					/*
+					 
+					$objUser = TenantObject::GetByName("User");
+					$inst = $objUser->GetInstance(array
+					(
+						new TenantObjectInstancePropertyValue($objUser->GetInstanceProperty("UserName"))
+					));
+					
+					if ($inst != null)
+					{
+						// we have an instance, validate the password
+						$passwordSalt = $inst->GetPropertyValue($objUser->GetInstanceProperty("PasswordSalt"));
+						$passwordHash = $inst->GetPropertyValue($objUser->GetInstanceProperty("PasswordHash"));
+						
+						$expectedPasswordHash = hash("sha512", $password . $passwordSalt);
+						
+						trigger_error("password hash: " . $passwordHash);
+						trigger_error("password hash expected: " . $expectedPasswordHash);
+						if ($passwordHash != $expectedPasswordHash)
+						{
+							$inst = null;
+						}
+					}
+					
+					 */
+					
 					$user = User::GetByCredentials($username, $password);
 					
 					if ($user != null)
