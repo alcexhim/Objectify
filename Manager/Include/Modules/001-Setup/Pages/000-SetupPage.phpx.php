@@ -8,11 +8,33 @@
 	use Phast\RandomStringGenerator;
 	use Phast\RandomStringGeneratorCharacterSets;
 	
+	use Objectify\Objects\DataType;
 	use Objectify\Objects\TenantObject;
 	use Objectify\Objects\TenantObjectInstancePropertyValue;
 	
 	class SetupPage extends PhastPage
 	{
+		private function CreateDefaultSecurityPrivilegesAndGroups()
+		{
+			$objSecurityPrivilege = TenantObject::GetByName("SecurityPrivilege");
+			
+			$instCreateTenant = $objSecurityPrivilege->CreateInstance();
+			
+			$objSecurityGroup = TenantObject::GetByName("SecurityGroup");
+			
+			$instTenantManager = $objSecurityGroup->CreateInstance(array
+			(
+				new TenantObjectInstancePropertyValue
+				(
+					$objSecurityGroup->GetProperty("SecurityPrivileges"), array
+					(
+						$instCreateTenant
+					)
+				)
+			)); // Tenant Manager
+		}
+		
+		
 		public function OnInitializing(CancelEventArgs $e)
 		{
 			if ($e->RenderingPage->IsPostback)
@@ -104,36 +126,37 @@
 					
 					// Create the tenanted objects required before anything else takes place
 					$objUser = TenantObject::Create("User");
-					// $objUser->CreateProperty("UserName");
-					// $objUser->CreateProperty("PasswordHash");
-					// $objUser->CreateProperty("PasswordSalt");
-					// $objUser->CreateProperty("IsGlobal");
-					
+					$objUser->CreateInstanceProperty("UserName", DataType::GetByName("Text"));
+					$objUser->CreateInstanceProperty("PasswordHash", DataType::GetByName("Text"));
+					$objUser->CreateInstanceProperty("PasswordSalt", DataType::GetByName("Text"));
+					$objUser->CreateInstanceProperty("IsGlobal", DataType::GetByName("Boolean"));
+
+					$objSecurityPrivilege = TenantObject::Create("SecurityPrivilege");
+					$objSecurityGroup = TenantObject::Create("SecurityGroup");
 					$objTenant = TenantObject::Create("Tenant");
 					
-					// $objSecurityGroup = TenantObject::GetByName("SecurityGroup");
-					// $instTenantManager = $objSecurityGroup->GetInstance(15); // Tenant Manager
+					// $this->CreateDefaultSecurityPrivilegesAndGroups();
 					
 					$instUser = $objUser->CreateInstance(array
 					(
 						new TenantObjectInstancePropertyValue
 						(
-							$objUser->GetProperty("UserName"),
+							$objUser->GetInstanceProperty("UserName"),
 							$Administrator_UserName
 						),
 						new TenantObjectInstancePropertyValue
 						(
-							$objUser->GetProperty("PasswordHash"),
+							$objUser->GetInstanceProperty("PasswordHash"),
 							$Administrator_PasswordHash
 						),
 						new TenantObjectInstancePropertyValue
 						(
-							$objUser->GetProperty("PasswordSalt"),
+							$objUser->GetInstanceProperty("PasswordSalt"),
 							$Administrator_PasswordSalt
 						),
 						new TenantObjectInstancePropertyValue
 						(
-							$objUser->GetProperty("IsGlobal"),
+							$objUser->GetInstanceProperty("IsGlobal"),
 							true
 						)
 					));
