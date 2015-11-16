@@ -129,9 +129,10 @@
 			return TenantObject::GetByName($name);
 		}
 		
-		/// <summary>
-		/// Creates an instance of this Objectify object with the specified properties.
-		/// </summary>
+		/**
+		 * Creates an instance of this Objectify object with the specified properties.
+		 * @param TenantObjectInstancePropertyValue[] $properties
+		 */
 		public function CreateInstance($properties)
 		{
 			if (!is_array($properties)) return false;
@@ -222,14 +223,11 @@
 			if ($result === false)
 			{
 				$ei = $statement->errorInfo();
-				trigger_error("TenantObject->CreateInstanceProperty - " . $ei[1] . ": " . $ei[2]);
-				/*
 				Objectify::Log("Database error when trying to create an instance property for the specified tenant object.", array
 				(
 					"DatabaseError" => $ei[2] . " (" . $ei[1] . ")",
 					"Query" => $query
 				));
-				*/
 				return false;
 			}
 		}
