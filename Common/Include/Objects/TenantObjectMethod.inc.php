@@ -255,7 +255,12 @@
 			return $retval;
 		}
 		
-		public function Execute($parameters)
+		/**
+		 * Executes this TenantObjectInstanceMethod on the specified instance.
+		 * @param TenantObjectInstance $instance The TenantObjectInstance on which to execute this TenantObjectInstanceMethod, referenced by $thisInstance.
+		 * @param TenantObjectMethodParameterValue[] $parameters
+		 */
+		public function Execute($instance, $parameters)
 		{
 			if ($parameters == null) $parameters = array();
 			
@@ -266,8 +271,10 @@
 				$func .= "use " . $ns->Value . ";\n";
 			}
 			
-			$func .= "\$x = function(";
+			$func .= "\$x = function(\$thisObject, \$thisInstance";
 			$count = count($parameters);
+			if ($count > 0) $func .= ", ";
+			
 			for ($i = 0; $i < $count; $i++)
 			{
 				$parameter = $parameters[$i];
@@ -278,8 +285,13 @@
 				}
 			}
 			$func .= "){";
+			
 			$func .= $this->CodeBlob;
 			$func .= "}; return \$x(";
+			$func .= "Objectify\\Objects\\TenantObject::GetByID(" . $this->ParentObject->ID . "), ";
+			$func .= "Objectify\\Objects\\TenantObjectInstance::GetByID(" . $instance->ID . ")";
+			if ($count > 0) $func .= ", ";
+			
 			for ($i = 0; $i < $count; $i++)
 			{
 				$parameter = $parameters[$i];
