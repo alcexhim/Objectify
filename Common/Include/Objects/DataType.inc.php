@@ -134,9 +134,6 @@ class DataType
 	public function Encode($value)
 	{
 		if ($this->EncoderCodeBlob == null) return $value;
-		trigger_error($this->EncoderCodeBlob);
-		die();
-		
 		$q = '';
 		$q .= 'use Objectify\Objects\MultipleInstanceProperty; ';
 		$q .= 'use Objectify\Objects\SingleInstanceProperty; ';
