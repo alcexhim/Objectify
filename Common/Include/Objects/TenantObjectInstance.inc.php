@@ -38,7 +38,7 @@
 		
 		public function GetPropertyValue($property, $defaultValue = null)
 		{
-			global $MySQL;
+			$pdo = DataSystem::GetPDO();
 			
 			if (is_string($property))
 			{
@@ -46,15 +46,20 @@
 			}
 			if ($property == null) return $defaultValue;
 			
-			$query = "SELECT propval_Value FROM " . System::$Configuration["Database.TablePrefix"] . "TenantObjectInstancePropertyValues WHERE propval_InstanceID = " . $this->ID . " AND propval_PropertyID = " . $property->ID;
+			$query = "SELECT propval_Value FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstancePropertyValues WHERE propval_InstanceID = :propval_InstanceID AND propval_PropertyID = :propval_PropertyID";
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				":propval_InstanceID" => $this->ID,
+				":propval_PropertyID" => $property->ID
+			));
 			
-			$result = $MySQL->query($query);
 			if ($result === false) return $defaultValue;
 			
-			$count = $result->num_rows;
+			$count = $statement->rowCount();
 			if ($count == 0) return $defaultValue;
 			
-			$values = $result->fetch_array();
+			$values = $statement->fetch(PDO::FETCH_ASSOC);
 			return $property->Decode($values[0]);
 		}
 		public function SetPropertyValue($property, $value)
@@ -86,19 +91,27 @@
 		}
 		public function HasPropertyValue($property)
 		{
-			global $MySQL;
+			$pdo = DataSystem::GetPDO();
 			
+			if (is_string($property))
+			{
+				$property = $this->ParentObject->GetInstanceProperty($property);
+			}
 			if ($property == null) return false;
 			
-			$query = "SELECT COUNT(propval_Value) FROM " . System::$Configuration["Database.TablePrefix"] . "TenantObjectInstancePropertyValues WHERE propval_InstanceID = " . $this->ID . " AND propval_PropertyID = " . $property->ID;
-			
-			$result = $MySQL->query($query);
+			$query = "SELECT COUNT(propval_Value) FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstancePropertyValues WHERE propval_InstanceID = :propval_InstanceID AND propval_PropertyID = :propval_PropertyID";
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				":propval_InstanceID" => $this->ID,
+				":propval_PropertyID" => $property->ID
+			));
 			if ($result === false) return false;
 			
-			$count = $result->num_rows;
+			$count = $statement->rowCount();
 			if ($count == 0) return false;
 			
-			$values = $result->fetch_array();
+			$values = $statement->fetch(PDO::FETCH_NUM);
 			return ($values[0] > 0);
 		}
 		
