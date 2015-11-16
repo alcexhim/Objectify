@@ -524,18 +524,31 @@
 			return null;
 		}
 		
-		public function GetInstances($max = null)
+		public function GetInstances()
 		{
-			global $MySQL;
-			$query = "SELECT * FROM " . System::$Configuration["Database.TablePrefix"] . "TenantObjectInstances WHERE instance_ObjectID = " . $this->ID;
-			$result = $MySQL->query($query);
+			$pdo = DataSystem::GetPDO();
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances WHERE instance_ObjectID = :instance_ObjectID";
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				":instance_ObjectID" => $this->ID
+			));
 			$retval = array();
 			
-			if ($result === false) return $retval;
-			$count = $result->num_rows;
+			if ($result === false)
+			{
+				$ei = $pdo->errorInfo();
+				Objectify::Log("Database error when trying to obtain an instance of an object on the tenant.", array
+				(
+					"DatabaseError" => $ei[2] . " (" . $ei[1] . ")",
+					"Query" => $query
+				));
+				return $retval;
+			}
+			$count = $statement->rowCount();
 			for ($i = 0; $i < $count; $i++)
 			{
-				$values = $result->fetch_assoc();
+				$values = $statement->fetch(PDO::FETCH_ASSOC);
 				$retval[] = TenantObjectInstance::GetByAssoc($values);
 			}
 			return $retval;
