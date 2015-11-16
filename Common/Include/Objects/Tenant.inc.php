@@ -50,13 +50,12 @@
 			return (!(($dateBegin == null || $dateBegin <= $date) && ($dateEnd == null || $dateEnd >= $date)));
 		}
 		
-		public static function Create($url, $description = null, $status = TenantStatus::Enabled, $type = null, $beginTimestamp = null, $endTimestamp = null)
+		public static function Create($url, $description = null, $status = TenantStatus::Enabled, $beginTimestamp = null, $endTimestamp = null)
 		{
 			$item = new Tenant();
 			$item->URL = $url;
 			$item->Description = $description;
 			$item->Status = $status;
-			$item->Type = $type;
 			$item->BeginTimestamp = $beginTimestamp;
 			$item->EndTimestamp = $endTimestamp;
 			
@@ -86,7 +85,6 @@
 					break;
 				}
 			}
-			$item->Type = TenantType::GetByID($values["tenant_TypeID"]);
 			$item->BeginTimestamp = $values["tenant_BeginTimestamp"];
 			$item->EndTimestamp = $values["tenant_EndTimestamp"];
 			return $item;
@@ -198,7 +196,6 @@
 				":tenant_URL" => $this->URL,
 				":tenant_Description" => $this->Description,
 				":tenant_Status" => ($this->Status == TenantStatus::Enabled ? "1" : "0"),
-				":tenant_TypeID" => ($this->Type != null ? $this->Type->ID : "NULL"),
 				":tenant_BeginTimestamp" => ($this->BeginTimestamp != null ? ($this->BeginTimestamp) : "NULL"),
 				":tenant_EndTimestamp" => ($this->EndTimestamp != null ? ($this->EndTimestamp) : "NULL")
 			);
@@ -459,7 +456,6 @@
 			echo("\"URL\":\"" . $this->URL . "\",");
 			echo("\"Description\":\"" . $this->Description . "\",");
 			echo("\"Status\":\"" . $this->Status . "\",");
-			echo("\"Type\":" . $this->Type->ToJSON() . ",");
 			echo("\"BeginTimestamp\":\"" . $this->BeginTimestamp . "\",");
 			echo("\"EndTimestamp\":\"" . $this->EndTimestamp . "\",");
 			echo("}");
