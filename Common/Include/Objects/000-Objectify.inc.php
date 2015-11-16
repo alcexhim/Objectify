@@ -51,12 +51,14 @@
 			
 			foreach ($params as $key => $value)
 			{
-				$query = "INSERT INTO " . System::$Configuration["Database.TablePrefix"] . "DebugMessageParameters (mp_MessageID, mp_Name, mp_Value) VALUES (";
-				$query .= $msgid . ", ";
-				$query .= "'" . $MySQL->real_escape_string($key) . "', ";
-				$query .= "'" . $MySQL->real_escape_string($value) . "'";
-				$query .= ")";
-				$MySQL->query($query);
+				$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "DebugMessageParameters (mp_MessageID, mp_Name, mp_Value) VALUES (:mp_MessageID, :mp_Name, :mp_Value)";
+				$statement = $pdo->prepare($query);
+				$result = $statement->execute(array
+				(
+					":mp_MessageID" => $msgid,
+					":mp_Name" => $key,
+					":mp_Value" => $value
+				));
 			}
 		}
 	}
