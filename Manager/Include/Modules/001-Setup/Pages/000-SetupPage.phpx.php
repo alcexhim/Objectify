@@ -11,6 +11,7 @@
 	use Objectify\Objects\DataType;
 	use Objectify\Objects\TenantObject;
 	use Objectify\Objects\TenantObjectInstancePropertyValue;
+	use Objectify\Objects\TenantObjectMethodParameter;
 	
 	class SetupPage extends PhastPage
 	{
@@ -125,47 +126,17 @@
 					// this can be set by User property IsGlobal - USE SPARINGLY!!!
 					
 					// Create the tenanted objects required before anything else takes place
-					$objUser = TenantObject::Create("User");
-					$objUser->CreateInstanceProperty("UserName", DataType::GetByName("Text"));
-					$objUser->CreateInstanceProperty("PasswordHash", DataType::GetByName("Text"));
-					$objUser->CreateInstanceProperty("PasswordSalt", DataType::GetByName("Text"));
-					$objUser->CreateInstanceProperty("IsGlobal", DataType::GetByName("Boolean"));
-
+					$tenantObjectFileNames = glob(dirname(__FILE__) . "/../TenantObjects/*.inc.php");
+					foreach ($tenantObjectFileNames as $tenantObjectFileName)
+					{
+						require($tenantObjectFileName);
+					}
+					
 					$objSecurityPrivilege = TenantObject::Create("SecurityPrivilege");
 					$objSecurityGroup = TenantObject::Create("SecurityGroup");
 					$objTenant = TenantObject::Create("Tenant");
 					
 					// $this->CreateDefaultSecurityPrivilegesAndGroups();
-					
-					$instUser = $objUser->CreateInstance(array
-					(
-						new TenantObjectInstancePropertyValue
-						(
-							$objUser->GetInstanceProperty("UserName"),
-							$Administrator_UserName
-						),
-						new TenantObjectInstancePropertyValue
-						(
-							$objUser->GetInstanceProperty("PasswordHash"),
-							$Administrator_PasswordHash
-						),
-						new TenantObjectInstancePropertyValue
-						(
-							$objUser->GetInstanceProperty("PasswordSalt"),
-							$Administrator_PasswordSalt
-						),
-						new TenantObjectInstancePropertyValue
-						(
-							$objUser->GetInstanceProperty("IsGlobal"),
-							true
-						)
-					));
-					
-					// $instUser->SetPropertyValue($objUser->GetInstanceProperty("SecurityGroups"), array
-					// (
-					//		$instTenantManager
-					//		... multiple instances go here
-					// ));
 					
 					$statement = $pdo->prepare("INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "Users (user_LoginID, user_PasswordHash, user_PasswordSalt) VALUES (:user_LoginID, :user_PasswordHash, :user_PasswordSalt)");
 					$result = $statement->execute(array
