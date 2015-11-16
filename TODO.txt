@@ -29,17 +29,22 @@ object Object
 			property 'Values' type SingleInstance:TranslatableValue
 		}
 	}
-	object Task
+	object TaskContainer
 	{
 		property Tasks type MultipleInstance:Task				// child tasks
-		
 	}
-	object Tenant
+	object Task extends TaskContainer
 	{
-		property Tasks type MultipleInstance:Task
+	}
+	object Tenant extends TaskContainer
+	{
 		instance
 		{
 		}
+	}
+	object TenantType
+	{
+		property Title type SingleInstance:TranslatableValue
 	}
 	object TranslatableValue
 	{
