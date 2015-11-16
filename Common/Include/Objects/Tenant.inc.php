@@ -174,18 +174,16 @@
 				$query .= "tenant_URL = :tenant_URL, ";
 				$query .= "tenant_Description = :tenant_Description, ";
 				$query .= "tenant_Status = :tenant_Status, ";
-				$query .= "tenant_TypeID = :tenant_TypeID, ";
 				$query .= "tenant_BeginTimestamp = :tenant_BeginTimestamp, ";
 				$query .= "tenant_EndTimestamp = :tenant_EndTimestamp";
 				$query .= " WHERE tenant_ID = :tenant_ID";
 			}
 			else
 			{
-				$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "Tenants (tenant_URL, tenant_Description, tenant_Status, tenant_TypeID, tenant_BeginTimestamp, tenant_EndTimestamp) VALUES (";
+				$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "Tenants (tenant_URL, tenant_Description, tenant_Status, tenant_BeginTimestamp, tenant_EndTimestamp) VALUES (";
 				$query .= ":tenant_URL, ";
 				$query .= ":tenant_Description, ";
 				$query .= ":tenant_Status, ";
-				$query .= ":tenant_TypeID, ";
 				$query .= ":tenant_BeginTimestamp, ";
 				$query .= ":tenant_EndTimestamp";
 				$query .= ")";

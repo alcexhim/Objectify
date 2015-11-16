@@ -107,7 +107,7 @@
 					$lvi = new ListViewItem(array
 					(
 						new ListViewItemColumn("lvcObject", $object->Name, "<a href=\"" . System::ExpandRelativePath("~/tenant/manage/" . $tenant->URL . "/objects/" . $object->ID) . "\">" . $object->Name . "</a>"),
-						new ListViewItemColumn("lvcDescription", $object->GetDescription()),
+						// new ListViewItemColumn("lvcDescription", $object->GetDescription()),
 						new ListViewItemColumn("lvcInstances", $object->CountInstances(), "<a href=\"" . System::ExpandRelativePath("~/tenant/manage/" . $tenant->URL . "/objects/" . $object->ID . "/instances") . "\">" . $object->CountInstances() . "</a>")
 					));
 					$lv->Items[] = $lvi;
@@ -120,7 +120,7 @@
 					$lvi = new ListViewItem(array
 					(
 						new ListViewItemColumn("lvcObject", $object->Name, "<a href=\"" . System::ExpandRelativePath("~/tenant/manage/" . $tenant->URL . "/objects/" . $object->ID) . "\">" . $object->Name . "</a>"),
-						new ListViewItemColumn("lvcDescription", $object->GetDescription()),
+						// new ListViewItemColumn("lvcDescription", $object->GetDescription()),
 						new ListViewItemColumn("lvcInstances", $object->CountInstances(), "<a href=\"" . System::ExpandRelativePath("~/tenant/manage/" . $tenant->URL . "/objects/" . $object->ID . "/instances") . "\">" . $object->CountInstances() . "</a>")
 					));
 				}
