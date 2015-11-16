@@ -135,6 +135,7 @@ class DataType
 	{
 		if ($this->EncoderCodeBlob == null) return $value;
 		$q = '';
+		$q .= 'use Objectify\Objects\Objectify; ';
 		$q .= 'use Objectify\Objects\MultipleInstanceProperty; ';
 		$q .= 'use Objectify\Objects\SingleInstanceProperty; ';
 		$q .= 'use Objectify\Objects\TenantObject; ';
@@ -148,6 +149,7 @@ class DataType
 	{
 		if ($this->DecoderCodeBlob == null) return $value;
 		$q = '';
+		$q .= 'use Objectify\Objects\Objectify; ';
 		$q .= 'use Objectify\Objects\MultipleInstanceProperty; ';
 		$q .= 'use Objectify\Objects\SingleInstanceProperty; ';
 		$q .= 'use Objectify\Objects\TenantObject; ';
