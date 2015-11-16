@@ -1,6 +1,6 @@
 <?php
 	namespace Objectify\Objects;
-	use WebFX\System;
+	use Phast\System;
 	use Phast\Data\DataSystem;
 		
 	\Enum::Create("Objectify\\Objects\\LogMessageSeverity", "Notice", "Warning", "Error");

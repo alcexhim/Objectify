@@ -205,7 +205,7 @@ EOD
 // object types is stored in the first part of the property, separated by a colon.
 if ($input == null)
 {
-	PhoenixSNS::Log("MultipleInstance::Encoder input is null - did you mean to pass in a blank MultipleInstanceProperty?");
+	Objectify::Log("MultipleInstance::Encoder input is null - did you mean to pass in a blank MultipleInstanceProperty?");
 	return "";
 }
 
@@ -262,7 +262,7 @@ EOD
 ),
 			new RecordColumn("ColumnRendererCodeBlob", <<<'EOD'
 if ($input == null) return;
-if (!is_object($input) || (get_class($input) != "PhoenixSNS\\Objects\\MultipleInstanceProperty"))
+if (!is_object($input) || (get_class($input) != "Objectify\\Objects\\MultipleInstanceProperty"))
 {
 	$bt = debug_backtrace();
 	trigger_error("Expected MultipleInstanceProperty, got something else in " . $bt[1]["file"] . "::" . $bt[1]["function"] . " at line " . $bt[1]["line"], E_USER_WARNING);
@@ -286,7 +286,7 @@ EOD
 ),
 			new RecordColumn("EditorRendererCodeBlob",  <<<'EOD'
 if ($input == null) return;
-if (!is_object($input) || (get_class($input) != "PhoenixSNS\\Objects\\MultipleInstanceProperty"))
+if (!is_object($input) || (get_class($input) != "Objectify\\Objects\\MultipleInstanceProperty"))
 {
 	$bt = debug_backtrace();
 	trigger_error("Expected MultipleInstanceProperty, got something else in " . $bt[1]["file"] . "::" . $bt[1]["function"] . " at line " . $bt[1]["line"], E_USER_WARNING);
