@@ -14,8 +14,21 @@
 				<StyleSheet FileName="$(Configuration:System.StaticPath)/StyleSheets/$(Configuration:Application.ThemeName|Slate)/Main.css" />
 			</StyleSheets>
 			<Content>
-				<wfx:SectionPlaceholder ID="Content" />
-				
+				<html:Navigation CssClass="Top">
+					
+				</html:Navigation>
+				<wfx:Sidebar>
+					<wfx:Menu>
+						<Items>
+							<wfx:MenuItemCommand TargetURL="~/dashboard" Title="Dashboard" IconName="dashboard" />
+							<wfx:MenuItemSeparator />
+							<wfx:MenuItemCommand TargetURL="~/objects" Title="Objects" IconName="cubes" />
+						</Items>
+					</wfx:Menu>
+				</wfx:Sidebar>
+				<div class="Content">
+					<wfx:SectionPlaceholder ID="Content" />
+				</div>
 				<footer>
 					Powered by Objectify<br />
 					Copyright &copy; 2015 Mike Becker's Software<br />
