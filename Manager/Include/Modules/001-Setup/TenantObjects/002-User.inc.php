@@ -12,6 +12,7 @@
 	use Objectify\Objects\TenantObjectInstancePropertyValue;
 	use Objectify\Objects\TenantObjectMethodParameter;
 	use Objectify\Objects\MultipleInstanceProperty;
+use Objectify\Objects\Objectify\Objects;
 	
 	$objUserLogin = TenantObject::Create("UserLogin");
 	$objUserLogin->CreateInstanceProperty("Token", DataType::GetByName("Text"));
@@ -83,9 +84,14 @@ EOF
 		)
 	));
 	
-	$instUser->SetPropertyValue($objUser->GetInstanceProperty("SecurityGroups"), array
+	$instUser->SetPropertyValue($objUser->GetInstanceProperty("SecurityGroups"), new MultipleInstanceProperty(
+	array
 	(
-		$instTenantManager
-	));
+		$instSecurityGroup_SystemAdministrator
+	),
+	array
+	(
+		$objSecurityGroups
+	)));
 	
 ?>
