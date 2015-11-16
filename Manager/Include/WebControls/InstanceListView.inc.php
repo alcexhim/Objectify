@@ -7,6 +7,7 @@
 	use Phast\WebControls\ListViewItemColumn;
 	
 	use Objectify\Objects\TenantObject;
+	use Phast\System;
 	
 	class InstanceListView extends ListView
 	{
@@ -21,13 +22,11 @@
 		 */
 		public $Object;
 		
-		public function __construct()
+		protected function RenderContent()
 		{
-			parent::__construct();
-			
 			if ($this->ObjectID != null)
 			{
-				$this->Object = TenantObject::GetByID($this->ObjectID);
+				$this->Object = TenantObject::GetByID(System::ExpandRelativePath($this->ObjectID));
 			}
 			if ($this->Object == null) return;
 			
@@ -44,6 +43,8 @@
 					new ListViewItemColumn("lvcID", $inst->ID)
 				));
 			}
+			
+			parent::RenderContent();
 		}
 	}
 ?>

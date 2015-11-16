@@ -1,0 +1,33 @@
+<Website>
+	<Pages>
+		<Page FileName="objects/modify/$(objectID)" CodeBehindClassName="Objectify\Tenant\Pages\ObjectModifyPage" MasterPageFileName="Default">
+			<Content>
+				<wfx:Section PlaceholderID="Content">
+					<h1>Modify Object</h1>
+					<wfx:TabContainer ID="tbsTabs" SelectedTabID="tabGeneralInformation">
+						<TabPages>
+							<wfx:TabPage ID="tabGeneralInformation" Title="General information">
+								<wfx:FormView ID="fvGeneralInformation">
+									<Items>
+										<wfx:FormViewItemText ID="txtObjectName" Title="Object name" />
+									</Items>
+								</wfx:FormView>
+							</wfx:TabPage>
+							<wfx:TabPage ID="tabInstances" Title="Instances">
+								<ofx:InstanceListView ObjectID="$(Path:objectID)" Width="100%"></ofx:InstanceListView>
+							</wfx:TabPage>
+						</TabPages>
+					</wfx:TabContainer>
+				</wfx:Section>
+			</Content>
+		</Page>
+		<Page FileName="objects" MasterPageFileName="Default">
+			<Content>
+				<wfx:Section PlaceholderID="Content">
+					<ofx:ObjectListView Width="100%">
+					</ofx:ObjectListView>
+				</wfx:Section>
+			</Content>
+		</Page>
+	</Pages>
+</Website>
