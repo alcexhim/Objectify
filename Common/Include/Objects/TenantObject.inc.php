@@ -105,24 +105,26 @@
 		/**
 		 * Creates a TenantObject.
 		 * @param string $name
+		 * @param TenantObject $parentObject
 		 * @return TenantObject
 		 */
-		public static function Create($name)
+		public static function Create($name, $parentObject = null)
 		{
 			$pdo = DataSystem::GetPDO();
 			
 			$retval = array();
 			
 			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjects (";
-			$query .= "object_Name";
+			$query .= "object_Name, object_ParentObjectID";
 			$query .= ") VALUES (";
-			$query .= ":object_Name";
+			$query .= ":object_Name, :object_ParentObjectID";
 			$query .= ")";
 			
 			$statement = $pdo->prepare($query);
 			$result = $statement->execute(array
 			(
-				":object_Name" => $name
+				":object_Name" => $name,
+				":object_ParentObjectID" => ($parentObject == null ? null : $parentObject->ID)
 			));
 			
 			if ($result === false) return null;
