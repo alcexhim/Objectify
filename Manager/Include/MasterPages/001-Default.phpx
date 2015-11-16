@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Website>
 	<MasterPages>
-		<MasterPage FileName="Default">
+		<MasterPage FileName="Default" CodeBehindClassName="Objectify\Tenant\MasterPages\DefaultPage">
 			<References>
 				<Reference TagPrefix="wfx" NamespacePath="Phast\WebControls" />
 				<Reference TagPrefix="html" NamespacePath="Phast\HTMLControls" />

@@ -10,6 +10,9 @@
 	{
 		public function OnInitializing($e)
 		{
+			$e->RenderingPage->ClassList[] = "EnableHeader";
+			$e->RenderingPage->ClassList[] = "EnableSidebar";
+			
 			if (User::GetCurrent() == null)
 			{
 				if ($e->RenderingPage->GetServerVariableValue("RequireLogin") !== "false")
