@@ -12,10 +12,18 @@
 		 */
 		public $MultiSelect;
 		
+		/**
+		 * Determines if a selection from the list is required.
+		 * @var boolean
+		 */
+		public $RequireSelection;
+		
 		protected function CreateControlInternal()
 		{
 			$elem = new ObjectBrowser();
+			$elem->ClearOnFocus = true;
 			$elem->MultiSelect = $this->MultiSelect;
+			$elem->RequireSelection = $this->RequireSelection;
 			
 			$elem->ID = $this->ID;
 			$elem->Name = $this->Name;

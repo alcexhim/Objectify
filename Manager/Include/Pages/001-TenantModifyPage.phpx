@@ -19,7 +19,7 @@
 									</wfx:FormViewItemChoice>
 									
 									<!-- for SingleInstance and MultipleInstance property types -->
-									<ofx:FormViewItemObject ID="objAllowedObjects" Title="Allowed objects" />
+									<ofx:FormViewItemObject ID="objAllowedObjects" Title="Allowed objects" MultiSelect="true" RequireSelection="true" />
 									<ofx:FormViewItemInstance ID="instSelectedInstances" Title="Value" />
 									
 									<wfx:FormViewItemText ID="txtPropertyValue" Title="Value" />
