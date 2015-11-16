@@ -25,36 +25,6 @@
 	);
 	$tables[] = $tblTenantObjects;
 	
-	$tblTenantObjectTitles = new Table("TenantObjectTitles", "entry_", array
-	(
-		// 			$name, $dataType, $size, $value, $allowNull, $primaryKey, $autoIncrement
-		new Column("ID", "INT", null, null, false, true, true),
-		new Column("ObjectID", "INT", null, null, false),
-		new Column("LanguageID", "INT", null, null, false),
-		new Column("Value", "LONGTEXT", null, null, false)
-	));
-	$tblTenantObjectTitles->ForeignKeys = array
-	(
-		new TableForeignKey("ObjectID", new TableForeignKeyColumn($tblTenantObjects, $tblTenantObjects->GetColumnByName("ID"))),
-		new TableForeignKey("LanguageID", new TableForeignKeyColumn($tblLanguages, $tblLanguages->GetColumnByName("ID")))
-	);
-	$tables[] = $tblTenantObjectTitles;
-	
-	$tblTenantObjectDescriptions = new Table("TenantObjectDescriptions", "entry_", array
-	(
-		// 			$name, $dataType, $size, $value, $allowNull, $primaryKey, $autoIncrement
-		new Column("ID", "INT", null, null, false, true, true),
-		new Column("ObjectID", "INT", null, null, false),
-		new Column("LanguageID", "INT", null, null, false),
-		new Column("Value", "LONGTEXT", null, null, false)
-	));
-	$tblTenantObjectDescriptions->ForeignKeys = array
-	(
-		new TableForeignKey("ObjectID", new TableForeignKeyColumn($tblTenantObjects, $tblTenantObjects->GetColumnByName("ID"))),
-		new TableForeignKey("LanguageID", new TableForeignKeyColumn($tblLanguages, $tblLanguages->GetColumnByName("ID")))
-	);
-	$tables[] = $tblTenantObjectDescriptions;
-	
 	// Available static properties for the objects.
 	$tblTenantObjectProperties = new Table("TenantObjectProperties", "property_", array
 	(

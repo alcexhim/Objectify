@@ -17,7 +17,7 @@
 			
 			foreach ($objects as $obj)
 			{
-				$this->Items[] = new TextBoxItem($obj->GetTitle(), $obj->ID);
+				$this->Items[] = new TextBoxItem($obj->Name, $obj->ID);
 			}
 		}
 	}
