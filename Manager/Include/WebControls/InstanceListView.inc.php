@@ -11,6 +11,8 @@
 	
 	class InstanceListView extends ListView
 	{
+		public $AutoGenerateColumns;
+		
 		/**
 		 * The ID of the TenantObject for which to view instances.
 		 * @var int
@@ -21,6 +23,12 @@
 		 * @var TenantObject
 		 */
 		public $Object;
+		
+		public function __construct()
+		{
+			parent::__construct();
+			$this->AutoGenerateColumns = true;
+		}
 		
 		protected function RenderContent()
 		{
@@ -35,13 +43,29 @@
 				new ListViewColumn("lvcID", "ID")
 			);
 			
+			$props = $this->Object->GetInstanceProperties();
+			
+			if ($this->AutoGenerateColumns)
+			{
+				foreach ($props as $prop)
+				{
+					$this->Columns[] = new ListViewColumn("lvcProperty" . $prop->ID, $prop->Name);
+				}
+			}
+			
 			$insts = $this->Object->GetInstances();
 			foreach ($insts as $inst)
 			{
-				$this->Items[] = new ListViewItem(array
+				$lvi = new ListViewItem(array
 				(
 					new ListViewItemColumn("lvcID", $inst->ID)
 				));
+				
+				foreach ($props as $prop)
+				{
+					$lvi->Columns[] = new ListViewItemColumn("lvcProperty" . $prop->ID, $inst->GetPropertyValue($prop));
+				} 
+				$this->Items[] = $lvi; 
 			}
 			
 			parent::RenderContent();
