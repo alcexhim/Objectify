@@ -435,18 +435,21 @@
 		}
 		public function GetInstanceProperties($max = null)
 		{
-			global $MySQL;
-			$query = "SELECT * FROM " . System::$Configuration["Database.TablePrefix"] . "TenantObjectInstanceProperties WHERE property_ObjectID = " . $this->ID;
+			$pdo = DataSystem::GetPDO();
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstanceProperties WHERE property_ObjectID = :property_ObjectID";
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				":property_ObjectID" => $this->ID
+			));
 			
-			$result = $MySQL->query($query);
 			$retval = array();
-			
 			if ($result === false) return $retval;
 			
-			$count = $result->num_rows;
+			$count = $statement->rowCount();
 			for ($i = 0; $i < $count; $i++)
 			{
-				$values = $result->fetch_assoc();
+				$values = $statement->fetch(PDO::FETCH_ASSOC);
 				$retval[] = TenantObjectInstanceProperty::GetByAssoc($values);
 			}
 			return $retval;
@@ -454,31 +457,40 @@
 		
 		public function GetMethod($name)
 		{
-			global $MySQL;
-			$query = "SELECT * FROM " . System::$Configuration["Database.TablePrefix"] . "TenantObjectMethods WHERE method_ObjectID = " . $this->ID . " AND method_Name = '" . $MySQL->real_escape_string($name) . "'";
-			$result = $MySQL->query($query);
+			$pdo = DataSystem::GetPDO();
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectMethods WHERE method_ObjectID = :method_ObjectID AND method_Name = :method_Name";
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				":method_ObjectID" => $this->ID,
+				":method_Name" => $name
+			));
 			
 			if ($result === false) return null;
-			$count = $result->num_rows;
+			$count = $statement->rowCount();
 			if ($count == 0) return null;
 			
-			$values = $result->fetch_assoc();
+			$values = $statement->fetch(PDO::FETCH_ASSOC);
 			return TenantObjectMethod::GetByAssoc($values);
 		}
 		public function GetMethods($max = null)
 		{
-			global $MySQL;
-			$query = "SELECT * FROM " . System::$Configuration["Database.TablePrefix"] . "TenantObjectMethods WHERE method_ObjectID = " . $this->ID;
+			$pdo = DataSystem::GetPDO();
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectMethods WHERE method_ObjectID = :method_ObjectID";
 			if (is_numeric($max)) $query .= " LIMIT " . $max;
-			$result = $MySQL->query($query);
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				":method_ObjectID" => $this->ID
+			));
 			
 			$retval = array();
 			if ($result === false) return $retval;
 			
-			$count = $result->num_rows;
+			$count = $statement->rowCount();
 			for ($i = 0; $i < $count; $i++)
 			{
-				$values = $result->fetch_assoc();
+				$values = $statement->fetch(PDO::FETCH_ASSOC);
 				$retval[] = TenantObjectMethod::GetByAssoc($values);
 			}
 			return $retval;
@@ -486,31 +498,40 @@
 		
 		public function GetInstanceMethod($name)
 		{
-			global $MySQL;
-			$query = "SELECT * FROM " . System::$Configuration["Database.TablePrefix"] . "TenantObjectInstanceMethods WHERE method_ObjectID = " . $this->ID . " AND method_Name = '" . $MySQL->real_escape_string($name) . "'";
-			$result = $MySQL->query($query);
+			$pdo = DataSystem::GetPDO();
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstanceMethods WHERE method_ObjectID = :method_ObjectID AND method_Name = :method_Name";
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				":method_ObjectID" => $this->ID,
+				":method_Name" => $name
+			));
 			if ($result === false) return null;
-			$count = $result->num_rows;
+			$count = $statement->rowCount();
 			if ($count == 0) return null;
 			
-			$values = $result->fetch_assoc();
+			$values = $statement->fetch(PDO::FETCH_ASSOC);
 			
 			return TenantObjectInstanceMethod::GetByAssoc($values);
 		}
 		public function GetInstanceMethods($max = null)
 		{
-			global $MySQL;
-			$query = "SELECT * FROM " . System::$Configuration["Database.TablePrefix"] . "TenantObjectInstanceMethods WHERE method_ObjectID = " . $this->ID;
+			$pdo = DataSystem::GetPDO();
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstanceMethods WHERE method_ObjectID = :method_ObjectID";
 			if (is_numeric($max)) $query .= " LIMIT " . $max;
-			$result = $MySQL->query($query);
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				":method_ObjectID" => $this->ID
+			));
 			
 			$retval = array();
 			if ($result === false) return $retval;
 			
-			$count = $result->num_rows;
+			$count = $statement->rowCount();
 			for ($i = 0; $i < $count; $i++)
 			{
-				$values = $result->fetch_assoc();
+				$values = $statement->fetch(PDO::FETCH_ASSOC);
 				$retval[] = TenantObjectInstanceMethod::GetByAssoc($values);
 			}
 			return $retval;

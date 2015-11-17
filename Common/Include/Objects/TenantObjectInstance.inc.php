@@ -27,12 +27,17 @@
 		{
 			if (!is_numeric($id)) return null;
 			
-			global $MySQL;
-			$query = "SELECT * FROM " . System::$Configuration["Database.TablePrefix"] . "TenantObjectInstances WHERE instance_ID = " . $id;
-			$result = $MySQL->query($query);
+			$pdo = DataSystem::GetPDO();
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances WHERE instance_ID = :instance_ID";
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				":instance_ID" => $id
+			));
 			if ($result === false) return null;
+			if ($statement->rowCount() == 0) return null;
 			
-			$values = $result->fetch_assoc();
+			$values = $statement->fetch(PDO::FETCH_ASSOC);
 			return TenantObjectInstance::GetByAssoc($values);
 		}
 		
@@ -60,7 +65,7 @@
 			if ($count == 0) return $defaultValue;
 			
 			$values = $statement->fetch(PDO::FETCH_ASSOC);
-			return $property->Decode($values[0]);
+			return $property->Decode($values["propval_Value"]);
 		}
 		public function SetPropertyValue($property, $value)
 		{
