@@ -10,7 +10,6 @@
 	{
 		public $ID;
 		public $Tenant;
-		public $Module;
 		public $ParentObject;
 		public $Name;
 		public $Description;
@@ -20,7 +19,6 @@
 			$item = new TenantObject();
 			$item->ID = $values["object_ID"];
 			$item->Tenant = Tenant::GetByID($values["object_TenantID"]);
-			$item->Module = Module::GetByID($values["object_ModuleID"]);
 			$item->ParentObject = TenantObject::GetByID($values["object_ParentObjectID"]);
 			$item->Name = $values["object_Name"];
 			$item->Description = $values["object_Description"];

@@ -84,20 +84,6 @@
 					$lv->Items[] = $lvi;
 				}
 				
-				/*
-				$lv = $page->GetControlByID("lvEnabledModules");
-				$modules = Module::Get(null, $this->Tenant);
-				foreach ($modules as $module)
-				{
-					$lvi = new ListViewItem(array
-					(
-						new ListViewItemColumn("lvcModule", $module->Name, "<a href=\"" . System::ExpandRelativePath("~/tenant/modify/" . $tenant->URL . "/modules/" . $module->ID) . "\">" . $module->Title . "</a>"),
-						new ListViewItemColumn("lvcDescription", $module->Description)
-					));
-					$lvModules->Items[] = $lvi;
-				}
-				*/
-				
 				$tabGlobalObjects = $tbsTabs->GetTabByID("tabGlobalObjects");
 				
 				$lv = $tabGlobalObjects->GetControlByID("lvInheritedObjects");

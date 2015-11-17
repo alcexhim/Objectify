@@ -289,9 +289,8 @@
 				return $this->GetObject($name);
 			}
 			
-			$query = "INSERT INTO " . System::$Configuration["Database.TablePrefix"] . "TenantObjects (object_TenantID, object_ModuleID, object_ParentObjectID, object_Name) VALUES (";
+			$query = "INSERT INTO " . System::$Configuration["Database.TablePrefix"] . "TenantObjects (object_TenantID, object_ParentObjectID, object_Name) VALUES (";
 			$query .= $this->ID . ", ";
-			$query .= "NULL" . ", ";
 			$query .= ($parentObject == null ? "NULL" : $parentObject->ID) . ", ";
 			$query .= "'" . $MySQL->real_escape_string($name) . "', ";
 			$query .= ")";

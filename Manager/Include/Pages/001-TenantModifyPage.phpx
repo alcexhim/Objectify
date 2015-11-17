@@ -54,15 +54,6 @@
 										</Columns>
 									</wfx:ListView>
 								</wfx:TabPage>
-								<wfx:TabPage ID="tabEnabledModules" Title="Enabled Modules">
-									<html:Paragraph>Click on a module name to configure the module on this tenant.</html:Paragraph>
-									<wfx:ListView ID="lvEnabledModules" Width="100%" EnableRowCheckBoxes="true">
-										<Columns>
-											<wfx:ListViewColumn ID="lvcModule" Title="Module" Width="128px" />
-											<wfx:ListViewColumn ID="lvcDescription" Title="Description" />
-										</Columns>
-									</wfx:ListView>
-								</wfx:TabPage>
 								<wfx:TabPage ID="tabGlobalObjects" Title="Global Objects">
 									<html:Paragraph>Lists all of the objects that are available on this tenant that are not associated with a particular Module.</html:Paragraph>
 									<wfx:Panel Title="Inherited Objects" Collapsible="true" Expanded="false">
