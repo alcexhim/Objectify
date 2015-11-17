@@ -15,8 +15,8 @@
 	use Objectify\Objects\MultipleInstanceProperty;
 use Objectify\Objects\Objectify\Objects;
 
-	$objLanguageString = TenantObject::Create("LanguageString");
-	$objLanguage = TenantObject::Create("Language");
+	$objLanguageString = TenantObject::Create("LanguageString", $objObject);
+	$objLanguage = TenantObject::Create("Language", $objObject);
 	
 	$objLanguage->CreateInstanceProperty("LocaleID", DataType::GetByName("Text"));
 	$objLanguage->CreateInstanceProperty("Code", DataType::GetByName("Text"));

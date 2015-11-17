@@ -13,7 +13,7 @@
 	use Objectify\Objects\SingleInstanceProperty;
 	use Objectify\Objects\MultipleInstanceProperty;
 	
-	$objTenantType = TenantObject::Create("TenantType");
+	$objTenantType = TenantObject::Create("TenantType", $objObject);
 	$objTenantType->CreateInstanceProperty("Title", DataType::GetByName("MultipleInstance"), new MultipleInstanceProperty(null, array($objLanguageString)));
 	$objTenantType->CreateInstanceProperty("Description", DataType::GetByName("MultipleInstance"), new MultipleInstanceProperty(null, array($objLanguageString)));
 

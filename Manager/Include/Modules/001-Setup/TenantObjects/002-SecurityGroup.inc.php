@@ -14,7 +14,7 @@
 	use Objectify\Objects\SingleInstanceProperty;
 	use Objectify\Objects\MultipleInstanceProperty;
 	
-	$objSecurityPermission = TenantObject::Create("SecurityPermission");
+	$objSecurityPermission = TenantObject::Create("SecurityPermission", $objObject);
 	$objSecurityPermission->CreateInstanceProperty("Title", DataType::GetByName("MultipleInstance"), new MultipleInstanceProperty(null, array($objLanguageString)));
 	
 	// Create the language string entry for ProvisionTenants - English ("Provision Tenants")
@@ -40,7 +40,7 @@
 		new TenantObjectInstancePropertyValue($objLanguageString->GetInstanceProperty("Value"), "System Administrator")
 	));
 	
-	$objSecurityGroup = TenantObject::Create("SecurityGroup");
+	$objSecurityGroup = TenantObject::Create("SecurityGroup", $objObject);
 	$objSecurityGroup->CreateInstanceProperty("Title", DataType::GetByName("MultipleInstance"), new MultipleInstanceProperty(null, array($objLanguageString)));
 	$objSecurityGroup->CreateInstanceProperty("Permissions", DataType::GetByName("MultipleInstance"), new MultipleInstanceProperty(null, array($objSecurityPermission)));
 	

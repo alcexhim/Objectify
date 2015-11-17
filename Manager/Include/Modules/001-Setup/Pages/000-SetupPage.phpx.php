@@ -132,9 +132,9 @@
 						require($tenantObjectFileName);
 					}
 					
-					$objSecurityPrivilege = TenantObject::Create("SecurityPrivilege");
-					$objSecurityGroup = TenantObject::Create("SecurityGroup");
-					$objTenant = TenantObject::Create("Tenant");
+					$objSecurityPrivilege = TenantObject::Create("SecurityPrivilege", $objObject);
+					$objSecurityGroup = TenantObject::Create("SecurityGroup", $objObject);
+					$objTenant = TenantObject::Create("Tenant", $objObject);
 					
 					// $this->CreateDefaultSecurityPrivilegesAndGroups();
 					

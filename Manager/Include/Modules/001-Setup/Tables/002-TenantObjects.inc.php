@@ -15,15 +15,26 @@
 		// 			$name, $dataType, $size, $value, $allowNull, $primaryKey, $autoIncrement
 		new Column("ID", "INT", null, null, false, true, true),
 		new Column("TenantID", "INT", null, null, true), // if set, object is only visible/referencable within specified tenant
-		new Column("ParentObjectID", "INT", null, null, true), // if set, object inherits its permissions, properties, and other attributes from given object
 		new Column("Name", "VARCHAR", 256, null, false)
 	));
 	$tblTenantObjects->ForeignKeys = array
 	(
-		new TableForeignKey("TenantID", new TableForeignKeyColumn($tblTenants, $tblTenants->GetColumnByName("ID"))),
-		new TableForeignKey("ParentObjectID", new TableForeignKeyColumn($tblTenantObjects, $tblTenantObjects->GetColumnByName("ID")))
+		new TableForeignKey("TenantID", new TableForeignKeyColumn($tblTenants, $tblTenants->GetColumnByName("ID")))
 	);
 	$tables[] = $tblTenantObjects;
+	
+	$tblTenantObjectParentObjects = new Table("TenantObjectParentObjects", "parentobject_", array
+	(
+		// 			$name, $dataType, $size, $value, $allowNull, $primaryKey, $autoIncrement
+		new Column("ObjectID", "INT", null, null, false),
+		new Column("ParentObjectID", "INT", null, null, false)
+	));
+	$tblTenantObjectParentObjects->ForeignKeys = array
+	(
+		new TableForeignKey("ObjectID", new TableForeignKeyColumn($tblTenantObjects, "ID")),
+		new TableForeignKey("ParentObjectID", new TableForeignKeyColumn($tblTenantObjects, "ID"))
+	);
+	$tables[] = $tblTenantObjectParentObjects;
 	
 	// Available static properties for the objects.
 	$tblTenantObjectProperties = new Table("TenantObjectProperties", "property_", array

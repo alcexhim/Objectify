@@ -10,7 +10,6 @@
 	{
 		public $ID;
 		public $Tenant;
-		public $ParentObject;
 		public $Name;
 		public $Description;
 		
@@ -19,7 +18,6 @@
 			$item = new TenantObject();
 			$item->ID = $values["object_ID"];
 			$item->Tenant = Tenant::GetByID($values["object_TenantID"]);
-			$item->ParentObject = TenantObject::GetByID($values["object_ParentObjectID"]);
 			$item->Name = $values["object_Name"];
 			$item->Description = $values["object_Description"];
 			return $item;
@@ -100,33 +98,102 @@
 			return TenantObject::GetByAssoc($values);
 		}
 		
+		public function GetParentObjects()
+		{
+			$pdo = DataSystem::GetPDO();
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectParentObjects WHERE parentobject_ObjectID = :parentobject_ObjectID";
+			$statement = $pdo->prepare($query);
+			
+			$result = $statement->execute(array
+			(
+				":parentobject_ObjectID" => $this->ID
+			));
+			
+			if ($result === false)
+			{
+				$ei = $statement->errorInfo();
+				Objectify::Log("Database error when trying to retrieve a list of parent objects from a child object.", array
+				(
+					"DatabaseError" => $ei[2] . " (" . $ei[1] . ")",
+					"Query" => $query,
+					"Object ID" => $obj->ID
+				));
+				return null;
+			}
+			
+			$count = $statement->rowCount();
+			$retval = array();
+			
+			for ($i = 0; $i < $count; $i++)
+			{
+				$values = $statement->fetch(PDO::FETCH_ASSOC);
+				$retval[] = TenantObject::GetByID($values["parentobject_ParentObjectID"]);
+			}
+			return $retval;
+		}
+		
 		/**
 		 * Creates a TenantObject.
 		 * @param string $name
 		 * @param TenantObject $parentObject
 		 * @return TenantObject
 		 */
-		public static function Create($name, $parentObject = null)
+		public static function Create($name, $parentObjects = null)
 		{
 			$pdo = DataSystem::GetPDO();
+			
+			if ($parentObjects == null) $parentObjects = array();
+			if (is_object($parentObjects))
+			{
+				if (get_class($parentObjects) == "Objectify\\Objects\\TenantObject")
+				{
+					$parentObjects = array($parentObjects);
+				}
+			}
+			if (!is_array($parentObjects)) $parentObjects = array();
 			
 			$retval = array();
 			
 			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjects (";
-			$query .= "object_Name, object_ParentObjectID";
+			$query .= "object_Name";
 			$query .= ") VALUES (";
-			$query .= ":object_Name, :object_ParentObjectID";
+			$query .= ":object_Name";
 			$query .= ")";
 			
 			$statement = $pdo->prepare($query);
 			$result = $statement->execute(array
 			(
-				":object_Name" => $name,
-				":object_ParentObjectID" => ($parentObject == null ? null : $parentObject->ID)
+				":object_Name" => $name
 			));
 			
 			if ($result === false) return null;
-			return TenantObject::GetByName($name);
+			$obj = TenantObject::GetByName($name);
+			if ($obj == null) return null;
+			
+			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectParentObjects (parentobject_ObjectID, parentobject_ParentObjectID) VALUES (:parentobject_ObjectID, :parentobject_ParentObjectID)";
+			$statement = $pdo->prepare($query);
+			foreach ($parentObjects as $obj1)
+			{
+				$result = $statement->execute(array
+				(
+					":parentobject_ObjectID" => $obj->ID,
+					":parentobject_ParentObjectID" => $obj1->ID
+				));
+				
+				if ($result === false)
+				{
+					$ei = $pdo->errorInfo();
+					Objectify::Log("Database error when trying to associate a parent object with a child object.", array
+					(
+						"DatabaseError" => $ei[2] . " (" . $ei[1] . ")",
+						"Query" => $query,
+						"Object ID" => $obj->ID,
+						"Parent Object ID" => $obj1->ID
+					));
+				}
+			}
+			
+			return $obj;
 		}
 		
 		/**
@@ -535,7 +602,7 @@
 			
 			if ($result === false)
 			{
-				$ei = $pdo->errorInfo();
+				$ei = $statement->errorInfo();
 				Objectify::Log("Database error when trying to obtain an instance of an object on the tenant.", array
 				(
 					"DatabaseError" => $ei[2] . " (" . $ei[1] . ")",

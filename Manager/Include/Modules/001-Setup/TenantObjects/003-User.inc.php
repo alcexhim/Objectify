@@ -14,11 +14,11 @@
 	use Objectify\Objects\MultipleInstanceProperty;
 use Objectify\Objects\Objectify\Objects;
 	
-	$objUserLogin = TenantObject::Create("UserLogin");
+	$objUserLogin = TenantObject::Create("UserLogin", $objObject);
 	$objUserLogin->CreateInstanceProperty("Token", DataType::GetByName("Text"));
 	$objUserLogin->CreateInstanceProperty("IPAddress", DataType::GetByName("Text"));
 	
-	$objUser = TenantObject::Create("User");
+	$objUser = TenantObject::Create("User", $objObject);
 	$objUser->CreateInstanceProperty("UserName", DataType::GetByName("Text"));
 	$objUser->CreateInstanceProperty("PasswordHash", DataType::GetByName("Text"));
 	$objUser->CreateInstanceProperty("PasswordSalt", DataType::GetByName("Text"));
