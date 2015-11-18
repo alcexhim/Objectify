@@ -216,24 +216,28 @@
 		
 		public function GetPropertyValue($property, $defaultValue = null)
 		{
-			global $MySQL;
-			
 			if (is_string($property))
 			{
 				$property = $this->GetProperty($property);
 			}
 			if ($property == null) return $defaultValue;
 			
-			$query = "SELECT propval_Value FROM " . System::$Configuration["Database.TablePrefix"] . "TenantObjectPropertyValues WHERE propval_PropertyID = " . $property->ID;
+			if ($defaultValue == null) $defaultValue = $property->DefaultValue;
 			
-			$result = $MySQL->query($query);
+			$pdo = DataSystem::GetPDO();
+			$query = "SELECT propval_Value FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectPropertyValues WHERE propval_PropertyID = :propval_PropertyID";
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				":propval_PropertyID" => $property->ID
+			));
 			if ($result === false) return $defaultValue;
 			
-			$count = $result->num_rows;
+			$count = $statement->rowCount();
 			if ($count == 0) return $defaultValue;
 			
-			$values = $result->fetch_array();
-			return $property->DataType->Decode($values[0]);
+			$values = $statement->fetch(PDO::FETCH_ASSOC);
+			return $property->DataType->Decode($values["propval_Value"]);
 		}
 		public function SetPropertyValue($property, $value)
 		{
@@ -299,6 +303,36 @@
 			}
 		}
 		
+		public function CreateProperty($propertyName, $dataType, $defaultValue = null, $isRequired = false)
+		{
+			$pdo = DataSystem::GetPDO();
+				
+			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectProperties "
+			. "(property_ObjectID, property_Name, property_DataTypeID, property_DefaultValue, property_IsRequired)"
+			. " VALUES "
+			. "(:property_ObjectID, :property_Name, :property_DataTypeID, :property_DefaultValue, :property_IsRequired)";
+				
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				":property_ObjectID" => $this->ID,
+				":property_Name" => $propertyName,
+				":property_DataTypeID" => $dataType->ID,
+				":property_DefaultValue" => $dataType->Encode($defaultValue),
+				":property_IsRequired" => $isRequired
+			));
+		
+			if ($result === false)
+			{
+				$ei = $statement->errorInfo();
+				Objectify::Log("Database error when trying to create a static property for the specified tenant object.", array
+				(
+					"DatabaseError" => $ei[2] . " (" . $ei[1] . ")",
+					"Query" => $query
+				));
+				return false;
+			}
+		}
 		
 		public function CreateMethod($name, $parameters, $codeblob, $description = null, $namespaceReferences = null)
 		{
@@ -378,9 +412,29 @@
 				":property_ObjectID" => $this->ID,
 				":property_Name" => $propertyName
 			));
-			if ($result === false) return null;
+			if ($result === false)
+			{
+				$ei = $pdo->errorInfo();
+				Objectify::Log("Database error when trying to fetch a static property for the specified tenant object.", array
+				(
+					"DatabaseError" => $ei[2] . " (" . $ei[1] . ")",
+					"Query" => $query,
+					"Property Name" => $propertyName,
+					"Object ID" => $this->ID
+				));
+				return null;
+			}
 			$count = $statement->rowCount();
-			if ($count == 0) return null;
+			if ($count == 0)
+			{
+				$inheritedObjs = $this->GetParentObjects();
+				foreach ($inheritedObjs as $obj)
+				{
+					$prop = $obj->GetProperty($propertyName);
+					if ($prop != null) return $prop;
+				}
+				return null;
+			}
 			
 			$values = $statement->fetch(PDO::FETCH_ASSOC);
 			return TenantObjectProperty::GetByAssoc($values);
