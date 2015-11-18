@@ -3,7 +3,14 @@
 	
 	class MultipleInstanceProperty
 	{
+		/**
+		 * @var TenantObjectInstance[]
+		 */
 		private $mvarInstances;
+		/**
+		 * Gets the instances assigned to this MultipleInstanceProperty.
+		 * @return TenantObjectInstance[]
+		 */
 		public function GetInstances()
 		{
 			return $this->mvarInstances;
