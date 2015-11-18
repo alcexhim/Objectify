@@ -34,7 +34,7 @@
 			$adw = new AdditionalDetailWidget();
 			$adw->TargetURL = "~/objects/modify/" . $this->CurrentObject->ID;
 			$adw->Text = $this->CurrentObject->Name;
-			$adw->ClassTitle = $this->CurrentObject->Name;
+			$adw->ClassTitle = "Object";
 			
 			$propTasks = $this->CurrentObject->GetPropertyValue("Tasks");
 			if ($propTasks != null)
