@@ -163,6 +163,22 @@
 		
 		public function ToString()
 		{
+			$propTitle = $this->GetPropertyValue("Title");
+			if ($propTitle != null)
+			{
+				$insts = $propTitle->GetInstances();
+				
+				$objLanguage = TenantObject::GetByName("Language");
+				$defaultLanguage = $objLanguage->GetInstance(array
+				(
+					new TenantObjectInstancePropertyValue("Code", "en-US")
+				));
+				
+				foreach ($insts as $inst)
+				{
+					if ($inst->GetPropertyValue("Language")->GetInstance() == $defaultLanguage) return $inst->GetPropertyValue("Value");
+				}
+			}
 			return $this->GetPropertyValue("Name");
 		}
 	}

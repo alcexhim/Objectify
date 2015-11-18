@@ -212,6 +212,12 @@
 			return $inst;
 		}
 		
+		/**
+		 * Gets the value of the specified static property on this TenantObject.
+		 * @param TenantObjectProperty $property
+		 * @param string|MultipleInstanceProperty|SingleInstanceProperty $defaultValue
+		 * @return string|MultipleInstanceProperty|SingleInstanceProperty
+		 */
 		public function GetPropertyValue($property, $defaultValue = null)
 		{
 			if (is_string($property))
@@ -622,21 +628,26 @@
 				return null;
 			}
 			
-			global $MySQL;
+			$pdo = DataSystem::GetPDO();
+			$query =	"SELECT " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances.* " .
+						" FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances, " .
+						System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstanceProperties, " .
+						System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstancePropertyValues";
 			
-			$query = "SELECT " . System::$Configuration["Database.TablePrefix"] . "TenantObjectInstances.* FROM " . System::$Configuration["Database.TablePrefix"] . "TenantObjectInstances, " . System::$Configuration["Database.TablePrefix"] . "TenantObjectInstanceProperties, " . System::$Configuration["Database.TablePrefix"] . "TenantObjectInstancePropertyValues";
-			$result = $MySQL->query($query);
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute();
 			if ($result === false)
 			{
+				$ei = $statement->errorInfo();
 				Objectify::Log("Database error when trying to obtain an instance of an object on the tenant.", array
 				(
-					"DatabaseError" => $MySQL->error . " (" . $MySQL->errno . ")",
+					"DatabaseError" => $ei[2] . " (" . $ei[1] . ")",
 					"Query" => $query
 				));
 				return null;
 			}
 			
-			$count = $result->num_rows;
+			$count = $statement->rowCount();
 			if ($count == 0)
 			{
 				Objectify::Log("Could not obtain an instance of the object with the specified parameters.", array
@@ -649,12 +660,12 @@
 			
 			for ($i = 0; $i < $count; $i++)
 			{
-				$values = $result->fetch_assoc();
+				$values = $statement->fetch(PDO::FETCH_ASSOC);
 				$inst = TenantObjectInstance::GetByAssoc($values);
 				$found = true;
 				foreach ($parameters as $parameter)
 				{
-					if ($inst->GetPropertyValue($this->GetInstanceProperty($parameter->Name)) != $parameter->Value)
+					if ($inst->GetPropertyValue($parameter->Property) != $parameter->Value)
 					{
 						$found = false;
 						break;
@@ -693,6 +704,20 @@
 				$retval[] = TenantObjectInstance::GetByAssoc($values);
 			}
 			return $retval;
+		}
+		
+		public function ToString()
+		{
+			$propTitle = $this->GetPropertyValue("Title");
+			if ($propTitle != null)
+			{
+				$insts = $propTitle->GetInstances();
+				foreach ($insts as $inst)
+				{
+					print_r($inst); die();
+				}
+			}
+			return $this->Name;
 		}
 	}
 ?>
