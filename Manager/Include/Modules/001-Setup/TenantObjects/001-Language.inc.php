@@ -13,10 +13,11 @@
 	use Objectify\Objects\TenantObjectMethodParameter;
 	use Objectify\Objects\SingleInstanceProperty;
 	use Objectify\Objects\MultipleInstanceProperty;
-use Objectify\Objects\Objectify\Objects;
 
 	$objLanguageString = TenantObject::Create("LanguageString", $objObject);
 	$objLanguage = TenantObject::Create("Language", $objObject);
+
+	$objObject->CreateProperty("Title", DataType::GetByName("MultipleInstance"), new MultipleInstanceProperty(null, array($objLanguageString)));
 	
 	$objLanguage->CreateInstanceProperty("LocaleID", DataType::GetByName("Text"));
 	$objLanguage->CreateInstanceProperty("Code", DataType::GetByName("Text"));
