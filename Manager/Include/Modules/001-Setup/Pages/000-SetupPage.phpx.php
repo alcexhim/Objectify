@@ -132,10 +132,6 @@
 						require($tenantObjectFileName);
 					}
 					
-					$objSecurityPrivilege = TenantObject::Create("SecurityPrivilege", $objObject);
-					$objSecurityGroup = TenantObject::Create("SecurityGroup", $objObject);
-					$objTenant = TenantObject::Create("Tenant", $objObject);
-					
 					// $this->CreateDefaultSecurityPrivilegesAndGroups();
 					
 					$statement = $pdo->prepare("INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "Users (user_LoginID, user_PasswordHash, user_PasswordSalt) VALUES (:user_LoginID, :user_PasswordHash, :user_PasswordSalt)");
