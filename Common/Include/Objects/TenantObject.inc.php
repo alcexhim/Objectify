@@ -229,11 +229,12 @@
 			if ($defaultValue == null) $defaultValue = $property->DefaultValue;
 			
 			$pdo = DataSystem::GetPDO();
-			$query = "SELECT propval_Value FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectPropertyValues WHERE propval_PropertyID = :propval_PropertyID";
+			$query = "SELECT propval_Value FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectPropertyValues WHERE propval_PropertyID = :propval_PropertyID AND (propval_ObjectID IS NULL OR propval_ObjectID = :propval_ObjectID)";
 			$statement = $pdo->prepare($query);
 			$result = $statement->execute(array
 			(
-				":propval_PropertyID" => $property->ID
+				":propval_PropertyID" => $property->ID,
+				":propval_ObjectID" => $this->ID
 			));
 			if ($result === false) return $defaultValue;
 			
@@ -245,28 +246,32 @@
 		}
 		public function SetPropertyValue($property, $value)
 		{
-			global $MySQL;
-			
+			$pdo = DataSystem::GetPDO();
 			if (is_string($property))
 			{
 				$property = $this->GetProperty($property);
 			}
 			if ($property == null) return false;
 			
-			$query = "INSERT INTO " . System::$Configuration["Database.TablePrefix"] . "TenantObjectPropertyValues (propval_PropertyID, propval_Value) VALUES (";
-			$query .= $property->ID . ", ";
-			$query .= "'" . $MySQL->real_escape_string($property->DataType->Encode($value)) . "'";
-			$query .= ")";
+			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectPropertyValues (propval_PropertyID, propval_ObjectID, propval_Value) VALUES (:propval_PropertyID, :propval_ObjectID, :propval_Value)";
 			$query .= " ON DUPLICATE KEY UPDATE ";
 			$query .= "propval_PropertyID = values(propval_PropertyID), ";
+			$query .= "propval_ObjectID = values(propval_ObjectID), ";
 			$query .= "propval_Value = values(propval_Value)";
 			
-			$result = $MySQL->query($query);
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				":propval_PropertyID" => $property->ID,
+				":propval_ObjectID" => $this->ID,
+				":propval_Value" => $property->DataType->Encode($value)
+			));
 			if ($result === false)
 			{
+				$ei = $statement->errorInfo();
 				Objectify::Log("Database error when trying to update a property value for the specified object.", array
 				(
-					"DatabaseError" => $MySQL->error . " (" . $MySQL->errno . ")",
+					"DatabaseError" => $ei[2] . " (" . $ei[1] . ")",
 					"Query" => $query
 				));
 				return false;
@@ -632,10 +637,14 @@
 			$query =	"SELECT " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances.* " .
 						" FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances, " .
 						System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstanceProperties, " .
-						System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstancePropertyValues";
+						System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstancePropertyValues" .
+						" WHERE " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances.instance_ObjectID = :instance_ObjectID";
 			
 			$statement = $pdo->prepare($query);
-			$result = $statement->execute();
+			$result = $statement->execute(array
+			(
+				":instance_ObjectID" => $this->ID
+			));
 			if ($result === false)
 			{
 				$ei = $statement->errorInfo();
@@ -712,9 +721,16 @@
 			if ($propTitle != null)
 			{
 				$insts = $propTitle->GetInstances();
+				
+				$objLanguage = TenantObject::GetByName("Language");
+				$defaultLanguage = $objLanguage->GetInstance(array
+				(
+					new TenantObjectInstancePropertyValue("Code", "en-US")
+				));
+
 				foreach ($insts as $inst)
 				{
-					print_r($inst); die();
+					if ($inst->GetPropertyValue("Language")->GetInstance() == $defaultLanguage) return $inst->GetPropertyValue("Value");
 				}
 			}
 			return $this->Name;

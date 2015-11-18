@@ -60,11 +60,13 @@
 	(
 		// 			$name, $dataType, $size, $value, $allowNull, $primaryKey, $autoIncrement
 		new Column("PropertyID", "INT", null, null, false),
+		new Column("ObjectID", "INT", null, null, false),
 		new Column("Value", "LONGBLOB", null, null, true)
 	));
 	$tblTenantObjectPropertyValues->ForeignKeys = array
 	(
-		new TableForeignKey("PropertyID", new TableForeignKeyColumn($tblTenantObjectProperties, "ID"))
+		new TableForeignKey("PropertyID", new TableForeignKeyColumn($tblTenantObjectProperties, "ID")),
+		new TableForeignKey("ObjectID", new TableForeignKeyColumn($tblTenantObjects, "ID"))
 	);
 	$tables[] = $tblTenantObjectPropertyValues;
 	
