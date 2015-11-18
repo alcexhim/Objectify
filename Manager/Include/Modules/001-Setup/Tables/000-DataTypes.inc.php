@@ -156,7 +156,7 @@ for ($i = 0; $i < $count; $i++)
 }
 
 // assign the instance
-$output->Instance = TenantObjectInstance::GetByID($instance);
+$output->SetInstance(TenantObjectInstance::GetByID($instance));
 return $output;
 EOD
 ),
