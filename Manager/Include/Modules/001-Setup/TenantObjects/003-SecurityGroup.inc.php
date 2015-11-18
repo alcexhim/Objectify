@@ -15,6 +15,16 @@
 	use Objectify\Objects\MultipleInstanceProperty;
 	
 	$objSecurityPermission = TenantObject::Create("SecurityPermission", $objObject);
+	$instLanguageString_English_SecurityPermission_Title = $objLanguageString->CreateInstance(array
+	(
+		new TenantObjectInstancePropertyValue($objLanguageString->GetInstanceProperty("Language"), new SingleInstanceProperty($instLanguageEnglish, array($objLanguage))),
+		new TenantObjectInstancePropertyValue($objLanguageString->GetInstanceProperty("Value"), "Security Permission")
+	));
+	$objSecurityPermission->SetPropertyValue("Title", new MultipleInstanceProperty(array
+	(
+		$instLanguageString_English_SecurityPermission_Title
+	), array($objLanguageString)));
+	
 	$objSecurityPermission->CreateInstanceProperty("Title", DataType::GetByName("MultipleInstance"), new MultipleInstanceProperty(null, array($objLanguageString)));
 	
 	// Create the language string entry for ProvisionTenants - English ("Provision Tenants")
@@ -41,6 +51,16 @@
 	));
 	
 	$objSecurityGroup = TenantObject::Create("SecurityGroup", $objObject);
+	$instLanguageString_English_SecurityGroup_Title = $objLanguageString->CreateInstance(array
+	(
+		new TenantObjectInstancePropertyValue($objLanguageString->GetInstanceProperty("Language"), new SingleInstanceProperty($instLanguageEnglish, array($objLanguage))),
+		new TenantObjectInstancePropertyValue($objLanguageString->GetInstanceProperty("Value"), "Security Group")
+	));
+	$objSecurityGroup->SetPropertyValue("Title", new MultipleInstanceProperty(array
+	(
+		$instLanguageString_English_SecurityGroup_Title
+	), array($objLanguageString)));
+	
 	$objSecurityGroup->CreateInstanceProperty("Title", DataType::GetByName("MultipleInstance"), new MultipleInstanceProperty(null, array($objLanguageString)));
 	$objSecurityGroup->CreateInstanceProperty("Permissions", DataType::GetByName("MultipleInstance"), new MultipleInstanceProperty(null, array($objSecurityPermission)));
 	
