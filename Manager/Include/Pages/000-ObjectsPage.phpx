@@ -13,6 +13,30 @@
 									</Items>
 								</wfx:FormView>
 							</wfx:TabPage>
+							<wfx:TabPage ID="tabProperties" Title="Properties">
+								<wfx:Panel Collapsible="true" Expanded="true" Title="Object properties">
+									<ContentControls>
+										<wfx:ListView ID="lvStaticProperties">
+											<Columns>
+												<wfx:ListViewColumn ID="lvcProperty" Title="Property" />
+												<wfx:ListViewColumn ID="lvcDataType" Title="Data type" />
+												<wfx:ListViewColumn ID="lvcDefaultValue" Title="Default value" />
+											</Columns>
+										</wfx:ListView>
+									</ContentControls>
+								</wfx:Panel>
+								<wfx:Panel Collapsible="true" Expanded="true" Title="Instance properties">
+									<ContentControls>
+										<wfx:ListView ID="lvInstanceProperties">
+											<Columns>
+												<wfx:ListViewColumn ID="lvcProperty" Title="Property" />
+												<wfx:ListViewColumn ID="lvcDataType" Title="Data type" />
+												<wfx:ListViewColumn ID="lvcDefaultValue" Title="Default value" />
+											</Columns>
+										</wfx:ListView>
+									</ContentControls>
+								</wfx:Panel>
+							</wfx:TabPage>
 							<wfx:TabPage ID="tabInstances" Title="Instances">
 								<ofx:InstanceListView ObjectID="$(Path:objectID)" Width="100%"></ofx:InstanceListView>
 							</wfx:TabPage>
