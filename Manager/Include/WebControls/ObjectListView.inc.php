@@ -32,10 +32,7 @@
 					new ListViewItemColumn("lvcID", $obj->ID),
 					new ListViewItemColumn("lvcObject", function($col)
 					{
-						$obj = $col->ExtraData;
-						$adw = new AdditionalDetailWidget();
-						$adw->TargetURL = "~/objects/modify/" . $obj->ID;
-						$adw->Text = $obj->Name;
+						$adw = new ObjectDisplayWidget($col->ExtraData);
 						$adw->Render();
 					}, $obj->Name, $obj),
 					new ListViewItemColumn("lvcParentObjects", function($col)
