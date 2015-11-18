@@ -11,7 +11,6 @@
 		public $ID;
 		public $Tenant;
 		public $Name;
-		public $Description;
 		
 		public static function GetByAssoc($values)
 		{
@@ -19,7 +18,6 @@
 			$item->ID = $values["object_ID"];
 			$item->Tenant = Tenant::GetByID($values["object_TenantID"]);
 			$item->Name = $values["object_Name"];
-			$item->Description = $values["object_Description"];
 			return $item;
 		}
 		
