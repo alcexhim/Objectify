@@ -8,7 +8,15 @@
 	
 	class TenantObjectInstance
 	{
+		/**
+		 * The internal identifier of this TenantObjectInstance in the database.
+		 * @var int
+		 */
 		public $ID;
+		/**
+		 * The parent TenantObject of which this is an instance.
+		 * @var TenantObject
+		 */
 		public $ParentObject;
 		
 		public function __construct($parentObject)
