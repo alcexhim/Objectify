@@ -46,8 +46,6 @@
 		new Column("DataTypeID", "INT", null, null, true),
 		new Column("DefaultValue", "LONGBLOB", null, null, true),
 		new Column("IsRequired", "INT", null, 0, false),
-		new Column("EnumerationID", "INT", null, null, true),
-		new Column("RequireChoiceFromEnumeration", "INT", null, 0, false),
 		new Column("ColumnVisible", "INT", null, 0, false)
 	));
 	$tblTenantObjectProperties->ForeignKeys = array
@@ -93,8 +91,6 @@
 		new Column("DataTypeID", "INT", null, null, true),
 		new Column("DefaultValue", "LONGBLOB", null, null, true),
 		new Column("IsRequired", "INT", null, 0, false),
-		new Column("EnumerationID", "INT", null, null, true),
-		new Column("RequireChoiceFromEnumeration", "INT", null, 0, false),
 		new Column("ColumnVisible", "INT", null, 0, false)
 	));
 	$tblTenantObjectInstanceProperties->ForeignKeys = array

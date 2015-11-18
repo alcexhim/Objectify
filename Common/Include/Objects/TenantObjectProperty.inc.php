@@ -14,8 +14,6 @@
 		public $DataType;
 		public $DefaultValue;
 		public $Required;
-		public $Enumeration;
-		public $RequireChoiceFromEnumeration;
 		
 		public function RenderColumn($value = null)
 		{
@@ -47,15 +45,13 @@
 			}
 		}
 		
-		public function __construct($name, $description = null, $dataType = null, $defaultValue = null, $required = false, $enumeration = null, $requireChoiceFromEnumeration = false)
+		public function __construct($name, $description = null, $dataType = null, $defaultValue = null, $required = false)
 		{
 			$this->Name = $name;
 			$this->Description = $description;
 			$this->DataType = $dataType;
 			$this->DefaultValue = $defaultValue;
 			$this->Required = $required;
-			$this->Enumeration = $enumeration;
-			$this->RequireChoiceFromEnumeration = $requireChoiceFromEnumeration;
 		}
 		
 		public static function GetByAssoc($values)
@@ -67,10 +63,8 @@
 			$item->Name = $values["property_Name"];
 			$item->Description = $values["property_Description"];
 			$item->DataType = DataType::GetByID($values["property_DataTypeID"]);
-			$item->DefaultValue = $values["property_DefaultValue"];
+			$item->DefaultValue = $item->DataType->Decode($values["property_DefaultValue"]);
 			$item->Required = ($values["property_IsRequired"] == 1);
-			$item->Enumeration = TenantEnumeration::GetByID($values["property_EnumerationID"]);
-			$item->RequireChoiceFromEnumeration = ($values["property_RequireChoiceFromEnumeration"] == 1);
 			return $item;
 		}
 		

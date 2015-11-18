@@ -317,19 +317,6 @@
 			return $object;
 		}
 		
-		public function CreateEnumeration($name, $description = null, $choices = null)
-		{
-			global $MySQL;
-			if ($choices == null) $choices = array();
-			
-			$item = new TenantEnumeration($name, $description, $choices);
-			$item->Tenant = $this;
-			$item->Choices = $choices;
-			$item->Update();
-			
-			return $item;
-		}
-		
 		public function GetProperties()
 		{
 			$pdo = DataSystem::GetPDO();
