@@ -50,7 +50,7 @@
 					//	or	'XquizIT Script Builder Task'
 					
 					// also check Task instance Security Groups, etc...
-					$taskName = $inst->GetPropertyValue($objTask->GetInstanceProperty("Name"));
+					$taskName = $inst->ToString();
 					$adw->MenuItems[] = new MenuItemCommand
 					(
 						$taskName
