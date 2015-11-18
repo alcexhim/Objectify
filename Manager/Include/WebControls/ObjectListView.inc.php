@@ -41,9 +41,7 @@
 						$objs = $obj->GetParentObjects();
 						foreach ($objs as $obj1)
 						{
-							$adw = new AdditionalDetailWidget();
-							$adw->TargetURL = "~/objects/modify/" . $obj1->ID;
-							$adw->Text = $obj1->Name;
+							$adw = new ObjectDisplayWidget($obj1);
 							$adw->Render();
 							echo("<br />");
 						}
