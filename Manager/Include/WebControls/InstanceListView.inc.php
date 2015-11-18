@@ -63,7 +63,33 @@
 				
 				foreach ($props as $prop)
 				{
-					$lvi->Columns[] = new ListViewItemColumn("lvcProperty" . $prop->ID, $inst->GetPropertyValue($prop));
+					$lvi->Columns[] = new ListViewItemColumn("lvcProperty" . $prop->ID, function($col)
+					{
+						$propval = $col->ExtraData["inst"]->GetPropertyValue($col->ExtraData["prop"]);
+						if (is_object($propval))
+						{
+							if (get_class($propval) == "Objectify\\Objects\\SingleInstanceProperty")
+							{
+								$inst = $propval->GetInstance();
+								$odw = new InstanceDisplayWidget($inst);
+								$odw->Render();
+							}
+							else if (get_class($propval) == "Objectify\\Objects\\MultipleInstanceProperty")
+							{
+								$insts = $propval->GetInstances();
+								foreach ($insts as $inst)
+								{
+									$odw = new InstanceDisplayWidget($inst);
+									$odw->Render();
+									echo("<br />");
+								}
+							}
+						}
+						else
+						{
+							echo($propval);
+						}
+					}, $inst->GetPropertyValue($prop), array("inst" => $inst, "prop" => $prop));
 				} 
 				$this->Items[] = $lvi; 
 			}
