@@ -439,20 +439,23 @@
 		}
 		public function GetProperties($max = null)
 		{
-			global $MySQL;
-			
-			$query = "SELECT * FROM " . System::$Configuration["Database.TablePrefix"] . "TenantObjectProperties WHERE property_ObjectID = " . $this->ID;
+			$pdo = DataSystem::GetPDO();
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectProperties WHERE property_ObjectID = :property_ObjectID";
 			if (is_numeric($max)) $query .= " LIMIT " . $max;
 			
-			$result = $MySQL->query($query);
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				":property_ObjectID" => $this->ID
+			));
 			$retval = array();
 			
 			if ($result === false) return $retval;
 			
-			$count = $result->num_rows;
+			$count = $statement->rowCount();
 			for ($i = 0; $i < $count; $i++)
 			{
-				$values = $result->fetch_assoc();
+				$values = $statement->fetch(PDO::FETCH_ASSOC);
 				$retval[] = TenantObjectProperty::GetByAssoc($values);
 			}
 			return $retval;
