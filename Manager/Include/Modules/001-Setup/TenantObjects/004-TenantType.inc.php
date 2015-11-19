@@ -17,7 +17,16 @@
 	$objTenantType->CreateInstanceProperty("Title", DataType::GetByName("MultipleInstance"), new MultipleInstanceProperty(null, array($objLanguageString)));
 	$objTenantType->CreateInstanceProperty("Description", DataType::GetByName("MultipleInstance"), new MultipleInstanceProperty(null, array($objLanguageString)));
 
-
+	$instLanguageString_English_TenantType_Title = $objLanguageString->CreateInstance(array
+	(
+		new TenantObjectInstancePropertyValue($objLanguageString->GetInstanceProperty("Language"), new SingleInstanceProperty($instLanguageEnglish, array($objLanguage))),
+		new TenantObjectInstancePropertyValue($objLanguageString->GetInstanceProperty("Value"), "Tenant Type")
+	));
+	$objTenantType->SetPropertyValue("Title", new MultipleInstanceProperty(array
+	(
+		$instLanguageString_English_TenantType_Title
+	), array($objLanguageString)));
+	
 	$instTenantTypeProduction_Title_English = $objLanguageString->CreateInstance(array
 	(
 		new TenantObjectInstancePropertyValue($objLanguageString->GetInstanceProperty("Language"), new SingleInstanceProperty($instLanguageEnglish, array($objLanguage))),

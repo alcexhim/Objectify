@@ -31,6 +31,16 @@
 		new TenantObjectInstancePropertyValue($objLanguage->GetInstanceProperty("LocaleID"), "1033"),
 		new TenantObjectInstancePropertyValue($objLanguage->GetInstanceProperty("Code"), "en-US")
 	));
+
+	$instLanguageString_English_LanguageString_Title = $objLanguageString->CreateInstance(array
+	(
+		new TenantObjectInstancePropertyValue($objLanguageString->GetInstanceProperty("Language"), new SingleInstanceProperty($instLanguageEnglish, array($objLanguage))),
+		new TenantObjectInstancePropertyValue($objLanguageString->GetInstanceProperty("Value"), "Language String")
+	));
+	$objLanguageString->SetPropertyValue("Title", new MultipleInstanceProperty(array
+	(
+		$instLanguageString_English_LanguageString_Title
+	), array($objLanguageString)));
 	
 	$instLanguageEnglish_Title = $objLanguageString->CreateInstance(array
 	(

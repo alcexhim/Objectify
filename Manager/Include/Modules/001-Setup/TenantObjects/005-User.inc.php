@@ -12,12 +12,22 @@
 	use Objectify\Objects\TenantObjectInstancePropertyValue;
 	use Objectify\Objects\TenantObjectMethodParameter;
 	use Objectify\Objects\MultipleInstanceProperty;
-use Objectify\Objects\Objectify\Objects;
+	use Objectify\Objects\SingleInstanceProperty;
 	
 	$objUserLogin = TenantObject::Create("UserLogin", $objObject);
 	$objUserLogin->CreateInstanceProperty("Token", DataType::GetByName("Text"));
 	$objUserLogin->CreateInstanceProperty("IPAddress", DataType::GetByName("Text"));
-	
+
+	$instLanguageString_English_UserLogin_Title = $objLanguageString->CreateInstance(array
+	(
+		new TenantObjectInstancePropertyValue($objLanguageString->GetInstanceProperty("Language"), new SingleInstanceProperty($instLanguageEnglish, array($objLanguage))),
+		new TenantObjectInstancePropertyValue($objLanguageString->GetInstanceProperty("Value"), "User Login")
+	));
+	$objUserLogin->SetPropertyValue("Title", new MultipleInstanceProperty(array
+	(
+		$instLanguageString_English_UserLogin_Title
+	), array($objLanguageString)));
+
 	$objUser = TenantObject::Create("User", $objObject);
 	$objUser->CreateInstanceProperty("UserName", DataType::GetByName("Text"));
 	$objUser->CreateInstanceProperty("PasswordHash", DataType::GetByName("Text"));
