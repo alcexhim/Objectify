@@ -1,3 +1,26 @@
+create "Calculated String" object inherits from "Calculated Field"
+
+Object should have an object property "Instance Title" of type MultipleInstance:"Calculated String"
+	
+	for example, Tenant "testing1 (Inactive)"
+		
+		create instance of "Language String", set Language property appropriately
+			
+			create instance of "Text Constant Calculated String Component" with value " " (space)
+			create instance of "Text Constant Calculated String Component" with value "(" (left paren)
+			create instance of "Text Constant Calculated String Component" with value ")" (right paren)
+			
+			create instance of "Instance Property Calculated String Component" with value SingleInstance:"Instance Property":"Tenant Name"
+			add instance to "Calculated String" Components property - calculated value is now "testing1"
+			
+			add "Text Constant Calculated String Component" instance " " (space) to "Calculated String" Components property - calculated value is now "testing1 "
+			add "Text Constant Calculated String Component" instance "(" (left paren) to "Calculated String" Components property - calculated value is now "testing1 ("
+			
+			create instance of "Instance Property Calculated String Component" with value SingleInstance:"Instance Property":"Tenant Status"
+			add instance to "Calculated String" Components property - calculated value is now "testing1 (Inactive"
+			
+			add "Text Constant Calculated String Component" instance ")" (right paren) to "Calculated String" Components property - calculated value is now "testing1 (Inactive)"
+
 object Object
 {
 	object Language
