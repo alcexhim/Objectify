@@ -23,6 +23,7 @@
 			
 			$this->CurrentObject = $object;
 			$this->TagName = "span";
+			$this->ClassList[] = "ObjectDisplayWidget";
 		}
 		
 		protected function RenderBeginTag()

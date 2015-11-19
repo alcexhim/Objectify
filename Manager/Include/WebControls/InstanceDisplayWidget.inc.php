@@ -23,6 +23,7 @@
 			
 			$this->CurrentInstance = $instance;
 			$this->TagName = "span";
+			$this->ClassList[] = "InstanceDisplayWidget";
 		}
 		
 		protected function RenderBeginTag()
