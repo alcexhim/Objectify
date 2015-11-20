@@ -107,8 +107,18 @@ EOD
 		(
 			new RecordColumn("Name", "DateTime"),
 			new RecordColumn("Description", "Stores a date and time value."),
-			new RecordColumn("EncoderCodeBlob", null),
-			new RecordColumn("DecoderCodeBlob", null),
+			new RecordColumn("EncoderCodeBlob", <<<'EOD'
+// $input should be a DateTime
+if ($input == null) return null;
+return $input->format("Y-m-d H:i:s");
+EOD
+),
+			new RecordColumn("DecoderCodeBlob", <<<'EOD'
+// $input should be a formatted datetime string
+if ($input == null) return null;
+return new DateTime($input);
+EOD
+),
 			new RecordColumn("ColumnRendererCodeBlob", null),
 			new RecordColumn("EditorRendererCodeBlob", null)
 		)),
