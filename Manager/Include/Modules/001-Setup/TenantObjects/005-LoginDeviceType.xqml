@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Objectify>
+	<Objects>
+		<Object ID="{C1FCE2B8-93EA-4575-95A7-8D4C3527AF63}" Name="LoginDeviceType">
+			<ParentObjects>
+				<ParentObject Name="Object" />
+			</ParentObjects>
+			<Properties>
+				<Property Name="Title">
+					<MultipleInstancePropertyValue>
+						<Instances>
+							<Instance ID="{3AB09F14-8258-4BDA-BE62-EE26CFD6D1D2}" />
+						</Instances>
+					</MultipleInstancePropertyValue>
+				</Property>
+			</Properties>
+			<InstanceProperties>
+				<Property Name="Title" DataTypeName="MultipleInstance">
+					<MultipleInstancePropertyValue>
+						<ValidObjects>
+							<ValidObject Name="LanguageString" />
+						</ValidObjects>
+					</MultipleInstancePropertyValue>
+				</Property>
+			</InstanceProperties>
+		</Object>
+	</Objects>
+</Objectify>

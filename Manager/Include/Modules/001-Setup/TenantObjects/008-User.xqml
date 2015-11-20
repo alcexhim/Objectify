@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Objectify>
+	<Objects>
+		<Object ID="{9C6871C1-9A7F-4A3A-900E-69D1D9E24486}" Name="User">
+			<ParentObjects>
+				<ParentObject Name="Object" />
+			</ParentObjects>
+			<Properties>
+				<Property Name="Title">
+					<MultipleInstancePropertyValue>
+						<Instances>
+							<Instance ID="{0D05F758-F3F7-4640-B462-43DA9DB35C1C}" />
+						</Instances>
+					</MultipleInstancePropertyValue>
+				</Property>
+			</Properties>
+			<InstanceProperties>
+				<Property Name="UserName" DataTypeName="Text" />
+				<Property Name="PasswordHash" DataTypeName="Text" />
+				<Property Name="PasswordSalt" DataTypeName="Text" />
+				<Property Name="IsGlobal" DataTypeName="Boolean" />
+				<Property Name="Logins" DataTypeName="MultipleInstance">
+					<MultipleInstancePropertyValue>
+						<ValidObjects>
+							<ValidObject Name="UserLogin" />
+						</ValidObjects>
+					</MultipleInstancePropertyValue>
+				</Property>
+				<Property Name="SecurityGroups" DataTypeName="MultipleInstance">
+					<MultipleInstancePropertyValue>
+						<ValidObjects>
+							<ValidObject Name="SecurityGroup" />
+						</ValidObjects>
+					</MultipleInstancePropertyValue>
+				</Property>
+			</InstanceProperties>
+			<InstanceMethods>
+				<Method Name="RequestLoginToken">
+					<Content>
+<![CDATA[
+$propLogins = $thisInstance->GetPropertyValue("Logins");
+if (!is_array($propLogins)) return false;
+
+$user_LoginToken = RandomStringGenerator::Generate(RandomStringGeneratorCharacterSets::AlphaNumericMixedCase, 32);
+
+// create an instance of UserLogin
+$objUserLogin = TenantObject::GetByName("UserLogin");
+
+$instUserLogin = $objUserLogin->CreateInstance(array
+(
+	new TenantObjectInstancePropertyValue
+	(
+		$objUserLogin->GetInstanceProperty("Token"),
+		$user_LoginToken
+	),
+	new TenantObjectInstancePropertyValue
+	(
+		$objUserLogin->GetInstanceProperty("IPAddress"),
+		$_SERVER["REMOTE_ADDR"]
+	)
+));
+if ($instUserLogin !== null)
+{
+	$propLogins[] = $instUserLogin;
+	$thisInstance->SetPropertyValue("Logins", $propLogins);
+	
+	$_SESSION["Authentication.LoginToken"] = $user_LoginToken;
+	return true;
+}]]>
+					</Content>
+				</Method>
+			</InstanceMethods>
+		</Object>
+	</Objects>
+</Objectify>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Objectify>
+	<Objects>
+		<Object ID="{D4F2564B-2D11-4A5C-8AA9-AF52D4EACC13}" Name="Task">
+			<ParentObjects>
+				<ParentObject Name="Object" />
+			</ParentObjects>
+			<InstanceProperties>
+				<Property Name="Name" DataTypeName="Text" />
+				<Property Name="Title" DataTypeName="MultipleInstance" />
+			</InstanceProperties>
+			<Instances>
+				<Instance ID="{9FCF4CA6-F8FA-40CD-B94E-FFED78707A2C}">
+					<PropertyValues>
+						<Property Name="Name" Value="Delete" />
+						<Property Name="Title">
+							<MultipleInstancePropertyValue>
+								<Instances>
+									<Instance ID="{7A8F57F1-A4F3-4BAF-84A5-E893FD79447D}" />
+								</Instances>
+								<ValidObjects>
+									<ValidObject Name="LanguageString" />
+								</ValidObjects>
+							</MultipleInstancePropertyValue>
+						</Property>
+					</PropertyValues>
+				</Instance>
+			</Instances>
+		</Object>
+		<Object Name="Object">
+			<Properties>
+				<Property Name="Tasks" DataTypeName="MultipleInstance">
+					<MultipleInstancePropertyValue>
+						<Instances>
+							<Instance ID="{9FCF4CA6-F8FA-40CD-B94E-FFED78707A2C}" />
+						</Instances>
+						<ValidObjects>
+							<ValidObject Name="Task" />
+						</ValidObjects>
+					</MultipleInstancePropertyValue>
+				</Property>
+			</Properties>
+		</Object>
+	</Objects>
+</Objectify>
