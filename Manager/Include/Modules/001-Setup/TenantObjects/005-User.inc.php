@@ -14,8 +14,34 @@
 	use Objectify\Objects\MultipleInstanceProperty;
 	use Objectify\Objects\SingleInstanceProperty;
 	
+	$objDeviceType = TenantObject::Create("DeviceType", $objObject);
+	$instLanguageString_English_DeviceType_Title = $objLanguageString->CreateInstance(array
+	(
+		new TenantObjectInstancePropertyValue("Language", new SingleInstanceProperty($instLanguageEnglish, array($objLanguage))),
+		new TenantObjectInstancePropertyValue("Value", "Device Type")
+	));
+	$objDeviceType->SetPropertyValue("Title", new MultipleInstanceProperty(array
+	(
+		$instLanguageString_English_DeviceType_Title
+	), array($objLanguageString)));
+
+	$objAuthenticationType = TenantObject::Create("AuthenticationType", $objObject);
+	$instLanguageString_English_AuthenticationType_Title = $objLanguageString->CreateInstance(array
+	(
+		new TenantObjectInstancePropertyValue("Language", new SingleInstanceProperty($instLanguageEnglish, array($objLanguage))),
+		new TenantObjectInstancePropertyValue("Value", "Authentication Type")
+	));
+	$objAuthenticationType->SetPropertyValue("Title", new MultipleInstanceProperty(array
+	(
+		$instLanguageString_English_AuthenticationType_Title
+	), array($objLanguageString)));
+	
 	$objUserLogin = TenantObject::Create("UserLogin", $objObject);
 	$objUserLogin->CreateInstanceProperty("Token", DataType::GetByName("Text"));
+	$objUserLogin->CreateInstanceProperty("SignonTime", DataType::GetByName("DateTime"));
+	$objUserLogin->CreateInstanceProperty("User", DataType::GetByName("SingleInstance"), new SingleInstanceProperty(null, array($objUser)));
+	$objUserLogin->CreateInstanceProperty("SignoffTime", DataType::GetByName("DateTime"));
+	$objUserLogin->CreateInstanceProperty("DeviceType", DataType::GetByName("SingleInstance"), new SingleInstanceProperty(null, array($objDeviceType)));
 	$objUserLogin->CreateInstanceProperty("IPAddress", DataType::GetByName("Text"));
 
 	$instLanguageString_English_UserLogin_Title = $objLanguageString->CreateInstance(array
