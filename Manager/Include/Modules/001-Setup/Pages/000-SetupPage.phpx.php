@@ -9,7 +9,8 @@
 	use Phast\RandomStringGeneratorCharacterSets;
 	
 	use UniversalEditor\ObjectModels\Markup\XMLParser;
-	
+
+	use Objectify\Objects\Objectify;
 	use Objectify\Objects\DataType;
 	use Objectify\Objects\TenantObject;
 	use Objectify\Objects\TenantObjectInstance;
@@ -140,18 +141,27 @@
 								
 							if ($attName == null) continue;
 							
-							$property = $obj->GetProperty($attName->Value, false);
+							$property = $obj->GetProperty($attName->Value);
 							$value = $this->XquizitLoadPropertyValueFromTag($elemProperty);
 							
 							if ($property == null)
 							{
 								if ($attDataTypeName == null)
 								{
-									trigger_error("XquizIT: attempted to create a new property without a data type name");
+									Objectify::Log("XquizIT attempted to create a new property without a data type name", array
+									(
+										"Property Name" => $attName->Value,
+										"Object Name" => $obj->Name,
+										"XquizIT Source File Name" => $filename
+									));
 									continue;
 								}
 		
 								$property = $obj->CreateProperty($attName->Value, DataType::GetByName($attDataTypeName->Value), $value);
+							}
+							else
+							{
+								$obj->SetPropertyValue($attName->Value, $value);
 							}
 						}
 					}
@@ -259,19 +269,6 @@
 						$instances = null;
 						$validObjects = null;
 			
-						$elemInstances = $elemPropertyValue->GetElement("Instances");
-						if ($elemInstances != null)
-						{
-							$instances = array();
-			
-							$elemInstancesItems = $elemInstances->GetElements();
-							foreach ($elemInstancesItems as $elemInstance)
-							{
-								$attID = $elemInstance->GetAttribute("ID");
-								$instances[] = TenantObjectInstance::GetByGlobalIdentifier($attID->Value);
-							}
-						}
-			
 						$elemValidObjects = $elemPropertyValue->GetElement("ValidObjects");
 						if ($elemValidObjects != null)
 						{
@@ -282,6 +279,19 @@
 							{
 								$attName = $elemValidObjectsItem->GetAttribute("Name");
 								$validObjects[] = TenantObject::GetByName($attName->Value);
+							}
+						}
+						
+						$elemInstances = $elemPropertyValue->GetElement("Instances");
+						if ($elemInstances != null)
+						{
+							$instances = array();
+			
+							$elemInstancesItems = $elemInstances->GetElements();
+							foreach ($elemInstancesItems as $elemInstance)
+							{
+								$attID = $elemInstance->GetAttribute("ID");
+								$instances[] = TenantObjectInstance::GetByGlobalIdentifier($attID->Value);
 							}
 						}
 			
@@ -324,6 +334,48 @@
 				}
 			}
 			return $value;
+		}
+		
+		private function CreateDefaultUser($username, $passwordHash)
+		{
+			$objUser = TenantObject::GetByName("User");
+			$objSecurityGroup = TenantObject::GetByName("SecurityGroup");
+			
+			$instSecurityGroup_SystemAdministrator = TenantObjectInstance::GetByGlobalIdentifier("{0E57B7A3-FE6D-4B40-843B-F20580441242}");
+			
+			$instUser = $objUser->CreateInstance(array
+			(
+				new TenantObjectInstancePropertyValue
+				(
+					"UserName",
+					$Administrator_UserName
+				),
+				new TenantObjectInstancePropertyValue
+				(
+					"PasswordHash",
+					$Administrator_PasswordHash
+				),
+				new TenantObjectInstancePropertyValue
+				(
+					"PasswordSalt",
+					$Administrator_PasswordSalt
+				),
+				new TenantObjectInstancePropertyValue
+				(
+					"IsGlobal",
+					true
+				)
+			));
+			
+			$instUser->SetPropertyValue("SecurityGroups", new MultipleInstanceProperty(
+			array
+			(
+				$instSecurityGroup_SystemAdministrator
+			),
+			array
+			(
+				$objSecurityGroup
+			)));
 		}
 		
 		
@@ -427,6 +479,8 @@
 					{
 						require($tenantObjectFileName);
 					}
+					
+					$this->CreateDefaultUser($Administrator_UserName, $Administrator_PasswordHash);
 					
 					// $this->CreateDefaultSecurityPrivilegesAndGroups();
 					

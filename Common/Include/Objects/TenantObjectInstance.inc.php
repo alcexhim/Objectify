@@ -18,6 +18,11 @@
 		 * @var TenantObject
 		 */
 		public $ParentObject;
+		/**
+		 * The global identifier of this instance.
+		 * @var string
+		 */
+		public $GlobalIdentifier;
 		
 		public function __construct($parentObject)
 		{
@@ -28,6 +33,7 @@
 		{
 			$item = new TenantObjectInstance(TenantObject::GetByID($values["instance_ObjectID"]));
 			$item->ID = $values["instance_ID"];
+			$item->GlobalIdentifier = $values["instance_GlobalIdentifier"];
 			return $item;
 		}
 		
@@ -41,6 +47,26 @@
 			$result = $statement->execute(array
 			(
 				":instance_ID" => $id
+			));
+			if ($result === false) return null;
+			if ($statement->rowCount() == 0) return null;
+			
+			$values = $statement->fetch(PDO::FETCH_ASSOC);
+			return TenantObjectInstance::GetByAssoc($values);
+		}
+		
+		public static function GetByGlobalIdentifier($globalIdentifier)
+		{
+			$globalIdentifier = str_replace("{", "", $globalIdentifier);
+			$globalIdentifier = str_replace("}", "", $globalIdentifier);
+			$globalIdentifier = str_replace("-", "", $globalIdentifier);
+			
+			$pdo = DataSystem::GetPDO();
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances WHERE instance_GlobalIdentifier = :instance_GlobalIdentifier";
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				":instance_GlobalIdentifier" => $globalIdentifier
 			));
 			if ($result === false) return null;
 			if ($statement->rowCount() == 0) return null;
@@ -84,6 +110,18 @@
 				$property = $this->ParentObject->GetInstanceProperty($property);
 			}
 			if ($property == null) return false;
+			
+			if (
+					get_class($value) == "Objectify\\Objects\\MultipleInstanceProperty"
+				|| get_class($value) == "Objectify\\Objects\\SingleInstanceProperty"
+				)
+			{
+				if ($value->ValidObjects == null)
+				{
+					$oldvalue = $this->GetPropertyValue($property);
+					$value->ValidObjects = $oldvalue->ValidObjects;
+				}
+			}
 			
 			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstancePropertyValues (propval_InstanceID, propval_PropertyID, propval_Value) VALUES (:propval_InstanceID, :propval_PropertyID, :propval_Value)";
 			$query .= " ON DUPLICATE KEY UPDATE ";
@@ -133,24 +171,30 @@
 			$pdo = DataSystem::GetPDO();
 			if ($this->ID == null)
 			{
-				$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances (instance_ObjectID) VALUES (:instance_ObjectID)";
+				$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances (instance_ObjectID, instance_GlobalIdentifier) VALUES (:instance_ObjectID, :instance_GlobalIdentifier)";
 			}
 			else
 			{
-				$query = "UPDATE " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances SET instance_ObjectID = :instance_ObjectID WHERE instance_ID = :instance_ID";
+				$query = "UPDATE " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances SET instance_ObjectID = :instance_ObjectID, instance_GlobalIdentifier = :instance_GlobalIdentifier WHERE instance_ID = :instance_ID";
 			}
 			
 			$statement = $pdo->prepare($query);
 			$paramz = array
 			(
-				":instance_ObjectID" => $this->ParentObject->ID
+				":instance_ObjectID" => $this->ParentObject->ID,
+				":instance_GlobalIdentifier" => $this->GlobalIdentifier
 			);
 			if ($this->ID != null) $paramz[":instance_ID"] = $this->ID;
 			$result = $statement->execute($paramz);
 			if ($result === false)
 			{
 				$ei = $statement->errorInfo();
-				trigger_error("TenantObjectInstance->Update (" . $ei[1] . "): " . $ei[2]);
+				Objectify::Log("Database error when trying to create or update an instance of the specified object.", array
+				(
+					"DatabaseError" => $ei[2] . " (" . $ei[1] . ")",
+					"Query" => $query,
+					"Tenant Object Instance ID" => $this->ID
+				));
 				return false;
 			}
 			

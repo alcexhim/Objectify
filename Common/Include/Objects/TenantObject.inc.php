@@ -21,6 +21,12 @@
 			return $item;
 		}
 		
+		/**
+		 * Gets all TenantObjects on the server.
+		 * @param int $max
+		 * @param unknown $tenant
+		 * @return TenantObject[]
+		 */
 		public static function Get($max = null, $tenant = null)
 		{
 			$pdo = DataSystem::GetPDO();
@@ -131,12 +137,44 @@
 		}
 		
 		/**
+		 * Adds the specified TenantObject as a parent of this TenantObject.
+		 * @param TenantObject $obj
+		 */
+		public function AddParentObject($obj)
+		{
+			$pdo = DataSystem::GetPDO();
+			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectParentObjects (parentobject_ObjectID, parentobject_ParentObjectID) VALUES (:parentobject_ObjectID, :parentobject_ParentObjectID)";
+			$statement = $pdo->prepare($query);
+			
+			$result = $statement->execute(array
+			(
+				":parentobject_ObjectID" => $this->ID,
+				":parentobject_ParentObjectID" => $obj->ID
+			));
+			
+			if ($result === false)
+			{
+				$ei = $statement->errorInfo();
+				Objectify::Log("Database error when trying to add a parent object to a child object.", array
+				(
+					"DatabaseError" => $ei[2] . " (" . $ei[1] . ")",
+					"Query" => $query,
+					"Object ID" => $this->ID,
+					"Parent Object ID" => $obj->ID
+				));
+				return false;
+			}
+			
+			return true;
+		}
+		
+		/**
 		 * Creates a TenantObject.
 		 * @param string $name
 		 * @param TenantObject $parentObject
 		 * @return TenantObject
 		 */
-		public static function Create($name, $parentObjects = null)
+		public static function Create($name, $parentObjects = null, $globalIdentifier = null)
 		{
 			$pdo = DataSystem::GetPDO();
 			
@@ -153,42 +191,25 @@
 			$retval = array();
 			
 			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjects (";
-			$query .= "object_Name";
+			$query .= "object_Name, object_GlobalIdentifier";
 			$query .= ") VALUES (";
-			$query .= ":object_Name";
+			$query .= ":object_Name, :object_GlobalIdentifier";
 			$query .= ")";
 			
 			$statement = $pdo->prepare($query);
 			$result = $statement->execute(array
 			(
-				":object_Name" => $name
+				":object_Name" => $name,
+				":object_GlobalIdentifier" => $globalIdentifier
 			));
 			
 			if ($result === false) return null;
 			$obj = TenantObject::GetByName($name);
 			if ($obj == null) return null;
 			
-			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectParentObjects (parentobject_ObjectID, parentobject_ParentObjectID) VALUES (:parentobject_ObjectID, :parentobject_ParentObjectID)";
-			$statement = $pdo->prepare($query);
 			foreach ($parentObjects as $obj1)
 			{
-				$result = $statement->execute(array
-				(
-					":parentobject_ObjectID" => $obj->ID,
-					":parentobject_ParentObjectID" => $obj1->ID
-				));
-				
-				if ($result === false)
-				{
-					$ei = $pdo->errorInfo();
-					Objectify::Log("Database error when trying to associate a parent object with a child object.", array
-					(
-						"DatabaseError" => $ei[2] . " (" . $ei[1] . ")",
-						"Query" => $query,
-						"Object ID" => $obj->ID,
-						"Parent Object ID" => $obj1->ID
-					));
-				}
+				$obj->AddParentObject($obj1);
 			}
 			
 			return $obj;
@@ -197,17 +218,20 @@
 		/**
 		 * Creates an instance of this Objectify object with the specified properties.
 		 * @param TenantObjectInstancePropertyValue[] $properties
+		 * @param string $globalIdentifier The global identifier for this instance.
+		 * @return TenantObjectInstance
 		 */
-		public function CreateInstance($properties)
+		public function CreateInstance($properties, $globalIdentifier)
 		{
-			if (!is_array($properties)) return false;
-			
 			$inst = new TenantObjectInstance($this);
+			$inst->GlobalIdentifier = $globalIdentifier;
 			$inst->Update();
-			
-			foreach ($properties as $instprop)
+			if (is_array($properties))
 			{
-				$inst->SetPropertyValue($instprop->Property, $instprop->Value);
+				foreach ($properties as $instprop)
+				{
+					$inst->SetPropertyValue($instprop->Property, $instprop->Value);
+				}
 			}
 			return $inst;
 		}
@@ -252,6 +276,19 @@
 				$property = $this->GetProperty($property);
 			}
 			if ($property == null) return false;
+
+
+			if (
+				get_class($value) == "Objectify\\Objects\\MultipleInstanceProperty"
+				|| get_class($value) == "Objectify\\Objects\\SingleInstanceProperty"
+				)
+			{
+				if ($value->ValidObjects == null)
+				{
+					$oldvalue = $this->GetPropertyValue($property);
+					$value->ValidObjects = $oldvalue->ValidObjects;
+				}
+			}
 			
 			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectPropertyValues (propval_PropertyID, propval_ObjectID, propval_Value) VALUES (:propval_PropertyID, :propval_ObjectID, :propval_Value)";
 			$query .= " ON DUPLICATE KEY UPDATE ";
@@ -411,7 +448,7 @@
 			return $method;
 		}
 		
-		public function GetProperty($propertyName)
+		public function GetProperty($propertyName, $searchInherited = true)
 		{
 			$pdo = DataSystem::GetPDO();
 			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectProperties WHERE property_ObjectID = :property_ObjectID AND property_Name = :property_Name";
@@ -436,11 +473,14 @@
 			$count = $statement->rowCount();
 			if ($count == 0)
 			{
-				$inheritedObjs = $this->GetParentObjects();
-				foreach ($inheritedObjs as $obj)
+				if ($searchInherited)
 				{
-					$prop = $obj->GetProperty($propertyName);
-					if ($prop != null) return $prop;
+					$inheritedObjs = $this->GetParentObjects();
+					foreach ($inheritedObjs as $obj)
+					{
+						$prop = $obj->GetProperty($propertyName);
+						if ($prop != null) return $prop;
+					}
 				}
 				return null;
 			}
@@ -470,6 +510,22 @@
 				$retval[] = TenantObjectProperty::GetByAssoc($values);
 			}
 			return $retval;
+		}
+		public function HasInstanceProperty($propertyName)
+		{
+			$pdo = DataSystem::GetPDO();
+			$query = "SELECT COUNT(*) FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstanceProperties WHERE property_ObjectID = :property_ObjectID AND property_Name = :property_Name";
+			$statement = $pdo->prepare($query);
+			
+			$result = $statement->execute(array
+			(
+				":property_ObjectID" => $this->ID,
+				":property_Name" => $propertyName
+			));
+			
+			if ($result === false) return false;
+			$values = $statement->fetch(PDO::FETCH_NUM);
+			return ($values[0] > 0);
 		}
 		public function GetInstanceProperty($propertyName)
 		{
@@ -623,6 +679,12 @@
 		
 		public function GetInstance($parameters)
 		{
+			// $defaultLanguage = $objLanguage->GetInstance(array
+			// (
+			// 		new TenantObjectInstancePropertyValue("Code", "en-US")
+			// ));
+			
+			
 			if (!is_array($parameters))
 			{
 				Objectify::Log("No parameters were specified by which to extract a single instance of the object.", array
@@ -640,11 +702,30 @@
 						System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstancePropertyValues" .
 						" WHERE " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances.instance_ObjectID = :instance_ObjectID";
 			
+			foreach ($parameters as $parm)
+			{
+				if (is_string($parm->Property)) $parm->Property = $this->GetInstanceProperty($parm->Property);
+				
+				$query .= " AND (";
+				$query .= System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstancePropertyValues.propval_PropertyID = " . $parm->Property->ID . " AND ";
+				$query .= System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstancePropertyValues.propval_Value = :propval_" . $parm->Property->ID . "_Value";
+				$query .= ")";
+			}
+			
 			$statement = $pdo->prepare($query);
-			$result = $statement->execute(array
+			
+			$parmz = array
 			(
 				":instance_ObjectID" => $this->ID
-			));
+			);
+			
+			foreach ($parameters as $parm)
+			{
+				$parmz[":propval_" . $parm->Property->ID . "_Value"] = $parm->Value;
+			}
+			
+			$result = $statement->execute($parmz);
+			
 			if ($result === false)
 			{
 				$ei = $statement->errorInfo();
@@ -659,11 +740,18 @@
 			$count = $statement->rowCount();
 			if ($count == 0)
 			{
-				Objectify::Log("Could not obtain an instance of the object with the specified parameters.", array
+				$errorParms = array
 				(
 					"Object" => $this->Name,
 					"Query" => $query
-				));
+				);
+				
+				foreach ($parameters as $parm)
+				{
+					$errorParms["Specified Parameter " . $parm->Property->ID] = $parm->Value;
+				}
+				
+				Objectify::Log("Could not obtain an instance of the object with the specified parameters.", $errorParms);
 				return null;
 			}
 			
@@ -714,6 +802,45 @@
 			}
 			return $retval;
 		}
+
+		public function GetInstanceByGlobalIdentifier($globalIdentifier)
+		{
+			$pdo = DataSystem::GetPDO();
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances WHERE instance_GlobalIdentifier = :instance_GlobalIdentifier";
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				":instance_GlobalIdentifier" => $globalIdentifier
+			));
+			$retval = null;
+				
+			if ($result === false)
+			{
+				$ei = $statement->errorInfo();
+				Objectify::Log("Database error when trying to obtain an instance of an object on the tenant.", array
+				(
+					"DatabaseError" => $ei[2] . " (" . $ei[1] . ")",
+					"Query" => $query,
+					"Instance Global Identifier" => $globalIdentifier
+				));
+				return $retval;
+			}
+			
+			$count = $statement->rowCount();
+			if ($count == 0)
+			{
+				Objectify::Log("An instance with the specified Global Identifier was not found.", array
+				(
+					"Query" => $query,
+					"Instance Global Identifier" => $globalIdentifier
+				));
+				return $retval;
+			}
+			
+			$values = $statement->fetch(PDO::FETCH_ASSOC);
+			$retval = TenantObjectInstance::GetByAssoc($values);
+			return $retval;
+		}
 		
 		public function ToString()
 		{
@@ -721,13 +848,12 @@
 			if ($propTitle != null)
 			{
 				$insts = $propTitle->GetInstances();
-				
 				$objLanguage = TenantObject::GetByName("Language");
 				$defaultLanguage = $objLanguage->GetInstance(array
 				(
 					new TenantObjectInstancePropertyValue("Code", "en-US")
 				));
-
+				
 				foreach ($insts as $inst)
 				{
 					if ($inst->GetPropertyValue("Language")->GetInstance() == $defaultLanguage) return $inst->GetPropertyValue("Value");
