@@ -31,35 +31,38 @@
 			{
 				$this->CurrentInstance = TenantObjectInstance::GetByID($this->InstanceID);
 			}
-			$adw = new AdditionalDetailWidget();
-			$adw->TargetURL = "~/instances/modify/" . $this->CurrentInstance->ID;
-			$adw->Text = $this->CurrentInstance->ToString();
-			$adw->ClassTitle = $this->CurrentInstance->ParentObject->Name;
 			
-			$propTasks = $this->CurrentInstance->ParentObject->GetPropertyValue("Tasks");
-			if ($propTasks != null)
+			if ($this->CurrentInstance != null)
 			{
-				$objTask = TenantObject::GetByName("Task");
+				$adw = new AdditionalDetailWidget();
+				$adw->TargetURL = "~/instances/modify/" . $this->CurrentInstance->ID;
+				$adw->Text = $this->CurrentInstance->ToString();
+				$adw->ClassTitle = $this->CurrentInstance->ParentObject->Name;
 				
-				$insts = $propTasks->GetInstances();
-				foreach ($insts as $inst)
+				$propTasks = $this->CurrentInstance->ParentObject->GetPropertyValue("Tasks");
+				if ($propTasks != null)
 				{
-					// TODO: determine if the Task is a
-					//		'Client-Side Script Task',
-					//		'Web Page Navigation Task',
-					//	or	'XquizIT Script Builder Task'
+					$objTask = TenantObject::GetByName("Task");
 					
-					// also check Task instance Security Groups, etc...
-					$taskName = $inst->ToString();
-					$adw->MenuItems[] = new MenuItemCommand
-					(
-						$taskName
-					);
+					$insts = $propTasks->GetInstances();
+					foreach ($insts as $inst)
+					{
+						// TODO: determine if the Task is a
+						//		'Client-Side Script Task',
+						//		'Web Page Navigation Task',
+						//	or	'XquizIT Script Builder Task'
+						
+						// also check Task instance Security Groups, etc...
+						$taskName = $inst->ToString();
+						$adw->MenuItems[] = new MenuItemCommand
+						(
+							$taskName
+						);
+					}
 				}
+				
+				$this->Controls[] = $adw;
 			}
-			
-			$this->Controls[] = $adw;
-			
 			parent::RenderBeginTag();
 		}
 	}
