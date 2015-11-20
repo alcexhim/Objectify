@@ -69,21 +69,6 @@
 					$txt->Render();
 				};
 				
-				$properties = $tenant->GetProperties();
-				foreach ($properties as $property)
-				{
-					$lvi = new ListViewItem(array
-					(
-						new ListViewItemColumn("lvcPropertyName", $property->Name),
-						new ListViewItemColumn("lvcPropertyDescription", $property->Description),
-						new ListViewItemColumn("lvcPropertyValue", null, function()
-						{
-							$property->RenderEditor($tenant->GetPropertyValue($property));
-						})
-					));
-					$lv->Items[] = $lvi;
-				}
-				
 				$tabGlobalObjects = $tbsTabs->GetTabByID("tabGlobalObjects");
 				
 				$lv = $tabGlobalObjects->GetControlByID("lvInheritedObjects");
