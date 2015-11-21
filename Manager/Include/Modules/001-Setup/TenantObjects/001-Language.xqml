@@ -80,14 +80,14 @@
 					</PropertyValues>
 				</Instance>
 				<Instance ID="{D573044A-4E7F-490C-864E-BD9EC0188A78}">
-					<!-- LanguageString_English_StringComponent_Title -->
+					<!-- LanguageString_English_UNUSED_Title -->
 					<PropertyValues>
 						<PropertyValue Name="Language">
 							<SingleInstancePropertyValue>
 								<Instance ID="{68BB6038-A4B5-4EE1-AAE9-326494942062}" />
 							</SingleInstancePropertyValue>
 						</PropertyValue>
-						<PropertyValue Name="Value" Value="String Component" />
+						<PropertyValue Name="Value" Value="UNUSED" />
 					</PropertyValues>
 				</Instance>
 				<Instance ID="{0F42BCB6-549A-4407-BB91-DD147443F68F}">
@@ -255,6 +255,61 @@
 						<PropertyValue Name="Value" Value="User" />
 					</PropertyValues>
 				</Instance>
+				<Instance ID="{056B2384-F841-4562-886B-F7AFB6D272F2}">
+					<!-- LanguageString_English_String_Title -->
+					<PropertyValues>
+						<PropertyValue Name="Language">
+							<SingleInstancePropertyValue>
+								<Instance ID="{68BB6038-A4B5-4EE1-AAE9-326494942062}" />
+							</SingleInstancePropertyValue>
+						</PropertyValue>
+						<PropertyValue Name="Value" Value="String" />
+					</PropertyValues>
+				</Instance>
+				<Instance ID="{481E3FBE-B82A-4C76-9DDF-D66C6BA8C590}">
+					<!-- LanguageString_English_StringComponent_Title -->
+					<PropertyValues>
+						<PropertyValue Name="Language">
+							<SingleInstancePropertyValue>
+								<Instance ID="{68BB6038-A4B5-4EE1-AAE9-326494942062}" />
+							</SingleInstancePropertyValue>
+						</PropertyValue>
+						<PropertyValue Name="Value" Value="String Component" />
+					</PropertyValues>
+				</Instance>
+				<Instance ID="{C773E134-D9C3-4524-A908-ACF0F744B4E1}">
+					<!-- LanguageString_English_InstancePropertyStringComponent_Title -->
+					<PropertyValues>
+						<PropertyValue Name="Language">
+							<SingleInstancePropertyValue>
+								<Instance ID="{68BB6038-A4B5-4EE1-AAE9-326494942062}" />
+							</SingleInstancePropertyValue>
+						</PropertyValue>
+						<PropertyValue Name="Value" Value="Instance Property String Component" />
+					</PropertyValues>
+				</Instance>
+				<Instance ID="{E6F690A2-87A2-49B7-885E-70B58629322B}">
+					<!-- LanguageString_English_TextConstantStringComponent_Title -->
+					<PropertyValues>
+						<PropertyValue Name="Language">
+							<SingleInstancePropertyValue>
+								<Instance ID="{68BB6038-A4B5-4EE1-AAE9-326494942062}" />
+							</SingleInstancePropertyValue>
+						</PropertyValue>
+						<PropertyValue Name="Value" Value="Text Constant String Component" />
+					</PropertyValues>
+				</Instance>
+				<Instance ID="{BEFAFDC4-358B-44E9-ACD9-FD253402EA22}">
+					<!-- LanguageString_English_TranslatableTextConstantStringComponent_Title -->
+					<PropertyValues>
+						<PropertyValue Name="Language">
+							<SingleInstancePropertyValue>
+								<Instance ID="{68BB6038-A4B5-4EE1-AAE9-326494942062}" />
+							</SingleInstancePropertyValue>
+						</PropertyValue>
+						<PropertyValue Name="Value" Value="Translatable Text Constant String Component" />
+					</PropertyValues>
+				</Instance>
 			</Instances>
 		</Object>
 		<Object Name="LanguageString">
@@ -273,7 +328,40 @@
 				<Property Name="Title">
 					<MultipleInstancePropertyValue>
 						<Instances>
-							<Instance ID="{D573044A-4E7F-490C-864E-BD9EC0188A78}" />
+							<Instance ID="{481E3FBE-B82A-4C76-9DDF-D66C6BA8C590}" />
+						</Instances>
+					</MultipleInstancePropertyValue>
+				</Property>
+			</Properties>
+		</Object>
+		<Object Name="InstancePropertyStringComponent">
+			<Properties>
+				<Property Name="Title" DataTypeName="MultipleInstance">
+					<MultipleInstancePropertyValue>
+						<Instances>
+							<Instance ID="{C773E134-D9C3-4524-A908-ACF0F744B4E1}" />
+						</Instances>
+					</MultipleInstancePropertyValue>
+				</Property>
+			</Properties>
+		</Object>
+		<Object Name="TextConstantStringComponent">
+			<Properties>
+				<Property Name="Title" DataTypeName="MultipleInstance">
+					<MultipleInstancePropertyValue>
+						<Instances>
+							<Instance ID="{E6F690A2-87A2-49B7-885E-70B58629322B}" />
+						</Instances>
+					</MultipleInstancePropertyValue>
+				</Property>
+			</Properties>
+		</Object>
+		<Object Name="TranslatableTextConstantStringComponent">
+			<Properties>
+				<Property Name="Title" DataTypeName="MultipleInstance">
+					<MultipleInstancePropertyValue>
+						<Instances>
+							<Instance ID="{BEFAFDC4-358B-44E9-ACD9-FD253402EA22}" />
 						</Instances>
 					</MultipleInstancePropertyValue>
 				</Property>

@@ -17,6 +17,7 @@
 	use Objectify\Objects\TenantObjectInstancePropertyValue;
 	use Objectify\Objects\MultipleInstanceProperty;
 	use Objectify\Objects\SingleInstanceProperty;
+	use UniversalEditor\ObjectModels\Markup\MarkupTagElement;
 	
 	class SetupPage extends PhastPage
 	{
@@ -142,7 +143,7 @@
 							if ($attName == null) continue;
 							
 							$property = $obj->GetProperty($attName->Value);
-							$value = $this->XquizitLoadPropertyValueFromTag($elemProperty);
+							$value = $this->XquizitLoadPropertyValueFromTag($elemProperty, $obj, false, $filename);
 							
 							if ($property == null)
 							{
@@ -185,7 +186,7 @@
 								
 							if ($attName == null) continue;
 
-							$value = $this->XquizitLoadPropertyValueFromTag($elemProperty);
+							$value = $this->XquizitLoadPropertyValueFromTag($elemProperty, $obj, true, $filename);
 							if ($obj->HasInstanceProperty($attName->Value))
 							{
 								$property = $obj->GetInstanceProperty($attName->Value, false);
@@ -194,7 +195,12 @@
 							{
 								if ($attDataTypeName == null)
 								{
-									trigger_error("XquizIT: attempted to create a new property without a data type name");
+									Objectify::Log("XquizIT attempted to create a new property without a data type name", array
+									(
+										"Property Name" => $attName->Value,
+										"Object Name" => $obj->Name,
+										"XquizIT Source File Name" => $filename
+									));
 									continue;
 								}
 								$property = $obj->CreateInstanceProperty($attName->Value, DataType::GetByName($attDataTypeName->Value), $value);
@@ -237,7 +243,7 @@
 									if ($attInstancePropertyName == null) continue;
 									
 									$name = $attInstancePropertyName->Value;
-									$value = $this->XquizitLoadPropertyValueFromTag($elemInstancePropertyValue);
+									$value = $this->XquizitLoadPropertyValueFromTag($elemInstancePropertyValue, $obj, true, $filename);
 									$inst->SetPropertyValue($name, $value);
 								}
 							}
@@ -249,8 +255,16 @@
 			return $retval;
 		}
 		
-		private function XquizitLoadPropertyValueFromTag($tag)
+		/**
+		 * Loads a property value from a tag in an Xquizit Markup Language file.
+		 * @param MarkupTagElement $tag
+		 * @param TenantObject $obj
+		 * @param boolean $isInstanceProperty
+		 * @param string $filename
+		 */
+		private function XquizitLoadPropertyValueFromTag($tag, $obj, $isInstanceProperty, $filename)
 		{
+			$attPropertyName = $tag->GetAttribute("Name");
 			$attPropertyValue = $tag->GetAttribute("Value");
 			$value = null;
 			if ($attPropertyValue != null)
@@ -262,25 +276,62 @@
 				$elemPropertyValue = $tag->GetElement(0);
 				if ($elemPropertyValue == null) return null;
 				
+				$validObjects = null;
+				
+				$elemValidObjects = $elemPropertyValue->GetElement("ValidObjects");
+				if ($elemValidObjects != null)
+				{
+					$validObjects = array();
+						
+					$elemValidObjectsItems = $elemValidObjects->GetElements();
+					foreach ($elemValidObjectsItems as $elemValidObjectsItem)
+					{
+						$attName = $elemValidObjectsItem->GetAttribute("Name");
+						$validObjects[] = TenantObject::GetByName($attName->Value);
+					}
+				}
+				else 
+				{
+					if ($obj != null)
+					{
+						$prop = null;
+						if ($isInstanceProperty)
+						{
+							$prop = $obj->GetInstanceProperty($attPropertyName->Value);
+						}
+						else
+						{
+							$prop = $obj->GetProperty($attPropertyName->Value);
+						}
+						
+						if ($prop != null && $prop->DefaultValue != null)
+						{
+							$className = get_class($prop->DefaultValue);
+							if ($className == "Objectify\\Objects\\MultipleInstanceProperty"
+									|| $className == "Objectify\\Objects\\SingleInstanceProperty")
+							{
+								$validObjects = $prop->DefaultValue->ValidObjects;
+							}
+						}
+					}
+				}
+				
+				if ($validObjects == null)
+				{
+					Objectify::Log("XquizIT warning - instance property defined with no valid objects", array
+					(
+						"Property Name" => $attPropertyName->Value,
+						"Object Name" => $obj->Name,
+						"XquizIT Source File Name" => $filename,
+						"Data Type Name" => $elemPropertyValue->Name
+					));
+				}
+				
 				switch ($elemPropertyValue->Name)
 				{
 					case "MultipleInstancePropertyValue":
 					{
 						$instances = null;
-						$validObjects = null;
-			
-						$elemValidObjects = $elemPropertyValue->GetElement("ValidObjects");
-						if ($elemValidObjects != null)
-						{
-							$validObjects = array();
-			
-							$elemValidObjectsItems = $elemValidObjects->GetElements();
-							foreach ($elemValidObjectsItems as $elemValidObjectsItem)
-							{
-								$attName = $elemValidObjectsItem->GetAttribute("Name");
-								$validObjects[] = TenantObject::GetByName($attName->Value);
-							}
-						}
 						
 						$elemInstances = $elemPropertyValue->GetElement("Instances");
 						if ($elemInstances != null)
@@ -301,34 +352,26 @@
 					case "SingleInstancePropertyValue":
 					{
 						$instance = null;
-						$validObjects = null;
-							
+						
 						$elemInstance = $elemPropertyValue->GetElement("Instance");
 						if ($elemInstance != null)
 						{
 							$attID = $elemInstance->GetAttribute("ID");
 							$instance = TenantObjectInstance::GetByGlobalIdentifier($attID->Value);
 						}
-			
-						$elemValidObjects = $elemPropertyValue->GetElement("ValidObjects");
-						if ($elemValidObjects != null)
-						{
-							$validObjects = array();
-			
-							$elemValidObjectsItems = $elemValidObjects->GetElements();
-							foreach ($elemValidObjectsItems as $elemValidObjectsItem)
-							{
-								$attName = $elemValidObjectsItem->GetAttribute("Name");
-								$validObjects[] = TenantObject::GetByName($attName->Value);
-							}
-						}
-			
+						
 						$value = new SingleInstanceProperty($instance, $validObjects);
 						break;
 					}
 					default:
 					{
-						trigger_error("XquizIT: unknown property value type '" . $elemPropertyValue->Name . "'");
+						Objectify::Log("XquizIT did not know how to parse this data type", array
+						(
+							"Property Name" => $attPropertyName->Value,
+							"Object Name" => $obj->Name,
+							"XquizIT Source File Name" => $filename,
+							"Data Type Name" => $elemPropertyValue->Name
+						));
 						break;
 					}
 				}

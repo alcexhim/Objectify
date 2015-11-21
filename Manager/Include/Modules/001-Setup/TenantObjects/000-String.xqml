@@ -6,35 +6,34 @@
 				<ParentObject Name="Object" />
 			</ParentObjects>
 			<Properties>
+				<Property Name="Title" DataTypeName="MultipleInstance">
+					<MultipleInstancePropertyValue>
+						<Instances>
+							<Instance ID="{056B2384-F841-4562-886B-F7AFB6D272F2}" />
+						</Instances>
+					</MultipleInstancePropertyValue>
+				</Property>
 			</Properties>
 		</Object>
 		<Object ID="{F9E2B671-13F5-4172-A568-725ACD8BBFAB}" Name="StringComponent">
 			<ParentObjects>
 				<ParentObject Name="Object" />
 			</ParentObjects>
-			<Properties>
-			</Properties>
 		</Object>
 		<Object ID="{D37439E3-1138-4148-9946-379695B9B945}" Name="InstancePropertyStringComponent">
 			<ParentObjects>
 				<ParentObject Name="StringComponent" />
 			</ParentObjects>
-			<Properties>
-			</Properties>
 		</Object>
 		<Object ID="{9934049D-048F-42AC-9B0F-539618A8057A}" Name="TextConstantStringComponent">
 			<ParentObjects>
 				<ParentObject Name="StringComponent" />
 			</ParentObjects>
-			<Properties>
-			</Properties>
 		</Object>
 		<Object ID="{895AF8DB-1138-40FF-94ED-13E5FA2AB9BA}" Name="TranslatableTextConstantStringComponent">
 			<ParentObjects>
 				<ParentObject Name="StringComponent" />
 			</ParentObjects>
-			<Properties>
-			</Properties>
 		</Object>
 	</Objects>
 </Objectify>
