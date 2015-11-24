@@ -207,6 +207,17 @@
 		
 		public function ToString()
 		{
+			$propInstanceDisplayTitle = $this->ParentObject->GetPropertyValue("InstanceDisplayTitle");
+			if ($propInstanceDisplayTitle != null)
+			{
+				$propInstanceDisplayTitle_Value = $propInstanceDisplayTitle->GetInstance();
+				if ($propInstanceDisplayTitle_Value != null)
+				{
+					print_r($propInstanceDisplayTitle_Value);
+					die();
+				}
+			}
+			
 			$propTitle = $this->GetPropertyValue("Title");
 			if ($propTitle != null)
 			{
