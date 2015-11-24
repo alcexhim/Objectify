@@ -4,9 +4,6 @@
 	use Phast\System;
 	use Phast\Parser\PhastPage;
 	
-	use Objectify\Tenant\MasterPages\WebPage;
-	use Objectify\Objects\Tenant;
-	
 	use Phast\WebControls\AdditionalDetailWidget;
 	use Phast\WebControls\AdditionalDetailWidgetDisplayStyle;
 	
@@ -15,18 +12,21 @@
 	
 	use Phast\WebControls\MenuItemCommand;
 	
+	use Objectify\Tenant\MasterPages\WebPage;
+	
+	use Objectify\Objects\TenantObject;
+use Objectify\WebControls\InstanceDisplayWidget;
+		
 	class DashboardPage extends PhastPage
 	{
 		public function OnInitializing($e)
 		{
-			$tenants = Tenant::Get();
-
 			$lvTenantsActive = $this->Page->GetControlByID("lvTenantsActive");
 			$lvTenantsInactive = $this->Page->GetControlByID("lvTenantsInactive");
 			
-			// $lblTenantCountTotal = $this->Page->GetControlByID("lblTenantCountTotal");
-			// $lblTenantCountActive = $this->Page->GetControlByID("lblTenantCountActive");
-			// $lblTenantCountInactive = $this->Page->GetControlByID("lblTenantCountInactive");
+			$objTenant = TenantObject::GetByName("Tenant");
+			$tenants = $objTenant->GetInstances();
+			
 			$dscActiveTenants = $this->Page->GetControlByID("dscActiveTenants");
 			$dscInactiveTenants = $this->Page->GetControlByID("dscInactiveTenants");
 			
@@ -34,16 +34,20 @@
 			
 			$countActive = 0;
 			$countInactive = 0;
+			
 			foreach ($tenants as $tenant)
 			{
 				$lvi = new ListViewItem();
 				$lvi->Columns[] = new ListViewItemColumn("lvcTenantName", function($sender)
 				{
 					$tenant = $sender->ExtraData;
+					
+					$adw = new InstanceDisplayWidget($tenant);
+					/*
 					$adw = new AdditionalDetailWidget();
-					$adw->Text = $tenant->URL;
+					$adw->Text = $tenant->GetPropertyValue("TenantURL");
 					$adw->ClassTitle = "Tenant";
-					$adw->TargetURL = "~/tenants/launch/" . $tenant->URL;
+					$adw->TargetURL = "~/tenants/launch/" . $tenant->GetPropertyValue("TenantURL");
 					$adw->TargetFrame = "_blank";
 					$adw->MenuItems = array
 					(
@@ -51,23 +55,24 @@
 						(
 							// Modify Tenant (101) : for Instance (1332) : of Tenant (15724)
 							// ~/o/15724/i/1332/t/101
-							new MenuItemCommand("Modify", "~/tenants/modify/" . $tenant->URL),
-							new MenuItemCommand("Clone", "~/tenants/clone/" . $tenant->URL),
-							new MenuItemCommand("Delete", "~/tenants/delete/" . $tenant->URL)
+							new MenuItemCommand("Modify", "~/tenants/modify/" . $tenant->GetPropertyValue("TenantURL")),
+							new MenuItemCommand("Clone", "~/tenants/clone/" . $tenant->GetPropertyValue("TenantURL")),
+							new MenuItemCommand("Delete", "~/tenants/delete/" . $tenant->GetPropertyValue("TenantURL"))
 						)),
 						new MenuItemCommand("Migration", null, null, null, array
 						(
-							new MenuItemCommand("Create", "~/migration/create/" . $tenant->URL)
+							new MenuItemCommand("Create", "~/migration/create/" . $tenant->GetPropertyValue("TenantURL"))
 						)),
 						new MenuItemCommand("Reporting", null, null, null, array
 						(
-							new MenuItemCommand("Create Custom Report from Here", "~/tenants/modify/" . $tenant->URL),
-							new MenuItemCommand("Related Reports", "~/tenants/delete/" . $tenant->URL),
-							new MenuItemCommand("Report Fields and Values", "~/tenants/delete/" . $tenant->URL)
+							new MenuItemCommand("Create Custom Report from Here", "~/tenants/modify/" . $tenant->GetPropertyValue("TenantURL")),
+							new MenuItemCommand("Related Reports", "~/tenants/delete/" . $tenant->GetPropertyValue("TenantURL")),
+							new MenuItemCommand("Report Fields and Values", "~/tenants/delete/" . $tenant->GetPropertyValue("TenantURL"))
 						))
 					);
+					*/
 					$adw->Render();
-				}, $tenant->URL, $tenant);
+				}, $tenant->GetPropertyValue("TenantURL"), $tenant);
 				$lvi->Columns[] = new ListViewItemColumn("lvcTenantType", "");
 				
 				$str = "";
@@ -83,7 +88,7 @@
 					"<a href=\"" . System::ExpandRelativePath("~/Tenants/Clone/" . $tenant->URL) . "\">Clone</a> | " .
 					"<a href=\"" . System::ExpandRelativePath("~/Tenants/Delete/" . $tenant->URL) . "\">Delete</a>");
 				*/
-				
+				/*
 				if ($tenant->IsExpired())
 				{
 					$countInactive++;
@@ -91,9 +96,10 @@
 				}
 				else
 				{
+				*/
 					$countActive++;
 					$lvTenantsActive->Items[] = $lvi;
-				}
+				//				}
 			}
 			
 			$dscActiveTenants->Title = "Active Tenants (" . $countActive . ")";
