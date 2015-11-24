@@ -14,14 +14,9 @@
 	(
 		// 			$name, $dataType, $size, $value, $allowNull, $primaryKey, $autoIncrement
 		new Column("ID", "INT", null, null, false, true, true),
-		new Column("TenantID", "INT", null, null, true), // if set, object is only visible/referencable within specified tenant
 		new Column("Name", "VARCHAR", 256, null, false),
 		new Column("GlobalIdentifier", "CHAR", 32, null, true)
 	));
-	$tblTenantObjects->ForeignKeys = array
-	(
-		new TableForeignKey("TenantID", new TableForeignKeyColumn($tblTenants, $tblTenants->GetColumnByName("ID")))
-	);
 	$tables[] = $tblTenantObjects;
 	
 	$tblTenantObjectParentObjects = new Table("TenantObjectParentObjects", "parentobject_", array

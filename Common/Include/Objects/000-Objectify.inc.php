@@ -15,17 +15,14 @@
 			
 			$pdo = DataSystem::GetPDO();
 			
-			$tenant = Tenant::GetCurrent();
-			
 			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "DebugMessages "
-				. "(message_TenantID, message_Content, message_SeverityID, message_Timestamp, message_IPAddress)"
+				. "(message_Content, message_SeverityID, message_Timestamp, message_IPAddress)"
 				. " VALUES "
-				. "(:message_TenantID, :message_Content, :message_SeverityID, NOW(), :message_IPAddress)";
+				. "(:message_Content, :message_SeverityID, NOW(), :message_IPAddress)";
 			
 			$statement = $pdo->prepare($query);
 			$result = $statement->execute(array
 			(
-				":message_TenantID" => ($tenant == null ? null : $tenant->ID),
 				":message_Content" => $message,
 				":message_SeverityID" => $severity,
 				":message_IPAddress" => $_SERVER["REMOTE_ADDR"]

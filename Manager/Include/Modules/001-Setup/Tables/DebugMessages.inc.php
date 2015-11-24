@@ -12,7 +12,6 @@
 	(
 		// 			$name, $dataType, $size, $value, $allowNull, $primaryKey, $autoIncrement
 		new Column("ID", "INT", null, null, false, true, true),
-		new Column("TenantID", "INT", null, null, true),
 		new Column("Content", "LONGTEXT", null, null, false),
 		new Column("SeverityID", "INT", null, 0, false),
 		new Column("Timestamp", "DATETIME", null, null, false),

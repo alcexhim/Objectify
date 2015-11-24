@@ -4,7 +4,8 @@
 	use Phast\Parser\PhastPage;
 	use Phast\CancelEventArgs;
 	
-	use Objectify\Objects\Tenant;
+	use Objectify\Objects\TenantObject;
+	use Objectify\Objects\TenantObjectInstancePropertyValue;
 	
 	class TenantAPI extends PhastPage
 	{
@@ -20,7 +21,7 @@
 				if ($_POST["tenant_ID"] != null)
 				{
 					// update an existing tenant
-					$tenant = Tenant::GetByID($_POST["tenant_ID"]);
+					// $tenant = Tenant::GetByID($_POST["tenant_ID"]);
 					
 					$tenant->URL = $_POST["tenant_Name"];
 					$tenant->Description = $_POST["tenant_Description"];
@@ -50,13 +51,20 @@
 							$tenantName .= str_pad(($i + 1), strlen($count), "0", STR_PAD_LEFT);
 						}
 						
+						/*
 						if (Tenant::ExistsByURL($tenantName))
 						{
 							echo ("{ \"Result\": \"Failure\", \"Message\": \"The tenant already exists\" }");
 							return;
 						}
+						*/
 						
-						$retval = Tenant::Create($tenantName);
+						$objTenant = TenantObject::GetByName("Tenant");
+						$retval = $objTenant->CreateInstance(array
+						(
+							new TenantObjectInstancePropertyValue("TenantURL", $tenantName)
+						));
+						
 						if ($retval === false)
 						{
 							echo ("{ \"Result\": \"Failure\", \"Message\": \"Unknown error occurred\" }");

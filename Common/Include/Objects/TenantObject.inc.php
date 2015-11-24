@@ -9,14 +9,12 @@
 	class TenantObject
 	{
 		public $ID;
-		public $Tenant;
 		public $Name;
 		
 		public static function GetByAssoc($values)
 		{
 			$item = new TenantObject();
 			$item->ID = $values["object_ID"];
-			$item->Tenant = Tenant::GetByID($values["object_TenantID"]);
 			$item->Name = $values["object_Name"];
 			return $item;
 		}
@@ -24,30 +22,19 @@
 		/**
 		 * Gets all TenantObjects on the server.
 		 * @param int $max
-		 * @param unknown $tenant
 		 * @return TenantObject[]
 		 */
-		public static function Get($max = null, $tenant = null)
+		public static function Get($max = null)
 		{
 			$pdo = DataSystem::GetPDO();
 			
 			$retval = array();
 			
 			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjects";
-			
-			$tenantID = null;
-			if ($tenant != null)
-			{
-				$query .= " WHERE object_TenantID = :object_TenantID";
-				$tenantID = $tenant->ID;
-			}
 			if (is_numeric($max)) $query .= " LIMIT " . $max;
 
 			$statement = $pdo->prepare($query);
-			$result = $statement->execute(array
-			(
-				":object_TenantID" => $tenantID
-			));
+			$result = $statement->execute();
 			
 			if ($result === false) return $retval;
 			

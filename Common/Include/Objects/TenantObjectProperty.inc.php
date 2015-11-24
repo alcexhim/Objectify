@@ -6,7 +6,6 @@
 	class TenantObjectProperty
 	{
 		public $ID;
-		public $Tenant;
 		public $ParentObject;
 		
 		public $Name;
@@ -58,7 +57,6 @@
 		{
 			$item = new TenantObjectProperty();
 			$item->ID = $values["property_ID"];
-			$item->Tenant = Tenant::GetByID($values["property_TenantID"]);
 			$item->ParentObject = TenantObject::GetByID($values["property_ObjectID"]);
 			$item->Name = $values["property_Name"];
 			$item->Description = $values["property_Description"];
