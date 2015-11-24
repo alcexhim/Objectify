@@ -24,7 +24,27 @@
 			{
 				if ($obj->ID != $value->ParentObject->ID)
 				{
-					$objIDsAllowed[] = $obj->ID;
+					// go through the hierarchy to see if it's really invalid
+					$objParents = $obj->GetParentObjects();
+					$ok = false;
+					$count = count($objParents);
+					while ($count > 0)
+					{
+						foreach ($objParents as $objParent)
+						{
+							if ($objParent->ID != $value->ParentObject->ID)
+							{
+								$ok = false;
+								break;
+							}
+						}
+						if (!$ok) break;
+					}
+					
+					if (!$ok)
+					{
+						$objIDsAllowed[] = $obj->ID;
+					}
 				}
 			}
 			
