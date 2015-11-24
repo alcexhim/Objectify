@@ -1,19 +1,21 @@
 <?php
 	namespace Objectify\WebControls;
+
+	use Phast\WebControlAttribute;
 	
 	use Phast\WebControls\TextBox;
 	use Phast\WebControls\TextBoxItem;
 	
 	use Objectify\Objects\TenantObject;
 	use Objectify\Objects\TenantObjectInstance;
-	
+			
 	class InstanceBrowser extends TextBox
 	{
 		/**
 		 * The TenantObjects allowed to be selected from this InstanceBrowser.
 		 * @var TenantObject[]
 		 */
-		public $ObjectTypes;
+		public $ValidObjects;
 		
 		/**
 		 * The TenantObjectInstances that are selected.
@@ -31,14 +33,40 @@
 		{
 			parent::__construct();
 			
-			foreach ($this->ObjectTypes as $obj)
+			$this->ClassList[] = "InstanceBrowser";
+			$this->SelectedInstances = array();
+			$this->ValidObjects = array();
+		}
+		
+		protected function RenderBeginTag()
+		{
+			// define the valid objects
+			$attval = "";
+			$count = count($this->ValidObjects);
+			if ($count > 0)
 			{
-				$insts = $obj->GetInstances();
-				foreach ($insts as $inst)
+				for ($i = 0; $i < $count; $i++)
 				{
-					$this->Items[] = new TextBoxItem($inst->ToString(), $inst->ID);
+					$attval .= $this->ValidObjects[$i]->ID;
+					if ($i < $count - 1) $attval .= ",";
 				}
+				$this->Attributes[] = new WebControlAttribute("data-valid-objects", $attval);
 			}
+				
+			// define the selected instances
+			$attval = "";
+			$count = count($this->SelectedInstances);
+			if ($count > 0)
+			{
+				for ($i = 0; $i < $count; $i++)
+				{
+					$attval .= $this->SelectedInstances[$i]->ID;
+					if ($i < $count - 1) $attval .= ",";
+				}
+				$this->Attributes[] = new WebControlAttribute("data-selected-instances", $attval);
+			}
+			
+			parent::RenderBeginTag();
 		}
 	}
 ?>

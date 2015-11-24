@@ -7,7 +7,7 @@
 	use Objectify\Objects\TenantObject;
 	use Objectify\Objects\TenantObjectInstancePropertyValue;
 	
-	class TenantAPI extends PhastPage
+	class TenantObjectAPI extends PhastPage
 	{
 		
 		public function OnInitializing(CancelEventArgs $e)
@@ -18,7 +18,7 @@
 			
 			if ($e->RenderingPage->IsPostback)
 			{
-				if ($_POST["tenant_ID"] != null)
+				if ($_POST["ID"] != null)
 				{
 					// update an existing tenant
 					// $tenant = Tenant::GetByID($_POST["tenant_ID"]);
@@ -76,25 +76,32 @@
 			}
 			else
 			{
-				switch ($_GET["action"])
+				switch ($_GET["Action"])
 				{
-					case "retrieve":
+					case "Retrieve":
 					{
-						$tenant_ID = $_GET["tenant_ID"];
-						$tenant_URL = $_GET["tenant_URL"];
-						
-						if (is_numeric($tenant_ID))
+						$items = array();
+						if (isset($_GET["ID"]))
 						{
-							$tenant = Tenant::GetByID($tenant_ID);
+							$items[] = TenantObject::GetByID($_GET["ID"]);
+						}
+						else if (isset($_GET["Name"]))
+						{
+							$items[] = TenantObject::GetByName($_GET["Name"]);
 						}
 						else
 						{
-							$tenant = Tenant::GetByURL($tenant_URL);
+							$items = TenantObject::Get();
 						}
 						
 						echo ("{ \"Result\": \"Success\", \"Items\": [ ");
 						
-						echo(json_encode($tenant));
+						$count = count($items);
+						for($i = 0; $i < $count; $i++)
+						{
+							echo(json_encode($items[$i]));
+							if ($i < $count - 1) echo(",");
+						}
 						
 						echo (" ] }");
 						return;
