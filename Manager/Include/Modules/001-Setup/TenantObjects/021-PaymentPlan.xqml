@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Objectify>
+	<Objects>
+		<Object Name="LanguageString">
+			<Instances>
+				<Instance ID="{C0B0CE3D-4AA6-417E-93F0-AAF39FDC191A}">
+					<!-- LanguageString_English_DataCenter_Title -->
+					<PropertyValues>
+						<PropertyValue Name="Language">
+							<SingleInstancePropertyValue>
+								<Instance ID="{68BB6038-A4B5-4EE1-AAE9-326494942062}" />
+							</SingleInstancePropertyValue>
+						</PropertyValue>
+						<PropertyValue Name="Value" Value="Payment Plan" />
+					</PropertyValues>
+				</Instance>
+			</Instances>
+		</Object>
+		<Object ID="{622C2C7B-B1C5-45F8-999C-370DC98D138D}" Name="PaymentPlan">
+			<ParentObjects>
+				<ParentObject Name="Object" />
+			</ParentObjects>
+			<Properties>
+				<Property Name="Title">
+					<MultipleInstancePropertyValue>
+						<Instances>
+							<Instance ID="{C0B0CE3D-4AA6-417E-93F0-AAF39FDC191A}" />
+						</Instances>
+					</MultipleInstancePropertyValue>
+				</Property>
+			</Properties>
+			<InstanceProperties>
+				<Property Name="FixedAmount" DataTypeName="Text" />
+			</InstanceProperties>
+		</Object>
+	</Objects>
+</Objectify>

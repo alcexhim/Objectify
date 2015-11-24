@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Objectify>
+	<Objects>
+		<Object Name="LanguageString">
+			<Instances>
+				<Instance ID="{92EC9173-A12B-4E74-8638-689C90145A8B}">
+					<!-- LanguageString_English_Dashboard_Title -->
+					<PropertyValues>
+						<PropertyValue Name="Language">
+							<SingleInstancePropertyValue>
+								<Instance ID="{68BB6038-A4B5-4EE1-AAE9-326494942062}" />
+							</SingleInstancePropertyValue>
+						</PropertyValue>
+						<PropertyValue Name="Value" Value="Dashboard" />
+					</PropertyValues>
+				</Instance>
+				<Instance ID="{7B72F7EE-0C80-4FA9-BEC6-3A6D20853D5B}">
+					<!-- LanguageString_English_DashboardContent_Title -->
+					<PropertyValues>
+						<PropertyValue Name="Language">
+							<SingleInstancePropertyValue>
+								<Instance ID="{68BB6038-A4B5-4EE1-AAE9-326494942062}" />
+							</SingleInstancePropertyValue>
+						</PropertyValue>
+						<PropertyValue Name="Value" Value="Dashboard Content" />
+					</PropertyValues>
+				</Instance>
+				<Instance ID="{944FBF95-C316-4C07-B34F-5D2E1EFCD965}">
+					<!-- LanguageString_English_ReportDashboardContent_Title -->
+					<PropertyValues>
+						<PropertyValue Name="Language">
+							<SingleInstancePropertyValue>
+								<Instance ID="{68BB6038-A4B5-4EE1-AAE9-326494942062}" />
+							</SingleInstancePropertyValue>
+						</PropertyValue>
+						<PropertyValue Name="Value" Value="Report Dashboard Content" />
+					</PropertyValues>
+				</Instance>
+			</Instances>
+		</Object>
+		<Object ID="{896B529C-452D-42AC-98C5-170ED4F826C6}" Name="Dashboard">
+			<Properties>
+				<Property Name="Title">
+					<MultipleInstancePropertyValue>
+						<Instances>
+							<Instance ID="{92EC9173-A12B-4E74-8638-689C90145A8B}" />
+						</Instances>
+					</MultipleInstancePropertyValue>
+				</Property>
+			</Properties>
+			<InstanceProperties>
+				<Property Name="Items" DataTypeName="MultipleInstance">
+					<MultipleInstancePropertyValue>
+						<ValidObjects>
+							<ValidObject Name="DashboardContent" />
+						</ValidObjects>
+					</MultipleInstancePropertyValue>
+				</Property>
+			</InstanceProperties>
+		</Object>
+		<Object ID="{D1A60533-1B5A-422E-9739-4551FDEC48BF}" Name="DashboardContent">
+			<Properties>
+				<Property Name="Title">
+					<MultipleInstancePropertyValue>
+						<Instances>
+							<Instance ID="{7B72F7EE-0C80-4FA9-BEC6-3A6D20853D5B}" />
+						</Instances>
+					</MultipleInstancePropertyValue>
+				</Property>
+			</Properties>
+			<InstanceProperties>
+				<Property Name="Title" DataTypeName="MultipleInstance">
+					<MultipleInstancePropertyValue>
+						<ValidObjects>
+							<ValidObject Name="LanguageString" />
+						</ValidObjects>
+					</MultipleInstancePropertyValue>
+				</Property>
+				<Property Name="Tasks" DataTypeName="MultipleInstance">
+					<MultipleInstancePropertyValue>
+						<ValidObjects>
+							<ValidObject Name="Task" />
+						</ValidObjects>
+					</MultipleInstancePropertyValue>
+				</Property>
+			</InstanceProperties>
+		</Object>
+		<Object ID="{F3D52C9C-8A4E-4D5B-85BC-FD8EF8B87805}" Name="ReportDashboardContent">
+			<ParentObjects>
+				<ParentObject ID="{D1A60533-1B5A-422E-9739-4551FDEC48BF}" />
+			</ParentObjects>
+			<Properties>
+				<Property Name="Title">
+					<MultipleInstancePropertyValue>
+						<Instances>
+							<Instance ID="{944FBF95-C316-4C07-B34F-5D2E1EFCD965}" />
+						</Instances>
+					</MultipleInstancePropertyValue>
+				</Property>
+			</Properties>
+			<InstanceProperties>
+				<Property Name="Report" DataTypeName="MultipleInstance">
+					<MultipleInstancePropertyValue>
+						<ValidObjects>
+							<ValidObject Name="Report" />
+						</ValidObjects>
+					</MultipleInstancePropertyValue>
+				</Property>
+			</InstanceProperties>
+		</Object>
+	</Objects>
+</Objectify>
