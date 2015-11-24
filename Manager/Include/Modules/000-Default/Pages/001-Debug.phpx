@@ -1,51 +1,55 @@
 <Website>
 	<Pages>
-		<Page FileName="debug/$(messageID)">
-			<html:Layer ID="divErrorList" EnableRender="false">
-				<html:Form Method="Post">
-					<html:Input Type="Hidden" Name="action" Value="delete" />
-					<html:Input Type="Submit" Value="Clear Messages" />
-				</html:Form>
-				<wfx:ListView ID="lvMessages">
-					<Columns>
-						<wfx:ListViewColumn ID="lvcTenant" Title="Tenant" />
-						<wfx:ListViewColumn ID="lvcSeverity" Title="Severity" />
-						<wfx:ListViewColumn ID="lvcMessage" Title="Message" />
-						<wfx:ListViewColumn ID="lvcTimestamp" Title="Timestamp" />
-						<wfx:ListViewColumn ID="lvcIPAddress" Title="IP Address" />
-					</Columns>
-				</wfx:ListView>
-			</html:Layer>
-			<html:Layer ID="divErrorDetails" EnableRender="false">
-				<html:Heading Level="1">Error Details</html:Heading>
-				<html:Paragraph>
-					<html:Literal ID="lblMessageContent" />
-				</html:Paragraph>
-				
-				<html:Heading Level="2">Parameters</html:Heading>
-				<wfx:ListView ID="lvParameters">
-					<Columns>
-						<wfx:ListViewColumn ID="lvcName" Title="Name" />
-						<wfx:ListViewColumn ID="lvcValue" Title="Value" />
-					</Columns>
-				</wfx:ListView>
-				
-				<html:Heading Level="2">Backtrace</html:Heading>
-				<wfx:ListView ID="lvBacktrace">
-					<Columns>
-						<wfx:ListViewColumn ID="lvcFileName" Title="File name" />
-						<wfx:ListViewColumn ID="lvcLineNumber" Title="Line number" />
-					</Columns>
-				</wfx:ListView>
-				
-				<html:Layer CssClass="Buttons">
-					<html:Form Method="Post">
-						<html:Input Type="Hidden" Name="action" Value="delete" />
-						<html:Input Type="Submit" Value="Delete Message" />
-						<html:Anchor TargetURL="~/debug">Back to Messages</html:Anchor>
-					</html:Form>
-				</html:Layer>
-			</html:Layer>
+		<Page FileName="debug/$(messageID)" MasterPageFileName="Default" CodeBehindClassName="Objectify\Manager\Modules\DefaultModule\Pages\DebugPage">
+			<Content>
+				<wfx:Section PlaceholderID="Content">
+					<html:Layer ID="divErrorList" EnableRender="false">
+						<html:Form Method="Post">
+							<html:Input Type="Hidden" Name="action" Value="delete" />
+							<html:Input Type="Submit" Value="Clear Messages" />
+						</html:Form>
+						<wfx:ListView ID="lvMessages">
+							<Columns>
+								<wfx:ListViewColumn ID="lvcTenant" Title="Tenant" />
+								<wfx:ListViewColumn ID="lvcSeverity" Title="Severity" />
+								<wfx:ListViewColumn ID="lvcMessage" Title="Message" />
+								<wfx:ListViewColumn ID="lvcTimestamp" Title="Timestamp" />
+								<wfx:ListViewColumn ID="lvcIPAddress" Title="IP Address" />
+							</Columns>
+						</wfx:ListView>
+					</html:Layer>
+					<html:Layer ID="divErrorDetails" EnableRender="false">
+						<html:Heading Level="1">Error Details</html:Heading>
+						<html:Paragraph>
+							<html:Literal ID="lblMessageContent" />
+						</html:Paragraph>
+						
+						<html:Heading Level="2">Parameters</html:Heading>
+						<wfx:ListView ID="lvParameters">
+							<Columns>
+								<wfx:ListViewColumn ID="lvcName" Title="Name" />
+								<wfx:ListViewColumn ID="lvcValue" Title="Value" />
+							</Columns>
+						</wfx:ListView>
+						
+						<html:Heading Level="2">Backtrace</html:Heading>
+						<wfx:ListView ID="lvBacktrace">
+							<Columns>
+								<wfx:ListViewColumn ID="lvcFileName" Title="File name" />
+								<wfx:ListViewColumn ID="lvcLineNumber" Title="Line number" />
+							</Columns>
+						</wfx:ListView>
+						
+						<html:Layer CssClass="PageFooter">
+							<html:Form Method="Post">
+								<html:Input Type="Hidden" Name="action" Value="delete" />
+								<html:Input CssClass="Primary" Type="Submit" Value="Delete Message" />
+								<wfx:Button TargetURL="~/debug" Text="Back to Messages" />
+							</html:Form>
+						</html:Layer>
+					</html:Layer>
+				</wfx:Section>
+			</Content>
 		</Page>
 	</Pages>
 </Website>
