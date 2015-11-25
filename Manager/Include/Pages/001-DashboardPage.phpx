@@ -58,6 +58,7 @@
 								</ContentControls>
 								<FooterControls>
 									<wfx:Button ID="cmdNewTenant" Text="New Tenant" TargetURL="~/tenants/create" TargetScript="wndCreateTenant.ShowDialog(); return false;" />
+									<ofx:TaskButton ID="cmdNewTenant_Tasked" Text="New Tenant (Task)" InstanceGlobalIdentifier="170908E4E3CD4854BB2FC7815BBD1990" />
 								</FooterControls>
 							</wfx:Panel>
 						</div>
