@@ -6,6 +6,7 @@ function InstanceBrowser(parentElement)
 	this.TextBoxObject.EventHandlers.DropDownOpening.Add(function(sender, e)
 	{
 		sender.Items.Clear();
+		sender.SetLoading(true);
 		
 		var validObjects = sender.ParentElement.getAttribute("data-valid-objects");
 		if (validObjects != null)
@@ -21,6 +22,7 @@ function InstanceBrowser(parentElement)
 						{
 							sender.Items.Add({ "Title": e2.Items[j].GlobalIdentifier, "Value": e2.Items[j].ID });
 						}
+						sender.SetLoading(true);
 					});
 				});
 			}
