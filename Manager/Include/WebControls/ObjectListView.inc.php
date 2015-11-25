@@ -23,6 +23,11 @@
 				new ListViewColumn("lvcParentObjects", "Parent object(s)"),
 				new ListViewColumn("lvcInstances", "Instances")
 			);
+		}
+		
+		protected function RenderBeginTag()
+		{
+			parent::RenderBeginTag();
 			
 			$objects = TenantObject::Get();
 			foreach ($objects as $obj)
