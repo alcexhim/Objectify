@@ -10,7 +10,7 @@
 	use Objectify\Objects\TenantObject;
 	use Objectify\Objects\MultipleInstanceProperty;
 	use Objectify\Objects\TenantObjectInstance;
-				
+	
 	class InstanceDisplayWidget extends WebControl
 	{
 		public $CurrentInstance;
