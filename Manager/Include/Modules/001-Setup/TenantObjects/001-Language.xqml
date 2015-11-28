@@ -370,15 +370,15 @@
 		<Object Name="Language">
 			<Instances>
 				<Instance ID="{68BB6038-A4B5-4EE1-AAE9-326494942062}">
-					<Properties>
-						<Property Name="Title">
+					<PropertyValues>
+						<PropertyValue Name="Title">
 							<MultipleInstancePropertyValue>
 								<Instances>
 									<Instance ID="{0F42BCB6-549A-4407-BB91-DD147443F68F}" />
 								</Instances>
 							</MultipleInstancePropertyValue>
-						</Property>
-					</Properties>
+						</PropertyValue>
+					</PropertyValues>
 				</Instance>
 			</Instances>
 		</Object>
