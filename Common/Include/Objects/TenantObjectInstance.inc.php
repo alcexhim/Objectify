@@ -207,6 +207,7 @@
 		
 		public function ToString()
 		{
+			// First get the Instance Display Title on the parent object and see if we have a format
 			$propInstanceDisplayTitle = $this->ParentObject->GetPropertyValue("InstanceDisplayTitle");
 			if ($propInstanceDisplayTitle != null)
 			{
@@ -218,6 +219,8 @@
 				}
 			}
 			
+			// If we do not have an Instance Display Title for the parent object, see
+			// if we have an instance property named Title and use that
 			$propTitle = $this->GetPropertyValue("Title");
 			if ($propTitle != null)
 			{
@@ -234,6 +237,8 @@
 					if ($inst->GetPropertyValue("Language")->GetInstance() == $defaultLanguage) return $inst->GetPropertyValue("Value");
 				}
 			}
+			
+			// When all else fails, use the Name property
 			return $this->GetPropertyValue("Name");
 		}
 	}
