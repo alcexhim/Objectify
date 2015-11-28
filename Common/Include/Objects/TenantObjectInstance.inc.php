@@ -239,7 +239,10 @@
 			}
 			
 			// When all else fails, use the Name property
-			return $this->GetPropertyValue("Name");
+			
+			// TODO: DON'T RELY ON THIS!!!
+			// this works for LanguageString but we really need to implement Instance Display Title ASAP!
+			return $this->GetPropertyValue("Value");
 		}
 	}
 ?>
