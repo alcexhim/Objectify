@@ -51,6 +51,36 @@
 			}
 			return $id;
 		}
+		
+		/**
+		 * Creates TenantObject(s) from an XquiIT JavaScript Object Notation (JSON) file and returns the array of all TenantObjects that were created.
+		 * @param string $filename The file name to parse as an XquizIT object definition.
+		 * @return TenantObject[]|false
+		 */
+		private function LoadXQJS($filename)
+		{
+			$retval = array();
+			$filedatastr = file_get_contents($filename);
+			$filedata = json_decode($filedatastr);
+			
+			if ($filedata->Objects != null)
+			{
+				foreach ($filedata->Objects as $objdef)
+				{
+					$obj = TenantObject::GetByName($objdef->Name);
+					if ($obj == null)
+					{
+						$obj = TenantObject::Create($objdef->Name, null, $objdef->ID);
+					}
+					
+					
+					
+					$retval[] = $obj;
+				}
+			}
+			
+			return $retval;
+		}
 
 		/**
 		 * Creates TenantObject(s) from an XquizIT markup language file and returns the array of all TenantObjects that were created.
@@ -62,7 +92,7 @@
 			$parser = new XMLParser();
 			$mom = $parser->LoadFile($filename);
 			$retval = array(); // to store an array of all the objects that were created by this function
-				
+			
 			$tagObjectify = $mom->GetElement("Objectify");
 			if ($tagObjectify == null)
 			{
@@ -512,6 +542,11 @@
 					// this can be set by User property IsGlobal - USE SPARINGLY!!!
 					
 					// Create the tenanted objects required before anything else takes place
+					$tenantObjectFileNames = glob(dirname(__FILE__) . "/../TenantObjects/*.xqjs");
+					foreach ($tenantObjectFileNames as $tenantObjectFileName)
+					{
+						$objs = $this->LoadXQJS($tenantObjectFileName);
+					}
 					$tenantObjectFileNames = glob(dirname(__FILE__) . "/../TenantObjects/*.xqml");
 					foreach ($tenantObjectFileNames as $tenantObjectFileName)
 					{
