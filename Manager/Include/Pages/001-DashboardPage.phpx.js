@@ -6,9 +6,25 @@ function wndCreateTenant_cmdCreate_Click()
 		Window.ShowDialog("Tenant name cannot be blank", "Error", null, "Danger");
 		return;
 	}
+
+	wndCreateTenant.SetLoading(true);
 	
 	var txtTenantCount = document.getElementById("txtTenantCount");
 	
+	TenantObject.GetByName("Tenant", function(sender, e)
+	{
+		var objTenant = e.Items[0];
+		objTenant.CreateInstance
+		([
+		  	{
+		  		"Name": "TenantURL",
+		  		"Value": txtTenantName.value
+		  	}
+		]);
+		wndCreateTenant.SetLoading(false);
+	});
+	
+	/*
 	var xhr = new XMLHttpRequest();
 	xhr.open('POST', System.ExpandRelativePath('~/api/tenant'), true);
 	xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
@@ -55,9 +71,8 @@ function wndCreateTenant_cmdCreate_Click()
 		strValues += encodeURI(values[i].Name) + '=' + encodeURI(values[i].Value);
 		if (i < values.length - 1) strValues += '&';
 	}
-
-	wndCreateTenant.SetLoading(true);
+	*/
 	
-	xhr.send(strValues);
+	// xhr.send(strValues);
 	return false;
 }

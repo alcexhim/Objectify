@@ -3,6 +3,11 @@ function TenantObjectInstanceEventArgs(success, items)
 	this.Success = success;
 	this.Items = items;
 }
+function TenantObjectInstanceCreatedEventArgs(success, inst)
+{
+	this.Success = success;
+	this.Instance = inst;
+}
 
 function TenantObjectInstance()
 {
