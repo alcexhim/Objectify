@@ -10,6 +10,56 @@ function TenantObject()
 	this.Name = null;
 	this.Description = null;
 	
+	this.CreateInstance = function(parameters, callback)
+	{
+		var xhr = new XMLHttpRequest();
+		var url = "~/API/TenantObjectInstance?Action=Create&ParentObjectID=" + this.ID;
+		xhr.open("POST", System.ExpandRelativePath(url));
+		xhr.onreadystatechange = function()
+		{
+			if (xhr.readyState == 4)
+			{
+				var obj = JSON.parse(xhr.responseText);
+				if (obj.Result == "Success")
+				{
+					if (typeof(callback) === "function")
+					{
+						callback(xhr, new TenantObjectInstanceCreatedEventArgs(true, null));
+					}
+					else
+					{
+						console.warn("TenantObject->CreateInstance(): no callback specified for asynchronous method call");
+					}
+				}
+				else
+				{
+					if (typeof(callback) === "function")
+					{
+						callback(xhr, new TenantObjectInstanceCreatedEventArgs(false, null));
+					}
+					else
+					{
+						console.warn("TenantObject->CreateInstance(): no callback specified for asynchronous method call");
+					}
+				}
+			}
+		};
+		
+		var paramstr = "";
+		if (typeof(parameters) !== "undefined")
+		{
+			paramstr += "ParamCount=" + parameters.length.toString();
+			for (var i = 0; i < parameters.length; i++)
+			{
+				paramstr += "&";
+				paramstr += "Param" + i.toString() + "Name=" + parameters[i].Name + "&";
+				paramstr += "Param"+ i.toString() + "Value=" + parameters[i].Value;
+			}
+		}
+		
+		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		xhr.send(paramstr);
+	};
 	this.GetInstances = function(callback)
 	{
 		var xhr = new XMLHttpRequest();
@@ -36,7 +86,6 @@ function TenantObject()
 				}
 			}
 		};
-		xhr.send(null);
 	};
 	
 	this.Update = function(callback)
@@ -118,6 +167,29 @@ TenantObject.GetByID = function(id, callback)
 {
 	var xhr = new XMLHttpRequest();
 	var url = "~/API/TenantObject?Action=Retrieve&ID=" + id;
+	xhr.open("GET", System.ExpandRelativePath(url));
+	xhr.onreadystatechange = function()
+	{
+		if (xhr.readyState == 4)
+		{
+			var obj = JSON.parse(xhr.responseText);
+			if (obj.Result == "Success")
+			{
+				var item = TenantObject.GetByAssoc(obj.Items[0]);
+				callback(xhr, new TenantObjectEventArgs(true, [item]));
+			}
+			else
+			{
+				callback(xhr, new TenantObjectEventArgs(false));
+			}
+		}
+	};
+	xhr.send(null);
+};
+TenantObject.GetByName = function(name, callback)
+{
+	var xhr = new XMLHttpRequest();
+	var url = "~/API/TenantObject?Action=Retrieve&Name=" + name;
 	xhr.open("GET", System.ExpandRelativePath(url));
 	xhr.onreadystatechange = function()
 	{

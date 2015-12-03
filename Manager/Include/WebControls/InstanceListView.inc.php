@@ -76,10 +76,10 @@
 							}
 							else if (get_class($propval) == "Objectify\\Objects\\MultipleInstanceProperty")
 							{
-								$insts = $propval->GetInstances();
-								foreach ($insts as $inst)
+								$insts2 = $propval->GetInstances();
+								foreach ($insts2 as $inst2)
 								{
-									$odw = new InstanceDisplayWidget($inst);
+									$odw = new InstanceDisplayWidget($inst2);
 									$odw->Render();
 									echo("<br />");
 								}

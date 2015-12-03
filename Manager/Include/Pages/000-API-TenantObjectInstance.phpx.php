@@ -19,60 +19,24 @@
 			
 			if ($e->RenderingPage->IsPostback)
 			{
-				if ($_POST["ID"] != null)
+				switch ($_GET["Action"])
 				{
-					// update an existing tenant
-					// $tenant = Tenant::GetByID($_POST["tenant_ID"]);
-					
-					$tenant->URL = $_POST["tenant_Name"];
-					$tenant->Description = $_POST["tenant_Description"];
-					if ($tenant->Update())
+					case "Create":
 					{
+						$obj = TenantObject::GetByID($_GET["ParentObjectID"]);
+						$globalIdentifier = null;
+						
+						$props = array();
+						$propCount = $_POST["ParamCount"];
+						for ($i = 0; $i < $propCount; $i++)
+						{
+							$props[] = new TenantObjectInstancePropertyValue($_POST["Param" . $i . "Name"], $_POST["Param" . $i . "Value"]);
+						}
+						
+						$obj->CreateInstance($props, $globalIdentifier);
 						echo ("{ \"Result\": \"Success\" }");
+						break;
 					}
-					else
-					{
-						echo ("{ \"Result\": \"Failure\" }");
-					}
-				}
-				else
-				{
-					// create a new tenant
-					$count = 1;
-					if (isset($_POST["tenant_Count"]))
-					{
-						$count = $_POST["tenant_Count"];
-					}
-					
-					for ($i = 0; $i < $count; $i++)
-					{
-						$tenantName = $_POST["tenant_URL"];
-						if ($count > 1)
-						{
-							$tenantName .= str_pad(($i + 1), strlen($count), "0", STR_PAD_LEFT);
-						}
-						
-						/*
-						if (Tenant::ExistsByURL($tenantName))
-						{
-							echo ("{ \"Result\": \"Failure\", \"Message\": \"The tenant already exists\" }");
-							return;
-						}
-						*/
-						
-						$objTenant = TenantObject::GetByName("Tenant");
-						$retval = $objTenant->CreateInstance(array
-						(
-							new TenantObjectInstancePropertyValue("TenantURL", $tenantName)
-						));
-						
-						if ($retval === false)
-						{
-							echo ("{ \"Result\": \"Failure\", \"Message\": \"Unknown error occurred\" }");
-							return;
-						}
-					}
-					echo ("{ \"Result\": \"Success\" }");
 				}
 			}
 			else
