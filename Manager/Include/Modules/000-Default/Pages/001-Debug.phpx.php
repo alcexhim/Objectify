@@ -139,7 +139,7 @@
 						$lvi->Columns[] = new ListViewItemColumn("lvcMessage", "<a href=\"" . System::ExpandRelativePath("~/debug/" . $values["message_ID"]) . "\">" . $values["message_Content"] . "</a>", $values["message_Content"]);
 						
 						$lvi->Columns[] = new ListViewItemColumn("lvcTimestamp", $values["message_Timestamp"]);
-						$lvi->Columns[] = new ListViewItemColumn("lvcTimestamp", $values["message_IPAddress"]);
+						$lvi->Columns[] = new ListViewItemColumn("lvcIPAddress", $values["message_IPAddress"]);
 						
 						$lvMessages->Items[] = $lvi;
 					}
