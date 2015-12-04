@@ -475,17 +475,29 @@
 			$values = $statement->fetch(PDO::FETCH_ASSOC);
 			return TenantObjectProperty::GetByAssoc($values);
 		}
-		public function GetProperties($max = null)
+		public function GetProperties()
 		{
 			$pdo = DataSystem::GetPDO();
 			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectProperties WHERE property_ObjectID = :property_ObjectID";
-			if (is_numeric($max)) $query .= " LIMIT " . $max;
+			
+			$parentObjects = $this->GetParentObjects();
+			$parentObjectCount = count($parentObjects);
+			for ($i = 0; $i < $parentObjectCount; $i++)
+			{
+				$query .= " OR property_ObjectID = :property_ObjectID" . $i;
+			}
 			
 			$statement = $pdo->prepare($query);
-			$result = $statement->execute(array
+			$paramz = array
 			(
 				":property_ObjectID" => $this->ID
-			));
+			);
+			for ($i = 0; $i < $parentObjectCount; $i++)
+			{
+				$paramz[":property_ObjectID" . $i] = $parentObjects[$i]->ID;
+			}
+			$result = $statement->execute($paramz);
+			
 			$retval = array();
 			
 			if ($result === false) return $retval;
