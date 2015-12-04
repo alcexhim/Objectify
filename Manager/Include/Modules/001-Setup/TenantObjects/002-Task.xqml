@@ -22,7 +22,13 @@
 			</ParentObjects>
 			<InstanceProperties>
 				<Property Name="Name" DataTypeName="Text" />
-				<Property Name="Title" DataTypeName="MultipleInstance" />
+				<Property Name="Title" DataTypeName="MultipleInstance">
+					<MultipleInstancePropertyValue>
+						<ValidObjects>
+							<ValidObject Name="LanguageString" />
+						</ValidObjects>
+					</MultipleInstancePropertyValue>
+				</Property>
 			</InstanceProperties>
 			<Instances>
 				<Instance ID="{170908E4-E3CD-4854-BB2F-C7815BBD1990}">
@@ -59,6 +65,9 @@
 						<Instances>
 							<Instance ID="{9FCF4CA6-F8FA-40CD-B94E-FFED78707A2C}" />
 						</Instances>
+						<ValidObjects>
+							<ValidObject Name="Task" />
+						</ValidObjects>
 					</MultipleInstancePropertyValue>
 				</Property>
 			</Properties>

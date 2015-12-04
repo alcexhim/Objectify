@@ -50,6 +50,15 @@
 						</Instances>
 					</MultipleInstancePropertyValue>
 				</Property>
+			</Properties>
+			<InstanceProperties>
+				<Property Name="Title" DataTypeName="MultipleInstance">
+					<MultipleInstancePropertyValue>
+						<ValidObjects>
+							<ValidObject Name="LanguageString" />
+						</ValidObjects>
+					</MultipleInstancePropertyValue>
+				</Property>
 				<Property Name="Permissions" DataTypeName="MultipleInstance">
 					<MultipleInstancePropertyValue>
 						<ValidObjects>
@@ -57,7 +66,7 @@
 						</ValidObjects>
 					</MultipleInstancePropertyValue>
 				</Property>
-			</Properties>
+			</InstanceProperties>
 			<Instances>
 				<!-- System Administrator -->
 				<Instance ID="{0E57B7A3-FE6D-4B40-843B-F20580441242}">
