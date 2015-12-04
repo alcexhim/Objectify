@@ -33,6 +33,18 @@
 			</Properties>
 		</Object>
 		
+		<Object Name="String">
+			<Properties>
+				<Property Name="Title" DataTypeName="MultipleInstance">
+					<MultipleInstancePropertyValue>
+						<Instances>
+							<Instance ID="{056B2384-F841-4562-886B-F7AFB6D272F2}" />
+						</Instances>
+					</MultipleInstancePropertyValue>
+				</Property>
+			</Properties>
+		</Object>
+		
 		<Object Name="Language">
 			<InstanceProperties>
 				<Property Name="LocaleID" DataTypeName="Text" />

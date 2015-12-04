@@ -39,6 +39,9 @@
 			</Instances>
 		</Object>
 		<Object ID="{896B529C-452D-42AC-98C5-170ED4F826C6}" Name="Dashboard">
+			<ParentObjects>
+				<ParentObject Name="Object" />
+			</ParentObjects>
 			<Properties>
 				<Property Name="Title">
 					<MultipleInstancePropertyValue>
@@ -59,6 +62,9 @@
 			</InstanceProperties>
 		</Object>
 		<Object ID="{D1A60533-1B5A-422E-9739-4551FDEC48BF}" Name="DashboardContent">
+			<ParentObjects>
+				<ParentObject Name="Object" />
+			</ParentObjects>
 			<Properties>
 				<Property Name="Title">
 					<MultipleInstancePropertyValue>
@@ -87,7 +93,7 @@
 		</Object>
 		<Object ID="{F3D52C9C-8A4E-4D5B-85BC-FD8EF8B87805}" Name="ReportDashboardContent">
 			<ParentObjects>
-				<ParentObject ID="{D1A60533-1B5A-422E-9739-4551FDEC48BF}" />
+				<ParentObject Name="DashboardContent" />
 			</ParentObjects>
 			<Properties>
 				<Property Name="Title">

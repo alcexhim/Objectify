@@ -28,6 +28,9 @@
 			</Instances>
 		</Object>
 		<Object Name="Report">
+			<ParentObjects>
+				<ParentObject Name="Object" />
+			</ParentObjects>
 			<InstanceProperties>
 				<Property Name="Title" DataTypeName="MultipleInstance">
 					<MultipleInstancePropertyValue>
@@ -65,6 +68,9 @@
 			</Instances>
 		</Object>
 		<Object Name="ReportColumn">
+			<ParentObjects>
+				<ParentObject Name="Object" />
+			</ParentObjects>
 			<Properties>
 				<Property Name="Title">
 					<MultipleInstancePropertyValue>

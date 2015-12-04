@@ -22,13 +22,6 @@
 						</ValidObjects>
 					</MultipleInstancePropertyValue>
 				</Property>
-				<Property Name="Permissions" DataTypeName="MultipleInstance">
-					<MultipleInstancePropertyValue>
-						<ValidObjects>
-							<ValidObject Name="SecurityPermission" />
-						</ValidObjects>
-					</MultipleInstancePropertyValue>
-				</Property>
 			</InstanceProperties>
 			<Instances>
 				<!-- Provision Tenants -->
@@ -39,9 +32,6 @@
 								<Instances>
 									<Instance ID="{6EF090CF-DF98-4DC6-83A9-364A3FA25E9B}" />
 								</Instances>
-								<ValidObjects>
-									<ValidObject Name="LanguageString" />
-								</ValidObjects>
 							</MultipleInstancePropertyValue>
 						</Property>
 					</PropertyValues>
@@ -58,6 +48,13 @@
 						<Instances>
 							<Instance ID="{739C26BC-740F-4CB0-BCB1-2A28FA570E7D}" />
 						</Instances>
+					</MultipleInstancePropertyValue>
+				</Property>
+				<Property Name="Permissions" DataTypeName="MultipleInstance">
+					<MultipleInstancePropertyValue>
+						<ValidObjects>
+							<ValidObject Name="SecurityPermission" />
+						</ValidObjects>
 					</MultipleInstancePropertyValue>
 				</Property>
 			</Properties>
