@@ -1,12 +1,14 @@
 function InstanceDisplayWidget(parentElement)
 {
 	this.ParentElement = parentElement;
-	this.ADWElement = this.ParentElement.children[0];
-	this.TextElement = this.ADWElement.children[0];
-	this.ButtonElement = this.ADWElement.children[1];
 	
-	this.ButtonElement;
-	this.TextElement;
+	this.ADWElement = this.ParentElement.children[0];
+	
+	if (typeof(this.ADWElement) !== "undefined")
+	{
+		this.TextElement = this.ADWElement.children[0];
+		this.ButtonElement = this.ADWElement.children[1];
+	}
 	
 	var odwParent = this;
 	
@@ -78,8 +80,12 @@ function InstanceDisplayWidget(parentElement)
 		e.preventDefault();
 		return false;
 	};
-	this.ButtonElement.addEventListener("contextmenu", this.__ShowContextMenu);
-	this.TextElement.addEventListener("contextmenu", this.__ShowContextMenu);
+	
+	if (typeof(this.ADWElement) !== "undefined")
+	{
+		this.ButtonElement.addEventListener("contextmenu", this.__ShowContextMenu);
+		this.TextElement.addEventListener("contextmenu", this.__ShowContextMenu);
+	}
 }
 
 window.addEventListener("load", function(e)
