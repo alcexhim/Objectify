@@ -2,6 +2,8 @@
 	namespace Objectify\WebControls;
 
 	use Phast\WebControl;
+	use Phast\WebControlAttribute;
+	
 	use Phast\System;
 	
 	use Phast\WebControls\AdditionalDetailWidget;
@@ -14,7 +16,6 @@
 	class InstanceDisplayWidget extends WebControl
 	{
 		public $CurrentInstance;
-		
 		public $InstanceID;
 		
 		public function __construct($instance)
@@ -35,6 +36,8 @@
 			
 			if ($this->CurrentInstance != null)
 			{
+				$this->Attributes[] = new WebControlAttribute("data-instance-id", $this->CurrentInstance->ID);
+				
 				$adw = new AdditionalDetailWidget();
 				$adw->TargetURL = "~/instances/modify/" . $this->CurrentInstance->ID;
 				$adw->Text = $this->CurrentInstance->ToString();
