@@ -145,7 +145,14 @@ for ($i = 0; $i < $count; $i++)
 $output .= ":";
 if ($input != null)
 {
-	if ($input->GetInstance() != null) $output .= $input->GetInstance()->ID;
+	if (!method_exists($input, "GetInstance"))
+	{
+		trigger_error("GetInstance() failed; maybe you assigned a MultipleInstance value to a SingleInstance property?");
+	}
+	else
+	{
+		if ($input->GetInstance() != null) $output .= $input->GetInstance()->ID;
+	}
 }
 return $output;
 EOD
@@ -227,7 +234,14 @@ for ($i = 0; $i < $count; $i++)
 	if ($i < $count - 1) $output .= ",";
 }
 $output .= ":";
-$insts = $input->GetInstances();
+if (!method_exists($input, "GetInstances"))
+{
+	trigger_error("GetInstances() failed; maybe you assigned a MultipleInstance value to a SingleInstance property?");
+}
+else
+{
+	$insts = $input->GetInstances();
+}
 $i = 0;
 $count = count($insts);
 foreach ($insts as $inst)
@@ -278,7 +292,15 @@ if (!is_object($input) || (get_class($input) != "Objectify\\Objects\\MultipleIns
 	trigger_error("Expected MultipleInstanceProperty, got something else in " . $bt[1]["file"] . "::" . $bt[1]["function"] . " at line " . $bt[1]["line"], E_USER_WARNING);
 	return;
 }
-$insts = $input->GetInstances();
+
+if (!method_exists($input, "GetInstances"))
+{
+	trigger_error("GetInstances() failed; maybe you assigned a SingleInstance value to a MultipleInstance property?");
+}
+else
+{
+	$insts = $input->GetInstances();
+}
 echo("<div class=\"InstanceEditor MultipleInstance ReadOnly\">");
 	echo("<input type=\"hidden\" id=\"" . $name . "_Instances\" name=\"" . $name . "_Instances\" />");
 	echo("<input type=\"text\" id=\"" . $name . "_CurrentInstance\" name=\"" . $name . "_CurrentInstance\" />");
@@ -302,7 +324,15 @@ if (!is_object($input) || (get_class($input) != "Objectify\\Objects\\MultipleIns
 	trigger_error("Expected MultipleInstanceProperty, got something else in " . $bt[1]["file"] . "::" . $bt[1]["function"] . " at line " . $bt[1]["line"], E_USER_WARNING);
 	return;
 }
-$insts = $input->GetInstances();
+
+if (!method_exists($input, "GetInstances"))
+{
+	trigger_error("GetInstances() failed; maybe you assigned a SingleInstance value to a MultipleInstance property?");
+}
+else
+{
+	$insts = $input->GetInstances();
+}
 echo("<div class=\"InstanceEditor MultipleInstance\">");
 $insts_text = "";
 $count = count($insts);
