@@ -67,15 +67,126 @@
 			{
 				foreach ($filedata->Objects as $objdef)
 				{
+					$id = null;
+					if (isset($objdef->ID)) $id = $objdef->ID;
+					
+					$id = $this->SanitizeGlobalIdentifier($id);
+					
 					$obj = TenantObject::GetByName($objdef->Name);
 					if ($obj == null)
 					{
-						$obj = TenantObject::Create($objdef->Name, null, $objdef->ID);
+						$obj = TenantObject::Create($objdef->Name, null, $id);
+						if ($obj == null)
+						{
+							trigger_error("XquizIT: create object failed for '" . $attName->Value . "'");
+							continue;
+						}
+						$retval[] = $obj;
 					}
 					
+					if (isset($objdef->ParentObjects))
+					{
+						foreach ($objdef->ParentObjects as $parentObjDef)
+						{
+							$parentObject = null;
+							if (isset($parentObjDef->ID))
+							{
+								$id = $this->SanitizeGlobalIdentifier($parentObjDef->ID);
+								$parentObject = TenantObject::GetByGlobalIdentifier($id);
+							}
+							else if (isset($parentObjDef->Name))
+							{
+								$parentObject = TenantObject::GetByName($parentObjef->Name);
+							}
+							if ($parentObject != null) $obj->AddParentObject($parentObject);
+						}
+					}
 					
+					if (isset($objdef->Properties))
+					{
+						foreach ($objdef->Properties as $propDef)
+						{
+							if (!isset($propDef->Name)) continue;
+							
+							$value = $this->XquizitLoadPropertyValueFromJSON($propDef, $obj, false, $filename);
+							$property = $obj->GetProperty($propDef->Name);
+							
+							if ($property == null)
+							{
+								if ($propDef->DataTypeName == null)
+								{
+									Objectify::Log("XquizIT attempted to create a new property without a data type name", array
+									(
+										"Property Name" => $propDef->Name,
+										"Object Name" => $obj->Name,
+										"XquizIT Source File Name" => $filename
+									));
+									continue;
+								}
+								$property = $obj->CreateProperty($attName->Value, DataType::GetByName($propDef->DataTypeName), $value);
+							}
+							else
+							{
+								$obj->SetPropertyValue($property, $value);
+							}
+						}
+					}
 					
-					$retval[] = $obj;
+					if (isset($objdef->InstanceProperties))
+					{
+						foreach ($objdef->InstanceProperties as $propDef)
+						{
+							if (!isset($propDef->Name)) continue;
+							
+							$value = $this->XquizitLoadPropertyValueFromJSON($propDef, $obj, false, $filename);
+							
+							if (!$obj->HasInstanceProperty($propDef->Name))
+							{
+								if ($propDef->DataTypeName == null)
+								{
+									Objectify::Log("XquizIT attempted to create a new instance property without a data type name", array
+									(
+										"Property Name" => $propDef->Name,
+										"Object Name" => $obj->Name,
+										"XquizIT Source File Name" => $filename
+									));
+									continue;
+								}
+								$property = $obj->CreateInstanceProperty($attName->Value, DataType::GetByName($propDef->DataTypeName), $value);
+							}
+							else
+							{
+								$property = $obj->GetInstanceProperty($propDef->Name, false);
+							}
+						}
+					}
+					
+					if (isset($objdef->Instances))
+					{
+						foreach ($objdef->Instances as $instDef)
+						{
+							if (!isset($instDef->ID)) continue;
+							
+							$id = $this->SanitizeGlobalIdentifier($instDef->ID);
+							$inst = $obj->GetInstanceByGlobalIdentifier($id);
+							if ($inst == null)
+							{
+								$inst = $obj->CreateInstance(null, $id);
+							}
+							
+							if (isset($instDef->PropertyValues))
+							{
+								foreach ($instDef->PropertyValues as $propValDef)
+								{
+									if (!isset($propValDef->Name)) continue;
+									$prop = $obj->GetInstanceProperty($propValDef->Name);
+									
+									$value = $this->XquizitLoadPropertyValueFromJSON($propValDef, $obj, true, $filename, $prop->DataType->Name);
+									$inst->SetPropertyValue($name, $value);
+								}
+							}
+						}
+					}
 				}
 			}
 			
@@ -283,6 +394,87 @@
 			}
 				
 			return $retval;
+		}
+		
+		private function XquizitLoadPropertyValueFromJSON($propDef, $obj, $isInstanceProperty, $filename, $dataTypeName = null)
+		{
+			if (!isset($propDef->Value)) return null;
+			$value = null;
+			
+			if ($dataTypeName == null) $dataTypeName = $propDef->DataTypeName;
+			
+			switch ($dataTypeName)
+			{
+				case "SingleInstance":
+				{
+					$instance = null;
+					$validObjects = array();
+					
+					if (isset($propDef->Value->ValidObjects))
+					{
+						foreach ($propDef->Value->ValidObjects as $validObject)
+						{
+							if (isset($validObject->Name))
+							{
+								$validObjects[] = TenantObject::GetByName($validObject->Name);
+							}
+							else if (isset($validObject->ID))
+							{
+								$id = $this->SanitizeGlobalIdentifier($validObject->ID);
+								$validObjects[] = TenantObject::GetByGlobalIdentifier($id);
+							}
+						}
+					}
+					
+					if (isset($propDef->Value->Instance))
+					{
+						$id = $this->SanitizeGlobalIdentifier($propDef->Value->Instance);
+						$instance = TenantObjectInstance::GetByGlobalIdentifier($id);
+					}
+					
+					$value = new SingleInstanceProperty($instances, $validObjects);
+					break;
+				}
+				case "MultipleInstance":
+				{
+					$instances = array();
+					$validObjects = array();
+					
+					if (isset($propDef->Value->ValidObjects))
+					{
+						foreach ($propDef->Value->ValidObjects as $validObject)
+						{
+							if (isset($validObject->Name))
+							{
+								$validObjects[] = TenantObject::GetByName($validObject->Name);
+							}
+							else if (isset($validObject->ID))
+							{
+								$id = $this->SanitizeGlobalIdentifier($validObject->ID);
+								$validObjects[] = TenantObject::GetByGlobalIdentifier($id);
+							}
+						}
+					}
+					
+					if (isset($propDef->Value->Instances))
+					{
+						foreach ($propDef->Value->Instances as $instId)
+						{
+							$id = $this->SanitizeGlobalIdentifier($instID);
+							$instances[] = TenantObjectInstance::GetByGlobalIdentifier($id);
+						}
+					}
+					
+					$value = new MultipleInstanceProperty($instances, $validObjects);
+					break;
+				}
+				default:
+				{
+					$value = $propDef->Value;
+					break;
+				}
+			}
+			return $value;
 		}
 		
 		/**
