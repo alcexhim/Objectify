@@ -96,7 +96,7 @@
 							}
 							else if (isset($parentObjDef->Name))
 							{
-								$parentObject = TenantObject::GetByName($parentObjef->Name);
+								$parentObject = TenantObject::GetByName($parentObjDef->Name);
 							}
 							if ($parentObject != null) $obj->AddParentObject($parentObject);
 						}
@@ -152,7 +152,7 @@
 									));
 									continue;
 								}
-								$property = $obj->CreateInstanceProperty($attName->Value, DataType::GetByName($propDef->DataTypeName), $value);
+								$property = $obj->CreateInstanceProperty($propDef->Name, DataType::GetByName($propDef->DataTypeName), $value);
 							}
 							else
 							{
