@@ -1,0 +1,78 @@
+{
+	"Objects":
+	[
+		{
+			"ID": "{F9E2B671-13F5-4172-A568-725ACD8BBFAB}",
+			"Name": "StringComponent",
+			"ParentObjects":
+			[
+				{
+					"Name": "Object"
+				}
+			]
+		},
+		{
+			"ID": "{D37439E3-1138-4148-9946-379695B9B945}",
+			"Name": "InstancePropertyStringComponent",
+			"ParentObjects":
+			[
+				{
+					"Name": "StringComponent"
+				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "PropertyName",
+					"DataTypeName": "Text"
+				}
+			]
+		},
+		{
+			"ID": "{9934049D-048F-42AC-9B0F-539618A8057A}",
+			"Name": "TextConstantStringComponent",
+			"ParentObjects":
+			[
+				{
+					"Name": "StringComponent"
+				}
+			]
+		},
+		{
+			"ID": "{895AF8DB-1138-40FF-94ED-13E5FA2AB9BA}",
+			"Name": "TranslatableTextConstantStringComponent",
+			"ParentObjects":
+			[
+				{
+					"Name": "StringComponent"
+				}
+			]
+		},
+		{
+			"ID": "{5AECB489-DBC2-432E-86AF-6BE349317238}",
+			"Name": "String",
+			"ParentObjects":
+			[
+				{
+					"Name": "Object"
+				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "Components",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "StringComponent"
+							}
+						]
+					}
+				}
+			]
+		}
+	]
+}
