@@ -1,0 +1,108 @@
+{
+	"InstanceID": "1422$157",
+	"Tasks":
+	[
+		{
+			"Title": "Custom Report",
+			"Tasks":
+			[
+				{
+					"Title": "Copy",
+					"InstanceID": "2997$888",
+					"IsViewable": false
+				},
+				{
+					"Title": "Run",
+					"InstanceID": "3001$14",
+					"IsViewable": true
+				},
+				{
+					"Title": "Schedule",
+					"InstanceID": "3001$20",
+					"IsViewable": false
+				},
+				{
+					"Title": "Test",
+					"InstanceID": "3001$15",
+					"IsViewable": true
+				}
+			]
+		},
+		{
+			"Title": "Favorite",
+			"Tasks":
+			[
+				{
+					"Title": "Add",
+					"InstanceID": "2997$178",
+					"IsViewable": false
+				}
+			]
+		},
+		{
+			"Title": "Integration IDs",
+			"Tasks":
+			[
+				{
+					"Title": "View IDs",
+					"InstanceID": "2998$3469",
+					"IsViewable": true
+				}
+			]
+		},
+		{
+			"Title": "Layout",
+			"Tasks":
+			[
+				{
+					"Title": "Print",
+					"InstanceID": "2997$1318",
+					"IsViewable": false
+				}
+			]
+		},
+		{
+			"Title": "Reporting",
+			"Tasks":
+			[
+				{
+					"Title": "Create Custom Report from Here",
+					"InstanceID": "2997$1720",
+					"IsViewable": false
+				},
+				{
+					"Title": "Related Reports",
+					"InstanceID": "2998$6675",
+					"IsViewable": true
+				},
+				{
+					"Title": "Report Fields and Values",
+					"InstanceID": "2998$6660",
+					"IsViewable": true
+				}
+			]
+		},
+		{
+			"Title": "Solution",
+			"Tasks":
+			[
+				{
+					"Title": "Create",
+					"InstanceID": "2997$3974",
+					"IsViewable": false
+				}
+			]
+		},
+		{
+			"Title": "Web Service",
+			"Tasks":
+			[
+				{
+					"Title": "View URLs",
+					"InstanceID": "2997$1071",
+					"IsViewable": false
+				}
+			]
+		}
+	]
+}
