@@ -69,6 +69,24 @@
 			return TenantObject::GetByAssoc($values);
 		}
 		
+		public static function GetByGlobalIdentifier($globalIdentifier)
+		{
+			$pdo = DataSystem::GetPDO();
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjects WHERE object_GlobalIdentifier = :object_GlobalIdentifier";
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				":object_GlobalIdentifier" => $globalIdentifier
+			));
+			if ($result === false) return null;
+			
+			$count = $statement->rowCount();
+			if ($count == 0) return null;
+			
+			$values = $statement->fetch(PDO::FETCH_ASSOC);
+			return TenantObject::GetByAssoc($values);
+		}
+		
 		public static function GetByName($name)
 		{
 			$pdo = DataSystem::GetPDO();
