@@ -22,6 +22,11 @@
 			$objIDsAllowed = array();
 			foreach ($this->ValidObjects as $obj)
 			{
+				if ($obj == null)
+				{
+					trigger_error("XquizIT: attempted to add instance " . $value->GlobalIdentifier . " to null valid object");
+					continue;
+				}
 				if ($obj->ID != $value->ParentObject->ID)
 				{
 					// go through the hierarchy to see if it's really invalid

@@ -866,14 +866,32 @@
 			{
 				$insts = $propTitle->GetInstances();
 				$objLanguage = TenantObject::GetByName("Language");
-				$defaultLanguage = $objLanguage->GetInstance(array
-				(
-					new TenantObjectInstancePropertyValue("Code", "en-US")
-				));
 				
-				foreach ($insts as $inst)
+				if ($objLanguage == null)
 				{
-					if ($inst->GetPropertyValue("Language")->GetInstance() == $defaultLanguage) return $inst->GetPropertyValue("Value");
+					Objectify::Log("The 'Language' object is missing! You may need to re-install Objectify.");
+				}
+				else
+				{
+					$defaultLanguage = $objLanguage->GetInstance(array
+					(
+						new TenantObjectInstancePropertyValue("Code", "en-US")
+					));
+					
+					foreach ($insts as $inst)
+					{
+						$propLang = $inst->GetPropertyValue("Language");
+						if ($propLang == null)
+						{
+							Objectify::Log("The 'Language' instance property is missing! You may need to re-install Objectify.", array
+							(
+								"Global Identifier" => $inst->GlobalIdentifier,
+								"Object" => $inst->ParentObject->Name
+							));
+							continue;
+						}
+						if ($propLang->GetInstance() == $defaultLanguage) return $inst->GetPropertyValue("Value");
+					}
 				}
 			}
 			return $this->Name;
