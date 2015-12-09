@@ -78,7 +78,7 @@
 						$obj = TenantObject::Create($objdef->Name, null, $id);
 						if ($obj == null)
 						{
-							trigger_error("XquizIT: create object failed for '" . $attName->Value . "'");
+							trigger_error("XquizIT: create object failed for '" . $objdef->Name . "'");
 							continue;
 						}
 						$retval[] = $obj;
@@ -123,7 +123,7 @@
 									));
 									continue;
 								}
-								$property = $obj->CreateProperty($attName->Value, DataType::GetByName($propDef->DataTypeName), $value);
+								$property = $obj->CreateProperty($propDef->Name, DataType::GetByName($propDef->DataTypeName), $value);
 							}
 							else
 							{
