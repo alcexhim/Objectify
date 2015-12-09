@@ -1,0 +1,777 @@
+{
+	"Objects":
+	[
+		{
+			"ID": "{61102B47-9B2F-4CF3-9840-D168B84CF1E5}",
+			"Name": "Language",
+			"ParentObjects":
+			[
+				{
+					"Name": "Object"
+				}
+			]
+		},
+		{
+			"ID": "{6D38E757-EC18-43AD-9C35-D15BB446C0E1}",
+			"Name": "LanguageString",
+			"ParentObjects":
+			[
+				{
+					"Name": "Object"
+				}
+			]
+		},
+		{
+			"Name": "Object",
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "LanguageString"
+							}
+						]
+					}
+				},
+				{
+					"Name": "InstanceDisplayTitle",
+					"DataTypeName": "SingleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "String"
+							}
+						]
+					}
+				}
+			]
+		},
+		
+		{
+			"Name": "String",
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"Instances":
+						[
+							{
+								"ID": "{056B2384-F841-4562-886B-F7AFB6D272F2}"
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"Name": "Language",
+			"InstanceProperties":
+			[
+				{
+					"Name": "LocaleID",
+					"DataTypeName": "Text"
+				},
+				{
+					"Name": "Code",
+					"DataTypeName": "Text"
+				},
+				{
+					"Name": "Title",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "LanguageString"
+							}
+						]
+					}
+				}
+			],
+			"Instances":
+			[
+				{
+					"ID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+					"PropertyValues":
+					[
+						{
+							"Name": "LocaleID",
+							"Value": "1033"
+						},
+						{
+							"Name": "Code",
+							"Value": "en-US"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "LanguageString",
+			"InstanceProperties":
+			[
+				{
+					"Name": "Language",
+					"DataTypeName": "SingleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "Language"
+							}
+						]
+					}
+				},
+				{
+					"Name": "Value",
+					"DataTypeName": "Text"
+				}
+			],
+			"Instances":
+			[
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_LanguageString_Title" 
+						}
+					],
+					"ID": "{08AB6C76-7461-4F10-9131-E2B63CF404C3}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Language String"
+						}
+					]
+				},
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_UNUSED_Title" 
+						}
+					],
+					"ID": "{D573044A-4E7F-490C-864E-BD9EC0188A78}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "UNUSED"
+						}
+					]
+				},
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_Language_English_Title" 
+						}
+					],
+					"ID": "{0F42BCB6-549A-4407-BB91-DD147443F68F}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "English (United States)"
+						}
+					]
+				},
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_Task_Object_Delete_Title" 
+						}
+					],
+					"ID": "{7A8F57F1-A4F3-4BAF-84A5-E893FD79447D}",
+					"PropertyValues":
+					[
+					 	{
+					 		"Name": "Language",
+					 		"Value":
+					 		{
+					 			"ID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+					 		}
+					 	},
+					 	{
+					 		"Name": "Value",
+					 		"Value": "Delete"
+					 	}
+					]
+				},
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_SecurityPermission_Title" 
+						}
+					],
+					"ID": "{34142FCB-172C-490A-AF03-FF8451D00CAF}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Security Permission"
+						}
+					]
+				},
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_SecurityPermission_ProvisionTenants_Title" 
+						}
+					],
+					"ID": "{6EF090CF-DF98-4DC6-83A9-364A3FA25E9B}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Provision Tenants"
+						}
+					]
+				},
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_SecurityGroup_SystemAdministrator_Title" 
+						}
+					],
+					"ID": "{616E5840-4DA4-4C99-B470-8F464465C2DB}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "System Administrator"
+						}
+					]
+				},
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_SecurityGroup_Title" 
+						}
+					],
+					"ID": "{739C26BC-740F-4CB0-BCB1-2A28FA570E7D}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Security Group"
+						}
+					]
+				},
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_TenantType_Title" 
+						}
+					],
+					"ID": "{143123C1-5C03-4346-AE84-E833D112576B}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Tenant Type"
+						}
+					]
+				},
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_TenantType_Production_Title" 
+						}
+					],
+					"ID": "{FBEAE730-6E4F-4EFB-83A2-3ACA02C1F947}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Production"
+						}
+					]
+				},
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_TenantType_Production_Description" 
+						}
+					],
+					"ID": "{79AAE09C-5690-471C-8442-1B230610456C}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "The production tenant type. Usually the only tenant type visible to regular users. Add more (such as production, development, sandbox, sandbox preview, implementation preview, implementation) as needed."
+						}
+					]
+				},
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_TenantType_Development_Title" 
+						}
+					],
+					"ID": "{84032F2C-B347-4529-8D2E-FA68F4497D7C}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Development"
+						}
+					]
+				},
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_TenantType_Development_Description" 
+						}
+					],
+					"ID": "{142296C4-22CE-4996-ACE4-E2DB9B83A706}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "The development tenant type. Usually used to create new features and modules before pushing them to production. Add more (such as production, development, sandbox, sandbox preview, implementation preview, implementation) as needed."
+						}
+					]
+				},
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_LoginDeviceType_Title" 
+						}
+					],
+					"ID": "{3AB09F14-8258-4BDA-BE62-EE26CFD6D1D2}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Login Device Type"
+						}
+					]
+				},
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_LoginAuthenticationType_Title" 
+						}
+					],
+					"ID": "{377A67E0-7C10-48DD-8D5C-0E65325D1663}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Login Authentication Type"
+						}
+					]
+				},
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_UserLogin_Title" 
+						}
+					],
+					"ID": "{410FCF87-26E3-41F1-887A-1D1CC391E52B}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "User Login"
+						}
+					]
+				},
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_User_Title" 
+						}
+					],
+					"ID": "{0D05F758-F3F7-4640-B462-43DA9DB35C1C}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "User"
+						}
+					]
+				},
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_String_Title" 
+						}
+					],
+					"ID": "{056B2384-F841-4562-886B-F7AFB6D272F2}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "String"
+						}
+					]
+				},
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_StringComponent_Title" 
+						}
+					],
+					"ID": "{481E3FBE-B82A-4C76-9DDF-D66C6BA8C590}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "String Component"
+						}
+					]
+				},
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_InstancePropertyStringComponent_Title" 
+						}
+					],
+					"ID": "{C773E134-D9C3-4524-A908-ACF0F744B4E1}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Instance Property String Component"
+						}
+					]
+				},
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_TextConstantStringComponent_Title" 
+						}
+					],
+					"ID": "{E6F690A2-87A2-49B7-885E-70B58629322B}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Text Constant String Component"
+						}
+					]
+				},
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_TranslatableTextConstantStringComponent_Title" 
+						}
+					],
+					"ID": "{BEFAFDC4-358B-44E9-ACD9-FD253402EA22}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Translatable Text Constant String Component"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "LanguageString",
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"Value":
+					{
+						"Instances":
+						[
+							"{08AB6C76-7461-4F10-9131-E2B63CF404C3}"
+						]
+					}
+				}
+			]
+		},
+		{
+			"Name": "StringComponent",
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"Value":
+					{
+						"Instances":
+						[
+							"{481E3FBE-B82A-4C76-9DDF-D66C6BA8C590}"
+						]
+					}
+				}
+			]
+		},
+		{
+			"Name": "InstancePropertyStringComponent",
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"Value":
+					{
+						"Instances":
+						[
+							"{C773E134-D9C3-4524-A908-ACF0F744B4E1}"
+						]
+					}
+				}
+			]
+		},
+		{
+			"Name": "TextConstantStringComponent",
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"Value":
+					{
+						"Instances":
+						[
+							"{E6F690A2-87A2-49B7-885E-70B58629322B}"
+						]
+					}
+				}
+			]
+		},
+		{
+			"Name": "TranslatableTextConstantStringComponent",
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"Value":
+					{
+						"Instances":
+						[
+							"{BEFAFDC4-358B-44E9-ACD9-FD253402EA22}"
+						]
+					}
+				}
+			]
+		},
+		{
+			"Name": "Language",
+			"Instances":
+			[
+				{
+					"ID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{0F42BCB6-549A-4407-BB91-DD147443F68F}"
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}
