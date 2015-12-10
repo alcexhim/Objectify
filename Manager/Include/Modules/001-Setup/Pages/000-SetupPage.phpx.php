@@ -421,7 +421,6 @@
 					
 					if (isset($propDef->Value->ValidObjects))
 					{
-						$validObjects = array();
 						foreach ($propDef->Value->ValidObjects as $validObject)
 						{
 							if (isset($validObject->Name))
@@ -433,6 +432,19 @@
 								$id = $this->SanitizeGlobalIdentifier($validObject->ID);
 								$validObjects[] = TenantObject::GetByGlobalIdentifier($id);
 							}
+						}
+					}
+					else
+					{
+						if ($isInstanceProperty)
+						{
+							$op = $obj->GetInstanceProperty($propDef->Name);
+							$validObjects = $op->DefaultValue->ValidObjects;
+						}
+						else
+						{
+							$op = $obj->GetPropertyValue($propDef->Name);
+							$validObjects = $op->ValidObjects;
 						}
 					}
 					
@@ -448,10 +460,11 @@
 				case "MultipleInstance":
 				{
 					$instances = array();
-					$validObjects = array();
+					$validObjects = null;
 					
 					if (isset($propDef->Value->ValidObjects))
 					{
+						$validObjects = array();
 						foreach ($propDef->Value->ValidObjects as $validObject)
 						{
 							if (isset($validObject->Name))
@@ -463,6 +476,19 @@
 								$id = $this->SanitizeGlobalIdentifier($validObject->ID);
 								$validObjects[] = TenantObject::GetByGlobalIdentifier($id);
 							}
+						}
+					}
+					else
+					{
+						if ($isInstanceProperty)
+						{
+							$op = $obj->GetInstanceProperty($propDef->Name);
+							$validObjects = $op->DefaultValue->ValidObjects;
+						}
+						else
+						{
+							$op = $obj->GetPropertyValue($propDef->Name);
+							$validObjects = $op->ValidObjects;
 						}
 					}
 					
