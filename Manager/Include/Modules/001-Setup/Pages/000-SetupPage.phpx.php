@@ -417,10 +417,11 @@
 				case "SingleInstance":
 				{
 					$instance = null;
-					$validObjects = array();
+					$validObjects = null;
 					
 					if (isset($propDef->Value->ValidObjects))
 					{
+						$validObjects = array();
 						foreach ($propDef->Value->ValidObjects as $validObject)
 						{
 							if (isset($validObject->Name))
@@ -441,7 +442,7 @@
 						$instance = TenantObjectInstance::GetByGlobalIdentifier($id);
 					}
 					
-					$value = new SingleInstanceProperty($instances, $validObjects);
+					$value = new SingleInstanceProperty($instance, $validObjects);
 					break;
 				}
 				case "MultipleInstance":

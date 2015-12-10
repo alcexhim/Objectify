@@ -23,8 +23,6 @@
 		public function __construct($instance = null, $validObjects = null)
 		{
 			$this->mvarInstance = $instance;
-			
-			if ($validObjects == null) $validObjects = array();
 			$this->ValidObjects = $validObjects;
 		}
 	}
