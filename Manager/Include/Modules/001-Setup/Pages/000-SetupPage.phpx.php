@@ -108,8 +108,11 @@
 						{
 							if (!isset($propDef->Name)) continue;
 							
-							$value = $this->XquizitLoadPropertyValueFromJSON($propDef, $obj, false, $filename);
 							$property = $obj->GetProperty($propDef->Name);
+							$dataTypeName = null;
+							if ($property != null) $dataTypeName = $property->DataType->Name;
+							
+							$value = $this->XquizitLoadPropertyValueFromJSON($propDef, $obj, false, $filename, $dataTypeName);
 							
 							if ($property == null)
 							{
@@ -138,7 +141,13 @@
 						{
 							if (!isset($propDef->Name)) continue;
 							
-							$value = $this->XquizitLoadPropertyValueFromJSON($propDef, $obj, false, $filename);
+							$dataTypeName = null;
+							if ($obj->HasInstanceProperty($propDef->Name))
+							{
+								$dataTypeName = $obj->GetInstanceProperty($propDef->Name)->DataType->Name;
+							}
+							
+							$value = $this->XquizitLoadPropertyValueFromJSON($propDef, $obj, false, $filename, $dataTypeName);
 							
 							if (!$obj->HasInstanceProperty($propDef->Name))
 							{
@@ -182,7 +191,7 @@
 									$prop = $obj->GetInstanceProperty($propValDef->Name);
 									
 									$value = $this->XquizitLoadPropertyValueFromJSON($propValDef, $obj, true, $filename, $prop->DataType->Name);
-									$inst->SetPropertyValue($name, $value);
+									$inst->SetPropertyValue($prop, $value);
 								}
 							}
 						}

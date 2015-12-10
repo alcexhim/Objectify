@@ -219,6 +219,7 @@
 				}
 			}
 			
+			/*
 			// If we do not have an Instance Display Title for the parent object, see
 			// if we have an instance property named Title and use that
 			$propTitle = $this->GetPropertyValue("Title");
@@ -237,6 +238,7 @@
 					if ($inst->GetPropertyValue("Language")->GetInstance() == $defaultLanguage) return $inst->GetPropertyValue("Value");
 				}
 			}
+			*/
 			
 			// When all else fails, use the Name property
 			

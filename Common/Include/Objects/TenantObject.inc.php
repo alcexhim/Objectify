@@ -226,9 +226,18 @@
 		 * @param string $globalIdentifier The global identifier for this instance.
 		 * @return TenantObjectInstance
 		 */
-		public function CreateInstance($properties, $globalIdentifier)
+		public function CreateInstance($properties, $globalIdentifier = null)
 		{
 			$inst = new TenantObjectInstance($this);
+			if ($globalIdentifier == null)
+			{
+				// $globalIdentifier = \uuid_create(\UUID_TYPE_RANDOM);
+				Objectify::Log("Created a new instance of an object without a predefined global identifier", array
+				(
+					"Object" => $this->Name //,
+					// "Global Identifier" => $globalIdentifier
+				));
+			}
 			$inst->GlobalIdentifier = $globalIdentifier;
 			$inst->Update();
 			if (is_array($properties))
