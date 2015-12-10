@@ -40,7 +40,7 @@
 		new Column("ObjectID", "INT", null, null, false),
 		new Column("Name", "VARCHAR", 256, null, true),
 		new Column("DataTypeID", "INT", null, null, true),
-		new Column("DefaultValue", "LONGBLOB", null, null, true),
+		new Column("DefaultValue", "LONGTEXT", null, null, true),
 		new Column("IsRequired", "INT", null, 0, false),
 		new Column("ColumnVisible", "INT", null, 0, false)
 	));
@@ -57,7 +57,7 @@
 		// 			$name, $dataType, $size, $value, $allowNull, $primaryKey, $autoIncrement
 		new Column("PropertyID", "INT", null, null, false),
 		new Column("ObjectID", "INT", null, null, false),
-		new Column("Value", "LONGBLOB", null, null, true)
+		new Column("Value", "LONGTEXT", null, null, true)
 	));
 	$tblTenantObjectPropertyValues->ForeignKeys = array
 	(
@@ -88,7 +88,7 @@
 		new Column("ObjectID", "INT", null, null, false),
 		new Column("Name", "VARCHAR", 256, null, true),
 		new Column("DataTypeID", "INT", null, null, true),
-		new Column("DefaultValue", "LONGBLOB", null, null, true),
+		new Column("DefaultValue", "LONGTEXT", null, null, true),
 		new Column("IsRequired", "INT", null, 0, false),
 		new Column("ColumnVisible", "INT", null, 0, false)
 	));
@@ -105,7 +105,7 @@
 		// 			$name, $dataType, $size, $value, $allowNull, $primaryKey, $autoIncrement
 		new Column("InstanceID", "INT", null, null, false),
 		new Column("PropertyID", "INT", null, null, false),
-		new Column("Value", "LONGBLOB", null, null, false)
+		new Column("Value", "LONGTEXT", null, null, false)
 	));
 	$tblTenantObjectInstancePropertyValues->PrimaryKey = new TableKey(array
 	(
@@ -126,7 +126,7 @@
 		new Column("ID", "INT", null, null, false, true, true),
 		new Column("ObjectID", "INT", null, null, false),
 		new Column("Name", "VARCHAR", 256, null, false),
-		new Column("CodeBlob", "LONGBLOB", null, null, false)
+		new Column("CodeBlob", "LONGTEXT", null, null, false)
 	));
 	$tblTenantObjectMethods->ForeignKeys = array
 	(
@@ -155,7 +155,7 @@
 		new Column("ID", "INT", null, null, false, true, true),
 		new Column("ObjectID", "INT", null, null, false),
 		new Column("Name", "VARCHAR", 256, null, false),
-		new Column("CodeBlob", "LONGBLOB", null, null, false)
+		new Column("CodeBlob", "LONGTEXT", null, null, false)
 	));
 	$tables[] = $tblTenantObjectInstanceMethods;
 	
