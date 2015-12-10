@@ -58,12 +58,10 @@
 				(
 					new ListViewItemColumn("lvcProperty", $prop->Name),
 					new ListViewItemColumn("lvcDataType", $prop->DataType->Name),
-					new ListViewItemColumn("lvcDefaultValue", function($sender)
+					new ListViewItemColumn("lvcValue", function($sender)
 					{
 						if (is_object($sender->ExtraData))
 						{
-							print_r($sender->ExtraData);
-							
 							if (get_class($sender->ExtraData) == "Objectify\\Objects\\MultipleInstanceProperty")
 							{
 								$iv = new InstanceDisplayWidget();
@@ -78,14 +76,15 @@
 							}
 							else
 							{
-								print_r($sender->ExtraData);
+								// print_r($sender->ExtraData);
+								echo($sender->ExtraData);
 							}
 						}
 						else
 						{
 							echo($sender->ExtraData);
 						}
-					}, null, $prop->DefaultValue)
+					}, null, $this->CurrentObject->GetPropertyValue($prop))
 				));
 				
 				$lvStaticProperties->Items[] = $lvi;

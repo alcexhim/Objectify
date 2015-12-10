@@ -20,7 +20,7 @@
 											<Columns>
 												<wfx:ListViewColumn ID="lvcProperty" Title="Property" />
 												<wfx:ListViewColumn ID="lvcDataType" Title="Data type" />
-												<wfx:ListViewColumn ID="lvcDefaultValue" Title="Default value" />
+												<wfx:ListViewColumn ID="lvcValue" Title="Value" />
 											</Columns>
 										</wfx:ListView>
 									</ContentControls>
