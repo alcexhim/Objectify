@@ -291,7 +291,8 @@
 			}
 			if ($property == null) return false;
 
-
+			// this might not look like it does anything, but it DOES... those properties get encoded
+			// by the InstanceDataType into ValidObjects:Instances string...
 			if (
 				get_class($value) == "Objectify\\Objects\\MultipleInstanceProperty"
 				|| get_class($value) == "Objectify\\Objects\\SingleInstanceProperty"
