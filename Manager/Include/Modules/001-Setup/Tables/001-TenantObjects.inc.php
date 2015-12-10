@@ -59,6 +59,11 @@
 		new Column("ObjectID", "INT", null, null, false),
 		new Column("Value", "LONGTEXT", null, null, true)
 	));
+	$tblTenantObjectPropertyValues->PrimaryKey = new TableKey(array
+	(
+		new TableKeyColumn("PropertyID"),
+		new TableKeyColumn("ObjectID")
+	));
 	$tblTenantObjectPropertyValues->ForeignKeys = array
 	(
 		new TableForeignKey("PropertyID", new TableForeignKeyColumn($tblTenantObjectProperties, "ID")),
