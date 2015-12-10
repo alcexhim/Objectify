@@ -20,7 +20,9 @@
 			</StyleSheets>
 			<Content>
 				<html:Navigation CssClass="Top">
-					
+					<wfx:Button CssClass="ApplicationButton">
+					</wfx:Button>
+					<ofx:InstanceBrowser CssClass="SearchBox" ID="ibSearch" />
 				</html:Navigation>
 				<wfx:Sidebar>
 					<wfx:Menu>

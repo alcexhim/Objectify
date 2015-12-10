@@ -5,13 +5,17 @@
 	use Phast\System;
 	
 	use Objectify\Objects\User;
-	
+	use Objectify\Objects\TenantObject;
+		
 	class DefaultPage extends PhastPage
 	{
 		public function OnInitializing($e)
 		{
 			$e->RenderingPage->ClassList[] = "EnableHeader";
 			$e->RenderingPage->ClassList[] = "EnableSidebar";
+			
+			$ibSearch = $e->RenderingPage->GetControlByID("ibSearch");
+			$ibSearch->ValidObjects[] = TenantObject::GetByName("Task");
 			
 			if (User::GetCurrent() == null)
 			{
