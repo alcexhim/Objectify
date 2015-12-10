@@ -1,0 +1,335 @@
+{
+	"Objects":
+	[
+		{
+			"ID": "{EF4D4027-6904-4773-9013-22CEDC169F00}",
+			"Name": "PageComponent",
+			"ParentObjects":
+			[
+				{
+					"Name": "Object"
+				}
+			]
+		},
+		{
+			"ID": "{6AD6BD1C-7D1C-4AC9-9642-FEBC61E9D6FF}",
+			"Name": "ContainerPageComponent",
+			"ParentObjects":
+			[
+				{
+					"Name": "PageComponent"
+				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "Components",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "PageComponent"
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"ID": "{DDC61BCA-022D-43EF-9A94-D79BA9FEC5C8}",
+			"Name": "SequentialContainerOrientation",
+			"ParentObjects":
+			[
+				{
+					"Name": "Object"
+				}
+			],
+			"Instances":
+			[
+				{
+					"ID": "{9B7B7F14-0925-456D-98E6-E3FFEFDC272C}",
+					"Title": "Horizontal"
+				},
+				{
+					"ID": "{96423CAA-260E-453A-B609-E8090897EDDF}",
+					"Title": "Vertical"
+				}
+			]
+		},
+		{
+			"ID": "{A66D9AE2-3BEC-4083-A5CB-7DE3B03A9CC7}",
+			"Name": "SequentialContainerPageComponent",
+			"ParentObjects":
+			[
+				{
+					"Name": "ContainerPageComponent"
+				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "Orientation",
+					"DataTypeName": "SingleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "SequentialContainerOrientation"
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"ID": "{798B67FA-D4BE-42B9-B4BD-6F8E02C953C0}",
+			"Name": "ImagePageComponent",
+			"ParentObjects":
+			[
+				{
+					"Name": "PageComponent"
+				}
+			]
+		},
+		{
+			"ID": "{D349C489-9684-4A5A-9843-B906A7F803BC}",
+			"Name": "PanelPageComponent",
+			"ParentObjects":
+			[
+				{
+					"Name": "PageComponent"
+				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "Title",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "LanguageString"
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"ID": "{FD86551E-E4CE-4B8B-95CB-BEC1E6A0EE2B}",
+			"Name": "HeadingPageComponent",
+			"ParentObjects":
+			[
+				{
+					"Name": "PageComponent"
+				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "Level",
+					"DataTypeName": "Number"
+				},
+				{
+					"Name": "Title",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "LanguageString"
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"ID": "{D9626359-48E3-4840-A089-CD8DA6731690}",
+			"Name": "Page",
+			"InstanceProperties":
+			[
+				{
+					"Name": "RelativePath",
+					"DataTypeName": "Text"
+				},
+				{
+					"Name": "Components",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "PageComponent"
+							}
+						]
+					}
+				}
+			]
+		},
+		
+		
+		
+		
+		
+		
+		{
+			"Name": "ImagePageComponent",
+			"Instances":
+			[
+				{
+					"ID": "{A77F672B-7F9C-4F20-B5CE-1990529407F4}",
+					"PropertyValues":
+					[
+						{
+							"Name": "ImageFileName",
+							"Value": "~/Images/Header.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "LanguageString",
+			"Instances":
+			[
+				{
+					"ID": "{C5027DC2-53EE-4FC0-9BA6-F2B883F7DAD8}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Please sign in to access this feature"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "HeadingPageComponent",
+			"Instances":
+			[
+				{
+					"ID": "{23164023-03A8-4DB2-9C15-DB8321F3486B}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Level",
+							"Value": 4
+						},
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{C5027DC2-53EE-4FC0-9BA6-F2B883F7DAD8}"
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "PanelPageComponent",
+			"Instances":
+			[
+				{
+					"ID": "{8F9C429D-2FF5-46E1-B906-CD1D3DFF7BDE}",
+					"PropertyValues":
+					[
+						{
+							"Name": "ContentComponents",
+							"Value":
+							{
+								"Instances":
+								[
+									"{23164023-03A8-4DB2-9C15-DB8321F3486B}"
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "SequentialContainerPageComponent",
+			"Instances":
+			[
+				{
+					"ID": "{E7C69CF3-CB71-43D8-91AB-B8F5030350AB}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Orientation",
+							"Value":
+							{
+								"Instance": "{9B7B7F14-0925-456D-98E6-E3FFEFDC272C}"
+							}
+						},
+						{
+							"Name": "Components",
+							"Value":
+							{
+								"Instances":
+								[
+									"{A77F672B-7F9C-4F20-B5CE-1990529407F4}",
+									"{8F9C429D-2FF5-46E1-B906-CD1D3DFF7BDE}"
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+		
+		{
+			"Name": "Page",
+			"Instances":
+			[
+				{
+					"ID": "{9E272BC3-0358-4EB7-8B3B-581964A59634}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "PageName",
+							"Value": "LoginPage" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "RelativePath",
+							"Value": "account/login"
+						},
+						{
+							"Name": "Components",
+							"Value":
+							{
+								"Instances":
+								[
+									"{E7C69CF3-CB71-43D8-91AB-B8F5030350AB}"
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}
