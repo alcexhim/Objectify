@@ -1,0 +1,148 @@
+{
+	"Objects":
+	[
+		{
+			"ID": "{8EA7D1D3-6FC8-40C9-98C6-F72798307E9F}",
+			"Name": "SecurityPermission",
+			"ParentObjects":
+			[
+				{
+					"Name": "Object"
+				}
+			],
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"Instances":
+						[
+							"{34142FCB-172C-490A-AF03-FF8451D00CAF}"
+						]
+					}
+				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "Title",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "LanguageString"
+							}
+						]
+					}
+				}
+			],
+			"Instances":
+			[
+				{
+					"ID": "{36156720-B166-47E8-AA45-073EE789AD59}",
+					"Name": "Provision Tenants",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{6EF090CF-DF98-4DC6-83A9-364A3FA25E9B}"
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"ID": "{498CCFD4-8D94-4EF4-B947-1D07ECC9342B}",
+			"Name": "SecurityGroup",
+			"ParentObjects":
+			[
+				{
+					"Name": "Object"
+				}
+			],
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"Instances":
+						[
+							"{739C26BC-740F-4CB0-BCB1-2A28FA570E7D}"
+						]
+					}
+				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "Title",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "LanguageString"
+							}
+						]
+					}
+				},
+				{
+					"Name": "Permissions",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "SecurityPermission"
+							}
+						]
+					}
+				}
+			],
+			"Instances":
+			[
+				{
+					"ID": "{0E57B7A3-FE6D-4B40-843B-F20580441242}",
+					"Name": "System Administrator",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{616E5840-4DA4-4C99-B470-8F464465C2DB}"
+								]
+							}
+						},
+						{
+							"Name": "Permissions",
+							"Value":
+							{
+								"Instances":
+								[
+									"{36156720-B166-47E8-AA45-073EE789AD59}"
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}
