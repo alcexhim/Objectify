@@ -11,6 +11,9 @@
 	use Phast\WebControls\ListViewItemColumn;
 	
 	use Objectify\Objects\TenantObject;
+	use Objectify\Objects\TenantObjectInstance;
+	
+	use Objectify\WebControls\InstanceDisplayWidget;
 	
 	class ObjectModifyPage extends PhastPage
 	{
@@ -38,14 +41,53 @@
 			$lvInstanceProperties = $tabProperties->GetControlByID("lvInstanceProperties");
 			
 			$props = $this->CurrentObject->GetProperties();
+			$i = 0;
 			foreach ($props as $prop)
 			{
+				$i++;
+				if ($i == 2)
+				{
+					$propval = $this->CurrentObject->GetPropertyValue($prop);
+					$propval->SetInstance(TenantObjectInstance::GetByGlobalIdentifier("9FE564A453AE45B48110BF732164C683"));
+					
+					$inst = $propval->GetInstance();
+					// print_r($inst);die();
+				}
+				
 				$lvi = new ListViewItem(array
 				(
 					new ListViewItemColumn("lvcProperty", $prop->Name),
 					new ListViewItemColumn("lvcDataType", $prop->DataType->Name),
-					new ListViewItemColumn("lvcDefaultValue", $prop->DefaultValue)
+					new ListViewItemColumn("lvcDefaultValue", function($sender)
+					{
+						if (is_object($sender->ExtraData))
+						{
+							print_r($sender->ExtraData);
+							
+							if (get_class($sender->ExtraData) == "Objectify\\Objects\\MultipleInstanceProperty")
+							{
+								$iv = new InstanceDisplayWidget();
+								$iv->InstanceID = $sender->ExtraData->GetInstances()[0]->ID;
+								$iv->Render();
+							}
+							else if (get_class($sender->ExtraData) == "Objectify\\Objects\\SingleInstanceProperty")
+							{
+								$iv = new InstanceDisplayWidget();
+								$iv->InstanceID = $sender->ExtraData->GetInstance()->ID;
+								$iv->Render();
+							}
+							else
+							{
+								print_r($sender->ExtraData);
+							}
+						}
+						else
+						{
+							echo($sender->ExtraData);
+						}
+					}, null, $prop->DefaultValue)
 				));
+				
 				$lvStaticProperties->Items[] = $lvi;
 			}
 			
