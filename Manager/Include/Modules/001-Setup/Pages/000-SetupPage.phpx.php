@@ -411,57 +411,13 @@
 			$value = null;
 			
 			if ($dataTypeName == null) $dataTypeName = $propDef->DataTypeName;
-			
+
+			$validObjects = null;
 			switch ($dataTypeName)
 			{
 				case "SingleInstance":
-				{
-					$instance = null;
-					$validObjects = null;
-					
-					if (isset($propDef->Value->ValidObjects))
-					{
-						foreach ($propDef->Value->ValidObjects as $validObject)
-						{
-							if (isset($validObject->Name))
-							{
-								$validObjects[] = TenantObject::GetByName($validObject->Name);
-							}
-							else if (isset($validObject->ID))
-							{
-								$id = $this->SanitizeGlobalIdentifier($validObject->ID);
-								$validObjects[] = TenantObject::GetByGlobalIdentifier($id);
-							}
-						}
-					}
-					else
-					{
-						if ($isInstanceProperty)
-						{
-							$op = $obj->GetInstanceProperty($propDef->Name);
-							$validObjects = $op->DefaultValue->ValidObjects;
-						}
-						else
-						{
-							$op = $obj->GetPropertyValue($propDef->Name);
-							$validObjects = $op->ValidObjects;
-						}
-					}
-					
-					if (isset($propDef->Value->Instance))
-					{
-						$id = $this->SanitizeGlobalIdentifier($propDef->Value->Instance);
-						$instance = TenantObjectInstance::GetByGlobalIdentifier($id);
-					}
-					
-					$value = new SingleInstanceProperty($instance, $validObjects);
-					break;
-				}
 				case "MultipleInstance":
-				{
-					$instances = array();
-					$validObjects = null;
-					
+				{					
 					if (isset($propDef->Value->ValidObjects))
 					{
 						$validObjects = array();
@@ -480,23 +436,48 @@
 					}
 					else
 					{
+						$op = null;
 						if ($isInstanceProperty)
 						{
-							$op = $obj->GetInstanceProperty($propDef->Name);
-							$validObjects = $op->DefaultValue->ValidObjects;
-						}
+							$op = $obj->GetInstanceProperty($propDef->Name);						}
 						else
 						{
-							$op = $obj->GetPropertyValue($propDef->Name);
-							$validObjects = $op->ValidObjects;
+							$op = $obj->GetProperty($propDef->Name);
+						}
+						$className = get_class($op->DefaultValue);
+						if ($className == "Objectify\\Objects\\MultipleInstanceProperty"
+								|| $className == "Objectify\\Objects\\SingleInstanceProperty")
+						{
+							$validObjects = $op->DefaultValue->ValidObjects;
 						}
 					}
+					break;
+				}
+			}
+			
+			switch ($dataTypeName)
+			{
+				case "SingleInstance":
+				{
+					$instance = null;
 					
+					if (isset($propDef->Value->Instance))
+					{
+						$id = $this->SanitizeGlobalIdentifier($propDef->Value->Instance);
+						$instance = TenantObjectInstance::GetByGlobalIdentifier($id);
+					}
+					
+					$value = new SingleInstanceProperty($instance, $validObjects);
+					break;
+				}
+				case "MultipleInstance":
+				{
+					$instances = array();
 					if (isset($propDef->Value->Instances))
 					{
 						foreach ($propDef->Value->Instances as $instId)
 						{
-							$id = $this->SanitizeGlobalIdentifier($instID);
+							$id = $this->SanitizeGlobalIdentifier($instId);
 							$instances[] = TenantObjectInstance::GetByGlobalIdentifier($id);
 						}
 					}
