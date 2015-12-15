@@ -41,7 +41,7 @@
 				$adw = new AdditionalDetailWidget();
 				$adw->TargetURL = "~/instances/modify/" . $this->CurrentInstance->ID;
 				$adw->Text = $this->CurrentInstance->ToString();
-				$adw->ClassTitle = $this->CurrentInstance->ParentObject->Name;
+				$adw->ClassTitle = $this->CurrentInstance->ParentObject->ToString();
 				
 				$propTasks = $this->CurrentInstance->ParentObject->GetPropertyValue("Tasks");
 				if ($propTasks != null)
