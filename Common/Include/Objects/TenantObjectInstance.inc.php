@@ -146,7 +146,14 @@
 			
 			if (is_string($property))
 			{
-				$property = $this->ParentObject->GetInstanceProperty($property);
+				if ($this->ParentObject->HasInstanceProperty($property))
+				{
+					$property = $this->ParentObject->GetInstanceProperty($property);
+				}
+				else
+				{
+					$property = null;
+				}
 			}
 			if ($property == null) return false;
 			
@@ -244,7 +251,8 @@
 			
 			// TODO: DON'T RELY ON THIS!!!
 			// this works for LanguageString but we really need to implement Instance Display Title ASAP!
-			return $this->GetPropertyValue("Value");
+			if ($this->HasPropertyValue("Value")) return $this->GetPropertyValue("Value");
+			return "";
 		}
 	}
 ?>
