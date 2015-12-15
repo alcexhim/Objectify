@@ -58,6 +58,16 @@
 			"Instances":
 			[
 				{
+					"ID": "{6933F902-9C87-4D9B-8B25-AD4214A87420}",
+					"PropertyValues":
+					[
+						{
+							"Name": "PropertyName",
+							"Value": "PropertyName"
+						}
+					]
+				},
+				{
 					"ID": "{03166067-EBEA-4153-80B4-E0847D166EB2}",
 					"PropertyValues":
 					[
@@ -88,6 +98,26 @@
 			"Instances":
 			[
 				{
+					"Comment": "Instance Property String Component, prop, Instance Display Title",
+					"ID": "{EB4F9366-4EC8-4A5E-A932-B6A8A222A416}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Components",
+							"Value":
+							[
+								{
+									"Comment": "Instance Property String Component, inst, Property Name",
+									"Instances":
+									[
+										"{6933F902-9C87-4D9B-8B25-AD4214A87420}"
+									]
+								}
+							]
+						}
+					]
+				},
+				{
 					"ID": "{AA37C17F-CDB8-4ED2-BE87-3388DF4825BB}",
 					"PropertyValues":
 					[
@@ -102,6 +132,19 @@
 							}
 						}
 					]
+				}
+			]
+		},
+		{
+			"Name": "InstancePropertyStringComponent",
+			"Properties":
+			[
+				{
+					"Name": "InstanceDisplayTitle",
+					"Value":
+					{
+						"Instance": "{EB4F9366-4EC8-4A5E-A932-B6A8A222A416}"
+					}
 				}
 			]
 		},
