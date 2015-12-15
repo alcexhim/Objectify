@@ -53,7 +53,22 @@
 				}
 			]
 		},
-		
+		{
+			"Name": "InstancePropertyStringComponent",
+			"Instances":
+			[
+				{
+					"ID": "{03166067-EBEA-4153-80B4-E0847D166EB2}",
+					"PropertyValues":
+					[
+						{
+							"Name": "PropertyName",
+							"Value": "Title"
+						}
+					]
+				}
+			]
+		},
 		{
 			"Name": "String",
 			"Properties":
@@ -68,6 +83,25 @@
 							"{056B2384-F841-4562-886B-F7AFB6D272F2}"
 						]
 					}
+				}
+			],
+			"Instances":
+			[
+				{
+					"ID": "{AA37C17F-CDB8-4ED2-BE87-3388DF4825BB}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Components",
+							"Value":
+							{
+								"Instances":
+								[
+									"{03166067-EBEA-4153-80B4-E0847D166EB2}"
+								]
+							}
+						}
+					]
 				}
 			]
 		},
