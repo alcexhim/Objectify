@@ -221,8 +221,18 @@
 				$propInstanceDisplayTitle_Value = $propInstanceDisplayTitle->GetInstance();
 				if ($propInstanceDisplayTitle_Value != null)
 				{
-					print_r($propInstanceDisplayTitle_Value);
-					die();
+					$components = $propInstanceDisplayTitle_Value->GetPropertyValue("Components");
+					$componentInstances = $components->GetInstances();
+					$retval = "";
+					foreach ($componentInstances as $inst)
+					{
+						if ($inst->ParentObject->Name == "InstancePropertyStringComponent")
+						{
+							$propertyName = $inst->GetPropertyValue("PropertyName");
+							$retval .= $this->GetPropertyValue($propertyName);
+						}
+					}
+					return $retval;
 				}
 			}
 			
