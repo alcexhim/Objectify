@@ -83,11 +83,13 @@
 						$items = array();
 						if (isset($_GET["ID"]))
 						{
-							$items[] = TenantObject::GetByID($_GET["ID"]);
+							$item = TenantObject::GetByID($_GET["ID"]);
+							if ($item != null) $items[] = $item;
 						}
 						else if (isset($_GET["Name"]))
 						{
-							$items[] = TenantObject::GetByName($_GET["Name"]);
+							$item = TenantObject::GetByName($_GET["Name"]);
+							if ($item != null) $items[] = $item;
 						}
 						else
 						{
@@ -99,6 +101,8 @@
 						$count = count($items);
 						for($i = 0; $i < $count; $i++)
 						{
+							$str = $items[$i]->ToString();
+							$items[$i]->DisplayTitle = $str;
 							echo(json_encode($items[$i]));
 							if ($i < $count - 1) echo(",");
 						}
