@@ -33,20 +33,20 @@
 					$objParents = $obj->GetParentObjects();
 					$ok = false;
 					$count = count($objParents);
-					while ($count > 0)
+					if ($count > 0)
 					{
 						foreach ($objParents as $objParent)
 						{
-							if ($objParent->ID != $value->ParentObject->ID)
+							if ($objParent->ID == $value->ParentObject->ID)
 							{
-								$ok = false;
+								$ok = true;
 								break;
 							}
 						}
-						if (!$ok) break;
+						if ($ok) break;
 					}
 					
-					if (!$ok)
+					if ($ok)
 					{
 						$objIDsAllowed[] = $obj->ID;
 					}
