@@ -29,6 +29,11 @@
 			$this->ParentObject = $parentObject;
 		}
 		
+		public function GetInstanceID()
+		{
+			return $this->ParentObject->ID . "$" . $this->ID;
+		}
+		
 		public static function GetByAssoc($values)
 		{
 			$item = new TenantObjectInstance(TenantObject::GetByID($values["instance_ObjectID"]));
