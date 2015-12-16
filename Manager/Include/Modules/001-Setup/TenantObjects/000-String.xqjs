@@ -73,6 +73,45 @@
 					}
 				}
 			]
+		},
+		
+		{
+			"Name": "InstancePropertyStringComponent",
+			"Instances":
+			[
+				{
+					"ID": "{0795FC31-589E-4219-9F20-3924132376A9}",
+					"PropertyValues":
+					[
+						{
+							"Name": "PropertyName",
+							"Value": "Name"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "String",
+			"Instances":
+			[
+				{
+					"ID": "{6894DC7E-F471-4F5C-88E6-B8016259817F}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Components",
+							"Value":
+							{
+								"Instances":
+								[
+									"{0795FC31-589E-4219-9F20-3924132376A9}"
+								]
+							}
+						}
+					]
+				}
+			]
 		}
 	]
 }
