@@ -41,19 +41,8 @@
 			$lvInstanceProperties = $tabProperties->GetControlByID("lvInstanceProperties");
 			
 			$props = $this->CurrentObject->GetProperties();
-			$i = 0;
 			foreach ($props as $prop)
-			{
-				$i++;
-				if ($i == 2)
-				{
-					$propval = $this->CurrentObject->GetPropertyValue($prop);
-					$propval->SetInstance(TenantObjectInstance::GetByGlobalIdentifier("9FE564A453AE45B48110BF732164C683"));
-					
-					$inst = $propval->GetInstance();
-					// print_r($inst);die();
-				}
-				
+			{				
 				$lvi = new ListViewItem(array
 				(
 					new ListViewItemColumn("lvcProperty", $prop->Name),
