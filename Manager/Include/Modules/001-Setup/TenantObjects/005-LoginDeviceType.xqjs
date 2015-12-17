@@ -1,0 +1,44 @@
+{
+	"Objects":
+	[
+		{
+			"ID": "{C1FCE2B8-93EA-4575-95A7-8D4C3527AF63}",
+			"Name": "LoginDeviceType",
+			"ParentObjects":
+			[
+				{
+					"Name": "Enumeration"
+				}
+			],
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"Value":
+					{
+						"Instances":
+						[
+							"{3AB09F14-8258-4BDA-BE62-EE26CFD6D1D2}"
+						]
+					}
+				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "Title",
+					"DataType": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "LanguageString"
+							}
+						]
+					}
+				}
+			]
+		}
+	]
+}
