@@ -618,7 +618,7 @@
 			return $value;
 		}
 		
-		private function CreateDefaultUser($username, $passwordHash)
+		private function CreateDefaultUser($username, $passwordHash, $passwordSalt)
 		{
 			$objUser = TenantObject::GetByName("User");
 			$objSecurityGroup = TenantObject::GetByName("SecurityGroup");
@@ -630,17 +630,17 @@
 				new TenantObjectInstancePropertyValue
 				(
 					"UserName",
-					$Administrator_UserName
+					$username
 				),
 				new TenantObjectInstancePropertyValue
 				(
 					"PasswordHash",
-					$Administrator_PasswordHash
+					$passwordHash
 				),
 				new TenantObjectInstancePropertyValue
 				(
 					"PasswordSalt",
-					$Administrator_PasswordSalt
+					$passwordSalt
 				),
 				new TenantObjectInstancePropertyValue
 				(
@@ -767,7 +767,7 @@
 						require($tenantObjectFileName);
 					}
 					
-					$this->CreateDefaultUser($Administrator_UserName, $Administrator_PasswordHash);
+					$this->CreateDefaultUser($Administrator_UserName, $Administrator_PasswordHash, $Administrator_PasswordSalt);
 					
 					// $this->CreateDefaultSecurityPrivilegesAndGroups();
 					
