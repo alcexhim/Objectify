@@ -143,6 +143,27 @@
 					]
 				}
 			]
+		},
+		
+		{
+			"Name": "Object",
+			"Properties":
+			[
+				{
+					"Name": "SecurityGroups",
+					"Comment": "Security Groups securing this Object",
+					"DataType": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "SecurityGroup"
+							}
+						]
+					}
+				}
+			]
 		}
 	]
 }
