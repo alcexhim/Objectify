@@ -1,0 +1,5 @@
+<Website>
+	<Pages>
+		<Page FileName="testing" CodeBehindClassName="Objectify\Tenant\Pages\TestingPage" />
+	</Pages>
+</Website>

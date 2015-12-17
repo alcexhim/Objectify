@@ -1,0 +1,358 @@
+{
+	"Objects":
+	[
+		{
+			"Name": "LanguageString",
+			"Instances":
+			[
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_MethodAction_Title" 
+						}
+					],
+					"ID": "{4B9417BB-2FEB-40D7-9A4E-6F36C4271F28}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Method Action"
+						}
+					]
+				},
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_Method_Title" 
+						}
+					],
+					"ID": "{D5AA18A7-7ACD-4792-B039-6C620A151BAD}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Method"
+						}
+					]
+				},
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_CallMethodMethodAction_Title" 
+						}
+					],
+					"ID": "{D8C0D4D4-F8C6-4B92-A2C1-8BF16B16203D}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "CM - Call Method Method Action"
+						}
+					]
+				},
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_ExecuteServerSideScriptMethodAction_Title" 
+						}
+					],
+					"ID": "{8B5CFF09-F929-4BAD-A0EE-BCBBA20807D6}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "ESS - Execute Server-Side Script Method Action"
+						}
+					]
+				}
+			]
+		},
+		
+		{
+			"Name": "InstancePropertyStringComponent",
+			"Instances":
+			[
+				{
+					"ID": "{04F267AB-7BF4-4851-AE01-B57FA6F330E7}",
+					"PropertyValues":
+					[
+						{
+							"Name": "PropertyName",
+							"Value": "Title"
+						}
+					]
+				}
+			]
+		},
+		
+		{
+			"Name": "String",
+			"Instances":
+			[
+				{
+					"ID": "{8833DA21-F5A4-4794-AE0D-724D744F12EC}",
+					"Comment": "Title - Instance Property String Component",
+					"PropertyValues":
+					[
+						{
+							"Name": "Components",
+							"Value":
+							{
+								"Instances":
+								[
+									"{04F267AB-7BF4-4851-AE01-B57FA6F330E7}"
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+		
+		{
+			"ID": "{084A6D58-32C9-4A5F-9D2B-86C46F74E522}",
+			"Name": "MethodAction",
+			"ParentObjects":
+			[
+				{
+					"Name": "Object"
+				}
+			],
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"Value":
+					{
+						"Instances":
+						[
+							"{4B9417BB-2FEB-40D7-9A4E-6F36C4271F28}"
+						]
+					}
+				},
+				{
+					"Name": "InstanceDisplayTitle",
+					"Value":
+					{
+						"Instance": "{8833DA21-F5A4-4794-AE0D-724D744F12EC}"
+					}
+				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "Title",
+					"DataTypeName": "SingleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "String"
+							}
+						]
+					}
+				}
+			]
+		},
+		
+		{
+			"ID": "{D2813913-80B6-4DD6-9AD6-56D989169734}",
+			"Name": "Method",
+			"ParentObjects":
+			[
+				{
+					"Name": "Object"
+				}
+			],
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"Instances":
+						[
+							"{D5AA18A7-7ACD-4792-B039-6C620A151BAD}"
+						]
+					}
+				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "Actions",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "MethodAction"
+							}
+						]
+					}
+				}
+			]
+		},
+		
+		{
+			"ID": "{795DD1D3-0744-459D-87BD-62C70F1F5CBA}",
+			"Name": "CallMethodMethodAction",
+			"ParentObjects":
+			[
+				{
+					"Name": "MethodAction"
+				}
+			],
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"Value":
+					{
+						"Instances":
+						[
+							"{D8C0D4D4-F8C6-4B92-A2C1-8BF16B16203D}"
+						]
+					}
+				}
+			]
+		},
+		
+		{
+			"Name": "LanguageString",
+			"Instances":
+			[
+				{
+					"ID": "{CAC2B62B-47F1-44F9-8C68-45EC64CE3C92}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "GCU - Get Currently Logged-In User"
+						}
+					]
+				}
+			]
+		},
+		{
+			"ID": "{C9A4BF32-9176-4409-A016-9A263C3F2657}",
+			"Name": "ExecuteServerSideScriptMethodAction",
+			"ParentObjects":
+			[
+				{
+					"Name": "MethodAction"
+				}
+			],
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"Value":
+					{
+						"Instances":
+						[
+							"{8B5CFF09-F929-4BAD-A0EE-BCBBA20807D6}"
+						]
+					}
+				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "Name",
+					"DataTypeName": "Text"
+				},
+				{
+					"Name": "Title",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "LanguageString"
+							}
+						]
+					}
+				},
+				{
+					"Name": "CodeBlob",
+					"DataTypeName": "CodeBlob"
+				}
+			],
+			"Instances":
+			[
+				{
+					"ID": "{944C1459-1757-4F76-8A8B-F9E617AEC5FB}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Name",
+							"Value": "GetCurrentUser"
+						},
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{CAC2B62B-47F1-44F9-8C68-45EC64CE3C92}"
+								]
+							}
+						},
+						{
+							"Name": "CodeBlob",
+							"Value": "echo($_SESSION['Authentication.LoginToken']);"
+						}
+					]
+				}
+			]
+		}
+	]
+}
