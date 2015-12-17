@@ -1,0 +1,112 @@
+{
+	"Objects":
+	[
+		{
+			"ID": "{5670953C-7367-4065-9AC2-46555342DC72}",
+			"Name": "TenantType",
+			"ParentObjects":
+			[
+				{
+					"Name": "Enumeration"
+				}
+			],
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"Value":
+					{
+						"Instances":
+						[
+							"{143123C1-5C03-4346-AE84-E833D112576B}"
+						]
+					}
+				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "Title",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "LanguageString"
+							}
+						]
+					}
+				},
+				{
+					"Name": "Description",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "LanguageString"
+							}
+						]
+					}
+				}
+			],
+			"Instances":
+			[
+				{
+					"ID": "{5535F488-6C8E-42BC-86A3-664D70411A2A}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{FBEAE730-6E4F-4EFB-83A2-3ACA02C1F947}"
+								]
+							}
+						},
+						{
+							"Name": "Description",
+							"Value":
+							{
+								"Instances":
+								[
+									"{79AAE09C-5690-471C-8442-1B230610456C}"
+								]
+							}
+						}
+					]
+				},
+				{
+					"ID": "{B4F900F1-2C22-41FD-AAB9-7C956663256F}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{84032F2C-B347-4529-8D2E-FA68F4497D7C}"
+								]
+							}
+						},
+						{
+							"Name": "Description",
+							"Value":
+							{
+								"Instances":
+								[
+									"{142296C4-22CE-4996-ACE4-E2DB9B83A706}"
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}
