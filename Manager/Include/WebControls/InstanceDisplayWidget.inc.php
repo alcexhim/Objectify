@@ -39,7 +39,9 @@
 				$this->Attributes[] = new WebControlAttribute("data-instance-id", $this->CurrentInstance->ID);
 				
 				$adw = new AdditionalDetailWidget();
-				$adw->TargetURL = "~/instances/modify/" . $this->CurrentInstance->GetInstanceID();
+				$iid = $this->CurrentInstance->GetInstanceID();
+				$iid = str_replace('$', '\\$', $iid);
+				$adw->TargetURL = "~/instances/modify/" . $iid;
 				$adw->Text = $this->CurrentInstance->ToString();
 				$adw->ClassTitle = $this->CurrentInstance->ParentObject->ToString();
 				
