@@ -20,6 +20,7 @@
 											<Columns>
 												<wfx:ListViewColumn ID="lvcProperty" Title="Property" />
 												<wfx:ListViewColumn ID="lvcDataType" Title="Data type" />
+												<wfx:ListViewColumn ID="lvcValidObjects" Title="Valid objects" />
 												<wfx:ListViewColumn ID="lvcValue" Title="Value" />
 											</Columns>
 										</wfx:ListView>
@@ -31,6 +32,7 @@
 											<Columns>
 												<wfx:ListViewColumn ID="lvcProperty" Title="Property" />
 												<wfx:ListViewColumn ID="lvcDataType" Title="Data type" />
+												<wfx:ListViewColumn ID="lvcValidObjects" Title="Valid objects" />
 												<wfx:ListViewColumn ID="lvcDefaultValue" Title="Default value" />
 											</Columns>
 										</wfx:ListView>
