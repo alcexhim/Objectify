@@ -1,39 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Objectify>
 	<Objects>
-		<Object ID="{9C6871C1-9A7F-4A3A-900E-69D1D9E24486}" Name="User">
-			<ParentObjects>
-				<ParentObject Name="Object" />
-			</ParentObjects>
-			<Properties>
-				<Property Name="Title">
-					<MultipleInstancePropertyValue>
-						<Instances>
-							<Instance ID="{0D05F758-F3F7-4640-B462-43DA9DB35C1C}" />
-						</Instances>
-					</MultipleInstancePropertyValue>
-				</Property>
-			</Properties>
-			<InstanceProperties>
-				<Property Name="UserName" DataTypeName="Text" />
-				<Property Name="PasswordHash" DataTypeName="Text" />
-				<Property Name="PasswordSalt" DataTypeName="Text" />
-				<Property Name="IsGlobal" DataTypeName="Boolean" />
-				<Property Name="Logins" DataTypeName="MultipleInstance">
-					<MultipleInstancePropertyValue>
-						<ValidObjects>
-							<ValidObject Name="UserLogin" />
-						</ValidObjects>
-					</MultipleInstancePropertyValue>
-				</Property>
-				<Property Name="SecurityGroups" DataTypeName="MultipleInstance">
-					<MultipleInstancePropertyValue>
-						<ValidObjects>
-							<ValidObject Name="SecurityGroup" />
-						</ValidObjects>
-					</MultipleInstancePropertyValue>
-				</Property>
-			</InstanceProperties>
+		<Object Name="User">
 			<InstanceMethods>
 				<Method Name="RequestLoginToken">
 					<Content>

@@ -1,0 +1,75 @@
+{
+	"Objects":
+	[
+		{
+			"ID": "{9C6871C1-9A7F-4A3A-900E-69D1D9E24486}",
+			"Name": "User",
+			"ParentObjects":
+			[
+				{
+					"Name": "Object"
+				}
+			],
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"Value":
+					{
+						"Instances":
+						[
+							"{0D05F758-F3F7-4640-B462-43DA9DB35C1C}"
+						]
+					}
+				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "UserName",
+					"DataTypeName": "Text"
+				},
+				{
+					"Name": "PasswordHash",
+					"DataTypeName": "Text"
+				},
+				{
+					"Name": "PasswordSalt",
+					"DataTypeName": "Text"
+				},
+				{
+					"Name": "IsGlobal",
+					"DataTypeName": "Boolean"
+				},
+				{
+					"Name": "Logins",
+					"Comment": "This should be a Fetch Multiple Instances field that fetches the instances from UserLogin object that have their User property set to this User instance",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "UserLogin"
+							}
+						]
+					}
+				},
+				{
+					"Name": "SecurityGroups",
+					"Comment": "The security groups this User is a member of",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "SecurityGroup"
+							}
+						]
+					}
+				}
+			]
+		}
+	]
+}

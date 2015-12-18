@@ -1,0 +1,73 @@
+{
+	"Objects":
+	[
+		{
+			"ID": "{64F4BCDB-38D0-4373-BA30-8AE99AF1A5F7}",
+			"Name": "UserLogin",
+			"ParentObjects":
+			[
+				{
+					"Name": "Object"
+				}
+			],
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"Value":
+					{
+						"Instances":
+						[
+							"{410FCF87-26E3-41F1-887A-1D1CC391E52B}"
+						]
+					}
+				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "Token",
+					"DataTypeName": "Text"
+				},
+				{
+					"Name": "SignonTime",
+					"DataTypeName": "DateTime"
+				},
+				{
+					"Name": "User",
+					"DataTypeName": "SingleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "User"
+							}
+						]
+					}
+				},
+				{
+					"Name": "SignoffTime",
+					"DataTypeName": "DateTime"
+				},
+				{
+					"Name": "DeviceType",
+					"DataTypeName": "SingleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "LoginDeviceType"
+							}
+						]
+					}
+				},
+				{
+					"Name": "IPAddress",
+					"DataTypeName": "Text"
+				}
+			]
+		}
+	]
+}
