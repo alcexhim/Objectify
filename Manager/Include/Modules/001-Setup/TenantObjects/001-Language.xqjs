@@ -245,6 +245,54 @@
 					[
 						{
 							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_ObjectSource_System_Title" 
+						}
+					],
+					"ID": "{DD5DA156-07A6-46C6-B3F8-5BDE2089FB86}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "System"
+						}
+					]
+				},
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_ObjectSource_Custom_Title" 
+						}
+					],
+					"ID": "{51550210-074D-487B-B950-E3630EE81C49}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Custom"
+						}
+					]
+				},
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
 							"Value": "LanguageString_English_UNUSED_Title" 
 						}
 					],
@@ -893,6 +941,57 @@
 					{
 						"Instance": "{6894DC7E-F471-4F5C-88E6-B8016259817F}"
 					}
+				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "Title",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "LanguageString"
+							}
+						]
+					}
+				}
+			],
+			"Instances":
+			[
+				{
+					"ID": "{9547EB35-07FB-4B64-B82C-6DA1989B9165}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{DD5DA156-07A6-46C6-B3F8-5BDE2089FB86}"
+								]
+							}
+						}
+					]
+				},
+				{
+					"ID": "{63D91CCD-D196-4C3A-8609-6DF371E2406F}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{51550210-074D-487B-B950-E3630EE81C49}"
+								]
+							}
+						}
+					]
 				}
 			]
 		}
