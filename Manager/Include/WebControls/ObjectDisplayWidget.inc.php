@@ -32,9 +32,13 @@
 			{
 				$this->CurrentObject = TenantObject::GetByID($this->ObjectID);
 			}
+			if ($this->CurrentObject == null) return;
+			
 			$adw = new AdditionalDetailWidget();
+			
 			$adw->TargetURL = "~/objects/modify/" . $this->CurrentObject->ID;
 			$adw->Text = $this->CurrentObject->ToString();
+			
 			$adw->ClassTitle = "Object";
 			
 			$propTasks = $this->CurrentObject->GetPropertyValue("Tasks");
