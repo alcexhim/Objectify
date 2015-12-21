@@ -105,15 +105,13 @@
 						{
 							"Name": "Components",
 							"Value":
-							[
-								{
-									"Comment": "Instance Property String Component, inst, Property Name",
-									"Instances":
-									[
-										"{6933F902-9C87-4D9B-8B25-AD4214A87420}"
-									]
-								}
-							]
+							{
+								"Comment": "Instance Property String Component, inst, Property Name",
+								"Instances":
+								[
+									"{6933F902-9C87-4D9B-8B25-AD4214A87420}"
+								]
+							}
 						}
 					]
 				},
