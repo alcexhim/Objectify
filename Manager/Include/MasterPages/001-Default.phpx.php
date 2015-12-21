@@ -6,7 +6,9 @@
 	
 	use Objectify\Objects\User;
 	use Objectify\Objects\TenantObject;
-		
+	
+	use Phast\WebControls\MenuItemCommand;
+	
 	class DefaultPage extends PhastPage
 	{
 		public function OnInitializing($e)
@@ -26,6 +28,11 @@
 					return;
 				}
 			}
+			
+			$sidebar = $e->RenderingPage->GetControlByID("sidebar");
+			$sidebarMenu = $sidebar->GetControlByID("sidebarMenu");
+			
+			$sidebarMenu->Items[] = new MenuItemCommand("TEST COMMAND");
 		}
 	}
 ?>

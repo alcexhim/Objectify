@@ -24,12 +24,16 @@
 					</wfx:Button>
 					<ofx:InstanceBrowser CssClass="SearchBox" ID="ibSearch" />
 				</html:Navigation>
-				<wfx:Sidebar>
-					<wfx:Menu>
+				<wfx:Sidebar ID="sidebar">
+					<wfx:Menu ID="sidebarMenu">
 						<Items>
+							<wfx:MenuItemHeader Title="Overview" />
 							<wfx:MenuItemCommand TargetURL="~/dashboard" Title="Dashboard" IconName="dashboard" />
-							<wfx:MenuItemSeparator />
+							<wfx:MenuItemHeader Title="Reports" />
 							<wfx:MenuItemCommand TargetURL="~/objects" Title="Objects" IconName="cubes" />
+							<wfx:MenuItemHeader Title="Help and Support" />
+							<wfx:MenuItemCommand TargetURL="~/support/documentation" Title="Documentation" IconName="book" />
+							<wfx:MenuItemCommand TargetURL="~/support" Title="Support Center" IconName="life-ring" />
 						</Items>
 					</wfx:Menu>
 				</wfx:Sidebar>
