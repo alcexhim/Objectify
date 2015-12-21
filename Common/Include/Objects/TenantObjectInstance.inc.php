@@ -231,10 +231,14 @@
 					$retval = "";
 					foreach ($componentInstances as $inst)
 					{
-						if ($inst->ParentObject->Name == "InstancePropertyStringComponent")
+						switch ($inst->ParentObject->Name)
 						{
-							$propertyName = $inst->GetPropertyValue("PropertyName");
-							$retval .= $this->GetPropertyValue($propertyName);
+							case "InstancePropertyStringComponent":
+							{
+								$propertyName = $inst->GetPropertyValue("PropertyName");
+								$retval .= $this->GetPropertyValue($propertyName);
+								break;
+							}
 						}
 					}
 					return $retval;
