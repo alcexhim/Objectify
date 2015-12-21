@@ -20,9 +20,9 @@ function InstanceBrowser(parentElement)
 					{
 						for (var j = 0; j < e2.Items.length; j++)
 						{
-							sender.Items.Add({ "Title": e2.Items[j].GlobalIdentifier, "Value": e2.Items[j].ID });
+							sender.Items.Add({ "Title": e2.Items[j].ToString(), "Value": e2.Items[j].ID });
 						}
-						sender.SetLoading(true);
+						sender.SetLoading(false);
 					});
 				});
 			}

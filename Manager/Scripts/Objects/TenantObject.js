@@ -86,6 +86,7 @@ function TenantObject()
 				}
 			}
 		};
+		xhr.send(null);
 	};
 	
 	this.Update = function(callback)

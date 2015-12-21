@@ -81,6 +81,7 @@
 						$count = count($items);
 						for($i = 0; $i < $count; $i++)
 						{
+							$items[$i]->DisplayTitle = $items[$i]->ToString();
 							echo(json_encode($items[$i]));
 							if ($i < $count - 1) echo(",");
 						}

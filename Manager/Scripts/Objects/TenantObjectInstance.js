@@ -17,13 +17,19 @@ function TenantObjectInstance()
 		TenantObject.GetByID(this.ParentObjectID, callback);
 	};
 	this.ID = null;
+	this.DisplayTitle = null;
 	this.GlobalIdentifier = null;
+	this.ToString = function()
+	{
+		return this.DisplayTitle;
+	};
 }
 TenantObjectInstance.GetByAssoc = function(obj)
 {
-	var item = new TenantObject();
+	var item = new TenantObjectInstance();
 	item.ParentObjectID = obj.ParentObject.ID;
 	item.ID = obj.ID;
 	item.GlobalIdentifier = obj.GlobalIdentifier;
+	item.DisplayTitle = obj.DisplayTitle;
 	return item;
 };
