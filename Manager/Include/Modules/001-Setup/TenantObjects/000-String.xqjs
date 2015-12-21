@@ -112,6 +112,25 @@
 					]
 				}
 			]
+		},
+		{
+			"Name": "Object",
+			"Properties":
+			[
+				{
+					"Name": "InstanceDisplayTitle",
+					"DataTypeName": "SingleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "String"
+							}
+						]
+					}
+				}
+			]
 		}
 	]
 }

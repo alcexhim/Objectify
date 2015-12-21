@@ -236,7 +236,31 @@
 							case "InstancePropertyStringComponent":
 							{
 								$propertyName = $inst->GetPropertyValue("PropertyName");
-								$retval .= $this->GetPropertyValue($propertyName);
+								$propertyValue = $this->GetPropertyValue($propertyName);
+								if (is_object($propertyValue))
+								{
+									switch (get_class($propertyValue))
+									{
+										case "Objectify\\Objects\\MultipleInstanceProperty":
+										{
+											$insts = $propertyValue->GetInstances();
+											$instCount = count($insts);
+											$propertyValue = "";
+											for ($i = 0; $i < $instCount; $i++)
+											{
+												$propertyValue .= $insts[$i]->ToString();
+												if ($i < $instCount - 1) $propertyValue .= " ";
+											}
+											break;
+										}
+										case "Objectify\\Objects\\SingleInstanceProperty":
+										{
+											$propertyValue = $propertyValue->GetInstance()->ToString();
+											break;
+										}
+									}
+								}
+								$retval .= $propertyValue;
 								break;
 							}
 						}

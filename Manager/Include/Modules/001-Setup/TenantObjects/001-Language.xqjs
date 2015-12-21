@@ -37,19 +37,6 @@
 							}
 						]
 					}
-				},
-				{
-					"Name": "InstanceDisplayTitle",
-					"DataTypeName": "SingleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "String"
-							}
-						]
-					}
 				}
 			]
 		},
@@ -148,6 +135,16 @@
 		},
 		{
 			"Name": "Language",
+			"Properties":
+			[
+				{
+					"Name": "InstanceDisplayTitle",
+					"Value":
+					{
+						"Instance": "{AA37C17F-CDB8-4ED2-BE87-3388DF4825BB}"
+					}
+				}
+			],
 			"InstanceProperties":
 			[
 				{
@@ -349,7 +346,7 @@
 					 		"Name": "Language",
 					 		"Value":
 					 		{
-					 			"ID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+					 			"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
 					 		}
 					 	},
 					 	{
