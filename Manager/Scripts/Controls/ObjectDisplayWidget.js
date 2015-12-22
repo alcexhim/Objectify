@@ -48,8 +48,8 @@ function ObjectDisplayWidget(parentElement)
 		e.preventDefault();
 		return false;
 	};
-	this.ButtonElement.addEventListener("contextmenu", this.__ShowContextMenu);
-	this.TextElement.addEventListener("contextmenu", this.__ShowContextMenu);
+	
+	this.ParentElement.addEventListener("contextmenu", this.__ShowContextMenu);
 }
 
 window.addEventListener("load", function(e)

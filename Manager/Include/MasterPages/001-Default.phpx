@@ -17,6 +17,7 @@
 			</Scripts>
 			<StyleSheets>
 				<StyleSheet FileName="$(Configuration:System.StaticPath)/StyleSheets/$(Configuration:Application.ThemeName|Slate)/Main.css" />
+				<StyleSheet FileName="~/StyleSheets/Main.css" />
 			</StyleSheets>
 			<Content>
 				<html:Navigation CssClass="Top">

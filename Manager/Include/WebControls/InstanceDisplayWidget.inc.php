@@ -23,7 +23,7 @@
 			parent::__construct();
 			
 			$this->CurrentInstance = $instance;
-			$this->TagName = "span";
+			$this->TagName = "div";
 			$this->ClassList[] = "InstanceDisplayWidget";
 		}
 		
