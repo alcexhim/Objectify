@@ -233,6 +233,12 @@
 					{
 						switch ($inst->ParentObject->Name)
 						{
+							case "TextConstantStringComponent":
+							{
+								$value = $inst->GetPropertyValue("Value");
+								$retval .= $value;
+								break;
+							}
 							case "InstancePropertyStringComponent":
 							{
 								$propertyName = $inst->GetPropertyValue("PropertyName");
