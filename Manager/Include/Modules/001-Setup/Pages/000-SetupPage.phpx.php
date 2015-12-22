@@ -625,12 +625,28 @@
 			
 			$instSecurityGroup_SystemAdministrator = TenantObjectInstance::GetByGlobalIdentifier("{0E57B7A3-FE6D-4B40-843B-F20580441242}");
 			
+			$objLanguage = TenantObject::GetByName("Language");
+			$objLanguageString = TenantObject::GetByName("LanguageString");
+			
+			$lang = $objLanguage->GetInstances()[0];
+			
+			$instEnglish_SystemAdministrator = $objLanguageString->CreateInstance(array
+			(
+				new TenantObjectInstancePropertyValue("Language", $lang),
+				new TenantObjectInstancePropertyValue("Value", "System Administrator")
+			));
+			
 			$instUser = $objUser->CreateInstance(array
 			(
 				new TenantObjectInstancePropertyValue
 				(
 					"UserName",
 					$username
+				),
+				new TenantObjectInstancePropertyValue
+				(
+					"DisplayName",
+					new MultipleInstanceProperty(array($instEnglish_SystemAdministrator), null)
 				),
 				new TenantObjectInstancePropertyValue
 				(
