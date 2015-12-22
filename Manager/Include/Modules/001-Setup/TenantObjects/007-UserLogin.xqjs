@@ -34,19 +34,6 @@
 					"DataTypeName": "DateTime"
 				},
 				{
-					"Name": "User",
-					"DataTypeName": "SingleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "User"
-							}
-						]
-					}
-				},
-				{
 					"Name": "SignoffTime",
 					"DataTypeName": "DateTime"
 				},

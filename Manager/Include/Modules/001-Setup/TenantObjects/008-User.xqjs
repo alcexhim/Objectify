@@ -70,6 +70,25 @@
 					}
 				}
 			]
+		},
+		{
+			"Name": "UserLogin",
+			"InstanceProperties":
+			[
+				{
+					"Name": "User",
+					"DataTypeName": "SingleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "User"
+							}
+						]
+					}
+				}
+			]
 		}
 	]
 }
