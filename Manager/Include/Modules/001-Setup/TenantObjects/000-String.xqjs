@@ -36,6 +36,36 @@
 				{
 					"Name": "StringComponent"
 				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "Value",
+					"DataTypeName": "Text"
+				}
+			],
+			"Instances":
+			[
+				{
+					"ID": "{FEE39766-9A0D-49A2-A29F-45C17989DCF6}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Value",
+							"Value": "/"
+						}
+					]
+				},
+				{
+					"ID": "{936E4426-5995-4713-BDEE-BF4F7BA2AFAE}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Value",
+							"Value": " "
+						}
+					]
+				}
 			]
 		},
 		{

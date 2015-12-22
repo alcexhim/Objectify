@@ -14,6 +14,16 @@
 							"Value": "UserName"
 						}
 					]
+				},
+				{
+					"ID": "{BAE9E054-ED1E-4DE7-A70B-33A437591D80}",
+					"PropertyValues":
+					[
+						{
+							"Name": "PropertyName",
+							"Value": "DisplayName"
+						}
+					]
 				}
 			]
 		},
@@ -31,7 +41,11 @@
 							{
 								"Instances":
 								[
-									"{91EB4F16-9E36-4EED-8E02-921DF802DC15}"
+									"{91EB4F16-9E36-4EED-8E02-921DF802DC15}",
+									"{936E4426-5995-4713-BDEE-BF4F7BA2AFAE}",
+									"{FEE39766-9A0D-49A2-A29F-45C17989DCF6}",
+									"{936E4426-5995-4713-BDEE-BF4F7BA2AFAE}",
+									"{BAE9E054-ED1E-4DE7-A70B-33A437591D80}"
 								]
 							}
 						}
@@ -73,6 +87,19 @@
 				{
 					"Name": "UserName",
 					"DataTypeName": "Text"
+				},
+				{
+					"Name": "DisplayName",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "LanguageString"
+							}
+						]
+					}
 				},
 				{
 					"Name": "PasswordHash",
