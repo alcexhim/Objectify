@@ -2,6 +2,44 @@
 	"Objects":
 	[
 		{
+			"Name": "InstancePropertyStringComponent",
+			"Instances":
+			[
+				{
+					"ID": "{91EB4F16-9E36-4EED-8E02-921DF802DC15}",
+					"PropertyValues":
+					[
+						{
+							"Name": "PropertyName",
+							"Value": "UserName"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "String",
+			"Instances":
+			[
+				{
+					"ID": "{344CC8C6-EC17-4568-BACA-D55C77B2B0BF}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Components",
+							"Value":
+							{
+								"Instances":
+								[
+									"{91EB4F16-9E36-4EED-8E02-921DF802DC15}"
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+		{
 			"ID": "{9C6871C1-9A7F-4A3A-900E-69D1D9E24486}",
 			"Name": "User",
 			"ParentObjects":
@@ -20,6 +58,13 @@
 						[
 							"{0D05F758-F3F7-4640-B462-43DA9DB35C1C}"
 						]
+					}
+				},
+				{
+					"Name": "InstanceDisplayTitle",
+					"Value":
+					{
+						"Instance": "{344CC8C6-EC17-4568-BACA-D55C77B2B0BF}"
 					}
 				}
 			],
