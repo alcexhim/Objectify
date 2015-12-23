@@ -568,14 +568,21 @@
 		public function GetInstanceProperty($propertyName)
 		{
 			$pdo = DataSystem::GetPDO();
-			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstanceProperties WHERE property_ObjectID = :property_ObjectID AND property_Name = :property_Name";
-			$statement = $pdo->prepare($query);
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstanceProperties WHERE property_Name = :property_Name AND (property_ObjectID = :property_ObjectID";
 			
-			$result = $statement->execute(array
+			$paramz = array
 			(
 				":property_ObjectID" => $this->ID,
 				":property_Name" => $propertyName
-			));
+			);
+			
+			TenantObject::Build_Get_Properties_Query($query, $paramz, $this);
+
+			$query .= ")";
+			
+			$statement = $pdo->prepare($query);
+			
+			$result = $statement->execute($paramz);
 			
 			if ($result === false) return null;
 			$count = $statement->rowCount();
