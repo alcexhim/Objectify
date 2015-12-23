@@ -810,6 +810,30 @@
 							"Value": "Object Source"
 						}
 					]
+				},
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_InstanceTitleableObject_Title" 
+						}
+					],
+					"ID": "{B670875A-0258-4C0E-83E7-61B3E6BEF366}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Instance Titleable Object"
+						}
+					]
 				}
 			]
 		},
@@ -912,6 +936,45 @@
 							}
 						}
 					]
+				}
+			]
+		},
+		{
+			"Name": "InstanceTitleableObject",
+			"ParentObjects":
+			[
+				{
+					"Name": "Object"
+				}
+			],
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"Instances":
+						[
+							"{B670875A-0258-4C0E-83E7-61B3E6BEF366}"
+						]
+					}
+				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "Title",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "LanguageString"
+							}
+						]
+					}
 				}
 			]
 		},
