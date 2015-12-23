@@ -1,0 +1,123 @@
+{
+	"Objects":
+	[
+		{
+			"Name": "LanguageString",
+			"Instances":
+			[
+				{
+					"ID": "{EB06C4C1-DE2D-41F9-B844-6C733B35079D}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_Package_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Package"
+						}
+					]
+				}
+			]
+		},
+		{
+			"ID": "{BCDB6FFD-D2F2-4B63-BD7E-9C2CCD9547E0}",
+			"Name": "Layout",
+			"ParentObjects":
+			[
+				{
+					"Name": "Object"
+				}
+			],
+			"Instances":
+			[
+				{
+					"ID": "{3E45AA17-6E8E-41DB-9C94-E84B4B4176E8}"
+				}
+			]
+		},
+		{
+			"ID": "{6A1F66F7-8EA6-43D1-B2AF-198F63B84710}",
+			"Name": "Package",
+			"ParentObjects":
+			[
+				{
+					"Name": "Object"
+				},
+				{
+					"Name": "InstanceTitleableObject"
+				}
+			],
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"Value":
+					{
+						"Instances":
+						[
+							"{EB06C4C1-DE2D-41F9-B844-6C733B35079D}"
+						]
+					}
+				},
+				{
+					"Name": "Layouts",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "Layout"
+							}
+						],
+						"Instances":
+						[
+							"{3E45AA17-6E8E-41DB-9C94-E84B4B4176E8}"
+						]
+					}
+				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "Description",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "LanguageString"
+							}
+						]
+					}
+				},
+				{
+					"Name": "Objects",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "Object"
+							}
+						]
+					}
+				}
+			]
+		}
+	]
+}
