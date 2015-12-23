@@ -49,7 +49,11 @@ function ObjectDisplayWidget(parentElement)
 		return false;
 	};
 	
-	this.ParentElement.addEventListener("contextmenu", this.__ShowContextMenu);
+	if (typeof(this.ADWElement) !== "undefined")
+	{
+		this.ButtonElement.addEventListener("contextmenu", this.__ShowContextMenu);
+		this.TextElement.addEventListener("contextmenu", this.__ShowContextMenu);
+	}
 }
 
 window.addEventListener("load", function(e)
