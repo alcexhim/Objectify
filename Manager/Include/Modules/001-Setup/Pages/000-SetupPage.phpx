@@ -3,8 +3,8 @@
 		<Page FileName="setup" MasterPageFileName="Blank" CodeBehindClassName="Objectify\Manager\Pages\SetupPage">
 			<Content>
 				<wfx:Section PlaceholderID="Content">
-					<div style="text-align: center;">
-						<html:Image ImageUrl="~/Images/Logo.png" Width="90%" />
+					<div style="text-align: center; padding: 32px">
+						<html:Image ImageUrl="~/Images/Header.png" MinimumWidth="300px" Width="60%" />
 					</div>
 					<p style="text-align: center;">
 						Please provide some information about your server to create the initial <html:Literal Value="$(Configuration:Application.Name)" /> tenant. Other
