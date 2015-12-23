@@ -141,6 +141,40 @@
 			return $retval;
 		}
 		
+		public function GetChildObjects()
+		{
+			$pdo = DataSystem::GetPDO();
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectParentObjects WHERE parentobject_ParentObjectID = :parentobject_ParentObjectID";
+			$statement = $pdo->prepare($query);
+			
+			$result = $statement->execute(array
+			(
+				":parentobject_ParentObjectID" => $this->ID
+			));
+			
+			if ($result === false)
+			{
+				$ei = $statement->errorInfo();
+				Objectify::Log("Database error when trying to retrieve a list of parent objects from a child object.", array
+				(
+					"DatabaseError" => $ei[2] . " (" . $ei[1] . ")",
+					"Query" => $query,
+					"Object ID" => $obj->ID
+				));
+				return null;
+			}
+			
+			$count = $statement->rowCount();
+			$retval = array();
+			
+			for ($i = 0; $i < $count; $i++)
+			{
+				$values = $statement->fetch(PDO::FETCH_ASSOC);
+				$retval[] = TenantObject::GetByID($values["parentobject_ObjectID"]);
+			}
+			return $retval;
+		}
+		
 		/**
 		 * Adds the specified TenantObject as a parent of this TenantObject.
 		 * @param TenantObject $obj
@@ -536,6 +570,24 @@
 			}
 		}
 		
+		/**
+		 * Recursively adds subclasses to a query
+		 * @param unknown $query
+		 * @param unknown $paramz
+		 * @param TenantObject $parentObject
+		 */
+		private static function Build_Subclass_Query(&$query, &$paramz, $parentObject, $prefix)
+		{
+			$parentObjects = $parentObject->GetChildObjects();
+			$parentObjectCount = count($parentObjects);
+			for ($i = 0; $i < $parentObjectCount; $i++)
+			{
+				$query .= " OR " . $prefix . "ObjectID = :" . $prefix . "ObjectID" . $parentObjects[$i]->ID;
+				$paramz[":" . $prefix . "ObjectID" . $parentObjects[$i]->ID] = $parentObjects[$i]->ID;
+				TenantObject::Build_Subclass_Query($query, $paramz, $parentObjects[$i], $prefix);
+			}
+		}
+		
 		public function GetProperties()
 		{
 			$pdo = DataSystem::GetPDO();
@@ -839,11 +891,14 @@
 		{
 			$pdo = DataSystem::GetPDO();
 			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances WHERE instance_ObjectID = :instance_ObjectID";
-			$statement = $pdo->prepare($query);
-			$result = $statement->execute(array
+			$paramz = array
 			(
 				":instance_ObjectID" => $this->ID
-			));
+			);
+			
+			TenantObject::Build_Subclass_Query($query, $paramz, $this, "instance_");
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute($paramz);
 			$retval = array();
 			
 			if ($result === false)
