@@ -161,6 +161,25 @@
 					}
 				}
 			]
+		},
+		{
+			"Name": "Object",
+			"Properties":
+			[
+				{
+					"Name": "CreationUser",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "User"
+							}
+						]
+					}
+				}
+			]
 		}
 	]
 }

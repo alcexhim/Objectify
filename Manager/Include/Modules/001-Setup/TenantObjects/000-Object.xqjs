@@ -3,7 +3,14 @@
 	[
 		{
 			"ID": "{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}",
-			"Name": "Object"
+			"Name": "Object",
+			"Properties":
+			[
+				{
+					"Name": "CreationTimestamp",
+					"DataTypeName": "DateTime"
+				}
+			]
 		},
 		{
 			"ID": "{868169B8-6BC6-4AD7-839A-D7DDFB0CE6AF}",

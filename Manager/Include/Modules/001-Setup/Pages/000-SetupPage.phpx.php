@@ -674,6 +674,8 @@
 			(
 				$objSecurityGroup
 			)));
+			
+			return $instUser;
 		}
 		
 		
@@ -783,9 +785,16 @@
 						require($tenantObjectFileName);
 					}
 					
-					$this->CreateDefaultUser($Administrator_UserName, $Administrator_PasswordHash, $Administrator_PasswordSalt);
+					$instDefaultUser = $this->CreateDefaultUser($Administrator_UserName, $Administrator_PasswordHash, $Administrator_PasswordSalt);
 					
 					// $this->CreateDefaultSecurityPrivilegesAndGroups();
+					
+					$objs = TenantObject::Get();
+					foreach ($objs as $obj)
+					{
+						$obj->SetPropertyValue("CreationUser", new MultipleInstanceProperty(array($instDefaultUser), null));
+						$obj->SetPropertyValue("CreationTimestamp", date());
+					}
 					
 					$statement = $pdo->prepare("INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "Users (user_LoginID, user_PasswordHash, user_PasswordSalt) VALUES (:user_LoginID, :user_PasswordHash, :user_PasswordSalt)");
 					$result = $statement->execute(array
