@@ -260,6 +260,7 @@
 		{
 			if (is_string($property))
 			{
+				$propertyName = $property;
 				$property = $this->GetProperty($property);
 			}
 			if ($property == null) return $defaultValue;
@@ -267,19 +268,26 @@
 			if ($defaultValue == null) $defaultValue = $property->DefaultValue;
 			
 			$pdo = DataSystem::GetPDO();
-			$query = "SELECT propval_Value FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectPropertyValues WHERE propval_PropertyID = :propval_PropertyID AND (propval_ObjectID IS NULL OR propval_ObjectID = :propval_ObjectID)";
-			$statement = $pdo->prepare($query);
-			$result = $statement->execute(array
+			$query = "SELECT propval_Value FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectPropertyValues WHERE propval_PropertyID = :propval_PropertyID AND (propval_ObjectID IS NULL OR (propval_ObjectID = :propval_ObjectID";
+			
+			$paramz = array
 			(
 				":propval_PropertyID" => $property->ID,
 				":propval_ObjectID" => $this->ID
-			));
+			);
+			TenantObject::Build_Get_Properties_Query($query, $paramz, $this, "propval_");
+			
+			$query .= ")) ORDER BY propval_ObjectID DESC";
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute($paramz);
+			
 			if ($result === false) return $defaultValue;
 			
 			$count = $statement->rowCount();
 			if ($count == 0) return $defaultValue;
 			
 			$values = $statement->fetch(PDO::FETCH_ASSOC);
+			
 			return $property->DataType->Decode($values["propval_Value"]);
 		}
 		public function SetPropertyValue($property, $value)
@@ -466,13 +474,19 @@
 		public function GetProperty($propertyName, $searchInherited = true)
 		{
 			$pdo = DataSystem::GetPDO();
-			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectProperties WHERE property_ObjectID = :property_ObjectID AND property_Name = :property_Name";
-			$statement = $pdo->prepare($query);
-			$result = $statement->execute(array
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectProperties WHERE property_Name = :property_Name AND (property_ObjectID = :property_ObjectID";
+			
+			$paramz = array
 			(
-				":property_ObjectID" => $this->ID,
-				":property_Name" => $propertyName
-			));
+				":property_Name" => $propertyName,
+				":property_ObjectID" => $this->ID
+			);
+			TenantObject::Build_Get_Properties_Query($query, $paramz, $this, "property_");
+			
+			$query .= ")";
+			
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute($paramz);
 			if ($result === false)
 			{
 				$ei = $pdo->errorInfo();
@@ -510,15 +524,15 @@
 		 * @param unknown $paramz
 		 * @param TenantObject $parentObject
 		 */
-		private static function Build_Get_Properties_Query(&$query, &$paramz, $parentObject)
+		private static function Build_Get_Properties_Query(&$query, &$paramz, $parentObject, $prefix)
 		{
 			$parentObjects = $parentObject->GetParentObjects();
 			$parentObjectCount = count($parentObjects);
 			for ($i = 0; $i < $parentObjectCount; $i++)
 			{
-				$query .= " OR property_ObjectID = :property_ObjectID" . $i;
-				$paramz[":property_ObjectID" . $i] = $parentObjects[$i]->ID;
-				TenantObject::Build_Get_Properties_Query($query, $paramz, $parentObjects[$i]);
+				$query .= " OR " . $prefix . "ObjectID = :" . $prefix . "ObjectID" . $parentObjects[$i]->ID;
+				$paramz[":" . $prefix . "ObjectID" . $parentObjects[$i]->ID] = $parentObjects[$i]->ID;
+				TenantObject::Build_Get_Properties_Query($query, $paramz, $parentObjects[$i], $prefix);
 			}
 		}
 		
@@ -532,7 +546,7 @@
 				":property_ObjectID" => $this->ID
 			);
 			
-			TenantObject::Build_Get_Properties_Query($query, $paramz, $this);
+			TenantObject::Build_Get_Properties_Query($query, $paramz, $this, "property_");
 			
 			$statement = $pdo->prepare($query);
 			$result = $statement->execute($paramz);
@@ -576,7 +590,7 @@
 				":property_Name" => $propertyName
 			);
 			
-			TenantObject::Build_Get_Properties_Query($query, $paramz, $this);
+			TenantObject::Build_Get_Properties_Query($query, $paramz, $this, "property_");
 
 			$query .= ")";
 			
@@ -608,7 +622,7 @@
 			(
 				":property_ObjectID" => $this->ID
 			);
-			TenantObject::Build_Get_Properties_Query($query, $paramz, $this);
+			TenantObject::Build_Get_Properties_Query($query, $paramz, $this, "property_");
 			
 			$statement = $pdo->prepare($query);
 			$result = $statement->execute($paramz);
