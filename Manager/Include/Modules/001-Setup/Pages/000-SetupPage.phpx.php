@@ -618,7 +618,7 @@
 			return $value;
 		}
 		
-		private function CreateDefaultUser($username, $passwordHash, $passwordSalt)
+		private function CreateDefaultUser($username, $passwordHash, $passwordSalt, $displayName)
 		{
 			$objUser = TenantObject::GetByName("User");
 			$objSecurityGroup = TenantObject::GetByName("SecurityGroup");
@@ -633,7 +633,7 @@
 			$instEnglish_SystemAdministrator = $objLanguageString->CreateInstance(array
 			(
 				new TenantObjectInstancePropertyValue("Language", $lang),
-				new TenantObjectInstancePropertyValue("Value", "System Administrator")
+				new TenantObjectInstancePropertyValue("Value", $displayName)
 			));
 			
 			$instUser = $objUser->CreateInstance(array
@@ -784,15 +784,22 @@
 					{
 						require($tenantObjectFileName);
 					}
+
+					$inst_xq_environments = $this->CreateDefaultUser("xq-environments", null, null, "XquizIT Environment Automation");
+					$inst_xq_developer = $this->CreateDefaultUser("xq-developer", null, null, "Developer Generic User");
+					$inst_xq_support = $this->CreateDefaultUser("xq-support", null, null, "XquizIT Support");
+					// implementer accounts go here?
+					$inst_xq_configurator = $this->CreateDefaultUser("xq-configurator", null, null, "XquizIT Configurator");
+					$inst_xq_implementer = $this->CreateDefaultUser("xq-implementer", null, null, "XquizIT Implementer");
 					
-					$instDefaultUser = $this->CreateDefaultUser($Administrator_UserName, $Administrator_PasswordHash, $Administrator_PasswordSalt);
+					$instDefaultUser = $this->CreateDefaultUser($Administrator_UserName, $Administrator_PasswordHash, $Administrator_PasswordSalt, "System Administrator");
 					
 					// $this->CreateDefaultSecurityPrivilegesAndGroups();
 					
 					$objs = TenantObject::Get();
 					foreach ($objs as $obj)
 					{
-						$obj->SetPropertyValue("CreationUser", new MultipleInstanceProperty(array($instDefaultUser), null));
+						$obj->SetPropertyValue("CreationUser", new MultipleInstanceProperty(array($inst_xq_environments), null));
 						$obj->SetPropertyValue("CreationTimestamp", date());
 					}
 					
