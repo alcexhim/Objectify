@@ -503,27 +503,38 @@
 			$values = $statement->fetch(PDO::FETCH_ASSOC);
 			return TenantObjectProperty::GetByAssoc($values);
 		}
+		
+		/**
+		 * Builds a "Get Properties Query"
+		 * @param unknown $query
+		 * @param unknown $paramz
+		 * @param TenantObject $parentObject
+		 */
+		private static function Build_Get_Properties_Query(&$query, &$paramz, $parentObject)
+		{
+			$parentObjects = $parentObject->GetParentObjects();
+			$parentObjectCount = count($parentObjects);
+			for ($i = 0; $i < $parentObjectCount; $i++)
+			{
+				$query .= " OR property_ObjectID = :property_ObjectID" . $i;
+				$paramz[":property_ObjectID" . $i] = $parentObjects[$i]->ID;
+				TenantObject::Build_Get_Properties_Query($query, $paramz, $parentObjects[$i]);
+			}
+		}
+		
 		public function GetProperties()
 		{
 			$pdo = DataSystem::GetPDO();
 			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectProperties WHERE property_ObjectID = :property_ObjectID";
 			
-			$parentObjects = $this->GetParentObjects();
-			$parentObjectCount = count($parentObjects);
-			for ($i = 0; $i < $parentObjectCount; $i++)
-			{
-				$query .= " OR property_ObjectID = :property_ObjectID" . $i;
-			}
-			
-			$statement = $pdo->prepare($query);
 			$paramz = array
 			(
 				":property_ObjectID" => $this->ID
 			);
-			for ($i = 0; $i < $parentObjectCount; $i++)
-			{
-				$paramz[":property_ObjectID" . $i] = $parentObjects[$i]->ID;
-			}
+			
+			TenantObject::Build_Get_Properties_Query($query, $paramz, $this);
+			
+			$statement = $pdo->prepare($query);
 			$result = $statement->execute($paramz);
 			
 			$retval = array();
