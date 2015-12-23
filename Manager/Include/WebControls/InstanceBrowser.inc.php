@@ -17,6 +17,8 @@
 		 */
 		public $ValidObjects;
 		
+		public $ValidObjectNames;
+		
 		/**
 		 * The TenantObjectInstances that are selected.
 		 * @var TenantObjectInstance[]
@@ -42,16 +44,30 @@
 		{
 			// define the valid objects
 			$attval = "";
+			
+			$validObjectNames = explode(",", $this->ValidObjectNames);
+			$count = count($validObjectNames);
+			if ($count > 0)
+			{
+				for ($i = 0; $i < $count; $i++)
+				{
+					$attval .= TenantObject::GetByName($validObjectNames[$i])->ID;
+					if ($i < $count - 1) $attval .= ",";
+				}
+			}
+			
 			$count = count($this->ValidObjects);
 			if ($count > 0)
 			{
+				if ($attval != "") $attval .= ",";
 				for ($i = 0; $i < $count; $i++)
 				{
 					$attval .= $this->ValidObjects[$i]->ID;
 					if ($i < $count - 1) $attval .= ",";
 				}
-				$this->Attributes[] = new WebControlAttribute("data-valid-objects", $attval);
 			}
+			
+			if ($attval != "") $this->Attributes[] = new WebControlAttribute("data-valid-objects", $attval);
 				
 			// define the selected instances
 			$attval = "";

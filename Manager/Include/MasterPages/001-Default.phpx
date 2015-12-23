@@ -23,7 +23,7 @@
 				<html:Navigation CssClass="Top">
 					<wfx:Button CssClass="ApplicationButton">
 					</wfx:Button>
-					<ofx:InstanceBrowser CssClass="SearchBox" ID="ibSearch" />
+					<ofx:InstanceBrowser CssClass="SearchBox" ID="ibSearch" ValidObjectNames="Task" />
 				</html:Navigation>
 				<wfx:Sidebar ID="sidebar">
 					<wfx:Menu ID="sidebarMenu">
