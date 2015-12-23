@@ -597,11 +597,14 @@
 		{
 			$pdo = DataSystem::GetPDO();
 			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstanceProperties WHERE property_ObjectID = :property_ObjectID";
-			$statement = $pdo->prepare($query);
-			$result = $statement->execute(array
+			$paramz = array
 			(
 				":property_ObjectID" => $this->ID
-			));
+			);
+			TenantObject::Build_Get_Properties_Query($query, $paramz, $this);
+			
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute($paramz);
 			
 			$retval = array();
 			if ($result === false) return $retval;
