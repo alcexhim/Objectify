@@ -2,12 +2,72 @@
 	"Objects":
 	[
 		{
+			"Name": "LanguageString",
+			"Instances":
+			[
+				{
+					"ID": "{72EA8C64-EFD3-4FC4-91D2-4A3B4932B7E2}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Desktop"
+						}
+					]
+				},
+				{
+					"ID": "{51DFB521-FA62-4008-BCB4-73FB644AF8B2}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Phone"
+						}
+					]
+				},
+				{
+					"ID": "{588EAFE8-EE92-41DC-AB33-1B8202820AC2}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Tablet"
+						}
+					]
+				}
+			]
+		},
+		{
 			"ID": "{C1FCE2B8-93EA-4575-95A7-8D4C3527AF63}",
 			"Name": "LoginDeviceType",
 			"ParentObjects":
 			[
 				{
 					"Name": "Enumeration"
+				},
+				{
+					"Name": "InstanceTitleableObject"
 				}
 			],
 			"Properties":
@@ -23,20 +83,55 @@
 					}
 				}
 			],
-			"InstanceProperties":
+			"Instances":
 			[
 				{
-					"Name": "Title",
-					"DataType": "MultipleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
+					"ID": "{74991048-7369-4C3C-8BCE-B371A385780C}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
 							{
-								"Name": "LanguageString"
+								"Instances":
+								[
+									"{72EA8C64-EFD3-4FC4-91D2-4A3B4932B7E2}"
+								]
 							}
-						]
-					}
+						}
+					]
+				},
+				{
+					"ID": "{D794A86F-41F2-4908-A898-E1DD62ECCCA1}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{51DFB521-FA62-4008-BCB4-73FB644AF8B2}"
+								]
+							}
+						}
+					]
+				},
+				{
+					"ID": "{76F7F962-93A6-411A-A612-719286E47C50}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{588EAFE8-EE92-41DC-AB33-1B8202820AC2}"
+								]
+							}
+						}
+					]
 				}
 			]
 		}

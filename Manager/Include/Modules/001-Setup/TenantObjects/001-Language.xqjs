@@ -2,6 +2,16 @@
 	"Objects":
 	[
 		{
+			"ID": "{DD658EAB-9A3D-4ED1-8631-E3A5A336A7B6}",
+			"Name": "InstanceTitleableObject",
+			"ParentObjects":
+			[
+				{
+					"Name": "Object"
+				}
+			]
+		},
+		{
 			"ID": "{61102B47-9B2F-4CF3-9840-D168B84CF1E5}",
 			"Name": "Language",
 			"ParentObjects":
@@ -135,16 +145,6 @@
 		},
 		{
 			"Name": "Language",
-			"Properties":
-			[
-				{
-					"Name": "InstanceDisplayTitle",
-					"Value":
-					{
-						"Instance": "{AA37C17F-CDB8-4ED2-BE87-3388DF4825BB}"
-					}
-				}
-			],
 			"InstanceProperties":
 			[
 				{
@@ -154,19 +154,6 @@
 				{
 					"Name": "Code",
 					"DataTypeName": "Text"
-				},
-				{
-					"Name": "Title",
-					"DataTypeName": "MultipleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "LanguageString"
-							}
-						]
-					}
 				}
 			],
 			"Instances":
@@ -303,7 +290,7 @@
 						},
 						{
 							"Name": "Value",
-							"Value": "UNUSED"
+							"Value": "Language"
 						}
 					]
 				},
@@ -918,7 +905,67 @@
 			]
 		},
 		{
+			"Name": "InstanceTitleableObject",
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"Instances":
+						[
+							"{B670875A-0258-4C0E-83E7-61B3E6BEF366}"
+						]
+					}
+				},
+				{
+					"Name": "InstanceDisplayTitle",
+					"DataTypeName": "SingleInstance",
+					"Value":
+					{
+						"Instance": "{AA37C17F-CDB8-4ED2-BE87-3388DF4825BB}"
+					}
+				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "Title",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "LanguageString"
+							}
+						]
+					}
+				}
+			]
+		},
+		{
 			"Name": "Language",
+			"ParentObjects":
+			[
+				{
+					"Name": "InstanceTitleableObject"
+				}
+			],
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"Value":
+					{
+						"Instances":
+						[
+							"{D573044A-4E7F-490C-864E-BD9EC0188A78}"
+						]
+					}
+				}
+			],
 			"Instances":
 			[
 				{
@@ -940,46 +987,13 @@
 			]
 		},
 		{
-			"Name": "InstanceTitleableObject",
-			"ParentObjects":
-			[
-				{
-					"Name": "Object"
-				}
-			],
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"DataTypeName": "MultipleInstance",
-					"Value":
-					{
-						"Instances":
-						[
-							"{B670875A-0258-4C0E-83E7-61B3E6BEF366}"
-						]
-					}
-				}
-			],
-			"InstanceProperties":
-			[
-				{
-					"Name": "Title",
-					"DataTypeName": "MultipleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "LanguageString"
-							}
-						]
-					}
-				}
-			]
-		},
-		{
 			"Name": "ObjectSource",
+			"ParentObject":
+			[
+				{
+					"Name": "InstanceTitleableObject"
+				}
+			],
 			"Properties":
 			[
 				{
@@ -990,29 +1004,6 @@
 						"Instances":
 						[
 							"{B271A437-32C7-4E99-8498-FC1B36A7AE11}"
-						]
-					}
-				},
-				{
-					"Name": "InstanceDisplayTitle",
-					"Value":
-					{
-						"Instance": "{6894DC7E-F471-4F5C-88E6-B8016259817F}"
-					}
-				}
-			],
-			"InstanceProperties":
-			[
-				{
-					"Name": "Title",
-					"DataTypeName": "MultipleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "LanguageString"
-							}
 						]
 					}
 				}

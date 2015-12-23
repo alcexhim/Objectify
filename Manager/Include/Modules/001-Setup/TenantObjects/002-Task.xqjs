@@ -10,6 +10,30 @@
 					[
 						{
 							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_Task_Title" 
+						}
+					],
+					"ID": "{358404B6-522A-4768-B7BF-2E46A53F418D}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Task"
+						}
+					]
+				},
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
 							"Value": "LanguageString_English_Task_TenantCreate_Title" 
 						}
 					],
@@ -38,6 +62,22 @@
 			[
 				{
 					"Name": "Object"
+				},
+				{
+					"Name": "InstanceTitleableObject"
+				}
+			],
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"Value":
+					{
+						"Instances":
+						[
+							"{358404B6-522A-4768-B7BF-2E46A53F418D}"
+						]
+					}
 				}
 			],
 			"InstanceProperties":
@@ -45,19 +85,6 @@
 				{
 					"Name": "Name",
 					"DataTypeName": "Text"
-				},
-				{
-					"Name": "Title",
-					"DataTypeName": "MultipleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "LanguageString"
-							}
-						]
-					}
 				}
 			],
 			"Instances":
