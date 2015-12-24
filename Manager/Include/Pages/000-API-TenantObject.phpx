@@ -1,5 +1,9 @@
 <Website>
 	<Pages>
-		<Page FileName="API/TenantObject" CodeBehindClassName="Objectify\Tenant\API\TenantObjectAPI" />
+		<Page FileName="API/TenantObject" CodeBehindClassName="Objectify\Tenant\API\TenantObjectAPI">
+			<ServerVariables>
+				<Variable Name="RequireLogin" Value="false" />
+			</ServerVariables>
+		</Page>
 	</Pages>
 </Website>

@@ -6,6 +6,7 @@
 	
 	use Objectify\Objects\TenantObject;
 	use Objectify\Objects\TenantObjectInstancePropertyValue;
+	use Objectify\Objects\User;
 	
 	class TenantObjectAPI extends PhastPage
 	{
@@ -13,6 +14,13 @@
 		public function OnInitializing(CancelEventArgs $e)
 		{
 			$e->Cancel = true;
+			
+			$user = User::GetCurrent();
+			if ($user === null)
+			{
+				echo ("{ \"Result\": \"Failure\", \"Remedy\": \"Login\", \"Message\", \"Your session has expired; please re-enter your password\" }");
+				die();
+			}
 			
 			header("Content-Type: application/json");
 			
