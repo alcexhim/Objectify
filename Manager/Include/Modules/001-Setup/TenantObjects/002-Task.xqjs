@@ -6,6 +6,31 @@
 			"Instances":
 			[
 				{
+					"ID": "{B4338FEF-025C-4755-956A-B1CBCEF4F51D}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_RedirectTask_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Redirect Task"
+						}
+					]
+				},
+				{
+					"ID": "{358404B6-522A-4768-B7BF-2E46A53F418D}",
 					"IntegrationIDs":
 					[
 						{
@@ -13,7 +38,6 @@
 							"Value": "LanguageString_English_Task_Title" 
 						}
 					],
-					"ID": "{358404B6-522A-4768-B7BF-2E46A53F418D}",
 					"PropertyValues":
 					[
 						{
@@ -30,6 +54,31 @@
 					]
 				},
 				{
+					"ID": "{2C4EA43B-6242-4370-9FF2-A78994702BCD}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_RedirectTask_LogOut_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Log Out"
+						}
+					]
+				},
+				{
+					"ID": "{4E5D363F-6984-4BD5-8E76-AAB598C1B09D}",
 					"IntegrationIDs":
 					[
 						{
@@ -37,7 +86,6 @@
 							"Value": "LanguageString_English_Task_TenantCreate_Title" 
 						}
 					],
-					"ID": "{4E5D363F-6984-4BD5-8E76-AAB598C1B09D}",
 					"PropertyValues":
 					[
 						{
@@ -50,6 +98,30 @@
 						{
 							"Name": "Value",
 							"Value": "Create Tenant"
+						}
+					]
+				},
+				{
+					"ID": "{7EFF26C4-E539-4792-BE4F-1C632FC728F3}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_RedirectTask_RedirectToResetSystemPage_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Reset System"
 						}
 					]
 				}
@@ -126,6 +198,79 @@
 									"{7A8F57F1-A4F3-4BAF-84A5-E893FD79447D}"
 								]
 							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"ID": "{B9C1E04A-FABB-4DEE-A56A-E3AA308237A1}",
+			"Name": "RedirectTask",
+			"ParentObjects":
+			[
+				{
+					"Name": "Task"
+				}
+			],
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"Value":
+					{
+						"Instances":
+						[
+							"{B4338FEF-025C-4755-956A-B1CBCEF4F51D}"
+						]
+					}
+				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "TargetURL",
+					"DataTypeName": "Text"
+				}
+			],
+			"Instances":
+			[
+				{
+					"ID": "{04B1F030-3DB1-4EAF-AE8E-88A886CAE299}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{2C4EA43B-6242-4370-9FF2-A78994702BCD}"
+								]
+							}
+						},
+						{
+							"Name": "TargetURL",
+							"Value": "~/account/logout"
+						}
+					]
+				},
+				{
+					"ID": "{8E3AA6C2-BA06-4D50-85A6-908D5397AE02}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{7EFF26C4-E539-4792-BE4F-1C632FC728F3}"
+								]
+							}
+						},
+						{
+							"Name": "TargetURL",
+							"Value": "~/reset"
 						}
 					]
 				}
