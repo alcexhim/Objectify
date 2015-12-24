@@ -821,6 +821,30 @@
 							"Value": "Instance Titleable Object"
 						}
 					]
+				},
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_Property_Title" 
+						}
+					],
+					"ID": "{1CFD48D1-C680-429B-B6FA-831AE57A6DB8}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Property"
+						}
+					]
 				}
 			]
 		},
@@ -1041,6 +1065,22 @@
 							}
 						}
 					]
+				}
+			]
+		},
+		{
+			"Name": "Property",
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"Value":
+					{
+						"Instances":
+						[
+							"{1CFD48D1-C680-429B-B6FA-831AE57A6DB8}"
+						]
+					}
 				}
 			]
 		}

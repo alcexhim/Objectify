@@ -1,0 +1,14 @@
+{
+	"Objects":
+	[
+		{
+			"Name": "Property",
+			"ParentObjects":
+			[
+				{
+					"Name": "Object"
+				}
+			]
+		}
+	]
+}
