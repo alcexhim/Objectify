@@ -803,19 +803,6 @@
 						$obj->SetPropertyValue("CreationTimestamp", date());
 					}
 					
-					$statement = $pdo->prepare("INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "Users (user_LoginID, user_PasswordHash, user_PasswordSalt) VALUES (:user_LoginID, :user_PasswordHash, :user_PasswordSalt)");
-					$result = $statement->execute(array
-					(
-						":user_LoginID" => $Administrator_UserName,
-						":user_PasswordHash" => $Administrator_PasswordHash,
-						":user_PasswordSalt" => $Administrator_PasswordSalt
-					));
-					
-					if ($result === false)
-					{
-						
-					}
-					
 					echo("{");
 					echo("\"Result\": \"Success\"");
 					echo("}");

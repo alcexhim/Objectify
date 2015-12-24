@@ -49,6 +49,7 @@
 					}
 					
 					$user_LoginToken = RandomStringGenerator::Generate(RandomStringGeneratorCharacterSets::AlphaNumericMixedCase, 32);
+					$_SESSION["Authentication.LoginToken"] = $user_LoginToken;
 					
 					$objUserLogin = TenantObject::GetByName("UserLogin");
 					$objUserLogin->CreateInstance(array
@@ -61,17 +62,18 @@
 						new TenantObjectInstancePropertyValue("IPAddress", $_SERVER["REMOTE_ADDR"])
 					));
 					
-					$user = User::GetByCredentials($username, $password);
+					$user = User::GetCurrent(); // User::GetByCredentials($username, $password);
 					
 					if ($user != null)
 					{
+						/*
 						if (!$user->RequestLoginToken())
 						{
 							$e->RenderingPage->GetControlByID("fv")->GetItemByID("txtUserName")->Value = $_POST["user_LoginID"];
 							$e->RenderingPage->GetControlByID("alertInvalidCredentials")->EnableRender = true;
 							return true;
 						}
-						
+						*/
 						if (isset($_SESSION["LoginRedirectURL"]))
 						{
 							System::Redirect($_SESSION["LoginRedirectURL"]);

@@ -44,7 +44,8 @@
 		public static function GetCurrent()
 		{
 			if (!isset($_SESSION["Authentication.LoginToken"])) return null;
-			return self::GetByLoginToken($_SESSION["Authentication.LoginToken"]);
+			$instUser = self::GetByLoginToken($_SESSION["Authentication.LoginToken"]);
+			return $instUser;
 		}
 		
 		public static function GetByCredentials($username, $password = null)
@@ -89,6 +90,16 @@
 		}
 		public static function GetByLoginToken($token)
 		{
+			$objUserLogin = TenantObject::GetByName("UserLogin");
+			$instUserLogins = $objUserLogin->GetInstances();
+			
+			foreach ($instUserLogins as $instUserLogin)
+			{
+				$tokenCompare = $instUserLogin->GetPropertyValue("Token");
+				if ($tokenCompare == $token) return $instUserLogin->GetPropertyValue("User")->GetInstance();
+			}
+			return null;
+			
 			$pdo = DataSystem::GetPDO();
 			
 			$query = "SELECT " . System::GetConfigurationValue("Database.TablePrefix") . "Users.* FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Users, " . System::GetConfigurationValue("Database.TablePrefix") . "UserLogins WHERE user_ID = login_UserID AND login_Token = :login_Token";
@@ -135,6 +146,7 @@
 		 */
 		public static function ReleaseLoginToken()
 		{
+			/*
 			$pdo = DataSystem::GetPDO();
 			$query = "DELETE FROM " . System::GetConfigurationValue("Database.TablePrefix") . "UserLogins WHERE login_Token = :login_Token";
 			$statement = $pdo->prepare($query);
@@ -145,10 +157,11 @@
 			
 			if ($retval)
 			{
+			*/
 				$_SESSION["Authentication.LoginToken"] = null;
 				return true;
-			}
-			return false;
+			// }
+			//return false;
 		}
 		
 		public function BindDataColumn($columnName, $value)
