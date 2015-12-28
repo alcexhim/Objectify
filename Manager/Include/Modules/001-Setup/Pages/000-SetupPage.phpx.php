@@ -608,6 +608,18 @@
 			return $value;
 		}
 		
+		private function CreateDefaultTenant($tenantName)
+		{
+			$objTenant = TenantObject::GetByName("Tenant");
+			$instTenant = $objTenant->CreateInstance(array
+			(
+				new TenantObjectInstancePropertyValue("TenantURL", $tenantName),
+				new TenantObjectInstancePropertyValue("LoginHeaderText", "Welcome to Your New Tenant"),
+				new TenantObjectInstancePropertyValue("LoginFooterText", "Once you're logged in, you can customize the 'Login Header Text' and 'Login Footer Text' properties of your new tenant.")
+			));
+			return $instTenant;
+		}
+		
 		private function CreateDefaultUser($username, $passwordHash, $passwordSalt, $displayName)
 		{
 			$objUser = TenantObject::GetByName("User");
@@ -788,6 +800,7 @@
 					$inst_xq_implementer = $this->CreateDefaultUser("xq-implementer", null, null, "XquizIT Implementer");
 					
 					$instDefaultUser = $this->CreateDefaultUser($Administrator_UserName, $Administrator_PasswordHash, $Administrator_PasswordSalt, "System Administrator");
+					$instDefaultTenant = $this->CreateDefaultTenant("default");
 					
 					// $this->CreateDefaultSecurityPrivilegesAndGroups();
 					
