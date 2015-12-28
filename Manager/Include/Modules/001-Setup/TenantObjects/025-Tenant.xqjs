@@ -118,6 +118,27 @@
 					}
 				},
 				{
+					"Name": "LogoImage",
+					"DataTypeName": "SingleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "File"
+							}
+						]
+					}
+				},
+				{
+					"Name": "LoginHeaderText",
+					"DataTypeName": "Text"
+				},
+				{
+					"Name": "LoginFooterText",
+					"DataTypeName": "Text"
+				},
+				{
 					"Name": "PaymentPlan",
 					"DataTypeName": "SingleInstance",
 					"Value":
