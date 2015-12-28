@@ -91,6 +91,8 @@
 		public static function GetByLoginToken($token)
 		{
 			$objUserLogin = TenantObject::GetByName("UserLogin");
+			if ($objUserLogin == null) return null;
+			
 			$instUserLogins = $objUserLogin->GetInstances();
 			
 			foreach ($instUserLogins as $instUserLogin)

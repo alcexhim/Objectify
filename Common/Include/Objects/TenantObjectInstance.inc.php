@@ -90,10 +90,12 @@
 			}
 			if ($property == null) return $defaultValue;
 			
-			$query = "SELECT propval_Value FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstancePropertyValues WHERE propval_InstanceID = :propval_InstanceID AND propval_PropertyID = :propval_PropertyID";
+			$query = "SELECT propval_Value FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstancePropertyValues WHERE propval_TenantID = :propval_TenantID AND propval_ObjectID = :propval_ObjectID AND propval_InstanceID = :propval_InstanceID AND propval_PropertyID = :propval_PropertyID";
 			$statement = $pdo->prepare($query);
 			$result = $statement->execute(array
 			(
+				":propval_TenantID" => $this->ParentObject->Tenant->ID,
+				":propval_ObjectID" => $this->ParentObject->ID,
 				":propval_InstanceID" => $this->ID,
 				":propval_PropertyID" => $property->ID
 			));
@@ -128,7 +130,7 @@
 				}
 			}
 			
-			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstancePropertyValues (propval_InstanceID, propval_PropertyID, propval_Value) VALUES (:propval_InstanceID, :propval_PropertyID, :propval_Value)";
+			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstancePropertyValues (propval_TenantID, propval_ObjectID, propval_InstanceID, propval_PropertyID, propval_Value) VALUES (:propval_TenantID, :propval_ObjectID, :propval_InstanceID, :propval_PropertyID, :propval_Value)";
 			$query .= " ON DUPLICATE KEY UPDATE ";
 			$query .= "propval_PropertyID = values(propval_PropertyID), ";
 			$query .= "propval_Value = values(propval_Value)";
@@ -136,9 +138,11 @@
 			$statement = $pdo->prepare($query);
 			$result = $statement->execute(array
 			(
-					":propval_InstanceID" => $this->ID,
-					":propval_PropertyID" => $property->ID,
-					":propval_Value" => $property->Encode($value)
+				":propval_TenantID" => $this->ParentObject->Tenant->ID,
+				":propval_ObjectID" => $this->ParentObject->ID,
+				":propval_InstanceID" => $this->ID,
+				":propval_PropertyID" => $property->ID,
+				":propval_Value" => $property->Encode($value)
 			));
 			
 			if ($result === false) return false;
@@ -162,10 +166,12 @@
 			}
 			if ($property == null) return false;
 			
-			$query = "SELECT COUNT(propval_Value) FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstancePropertyValues WHERE propval_InstanceID = :propval_InstanceID AND propval_PropertyID = :propval_PropertyID";
+			$query = "SELECT COUNT(propval_Value) FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstancePropertyValues WHERE propval_TenantID = :propval_TenantID AND propval_ObjectID = :propval_ObjectID AND propval_InstanceID = :propval_InstanceID AND propval_PropertyID = :propval_PropertyID";
 			$statement = $pdo->prepare($query);
 			$result = $statement->execute(array
 			(
+				":propval_TenantID" => $this->ParentObject->Tenant->ID,
+				":propval_ObjectID" => $this->ParentObject->ID,
 				":propval_InstanceID" => $this->ID,
 				":propval_PropertyID" => $property->ID
 			));
@@ -183,16 +189,17 @@
 			$pdo = DataSystem::GetPDO();
 			if ($this->ID == null)
 			{
-				$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances (instance_ObjectID, instance_GlobalIdentifier) VALUES (:instance_ObjectID, :instance_GlobalIdentifier)";
+				$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances (instance_TenantID, instance_ObjectID, instance_GlobalIdentifier) VALUES (:instance_TenantID, :instance_ObjectID, :instance_GlobalIdentifier)";
 			}
 			else
 			{
-				$query = "UPDATE " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances SET instance_ObjectID = :instance_ObjectID, instance_GlobalIdentifier = :instance_GlobalIdentifier WHERE instance_ID = :instance_ID";
+				$query = "UPDATE " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances SET instance_ObjectID = :instance_ObjectID, instance_GlobalIdentifier = :instance_GlobalIdentifier WHERE instance_ID = :instance_ID AND instance_TenantID = :instance_TenantID";
 			}
 			
 			$statement = $pdo->prepare($query);
 			$paramz = array
 			(
+				":instance_TenantID" => $this->ParentObject->Tenant->ID,
 				":instance_ObjectID" => $this->ParentObject->ID,
 				":instance_GlobalIdentifier" => $this->GlobalIdentifier
 			);

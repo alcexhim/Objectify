@@ -78,6 +78,17 @@
 			System::Redirect("~/setup");
 			return true;
 		}
+		else if (IsConfigured())
+		{
+			System::$EnableTenantedHosting = true;
+			
+			$tenantName = System::GetTenantName();
+			if (!Tenant::ExistsByName($tenantName))
+			{
+				echo("Tenant '" . $tenantName . "' does not exist");
+				die();
+			}
+		}
 		/*
 		if (!IsAdministrator() && (!($path[0] == "account" && $path[1] == "login")) && (!($path[0] == "setup")) && (!($path[0] == "favicon.ico")))
 		{

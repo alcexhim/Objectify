@@ -8,13 +8,27 @@
 	
 	class TenantObject
 	{
+		/**
+		 * The internal identifier assigned to this TenantObject.
+		 * @var int
+		 */
 		public $ID;
+		/**
+		 * The Tenant that owns this TenantObject.
+		 * @var Tenant
+		 */
+		public $Tenant;
 		public $Name;
 		
+		/**
+		 * Gets the TenantObject represented by the given database table row values.
+		 * @param array $values
+		 */
 		public static function GetByAssoc($values)
 		{
 			$item = new TenantObject();
 			$item->ID = $values["object_ID"];
+			$item->Tenant = Tenant::GetByID($values["object_TenantID"]);
 			$item->Name = $values["object_Name"];
 			return $item;
 		}
@@ -87,15 +101,17 @@
 			return TenantObject::GetByAssoc($values);
 		}
 		
-		public static function GetByName($name)
+		public static function GetByName($name, $tenant = null)
 		{
 			$pdo = DataSystem::GetPDO();
-			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjects WHERE object_Name = :object_Name";
+			if ($tenant == null) $tenant = Tenant::GetCurrent();
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjects WHERE object_Name = :object_Name AND object_TenantID = :object_TenantID";
 			$statement = $pdo->prepare($query);
 			
 			$result = $statement->execute(array
 			(
-				":object_Name" => $name
+				":object_Name" => $name,
+				":object_TenantID" => ($tenant == null ? null : $tenant->ID)
 			));
 			
 			if ($result === false) return null;
@@ -182,11 +198,12 @@
 		public function AddParentObject($obj)
 		{
 			$pdo = DataSystem::GetPDO();
-			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectParentObjects (parentobject_ObjectID, parentobject_ParentObjectID) VALUES (:parentobject_ObjectID, :parentobject_ParentObjectID)";
+			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectParentObjects (parentobject_TenantID, parentobject_ObjectID, parentobject_ParentObjectID) VALUES (:parentobject_TenantID, :parentobject_ObjectID, :parentobject_ParentObjectID)";
 			$statement = $pdo->prepare($query);
 			
 			$result = $statement->execute(array
 			(
+				":parentobject_TenantID" => $this->Tenant->ID,
 				":parentobject_ObjectID" => $this->ID,
 				":parentobject_ParentObjectID" => $obj->ID
 			));
@@ -213,11 +230,13 @@
 		 * @param TenantObject $parentObject
 		 * @return TenantObject
 		 */
-		public static function Create($name, $parentObjects = null, $globalIdentifier = null)
+		public static function Create($name, $parentObjects = null, $globalIdentifier = null, $tenant = null)
 		{
 			$pdo = DataSystem::GetPDO();
 			
 			if ($parentObjects == null) $parentObjects = array();
+			if ($tenant == null) $tenant = Tenant::GetCurrent();
+			
 			if (is_object($parentObjects))
 			{
 				if (get_class($parentObjects) == "Objectify\\Objects\\TenantObject")
@@ -230,14 +249,16 @@
 			$retval = array();
 			
 			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjects (";
-			$query .= "object_Name, object_GlobalIdentifier";
+			$query .= "object_ID, object_TenantID, object_Name, object_GlobalIdentifier";
 			$query .= ") VALUES (";
-			$query .= ":object_Name, :object_GlobalIdentifier";
+			$query .= ":object_ID, :object_TenantID, :object_Name, :object_GlobalIdentifier";
 			$query .= ")";
 			
 			$statement = $pdo->prepare($query);
 			$result = $statement->execute(array
 			(
+				":object_ID" => $tenant->GetNextObjectID(),
+				":object_TenantID" => $tenant->ID,
 				":object_Name" => $name,
 				":object_GlobalIdentifier" => $globalIdentifier
 			));
@@ -347,7 +368,7 @@
 				}
 			}
 			
-			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectPropertyValues (propval_PropertyID, propval_ObjectID, propval_Value) VALUES (:propval_PropertyID, :propval_ObjectID, :propval_Value)";
+			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectPropertyValues (propval_TenantID, propval_ObjectID, propval_PropertyID, propval_Value) VALUES (:propval_TenantID, :propval_ObjectID, :propval_PropertyID, :propval_Value)";
 			$query .= " ON DUPLICATE KEY UPDATE ";
 			$query .= "propval_PropertyID = values(propval_PropertyID), ";
 			$query .= "propval_ObjectID = values(propval_ObjectID), ";
@@ -356,8 +377,9 @@
 			$statement = $pdo->prepare($query);
 			$result = $statement->execute(array
 			(
-				":propval_PropertyID" => $property->ID,
+				":propval_TenantID" => $this->Tenant->ID,
 				":propval_ObjectID" => $this->ID,
+				":propval_PropertyID" => $property->ID,
 				":propval_Value" => $property->DataType->Encode($value)
 			));
 			if ($result === false)
@@ -380,13 +402,14 @@
 			$pdo = DataSystem::GetPDO();
 			
 			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstanceProperties "
-			. "(property_ObjectID, property_Name, property_DataTypeID, property_DefaultValue, property_IsRequired)"
+			. "(property_TenantID, property_ObjectID, property_Name, property_DataTypeID, property_DefaultValue, property_IsRequired)"
 			. " VALUES "
-			. "(:property_ObjectID, :property_Name, :property_DataTypeID, :property_DefaultValue, :property_IsRequired)";
+			. "(:property_TenantID, :property_ObjectID, :property_Name, :property_DataTypeID, :property_DefaultValue, :property_IsRequired)";
 			
 			$statement = $pdo->prepare($query);
 			$result = $statement->execute(array
 			(
+				":property_TenantID" => $this->Tenant->ID,
 				":property_ObjectID" => $this->ID,
 				":property_Name" => $propertyName,
 				":property_DataTypeID" => $dataType->ID,
@@ -411,13 +434,14 @@
 			$pdo = DataSystem::GetPDO();
 				
 			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectProperties "
-			. "(property_ObjectID, property_Name, property_DataTypeID, property_DefaultValue, property_IsRequired)"
+			. "(property_TenantID, property_ObjectID, property_Name, property_DataTypeID, property_DefaultValue, property_IsRequired)"
 			. " VALUES "
-			. "(:property_ObjectID, :property_Name, :property_DataTypeID, :property_DefaultValue, :property_IsRequired)";
+			. "(:property_TenantID, :property_ObjectID, :property_Name, :property_DataTypeID, :property_DefaultValue, :property_IsRequired)";
 				
 			$statement = $pdo->prepare($query);
 			$result = $statement->execute(array
 			(
+				":property_TenantID" => $this->Tenant->ID,
 				":property_ObjectID" => $this->ID,
 				":property_Name" => $propertyName,
 				":property_DataTypeID" => $dataType->ID,
@@ -618,11 +642,12 @@
 		public function HasInstanceProperty($propertyName)
 		{
 			$pdo = DataSystem::GetPDO();
-			$query = "SELECT COUNT(*) FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstanceProperties WHERE property_ObjectID = :property_ObjectID AND property_Name = :property_Name";
+			$query = "SELECT COUNT(*) FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstanceProperties WHERE property_TenantID = :property_TenantID AND property_ObjectID = :property_ObjectID AND property_Name = :property_Name";
 			$statement = $pdo->prepare($query);
 			
 			$result = $statement->execute(array
 			(
+				":property_TenantID" => $this->Tenant->ID,
 				":property_ObjectID" => $this->ID,
 				":property_Name" => $propertyName
 			));
@@ -634,10 +659,11 @@
 		public function GetInstanceProperty($propertyName)
 		{
 			$pdo = DataSystem::GetPDO();
-			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstanceProperties WHERE property_Name = :property_Name AND (property_ObjectID = :property_ObjectID";
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstanceProperties WHERE property_TenantID = :property_TenantID AND property_Name = :property_Name AND (property_ObjectID = :property_ObjectID";
 			
 			$paramz = array
 			(
+				":property_TenantID" => $this->Tenant->ID,
 				":property_ObjectID" => $this->ID,
 				":property_Name" => $propertyName
 			);
@@ -669,9 +695,10 @@
 		public function GetInstanceProperties($max = null)
 		{
 			$pdo = DataSystem::GetPDO();
-			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstanceProperties WHERE property_ObjectID = :property_ObjectID";
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstanceProperties WHERE property_TenantID = :property_TenantID AND property_ObjectID = :property_ObjectID";
 			$paramz = array
 			(
+				":property_TenantID" => $this->Tenant->ID,
 				":property_ObjectID" => $this->ID
 			);
 			TenantObject::Build_Get_Properties_Query($query, $paramz, $this, "property_");

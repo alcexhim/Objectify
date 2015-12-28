@@ -12,6 +12,7 @@
 
 	use Objectify\Objects\Objectify;
 	use Objectify\Objects\DataType;
+	use Objectify\Objects\Tenant;
 	use Objectify\Objects\TenantObject;
 	use Objectify\Objects\TenantObjectInstance;
 	use Objectify\Objects\TenantObjectInstancePropertyValue;
@@ -756,6 +757,11 @@
 					
 					// create a new global (non-tenanted) instance of the User object
 					// this can be set by User property IsGlobal - USE SPARINGLY!!!
+					
+					// First create the initial tenant
+					$tenant = Tenant::Create("default");
+					
+					$_SESSION["CurrentTenantID"] = $tenant->ID;
 					
 					// Create the tenanted objects required before anything else takes place
 					$tenantObjectFileNames = glob(dirname(__FILE__) . "/../TenantObjects/*.xqjs");
