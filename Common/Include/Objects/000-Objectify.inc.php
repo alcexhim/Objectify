@@ -7,6 +7,17 @@
 	
 	class Objectify
 	{
+		public static function SanitizeGlobalIdentifier($id)
+		{
+			if ($id != null)
+			{
+				$id = str_replace("{", "", $id);
+				$id = str_replace("}", "", $id);
+				$id = str_replace("-", "", $id);
+			}
+			return $id;
+		}
+		
 		public static function Log($message, $params = null, $severity = LogMessageSeverity::Error)
 		{
 			$bt = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS);

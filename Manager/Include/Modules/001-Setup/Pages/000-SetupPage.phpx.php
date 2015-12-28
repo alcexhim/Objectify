@@ -41,17 +41,6 @@
 			)); // Tenant Manager
 		}
 		
-		private function SanitizeGlobalIdentifier($id)
-		{
-			if ($id != null)
-			{
-				$id = str_replace("{", "", $id);
-				$id = str_replace("}", "", $id);
-				$id = str_replace("-", "", $id);
-			}
-			return $id;
-		}
-		
 		/**
 		 * Creates TenantObject(s) from an XquiIT JavaScript Object Notation (JSON) file and returns the array of all TenantObjects that were created.
 		 * @param string $filename The file name to parse as an XquizIT object definition.
@@ -70,7 +59,7 @@
 					$id = null;
 					if (isset($objdef->ID)) $id = $objdef->ID;
 					
-					$id = $this->SanitizeGlobalIdentifier($id);
+					$id = Objectify::SanitizeGlobalIdentifier($id);
 					
 					$obj = TenantObject::GetByName($objdef->Name);
 					if ($obj == null)
@@ -91,7 +80,7 @@
 							$parentObject = null;
 							if (isset($parentObjDef->ID))
 							{
-								$id = $this->SanitizeGlobalIdentifier($parentObjDef->ID);
+								$id = Objectify::SanitizeGlobalIdentifier($parentObjDef->ID);
 								$parentObject = TenantObject::GetByGlobalIdentifier($id);
 							}
 							else if (isset($parentObjDef->Name))
@@ -176,7 +165,7 @@
 						{
 							if (!isset($instDef->ID)) continue;
 							
-							$id = $this->SanitizeGlobalIdentifier($instDef->ID);
+							$id = Objectify::SanitizeGlobalIdentifier($instDef->ID);
 							$inst = $obj->GetInstanceByGlobalIdentifier($id);
 							if ($inst == null)
 							{
@@ -235,7 +224,7 @@
 					$attID = $elem->GetAttribute("ID");
 					if ($attID != null) $id = $attID->Value;
 					
-					$id = $this->SanitizeGlobalIdentifier($id);
+					$id = Objectify::SanitizeGlobalIdentifier($id);
 					
 					$obj = TenantObject::GetByName($attName->Value);
 					if ($obj == null)
@@ -375,7 +364,7 @@
 							$attInstanceGlobalID = $elemInstance->GetAttribute("ID");
 							if ($attInstanceGlobalID == null) continue;
 							
-							$globalIdentifier = $this->SanitizeGlobalIdentifier($attInstanceGlobalID->Value);
+							$globalIdentifier = Objectify::SanitizeGlobalIdentifier($attInstanceGlobalID->Value);
 							
 							$inst = $obj->GetInstanceByGlobalIdentifier($globalIdentifier);
 							if ($inst == null)
@@ -429,7 +418,7 @@
 							}
 							else if (isset($validObject->ID))
 							{
-								$id = $this->SanitizeGlobalIdentifier($validObject->ID);
+								$id = Objectify::SanitizeGlobalIdentifier($validObject->ID);
 								$validObjects[] = TenantObject::GetByGlobalIdentifier($id);
 							}
 						}
@@ -463,7 +452,7 @@
 					
 					if (isset($propDef->Value->Instance))
 					{
-						$id = $this->SanitizeGlobalIdentifier($propDef->Value->Instance);
+						$id = Objectify::SanitizeGlobalIdentifier($propDef->Value->Instance);
 						$instance = TenantObjectInstance::GetByGlobalIdentifier($id);
 					}
 					
@@ -477,7 +466,7 @@
 					{
 						foreach ($propDef->Value->Instances as $instId)
 						{
-							$id = $this->SanitizeGlobalIdentifier($instId);
+							$id = Objectify::SanitizeGlobalIdentifier($instId);
 							$instances[] = TenantObjectInstance::GetByGlobalIdentifier($id);
 						}
 					}
