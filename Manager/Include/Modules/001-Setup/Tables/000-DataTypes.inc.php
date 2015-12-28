@@ -34,6 +34,15 @@
 		)),
 		new Record(array
 		(
+			new RecordColumn("Name", "Binary"),
+			new RecordColumn("Description", "Allows you to upload a binary file."),
+			new RecordColumn("EncoderCodeBlob", ColumnValue::Undefined),
+			new RecordColumn("DecoderCodeBlob", ColumnValue::Undefined),
+			new RecordColumn("ColumnRendererCodeBlob", ColumnValue::Undefined),
+			new RecordColumn("EditorRendererCodeBlob", ColumnValue::Undefined)
+		)),
+		new Record(array
+		(
 			new RecordColumn("Name", "Memo"),
 			new RecordColumn("Description", "Allows you to enter large amounts of text."),
 			new RecordColumn("EncoderCodeBlob", ColumnValue::Undefined),
