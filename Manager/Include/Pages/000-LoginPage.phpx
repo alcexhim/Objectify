@@ -3,7 +3,7 @@
 		<Page FileName="account/login" CodeBehindClassName="Objectify\Tenant\Pages\LoginPage" MasterPageFileName="Blank" CssClass="LoginPage">
 			<Content>
 				<wfx:Section PlaceholderID="Content">
-					<html:Image ImageUrl="~/Images/Header.png" />
+					<html:Image ImageUrl="~/Images/Header" />
 					<html:Form Method="POST">
 						<wfx:Panel CssClass="Primary">
 							<ContentControls>

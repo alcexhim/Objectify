@@ -4,7 +4,7 @@
 			<Content>
 				<wfx:Section PlaceholderID="Content">
 					<div style="text-align: center; padding: 32px">
-						<html:Image ImageUrl="~/Images/Header.png" MinimumWidth="300px" Width="60%" />
+						<html:Image ImageUrl="~/Images/Header_Default.png" MinimumWidth="300px" Width="60%" />
 					</div>
 					<p style="text-align: center;">
 						Please provide some information about your server to create the initial <html:Literal Value="$(Configuration:Application.Name)" /> tenant. Other
