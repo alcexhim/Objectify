@@ -132,11 +132,29 @@
 				},
 				{
 					"Name": "LoginHeaderText",
-					"DataTypeName": "Text"
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "LanguageString"
+							}
+						]
+					}
 				},
 				{
 					"Name": "LoginFooterText",
-					"DataTypeName": "Text"
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "LanguageString"
+							}
+						]
+					}
 				},
 				{
 					"Name": "PaymentPlan",

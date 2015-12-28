@@ -611,11 +611,29 @@
 		private function CreateDefaultTenant($tenantName)
 		{
 			$objTenant = TenantObject::GetByName("Tenant");
+			
+			$objLanguage = TenantObject::GetByName("Language");
+			$instLanguageEnglish = $objLanguage->GetInstances()[0];
+			
+			$objLanguageString = TenantObject::GetByName("LanguageString");
+			
+			$instLanguageEnglish_LoginHeaderText = $objLanguageString->CreateInstance(array
+			(
+				new TenantObjectInstancePropertyValue("Language", new SingleInstanceProperty($instLanguageEnglish)),
+				new TenantObjectInstancePropertyValue("Value", "Welcome to Your New Tenant")
+			));
+			
+			$instLanguageEnglish_LoginFooterText = $objLanguageString->CreateInstance(array
+			(
+				new TenantObjectInstancePropertyValue("Language", new SingleInstanceProperty($instLanguageEnglish)),
+				new TenantObjectInstancePropertyValue("Value", "Once you're logged in, you can customize the 'Login Header Text' and 'Login Footer Text' properties of your new tenant.")
+			));
+			
 			$instTenant = $objTenant->CreateInstance(array
 			(
 				new TenantObjectInstancePropertyValue("TenantURL", $tenantName),
-				new TenantObjectInstancePropertyValue("LoginHeaderText", "Welcome to Your New Tenant"),
-				new TenantObjectInstancePropertyValue("LoginFooterText", "Once you're logged in, you can customize the 'Login Header Text' and 'Login Footer Text' properties of your new tenant.")
+				new TenantObjectInstancePropertyValue("LoginHeaderText", new MultipleInstanceProperty(array($instLanguageEnglish_LoginHeaderText))),
+				new TenantObjectInstancePropertyValue("LoginFooterText", new MultipleInstanceProperty(array($instLanguageEnglish_LoginFooterText)))
 			));
 			return $instTenant;
 		}
