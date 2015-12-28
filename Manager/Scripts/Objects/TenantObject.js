@@ -13,7 +13,7 @@ function TenantObject()
 	this.CreateInstance = function(parameters, callback)
 	{
 		var xhr = new XMLHttpRequest();
-		var url = "~/API/TenantObjectInstance?Action=Create&ParentObjectID=" + this.ID;
+		var url = "~/api/TenantObjectInstance?Action=Create&ParentObjectID=" + this.ID;
 		xhr.open("POST", System.ExpandRelativePath(url));
 		xhr.onreadystatechange = function()
 		{
@@ -63,7 +63,7 @@ function TenantObject()
 	this.GetInstances = function(callback)
 	{
 		var xhr = new XMLHttpRequest();
-		var url = "~/API/TenantObjectInstance?Action=Retrieve&ParentObjectID=" + this.ID;
+		var url = "~/api/TenantObjectInstance?Action=Retrieve&ParentObjectID=" + this.ID;
 		xhr.open("GET", System.ExpandRelativePath(url));
 		xhr.onreadystatechange = function()
 		{
@@ -92,7 +92,7 @@ function TenantObject()
 	this.Update = function(callback)
 	{
 		var xhr = new XMLHttpRequest();
-		var url = "~/API/TenantObject";
+		var url = "~/api/TenantObject";
 		xhr.open("POST", System.ExpandRelativePath(url));
 		xhr.onreadystatechange = function()
 		{
@@ -139,7 +139,7 @@ TenantObject.GetByAssoc = function(obj)
 TenantObject.Get = function(callback)
 {
 	var xhr = new XMLHttpRequest();
-	var url = "~/API/TenantObject?Action=Retrieve";
+	var url = "~/api/TenantObject?Action=Retrieve";
 	xhr.open("GET", System.ExpandRelativePath(url));
 	xhr.onreadystatechange = function()
 	{
@@ -167,7 +167,7 @@ TenantObject.Get = function(callback)
 TenantObject.GetByID = function(id, callback)
 {
 	var xhr = new XMLHttpRequest();
-	var url = "~/API/TenantObject?Action=Retrieve&ID=" + id;
+	var url = "~/api/TenantObject?Action=Retrieve&ID=" + id;
 	xhr.open("GET", System.ExpandRelativePath(url));
 	xhr.onreadystatechange = function()
 	{
@@ -190,7 +190,7 @@ TenantObject.GetByID = function(id, callback)
 TenantObject.GetByName = function(name, callback)
 {
 	var xhr = new XMLHttpRequest();
-	var url = "~/API/TenantObject?Action=Retrieve&Name=" + name;
+	var url = "~/api/TenantObject?Action=Retrieve&Name=" + name;
 	xhr.open("GET", System.ExpandRelativePath(url));
 	xhr.onreadystatechange = function()
 	{

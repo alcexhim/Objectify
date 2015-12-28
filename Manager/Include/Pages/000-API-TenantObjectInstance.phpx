@@ -1,5 +1,5 @@
 <Website>
 	<Pages>
-		<Page FileName="API/TenantObjectInstance" CodeBehindClassName="Objectify\Tenant\API\TenantObjectInstanceAPI" />
+		<Page FileName="api/TenantObjectInstance" CodeBehindClassName="Objectify\Tenant\API\TenantObjectInstanceAPI" />
 	</Pages>
 </Website>
