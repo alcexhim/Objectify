@@ -4,6 +4,9 @@
 			<Content>
 				<wfx:Section PlaceholderID="Content">
 					<html:Image ImageUrl="~/Images/Header" />
+					<div style="text-align: center; font-size: 14pt; padding: 16px;">
+						<html:Paragraph ID="paraTopText">Welcome to the XquizIT Shared Development tenant</html:Paragraph>
+					</div>
 					<html:Form Method="POST">
 						<wfx:Panel CssClass="Primary">
 							<ContentControls>
@@ -17,9 +20,7 @@
 										<wfx:FormViewItemPassword ID="txtPassword" Title="Password" Name="user_Password" />
 									</Items>
 								</wfx:FormView>
-								<html:Paragraph>
-									<html:Literal Value="$(Configuration:LoginBrandingText)" />
-								</html:Paragraph>
+								<html:Paragraph ID="paraBottomText">By signing in you agree to the Tenant Administrator Terms and Conditions.</html:Paragraph>
 							</ContentControls>
 							<FooterControls>
 								<wfx:Button CssClass="Primary" ID="cmdSubmit" Text="Continue" UseSubmitBehavior="true" />

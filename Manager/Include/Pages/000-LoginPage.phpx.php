@@ -21,6 +21,18 @@
 	{
 		public function OnInitializing(CancelEventArgs $e)
 		{
+			$objTenant = TenantObject::GetByName("Tenant");
+			$instTenant = $objTenant->GetInstance(array
+			(
+				new TenantObjectInstancePropertyValue("TenantURL", System::GetTenantName())
+			));
+			
+			$paraTopText = $e->RenderingPage->GetControlByID("paraTopText");
+			$paraTopText->Content = $instTenant->GetPropertyValue("LoginHeaderText", "");
+			
+			$paraBottomText = $e->RenderingPage->GetControlByID("paraBottomText");
+			$paraBottomText->Content = $instTenant->GetPropertyValue("LoginFooterText", "");
+			
 			if ($_SERVER["REQUEST_METHOD"] == "POST")
 			{
 				if (isset($_POST["user_LoginID"]) && isset($_POST["user_Password"]))
