@@ -63,15 +63,17 @@
 			return $retval;
 		}
 		
-		public static function GetByID($id)
+		public static function GetByID($id, $tenant = null)
 		{
 			if (!is_numeric($id)) return null;
+			if ($tenant == null) $tenant = Tenant::GetCurrent();
 			
 			$pdo = DataSystem::GetPDO();
-			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjects WHERE object_ID = :object_ID";
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjects WHERE object_TenantID = :object_TenantID AND object_ID = :object_ID";
 			$statement = $pdo->prepare($query);
 			$result = $statement->execute(array
 			(
+				":object_TenantID" => $tenant->ID,
 				":object_ID" => $id
 			));
 			if ($result === false) return null;
