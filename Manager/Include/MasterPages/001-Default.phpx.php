@@ -29,10 +29,22 @@
 				}
 			}
 			
-			$sidebar = $e->RenderingPage->GetControlByID("sidebar");
+			$sidebar = $this->Page->GetControlByID("sidebar");
 			$sidebarMenu = $sidebar->GetControlByID("sidebarMenu");
 			
-			$sidebarMenu->Items[] = new MenuItemCommand("TEST COMMAND");
+			// TODO: Add your items here (load from Tenant.Sidebar Menu Items property?)
+			
+			/*
+			$sidebarMenu->Items = array();
+			$instTenant = TenantObject::GetByName("Tenant")->GetInstanceByIndex(0);
+			$instSidebarMenuItems = $instTenant->GetPropertyValue("SidebarMenuItems")->GetInstances();
+			foreach ...
+			{
+				$sidebarMenu->Items[] = ... 
+			}
+			*/
+			
+			// $sidebarMenu->Items[] = new MenuItemCommand("TEST COMMAND");
 		}
 	}
 ?>
