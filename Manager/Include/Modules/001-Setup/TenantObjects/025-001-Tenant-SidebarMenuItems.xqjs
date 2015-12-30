@@ -172,6 +172,54 @@
 							"Value": "Support Center"
 						}
 					]
+				},
+				{
+					"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_MenuItemCommand_Developer_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Developer"
+						}
+					]
+				},
+				{
+					"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_MenuItemCommand_Migrate_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Migrate Packages"
+						}
+					]
 				}
 			]
 		},
@@ -222,6 +270,22 @@
 								"Instances":
 								[
 									"{E81D9358-CFA9-447C-854E-4A95BE22210D}"
+								]
+							}
+						}
+					]
+				},
+				{
+					"ID": "{EC5BC2CD-F400-4064-B7E8-DA2CADDCD2A9}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}"
 								]
 							}
 						}
@@ -328,6 +392,30 @@
 							"Value": "~/support"
 						}
 					]
+				},
+				{
+					"ID": "{529EFFF5-B967-40BA-BF07-B163BD58DFE6}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{71106B12-1934-4834-B0F6-D894637BAEED}"
+								]
+							}
+						},
+						{
+							"Name": "IconName",
+							"Value": "paper-plane-o"
+						},
+						{
+							"Name": "TargetURL",
+							"Value": "~/migrate"
+						}
+					]
 				}
 			]
 		},
@@ -349,6 +437,10 @@
 									"{80832D29-809C-45F6-8548-1F552B7E0974}",
 									"{7855FB37-1F75-4FA0-B3EE-5EE2D463E39F}",
 									"{E1B04FF9-5364-47B3-AC5E-300726CF3BE9}",
+									
+									"{EC5BC2CD-F400-4064-B7E8-DA2CADDCD2A9}",
+									"{529EFFF5-B967-40BA-BF07-B163BD58DFE6}",
+									
 									"{4723BA97-2321-485A-B3F1-346716C1A3E1}",
 									"{D0AB191C-ACC2-4C68-8D2F-06C77369728B}",
 									"{C7C2087D-51EB-4DCD-B13A-3577CAD50FA0}"

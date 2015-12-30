@@ -1,0 +1,39 @@
+<Website>
+	<Pages>
+		<Page MasterPageFileName="Default" FileName="migrate" CodeBehindClassName="Objectify\Tenant\Pages\MigratePage">
+			<Content>
+				<wfx:Section ID="Content">
+					<h1>Migrate Packages</h1>
+					<form method="POST">
+						<wfx:FormView ID="fv">
+							<Items>
+								<wfx:FormViewItemChoice ID="cboSource" Title="Source" EnableMultipleSelection="false" RequireSelectionFromChoices="true">
+									<Items>
+										<wfx:FormViewItemChoiceValue Title="Specific packages" Value="1" />
+										<wfx:FormViewItemChoiceValue Title="Entire tenant" Value="2" />
+									</Items>
+								</wfx:FormViewItemChoice>
+								<ofx:FormViewItemInstance ID="txtSource_SpecificPackages_Packages" Title="Source Package(s)" MultiSelect="true" ValidObjectNames="Package" />
+								<ofx:FormViewItemInstance ID="txtSource_EntireTenant_TenantName" Title="Source Tenant" MultiSelect="true" ValidObjectNames="Tenant" />
+								
+								<wfx:FormViewItemChoice ID="cboDestination" Title="Destination" EnableMultipleSelection="false" RequireSelectionFromChoices="true">
+									<Items>
+										<wfx:FormViewItemChoiceValue Title="New Tenant" Value="1" />
+										<wfx:FormViewItemChoiceValue Title="Existing Tenant" Value="2" />
+									</Items>
+								</wfx:FormViewItemChoice>
+								<wfx:FormViewItemText ID="txtDestination_NewTenant_TenantName" Title="New Tenant Name" />
+								<ofx:FormViewItemInstance ID="txtDestination_ExistingTenant_TenantName" Title="Destination Tenant" MultiSelect="true" ValidObjectNames="Tenant" />
+							</Items>
+						</wfx:FormView>
+						<div class="PageFooter">
+							<wfx:Button ID="cmdOK" Text="Migrate Now" CssClass="Primary" />
+							<wfx:Button ID="cmdSaveForLater" Text="Save Migration for Later" />
+							<wfx:Button ID="cmdCancel" Text="Cancel" TargetURL="~/" TargetScript="history.back(); return false;" />
+						</div>
+					</form>
+				</wfx:Section>
+			</Content>
+		</Page>
+	</Pages>
+</Website>
