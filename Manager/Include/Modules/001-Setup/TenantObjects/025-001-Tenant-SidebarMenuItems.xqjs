@@ -1,0 +1,363 @@
+{
+	"Objects":
+	[
+		{
+			"Name": "LanguageString",
+			"Instances":
+			[
+				{
+					"ID": "{40E17597-0AEB-4C56-BBAB-FC600E1196DD}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_MenuItemHeader_Overview_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Overview"
+						}
+					]
+				},
+				{
+					"ID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_MenuItemCommand_Dashboard_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Dashboard"
+						}
+					]
+				},
+				{
+					"ID": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_MenuItemHeader_Reports_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Reports"
+						}
+					]
+				},
+				{
+					"ID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_MenuItemCommand_Objects_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Objects"
+						}
+					]
+				},
+				{
+					"ID": "{E81D9358-CFA9-447C-854E-4A95BE22210D}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_MenuItemHeader_HelpAndSupport_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Help and Support"
+						}
+					]
+				},
+				{
+					"ID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_MenuItemCommand_Documentation_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Documentation"
+						}
+					]
+				},
+				{
+					"ID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_MenuItemCommand_SupportCenter_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Support Center"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "MenuItemHeader",
+			"Instances":
+			[
+				{
+					"ID": "{D135F145-36DC-4482-8130-872D1A8AA551}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{40E17597-0AEB-4C56-BBAB-FC600E1196DD}"
+								]
+							}
+						}
+					]
+				},
+				{
+					"ID": "{7855FB37-1F75-4FA0-B3EE-5EE2D463E39F}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}"
+								]
+							}
+						}
+					]
+				},
+				{
+					"ID": "{4723BA97-2321-485A-B3F1-346716C1A3E1}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{E81D9358-CFA9-447C-854E-4A95BE22210D}"
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "MenuItemCommand",
+			"Instances":
+			[
+				{
+					"ID": "{80832D29-809C-45F6-8548-1F552B7E0974}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}"
+								]
+							}
+						},
+						{
+							"Name": "IconName",
+							"Value": "dashboard"
+						},
+						{
+							"Name": "TargetURL",
+							"Value": "~/dashboard"
+						}
+					]
+				},
+				{
+					"ID": "{E1B04FF9-5364-47B3-AC5E-300726CF3BE9}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{20FFFDE8-11A5-48D6-894B-21C6B234B811}"
+								]
+							}
+						},
+						{
+							"Name": "IconName",
+							"Value": "cubes"
+						},
+						{
+							"Name": "TargetURL",
+							"Value": "~/objects"
+						}
+					]
+				},
+				{
+					"ID": "{D0AB191C-ACC2-4C68-8D2F-06C77369728B}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}"
+								]
+							}
+						},
+						{
+							"Name": "IconName",
+							"Value": "book"
+						},
+						{
+							"Name": "TargetURL",
+							"Value": "~/support/documentation"
+						}
+					]
+				},
+				{
+					"ID": "{C7C2087D-51EB-4DCD-B13A-3577CAD50FA0}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{A66CD08C-A155-42AF-8995-A1D96C5A0C06}"
+								]
+							}
+						},
+						{
+							"Name": "IconName",
+							"Value": "life-ring"
+						},
+						{
+							"Name": "TargetURL",
+							"Value": "~/support"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "Tenant",
+			"Instances":
+			[
+				{
+					"ID": "{F2C9D4A9-9EFB-4263-84DB-66A9DA65AD00}",
+					"PropertyValues":
+					[
+						{
+							"Name": "SidebarMenuItems",
+							"Value":
+							{
+								"Instances":
+								[
+									"{D135F145-36DC-4482-8130-872D1A8AA551}",
+									"{80832D29-809C-45F6-8548-1F552B7E0974}",
+									"{7855FB37-1F75-4FA0-B3EE-5EE2D463E39F}",
+									"{E1B04FF9-5364-47B3-AC5E-300726CF3BE9}",
+									"{4723BA97-2321-485A-B3F1-346716C1A3E1}",
+									"{D0AB191C-ACC2-4C68-8D2F-06C77369728B}",
+									"{C7C2087D-51EB-4DCD-B13A-3577CAD50FA0}"
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}
