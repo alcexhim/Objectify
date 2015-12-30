@@ -217,8 +217,17 @@
 			"InstanceProperties":
 			[
 				{
-					"Name": "IconName",
-					"DataTypeName": "Text"
+					"Name": "Icon",
+					"DataTypeName": "SingleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "Icon"
+							}
+						]
+					}
 				},
 				{
 					"Name": "TargetURL",

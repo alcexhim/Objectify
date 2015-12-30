@@ -312,8 +312,11 @@
 							}
 						},
 						{
-							"Name": "IconName",
-							"Value": "dashboard"
+							"Name": "Icon",
+							"Value":
+							{
+								"Instance": "{FC73ECB7-58C7-4E3C-B916-BB0C86864A67}"
+							}
 						},
 						{
 							"Name": "TargetURL",
@@ -336,8 +339,11 @@
 							}
 						},
 						{
-							"Name": "IconName",
-							"Value": "cubes"
+							"Name": "Icon",
+							"Value":
+							{
+								"Instance": "{41C8C445-A0C9-4245-A05C-3AA282A06985}"
+							}
 						},
 						{
 							"Name": "TargetURL",
@@ -360,8 +366,11 @@
 							}
 						},
 						{
-							"Name": "IconName",
-							"Value": "book"
+							"Name": "Icon",
+							"Value":
+							{
+								"Instance": "{FA5F164D-04AD-495A-BDFB-BD33E80E22F1}"
+							}
 						},
 						{
 							"Name": "TargetURL",
@@ -384,8 +393,11 @@
 							}
 						},
 						{
-							"Name": "IconName",
-							"Value": "life-ring"
+							"Name": "Icon",
+							"Value":
+							{
+								"Instance": "{92A5E29D-78E2-43FA-96AE-84827C441667}"
+							}
 						},
 						{
 							"Name": "TargetURL",
@@ -408,8 +420,11 @@
 							}
 						},
 						{
-							"Name": "IconName",
-							"Value": "paper-plane-o"
+							"Name": "Icon",
+							"Value":
+							{
+								"Instance": "{463C1D88-D2CD-45BA-BEBA-29CFD5509E17}"
+							}
 						},
 						{
 							"Name": "TargetURL",

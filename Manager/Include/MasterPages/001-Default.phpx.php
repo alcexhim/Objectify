@@ -56,7 +56,19 @@ use Phast\WebControlAttribute;
 					{
 						$mi = new MenuItemCommand();
 						$mi->Title = $instSidebarMenuItem->GetPropertyValue("Title")->GetInstances()[0]->ToString();
-						$mi->IconName = $instSidebarMenuItem->GetPropertyValue("IconName");
+						
+						$instIcon = $instSidebarMenuItem->GetPropertyValue("Icon")->GetInstance();
+						if ($instIcon != null)
+						{
+							switch ($instIcon->ParentObject->Name)
+							{
+								case "IconFontAwesome":
+								{
+									$mi->IconName = $instIcon->GetPropertyValue("IconName");
+									break;
+								}
+							}
+						}
 						$mi->TargetURL = $instSidebarMenuItem->GetPropertyValue("TargetURL");
 						break;
 					}
