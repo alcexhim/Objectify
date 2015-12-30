@@ -22,16 +22,19 @@
 		public function OnInitializing(CancelEventArgs $e)
 		{
 			$objTenant = TenantObject::GetByName("Tenant");
-			$instTenant = $objTenant->GetInstance(array
-			(
-				new TenantObjectInstancePropertyValue("TenantURL", System::GetTenantName())
-			));
-			
-			$paraTopText = $e->RenderingPage->GetControlByID("paraTopText");
-			$paraTopText->Content = $instTenant->GetPropertyValue("LoginHeaderText", "")->GetInstances()[0]->ToString();
-			
-			$paraBottomText = $e->RenderingPage->GetControlByID("paraBottomText");
-			$paraBottomText->Content = $instTenant->GetPropertyValue("LoginFooterText", "")->GetInstances()[0]->ToString();
+			if ($objTenant != null)
+			{
+				$instTenant = $objTenant->GetInstance(array
+				(
+					new TenantObjectInstancePropertyValue("TenantURL", System::GetTenantName())
+				));
+				
+				$paraTopText = $e->RenderingPage->GetControlByID("paraTopText");
+				$paraTopText->Content = $instTenant->GetPropertyValue("LoginHeaderText", "")->GetInstances()[0]->ToString();
+				
+				$paraBottomText = $e->RenderingPage->GetControlByID("paraBottomText");
+				$paraBottomText->Content = $instTenant->GetPropertyValue("LoginFooterText", "")->GetInstances()[0]->ToString();
+			}
 			
 			if ($_SERVER["REQUEST_METHOD"] == "POST")
 			{
@@ -41,10 +44,14 @@
 					$password = $_POST["user_Password"];
 					
 					$objUser = TenantObject::GetByName("User");
-					$inst = $objUser->GetInstance(array
-					(
-						new TenantObjectInstancePropertyValue("UserName", $username)
-					));
+					$inst = null;
+					if ($objUser != null)
+					{
+						$inst = $objUser->GetInstance(array
+						(
+							new TenantObjectInstancePropertyValue("UserName", $username)
+						));
+					}
 					
 					if ($inst != null)
 					{
@@ -60,19 +67,22 @@
 						}
 					}
 					
-					$user_LoginToken = RandomStringGenerator::Generate(RandomStringGeneratorCharacterSets::AlphaNumericMixedCase, 32);
-					$_SESSION["Authentication.LoginToken"] = $user_LoginToken;
-					
-					$objUserLogin = TenantObject::GetByName("UserLogin");
-					$objUserLogin->CreateInstance(array
-					(
-						new TenantObjectInstancePropertyValue("Token", $user_LoginToken),
-						new TenantObjectInstancePropertyValue("SignonTime", (new \DateTime())),
-						new TenantObjectInstancePropertyValue("User", new SingleInstanceProperty($inst, array($objUser))),
-						new TenantObjectInstancePropertyValue("SignoffTime", null),
-						new TenantObjectInstancePropertyValue("DeviceType", new SingleInstanceProperty(null, array($objDeviceType))),
-						new TenantObjectInstancePropertyValue("IPAddress", $_SERVER["REMOTE_ADDR"])
-					));
+					if ($inst != null)
+					{
+						$user_LoginToken = RandomStringGenerator::Generate(RandomStringGeneratorCharacterSets::AlphaNumericMixedCase, 32);
+						$_SESSION["Authentication.LoginToken"] = $user_LoginToken;
+						
+						$objUserLogin = TenantObject::GetByName("UserLogin");
+						$objUserLogin->CreateInstance(array
+						(
+							new TenantObjectInstancePropertyValue("Token", $user_LoginToken),
+							new TenantObjectInstancePropertyValue("SignonTime", (new \DateTime())),
+							new TenantObjectInstancePropertyValue("User", new SingleInstanceProperty($inst, array($objUser))),
+							new TenantObjectInstancePropertyValue("SignoffTime", null),
+							new TenantObjectInstancePropertyValue("DeviceType", new SingleInstanceProperty(null, array($objDeviceType))),
+							new TenantObjectInstancePropertyValue("IPAddress", $_SERVER["REMOTE_ADDR"])
+						));
+					}
 					
 					$user = User::GetCurrent(); // User::GetByCredentials($username, $password);
 					
