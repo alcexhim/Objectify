@@ -1,0 +1,288 @@
+{
+	"Objects":
+	[
+		{
+			"Name": "LanguageString",
+			"Instances":
+			[
+				{
+					"ID": "{EC9D2CA1-5629-4F9E-A74B-CC3AE0B6633F}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_Menu_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Menu"
+						}
+					]
+				},
+				{
+					"ID": "{4A5E4CC0-D674-43EC-A0E7-531706378820}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_MenuItem_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Menu Item"
+						}
+					]
+				},
+				{
+					"ID": "{7DDAB0C9-BC56-4213-AB4E-9C5EF2C841F4}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_MenuItemCommand_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Command Menu Item"
+						}
+					]
+				},
+				{
+					"ID": "{57A0737B-F7C8-4DD4-8326-47519137D265}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_MenuItemSeparator_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Separator Menu Item"
+						}
+					]
+				},
+				{
+					"ID": "{9A4FCD63-F11F-4312-A59C-2160F19A06BB}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_MenuItemHeader_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Header Menu Item"
+						}
+					]
+				}
+			]
+		},
+		{
+			"ID": "{06E7806D-9384-4EA5-B5D1-350A51552773}",
+			"Name": "Menu",
+			"ParentObjects":
+			[
+				{
+					"Name": "Object"
+				}
+			],
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"Value":
+					{
+						"Instances":
+						[
+							"{EC9D2CA1-5629-4F9E-A74B-CC3AE0B6633F}"
+						]
+					}
+				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "Items",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "MenuItem"
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"ID": "{1E9D38B9-1B07-4EF9-BAD7-43DEB25AEB83}",
+			"Name": "MenuItem",
+			"ParentObjects":
+			[
+				{
+					"Name": "Object"
+				}
+			],
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"Value":
+					{
+						"Instances":
+						[
+							"{4A5E4CC0-D674-43EC-A0E7-531706378820}"
+						]
+					}
+				}
+			]
+		},
+		{
+			"ID": "{9D3EDE23-6DB9-4664-9145-ABCBD3A0A2C2}",
+			"Name": "MenuItemCommand",
+			"ParentObjects":
+			[
+				{
+					"Name": "MenuItem"
+				},
+				{
+					"Name": "InstanceTitleableObject"
+				}
+			],
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"Value":
+					{
+						"Instances":
+						[
+							"{7DDAB0C9-BC56-4213-AB4E-9C5EF2C841F4}"
+						]
+					}
+				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "Icon",
+					"DataTypeName": "SingleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "Icon"
+							}
+						]
+					}
+				},
+				{
+					"Name": "TargetURL",
+					"DataTypeName": "Text"
+				}
+			]
+		},
+		{
+			"ID": "{798DECAB-5119-49D7-B0AD-D4BF45807188}",
+			"Name": "MenuItemSeparator",
+			"ParentObjects":
+			[
+				{
+					"Name": "MenuItem"
+				}
+			],
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"Value":
+					{
+						"Instances":
+						[
+							"{57A0737B-F7C8-4DD4-8326-47519137D265}"
+						]
+					}
+				}
+			]
+		},
+		{
+			"ID": "{1F148873-8A97-4409-A79B-C19D5D380CA4}",
+			"Name": "MenuItemHeader",
+			"ParentObjects":
+			[
+				{
+					"Name": "MenuItem"
+				},
+				{
+					"Name": "InstanceTitleableObject"
+				}
+			],
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"Value":
+					{
+						"Instances":
+						[
+							"{9A4FCD63-F11F-4312-A59C-2160F19A06BB}"
+						]
+					}
+				}
+			]
+		}
+	]
+}

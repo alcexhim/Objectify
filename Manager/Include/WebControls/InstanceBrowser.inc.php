@@ -17,6 +17,10 @@
 		 */
 		public $ValidObjects;
 		
+		/**
+		 * A comma-separated list of object names used in markup to populate the ValidObjects property.
+		 * @var string
+		 */
 		public $ValidObjectNames;
 		
 		/**

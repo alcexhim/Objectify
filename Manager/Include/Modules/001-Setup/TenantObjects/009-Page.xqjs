@@ -78,6 +78,54 @@
 					]
 				},
 				{
+					"ID": "{F606C9F1-1A58-430A-B37C-14DC3A4393A6}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_SequentialContainerOrientation_Horizontal_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Horizontal"
+						}
+					]
+				},
+				{
+					"ID": "{29C02384-57B0-45F5-9C15-747F9DFD2C69}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_SequentialContainerOrientation_Vertical_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Vertical"
+						}
+					]
+				},
+				{
 					"ID": "{742F1012-CF68-4A26-BC9B-65F30A830129}",
 					"IntegrationIDs":
 					[
@@ -268,6 +316,9 @@
 			[
 				{
 					"Name": "Enumeration"
+				},
+				{
+					"Name": "InstanceTitleableObject"
 				}
 			],
 			"Properties":
@@ -287,11 +338,35 @@
 			[
 				{
 					"ID": "{9B7B7F14-0925-456D-98E6-E3FFEFDC272C}",
-					"Title": "Horizontal"
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{F606C9F1-1A58-430A-B37C-14DC3A4393A6}"
+								]
+							}
+						}
+					]
 				},
 				{
 					"ID": "{96423CAA-260E-453A-B609-E8090897EDDF}",
-					"Title": "Vertical"
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{29C02384-57B0-45F5-9C15-747F9DFD2C69}"
+								]
+							}
+						}
+					]
 				}
 			]
 		},

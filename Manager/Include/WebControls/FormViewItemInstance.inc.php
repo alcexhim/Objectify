@@ -10,7 +10,13 @@
 		 * The TenantObjects whose instances are allowed to be selected from this InstanceBrowser. 
 		 * @var TenantObject[]
 		 */
-		public $ObjectTypes;
+		public $ValidObjects;
+		
+		/**
+		 * A comma-separated list of object names used in markup to populate the ValidObjects property.
+		 * @var string
+		 */
+		public $ValidObjectNames;
 		
 		/**
 		 * Determines if more than one TenantObjectInstance may be selected from this InstanceBrowser.
@@ -21,7 +27,8 @@
 		protected function CreateControlInternal()
 		{
 			$elem = new InstanceBrowser();
-			$elem->ObjectTypes = $this->ObjectTypes;
+			$elem->ValidObjectNames = $this->ValidObjectNames;
+			$elem->ValidObjects = $this->ValidObjects;
 			$elem->MultiSelect = $this->MultiSelect;
 			
 			$elem->ID = $this->ID;

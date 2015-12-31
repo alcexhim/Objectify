@@ -1,0 +1,389 @@
+{
+	"Objects":
+	[
+		{
+			"Name": "LanguageString",
+			"Instances":
+			[
+				{
+					"ID": "{5E95CF95-58F0-41EF-8651-88A39766FE21}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_Icon_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Icon"
+						}
+					]
+				},
+				{
+					"ID": "{DBD1AAB8-AF17-4697-AA98-BBFF2D56F0A0}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_IconFontAwesome_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Font Awesome Icon"
+						}
+					]
+				},
+				{
+					"ID": "{F364A847-2D26-42F2-A4D9-C36F8771A28A}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_IconImage_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Image Icon"
+						}
+					]
+				},
+				{
+					"ID": "{E16BFD3B-2F2C-431F-A7E1-BC2ADC6A3746}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_Dashboard_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Dashboard / Tachometer"
+						}
+					]
+				},
+				{
+					"ID": "{026D6615-5639-4AF1-B692-C33557EF4363}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_Cubes_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Cubes"
+						}
+					]
+				},
+				{
+					"ID": "{CC278DA3-5729-42A5-BD0F-1C597AE38D6C}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_Book_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Book"
+						}
+					]
+				},
+				{
+					"ID": "{0A630A62-7123-42BE-8EE0-021862C76F04}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_LifeRing_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Life Ring / Life Buoy / Life Saver / Support"
+						}
+					]
+				},
+				{
+					"ID": "{E16B2BDB-3935-4D1D-8070-028BEFE40D9E}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_PaperPlaneOutline_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Paper Plane (Outline)"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "Icon",
+			"ParentObjects":
+			[
+				{
+					"Name": "Object"
+				},
+				{
+					"Name": "InstanceTitleableObject"
+				}
+			],
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"Value":
+					{
+						"Instances":
+						[
+							"{5E95CF95-58F0-41EF-8651-88A39766FE21}"
+						]
+					}
+				}
+			]
+		},
+		{
+			"Name": "IconFontAwesome",
+			"ParentObjects":
+			[
+				{
+					"Name": "Icon"
+				}
+			],
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"Value":
+					{
+						"Instances":
+						[
+							"{DBD1AAB8-AF17-4697-AA98-BBFF2D56F0A0}"
+						]
+					}
+				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "IconName",
+					"DataTypeName": "Text"
+				}
+			],
+			"Instances":
+			[
+				{
+					"ID": "{FC73ECB7-58C7-4E3C-B916-BB0C86864A67}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{E16BFD3B-2F2C-431F-A7E1-BC2ADC6A3746}"
+								]
+							}
+						},
+						{
+							"Name": "IconName",
+							"Value": "tachometer"
+						}
+					]
+				},
+				{
+					"ID": "{41C8C445-A0C9-4245-A05C-3AA282A06985}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{026D6615-5639-4AF1-B692-C33557EF4363}"
+								]
+							}
+						},
+						{
+							"Name": "IconName",
+							"Value": "cubes"
+						}
+					]
+				},
+				{
+					"ID": "{FA5F164D-04AD-495A-BDFB-BD33E80E22F1}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{CC278DA3-5729-42A5-BD0F-1C597AE38D6C}"
+								]
+							}
+						},
+						{
+							"Name": "IconName",
+							"Value": "book"
+						}
+					]
+				},
+				{
+					"ID": "{92A5E29D-78E2-43FA-96AE-84827C441667}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{0A630A62-7123-42BE-8EE0-021862C76F04}"
+								]
+							}
+						},
+						{
+							"Name": "IconName",
+							"Value": "life-ring"
+						}
+					]
+				},
+				{
+					"ID": "{463C1D88-D2CD-45BA-BEBA-29CFD5509E17}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{E16B2BDB-3935-4D1D-8070-028BEFE40D9E}"
+								]
+							}
+						},
+						{
+							"Name": "IconName",
+							"Value": "paper-plane-o"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "IconImage",
+			"ParentObjects":
+			[
+				{
+					"Name": "Icon"
+				}
+			],
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"Value":
+					{
+						"Instances":
+						[
+							"{F364A847-2D26-42F2-A4D9-C36F8771A28A}"
+						]
+					}
+				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "ImageURL",
+					"DataTypeName": "Text"
+				}
+			]
+		}
+	]
+}

@@ -629,12 +629,18 @@
 				new TenantObjectInstancePropertyValue("Value", "Once you're logged in, you can customize the 'Login Header Text' and 'Login Footer Text' properties of your new tenant.")
 			));
 			
+			$instTenant = $objTenant->GetInstanceByGlobalIdentifier("{F2C9D4A9-9EFB-4263-84DB-66A9DA65AD00}");
+			$instTenant->SetPropertyValue("TenantURL", $tenantName);
+			$instTenant->SetPropertyValue("LoginHeaderText", new MultipleInstanceProperty(array($instLanguageEnglish_LoginHeaderText)));
+			$instTenant->SetPropertyValue("LoginFooterText", new MultipleInstanceProperty(array($instLanguageEnglish_LoginFooterText)));
+			/*
 			$instTenant = $objTenant->CreateInstance(array
 			(
 				new TenantObjectInstancePropertyValue("TenantURL", $tenantName),
 				new TenantObjectInstancePropertyValue("LoginHeaderText", new MultipleInstanceProperty(array($instLanguageEnglish_LoginHeaderText))),
 				new TenantObjectInstancePropertyValue("LoginFooterText", new MultipleInstanceProperty(array($instLanguageEnglish_LoginFooterText)))
 			));
+			*/
 			return $instTenant;
 		}
 		

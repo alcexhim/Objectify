@@ -951,6 +951,7 @@
 
 		public function GetInstanceByGlobalIdentifier($globalIdentifier)
 		{
+			$globalIdentifier = Objectify::SanitizeGlobalIdentifier($globalIdentifier);
 			$pdo = DataSystem::GetPDO();
 			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances WHERE instance_GlobalIdentifier = :instance_GlobalIdentifier";
 			$statement = $pdo->prepare($query);

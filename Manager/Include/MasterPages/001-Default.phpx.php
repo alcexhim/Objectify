@@ -5,10 +5,15 @@
 	use Phast\System;
 	
 	use Objectify\Objects\User;
+	use Objectify\Objects\Tenant;
 	use Objectify\Objects\TenantObject;
+	use Objectify\Objects\TenantObjectInstancePropertyValue;
 	
 	use Phast\WebControls\MenuItemCommand;
-	
+use Phast\WebControls\MenuItemSeparator;
+use Phast\WebControls\MenuItemHeader;
+use Phast\WebControlAttribute;
+					
 	class DefaultPage extends PhastPage
 	{
 		public function OnInitializing($e)
@@ -34,17 +39,57 @@
 			
 			// TODO: Add your items here (load from Tenant.Sidebar Menu Items property?)
 			
-			/*
 			$sidebarMenu->Items = array();
-			$instTenant = TenantObject::GetByName("Tenant")->GetInstanceByIndex(0);
-			$instSidebarMenuItems = $instTenant->GetPropertyValue("SidebarMenuItems")->GetInstances();
-			foreach ...
-			{
-				$sidebarMenu->Items[] = ... 
-			}
-			*/
+			$tenantName = System::GetTenantName();
 			
-			// $sidebarMenu->Items[] = new MenuItemCommand("TEST COMMAND");
+			$objTenant = TenantObject::GetByName("Tenant");
+			$instTenant = $objTenant->GetInstance(array
+			(
+				new TenantObjectInstancePropertyValue("TenantURL", $tenantName)
+			));
+			$instSidebarMenuItems = $instTenant->GetPropertyValue("SidebarMenuItems")->GetInstances();
+			foreach ($instSidebarMenuItems as $instSidebarMenuItem)
+			{
+				switch ($instSidebarMenuItem->ParentObject->Name)
+				{
+					case "MenuItemCommand":
+					{
+						$mi = new MenuItemCommand();
+						$mi->Title = $instSidebarMenuItem->GetPropertyValue("Title")->GetInstances()[0]->ToString();
+						
+						$instIcon = $instSidebarMenuItem->GetPropertyValue("Icon")->GetInstance();
+						if ($instIcon != null)
+						{
+							switch ($instIcon->ParentObject->Name)
+							{
+								case "IconFontAwesome":
+								{
+									$mi->IconName = $instIcon->GetPropertyValue("IconName");
+									break;
+								}
+							}
+						}
+						$mi->TargetURL = $instSidebarMenuItem->GetPropertyValue("TargetURL");
+						break;
+					}
+					case "MenuItemSeparator":
+					{
+						$mi = new MenuItemSeparator();
+						break;
+					}
+					case "MenuItemHeader":
+					{
+						$mi = new MenuItemHeader();
+						$mi->Title = $instSidebarMenuItem->GetPropertyValue("Title")->GetInstances()[0]->ToString();
+						break;
+					}
+				}
+				if (isset($mi))
+				{
+					$mi->Attributes[] = new WebControlAttribute("data-instance-id", $instSidebarMenuItem->GetInstanceID());
+					$sidebarMenu->Items[] = $mi;
+				}
+			}
 		}
 	}
 ?>
