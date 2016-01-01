@@ -124,6 +124,30 @@
 							"Value": "Reset System"
 						}
 					]
+				},
+				{
+					"ID": "{D97AE03C-261F-4060-A06D-985E26FA662C}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_RedirectTask_ObjectDelete_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Delete Object"
+						}
+					]
 				}
 			]
 		},
@@ -273,6 +297,49 @@
 							"Value": "~/reset"
 						}
 					]
+				},
+				{
+					"ID": "{16D35AE0-5F0A-4D06-A14A-8D08E85BFA37}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{D97AE03C-261F-4060-A06D-985E26FA662C}"
+								]
+							}
+						},
+						{
+							"Name": "TargetURL",
+							"Value": "~/reset"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "Object",
+			"Properties":
+			[
+				{
+					"Name": "Tasks",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "Task"
+							}
+						],
+						"Instances":
+						[
+							"{16D35AE0-5F0A-4D06-A14A-8D08E85BFA37}"
+						]
+					}
 				}
 			]
 		}
