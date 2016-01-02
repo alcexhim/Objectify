@@ -55,7 +55,9 @@ use Phast\WebControlAttribute;
 					case "MenuItemCommand":
 					{
 						$mi = new MenuItemCommand();
-						$mi->Title = $instSidebarMenuItem->GetPropertyValue("Title")->GetInstances()[0]->ToString();
+						
+						$instsTitle = $instSidebarMenuItem->GetPropertyValue("Title")->GetInstances();
+						$mi->Title = $instsTitle[0]->ToString();
 						
 						$instIcon = $instSidebarMenuItem->GetPropertyValue("Icon")->GetInstance();
 						if ($instIcon != null)
@@ -80,7 +82,8 @@ use Phast\WebControlAttribute;
 					case "MenuItemHeader":
 					{
 						$mi = new MenuItemHeader();
-						$mi->Title = $instSidebarMenuItem->GetPropertyValue("Title")->GetInstances()[0]->ToString();
+						$instsTitle = $instSidebarMenuItem->GetPropertyValue("Title")->GetInstances();
+						$mi->Title = $instsTitle[0]->ToString();
 						break;
 					}
 				}

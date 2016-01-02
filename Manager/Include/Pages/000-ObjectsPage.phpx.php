@@ -93,7 +93,8 @@
 							if (get_class($sender->ExtraData) == "Objectify\\Objects\\MultipleInstanceProperty")
 							{
 								$iv = new InstanceDisplayWidget();
-								$iv->InstanceID = $sender->ExtraData->GetInstances()[0]->ID;
+								$insts = $sender->ExtraData->GetInstances();
+								$iv->InstanceID = $insts[0]->ID;
 								$iv->Render();
 							}
 							else if (get_class($sender->ExtraData) == "Objectify\\Objects\\SingleInstanceProperty")

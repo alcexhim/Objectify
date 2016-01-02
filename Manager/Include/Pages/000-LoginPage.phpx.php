@@ -30,10 +30,13 @@
 				));
 				
 				$paraTopText = $e->RenderingPage->GetControlByID("paraTopText");
-				$paraTopText->Content = $instTenant->GetPropertyValue("LoginHeaderText", "")->GetInstances()[0]->ToString();
+				
+				$instsLoginHeaderText = $instTenant->GetPropertyValue("LoginHeaderText", "")->GetInstances();
+				$paraTopText->Content = $instsLoginHeaderText[0]->ToString();
 				
 				$paraBottomText = $e->RenderingPage->GetControlByID("paraBottomText");
-				$paraBottomText->Content = $instTenant->GetPropertyValue("LoginFooterText", "")->GetInstances()[0]->ToString();
+				$instsLoginFooterText = $instTenant->GetPropertyValue("LoginFooterText", "")->GetInstances();
+				$paraBottomText->Content = $instsLoginFooterText[0]->ToString();
 			}
 			
 			if ($_SERVER["REQUEST_METHOD"] == "POST")

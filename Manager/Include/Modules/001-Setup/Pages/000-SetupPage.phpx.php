@@ -613,7 +613,8 @@
 			$objTenant = TenantObject::GetByName("Tenant");
 			
 			$objLanguage = TenantObject::GetByName("Language");
-			$instLanguageEnglish = $objLanguage->GetInstances()[0];
+			$instsLanguage = $objLanguage->GetInstances();
+			$instLanguageEnglish = $instsLanguage[0];
 			
 			$objLanguageString = TenantObject::GetByName("LanguageString");
 			
@@ -654,7 +655,8 @@
 			$objLanguage = TenantObject::GetByName("Language");
 			$objLanguageString = TenantObject::GetByName("LanguageString");
 			
-			$lang = $objLanguage->GetInstances()[0];
+			$instLangs = $objLanguage->GetInstances();
+			$lang = $instLangs[0];
 			
 			$instEnglish_SystemAdministrator = $objLanguageString->CreateInstance(array
 			(
