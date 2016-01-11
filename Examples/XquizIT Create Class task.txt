@@ -1,0 +1,19 @@
+Task "Create Class"
+
+Parameters
+	title = "Class Name", data type = "Text"
+	title = "Inherits from", data type = "MultipleInstance", valid objects = "Object"
+
+popup:
+
+======== Create New Object ========|
+|                                  |
+|  Class Name: ___________________ |
+|                                  |
+|  Inherits from: [            v ] |
+|                                  |
+|----------------------------------|
+|                                  |
+|                [ Cancel ] [ OK ] |
+|                                  |
+|==================================|
