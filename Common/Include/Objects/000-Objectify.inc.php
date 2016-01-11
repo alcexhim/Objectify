@@ -2,8 +2,14 @@
 	namespace Objectify\Objects;
 	use Phast\System;
 	use Phast\Data\DataSystem;
+	use Phast\Enumeration;
 		
-	\Enum::Create("Objectify\\Objects\\LogMessageSeverity", "Notice", "Warning", "Error");
+	class LogMessageSeverity extends Enumeration
+	{
+		const Notice = 1;
+		const Warning = 2;
+		const Error = 3;
+	}
 	
 	class Objectify
 	{
