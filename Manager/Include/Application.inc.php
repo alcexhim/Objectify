@@ -36,6 +36,8 @@
 	use Objectify\Objects\TenantObjectMethodParameterValue;
 	use Objectify\Objects\User;
 	
+	use Exception;
+	
 	function IsConfigured()
 	{
 		if (!(System::HasConfigurationValue("Database.ServerName") &&
@@ -48,7 +50,15 @@
 			return false;
 		}
 		
-		$pdo = DataSystem::GetPDO() or null;
+		$pdo = null;
+		try
+		{
+			$pdo = DataSystem::GetPDO();
+		}
+		catch (Exception $ex)
+		{
+			
+		}
 		if ($pdo == null) return false;
 		
 		$query = "SHOW TABLES LIKE '" . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjects'";
@@ -73,7 +83,7 @@
 	
 	System::$BeforeLaunchEventHandler = function($path)
 	{
-		if (!IsConfigured() && (!($path[0] == "setup")) && (!($path[0] == "Images")))
+		if (!IsConfigured() && (!($path[0] == "setup" || $path[0] == "Images")))
 		{
 			System::Redirect("~/setup");
 			return true;
