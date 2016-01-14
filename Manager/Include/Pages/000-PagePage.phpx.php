@@ -136,6 +136,19 @@ use Phast\HTMLControls\Heading;
 				}
 			}
 			
+			if ($ctl != null)
+			{
+				$propStyles = $instComponent->GetPropertyValue("Styles");
+				if ($propStyles != null)
+				{
+					$instStyles = $propStyles->GetInstances();
+					foreach ($instStyles as $instStyle)
+					{
+						$ctl->ClassList[] = $instStyle->GetPropertyValue("ClassName");
+					}
+				}
+			}
+			
 			return $ctl;
 		}
 		

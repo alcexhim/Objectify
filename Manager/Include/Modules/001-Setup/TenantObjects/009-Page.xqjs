@@ -268,6 +268,22 @@
 						]
 					}
 				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "Styles",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "Style"
+							}
+						]
+					}
+				}
 			]
 		},
 		{
@@ -683,6 +699,69 @@
 			]
 		},
 		{
+			"Name": "LanguageString",
+			"Instances":
+			[
+				{
+					"ID": "{B1A5F12F-2882-431E-A3E2-801FCA2114D2}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_Style_PrimaryThemeColorStyle"
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Primary Theme Color Style"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "Style",
+			"Instances":
+			[
+				{
+					"ID": "{10C3078C-F2FC-4B8E-9875-450449549351}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "StyleName",
+							"Value": "LoginPage" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{B1A5F12F-2882-431E-A3E2-801FCA2114D2}"
+								]
+							}
+						},
+						{
+							"Name": "ClassName",
+							"Value": "Primary"
+						}
+					]
+				}
+			]
+		},
+		{
 			"Name": "PanelPageComponent",
 			"Instances":
 			[
@@ -697,6 +776,16 @@
 								"Instances":
 								[
 									"{23164023-03A8-4DB2-9C15-DB8321F3486B}"
+								]
+							}
+						},
+						{
+							"Name": "Styles",
+							"Value":
+							{
+								"Instances":
+								[
+									"{10C3078C-F2FC-4B8E-9875-450449549351}"
 								]
 							}
 						}
