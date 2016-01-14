@@ -948,6 +948,15 @@
 			}
 			return $retval;
 		}
+		
+		public function GetInstanceByInstanceID($instanceID)
+		{
+			$iDs = stripos($instanceID, "$");
+			if ($iDs === null) return TenantObjectInstance::GetByID($instanceID);
+			$instanceIDParts = explode("$", $instanceID);
+			if ($instanceIDParts[0] != $this->ID) return null;
+			return TenantObjectInstance::GetByID($instanceIDParts[1]);
+		}
 
 		public function GetInstanceByGlobalIdentifier($globalIdentifier)
 		{

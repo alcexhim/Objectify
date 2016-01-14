@@ -1,0 +1,16 @@
+<Website>
+	<Pages>
+		<Page FileName="pages/$(pageID)" CodeBehindClassName="Objectify\Tenant\Pages\PagePage">
+			<References>
+				<Reference TagPrefix="wfx" NamespacePath="Phast\WebControls" />
+				<Reference TagPrefix="html" NamespacePath="Phast\HTMLControls" />
+				<Reference TagPrefix="ofx" NamespacePath="Objectify\WebControls" />
+			</References>
+			<StyleSheets>
+				<StyleSheet FileName="$(Configuration:System.StaticPath)/StyleSheets/$(Configuration:Application.ThemeName|Slate)/Main.css" />
+			</StyleSheets>
+			<Content>
+			</Content>
+		</Page>
+	</Pages>
+</Website>

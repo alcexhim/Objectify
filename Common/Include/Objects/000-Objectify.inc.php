@@ -5,7 +5,7 @@
 	use Phast\System;
 	
 	use Phast\Data\DataSystem;
-			
+	
 	class LogMessageSeverity extends Enumeration
 	{
 		const Notice = 1;

@@ -334,6 +334,13 @@
 					}
 				}
 			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "Value",
+					"DataTypeName": "Text"
+				}
+			],
 			"Instances":
 			[
 				{
@@ -349,6 +356,10 @@
 									"{F606C9F1-1A58-430A-B37C-14DC3A4393A6}"
 								]
 							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Horizontal"
 						}
 					]
 				},
@@ -365,6 +376,10 @@
 									"{29C02384-57B0-45F5-9C15-747F9DFD2C69}"
 								]
 							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Vertical"
 						}
 					]
 				}
@@ -430,6 +445,13 @@
 						]
 					}
 				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "ImageFileName",
+					"DataTypeName": "Text"
+				}
 			]
 		},
 		{
@@ -439,6 +461,9 @@
 			[
 				{
 					"Name": "PageComponent"
+				},
+				{
+					"Name": "InstanceTitleableObject"
 				}
 			],
 			"Properties":
@@ -457,14 +482,40 @@
 			"InstanceProperties":
 			[
 				{
-					"Name": "Title",
+					"Name": "HeaderComponents",
 					"DataTypeName": "MultipleInstance",
 					"Value":
 					{
 						"ValidObjects":
 						[
 							{
-								"Name": "LanguageString"
+								"Name": "PageComponent"
+							}
+						]
+					}
+				},
+				{
+					"Name": "ContentComponents",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "PageComponent"
+							}
+						]
+					}
+				},
+				{
+					"Name": "FooterComponents",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "PageComponent"
 							}
 						]
 					}
@@ -478,6 +529,9 @@
 			[
 				{
 					"Name": "PageComponent"
+				},
+				{
+					"Name": "InstanceTitleableObject"
 				}
 			],
 			"Properties":
@@ -498,19 +552,6 @@
 				{
 					"Name": "Level",
 					"DataTypeName": "Number"
-				},
-				{
-					"Name": "Title",
-					"DataTypeName": "MultipleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "LanguageString"
-							}
-						]
-					}
 				}
 			]
 		},
@@ -541,6 +582,19 @@
 				{
 					"Name": "RelativePath",
 					"DataTypeName": "Text"
+				},
+				{
+					"Name": "Styles",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "Style"
+							}
+						]
+					}
 				},
 				{
 					"Name": "Components",
@@ -682,6 +736,69 @@
 		},
 		
 		{
+			"Name": "LanguageString",
+			"Instances":
+			[
+				{
+					"ID": "{963233D5-88F6-41F0-9DE0-63BAB95FA228}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_Style_LoginPage_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Login Page Style"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "Style",
+			"Instances":
+			[
+				{
+					"ID": "{96B81CE8-DEDA-4EFF-BF5F-0F988ABCC3EC}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "StyleName",
+							"Value": "LoginPage" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{963233D5-88F6-41F0-9DE0-63BAB95FA228}"
+								]
+							}
+						},
+						{
+							"Name": "ClassName",
+							"Value": "LoginPage"
+						}
+					]
+				}
+			]
+		},
+		{
 			"Name": "Page",
 			"Instances":
 			[
@@ -699,6 +816,16 @@
 						{
 							"Name": "RelativePath",
 							"Value": "account/login"
+						},
+						{
+							"Name": "Styles",
+							"Value":
+							{
+								"Instances":
+								[
+									"{96B81CE8-DEDA-4EFF-BF5F-0F988ABCC3EC}"
+								]
+							}
 						},
 						{
 							"Name": "Components",
