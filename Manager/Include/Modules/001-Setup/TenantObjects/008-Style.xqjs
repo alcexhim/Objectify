@@ -1,0 +1,68 @@
+{
+	"Objects":
+	[
+		{
+			"Name": "LanguageString",
+			"Instances":
+			[
+				{
+					"ID": "{0278FFAE-499B-460B-B281-5BA8BE7F8BA7}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_Style_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Style"
+						}
+					]
+				}
+			]
+		},
+		{
+			"ID": "A48C843A-B24B-4BC3-BE6F-E2D069229B0A",
+			"Name": "Style",
+			"ParentObjects":
+			[
+				{
+					"Name": "Object"
+				},
+				{
+					"Name": "InstanceTitleableObject"
+				}
+			],
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"Value":
+					{
+						"Instances":
+						[
+							"{0278FFAE-499B-460B-B281-5BA8BE7F8BA7}"
+						]
+					}
+				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "ClassName",
+					"DataTypeName": "Text"
+				}
+			]
+		}
+	]
+}
