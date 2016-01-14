@@ -174,6 +174,30 @@
 					]
 				},
 				{
+					"ID": "{BD3B57A8-E4A2-4A51-9E5D-DA6A5799A792}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_ParagraphPageComponent_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Paragraph Page Component"
+						}
+					]
+				},
+				{
 					"ID": "{481B1D90-4D1C-4F9D-9B0F-F196087B0817}",
 					"IntegrationIDs":
 					[
@@ -441,6 +465,36 @@
 			]
 		},
 		{
+			"ID": "{ADFF93CE-9E85-4168-A7D4-5239B99BE36D}",
+			"Name": "ParagraphPageComponent",
+			"ParentObjects":
+			[
+				{
+					"Name": "PageComponent"
+				}
+			],
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"Value":
+					{
+						"Instances":
+						[
+							"{BD3B57A8-E4A2-4A51-9E5D-DA6A5799A792}"
+						]
+					}
+				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "Text",
+					"DataTypeName": "Text"
+				}
+			]
+		},
+		{
 			"ID": "{798B67FA-D4BE-42B9-B4BD-6F8E02C953C0}",
 			"Name": "ImagePageComponent",
 			"ParentObjects":
@@ -627,12 +681,153 @@
 				}
 			]
 		},
-		
-		
-		
-		
-		
-		
+		{
+			"Name": "StyleRule",
+			"Instances":
+			[
+				{
+					"ID": "{E753D577-90AA-44EE-90A9-99D002B43367}",
+					"PropertyValues":
+					[
+						{
+							"Name": "StyleProperty",
+							"Value":
+							{
+								"Instance": "{1AE4BE55-312D-461C-9A4B-5F3F13CCF7F9}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "center"
+						}
+					]
+				},
+				{
+					"ID": "{372D78D0-ED49-4C16-9841-084AC3224A19}",
+					"PropertyValues":
+					[
+						{
+							"Name": "StyleProperty",
+							"Value":
+							{
+								"Instance": "{F936088C-8D65-4476-BDBC-421EE8BC41A9}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "14pt"
+						}
+					]
+				},
+				{
+					"ID": "{C7C4790B-4D81-4E1E-965F-1DD1A7D788F0}",
+					"PropertyValues":
+					[
+						{
+							"Name": "StyleProperty",
+							"Value":
+							{
+								"Instance": "{354D0A44-6816-4E65-BC84-4910CE0CE6F5}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "16px"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "LanguageString",
+			"Instances":
+			[
+				{
+					"ID": "{B14DB3B7-4F72-4930-AD13-3E3CCD8F0C7F}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_Style_LoginHeaderTextStyle_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Login Header Text Style"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "Style",
+			"Instances":
+			[
+				{
+					"ID": "{EED15C64-0279-4219-A920-E9635AA84468}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{B14DB3B7-4F72-4930-AD13-3E3CCD8F0C7F}"
+								]
+							}
+						},
+						{
+							"Name": "Rules",
+							"Value":
+							{
+								"Instances":
+								[
+									"{E753D577-90AA-44EE-90A9-99D002B43367}",
+									"{372D78D0-ED49-4C16-9841-084AC3224A19}",
+									"{C7C4790B-4D81-4E1E-965F-1DD1A7D788F0}"
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "ParagraphPageComponent",
+			"Instances":
+			[
+				{
+					"ID": "{F0C52DD4-B074-49AE-A96F-5F907359DB6D}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Styles",
+							"Value":
+							{
+								"Instances":
+								[
+									"{EED15C64-0279-4219-A920-E9635AA84468}"
+								]
+							}
+						},
+						{
+							"Name": "Text",
+							"Value": "This is testing text for the Paragraph Page Component"
+						}
+					]
+				}
+			]
+		},
 		{
 			"Name": "ImagePageComponent",
 			"Instances":
@@ -815,6 +1010,7 @@
 								"Instances":
 								[
 									"{A77F672B-7F9C-4F20-B5CE-1990529407F4}",
+									"{F0C52DD4-B074-49AE-A96F-5F907359DB6D}",
 									"{8F9C429D-2FF5-46E1-B906-CD1D3DFF7BDE}"
 								]
 							}

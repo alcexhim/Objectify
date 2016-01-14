@@ -28,6 +28,262 @@
 							"Value": "Style"
 						}
 					]
+				},
+				{
+					"ID": "{7EA271FE-7990-4B9B-8D19-E63235E11816}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_StyleRule_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Style Rule"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "LanguageString",
+			"Instances":
+			[
+				{
+					"ID": "{067887A6-DB03-4235-B20A-FED3275FCA3F}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Style Property"
+						}
+					]
+				},
+				{
+					"ID": "{8F33A8D4-74F8-4A90-AADE-6EDFF1D561DE}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Horizontal Alignment"
+						}
+					]
+				},
+				{
+					"ID": "{8CD4BAF5-C762-42B2-8BCC-CC5BC82F40CD}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Font Size"
+						}
+					]
+				},
+				{
+					"ID": "{847CA108-F881-4FF0-A1AF-F1933BF12E19}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Padding (All)"
+						}
+					]
+				},
+				{
+					"ID": "{4CAEBA49-55A9-4D96-9D53-2B6D5F2D8207}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Style Rule"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "StyleProperty",
+			"ParentObjects":
+			[
+				{
+					"Name": "Object"
+				},
+				{
+					"Name": "InstanceTitleableObject"
+				}
+			],
+			"Properties":
+			[
+				{
+					"Name": "InstanceDisplayTitle",
+					"Value":
+					{
+						"Instances":
+						[
+							"{067887A6-DB03-4235-B20A-FED3275FCA3F}"
+						]
+					}
+				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "CSSPropertyName",
+					"DataTypeName": "Text"
+				}
+			],
+			"Instances":
+			[
+				{
+					"ID": "{1AE4BE55-312D-461C-9A4B-5F3F13CCF7F9}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{8F33A8D4-74F8-4A90-AADE-6EDFF1D561DE}"
+								]
+							}
+						},
+						{
+							"Name": "CSSPropertyName",
+							"Value": "text-align"
+						}
+					]
+				},
+				{
+					"ID": "{F936088C-8D65-4476-BDBC-421EE8BC41A9}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{8CD4BAF5-C762-42B2-8BCC-CC5BC82F40CD}"
+								]
+							}
+						},
+						{
+							"Name": "CSSPropertyName",
+							"Value": "font-size"
+						}
+					]
+				},
+				{
+					"ID": "{354D0A44-6816-4E65-BC84-4910CE0CE6F5}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{847CA108-F881-4FF0-A1AF-F1933BF12E19}"
+								]
+							}
+						},
+						{
+							"Name": "CSSPropertyName",
+							"Value": "padding"
+						}
+					]
+				}
+			]
+		},
+		{
+			"ID": "{C269A1F3-E014-4230-B78D-38EAF6EA8A81}",
+			"Name": "StyleRule",
+			"ParentObjects":
+			[
+				{
+					"Name": "Object"
+				},
+				{
+					"Name": "InstanceTitleableObject"
+				}
+			],
+			"Properties":
+			[
+				{
+					"Name": "InstanceDisplayTitle",
+					"Value":
+					{
+						"Instances":
+						[
+							"{4CAEBA49-55A9-4D96-9D53-2B6D5F2D8207}"
+						]
+					}
+				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "StyleProperty",
+					"DataTypeName": "SingleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "StyleProperty"
+							}
+						]
+					}
+				},
+				{
+					"Name": "Value",
+					"DataTypeName": "Text"
 				}
 			]
 		},
@@ -61,6 +317,19 @@
 				{
 					"Name": "ClassName",
 					"DataTypeName": "Text"
+				},
+				{
+					"Name": "Rules",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "StyleRule"
+							}
+						]
+					}
 				}
 			]
 		}

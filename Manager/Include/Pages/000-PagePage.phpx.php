@@ -17,7 +17,9 @@
 use Phast\WebControls\Panel;
 use Phast\HTMLControls\Header;
 use Phast\HTMLControls\Heading;
-					
+use Phast\HTMLControls\Paragraph;
+use Phast\WebStyleSheetRule;
+							
 	class PagePage extends PhastPage
 	{
 		/**
@@ -31,6 +33,17 @@ use Phast\HTMLControls\Heading;
 			
 			switch ($instComponent->ParentObject->Name)
 			{
+				case "ParagraphPageComponent":
+				{
+					$para = new Paragraph();
+					$propText = $instComponent->GetPropertyValue("Text");
+					if ($propText != null)
+					{
+						$para->Content = $propText;
+					}
+					$ctl = $para;
+					break;
+				}
 				case "HeadingPageComponent":
 				{
 					$hdr = new Heading();
@@ -145,6 +158,24 @@ use Phast\HTMLControls\Heading;
 					foreach ($instStyles as $instStyle)
 					{
 						$ctl->ClassList[] = $instStyle->GetPropertyValue("ClassName");
+						
+						$instRules = $instStyle->GetPropertyValue("Rules");
+						if ($instRules != null)
+						{
+							$instRules = $instRules->GetInstances();
+							foreach ($instRules as $instRule)
+							{
+								$propStyleProperty = $instRule->GetPropertyValue("StyleProperty");
+								if ($propStyleProperty != null)
+								{
+									$propStyleProperty = $propStyleProperty->GetInstance();
+									$cssPropertyName = $propStyleProperty->GetPropertyValue("CSSPropertyName");
+								}
+								
+								$cssPropertyValue = $instRule->GetPropertyValue("Value");
+								$ctl->StyleRules[] = new WebStyleSheetRule($cssPropertyName, $cssPropertyValue);
+							}
+						}
 					}
 				}
 			}
