@@ -6,20 +6,20 @@
 	
 	use Phast\HTMLControl;
 	use Phast\HTMLControls\Image;
+	use Phast\HTMLControls\Heading;
+	use Phast\HTMLControls\Paragraph;
 	
 	use Phast\WebControl;
+	use Phast\WebControls\Panel;
+	
 	use Phast\WebControlAttribute;
+	use Phast\WebStyleSheetRule;
 	
 	use Phast\Parser\PhastPage;
 	
 	use Objectify\Objects\TenantObject;
 	use Objectify\Objects\TenantObjectInstance;
-use Phast\WebControls\Panel;
-use Phast\HTMLControls\Header;
-use Phast\HTMLControls\Heading;
-use Phast\HTMLControls\Paragraph;
-use Phast\WebStyleSheetRule;
-							
+	
 	class PagePage extends PhastPage
 	{
 		/**
@@ -151,6 +151,8 @@ use Phast\WebStyleSheetRule;
 			
 			if ($ctl != null)
 			{
+				$ctl->Attributes[] = new WebControlAttribute("data-instance-id", $instComponent->GetInstanceID());
+				
 				$propStyles = $instComponent->GetPropertyValue("Styles");
 				if ($propStyles != null)
 				{
