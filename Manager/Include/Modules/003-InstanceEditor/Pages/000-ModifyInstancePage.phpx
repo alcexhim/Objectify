@@ -1,0 +1,15 @@
+<Website>
+	<Pages>
+		<Page FileName="instances/modify/$(instanceID)" CodeBehindClassName="Objectify\Manager\Modules\InstanceEditor\Pages\ModifyInstancePage" MasterPageFileName="Default">
+			<Content>
+				<wfx:Section PlaceholderID="Content">
+					<html:Heading Level="1">Edit Instance</html:Heading>
+					<html:Heading Level="2"><html:Literal ID="litInstanceID" /></html:Heading>
+					
+					<wfx:FormView ID="fvInstanceProperties">
+					</wfx:FormView>
+				</wfx:Section>
+			</Content>
+		</Page>
+	</Pages>
+</Website>
