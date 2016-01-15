@@ -616,7 +616,7 @@
 			$instsLanguage = $objLanguage->GetInstances();
 			$instLanguageEnglish = $instsLanguage[0];
 			
-			$objLanguageString = TenantObject::GetByName("LanguageString");
+			$objLanguageString = TenantObject::GetByName("TranslatableTextConstantValue");
 			
 			$instLanguageEnglish_LoginHeaderText = $objLanguageString->CreateInstance(array
 			(
@@ -653,7 +653,7 @@
 			$instSecurityGroup_SystemAdministrator = TenantObjectInstance::GetByGlobalIdentifier("{0E57B7A3-FE6D-4B40-843B-F20580441242}");
 			
 			$objLanguage = TenantObject::GetByName("Language");
-			$objLanguageString = TenantObject::GetByName("LanguageString");
+			$objLanguageString = TenantObject::GetByName("TranslatableTextConstantValue");
 			
 			$instLangs = $objLanguage->GetInstances();
 			$lang = $instLangs[0];

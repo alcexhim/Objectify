@@ -2,7 +2,7 @@
 	"Objects":
 	[
 		{
-			"Name": "LanguageString",
+			"Name": "TranslatableTextConstantValue",
 			"Instances":
 			[
 				{
@@ -56,7 +56,7 @@
 			]
 		},
 		{
-			"Name": "LanguageString",
+			"Name": "TranslatableTextConstantValue",
 			"Instances":
 			[
 				{

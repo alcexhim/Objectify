@@ -81,7 +81,7 @@
 						"ValidObjects":
 						[
 							{
-								"Name": "LanguageString"
+								"Name": "TranslatableTextConstantValue"
 							}
 						]
 					}

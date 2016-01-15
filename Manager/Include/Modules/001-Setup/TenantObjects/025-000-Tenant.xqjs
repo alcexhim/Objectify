@@ -2,7 +2,7 @@
 	"Objects":
 	[
 		{
-			"Name": "LanguageString",
+			"Name": "TranslatableTextConstantValue",
 			"Instances":
 			[
 				{
@@ -138,7 +138,7 @@
 						"ValidObjects":
 						[
 							{
-								"Name": "LanguageString"
+								"Name": "TranslatableTextConstantValue"
 							}
 						]
 					}
@@ -151,7 +151,7 @@
 						"ValidObjects":
 						[
 							{
-								"Name": "LanguageString"
+								"Name": "TranslatableTextConstantValue"
 							}
 						]
 					}

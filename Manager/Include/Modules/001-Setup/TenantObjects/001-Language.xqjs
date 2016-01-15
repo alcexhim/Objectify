@@ -23,7 +23,7 @@
 		},
 		{
 			"ID": "{6D38E757-EC18-43AD-9C35-D15BB446C0E1}",
-			"Name": "LanguageString",
+			"Name": "TranslatableTextConstantValue",
 			"ParentObjects":
 			[
 				{
@@ -43,7 +43,7 @@
 						"ValidObjects":
 						[
 							{
-								"Name": "LanguageString"
+								"Name": "TranslatableTextConstantValue"
 							}
 						]
 					}
@@ -175,7 +175,7 @@
 			]
 		},
 		{
-			"Name": "LanguageString",
+			"Name": "TranslatableTextConstantValue",
 			"InstanceProperties":
 			[
 				{
@@ -218,7 +218,7 @@
 						},
 						{
 							"Name": "Value",
-							"Value": "Language String"
+							"Value": "Translatable Text Constant Value"
 						}
 					]
 				},
@@ -849,7 +849,7 @@
 			]
 		},
 		{
-			"Name": "LanguageString",
+			"Name": "TranslatableTextConstantValue",
 			"Properties":
 			[
 				{
@@ -962,7 +962,7 @@
 						"ValidObjects":
 						[
 							{
-								"Name": "LanguageString"
+								"Name": "TranslatableTextConstantValue"
 							}
 						]
 					}
