@@ -103,6 +103,12 @@
 			return TenantObject::GetByAssoc($values);
 		}
 		
+		/**
+		 * Gets the TenantObject with the specified name.
+		 * @param string $name The name of the TenantObject to search for.
+		 * @param string $tenant The tenant on which to search for the object.
+		 * @return TenantObject The TenantObject with the specified name, or NULL if no TenantObject with the specified name exists.
+		 */
 		public static function GetByName($name, $tenant = null)
 		{
 			$pdo = DataSystem::GetPDO();
@@ -916,6 +922,10 @@
 			return null;
 		}
 		
+		/**
+		 * Gets all instances of the current TenantObject.
+		 * @return TenantObjectInstance[]
+		 */
 		public function GetInstances()
 		{
 			$pdo = DataSystem::GetPDO();
