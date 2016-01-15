@@ -32,6 +32,51 @@
 			]
 		},
 		{
+			"ID": "{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}",
+			"Name": "TranslatableTextConstant",
+			"ParentObjects":
+			[
+				{
+					"Name": "Object"
+				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "Values",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "TranslatableTextConstantValue"
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"Name": "TranslatableTextConstantStringComponent",
+			"InstanceProperties":
+			[
+				{
+					"Name": "Constant",
+					"DataTypeName": "SingleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "TranslatableTextConstant"
+							}
+						]
+					}
+				}
+			]
+		},
+		{
 			"Name": "Object",
 			"Properties":
 			[
