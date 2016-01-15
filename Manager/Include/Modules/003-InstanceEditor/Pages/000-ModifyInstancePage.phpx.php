@@ -19,6 +19,9 @@
 			$inst = TenantObjectInstance::GetByID($iidParts[1]);
 			$litInstanceID->Value = $inst->ToString();
 			
+			$litInstanceObjectID = $e->RenderingPage->GetControlByID("litInstanceObjectID");
+			$litInstanceObjectID->Value = $inst->ParentObject->ToString();
+			
 			$fv = $e->RenderingPage->GetControlByID("fvInstanceProperties");
 			
 			$instanceProperties = $inst->ParentObject->GetInstanceProperties();
@@ -27,10 +30,30 @@
 				$value = $inst->GetPropertyValue($prop);
 				switch ($prop->DataType->Name)
 				{
+					case "SingleInstance":
 					case "MultipleInstance":
 					{
 						$fvi = new FormViewItemInstance("prop" . $prop->ID, "prop" . $prop->ID, $prop->Name, $prop->DefaultValue);
-						$fvi->MultiSelect = true;
+						$fvi->MultiSelect = ($prop->DataType->Name == "MultipleInstance");
+						
+						if ($value == null) continue;
+						
+						if ($prop->DataType->Name == "MultipleInstance")
+						{
+							$insts = $value->GetInstances();
+						}
+						else if ($prop->DataType->Name == "SingleInstance")
+						{
+							$insts = array($value->GetInstance());
+						}
+						
+						if (is_array($insts))
+						{
+							foreach ($insts as $instt)
+							{
+								$fvi->SelectedInstances[] = $instt;
+							}
+						}
 						
 						foreach ($value->ValidObjects as $obj)
 						{
