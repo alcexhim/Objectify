@@ -5,17 +5,19 @@
 	use Phast\CancelEventArgs;
 	
 	use Objectify\Objects\TenantObject;
+	use Objectify\Objects\Objectify;
 	
 	class TestingPage extends PhastPage
 	{
 		public function OnInitializing(CancelEventArgs $e)
 		{
-			$objESS = TenantObject::GetByName("ExecuteServerSideScriptMethodAction");
+			$objESS = TenantObject::GetByName("ServerSideScriptMethod");
 			$instESS = $objESS->GetInstances();
 			
-			$val = $instESS[0]->GetPropertyValue("CodeBlob");
-			
-			eval($val);
+			Objectify::ExecuteMethod("GetCurrentUser", array
+			(
+				"MethodName" => "cast_01102"
+			));
 			
 			die();
 		}

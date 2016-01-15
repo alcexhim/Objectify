@@ -82,7 +82,7 @@
 					[
 						{
 							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_ExecuteServerSideScriptMethodAction_Title" 
+							"Value": "LanguageString_English_ServerSideScriptMethod_Title" 
 						}
 					],
 					"ID": "{8B5CFF09-F929-4BAD-A0EE-BCBBA20807D6}",
@@ -97,7 +97,31 @@
 						},
 						{
 							"Name": "Value",
-							"Value": "ESS - Execute Server-Side Script Method Action"
+							"Value": "SS - Server-Side Script Method"
+						}
+					]
+				},
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_SequenceMethod_Title" 
+						}
+					],
+					"ID": "{C2B3A2FA-25A0-45B4-91F2-22D00C4008AF}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "SM - Sequence Method"
 						}
 					]
 				}
@@ -218,17 +242,8 @@
 			"InstanceProperties":
 			[
 				{
-					"Name": "Actions",
-					"DataTypeName": "MultipleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "MethodAction"
-							}
-						]
-					}
+					"Name": "Name",
+					"DataTypeName": "Text"
 				}
 			]
 		},
@@ -277,16 +292,73 @@
 							"Value": "GCU - Get Currently Logged-In User"
 						}
 					]
+				},
+				{
+					"ID": "{8EBE8D2C-FB89-41A0-9AB6-FBA78323D5B9}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "PMP - Print Method Parameters"
+						}
+					]
+				}
+			]
+		},
+		
+		{
+			"ID": "{8BF91515-89EA-4633-80D3-C096A38E7B89}",
+			"Name": "SequenceMethod",
+			"ParentObjects":
+			[
+				{
+					"Name": "Method"
+				}
+			],
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"Value":
+					{
+						"Instances":
+						[
+							"{C2B3A2FA-25A0-45B4-91F2-22D00C4008AF}"
+						]
+					}
+				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "Actions",
+					"DataTypeName": "MultipleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "MethodAction"
+							}
+						]
+					}
 				}
 			]
 		},
 		{
 			"ID": "{C9A4BF32-9176-4409-A016-9A263C3F2657}",
-			"Name": "ExecuteServerSideScriptMethodAction",
+			"Name": "ServerSideScriptMethod",
 			"ParentObjects":
 			[
 				{
-					"Name": "MethodAction"
+					"Name": "Method"
 				}
 			],
 			"Properties":
@@ -305,29 +377,36 @@
 			"InstanceProperties":
 			[
 				{
-					"Name": "Name",
-					"DataTypeName": "Text"
-				},
-				{
-					"Name": "Title",
-					"DataTypeName": "MultipleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "TranslatableTextConstantValue"
-							}
-						]
-					}
-				},
-				{
 					"Name": "CodeBlob",
 					"DataTypeName": "CodeBlob"
 				}
 			],
 			"Instances":
 			[
+				{
+					"ID": "{7FFB4808-60B3-4442-B343-B6CA2FE3B0DE}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Name",
+							"Value": "TEST_PrintMethodArguments"
+						},
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{8EBE8D2C-FB89-41A0-9AB6-FBA78323D5B9}"
+								]
+							}
+						},
+						{
+							"Name": "CodeBlob",
+							"Value": "print_r($parameters);"
+						}
+					]
+				},
 				{
 					"ID": "{944C1459-1757-4F76-8A8B-F9E617AEC5FB}",
 					"PropertyValues":

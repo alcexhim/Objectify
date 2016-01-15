@@ -15,6 +15,34 @@
 	
 	class Objectify
 	{
+		/**
+		 * Executes the specified XquizIT method.
+		 * @param TenantObjectInstance $method
+		 */
+		public static function ExecuteMethod($method, $parameters = null)
+		{
+			if (is_string($method))
+			{
+				$methodName = $method;
+				
+				$objMethod = TenantObject::GetByName("Method");
+				$instMethod = $objMethod->GetInstance(array
+				(
+					new TenantObjectInstancePropertyValue("Name", $method)
+				));
+				$method = $instMethod;
+			}
+			
+			if ($method == null)
+			{
+				trigger_error("XquizIT: method not found" . (isset($methodName) ? (" " . $methodName) : ""));
+			}
+			
+			if ($parameters == null) $parameters = array();
+			$codeblob = $method->GetPropertyValue("CodeBlob");
+			return eval($codeblob);
+		}
+		
 		public static function SanitizeGlobalIdentifier($id)
 		{
 			if ($id != null)
