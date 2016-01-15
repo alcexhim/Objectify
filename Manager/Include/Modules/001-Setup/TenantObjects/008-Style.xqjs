@@ -160,7 +160,7 @@
 			"Properties":
 			[
 				{
-					"Name": "InstanceDisplayTitle",
+					"Name": "Title",
 					"Value":
 					{
 						"Instances":
@@ -256,7 +256,7 @@
 			"Properties":
 			[
 				{
-					"Name": "InstanceDisplayTitle",
+					"Name": "Title",
 					"Value":
 					{
 						"Instances":
