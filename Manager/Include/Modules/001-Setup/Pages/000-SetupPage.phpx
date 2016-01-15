@@ -18,7 +18,7 @@
 										<wfx:FormViewItemText ID="txtDatabaseServerName" Name="database_ServerName" Title="Server name" Value="$(Configuration:Database.ServerName|localhost)" />
 										<wfx:FormViewItemText ID="txtDatabaseDatabaseName" Name="database_DatabaseName" Title="Database name" Value="$(Configuration:Database.DatabaseName|Objectify)" />
 										<wfx:FormViewItemText ID="txtDatabaseUserName" Name="database_UserName" Title="User name" Value="$(Configuration:Database.UserName|Objectify)" />
-										<wfx:FormViewItemPassword ID="txtDatabasePassword" Name="database_Password" Title="Password" />
+										<wfx:FormViewItemPassword ID="txtDatabasePassword" Name="database_Password" Title="Password" Value="$(Configuration:Database.Password|)" />
 										<wfx:FormViewItemText ID="txtDatabaseTablePrefix" Name="database_TablePrefix" Title="Table prefix" Value="$(Configuration:Database.TablePrefix|ofx_)" />
 									</Items>
 								</wfx:FormView>
