@@ -861,12 +861,15 @@
 				$query .= ")";
 			}
 			
-			$statement = $pdo->prepare($query);
-			
 			$parmz = array
 			(
 				":instance_ObjectID" => $this->ID
 			);
+			
+			// TODO: Figure out why Build_Subclass_Query takes TOO DAMN LONG!!! to execute for some objects
+			$this->Build_Subclass_Query($query, $parmz, $this, "propval_");
+			
+			$statement = $pdo->prepare($query);
 			
 			foreach ($parameters as $parm)
 			{
