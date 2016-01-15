@@ -78,6 +78,8 @@
 			$count = count($this->SelectedInstances);
 			if ($count > 0)
 			{
+				if (!$this->MultiSelect) $count = 1;
+				
 				for ($i = 0; $i < $count; $i++)
 				{
 					$attval .= $this->SelectedInstances[$i]->ID;
