@@ -3,6 +3,7 @@
 	
 	use Phast\WebControls\FormViewItem;
 	use Objectify\Objects\TenantObject;
+	use Objectify\Objects\TenantObjectInstance;
 	
 	class FormViewItemInstance extends FormViewItem
 	{
@@ -25,6 +26,12 @@
 		public $MultiSelect;
 		
 		/**
+		 * The TenantObjectInstances that are selected.
+		 * @var TenantObjectInstance[]
+		 */
+		public $SelectedInstances;
+		
+		/**
 		 * Creates a new Instance FormViewItem with the given parameters.
 		 * @param string $id The control ID for the FormViewItem.
 		 * @param string $name The name of the form field to associate with the FormViewItem.
@@ -34,6 +41,7 @@
 		public function __construct($id = null, $name = null, $title = null, $defaultValue = null)
 		{
 			parent::__construct($id, $name, $title, $defaultValue);
+			$this->SelectedInstances = array();
 		}
 		
 		protected function CreateControlInternal()
@@ -42,6 +50,11 @@
 			$elem->ValidObjectNames = $this->ValidObjectNames;
 			$elem->ValidObjects = $this->ValidObjects;
 			$elem->MultiSelect = $this->MultiSelect;
+			
+			foreach ($this->SelectedInstances as $inst)
+			{
+				$elem->SelectedInstances[] = $inst;
+			}
 			
 			$elem->ID = $this->ID;
 			$elem->Name = $this->Name;
