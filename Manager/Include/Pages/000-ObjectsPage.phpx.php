@@ -28,6 +28,9 @@
 		{
 			$this->CurrentObject = TenantObject::GetByID($e->RenderingPage->GetPathVariableValue("objectID"));
 			
+			$idwObjectTitleHeading = $e->RenderingPage->GetControlByID("idwObjectTitleHeading");
+			$idwObjectTitleHeading->CurrentObject = $this->CurrentObject;
+			
 			$tbsTabs = $e->RenderingPage->GetControlByID("tbsTabs");
 			$tabGeneralInformation = $tbsTabs->GetTabByID("tabGeneralInformation");
 			$fvGeneralInformation = $tabGeneralInformation->GetControlByID("fvGeneralInformation");

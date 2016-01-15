@@ -4,6 +4,7 @@
 			<Content>
 				<wfx:Section PlaceholderID="Content">
 					<h1>Modify Object</h1>
+					<ofx:ObjectDisplayWidget ID="idwObjectTitleHeading" />
 					<wfx:TabContainer ID="tbsTabs" SelectedTabID="tabGeneralInformation">
 						<TabPages>
 							<wfx:TabPage ID="tabGeneralInformation" Title="General information">
