@@ -894,6 +894,22 @@
 			]
 		},
 		{
+			"Name": "ParagraphPageComponent",
+			"Instances":
+			[
+				{
+					"ID": "{DF0FCBC5-E1E5-40AD-B1FF-FD001FB680F6}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Text",
+							"Value": "This is testing text for the Paragraph Page Component"
+						}
+					]	
+				}
+			]
+		},
+		{
 			"Name": "LanguageString",
 			"Instances":
 			[
@@ -970,7 +986,8 @@
 							{
 								"Instances":
 								[
-									"{23164023-03A8-4DB2-9C15-DB8321F3486B}"
+									"{23164023-03A8-4DB2-9C15-DB8321F3486B}",
+									"{DF0FCBC5-E1E5-40AD-B1FF-FD001FB680F6}"
 								]
 							}
 						},
