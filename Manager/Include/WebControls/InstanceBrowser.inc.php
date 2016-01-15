@@ -72,13 +72,18 @@
 			}
 			
 			if ($attval != "") $this->Attributes[] = new WebControlAttribute("data-valid-objects", $attval);
-				
+			
 			// define the selected instances
 			$attval = "";
 			$count = count($this->SelectedInstances);
 			if ($count > 0)
 			{
 				if (!$this->MultiSelect) $count = 1;
+				
+				if ($count == 1)
+				{
+					$this->Text = $this->SelectedInstances[0]->ToString();
+				}
 				
 				for ($i = 0; $i < $count; $i++)
 				{
