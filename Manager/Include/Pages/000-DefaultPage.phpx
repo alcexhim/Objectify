@@ -1,8 +1,5 @@
 <Website>
 	<Pages>
-		<Page FileName="" CodeBehindClassName="Objectify\Tenant\Pages\DefaultPage">
-			<Content>
-			</Content>
-		</Page>
+		<Page FileName="" CodeBehindClassName="Objectify\Tenant\Pages\DefaultPage" />
 	</Pages>
 </Website>

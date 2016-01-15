@@ -194,13 +194,25 @@
 							}
 						]
 					}
+				},
+				{
+					"Name": "DefaultRedirectURL",
+					"DataTypeName": "Text",
+					"DefaultValue": "~/dashboard"
 				}
 			],
 			"Instances":
 			[
 				{
 					"ID": "{F2C9D4A9-9EFB-4263-84DB-66A9DA65AD00}",
-					"Comment": "This is the initial Tenant instance used by the Setup routine"
+					"Comment": "This is the initial Tenant instance used by the Setup routine",
+					"PropertyValues":
+					[
+						{
+							"Name": "DefaultRedirectURL",
+							"Value": "~/dashboard"
+						}
+					]
 				}
 			]
 		}
