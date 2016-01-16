@@ -847,7 +847,6 @@
 			$pdo = DataSystem::GetPDO();
 			$query =	"SELECT " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances.* " .
 						" FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances, " .
-						System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstanceProperties, " .
 						System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstancePropertyValues" .
 						" WHERE " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances.instance_ObjectID = :instance_ObjectID";
 			
