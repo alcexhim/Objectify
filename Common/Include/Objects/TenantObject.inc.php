@@ -1012,6 +1012,10 @@
 		
 		public function ToString()
 		{
+			// return $this->Name;	// this takes 20 spins
+			// without takes 23 spins, a difference of +3
+			// so getting the Title property is slower, but not by much...
+			
 			$propTitle = $this->GetPropertyValue("Title");
 			if ($propTitle != null)
 			{
@@ -1029,6 +1033,8 @@
 						new TenantObjectInstancePropertyValue("Code", "en-US")
 					));
 					
+					// TODO: figure out how not to loop through all the instances
+					// e.g. $inst = $propTitle->GetInstance(array(new TenantObjectInstancePropertyValue("Language", ...)))
 					foreach ($insts as $inst)
 					{
 						$propLang = $inst->GetPropertyValue("Language");
