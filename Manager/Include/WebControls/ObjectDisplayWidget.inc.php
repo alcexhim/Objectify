@@ -50,6 +50,7 @@
 				
 				$adw->ClassTitle = "Object";
 				
+				/*
 				$propTasks = $this->CurrentObject->GetPropertyValue("Tasks");
 				if ($propTasks != null)
 				{
@@ -71,6 +72,7 @@
 						);
 					}
 				}
+				*/
 				
 				$this->Controls[] = $adw;
 			}
