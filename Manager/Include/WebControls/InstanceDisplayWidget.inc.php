@@ -45,6 +45,7 @@
 				$adw->Text = $this->CurrentInstance->ToString();
 				$adw->ClassTitle = $this->CurrentInstance->ParentObject->ToString();
 				
+				/*
 				$propTasks = $this->CurrentInstance->ParentObject->GetPropertyValue("Tasks");
 				if ($propTasks != null)
 				{
@@ -66,6 +67,7 @@
 						);
 					}
 				}
+				*/
 				
 				$this->Controls[] = $adw;
 			}
