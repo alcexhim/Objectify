@@ -32,12 +32,61 @@
 			]
 		},
 		{
+			"Name": "InstancePropertyStringComponent",
+			"Instances":
+			[
+				{
+					"ID": "{76D2CE0D-AA4D-460B-B844-2BD76EF9902B}",
+					"PropertyValues":
+					[
+						{
+							"Name": "PropertyName",
+							"Value": "Values"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "String",
+			"Instances":
+			[
+				{
+					"ID": "{2E113B59-CFF0-4F08-A5B2-1E5061491AC5}",
+					"Comment": "Translatable Text Constant.get Description",
+					"PropertyValues":
+					[
+						{
+							"Name": "Components",
+							"Value":
+							{
+								"Instances":
+								[
+									"{76D2CE0D-AA4D-460B-B844-2BD76EF9902B}"
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+		{
 			"ID": "{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}",
 			"Name": "TranslatableTextConstant",
 			"ParentObjects":
 			[
 				{
 					"Name": "Object"
+				}
+			],
+			"Properties":
+			[
+				{
+					"Name": "InstanceDisplayTitle",
+					"Value":
+					{
+						"Instance": "{2E113B59-CFF0-4F08-A5B2-1E5061491AC5}"
+					}
 				}
 			],
 			"InstanceProperties":
