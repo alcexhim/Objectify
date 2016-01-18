@@ -244,6 +244,30 @@
 			"Instances":
 			[
 				{
+					"ID": "{1245ECDF-883F-4C1A-8A9F-27505A5EA3D6}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_TranslatableTextConstant_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Translatable Text Constant"
+						}
+					]
+				},
+				{
 					"IntegrationIDs":
 					[
 						{
@@ -890,6 +914,22 @@
 							"Value": "Property"
 						}
 					]
+				}
+			]
+		},
+		{
+			"Name": "TranslatableTextConstant",
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"Value":
+					{
+						"Instances":
+						[
+							"{1245ECDF-883F-4C1A-8A9F-27505A5EA3D6}"
+						]
+					}
 				}
 			]
 		},
