@@ -92,6 +92,19 @@
 							}
 						]
 					}
+				},
+				{
+					"Name": "Description",
+					"DataTypeName": "SingleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "TranslatableTextConstant"
+							}
+						]
+					}
 				}
 			]
 		},
