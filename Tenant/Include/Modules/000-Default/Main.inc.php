@@ -14,7 +14,6 @@
 	use Objectify\Pages\LoginPage;
 	
 	use Objectify\Objects\Tenant;
-	use Objectify\Objects\TenantObjectMethodParameterValue;
 	
 	use Objectify\Objects\User;
 	use Objectify\Objects\UserProfileVisibility;
