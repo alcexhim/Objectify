@@ -276,6 +276,9 @@
 			[
 				{
 					"Name": "Object"
+				},
+				{
+					"Name": "InstanceTitleableObject"
 				}
 			],
 			"Properties":
