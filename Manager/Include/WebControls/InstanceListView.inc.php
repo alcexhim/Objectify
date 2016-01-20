@@ -40,7 +40,8 @@
 			
 			$this->Columns = array
 			(
-				new ListViewColumn("lvcID", "ID")
+				new ListViewColumn("lvcID", "ID"),
+				new ListViewColumn("lvcInstance", "Instance")
 			);
 			
 			$props = $this->Object->GetInstanceProperties();
@@ -58,7 +59,12 @@
 			{
 				$lvi = new ListViewItem(array
 				(
-					new ListViewItemColumn("lvcID", $inst->ID)
+					new ListViewItemColumn("lvcID", $inst->ID),
+					new ListViewItemColumn("lvcInstance", function($col)
+					{
+						$idw = new InstanceDisplayWidget($col->ExtraData);
+						$idw->Render();
+					}, $inst->ToString(), $inst)
 				));
 				
 				foreach ($props as $prop)
