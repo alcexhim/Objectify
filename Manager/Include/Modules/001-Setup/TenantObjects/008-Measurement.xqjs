@@ -1,0 +1,980 @@
+{
+	"Objects":
+	[
+		{
+			"Name": "TranslatableTextConstantValue",
+			"Instances":
+			[
+				{
+					"ID": "{A73F4267-FBEC-4C6B-A831-544972FCFA54}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_Measurement_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Measurement"
+						}
+					]
+				},
+				{
+					"ID": "{BEA3084E-7A0B-47C3-89A1-6E287172284A}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_MeasurementUnit_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Measurement Unit"
+						}
+					]
+				},
+				{
+					"ID": "{D3D86C8F-A1B2-4792-94F8-017A5FD22BF4}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_MeasurementUnit_Centimeter_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Centimeter"
+						}
+					]
+				},
+				{
+					"ID": "{CCF074BA-155C-4BCF-A4C5-D06085502A70}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_MeasurementUnit_Em_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Em"
+						}
+					]
+				},
+				{
+					"ID": "{2552F66B-0DBE-41EB-8A80-76DE8575A468}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_MeasurementUnit_Ex_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Ex"
+						}
+					]
+				},
+				{
+					"ID": "{77C7CC0E-18D5-46F1-A848-3BB3A3BAE798}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_MeasurementUnit_Inch_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Inch"
+						}
+					]
+				},
+				{
+					"ID": "{E18E5EF1-7AF4-4FB1-9AED-917C24DF5092}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_MeasurementUnit_Millimeter_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Millimeter"
+						}
+					]
+				},
+				{
+					"ID": "{F3E3CF84-8133-4B54-BE39-9EC2B6888BAE}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_MeasurementUnit_Percentage_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Percentage"
+						}
+					]
+				},
+				{
+					"ID": "{4E658CD0-775B-4A7F-A876-78CBAB0FB445}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_MeasurementUnit_Pica_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Pica"
+						}
+					]
+				},
+				{
+					"ID": "{1BC069A9-C223-477A-AACC-08462AE37090}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_MeasurementUnit_Pixel_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Pixel"
+						}
+					]
+				},
+				{
+					"ID": "{716D4C16-040F-4EBB-A920-DDF88765A017}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_MeasurementUnit_Point_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Point"
+						}
+					]
+				},
+				
+				
+				
+				{
+					"ID": "{0BF7CC86-C0F8-4EC4-98F3-929BE9529BB8}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_MeasurementUnit_Centimeter_Description" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Measurement is in centimeters."
+						}
+					]
+				},
+				{
+					"ID": "{59272367-7213-478B-AFD2-7A694D6B915D}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_MeasurementUnit_Em_Description" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Measurement is relative to the height of the parent element's font."
+						}
+					]
+				},
+				{
+					"ID": "{956831DF-1801-42B6-AAE3-CD3DC376EA43}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_MeasurementUnit_Ex_Description" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Measurement is relative to the height of the lowercase letter x of the parent element's font."
+						}
+					]
+				},
+				{
+					"ID": "{136766CD-5B0E-4100-A830-B419582774CE}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_MeasurementUnit_Inch_Description" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Measurement is in inches."
+						}
+					]
+				},
+				{
+					"ID": "{39B0D963-4BE0-49C8-BFA2-607051CB0101}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_MeasurementUnit_Millimeter_Description" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Measurement is in millimeters."
+						}
+					]
+				},
+				{
+					"ID": "{39A0D313-A6DA-40BD-A7EC-B0EECD03B191}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_MeasurementUnit_Percentage_Description" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Measurement is a percentage relative to the parent element."
+						}
+					]
+				},
+				{
+					"ID": "{E6EC799B-5F02-4681-B0A0-4863313B2EED}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_MeasurementUnit_Pica_Description" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Measurement is in picas. A pica represents 12 points."
+						}
+					]
+				},
+				{
+					"ID": "{F67A7438-9D65-4C91-BED7-A2458979FB56}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_MeasurementUnit_Pixel_Description" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Measurement is in pixels."
+						}
+					]
+				},
+				{
+					"ID": "{DEC15A1B-A8C7-4842-91AF-0862ED9613B8}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_MeasurementUnit_Point_Description" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Measurement is in points. A point represents 1/72 of an inch."
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "TranslatableTextConstant",
+			"Instances":
+			[
+				{
+					"ID": "{E8607E63-E16B-4864-9F65-2607447FBF58}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Values",
+							"Value":
+							{
+								"Instances":
+								[
+									"{0BF7CC86-C0F8-4EC4-98F3-929BE9529BB8}"
+								]
+							}
+						}
+					]
+				},
+				{
+					"ID": "{8D8F415F-E095-4DEF-B52C-9FA370BCE7D1}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Values",
+							"Value":
+							{
+								"Instances":
+								[
+									"{59272367-7213-478B-AFD2-7A694D6B915D}"
+								]
+							}
+						}
+					]
+				},
+				{
+					"ID": "{B5725DB6-A805-4BAF-B512-90A40F97B19A}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Values",
+							"Value":
+							{
+								"Instances":
+								[
+									"{956831DF-1801-42B6-AAE3-CD3DC376EA43}"
+								]
+							}
+						}
+					]
+				},
+				{
+					"ID": "{CFF6C955-4832-4298-92E7-9467FEC61B91}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Values",
+							"Value":
+							{
+								"Instances":
+								[
+									"{136766CD-5B0E-4100-A830-B419582774CE}"
+								]
+							}
+						}
+					]
+				},
+				{
+					"ID": "{3293C7EC-7900-4953-8031-24464F7DC0B3}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Values",
+							"Value":
+							{
+								"Instances":
+								[
+									"{39B0D963-4BE0-49C8-BFA2-607051CB0101}"
+								]
+							}
+						}
+					]
+				},
+				{
+					"ID": "{94D32217-87E4-478D-AAC6-C3451C977F4A}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Values",
+							"Value":
+							{
+								"Instances":
+								[
+									"{39A0D313-A6DA-40BD-A7EC-B0EECD03B191}"
+								]
+							}
+						}
+					]
+				},
+				{
+					"ID": "{23C39C3A-A8E7-4836-9C3E-CA5EAE118855}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Values",
+							"Value":
+							{
+								"Instances":
+								[
+									"{E6EC799B-5F02-4681-B0A0-4863313B2EED}"
+								]
+							}
+						}
+					]
+				},
+				{
+					"ID": "{05A39315-0AA9-4198-8283-0CCC1E2C28AE}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Values",
+							"Value":
+							{
+								"Instances":
+								[
+									"{F67A7438-9D65-4C91-BED7-A2458979FB56}"
+								]
+							}
+						}
+					]
+				},
+				{
+					"ID": "{6B0AA372-0CC1-49C0-A038-F22DEBB12E60}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Values",
+							"Value":
+							{
+								"Instances":
+								[
+									"{DEC15A1B-A8C7-4842-91AF-0862ED9613B8}"
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "MeasurementUnit",
+			"ParentObjects":
+			[
+				{
+					"Name": "Object"
+				},
+				{
+					"Name": "InstanceTitleableObject"
+				}
+			],
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"Value":
+					{
+						"Instances":
+						[
+							"{BEA3084E-7A0B-47C3-89A1-6E287172284A}"
+						]
+					}
+				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "Description",
+					"DataTypeName": "SingleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "TranslatableTextConstant"
+							}
+						]
+					}
+				},
+				{
+					"Name": "CSSValue",
+					"DataTypeName": "Text"
+				}
+			],
+			"Instances":
+			[
+				{
+					"ID": "{BBBB1E24-8C0F-48B5-8529-7BB522415D35}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{D3D86C8F-A1B2-4792-94F8-017A5FD22BF4}"
+								]
+							}
+						},
+						{
+							"Name": "Description",
+							"Value":
+							{
+								"Instance": "{E8607E63-E16B-4864-9F65-2607447FBF58}"
+							}
+						},
+						{
+							"Name": "CSSValue",
+							"Value": "cm"
+						}
+					]
+				},
+				{
+					"ID": "{D55BF6E0-D6DB-43CA-909E-C66E25328F4E}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{CCF074BA-155C-4BCF-A4C5-D06085502A70}"
+								]
+							}
+						},
+						{
+							"Name": "Description",
+							"Value":
+							{
+								"Instance": "{8D8F415F-E095-4DEF-B52C-9FA370BCE7D1}"
+							}
+						},
+						{
+							"Name": "CSSValue",
+							"Value": "em"
+						}
+					]
+				},
+				{
+					"ID": "{912A40FE-778C-4004-9685-1F2BF8618026}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{2552F66B-0DBE-41EB-8A80-76DE8575A468}"
+								]
+							}
+						},
+						{
+							"Name": "Description",
+							"Value":
+							{
+								"Instance": "{B5725DB6-A805-4BAF-B512-90A40F97B19A}"
+							}
+						},
+						{
+							"Name": "CSSValue",
+							"Value": "ex"
+						}
+					]
+				},
+				{
+					"ID": "{6D670E0D-536C-46DF-801A-2DFFA086350F}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{77C7CC0E-18D5-46F1-A848-3BB3A3BAE798}"
+								]
+							}
+						},
+						{
+							"Name": "Description",
+							"Value":
+							{
+								"Instance": "{CFF6C955-4832-4298-92E7-9467FEC61B91}"
+							}
+						},
+						{
+							"Name": "CSSValue",
+							"Value": "in"
+						}
+					]
+				},
+				{
+					"ID": "{180B1276-BD0D-43A6-BD3D-8A0D4043FFCE}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{E18E5EF1-7AF4-4FB1-9AED-917C24DF5092}"
+								]
+							}
+						},
+						{
+							"Name": "Description",
+							"Value":
+							{
+								"Instance": "{3293C7EC-7900-4953-8031-24464F7DC0B3}"
+							}
+						},
+						{
+							"Name": "CSSValue",
+							"Value": "mm"
+						}
+					]
+				},
+				{
+					"ID": "{5DF5DE6A-819F-4880-9F48-098CB7F67FA2}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{F3E3CF84-8133-4B54-BE39-9EC2B6888BAE}"
+								]
+							}
+						},
+						{
+							"Name": "Description",
+							"Value":
+							{
+								"Instance": "{94D32217-87E4-478D-AAC6-C3451C977F4A}"
+							}
+						},
+						{
+							"Name": "CSSValue",
+							"Value": "%"
+						}
+					]
+				},
+				{
+					"ID": "{D0A462FC-683C-4C14-945F-F8F0B02C472F}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{4E658CD0-775B-4A7F-A876-78CBAB0FB445}"
+								]
+							}
+						},
+						{
+							"Name": "Description",
+							"Value":
+							{
+								"Instance": "{23C39C3A-A8E7-4836-9C3E-CA5EAE118855}"
+							}
+						},
+						{
+							"Name": "CSSValue",
+							"Value": "pc"
+						}
+					]
+				},
+				{
+					"ID": "{A945C259-06AC-428C-BE8B-7B54B1911A2A}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{1BC069A9-C223-477A-AACC-08462AE37090}"
+								]
+							}
+						},
+						{
+							"Name": "Description",
+							"Value":
+							{
+								"Instance": "{05A39315-0AA9-4198-8283-0CCC1E2C28AE}"
+							}
+						},
+						{
+							"Name": "CSSValue",
+							"Value": "px"
+						}
+					]
+				},
+				{
+					"ID": "{33027987-0466-439A-B53B-1950FD65EA03}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{716D4C16-040F-4EBB-A920-DDF88765A017}"
+								]
+							}
+						},
+						{
+							"Name": "Description",
+							"Value":
+							{
+								"Instance": "{6B0AA372-0CC1-49C0-A038-F22DEBB12E60}"
+							}
+						},
+						{
+							"Name": "CSSValue",
+							"Value": "pt"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "Measurement",
+			"ParentObjects":
+			[
+				{
+					"Name": "Object"
+				},
+				{
+					"Name": "InstanceTitleableObject"
+				}
+			],
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"Value":
+					{
+						"Instances":
+						[
+							"{A73F4267-FBEC-4C6B-A831-544972FCFA54}"
+						]
+					}
+				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "Unit",
+					"DataTypeName": "SingleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "MeasurementUnit"
+							}
+						]
+					}
+				},
+				{
+					"Name": "Value",
+					"DataTypeName": "Number"
+				}
+			]
+		}
+	]
+}
