@@ -38,6 +38,12 @@
 	
 	use Exception;
 	
+	/**
+	 * Determines if this application has been configured yet.
+	 * 
+	 * This method MUST NOT be Objectified.
+	 * @return boolean True if this application has been configured; false otherwise.
+	 */
 	function IsConfigured()
 	{
 		if (!(System::HasConfigurationValue("Database.ServerName") &&
@@ -71,6 +77,13 @@
 		return true;
 	}
 	
+	/**
+	 * Determines whether the current user is an administrator. (DEPRECATED)
+	 * 
+	 * Please Objectify this as soon as possible and use Objectified classes for security permissions and roles.
+	 * @return boolean
+	 * @deprecated Please use Objectified classes for User, Security Role (Group), and Security Privilege.
+	 */
 	function IsAdministrator()
 	{
 		if (!isset($_SESSION["Authentication.LoginToken"])) return false;
@@ -114,6 +127,10 @@
 			return true;
 		}
 		*/
+		
+		// TODO: Should there be a Method (Objectified) to call when the application launches? What should we call it?
+		// a sequence method essentially calls other methods, so this would be good here
+		// $objSequenceMethod = TenantObject::GetByName("SequenceMethod");
 		return true;
 	};
 	
