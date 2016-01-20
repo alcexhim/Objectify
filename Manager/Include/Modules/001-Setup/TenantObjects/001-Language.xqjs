@@ -1158,8 +1158,68 @@
 			]
 		},
 		{
+			"ID": "{8EE7024D-ED87-4D99-BF21-10E09AF5566D}",
 			"Name": "ObjectSource",
-			"ParentObject":
+			"ParentObjects":
+			[
+				{
+					"Name": "Enumeration"
+				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "Name",
+					"DataTypeName": "Text"
+				}
+			],
+			"Instances":
+			[
+				{
+					"ID": "{9547EB35-07FB-4B64-B82C-6DA1989B9165}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Name",
+							"Value": "System"
+						}
+					]
+				},
+				{
+					"ID": "{63D91CCD-D196-4C3A-8609-6DF371E2406F}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Name",
+							"Value": "Custom"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "Object",
+			"Properties":
+			[
+				{
+					"Name": "Source",
+					"DataTypeName": "SingleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "ObjectSource"
+							}
+						],
+						"Instance": "{9547EB35-07FB-4B64-B82C-6DA1989B9165}"
+					}
+				}
+			]
+		},
+		{
+			"Name": "ObjectSource",
+			"ParentObjects":
 			[
 				{
 					"Name": "InstanceTitleableObject"
@@ -1169,7 +1229,6 @@
 			[
 				{
 					"Name": "Title",
-					"DataTypeName": "MultipleInstance",
 					"Value":
 					{
 						"Instances":
