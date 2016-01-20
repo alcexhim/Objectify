@@ -313,6 +313,31 @@
 			return $inst;
 		}
 		
+		public function GetNextInstanceID()
+		{
+			$pdo = DataSystem::GetPDO();
+			$query = "SELECT COUNT(instance_ID) FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances WHERE instance_ObjectID = :instance_ObjectID AND instance_TenantID = :instance_TenantID";
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				":instance_ObjectID" => $this->ID,
+				":instance_TenantID" => $this->Tenant->ID
+			));
+			
+			$count = $statement->rowCount();
+			if ($count == 0)
+			{
+				return 1;
+			}
+			else
+			{
+				$values = $statement->fetch(PDO::FETCH_NUM);
+				$instanceID = $values[0];
+				
+				return $instanceID + 1;
+			}
+		}
+		
 		/**
 		 * Gets the value of the specified static property on this TenantObject.
 		 * @param TenantObjectProperty $property
@@ -698,7 +723,8 @@
 			$query =	"SELECT " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances.* " .
 						" FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances, " .
 						System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstancePropertyValues" .
-						" WHERE " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances.instance_ObjectID = :instance_ObjectID";
+						" WHERE (" . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances.instance_ObjectID = :instance_ObjectID" .
+						" AND " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances.instance_TenantID = :instance_TenantID)";
 			
 			foreach ($parameters as $parm)
 			{
@@ -712,7 +738,8 @@
 			
 			$parmz = array
 			(
-				":instance_ObjectID" => $this->ID
+				":instance_ObjectID" => $this->ID,
+				":instance_TenantID" => $this->Tenant->ID
 			);
 			
 			// TODO: Figure out why Build_Subclass_Query takes TOO DAMN LONG!!! to execute for some objects
@@ -781,10 +808,11 @@
 		public function GetInstances()
 		{
 			$pdo = DataSystem::GetPDO();
-			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances WHERE instance_ObjectID = :instance_ObjectID";
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances WHERE instance_ObjectID = :instance_ObjectID AND instance_TenantID = :instance_TenantID";
 			$paramz = array
 			(
-				":instance_ObjectID" => $this->ID
+				":instance_ObjectID" => $this->ID,
+				":instance_TenantID" => $this->Tenant->ID
 			);
 			
 			TenantObject::Build_Subclass_Query($query, $paramz, $this, "instance_");
