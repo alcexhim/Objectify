@@ -438,7 +438,7 @@
 			[
 				{
 					"Name": "CodeBlob",
-					"DataTypeName": "CodeBlob"
+					"DataTypeName": "Text"
 				}
 			],
 			"Instances":

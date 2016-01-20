@@ -43,36 +43,6 @@
 		)),
 		new Record(array
 		(
-			new RecordColumn("Name", "Memo"),
-			new RecordColumn("Description", "Allows you to enter large amounts of text."),
-			new RecordColumn("EncoderCodeBlob", ColumnValue::Undefined),
-			new RecordColumn("DecoderCodeBlob", ColumnValue::Undefined),
-			new RecordColumn("ColumnRendererCodeBlob", <<<'EOD'
-			echo("<div style=\"width: 100%; overflow: scroll; overflow-x: hidden;\">" . $input . "</div>");
-EOD
-),
-			new RecordColumn("EditorRendererCodeBlob",  <<<'EOD'
-			echo("<textarea id=\"" . $name . "\" name=\"" . $name . "\">" . $input . "</textarea>");
-EOD
-)
-		)),
-		new Record(array
-		(
-			new RecordColumn("Name", "CodeBlob"),
-			new RecordColumn("Description", "Allows you to enter script code with a special text editor."),
-			new RecordColumn("EncoderCodeBlob", null),
-			new RecordColumn("DecoderCodeBlob", null),
-			new RecordColumn("ColumnRendererCodeBlob", <<<'EOD'
-			echo("<div style=\"width: 100%; overflow: scroll; overflow-x: hidden;\">" . $input . "</div>");
-EOD
-),
-			new RecordColumn("EditorRendererCodeBlob",  <<<'EOD'
-			echo("<textarea id=\"" . $name . "\" name=\"" . $name . "\">" . $input . "</textarea>");
-EOD
-)
-		)),
-		new Record(array
-		(
 			new RecordColumn("Name", "Number"),
 			new RecordColumn("Description", "Stores numeric data."),
 			new RecordColumn("EncoderCodeBlob", null),
@@ -92,23 +62,6 @@ EOD
 ),
 			new RecordColumn("EditorRendererCodeBlob", <<<'EOD'
 echo("<input type=\"checkbox\" id=\"" . $name . "\" name=\"" . $name . "\" />");
-EOD
-)
-		)),
-		new Record(array
-		(
-			new RecordColumn("Name", "Measurement"),
-			new RecordColumn("Description", "Stores measurement data, which is a double-precision floating-point number followed by a unit of measurement."),
-			new RecordColumn("EncoderCodeBlob", null),
-			new RecordColumn("DecoderCodeBlob", null),
-			new RecordColumn("ColumnRendererCodeBlob", null),
-			new RecordColumn("EditorRendererCodeBlob", <<<'EOD'
-echo("<input type=\"text\" id=\"Measurement_" . $name . "_Value\" /> <select id=\"Measurement_" . $name . "_Unit\">");
-echo("<option value=\"px\" selected=\"selected\">px</option>");
-echo("<option value=\"pt\" selected=\"selected\">pt</option>");
-echo("<option value=\"em\" selected=\"selected\">em</option>");
-echo("<option value=\"%\" selected=\"selected\">%</option>");
-echo("</select>");
 EOD
 )
 		)),
