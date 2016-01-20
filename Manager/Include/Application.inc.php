@@ -21,19 +21,15 @@
 	
 	use Objectify\Tenant\Pages\TenantObjectInstanceBrowsePage;
 	
-	use Objectify\Tenant\Pages\TenantObjectMethodManagementPage;
-	
 	use Objectify\Tenant\Pages\ConfirmOperationPage;
 	
 	use Objectify\Objects\DataType;
 	use Objectify\Objects\Tenant;
 	use Objectify\Objects\TenantObject;
-	use Objectify\Objects\TenantObjectMethod;
 	use Objectify\Objects\TenantObjectInstanceMethod;
 	use Objectify\Objects\TenantObjectInstanceProperty;
 	use Objectify\Objects\TenantStatus;
 	use Objectify\Objects\TenantType;
-	use Objectify\Objects\TenantObjectMethodParameterValue;
 	use Objectify\Objects\User;
 	
 	use Exception;
@@ -326,44 +322,6 @@
 												break;
 											}
 										}
-									}
-									case "methods":
-									{
-										switch ($path[4])
-										{
-											case "static":
-											{
-												$tenant = Tenant::GetByURL($path[0]);
-												$object = TenantObject::GetByID($path[2]);
-												$method = TenantObjectMethod::GetByID($path[5]);
-												
-												if ($_SERVER["REQUEST_METHOD"] == "POST")
-												{
-													$method->CodeBlob = $_POST["method_CodeBlob"];
-													$method->Update();
-													
-													System::Redirect("~/tenant/manage/" . $tenant->URL . "/objects/" . $object->ID);
-													return true;
-												}
-												
-												$page = new TenantObjectMethodManagementPage();
-												$page->CurrentTenant = $tenant;
-												$page->CurrentObject = $object;
-												$page->CurrentMethod = $method;
-												$page->Render();
-												break;
-											}
-											case "instance":
-											{
-												$page = new TenantObjectMethodManagementPage();
-												$page->CurrentTenant = Tenant::GetByURL($path[0]);
-												$page->CurrentObject = TenantObject::GetByID($path[2]);
-												$page->CurrentMethod = TenantObjectInstanceMethod::GetByID($path[5]);
-												$page->Render();
-												break;
-											}
-										}
-										break;
 									}
 									case "":
 									{

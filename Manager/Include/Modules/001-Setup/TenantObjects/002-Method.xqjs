@@ -6,6 +6,30 @@
 			"Instances":
 			[
 				{
+					"ID": "{91E97088-3946-4354-A5D5-84CF3E66D91A}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_ServerSideScriptMethod_Description" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Defines a server-side code block written in PHP that is executed when this Method is called."
+						}
+					]
+				},
+				{
 					"IntegrationIDs":
 					[
 						{
@@ -124,6 +148,35 @@
 							"Value": "SM - Sequence Method"
 						}
 					]
+				}
+			]
+		},
+		
+		{
+			"Name": "TranslatableTextConstant",
+			"Instances":
+			[
+				{
+					"ID": "{8E4924CC-F09D-488A-80A6-7000B21510C0}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Values",
+							"Value":
+							{
+								"Instances":
+								[
+									"{91E97088-3946-4354-A5D5-84CF3E66D91A}"
+								]
+							}
+						}
+					]
+				},
+				{
+					"ID": "{CC4E65BD-7AAA-40DA-AECA-C607D7042CE3}"
+				},
+				{
+					"ID": "{3B88A43F-2F9E-47A4-AD04-B096E2E5A735}"
 				}
 			]
 		},
@@ -371,6 +424,13 @@
 						[
 							"{8B5CFF09-F929-4BAD-A0EE-BCBBA20807D6}"
 						]
+					}
+				},
+				{
+					"Name": "Description",
+					"Value":
+					{
+						"Instance": "{8E4924CC-F09D-488A-80A6-7000B21510C0}"
 					}
 				}
 			],
