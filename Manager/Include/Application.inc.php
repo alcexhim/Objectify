@@ -1,4 +1,6 @@
 <?php
+	namespace Objectify\Manager;
+	
 	use Phast\System;
 
 	use Phast\Data\DataSystem;
