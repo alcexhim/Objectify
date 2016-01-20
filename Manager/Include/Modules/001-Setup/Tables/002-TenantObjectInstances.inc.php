@@ -10,43 +10,32 @@
 	use Phast\Data\TableForeignKeyColumn;
 	use Phast\Data\TableForeignKeyReferenceOption;
 	
-	$tblTenantObjects = new Table("TenantObjects", "object_", array
+	// Instances of the objects.
+	$tblTenantObjectInstances = new Table("TenantObjectInstances", "instance_", array
 	(
 		// 			$name, $dataType, $size, $value, $allowNull, $primaryKey, $autoIncrement
 		new Column("ID", "INT", null, null, false, true, true),
 		new Column("TenantID", "INT", null, null, false),
-		new Column("Name", "VARCHAR", 256, null, false),
+		new Column("ObjectID", "INT", null, null, false),
 		new Column("GlobalIdentifier", "CHAR", 32, null, true)
 	));
-	$tblTenantObjects->ForeignKeys = array
-	(
-		new TableForeignKey("TenantID", new TableForeignKeyColumn($tblTenants, "ID"))
-	);
-	$tables[] = $tblTenantObjects;
-	
-	$tblTenantObjectParentObjects = new Table("TenantObjectParentObjects", "parentobject_", array
-	(
-		// 			$name, $dataType, $size, $value, $allowNull, $primaryKey, $autoIncrement
-		new Column("TenantID", "INT", null, null, false),
-		new Column("ObjectID", "INT", null, null, false),
-		new Column("ParentObjectID", "INT", null, null, false)
-	));
-	$tblTenantObjectParentObjects->PrimaryKey = new TableKey(array
-	(
-		new TableKeyColumn("TenantID"),
-		new TableKeyColumn("ObjectID"),
-		new TableKeyColumn("ParentObjectID")
-	));
-	$tblTenantObjectParentObjects->ForeignKeys = array
+	/*
+	 $tblTenantObjectInstances->PrimaryKey = new TableKey(array
+	 (
+	 new TableKeyColumn("ID"),
+	 new TableKeyColumn("TenantID"),
+	 new TableKeyColumn("ObjectID")
+	 ));
+	 */
+	$tblTenantObjectInstances->ForeignKeys = array
 	(
 		new TableForeignKey("TenantID", new TableForeignKeyColumn($tblTenants, "ID")),
-		new TableForeignKey("ObjectID", new TableForeignKeyColumn($tblTenantObjects, "ID")),
-		new TableForeignKey("ParentObjectID", new TableForeignKeyColumn($tblTenantObjects, "ID"))
+		new TableForeignKey("ObjectID", new TableForeignKeyColumn($tblTenantObjects, "ID"))
 	);
-	$tables[] = $tblTenantObjectParentObjects;
+	$tables[] = $tblTenantObjectInstances;
 	
-	// Available static properties for the objects.
-	$tblTenantObjectProperties = new Table("TenantObjectProperties", "property_", array
+	// Properties of the object instances.
+	$tblTenantObjectInstanceProperties = new Table("TenantObjectInstanceProperties", "property_", array
 	(
 		// 			$name, $dataType, $size, $value, $allowNull, $primaryKey, $autoIncrement
 		new Column("ID", "INT", null, null, false, true, true),
@@ -58,34 +47,37 @@
 		new Column("IsRequired", "INT", null, 0, false),
 		new Column("ColumnVisible", "INT", null, 0, false)
 	));
-	$tblTenantObjectProperties->ForeignKeys = array
+	$tblTenantObjectInstanceProperties->ForeignKeys = array
 	(
 		new TableForeignKey("TenantID", new TableForeignKeyColumn($tblTenants, "ID")),
 		new TableForeignKey("ObjectID", new TableForeignKeyColumn($tblTenantObjects, "ID")),
 		new TableForeignKey("DataTypeID", new TableForeignKeyColumn($tblDataTypes, "ID"))
 	);
-	$tables[] = $tblTenantObjectProperties;
+	$tables[] = $tblTenantObjectInstanceProperties;
 	
-	// Values for static properties of objects.
-	$tblTenantObjectPropertyValues = new Table("TenantObjectPropertyValues", "propval_", array
+	// Values of the object instance properties.
+	$tblTenantObjectInstancePropertyValues = new Table("TenantObjectInstancePropertyValues", "propval_", array
 	(
 		// 			$name, $dataType, $size, $value, $allowNull, $primaryKey, $autoIncrement
 		new Column("TenantID", "INT", null, null, false),
 		new Column("ObjectID", "INT", null, null, false),
+		new Column("InstanceID", "INT", null, null, false),
 		new Column("PropertyID", "INT", null, null, false),
-		new Column("Value", "LONGTEXT", null, null, true)
+		new Column("Value", "LONGTEXT", null, null, false)
 	));
-	$tblTenantObjectPropertyValues->PrimaryKey = new TableKey(array
+	$tblTenantObjectInstancePropertyValues->PrimaryKey = new TableKey(array
 	(
 		new TableKeyColumn("TenantID"),
 		new TableKeyColumn("ObjectID"),
+		new TableKeyColumn("InstanceID"),
 		new TableKeyColumn("PropertyID")
 	));
-	$tblTenantObjectPropertyValues->ForeignKeys = array
+	$tblTenantObjectInstancePropertyValues->ForeignKeys = array
 	(
 		new TableForeignKey("TenantID", new TableForeignKeyColumn($tblTenants, "ID")),
-		new TableForeignKey("PropertyID", new TableForeignKeyColumn($tblTenantObjectProperties, "ID")),
-		new TableForeignKey("ObjectID", new TableForeignKeyColumn($tblTenantObjects, "ID"))
+		new TableForeignKey("ObjectID", new TableForeignKeyColumn($tblTenantObjects, "ID")),
+		new TableForeignKey("InstanceID", new TableForeignKeyColumn($tblTenantObjectInstances, "ID")),
+		new TableForeignKey("PropertyID", new TableForeignKeyColumn($tblTenantObjectInstanceProperties, "ID"))
 	);
-	$tables[] = $tblTenantObjectPropertyValues;
+	$tables[] = $tblTenantObjectInstancePropertyValues;
 ?>
