@@ -41,6 +41,10 @@
 		 */
 		public $ParentTenant;
 		
+		/**
+		 * Gets the Instance of the User currently logged in, or NULL if no user is currently logged in.
+		 * @return TenantObjectInstance|null
+		 */
 		public static function GetCurrent()
 		{
 			if (!isset($_SESSION["Authentication.LoginToken"])) return null;
@@ -88,6 +92,12 @@
 			$values = $statement->fetch(PDO::FETCH_ASSOC);
 			return self::GetByAssoc($values);
 		}
+		
+		/**
+		 * Gets the Instance of the User associated with the given Login Token.
+		 * @param string $token The Login Token to search for.
+		 * @return TenantObjectInstance The Instance of the User object associated with the specified Login Token.
+		 */
 		public static function GetByLoginToken($token)
 		{
 			$objUserLogin = TenantObject::GetByName("UserLogin");
