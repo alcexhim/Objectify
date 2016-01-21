@@ -14,7 +14,7 @@
 			$objESS = TenantObject::GetByName("ServerSideScriptMethod");
 			$instESS = $objESS->GetInstances();
 			
-			Objectify::ExecuteMethod("GetCurrentUser", array
+			Objectify::ExecuteMethod("GetLoginTokenForCurrentUser", array
 			(
 				"MethodName" => "cast_01102"
 			));

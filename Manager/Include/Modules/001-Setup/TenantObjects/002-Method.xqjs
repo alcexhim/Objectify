@@ -345,7 +345,7 @@
 						},
 						{
 							"Name": "Value",
-							"Value": "GCU - Get Currently Logged-In User"
+							"Value": "get Login Token for currently logged-in User"
 						}
 					]
 				},
@@ -517,7 +517,7 @@
 					[
 						{
 							"Name": "Name",
-							"Value": "GetCurrentUser"
+							"Value": "GetLoginTokenForCurrentUser"
 						},
 						{
 							"Name": "Title",
