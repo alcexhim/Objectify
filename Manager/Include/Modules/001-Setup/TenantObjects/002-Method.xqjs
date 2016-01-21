@@ -531,7 +531,7 @@
 						},
 						{
 							"Name": "CodeBlob",
-							"Value": "echo($_SESSION['Authentication.LoginToken']);"
+							"Value": "return $_SESSION['Authentication.LoginToken'];"
 						}
 					]
 				}
