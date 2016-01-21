@@ -475,6 +475,11 @@
 					$value = new MultipleInstanceProperty($instances, $validObjects);
 					break;
 				}
+				case "ObjectReference":
+				{
+					$value = TenantObject::GetByName($propDef->Value->Name);
+					break;
+				}
 				default:
 				{
 					$value = $propDef->Value;
