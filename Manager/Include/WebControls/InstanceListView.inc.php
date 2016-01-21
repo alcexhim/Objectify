@@ -90,6 +90,11 @@
 									echo("<br />");
 								}
 							}
+							else if (get_class($propval) == "Objectify\\Objects\\TenantObject")
+							{
+								$odw = new ObjectDisplayWidget($propval);
+								$odw->Render();
+							}
 						}
 						else
 						{
