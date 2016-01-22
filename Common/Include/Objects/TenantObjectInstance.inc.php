@@ -117,16 +117,19 @@
 				$property = $this->ParentObject->GetInstanceProperty($property);
 			}
 			if ($property == null) return false;
-			
-			if (
-					get_class($value) == "Objectify\\Objects\\MultipleInstanceProperty"
-				|| get_class($value) == "Objectify\\Objects\\SingleInstanceProperty"
-				)
+
+			if (is_object($parentObjects))
 			{
-				if ($value->ValidObjects == null)
+				if (
+						get_class($value) == "Objectify\\Objects\\MultipleInstanceProperty"
+					|| get_class($value) == "Objectify\\Objects\\SingleInstanceProperty"
+					)
 				{
-					$oldvalue = $this->GetPropertyValue($property);
-					$value->ValidObjects = $oldvalue->ValidObjects;
+					if ($value->ValidObjects == null)
+					{
+						$oldvalue = $this->GetPropertyValue($property);
+						$value->ValidObjects = $oldvalue->ValidObjects;
+					}
 				}
 			}
 			
