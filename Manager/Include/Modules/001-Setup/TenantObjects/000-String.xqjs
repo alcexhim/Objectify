@@ -158,6 +158,16 @@
 							"Value": "DestinationObject"
 						}
 					]
+				},
+				{
+					"ID": "{B324D93A-738C-48BF-854F-A1C038BE5BA5}",
+					"PropertyValues":
+					[
+						{
+							"Name": "PropertyName",
+							"Value": "Name"
+						}
+					]
 				}
 			]
 		},
@@ -200,6 +210,22 @@
 							}
 						}
 					]
+				},
+				{
+					"ID": "{2DA28271-5E46-4472-A6F5-910B5DD6F608}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Components",
+							"Value":
+							{
+								"Instances":
+								[
+									"{B324D93A-738C-48BF-854F-A1C038BE5BA5}"
+								]
+							}
+						}
+					]
 				}
 			]
 		},
@@ -230,10 +256,20 @@
 					"Name": "InstanceDisplayTitle",
 					"Value":
 					{
-						"Instances":
-						[
-							"{69FA0360-4747-49BC-8B82-06CD121B6F36}"
-						]
+						"Instance": "{69FA0360-4747-49BC-8B82-06CD121B6F36}"
+					}
+				}
+			]
+		},
+		{
+			"Name": "RelationshipType",
+			"Properties":
+			[
+				{
+					"Name": "InstanceDisplayTitle",
+					"Value":
+					{
+						"Instance": "{2DA28271-5E46-4472-A6F5-910B5DD6F608}"
 					}
 				}
 			]

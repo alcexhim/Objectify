@@ -358,6 +358,30 @@
 					[
 						{
 							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_RelationshipType_Title" 
+						}
+					],
+					"ID": "{A22FF150-68C4-4A0C-B8C7-8FD86FD8CC68}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Relationship Type"
+						}
+					]
+				},
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
 							"Value": "LanguageString_English_ObjectSource_System_Title" 
 						}
 					],
@@ -1285,6 +1309,22 @@
 						"Instances":
 						[
 							"{1CFD48D1-C680-429B-B6FA-831AE57A6DB8}"
+						]
+					}
+				}
+			]
+		},
+		{
+			"Name": "RelationshipType",
+			"Properties":
+			[
+				{
+					"Name": "Title",
+					"Value":
+					{
+						"Instances":
+						[
+							"{A22FF150-68C4-4A0C-B8C7-8FD86FD8CC68}"
 						]
 					}
 				}

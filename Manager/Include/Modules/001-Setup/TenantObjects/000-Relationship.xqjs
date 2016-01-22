@@ -4,6 +4,12 @@
 		{
 			"ID": "{03B226E1-B407-4FEE-94C6-C388FCD0F0BB}",
 			"Name": "RelationshipType",
+			"ParentObjects":
+			[
+				{
+					"Name": "Object"
+				}
+			],
 			"InstanceProperties":
 			[
 				{
@@ -181,6 +187,57 @@
 							}
 						}
 					]
+				}
+			]
+		},
+		{
+			"Name": "RelationshipEntry",
+			"ParentObjects":
+			[
+				{
+					"Name": "Object"
+				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "Relationship",
+					"DataTypeName": "SingleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "Relationship"
+							}
+						]
+					}
+				},
+				{
+					"Name": "SourceInstance",
+					"DataTypeName": "SingleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "Object"
+							}
+						]
+					}
+				},
+				{
+					"Name": "DestinationInstance",
+					"DataTypeName": "SingleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "Object"
+							}
+						]
+					}
 				}
 			]
 		}
