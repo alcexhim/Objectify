@@ -4,10 +4,19 @@
 	class SingleInstanceProperty
 	{
 		private $mvarInstance;
+		
+		/**
+		 * Gets the instance stored in this property.
+		 * @return TenantObjectInstance
+		 */
 		public function GetInstance()
 		{
 			return $this->mvarInstance;
 		}
+		/**
+		 * Stores the specified instance in this property. If another instance is already stored in this property, that instance is replaced.
+		 * @param TenantObjectInstance $value
+		 */
 		public function SetInstance($value)
 		{
 			$objIDsAllowed = array();
@@ -66,8 +75,17 @@
 			return true;
 		}
 		
+		/**
+		 * The objects whose instances may be stored in this property.
+		 * @var TenantObject[]
+		 */
 		public $ValidObjects;
 		
+		/**
+		 * Creates a SingleInstanceProperty with the specified instances and valid objects.
+		 * @param TenantObjectInstance $instance The instance to store in this property.
+		 * @param TenantObject[] $validObjects The objects whose instances may be stored in this property.
+		 */
 		public function __construct($instance = null, $validObjects = null)
 		{
 			$this->mvarInstance = $instance;
