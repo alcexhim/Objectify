@@ -237,6 +237,11 @@
 				if ($propInstanceDisplayTitle_Value != null)
 				{
 					$components = $propInstanceDisplayTitle_Value->GetPropertyValue("Components");
+					if ($components === null)
+					{
+						trigger_error("XquizIT: Instance Display Title - Components property is NULL");
+						return "";
+					}
 					$componentInstances = $components->GetInstances();
 					$retval = "";
 					foreach ($componentInstances as $inst)
