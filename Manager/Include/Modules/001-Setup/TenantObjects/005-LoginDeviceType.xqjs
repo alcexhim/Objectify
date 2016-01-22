@@ -64,7 +64,7 @@
 			"ParentObjects":
 			[
 				{
-					"Name": "Enumeration"
+					"Name": "Object"
 				},
 				{
 					"Name": "InstanceTitleableObject"

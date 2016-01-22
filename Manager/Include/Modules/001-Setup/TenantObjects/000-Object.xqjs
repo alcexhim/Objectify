@@ -11,16 +11,6 @@
 					"DataTypeName": "DateTime"
 				}
 			]
-		},
-		{
-			"ID": "{868169B8-6BC6-4AD7-839A-D7DDFB0CE6AF}",
-			"Name": "Enumeration",
-			"ParentObjects":
-			[
-				{
-					"Name": "Object"
-				}
-			]
 		}
 	]
 }
