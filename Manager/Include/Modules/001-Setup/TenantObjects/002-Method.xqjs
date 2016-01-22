@@ -531,7 +531,7 @@
 						},
 						{
 							"Name": "CodeBlob",
-							"Value": "return $_SESSION['Authentication.LoginToken'];"
+							"Value": "if (isset($_SESSION['Authentication.LoginToken'])) { return $_SESSION['Authentication.LoginToken']; } else { return null; }"
 						}
 					]
 				}
