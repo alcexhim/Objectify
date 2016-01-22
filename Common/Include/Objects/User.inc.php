@@ -47,8 +47,10 @@
 		 */
 		public static function GetCurrent()
 		{
-			if (!isset($_SESSION["Authentication.LoginToken"])) return null;
-			$instUser = self::GetByLoginToken($_SESSION["Authentication.LoginToken"]);
+			$loginToken = Objectify::ExecuteMethod("GetLoginTokenForCurrentUser");
+			
+			if ($loginToken == null) return null;
+			$instUser = self::GetByLoginToken($loginToken);
 			return $instUser;
 		}
 		
