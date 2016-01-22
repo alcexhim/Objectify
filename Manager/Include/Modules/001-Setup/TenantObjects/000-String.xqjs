@@ -65,6 +65,16 @@
 							"Value": " "
 						}
 					]
+				},
+				{
+					"ID": "{1BC6AC2B-7C3F-46EB-88F7-47F7070ED1DD}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Value",
+							"Value": "."
+						}
+					]
 				}
 			]
 		},
@@ -118,6 +128,36 @@
 							"Value": "Name"
 						}
 					]
+				},
+				{
+					"ID": "{9DD1CDE1-6DAD-452D-9A07-9DE1CC32A396}",
+					"PropertyValues":
+					[
+						{
+							"Name": "PropertyName",
+							"Value": "SourceObject"
+						}
+					]
+				},
+				{
+					"ID": "{CD44D6DB-9C7F-4AE3-A1D8-FA6135EB3689}",
+					"PropertyValues":
+					[
+						{
+							"Name": "PropertyName",
+							"Value": "RelationshipType"
+						}
+					]
+				},
+				{
+					"ID": "{7734AD93-8328-421B-BD78-E353EEFB0879}",
+					"PropertyValues":
+					[
+						{
+							"Name": "PropertyName",
+							"Value": "DestinationObject"
+						}
+					]
 				}
 			]
 		},
@@ -125,6 +165,26 @@
 			"Name": "String",
 			"Instances":
 			[
+				{
+					"ID": "{69FA0360-4747-49BC-8B82-06CD121B6F36}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Components",
+							"Value":
+							{
+								"Instances":
+								[
+									"{9DD1CDE1-6DAD-452D-9A07-9DE1CC32A396}",
+									"{1BC6AC2B-7C3F-46EB-88F7-47F7070ED1DD}",
+									"{CD44D6DB-9C7F-4AE3-A1D8-FA6135EB3689}",
+									"{936E4426-5995-4713-BDEE-BF4F7BA2AFAE}",
+									"{7734AD93-8328-421B-BD78-E353EEFB0879}"
+								]
+							}
+						}
+					]
+				},
 				{
 					"ID": "{6894DC7E-F471-4F5C-88E6-B8016259817F}",
 					"PropertyValues":
@@ -157,6 +217,22 @@
 							{
 								"Name": "String"
 							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"Name": "Relationship",
+			"Properties":
+			[
+				{
+					"Name": "InstanceDisplayTitle",
+					"Value":
+					{
+						"Instances":
+						[
+							"{69FA0360-4747-49BC-8B82-06CD121B6F36}"
 						]
 					}
 				}

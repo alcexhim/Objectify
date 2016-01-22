@@ -475,6 +475,11 @@
 					$value = new MultipleInstanceProperty($instances, $validObjects);
 					break;
 				}
+				case "ObjectReference":
+				{
+					$value = TenantObject::GetByName($propDef->Value->Name);
+					break;
+				}
 				default:
 				{
 					$value = $propDef->Value;
@@ -800,6 +805,23 @@
 					$tenant = Tenant::Create("default");
 					
 					$_SESSION["CurrentTenantID"] = $tenant->ID;
+					
+					// Create the tenanted objects in directories required before anything else takes place
+					$tenantObjectFileNames = glob(dirname(__FILE__) . "/../TenantObjects/*/*.xqjs");
+					foreach ($tenantObjectFileNames as $tenantObjectFileName)
+					{
+						$objs = $this->LoadXQJS($tenantObjectFileName);
+					}
+					$tenantObjectFileNames = glob(dirname(__FILE__) . "/../TenantObjects/*/*.xqml");
+					foreach ($tenantObjectFileNames as $tenantObjectFileName)
+					{
+						$objs = $this->LoadXQML($tenantObjectFileName);
+					}
+					$tenantObjectFileNames = glob(dirname(__FILE__) . "/../TenantObjects/*/*.inc.php");
+					foreach ($tenantObjectFileNames as $tenantObjectFileName)
+					{
+						require($tenantObjectFileName);
+					}
 					
 					// Create the tenanted objects required before anything else takes place
 					$tenantObjectFileNames = glob(dirname(__FILE__) . "/../TenantObjects/*.xqjs");

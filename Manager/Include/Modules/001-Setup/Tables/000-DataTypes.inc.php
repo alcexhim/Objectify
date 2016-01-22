@@ -86,6 +86,39 @@ EOD
 		)),
 		new Record(array
 		(
+			new RecordColumn("Name", "ObjectReference"),
+			new RecordColumn("Description", "Allows Properties to store Object References instead of Instance References."),
+			new RecordColumn("EncoderCodeBlob", <<<'EOD'
+// $input should be a TenantObject
+if ($input == null)
+{
+	$bt = debug_backtrace();
+	trigger_error("ObjectReference::Encoder - input is null, did you mean to pass in a TenantObject?, in " . $bt["file"] . "::" . $bt["function"] . " on line " . $bt["line"] . "; ", E_USER_WARNING);
+	return "";
+}
+// encode the property by simply storing the object ID in the property value.
+$output = $input->ID;
+return $output;
+EOD
+),
+			new RecordColumn("DecoderCodeBlob", <<<'EOD'
+// $input should be a String
+if ($input == null)
+{
+	$bt = debug_backtrace();
+	trigger_error("ObjectReference::Decoder - input is null, did you mean to pass in a TenantObject?, in " . $bt["file"] . "::" . $bt["function"] . " on line " . $bt["line"] . "; ", E_USER_WARNING);
+	return null;
+}
+// encode the property by simply storing the object ID in the property value.
+$output = TenantObject::GetByID($input);
+return $output;
+EOD
+),
+			new RecordColumn("ColumnRendererCodeBlob", null),
+			new RecordColumn("EditorRendererCodeBlob", null)
+		)),
+		new Record(array
+		(
 			new RecordColumn("Name", "SingleInstance"),
 			new RecordColumn("Description", "Represents a property that returns a single TenantObjectInstance object."),
 			new RecordColumn("EncoderCodeBlob", <<<'EOD'

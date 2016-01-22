@@ -1,0 +1,188 @@
+{
+	"Objects":
+	[
+		{
+			"ID": "{03B226E1-B407-4FEE-94C6-C388FCD0F0BB}",
+			"Name": "RelationshipType",
+			"InstanceProperties":
+			[
+				{
+					"Name": "Name",
+					"DataTypeName": "Text"
+				}
+			],
+			"Instances":
+			[
+				{
+					"ID": "{E301E8E4-DA68-4A98-B417-552BDAFAEC8D}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Name",
+							"Value": "has"
+						}
+					]
+				},
+				{
+					"ID": "{F7A0D7A6-9427-4C74-B1A3-30CF8E41B2ED}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Name",
+							"Value": "for"
+						}
+					]
+				}
+			]
+		},
+		{
+			"ID": "{9B0A80F9-C325-4D36-997C-FB4106204648}",
+			"Name": "Relationship",
+			"ParentObjects":
+			[
+				{
+					"Name": "Object"
+				}
+			],
+			"InstanceProperties":
+			[
+				{
+					"Name": "SourceObject",
+					"DataTypeName": "ObjectReference"
+				},
+				{
+					"Name": "DestinationObject",
+					"DataTypeName": "ObjectReference"
+				},
+				{
+					"Name": "RelationshipType",
+					"DataTypeName": "SingleInstance",
+					"Value":
+					{
+						"ValidObjects":
+						[
+							{
+								"Name": "RelationshipType"
+							}
+						]
+					}
+				}
+			],
+			"Instances":
+			[
+				{
+					"ID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+					"Comment": "Object.has Property",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "Object"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "Property"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value":
+							{
+								"Instance": "{E301E8E4-DA68-4A98-B417-552BDAFAEC8D}"
+							}
+						}
+					]
+				},
+				{
+					"ID": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
+					"Comment": "Property.for Object",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "Property"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "Object"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value":
+							{
+								"Instance": "{F7A0D7A6-9427-4C74-B1A3-30CF8E41B2ED}"
+							}
+						}
+					]
+				},
+				{
+					"ID": "{3997CAAD-3BFA-4EA6-9CFA-2AA63E20F08D}",
+					"Comment": "Object.has Relationship",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "Object"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "Relationship"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value":
+							{
+								"Instance": "{E301E8E4-DA68-4A98-B417-552BDAFAEC8D}"
+							}
+						}
+					]
+				},
+				{
+					"ID": "{C00BD63F-10DA-4751-B8EA-0905436EA098}",
+					"Comment": "Relationship.for Object",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "Relationship"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "Object"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value":
+							{
+								"Instance": "{F7A0D7A6-9427-4C74-B1A3-30CF8E41B2ED}"
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

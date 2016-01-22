@@ -271,6 +271,11 @@
 											$propertyValue = $propertyValue->GetInstance()->ToString();
 											break;
 										}
+										case "Objectify\\Objects\\TenantObject":
+										{
+											$propertyValue = $propertyValue->ToString();
+											break;
+										}
 									}
 								}
 								$retval .= $propertyValue;
