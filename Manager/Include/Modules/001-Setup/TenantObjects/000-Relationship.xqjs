@@ -78,7 +78,7 @@
 			[
 				{
 					"ID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
-					"Comment": "Object.has Property",
+					"Comment": "Class.has Attribute",
 					"PropertyValues":
 					[
 						{
@@ -92,7 +92,7 @@
 							"Name": "DestinationObject",
 							"Value":
 							{
-								"Name": "Property"
+								"Name": "Attribute"
 							}
 						},
 						{
@@ -106,14 +106,14 @@
 				},
 				{
 					"ID": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
-					"Comment": "Property.for Object",
+					"Comment": "Attribute.for Class",
 					"PropertyValues":
 					[
 						{
 							"Name": "SourceObject",
 							"Value":
 							{
-								"Name": "Property"
+								"Name": "Attribute"
 							}
 						},
 						{
@@ -134,7 +134,7 @@
 				},
 				{
 					"ID": "{3997CAAD-3BFA-4EA6-9CFA-2AA63E20F08D}",
-					"Comment": "Object.has Relationship",
+					"Comment": "Class.has Relationship",
 					"PropertyValues":
 					[
 						{
@@ -162,7 +162,7 @@
 				},
 				{
 					"ID": "{C00BD63F-10DA-4751-B8EA-0905436EA098}",
-					"Comment": "Relationship.for Object",
+					"Comment": "Relationship.for Class",
 					"PropertyValues":
 					[
 						{
