@@ -42,6 +42,36 @@
 			)); // Tenant Manager
 		}
 		
+		private function LoadPostXQJS($filename)
+		{
+			$retval = array();
+			$filedatastr = file_get_contents($filename);
+			$filedata = json_decode($filedatastr);
+			
+			if ($filedata->Relationships != null)
+			{
+				$objRelationshipEntry = TenantObject::GetByName("RelationshipEntry");
+				foreach ($filedata->Relationships as $rel)
+				{
+					$instRelationship = TenantObjectInstance::GetByGlobalIdentifier($rel->RelationshipInstance);
+					$instSource = TenantObjectInstance::GetByGlobalIdentifier($rel->SourceInstance);
+					
+					$instDests = array();
+					foreach ($rel->DestinationInstances as $iid)
+					{
+						$instDests[] = TenantObjectInstance::GetByGlobalIdentifier($iid);
+					}
+					
+					$objRelationshipEntry->CreateInstance(array
+					(
+						new TenantObjectInstancePropertyValue("Relationship", new SingleInstanceProperty($instRelationship)),
+						new TenantObjectInstancePropertyValue("SourceInstance", new SingleInstanceProperty($instSource)),
+						new TenantObjectInstancePropertyValue("DestinationInstance", new MultipleInstanceProperty($instDests))
+					));
+				}
+			}
+		}
+		
 		/**
 		 * Creates TenantObject(s) from an XquiIT JavaScript Object Notation (JSON) file and returns the array of all TenantObjects that were created.
 		 * @param string $filename The file name to parse as an XquizIT object definition.
@@ -857,6 +887,12 @@
 					{
 						$obj->SetPropertyValue("CreationUser", new MultipleInstanceProperty(array($inst_xq_environments), null));
 						$obj->SetPropertyValue("CreationTimestamp", date());
+					}
+					
+					$tenantObjectFileNames = glob(dirname(__FILE__) . "/../TenantObjects/*/*.xqjs");
+					foreach ($tenantObjectFileNames as $tenantObjectFileName)
+					{
+						$objs = $this->LoadPostXQJS($tenantObjectFileName);
 					}
 					
 					echo("{");
