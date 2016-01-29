@@ -16,6 +16,34 @@
 		{
 			header("Content-Type: text/plain");
 			
+			
+			// test getting relationships for classes
+			$objRelationship = TenantObject::GetByName("Relationship");
+			
+			// get the `Class.has Attribute` relationship
+			$objClass = TenantObject::GetByName("Class");
+			$objAttribute = TenantObject::GetByName("Attribute");
+			
+			$instRelationship_Class__has_Attribute = $objRelationship->GetInstance(array
+			(
+				new TenantObjectInstancePropertyValue("SourceObject", $objClass),
+				new TenantObjectInstancePropertyValue("RelationshipType", "has"),
+				new TenantObjectInstancePropertyValue("DestinationObject", $objAttribute)
+			));
+			
+			// get all relationship entries for this relationship
+			$objRelationshipEntry = TenantObject::GetByName("RelationshipEntry");
+			$insts = $objRelationshipEntry->GetInstances(array
+			(
+				new TenantObjectInstancePropertyValue("Relationship", $instRelationship_Class__has_Attribute)
+			));
+			
+			// if we also filter on class, we can get all attributes on a particular Class, etc. etc. PROFIT!!!
+			print_r($insts);
+			
+			return;
+			
+			
 			$sw = new Stopwatch();
 			
 			$objMethod = TenantObject::GetByName("Method");
