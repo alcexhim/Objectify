@@ -2,46 +2,6 @@
 	"Objects":
 	[
 		{
-			"ID": "{03B226E1-B407-4FEE-94C6-C388FCD0F0BB}",
-			"Name": "RelationshipType",
-			"ParentObjects":
-			[
-				{
-					"Name": "Class"
-				}
-			],
-			"InstanceProperties":
-			[
-				{
-					"Name": "Name",
-					"DataTypeName": "Text"
-				}
-			],
-			"Instances":
-			[
-				{
-					"ID": "{E301E8E4-DA68-4A98-B417-552BDAFAEC8D}",
-					"PropertyValues":
-					[
-						{
-							"Name": "Name",
-							"Value": "has"
-						}
-					]
-				},
-				{
-					"ID": "{F7A0D7A6-9427-4C74-B1A3-30CF8E41B2ED}",
-					"PropertyValues":
-					[
-						{
-							"Name": "Name",
-							"Value": "for"
-						}
-					]
-				}
-			]
-		},
-		{
 			"ID": "{9B0A80F9-C325-4D36-997C-FB4106204648}",
 			"Name": "Relationship",
 			"ParentObjects":
@@ -62,16 +22,7 @@
 				},
 				{
 					"Name": "RelationshipType",
-					"DataTypeName": "SingleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "RelationshipType"
-							}
-						]
-					}
+					"DataTypeName": "Text"
 				}
 			],
 			"Instances":
@@ -97,10 +48,7 @@
 						},
 						{
 							"Name": "RelationshipType",
-							"Value":
-							{
-								"Instance": "{E301E8E4-DA68-4A98-B417-552BDAFAEC8D}"
-							}
+							"Value": "has"
 						}
 					]
 				},
@@ -125,10 +73,7 @@
 						},
 						{
 							"Name": "RelationshipType",
-							"Value":
-							{
-								"Instance": "{F7A0D7A6-9427-4C74-B1A3-30CF8E41B2ED}"
-							}
+							"Value": "for"
 						}
 					]
 				},
@@ -153,10 +98,7 @@
 						},
 						{
 							"Name": "RelationshipType",
-							"Value":
-							{
-								"Instance": "{E301E8E4-DA68-4A98-B417-552BDAFAEC8D}"
-							}
+							"Value": "has"
 						}
 					]
 				},
@@ -181,10 +123,107 @@
 						},
 						{
 							"Name": "RelationshipType",
+							"Value": "for"
+						}
+					]
+				},
+				{
+					"ID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+					"Comment": "Relationship.has sibling Relationship",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
 							"Value":
 							{
-								"Instance": "{F7A0D7A6-9427-4C74-B1A3-30CF8E41B2ED}"
+								"Name": "Relationship"
 							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "Relationship"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "has sibling"
+						}
+					]
+				},
+				{
+					"ID": "{FA08B2A4-71E2-44CB-9252-8CE336E2E1AD}",
+					"Comment": "Relationship.is sibling Relationship",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "Relationship"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "Relationship"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "is sibling"
+						}
+					]
+				},
+				{
+					"ID": "{100F0308-855D-4EC5-99FA-D8976CA20053}",
+					"Comment": "Class.has super Class",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "Class"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "Class"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "has super"
+						}
+					]
+				},
+				{
+					"ID": "{C14BC80D-879C-4E6F-9123-E8DFB13F4666}",
+					"Comment": "Class.has sub Class",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "Class"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "Class"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "has sub"
 						}
 					]
 				}
@@ -228,7 +267,7 @@
 				},
 				{
 					"Name": "DestinationInstance",
-					"DataTypeName": "SingleInstance",
+					"DataTypeName": "MultipleInstance",
 					"Value":
 					{
 						"ValidObjects":
