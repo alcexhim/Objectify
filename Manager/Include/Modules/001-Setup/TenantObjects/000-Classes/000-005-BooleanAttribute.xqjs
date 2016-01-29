@@ -1,0 +1,15 @@
+{
+	"Objects":
+	[
+		{
+			"ID": "{EA830448-A403-4ED9-A3D3-048D5D5C3A03}",
+			"Name": "BooleanAttribute",
+			"ParentObjects":
+			[
+				{
+					"Name": "Attribute"
+				}
+			]
+		}
+	]
+}

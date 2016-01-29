@@ -1,0 +1,41 @@
+{
+	"Objects":
+	[
+		{
+			"Name": "DateAttribute",
+			"Instances":
+			[
+				{
+					"ID": "{BA83E910-2B69-4056-8D4C-D7E363A7CB62}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Name",
+							"Value": "Date"
+						}
+					]
+				},
+				{
+					"ID": "{F23CD242-64DB-4115-AB57-E9C70B0A38DC}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Name",
+							"Value": "StartDate"
+						}
+					]
+				},
+				{
+					"ID": "{B3AED59A-1977-4CE4-A2F9-891A1CACDEB8}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Name",
+							"Value": "EndDate"
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,15 @@
+{
+	"Objects":
+	[
+		{
+			"ID": "{0B7B1812-DFB4-4F25-BF6D-CEB0E1DF8744}",
+			"Name": "DateAttribute",
+			"ParentObjects":
+			[
+				{
+					"Name": "Attribute"
+				}
+			]
+		}
+	]
+}

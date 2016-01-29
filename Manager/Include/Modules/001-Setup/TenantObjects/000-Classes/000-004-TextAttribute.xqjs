@@ -1,0 +1,15 @@
+{
+	"Objects":
+	[
+		{
+			"ID": "{C2F36542-60C3-4B9E-9A96-CA9B309C43AF}",
+			"Name": "TextAttribute",
+			"ParentObjects":
+			[
+				{
+					"Name": "Attribute"
+				}
+			]
+		}
+	]
+}
