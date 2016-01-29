@@ -7,7 +7,7 @@
 			"ParentObjects":
 			[
 				{
-					"Name": "Object"
+					"Name": "Class"
 				}
 			],
 			"InstanceProperties":
@@ -47,7 +47,7 @@
 			"ParentObjects":
 			[
 				{
-					"Name": "Object"
+					"Name": "Class"
 				}
 			],
 			"InstanceProperties":
@@ -85,7 +85,7 @@
 							"Name": "SourceObject",
 							"Value":
 							{
-								"Name": "Object"
+								"Name": "Class"
 							}
 						},
 						{
@@ -120,7 +120,7 @@
 							"Name": "DestinationObject",
 							"Value":
 							{
-								"Name": "Object"
+								"Name": "Class"
 							}
 						},
 						{
@@ -141,7 +141,7 @@
 							"Name": "SourceObject",
 							"Value":
 							{
-								"Name": "Object"
+								"Name": "Class"
 							}
 						},
 						{
@@ -176,7 +176,7 @@
 							"Name": "DestinationObject",
 							"Value":
 							{
-								"Name": "Object"
+								"Name": "Class"
 							}
 						},
 						{
@@ -195,7 +195,7 @@
 			"ParentObjects":
 			[
 				{
-					"Name": "Object"
+					"Name": "Class"
 				}
 			],
 			"InstanceProperties":
@@ -221,7 +221,7 @@
 						"ValidObjects":
 						[
 							{
-								"Name": "Object"
+								"Name": "Class"
 							}
 						]
 					}
@@ -234,7 +234,7 @@
 						"ValidObjects":
 						[
 							{
-								"Name": "Object"
+								"Name": "Class"
 							}
 						]
 					}

@@ -157,7 +157,7 @@
 			"ParentObjects":
 			[
 				{
-					"Name": "Object"
+					"Name": "Class"
 				},
 				{
 					"Name": "InstanceTitleableObject"
@@ -321,7 +321,7 @@
 			]
 		},
 		{
-			"Name": "Object",
+			"Name": "Class",
 			"Properties":
 			[
 				{

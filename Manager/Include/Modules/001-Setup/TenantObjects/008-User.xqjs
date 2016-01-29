@@ -59,7 +59,7 @@
 			"ParentObjects":
 			[
 				{
-					"Name": "Object"
+					"Name": "Class"
 				}
 			],
 			"Properties":
@@ -163,7 +163,7 @@
 			]
 		},
 		{
-			"Name": "Object",
+			"Name": "Class",
 			"Properties":
 			[
 				{

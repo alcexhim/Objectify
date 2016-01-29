@@ -2,7 +2,7 @@
 	"Objects":
 	[
 		{
-			"Name": "TranslatableTextConstantValue",
+			"Name": "LanguageString",
 			"Instances":
 			[
 				{
@@ -131,32 +131,6 @@
 					}
 				},
 				{
-					"Name": "LoginHeaderText",
-					"DataTypeName": "MultipleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "TranslatableTextConstantValue"
-							}
-						]
-					}
-				},
-				{
-					"Name": "LoginFooterText",
-					"DataTypeName": "MultipleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "TranslatableTextConstantValue"
-							}
-						]
-					}
-				},
-				{
 					"Name": "PaymentPlan",
 					"DataTypeName": "SingleInstance",
 					"Value":
@@ -181,38 +155,6 @@
 							}
 						]
 					}
-				},
-				{
-					"Name": "SidebarMenuItems",
-					"DataTypeName": "MultipleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "MenuItem"
-							}
-						]
-					}
-				},
-				{
-					"Name": "DefaultRedirectURL",
-					"DataTypeName": "Text",
-					"DefaultValue": "~/dashboard"
-				}
-			],
-			"Instances":
-			[
-				{
-					"ID": "{F2C9D4A9-9EFB-4263-84DB-66A9DA65AD00}",
-					"Comment": "This is the initial Tenant instance used by the Setup routine",
-					"PropertyValues":
-					[
-						{
-							"Name": "DefaultRedirectURL",
-							"Value": "~/dashboard"
-						}
-					]
 				}
 			]
 		}
