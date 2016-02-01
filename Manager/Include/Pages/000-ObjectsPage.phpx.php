@@ -15,7 +15,8 @@
 	
 	use Objectify\WebControls\InstanceDisplayWidget;
 	use Objectify\WebControls\ObjectDisplayWidget;
-	
+use Objectify\Objects\Relationship;
+		
 	class ObjectModifyPage extends PhastPage
 	{
 		/**
@@ -173,6 +174,58 @@
 					new ListViewItemColumn("lvcDefaultValue", $prop->DefaultValue)
 				));
 				$lvInstanceProperties->Items[] = $lvi;
+			}
+			
+			$instThisObject = TenantObjectInstance::GetByGlobalIdentifier($this->CurrentObject->GlobalIdentifier);
+			
+			$tabAttributes = $tbsTabs->GetTabByID("tabAttributes");
+			$lvAttributes = $tabAttributes->GetControlByID("lvAttributes");
+
+			$instRelAtt = TenantObjectInstance::GetByID(4);
+			$relsAtts = Relationship::GetBySourceInstance($instThisObject, $instRelAtt);
+			
+			foreach ($relsAtts as $rel)
+			{
+				$lvi = new ListViewItem(array
+				(
+					new ListViewItemColumn("lvcAttribute", function($sender)
+					{
+						$iv = new InstanceDisplayWidget($sender->ExtraData[0]);
+						$iv->Render();
+					}, null, $rel->GetDestinationInstances()),
+					new ListViewItemColumn("lvcValue", function($sender)
+					{
+						echo("(empty)");
+					}, null, $rel->GetDestinationInstances())
+				));
+				$lvAttributes->Items[] = $lvi;
+			}
+			
+			
+			$tabRelationships = $tbsTabs->GetTabByID("tabRelationships");
+			$lvRelationships = $tabRelationships->GetControlByID("lvRelationships");
+			
+			$rels = Relationship::GetBySourceInstance($instThisObject);
+			foreach ($rels as $rel)
+			{
+				$lvi = new ListViewItem(array
+				(
+					new ListViewItemColumn("lvcRelationship", function($sender)
+					{
+						$iv = new InstanceDisplayWidget($sender->ExtraData);
+						$iv->Render();
+					}, null, $rel->RelationshipInstance),
+					new ListViewItemColumn("lvcDestinationInstances", function($sender)
+					{
+						foreach ($sender->ExtraData as $inst)
+						{
+							$iv = new InstanceDisplayWidget($inst);
+							$iv->Render();
+							echo ("<br />");
+						}
+					}, null, $rel->GetDestinationInstances())
+				));
+				$lvRelationships->Items[] = $lvi;
 			}
 		}
 	}

@@ -21,6 +21,12 @@
 		public $Name;
 		
 		/**
+		 * The global identifier used to uniquely identify this TenantObject across migrations.
+		 * @var string
+		 */
+		public $GlobalIdentifier;
+		
+		/**
 		 * Gets the TenantObject represented by the given database table row values.
 		 * @param array $values
 		 */
@@ -30,6 +36,7 @@
 			$item->ID = $values["object_ID"];
 			$item->Tenant = Tenant::GetByID($values["object_TenantID"]);
 			$item->Name = $values["object_Name"];
+			$item->GlobalIdentifier = $values["object_GlobalIdentifier"];
 			return $item;
 		}
 		
@@ -274,6 +281,20 @@
 			if ($result === false) return null;
 			$obj = TenantObject::GetByName($name);
 			if ($obj == null) return null;
+			
+			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances (";
+			$query .= "instance_TenantID, instance_ObjectID, instance_GlobalIdentifier";
+			$query .= ") VALUES (";
+			$query .= ":instance_TenantID, :instance_ObjectID, :instance_GlobalIdentifier";
+			$query .= ")";
+			
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				":instance_TenantID" => $tenant->ID,
+				":instance_ObjectID" => 1,
+				":instance_GlobalIdentifier" => $globalIdentifier
+			));
 			
 			foreach ($parentObjects as $obj1)
 			{
@@ -897,6 +918,19 @@
 			// return $this->Name;	// this takes 20 spins
 			// without takes 23 spins, a difference of +3
 			// so getting the Title property is slower, but not by much...
+			
+			$instObject = TenantObjectInstance::GetByGlobalIdentifier($this->GlobalIdentifier);
+			$instRelationship_LabeledBy = TenantObjectInstance::GetByGlobalIdentifier("{B8BDB905-69DD-49CD-B557-0781F7EF2C50}");
+			$relLabeledBy = Relationship::GetBySourceInstance($instObject, $instRelationship_LabeledBy);
+			$relLabeledBy = $relLabeledBy[0];
+			
+			if ($relLabeledBy != null)
+			{
+				$insts = $relLabeledBy->GetDestinationInstances();
+				$str = $insts[0]->ToString();
+				return $str;
+			}
+			return "";
 			
 			$propTitle = $this->GetPropertyValue("Title");
 			if ($propTitle != null)

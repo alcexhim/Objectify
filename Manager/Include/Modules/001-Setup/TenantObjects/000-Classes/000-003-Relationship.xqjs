@@ -228,57 +228,6 @@
 					]
 				}
 			]
-		},
-		{
-			"Name": "RelationshipEntry",
-			"ParentObjects":
-			[
-				{
-					"Name": "Class"
-				}
-			],
-			"InstanceProperties":
-			[
-				{
-					"Name": "Relationship",
-					"DataTypeName": "SingleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "Relationship"
-							}
-						]
-					}
-				},
-				{
-					"Name": "SourceInstance",
-					"DataTypeName": "SingleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "Class"
-							}
-						]
-					}
-				},
-				{
-					"Name": "DestinationInstance",
-					"DataTypeName": "MultipleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "Class"
-							}
-						]
-					}
-				}
-			]
 		}
 	]
 }

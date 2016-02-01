@@ -80,9 +80,7 @@
 		
 		public static function GetByGlobalIdentifier($globalIdentifier)
 		{
-			$globalIdentifier = str_replace("{", "", $globalIdentifier);
-			$globalIdentifier = str_replace("}", "", $globalIdentifier);
-			$globalIdentifier = str_replace("-", "", $globalIdentifier);
+			$globalIdentifier = Objectify::SanitizeGlobalIdentifier($globalIdentifier);
 			
 			$pdo = DataSystem::GetPDO();
 			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances WHERE instance_GlobalIdentifier = :instance_GlobalIdentifier";
