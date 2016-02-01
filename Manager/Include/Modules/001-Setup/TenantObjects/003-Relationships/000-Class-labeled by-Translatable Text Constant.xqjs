@@ -11,12 +11,22 @@
 			]
 		},
 		{
-			"Comment": "Class `Class`.labeled by Translatable Text Constant `Class Translatable Test`",
+			"Comment": "Class `Class`.labeled by Translatable Text Constant `Class`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"SourceInstance": "{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}",
 			"DestinationInstances":
 			[
 				"{225FB3DA-FBF9-4DE4-AACD-107F2B5EAC2D}"
+			]
+		},
+		
+		{
+			"Comment": "Class `Attribute`.labeled by Translatable Text Constant `Attribute`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{F9CD7751-EF62-4F7C-8A28-EBE90B8F46AA}",
+			"DestinationInstances":
+			[
+				"{5EE8BE76-41AD-42C5-9DD7-4E55C482EAAF}"
 			]
 		}
 	]
