@@ -29,6 +29,24 @@
 			$this->ParentObject = $parentObject;
 		}
 		
+		public function HasParentObject($obj)
+		{
+			$b = false;
+			if (is_string($obj)) $obj = TenantObject::GetByName($objectOrName);
+			
+			$po = $this->GetParentObjects();
+			while (count($po) > 0)
+			{
+				foreach ($po as $p)
+				{
+					// I have no idea what the fuck I'm doing.
+					// It's 11:35 PM and I'm tired and I'm going to bed.
+				}
+			}
+			
+			return $b;
+		}
+		
 		public function GetInstanceID()
 		{
 			return $this->ParentObject->ID . "$" . $this->ID;
