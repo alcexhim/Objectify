@@ -6,17 +6,19 @@
 	
 	use Objectify\Objects\TenantObject;
 	use Objectify\Objects\TenantObjectInstancePropertyValue;
+	use Objectify\Objects\Relationship;
 	
 	use Objectify\Objects\Objectify;
+	
 	use Phast\Utilities\Stopwatch;
-		
+			
 	class TestingPage extends PhastPage
 	{
 		public function OnInitializing(CancelEventArgs $e)
 		{
 			header("Content-Type: text/plain");
 			
-			
+			/*
 			// test getting relationships for classes
 			$objRelationship = TenantObject::GetByName("Relationship");
 			
@@ -40,6 +42,10 @@
 			
 			// if we also filter on class, we can get all attributes on a particular Class, etc. etc. PROFIT!!!
 			print_r($insts);
+			*/
+			
+			$rels = Relationship::Get();
+			print_r($rels);
 			
 			return;
 			

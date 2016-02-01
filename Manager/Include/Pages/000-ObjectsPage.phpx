@@ -14,7 +14,7 @@
 									</Items>
 								</wfx:FormView>
 							</wfx:TabPage>
-							<wfx:TabPage ID="tabProperties" Title="Properties">
+							<wfx:TabPage ID="tabProperties" Title="Properties (legacy)">
 								<wfx:Panel Collapsible="true" Expanded="true" Title="Object properties">
 									<ContentControls>
 										<wfx:ListView ID="lvStaticProperties">
@@ -40,8 +40,24 @@
 									</ContentControls>
 								</wfx:Panel>
 							</wfx:TabPage>
+							<wfx:TabPage ID="tabAttributes" Title="Attributes">
+								<wfx:ListView ID="lvAttributes">
+									<Columns>
+										<wfx:ListViewColumn ID="lvcAttribute" Title="Attribute" />
+										<wfx:ListViewColumn ID="lvcValue" Title="Value" />
+									</Columns>
+								</wfx:ListView>
+							</wfx:TabPage>
 							<wfx:TabPage ID="tabInstances" Title="Instances">
-								<ofx:InstanceListView ObjectID="$(Path:objectID)" Width="100%"></ofx:InstanceListView>
+								<ofx:InstanceListView ObjectID="$(Path:objectID)" Width="100%" />
+							</wfx:TabPage>
+							<wfx:TabPage ID="tabRelationships" Title="Relationships">
+								<wfx:ListView ID="lvRelationships">
+									<Columns>
+										<wfx:ListViewColumn ID="lvcRelationship" Title="Relationship" />
+										<wfx:ListViewColumn ID="lvcDestinationInstances" Title="Target instances" />
+									</Columns>
+								</wfx:ListView>
 							</wfx:TabPage>
 						</TabPages>
 					</wfx:TabContainer>

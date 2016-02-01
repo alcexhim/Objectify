@@ -1,0 +1,23 @@
+{
+	"Relationships":
+	[
+		{
+			"Comment": "Translatable Text Constant `Class`.has Translatable Text Constant Value `Class - English - Class`",
+			"RelationshipInstance": "{F9B60C00-FF1D-438F-AC74-6EDFA8DD7324}",
+			"SourceInstance": "{225FB3DA-FBF9-4DE4-AACD-107F2B5EAC2D}",
+			"DestinationInstances":
+			[
+				"{097E8FA7-7118-4C10-BDC0-2E9100661600}"
+			]
+		},
+		{
+			"Comment": "Class `Class`.labeled by Translatable Text Constant `Class Translatable Test`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}",
+			"DestinationInstances":
+			[
+				"{225FB3DA-FBF9-4DE4-AACD-107F2B5EAC2D}"
+			]
+		}
+	]
+}

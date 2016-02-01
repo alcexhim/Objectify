@@ -18,6 +18,8 @@
 	use Objectify\Objects\TenantObjectInstancePropertyValue;
 	use Objectify\Objects\MultipleInstanceProperty;
 	use Objectify\Objects\SingleInstanceProperty;
+	use Objectify\Objects\Relationship;
+	
 	use UniversalEditor\ObjectModels\Markup\MarkupTagElement;
 	
 	class SetupPage extends PhastPage
@@ -48,9 +50,34 @@
 			$filedatastr = file_get_contents($filename);
 			$filedata = json_decode($filedatastr);
 			
+			$inst_Class_has_sub_Class = TenantObjectInstance::GetByGlobalIdentifier("{C14BC80D-879C-4E6F-9123-E8DFB13F4666}");
+			$inst_Class_has_super_Class = TenantObjectInstance::GetByGlobalIdentifier("{100F0308-855D-4EC5-99FA-D8976CA20053}");
+			
+			if ($filedata->Objects != null)
+			{
+				foreach ($filedata->Objects as $obj_data)
+				{
+					if (isset($obj_data->Name))
+					{
+						$obj = TenantObject::GetByName($obj_data->Name);
+						$instObj = TenantObjectInstance::GetByGlobalIdentifier($obj->GlobalIdentifier);
+						
+						if (isset($obj_data->ParentObjects))
+						{
+							foreach ($obj_data->ParentObjects as $pobj_data)
+							{
+								$pobj = TenantObject::GetByName($pobj_data->Name);
+								$instPObj = TenantObjectInstance::GetByGlobalIdentifier($pobj->GlobalIdentifier);
+								
+								Relationship::Create($inst_Class_has_sub_Class, $instPObj, $instObj);
+								Relationship::Create($inst_Class_has_super_Class, $instObj, $instPObj);
+							}
+						}
+					}
+				}
+			}
 			if ($filedata->Relationships != null)
 			{
-				$objRelationshipEntry = TenantObject::GetByName("RelationshipEntry");
 				foreach ($filedata->Relationships as $rel)
 				{
 					$instRelationship = TenantObjectInstance::GetByGlobalIdentifier($rel->RelationshipInstance);
@@ -59,15 +86,19 @@
 					$instDests = array();
 					foreach ($rel->DestinationInstances as $iid)
 					{
-						$instDests[] = TenantObjectInstance::GetByGlobalIdentifier($iid);
+						$instDest = TenantObjectInstance::GetByGlobalIdentifier($iid);
+						$instDests[] = $instDest;
 					}
 					
-					$objRelationshipEntry->CreateInstance(array
+					Objectify::Log("Creating a new Relationship", array
 					(
-						new TenantObjectInstancePropertyValue("Relationship", new SingleInstanceProperty($instRelationship)),
-						new TenantObjectInstancePropertyValue("SourceInstance", new SingleInstanceProperty($instSource)),
-						new TenantObjectInstancePropertyValue("DestinationInstance", new MultipleInstanceProperty($instDests))
+						"Relationship Instance GID" => $rel->RelationshipInstance,
+						"Source Instance GID" => $rel->SourceInstance,
+						"Relationship Instance DBID" => $instRelationship->ID,
+						"Source Instance DBID" => $instSource->ID
 					));
+					
+					Relationship::Create($instRelationship, $instSource, $instDests);
 				}
 			}
 		}

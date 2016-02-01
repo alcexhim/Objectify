@@ -107,6 +107,62 @@
 			]
 		},
 		{
+			"Name": "Relationship",
+			"Instances":
+			[
+				{
+					"ID": "{F9B60C00-FF1D-438F-AC74-6EDFA8DD7324}",
+					"Comment": "Translatable Text Constant.has Translatable Text Constant Value",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "TranslatableTextConstant"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "TranslatableTextConstantValue"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "has"
+						}
+					]
+				},
+				{
+					"ID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+					"Comment": "Class.labeled by Translatable Text Constant",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "Class"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "TranslatableTextConstant"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "labeled by"
+						}
+					]
+				}
+			]
+		},
+		{
 			"Name": "TranslatableTextConstantStringComponent",
 			"InstanceProperties":
 			[
