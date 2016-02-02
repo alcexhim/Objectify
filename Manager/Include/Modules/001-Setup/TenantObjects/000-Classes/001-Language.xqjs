@@ -258,24 +258,6 @@
 			"Instances":
 			[
 				{
-					"Comment": "Instance Property String Component, prop, Instance Display Title",
-					"ID": "{EB4F9366-4EC8-4A5E-A932-B6A8A222A416}",
-					"PropertyValues":
-					[
-						{
-							"Name": "Components",
-							"Value":
-							{
-								"Comment": "Instance Property String Component, inst, Property Name",
-								"Instances":
-								[
-									"{6933F902-9C87-4D9B-8B25-AD4214A87420}"
-								]
-							}
-						}
-					]
-				},
-				{
 					"ID": "{AA37C17F-CDB8-4ED2-BE87-3388DF4825BB}",
 					"PropertyValues":
 					[
@@ -362,54 +344,6 @@
 			"Instances":
 			[
 				{
-					"ID": "{1245ECDF-883F-4C1A-8A9F-27505A5EA3D6}",
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_TranslatableTextConstant_Title" 
-						}
-					],
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Translatable Text Constant"
-						}
-					]
-				},
-				{
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_LanguageString_Title" 
-						}
-					],
-					"ID": "{08AB6C76-7461-4F10-9131-E2B63CF404C3}",
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Translatable Text Constant Value"
-						}
-					]
-				},
-				{
 					"IntegrationIDs":
 					[
 						{
@@ -486,30 +420,6 @@
 					[
 						{
 							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_UNUSED_Title" 
-						}
-					],
-					"ID": "{D573044A-4E7F-490C-864E-BD9EC0188A78}",
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Language"
-						}
-					]
-				},
-				{
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
 							"Value": "LanguageString_English_Language_English_Title" 
 						}
 					],
@@ -558,30 +468,6 @@
 					[
 						{
 							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_SecurityPermission_Title" 
-						}
-					],
-					"ID": "{34142FCB-172C-490A-AF03-FF8451D00CAF}",
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Security Permission"
-						}
-					]
-				},
-				{
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
 							"Value": "LanguageString_English_SecurityPermission_ProvisionTenants_Title" 
 						}
 					],
@@ -622,54 +508,6 @@
 						{
 							"Name": "Value",
 							"Value": "System Administrator"
-						}
-					]
-				},
-				{
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_SecurityGroup_Title" 
-						}
-					],
-					"ID": "{739C26BC-740F-4CB0-BCB1-2A28FA570E7D}",
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Security Group"
-						}
-					]
-				},
-				{
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_TenantType_Title" 
-						}
-					],
-					"ID": "{143123C1-5C03-4346-AE84-E833D112576B}",
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Tenant Type"
 						}
 					]
 				},
@@ -774,54 +612,6 @@
 					[
 						{
 							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_LoginDeviceType_Title" 
-						}
-					],
-					"ID": "{3AB09F14-8258-4BDA-BE62-EE26CFD6D1D2}",
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Login Device Type"
-						}
-					]
-				},
-				{
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_LoginAuthenticationType_Title" 
-						}
-					],
-					"ID": "{377A67E0-7C10-48DD-8D5C-0E65325D1663}",
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Login Authentication Type"
-						}
-					]
-				},
-				{
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
 							"Value": "LanguageString_English_UserLogin_Title" 
 						}
 					],
@@ -870,174 +660,6 @@
 					[
 						{
 							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_String_Title" 
-						}
-					],
-					"ID": "{056B2384-F841-4562-886B-F7AFB6D272F2}",
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "String"
-						}
-					]
-				},
-				{
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_StringComponent_Title" 
-						}
-					],
-					"ID": "{481E3FBE-B82A-4C76-9DDF-D66C6BA8C590}",
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "String Component"
-						}
-					]
-				},
-				{
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_InstancePropertyStringComponent_Title" 
-						}
-					],
-					"ID": "{C773E134-D9C3-4524-A908-ACF0F744B4E1}",
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Instance Property String Component"
-						}
-					]
-				},
-				{
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_TextConstantStringComponent_Title" 
-						}
-					],
-					"ID": "{E6F690A2-87A2-49B7-885E-70B58629322B}",
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Text Constant String Component"
-						}
-					]
-				},
-				{
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_TranslatableTextConstantStringComponent_Title" 
-						}
-					],
-					"ID": "{BEFAFDC4-358B-44E9-ACD9-FD253402EA22}",
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Translatable Text Constant String Component"
-						}
-					]
-				},
-				{
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_ObjectSource_Title" 
-						}
-					],
-					"ID": "{B271A437-32C7-4E99-8498-FC1B36A7AE11}",
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Object Source"
-						}
-					]
-				},
-				{
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_InstanceTitleableObject_Title" 
-						}
-					],
-					"ID": "{B670875A-0258-4C0E-83E7-61B3E6BEF366}",
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Instance Titleable Object"
-						}
-					]
-				},
-				{
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
 							"Value": "LanguageString_English_Property_Title" 
 						}
 					],
@@ -1054,78 +676,6 @@
 						{
 							"Name": "Value",
 							"Value": "Attribute"
-						}
-					]
-				},
-				{
-					"ID": "{9C0705AD-07D0-4D06-A132-93987B966CF0}",
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_TextAttribute_Title" 
-						}
-					],
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Text Attribute"
-						}
-					]
-				},
-				{
-					"ID": "{E5B60723-ECE4-46C8-9CD1-E2AFA8D27AF8}",
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_BooleanAttribute_Title" 
-						}
-					],
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Boolean Attribute"
-						}
-					]
-				},
-				{
-					"ID": "{7BE6522A-4BE8-4CD3-8701-C8353F7DF630}",
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_DateAttribute_Title" 
-						}
-					],
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Date Attribute"
 						}
 					]
 				}
@@ -1464,22 +1014,6 @@
 						"Instances":
 						[
 							"{7BE6522A-4BE8-4CD3-8701-C8353F7DF630}"
-						]
-					}
-				}
-			]
-		},
-		{
-			"Name": "RelationshipType",
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{A22FF150-68C4-4A0C-B8C7-8FD86FD8CC68}"
 						]
 					}
 				}

@@ -1,0 +1,57 @@
+{
+	"Objects":
+	[
+		{
+			"Name": "TranslatableTextConstantValue",
+			"Instances":
+			[
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_TenantType_Title" 
+						}
+					],
+					"ID": "{143123C1-5C03-4346-AE84-E833D112576B}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Tenant Type"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "TranslatableTextConstant",
+			"Instances":
+			[
+				{
+					"ID": "{E29EA681-B597-43FD-87A3-08114F881138}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Values",
+							"Value":
+							{
+								"Instances":
+								[
+									"{143123C1-5C03-4346-AE84-E833D112576B}"
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -6,54 +6,6 @@
 			"Instances":
 			[
 				{
-					"ID": "{B4338FEF-025C-4755-956A-B1CBCEF4F51D}",
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_RedirectTask_Title" 
-						}
-					],
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Redirect Task"
-						}
-					]
-				},
-				{
-					"ID": "{358404B6-522A-4768-B7BF-2E46A53F418D}",
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_Task_Title" 
-						}
-					],
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Task"
-						}
-					]
-				},
-				{
 					"ID": "{2C4EA43B-6242-4370-9FF2-A78994702BCD}",
 					"IntegrationIDs":
 					[

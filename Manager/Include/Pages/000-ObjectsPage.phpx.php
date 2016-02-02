@@ -39,6 +39,7 @@ use Objectify\Objects\Relationship;
 			if ($this->CurrentObject != null)
 			{
 				$fvGeneralInformation->GetItemByID("txtObjectName")->Value = $this->CurrentObject->Name;
+				$fvGeneralInformation->GetItemByID("txtGlobalIdentifier")->Value = $this->CurrentObject->GlobalIdentifier;
 			}
 			
 			$tabProperties = $tbsTabs->GetTabByID("tabProperties");

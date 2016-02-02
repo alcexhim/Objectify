@@ -1,7 +1,8 @@
 window.addEventListener("load", function(e)
 {
 	var cmdContinue = document.getElementById("cmdContinue");
-	cmdContinue.addEventListener("click", function(e)
+	var frmMain = document.getElementById("frmMain");
+	frmMain.addEventListener("submit", function(e)
 	{
 		cmdContinue.setAttribute("disabled", "disabled");
 		

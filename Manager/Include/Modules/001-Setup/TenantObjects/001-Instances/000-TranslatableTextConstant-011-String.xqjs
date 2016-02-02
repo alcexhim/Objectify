@@ -1,0 +1,57 @@
+{
+	"Objects":
+	[
+		{
+			"Name": "TranslatableTextConstantValue",
+			"Instances":
+			[
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_String_Title" 
+						}
+					],
+					"ID": "{056B2384-F841-4562-886B-F7AFB6D272F2}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "String"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "TranslatableTextConstant",
+			"Instances":
+			[
+				{
+					"ID": "{C9472658-9E50-48FD-BF7F-ED31A72DEF39}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Values",
+							"Value":
+							{
+								"Instances":
+								[
+									"{056B2384-F841-4562-886B-F7AFB6D272F2}"
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

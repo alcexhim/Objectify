@@ -260,19 +260,6 @@
 					}
 				}
 			]
-		},
-		{
-			"Name": "RelationshipType",
-			"Properties":
-			[
-				{
-					"Name": "InstanceDisplayTitle",
-					"Value":
-					{
-						"Instance": "{2DA28271-5E46-4472-A6F5-910B5DD6F608}"
-					}
-				}
-			]
 		}
 	]
 }

@@ -1,0 +1,57 @@
+{
+	"Objects":
+	[
+		{
+			"Name": "TranslatableTextConstantValue",
+			"Instances":
+			[
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_CallMethodMethodAction_Title" 
+						}
+					],
+					"ID": "{D8C0D4D4-F8C6-4B92-A2C1-8BF16B16203D}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "CM - Call Method Method Action"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "TranslatableTextConstant",
+			"Instances":
+			[
+				{
+					"ID": "{8FB46A15-DE06-4F50-95EB-3A5AD71C89B6}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Values",
+							"Value":
+							{
+								"Instances":
+								[
+									"{D8C0D4D4-F8C6-4B92-A2C1-8BF16B16203D}"
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

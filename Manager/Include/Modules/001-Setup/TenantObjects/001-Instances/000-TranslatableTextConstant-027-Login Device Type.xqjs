@@ -1,0 +1,57 @@
+{
+	"Objects":
+	[
+		{
+			"Name": "TranslatableTextConstantValue",
+			"Instances":
+			[
+				{
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_LoginDeviceType_Title" 
+						}
+					],
+					"ID": "{3AB09F14-8258-4BDA-BE62-EE26CFD6D1D2}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Login Device Type"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "TranslatableTextConstant",
+			"Instances":
+			[
+				{
+					"ID": "{27F95970-E916-401D-AF34-790B1118B04E}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Values",
+							"Value":
+							{
+								"Instances":
+								[
+									"{3AB09F14-8258-4BDA-BE62-EE26CFD6D1D2}"
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

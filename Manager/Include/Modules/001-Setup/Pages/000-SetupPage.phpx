@@ -10,7 +10,7 @@
 						Please provide some information about your server to create the initial <html:Literal Value="$(Configuration:Application.Name)" /> tenant. Other
 						tenants may be created and removed at any time by entering the Administrator Control Panel.
 					</p>
-					<form method="POST">
+					<form method="POST" id="frmMain">
 						<div class="ColumnContainer TwoColumn">
 							<div class="Column">
 								<wfx:FormView ID="fv1">
@@ -33,7 +33,7 @@
 							</div>
 						</div>
 						<div class="PageFooter">
-							<wfx:Button ID="cmdContinue" CssClass="Primary" Text="Continue" />
+							<wfx:Button ID="cmdContinue" CssClass="Primary" Text="Continue" UseSubmitBehavior="true" />
 						</div>
 					</form>
 				</wfx:Section>
