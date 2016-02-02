@@ -612,54 +612,6 @@
 					[
 						{
 							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_UserLogin_Title" 
-						}
-					],
-					"ID": "{410FCF87-26E3-41F1-887A-1D1CC391E52B}",
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "User Login"
-						}
-					]
-				},
-				{
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_User_Title" 
-						}
-					],
-					"ID": "{0D05F758-F3F7-4640-B462-43DA9DB35C1C}",
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "User"
-						}
-					]
-				},
-				{
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
 							"Value": "LanguageString_English_Property_Title" 
 						}
 					],

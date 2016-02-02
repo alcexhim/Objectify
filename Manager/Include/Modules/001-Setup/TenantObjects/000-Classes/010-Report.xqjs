@@ -6,30 +6,6 @@
 			"Instances":
 			[
 				{
-					"ID": "{F344EC2D-58BC-49C1-8E2B-A65514401023}",
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_ReportColumn_Title" 
-						}
-					],
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}" 
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Report Column"
-						}
-					]
-				},
-				{
 					"ID": "{DF93EFB0-8B5E-49E7-8BC0-553F9E7602F9}",
 					"IntegrationIDs":
 					[
@@ -52,34 +28,11 @@
 							"Value": "View Objects"
 						}
 					]
-				},
-				{
-					"ID": "{8D2CD6B7-7F01-4861-A613-28F4EA4C6F5A}",
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_StandardReport_Title" 
-						}
-					],
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}" 
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Standard Report"
-						}
-					]
 				}
 			]
 		},
 		{
+			"ID": "{19D947B6-CE82-4EEE-92EC-A4E01E27F2DB}",
 			"Name": "Report",
 			"ParentObjects":
 			[
@@ -105,46 +58,22 @@
 			]
 		},
 		{
+			"ID": "{655A04D9-FE35-4F89-9AAB-B8FA34989D03}",
 			"Name": "ReportColumn",
 			"ParentObjects":
 			[
 				{
 					"Name": "Class"
 				}
-			],
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{F344EC2D-58BC-49C1-8E2B-A65514401023}"
-						]
-					}
-				}
 			]
 		},
 		{
+			"ID": "{FDF4A498-DE83-417D-BA01-707372125C8D}",
 			"Name": "StandardReport",
 			"ParentObjects":
 			[
 				{
 					"Name": "Report"
-				}
-			],
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{8D2CD6B7-7F01-4861-A613-28F4EA4C6F5A}"
-						]
-					}
 				}
 			],
 			"InstanceProperties":

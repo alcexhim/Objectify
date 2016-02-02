@@ -1,0 +1,57 @@
+{
+	"Objects":
+	[
+		{
+			"Name": "TranslatableTextConstantValue",
+			"Instances":
+			[
+				{
+					"ID": "{8D2CD6B7-7F01-4861-A613-28F4EA4C6F5A}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_StandardReport_Title" 
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Language",
+							"Value":
+							{
+								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}" 
+							}
+						},
+						{
+							"Name": "Value",
+							"Value": "Standard Report"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "TranslatableTextConstant",
+			"Instances":
+			[
+				{
+					"ID": "{A0C75753-AF65-4291-B52F-5A461C2C5708}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Values",
+							"Value":
+							{
+								"Instances":
+								[
+									"{8D2CD6B7-7F01-4861-A613-28F4EA4C6F5A}"
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

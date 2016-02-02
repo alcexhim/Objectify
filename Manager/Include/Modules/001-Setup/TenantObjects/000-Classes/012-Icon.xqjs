@@ -6,78 +6,6 @@
 			"Instances":
 			[
 				{
-					"ID": "{5E95CF95-58F0-41EF-8651-88A39766FE21}",
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_Icon_Title" 
-						}
-					],
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Icon"
-						}
-					]
-				},
-				{
-					"ID": "{DBD1AAB8-AF17-4697-AA98-BBFF2D56F0A0}",
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_IconFontAwesome_Title" 
-						}
-					],
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Font Awesome Icon"
-						}
-					]
-				},
-				{
-					"ID": "{F364A847-2D26-42F2-A4D9-C36F8771A28A}",
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_IconImage_Title" 
-						}
-					],
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Image Icon"
-						}
-					]
-				},
-				{
 					"ID": "{E16BFD3B-2F2C-431F-A7E1-BC2ADC6A3746}",
 					"IntegrationIDs":
 					[
@@ -200,6 +128,7 @@
 			]
 		},
 		{
+			"ID": "{67BD594B-E8B0-4752-8796-D7A369513FBF}",
 			"Name": "Icon",
 			"ParentObjects":
 			[
@@ -225,24 +154,12 @@
 			]
 		},
 		{
+			"ID": "{2B71F9EE-E843-46ED-B07D-B0424767A921}",
 			"Name": "IconFontAwesome",
 			"ParentObjects":
 			[
 				{
 					"Name": "Icon"
-				}
-			],
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{DBD1AAB8-AF17-4697-AA98-BBFF2D56F0A0}"
-						]
-					}
 				}
 			],
 			"InstanceProperties":
@@ -357,24 +274,12 @@
 			]
 		},
 		{
+			"ID": "{AEBB7B6A-917F-4D62-AED8-279E758ED203}",
 			"Name": "IconImage",
 			"ParentObjects":
 			[
 				{
 					"Name": "Icon"
-				}
-			],
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{F364A847-2D26-42F2-A4D9-C36F8771A28A}"
-						]
-					}
 				}
 			],
 			"InstanceProperties":

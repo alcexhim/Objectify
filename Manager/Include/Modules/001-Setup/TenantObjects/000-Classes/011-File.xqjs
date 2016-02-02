@@ -2,36 +2,6 @@
 	"Objects":
 	[
 		{
-			"Name": "TranslatableTextConstantValue",
-			"Instances":
-			[
-				{
-					"ID": "{CF576B15-BFD8-43D3-B0F7-AA29E3BCCF8E}",
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_File_Title" 
-						}
-					],
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "File"
-						}
-					]
-				}
-			]
-		},
-		{
 			"ID": "{5D081079-E136-406A-A728-7472937A6E5E}",
 			"Name": "File",
 			"Properties":

@@ -6,77 +6,6 @@
 			"Instances":
 			[
 				{
-					"ID": "{0278FFAE-499B-460B-B281-5BA8BE7F8BA7}",
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_Style_Title" 
-						}
-					],
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Style"
-						}
-					]
-				},
-				{
-					"ID": "{7EA271FE-7990-4B9B-8D19-E63235E11816}",
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_StyleRule_Title" 
-						}
-					],
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Style Rule"
-						}
-					]
-				}
-			]
-		},
-		{
-			"Name": "TranslatableTextConstantValue",
-			"Instances":
-			[
-				{
-					"ID": "{067887A6-DB03-4235-B20A-FED3275FCA3F}",
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Style Property"
-						}
-					]
-				},
-				{
 					"ID": "{8F33A8D4-74F8-4A90-AADE-6EDFF1D561DE}",
 					"PropertyValues":
 					[
@@ -147,6 +76,7 @@
 			]
 		},
 		{
+			"ID": "{A5688B41-343C-4D9E-8DE9-EAD92EC44E12}",
 			"Name": "StyleProperty",
 			"ParentObjects":
 			[
@@ -155,19 +85,6 @@
 				},
 				{
 					"Name": "InstanceTitleableObject"
-				}
-			],
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{067887A6-DB03-4235-B20A-FED3275FCA3F}"
-						]
-					}
 				}
 			],
 			"InstanceProperties":
@@ -288,7 +205,7 @@
 			]
 		},
 		{
-			"ID": "A48C843A-B24B-4BC3-BE6F-E2D069229B0A",
+			"ID": "{A48C843A-B24B-4BC3-BE6F-E2D069229B0A}",
 			"Name": "Style",
 			"ParentObjects":
 			[

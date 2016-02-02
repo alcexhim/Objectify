@@ -263,6 +263,339 @@
 			[
 				"{79049638-9772-4E60-B6DB-2704499D59F5}"
 			]
+		},
+		{
+			"Comment": "Class `User Login`.labeled by Translatable Text Constant `User Login`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{64F4BCDB-38D0-4373-BA30-8AE99AF1A5F7}",
+			"DestinationInstances":
+			[
+				"{C64F1F96-D87B-4526-9F04-1A55AAA91202}"
+			]
+		},
+		{
+			"Comment": "Class `Measurement Unit`.labeled by Translatable Text Constant `Measurement Unit`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{62693026-B7A0-40B5-92AE-038A2B264F33}",
+			"DestinationInstances":
+			[
+				"{D7190C9E-62D9-4414-8062-AFC521F952F2}"
+			]
+		},
+		{
+			"Comment": "Class `Measurement`.labeled by Translatable Text Constant `Measurement`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{9FAED5A9-040D-4718-92C0-FBE2385F2A97}",
+			"DestinationInstances":
+			[
+				"{0F8CA58C-26DF-49B3-9702-DB5C39A5BBDC}"
+			]
+		},
+		{
+			"Comment": "Class `Style Property`.labeled by Translatable Text Constant `Style Property`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{A5688B41-343C-4D9E-8DE9-EAD92EC44E12}",
+			"DestinationInstances":
+			[
+				"{217CA667-DB56-40C7-96DB-5EF82DA75E6B}"
+			]
+		},
+		{
+			"Comment": "Class `Style Rule`.labeled by Translatable Text Constant `Style Rule`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{C269A1F3-E014-4230-B78D-38EAF6EA8A81}",
+			"DestinationInstances":
+			[
+				"{F1CC1A3F-62F2-4189-ABE7-7E6129E14FF1}"
+			]
+		},
+		{
+			"Comment": "Class `Style`.labeled by Translatable Text Constant `Style`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{A48C843A-B24B-4BC3-BE6F-E2D069229B0A}",
+			"DestinationInstances":
+			[
+				"{73249A7E-BB76-4B53-8AC4-F124D8639F87}"
+			]
+		},
+		{
+			"Comment": "Class `User`.labeled by Translatable Text Constant `User`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{9C6871C1-9A7F-4A3A-900E-69D1D9E24486}",
+			"DestinationInstances":
+			[
+				"{22341A1D-6CF3-4CDE-B2A5-DA852E748551}"
+			]
+		},
+		{
+			"Comment": "Class `Page Component`.labeled by Translatable Text Constant `Page Component`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{EF4D4027-6904-4773-9013-22CEDC169F00}",
+			"DestinationInstances":
+			[
+				"{2207A294-B8F3-47AB-8077-77AECF8B2D92}"
+			]
+		},
+		{
+			"Comment": "Class `Page Component`.labeled by Translatable Text Constant `Page Component`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{EF4D4027-6904-4773-9013-22CEDC169F00}",
+			"DestinationInstances":
+			[
+				"{2207A294-B8F3-47AB-8077-77AECF8B2D92}"
+			]
+		},
+		{
+			"Comment": "Class `Container Page Component`.labeled by Translatable Text Constant `Container Page Component`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{6AD6BD1C-7D1C-4AC9-9642-FEBC61E9D6FF}",
+			"DestinationInstances":
+			[
+				"{747F19EC-FA2A-413A-BA93-ADEE1DFE4296}"
+			]
+		},
+		{
+			"Comment": "Class `Sequential Container Orientation`.labeled by Translatable Text Constant `Sequential Container Orientation`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{DDC61BCA-022D-43EF-9A94-D79BA9FEC5C8}",
+			"DestinationInstances":
+			[
+				"{0A084DAA-1A69-4DAF-93F4-74AC37AF00C0}"
+			]
+		},
+		{
+			"Comment": "Class `Sequential Container Page Component`.labeled by Translatable Text Constant `Sequential Container Page Component`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{A66D9AE2-3BEC-4083-A5CB-7DE3B03A9CC7}",
+			"DestinationInstances":
+			[
+				"{B687E0B2-3D79-4A43-82F9-81A29769E8BF}"
+			]
+		},
+		{
+			"Comment": "Class `Paragraph Page Component`.labeled by Translatable Text Constant `Paragraph Page Component`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{ADFF93CE-9E85-4168-A7D4-5239B99BE36D}",
+			"DestinationInstances":
+			[
+				"{0187DF47-7B82-45BE-AD15-72AD9B556A5E}"
+			]
+		},
+		{
+			"Comment": "Class `Image Page Component`.labeled by Translatable Text Constant `Image Page Component`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{798B67FA-D4BE-42B9-B4BD-6F8E02C953C0}",
+			"DestinationInstances":
+			[
+				"{117CD224-8048-44E2-81DF-191301D7D59D}"
+			]
+		},
+		{
+			"Comment": "Class `Panel Page Component`.labeled by Translatable Text Constant `Panel Page Component`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{D349C489-9684-4A5A-9843-B906A7F803BC}",
+			"DestinationInstances":
+			[
+				"{38894806-45B2-488D-90C2-A37D1554DD6E}"
+			]
+		},
+		{
+			"Comment": "Class `Heading Page Component`.labeled by Translatable Text Constant `Heading Page Component`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{FD86551E-E4CE-4B8B-95CB-BEC1E6A0EE2B}",
+			"DestinationInstances":
+			[
+				"{859D3608-79D4-4232-BDA3-C33B47478D81}"
+			]
+		},
+		{
+			"Comment": "Class `Page`.labeled by Translatable Text Constant `Page`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{D9626359-48E3-4840-A089-CD8DA6731690}",
+			"DestinationInstances":
+			[
+				"{0D52D7AC-5BE5-48F6-982F-C8F0057378AD}"
+			]
+		},
+		{
+			"Comment": "Class `Report`.labeled by Translatable Text Constant `Report`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{19D947B6-CE82-4EEE-92EC-A4E01E27F2DB}",
+			"DestinationInstances":
+			[
+				"{CF1B6102-2D79-47D8-B477-ACA11BECE942}"
+			]
+		},
+		{
+			"Comment": "Class `Report Column`.labeled by Translatable Text Constant `Report Column`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{655A04D9-FE35-4F89-9AAB-B8FA34989D03}",
+			"DestinationInstances":
+			[
+				"{75584B38-C260-4737-ADA8-34CE5CC591C1}"
+			]
+		},
+		{
+			"Comment": "Class `Standard Report`.labeled by Translatable Text Constant `Standard Report`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{FDF4A498-DE83-417D-BA01-707372125C8D}",
+			"DestinationInstances":
+			[
+				"{A0C75753-AF65-4291-B52F-5A461C2C5708}"
+			]
+		},
+		{
+			"Comment": "Class `File`.labeled by Translatable Text Constant `File`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{5D081079-E136-406A-A728-7472937A6E5E}",
+			"DestinationInstances":
+			[
+				"{71738243-99E4-4E68-8006-617C68725FC4}"
+			]
+		},
+		{
+			"Comment": "Class `Icon`.labeled by Translatable Text Constant `Icon`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{67BD594B-E8B0-4752-8796-D7A369513FBF}",
+			"DestinationInstances":
+			[
+				"{3B2CA86A-D332-416E-8AED-C203046A407C}"
+			]
+		},
+		{
+			"Comment": "Class `Font Awesome Icon`.labeled by Translatable Text Constant `Font Awesome Icon`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{2B71F9EE-E843-46ED-B07D-B0424767A921}",
+			"DestinationInstances":
+			[
+				"{4F8F55A7-5670-4F30-93A1-4EEEF324E202}"
+			]
+		},
+		{
+			"Comment": "Class `Image Icon`.labeled by Translatable Text Constant `Image Icon`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{AEBB7B6A-917F-4D62-AED8-279E758ED203}",
+			"DestinationInstances":
+			[
+				"{371C6FBC-9427-46B1-ADA0-BB38296032C4}"
+			]
+		},
+		{
+			"Comment": "Class `Menu`.labeled by Translatable Text Constant `Menu`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{06E7806D-9384-4EA5-B5D1-350A51552773}",
+			"DestinationInstances":
+			[
+				"{0B545C29-8BA7-4225-B072-D754657E7B27}"
+			]
+		},
+		{
+			"Comment": "Class `Menu Item`.labeled by Translatable Text Constant `Menu Item`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{1E9D38B9-1B07-4EF9-BAD7-43DEB25AEB83}",
+			"DestinationInstances":
+			[
+				"{2405A141-C3A3-42F7-904E-B69D24F0A455}"
+			]
+		},
+		{
+			"Comment": "Class `Command Menu Item`.labeled by Translatable Text Constant `Command Menu Item`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{9D3EDE23-6DB9-4664-9145-ABCBD3A0A2C2}",
+			"DestinationInstances":
+			[
+				"{79863946-FCBA-4889-9A97-B0E87FA1F1F0}"
+			]
+		},
+		{
+			"Comment": "Class `Separator Menu Item`.labeled by Translatable Text Constant `Separator Menu Item`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{798DECAB-5119-49D7-B0AD-D4BF45807188}",
+			"DestinationInstances":
+			[
+				"{48FC2F1B-DA87-44ED-8F0C-83C44C645346}"
+			]
+		},
+		{
+			"Comment": "Class `Header Menu Item`.labeled by Translatable Text Constant `Header Menu Item`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{1F148873-8A97-4409-A79B-C19D5D380CA4}",
+			"DestinationInstances":
+			[
+				"{830F0990-0374-4DDC-8760-562DF39CEA37}"
+			]
+		},
+		{
+			"Comment": "Class `Dashboard`.labeled by Translatable Text Constant `Dashboard`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{896B529C-452D-42AC-98C5-170ED4F826C6}",
+			"DestinationInstances":
+			[
+				"{748708BD-F6FF-406E-881D-FA76BE323FBD}"
+			]
+		},
+		{
+			"Comment": "Class `Dashboard Content`.labeled by Translatable Text Constant `Dashboard Content`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{D1A60533-1B5A-422E-9739-4551FDEC48BF}",
+			"DestinationInstances":
+			[
+				"{908DEF10-51C1-40A3-BF68-90936F6ECF2D}"
+			]
+		},
+		{
+			"Comment": "Class `Report Dashboard Content`.labeled by Translatable Text Constant `Report Dashboard Content`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{F3D52C9C-8A4E-4D5B-85BC-FD8EF8B87805}",
+			"DestinationInstances":
+			[
+				"{6F652E24-AC0C-49EE-8602-08944F997C45}"
+			]
+		},
+		{
+			"Comment": "Class `Data Center`.labeled by Translatable Text Constant `Data Center`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{7E3C9A3A-23D7-4811-9711-EE0BF92F1F63}",
+			"DestinationInstances":
+			[
+				"{C57A3514-AD6A-4904-A188-4FB7B36D8548}"
+			]
+		},
+		{
+			"Comment": "Class `Payment Plan`.labeled by Translatable Text Constant `Payment Plan`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{622C2C7B-B1C5-45F8-999C-370DC98D138D}",
+			"DestinationInstances":
+			[
+				"{A99DC9CE-C5BA-49FC-AECC-D5C9C8C0F74B}"
+			]
+		},
+		{
+			"Comment": "Class `Tenant`.labeled by Translatable Text Constant `Tenant`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{703F9D65-C584-4D9F-A656-D0E3C247FF1F}",
+			"DestinationInstances":
+			[
+				"{EDB58317-D9EC-4024-9DED-7292FC3360A5}"
+			]
+		},
+		{
+			"Comment": "Class `Layout`.labeled by Translatable Text Constant `Layout`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{BCDB6FFD-D2F2-4B63-BD7E-9C2CCD9547E0}",
+			"DestinationInstances":
+			[
+				"{1443BA25-F60F-4BCF-A9E7-A6A9A36A45F1}"
+			]
+		},
+		{
+			"Comment": "Class `Package`.labeled by Translatable Text Constant `Package`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"SourceInstance": "{6A1F66F7-8EA6-43D1-B2AF-198F63B84710}",
+			"DestinationInstances":
+			[
+				"{5696ADD4-E61D-441B-B31C-DE1A38ADD02B}"
+			]
 		}
 	]
 }
