@@ -4,6 +4,7 @@ window.addEventListener("load", function(e)
 	var frmMain = document.getElementById("frmMain");
 	frmMain.addEventListener("submit", function(e)
 	{
+		System.ClassList.Add(document.body, "Loading");
 		cmdContinue.setAttribute("disabled", "disabled");
 		
 		var xhr = new XMLHttpRequest();
@@ -22,6 +23,7 @@ window.addEventListener("load", function(e)
 				}
 				else
 				{
+					System.ClassList.Remove(document.body, "Loading");
 					alert(obj.Message);
 				}
 				cmdContinue.removeAttribute("disabled");
