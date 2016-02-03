@@ -99,6 +99,24 @@
 					));
 					
 					Relationship::Create($instRelationship, $instSource, $instDests);
+					
+					if (isset($rel->InverseRelationshipInstance))
+					{
+						$instInverseRelationship = TenantObjectInstance::GetByGlobalIdentifier($rel->InverseRelationshipInstance);
+						
+						foreach ($instDests as $instDest)
+						{
+							Objectify::Log("Creating a new Relationship", array
+							(
+								"Relationship Instance GID" => $rel->RelationshipInstance,
+								"Source Instance GID" => $instDest->GlobalIdentifier,
+								"Relationship Instance DBID" => $instRelationship->ID,
+								"Source Instance DBID" => $instDest->ID
+							));
+							
+							Relationship::Create($instInverseRelationship, $instDest, $instSource);
+						}
+					}
 				}
 			}
 		}
