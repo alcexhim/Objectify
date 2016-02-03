@@ -1,6 +1,6 @@
 <Website>
 	<Pages>
-		<Page FileName="objects/modify/$(objectID)" CodeBehindClassName="Objectify\Tenant\Pages\ObjectModifyPage" MasterPageFileName="Default">
+		<Page Title="Modify Object" FileName="objects/modify/$(objectID)" CodeBehindClassName="Objectify\Tenant\Pages\ObjectModifyPage" MasterPageFileName="Default">
 			<Content>
 				<wfx:Section PlaceholderID="Content">
 					<h1>Modify Object</h1>
@@ -65,7 +65,7 @@
 				</wfx:Section>
 			</Content>
 		</Page>
-		<Page FileName="objects" MasterPageFileName="Default">
+		<Page Title="View All Objects" FileName="objects" MasterPageFileName="Default">
 			<Content>
 				<wfx:Section PlaceholderID="Content">
 					<ofx:ObjectListView Width="100%">

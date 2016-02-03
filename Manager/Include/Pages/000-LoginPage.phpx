@@ -1,6 +1,6 @@
 <Website>
 	<Pages>
-		<Page FileName="account/login" CodeBehindClassName="Objectify\Tenant\Pages\LoginPage" MasterPageFileName="Blank" CssClass="LoginPage">
+		<Page Title="Log In" FileName="account/login" CodeBehindClassName="Objectify\Tenant\Pages\LoginPage" MasterPageFileName="Blank" CssClass="LoginPage">
 			<Content>
 				<wfx:Section PlaceholderID="Content">
 					<html:Image ImageUrl="~/Images/Header" />

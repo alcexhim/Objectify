@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Website>
 	<Pages>
-		<Page FileName="dashboard" CodeBehindClassName="Objectify\Tenant\Pages\DashboardPage" MasterPageFileName="Default">
+		<Page Title="Dashboard" FileName="dashboard" CodeBehindClassName="Objectify\Tenant\Pages\DashboardPage" MasterPageFileName="Default">
 			<Content>
 				<wfx:Section PlaceholderID="Content">
 					<wfx:Window ID="wndCreateTenant" Title="Create Tenant">
