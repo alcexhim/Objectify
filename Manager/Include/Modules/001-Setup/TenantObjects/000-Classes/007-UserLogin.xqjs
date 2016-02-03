@@ -10,19 +10,6 @@
 					"Name": "Class"
 				}
 			],
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{410FCF87-26E3-41F1-887A-1D1CC391E52B}"
-						]
-					}
-				}
-			],
 			"InstanceProperties":
 			[
 				{

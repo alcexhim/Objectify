@@ -13,19 +13,6 @@
 					"Name": "InstanceTitleableObject"
 				}
 			],
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{C0B0CE3D-4AA6-417E-93F0-AAF39FDC191A}"
-						]
-					}
-				}
-			],
 			"InstanceProperties":
 			[
 				{

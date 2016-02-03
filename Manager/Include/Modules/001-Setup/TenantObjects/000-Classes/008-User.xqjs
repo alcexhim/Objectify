@@ -65,16 +65,6 @@
 			"Properties":
 			[
 				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{0D05F758-F3F7-4640-B462-43DA9DB35C1C}"
-						]
-					}
-				},
-				{
 					"Name": "InstanceDisplayTitle",
 					"Value":
 					{

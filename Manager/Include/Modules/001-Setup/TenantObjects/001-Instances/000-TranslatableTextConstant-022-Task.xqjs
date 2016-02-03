@@ -36,20 +36,7 @@
 			"Instances":
 			[
 				{
-					"ID": "{72AF7286-FD95-43C1-B848-1050F36C15FE}",
-					"PropertyValues":
-					[
-						{
-							"Name": "Values",
-							"Value":
-							{
-								"Instances":
-								[
-									"{358404B6-522A-4768-B7BF-2E46A53F418D}"
-								]
-							}
-						}
-					]
+					"ID": "{72AF7286-FD95-43C1-B848-1050F36C15FE}"
 				}
 			]
 		}

@@ -20,7 +20,7 @@
 							"Name": "Language",
 							"Value":
 							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+								"I": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
 							}
 						},
 						{
@@ -36,20 +36,7 @@
 			"Instances":
 			[
 				{
-					"ID": "{C22BD524-1E63-4015-88C5-DB2E249B9BDE}",
-					"PropertyValues":
-					[
-						{
-							"Name": "Values",
-							"Value":
-							{
-								"Instances":
-								[
-									"{062B57B5-D728-4DF8-903A-AD79D843B5CA}"
-								]
-							}
-						}
-					]
+					"ID": "{C22BD524-1E63-4015-88C5-DB2E249B9BDE}"
 				}
 			]
 		}

@@ -64,19 +64,6 @@
 					"Name": "Class"
 				}
 			],
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{A2968B27-EC66-4213-8D54-768CD53284C2}"
-						]
-					}
-				}
-			],
 			"InstanceProperties":
 			[
 				{
@@ -101,19 +88,6 @@
 			[
 				{
 					"Name": "PageComponent"
-				}
-			],
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{C8839B75-2322-4D87-9367-A79C0291F3C6}"
-						]
-					}
 				}
 			],
 			"InstanceProperties":
@@ -143,19 +117,6 @@
 				},
 				{
 					"Name": "InstanceTitleableObject"
-				}
-			],
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{4CA712C7-FB9E-4D5E-84F7-B0C4539BF912}"
-						]
-					}
 				}
 			],
 			"InstanceProperties":
@@ -244,19 +205,6 @@
 					"Name": "PageComponent"
 				}
 			],
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{BD3B57A8-E4A2-4A51-9E5D-DA6A5799A792}"
-						]
-					}
-				}
-			],
 			"InstanceProperties":
 			[
 				{
@@ -272,19 +220,6 @@
 			[
 				{
 					"Name": "PageComponent"
-				}
-			],
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{43607289-E9F2-42E7-A6A9-9FB980CA89B5}"
-						]
-					}
 				}
 			],
 			"InstanceProperties":
@@ -305,19 +240,6 @@
 				},
 				{
 					"Name": "InstanceTitleableObject"
-				}
-			],
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{481B1D90-4D1C-4F9D-9B0F-F196087B0817}"
-						]
-					}
 				}
 			],
 			"InstanceProperties":
@@ -375,19 +297,6 @@
 					"Name": "InstanceTitleableObject"
 				}
 			],
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{9BBFCB74-FA17-4F89-A222-51E07C3DBFC6}"
-						]
-					}
-				}
-			],
 			"InstanceProperties":
 			[
 				{
@@ -403,19 +312,6 @@
 			[
 				{
 					"Name": "Class"
-				}
-			],
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{F3B4AE3F-4F98-4077-9AF9-6ACC2C0B3A89}"
-						]
-					}
 				}
 			],
 			"InstanceProperties":

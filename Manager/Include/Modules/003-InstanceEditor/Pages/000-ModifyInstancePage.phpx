@@ -6,8 +6,22 @@
 					<html:Heading Level="1">Edit Instance: <html:Literal ID="litInstanceObjectID" /></html:Heading>
 					<html:Heading Level="2"><html:Literal ID="litInstanceID" /></html:Heading>
 					
-					<wfx:FormView ID="fvInstanceProperties">
-					</wfx:FormView>
+					<wfx:TabContainer ID="tbsTabs" SelectedTabID="tabInstanceProperties">
+						<TabPages>
+							<wfx:TabPage ID="tabInstanceProperties" Title="Instance Properties (legacy)">
+								<wfx:FormView ID="fvInstanceProperties">
+								</wfx:FormView>
+							</wfx:TabPage>
+							<wfx:TabPage ID="tabRelationships" Title="Relationships">
+								<wfx:ListView ID="lvRelationships">
+									<Columns>
+										<wfx:ListViewColumn ID="lvcRelationship" Title="Relationship" />
+										<wfx:ListViewColumn ID="lvcDestinationInstances" Title="Target instances" />
+									</Columns>
+								</wfx:ListView>
+							</wfx:TabPage>
+						</TabPages>
+					</wfx:TabContainer>
 					
 					<div class="PageFooter">
 						<wfx:Button ID="cmdSaveChanges" CssClass="Primary" Text="Save Changes" />

@@ -36,20 +36,7 @@
 			"Instances":
 			[
 				{
-					"ID": "{748708BD-F6FF-406E-881D-FA76BE323FBD}",
-					"PropertyValues":
-					[
-						{
-							"Name": "Values",
-							"Value":
-							{
-								"Instances":
-								[
-									"{92EC9173-A12B-4E74-8638-689C90145A8B}"
-								]
-							}
-						}
-					]
+					"ID": "{748708BD-F6FF-406E-881D-FA76BE323FBD}"
 				}
 			]
 		}

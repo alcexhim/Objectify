@@ -136,6 +136,31 @@
 					]
 				},
 				{
+					"ID": "{20C70FA4-5258-480D-A61A-4A5BC9C5F990}",
+					"Comment": "Translatable Text Constant Value.for Translatable Text Constant Value",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "TranslatableTextConstantValue"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "TranslatableTextConstant"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "for"
+						}
+					]
+				},
+				{
 					"ID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 					"Comment": "Class.labeled by Translatable Text Constant",
 					"PropertyValues":
@@ -157,6 +182,31 @@
 						{
 							"Name": "RelationshipType",
 							"Value": "labeled by"
+						}
+					]
+				},
+				{
+					"ID": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
+					"Comment": "Translatable Text Constant.is label for Class",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "TranslatableTextConstant"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "Class"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "is label for"
 						}
 					]
 				}
@@ -185,19 +235,6 @@
 			"Name": "Class",
 			"Properties":
 			[
-				{
-					"Name": "Title",
-					"DataTypeName": "MultipleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "TranslatableTextConstantValue"
-							}
-						]
-					}
-				},
 				{
 					"Name": "Description",
 					"DataTypeName": "SingleInstance",
@@ -241,20 +278,6 @@
 		},
 		{
 			"Name": "String",
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"DataTypeName": "MultipleInstance",
-					"Value":
-					{
-						"Instances":
-						[
-							"{056B2384-F841-4562-886B-F7AFB6D272F2}"
-						]
-					}
-				}
-			],
 			"Instances":
 			[
 				{
@@ -634,116 +657,9 @@
 			]
 		},
 		{
-			"Name": "TranslatableTextConstant",
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{1245ECDF-883F-4C1A-8A9F-27505A5EA3D6}"
-						]
-					}
-				}
-			]
-		},
-		{
-			"Name": "TranslatableTextConstantValue",
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{08AB6C76-7461-4F10-9131-E2B63CF404C3}"
-						]
-					}
-				}
-			]
-		},
-		{
-			"Name": "StringComponent",
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{481E3FBE-B82A-4C76-9DDF-D66C6BA8C590}"
-						]
-					}
-				}
-			]
-		},
-		{
-			"Name": "InstancePropertyStringComponent",
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{C773E134-D9C3-4524-A908-ACF0F744B4E1}"
-						]
-					}
-				}
-			]
-		},
-		{
-			"Name": "TextConstantStringComponent",
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{E6F690A2-87A2-49B7-885E-70B58629322B}"
-						]
-					}
-				}
-			]
-		},
-		{
-			"Name": "TranslatableTextConstantStringComponent",
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{BEFAFDC4-358B-44E9-ACD9-FD253402EA22}"
-						]
-					}
-				}
-			]
-		},
-		{
 			"Name": "InstanceTitleableObject",
 			"Properties":
 			[
-				{
-					"Name": "Title",
-					"DataTypeName": "MultipleInstance",
-					"Value":
-					{
-						"Instances":
-						[
-							"{B670875A-0258-4C0E-83E7-61B3E6BEF366}"
-						]
-					}
-				},
 				{
 					"Name": "InstanceDisplayTitle",
 					"DataTypeName": "SingleInstance",
@@ -778,19 +694,6 @@
 					"Name": "InstanceTitleableObject"
 				}
 			],
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{D573044A-4E7F-490C-864E-BD9EC0188A78}"
-						]
-					}
-				}
-			],
 			"Instances":
 			[
 				{
@@ -821,19 +724,6 @@
 				},
 				{
 					"Name": "InstanceTitleableObject"
-				}
-			],
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{B271A437-32C7-4E99-8498-FC1B36A7AE11}"
-						]
-					}
 				}
 			],
 			"InstanceProperties":
@@ -903,70 +793,6 @@
 							}
 						],
 						"Instance": "{9547EB35-07FB-4B64-B82C-6DA1989B9165}"
-					}
-				}
-			]
-		},
-		{
-			"Name": "Attribute",
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{1CFD48D1-C680-429B-B6FA-831AE57A6DB8}"
-						]
-					}
-				}
-			]
-		},
-		{
-			"Name": "TextAttribute",
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{9C0705AD-07D0-4D06-A132-93987B966CF0}"
-						]
-					}
-				}
-			]
-		},
-		{
-			"Name": "BooleanAttribute",
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{E5B60723-ECE4-46C8-9CD1-E2AFA8D27AF8}"
-						]
-					}
-				}
-			]
-		},
-		{
-			"Name": "DateAttribute",
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{7BE6522A-4BE8-4CD3-8701-C8353F7DF630}"
-						]
 					}
 				}
 			]

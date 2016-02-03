@@ -32,16 +32,6 @@
 			"Properties":
 			[
 				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{EB06C4C1-DE2D-41F9-B844-6C733B35079D}"
-						]
-					}
-				},
-				{
 					"Name": "Layouts",
 					"DataTypeName": "MultipleInstance",
 					"Value":

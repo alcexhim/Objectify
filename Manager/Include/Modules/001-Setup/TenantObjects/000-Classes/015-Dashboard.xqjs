@@ -10,19 +10,6 @@
 					"Name": "Class"
 				}
 			],
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{92EC9173-A12B-4E74-8638-689C90145A8B}"
-						]
-					}
-				}
-			],
 			"InstanceProperties":
 			[
 				{
@@ -47,19 +34,6 @@
 			[
 				{
 					"Name": "Class"
-				}
-			],
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{7B72F7EE-0C80-4FA9-BEC6-3A6D20853D5B}"
-						]
-					}
 				}
 			],
 			"InstanceProperties":
@@ -99,19 +73,6 @@
 			[
 				{
 					"Name": "DashboardContent"
-				}
-			],
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{944FBF95-C316-4C07-B34F-5D2E1EFCD965}"
-						]
-					}
 				}
 			],
 			"InstanceProperties":

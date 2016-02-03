@@ -114,16 +114,6 @@
 			"Properties":
 			[
 				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{4B9417BB-2FEB-40D7-9A4E-6F36C4271F28}"
-						]
-					}
-				},
-				{
 					"Name": "InstanceDisplayTitle",
 					"Value":
 					{
@@ -161,20 +151,6 @@
 					"Name": "InstanceTitleableObject"
 				}
 			],
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"DataTypeName": "MultipleInstance",
-					"Value":
-					{
-						"Instances":
-						[
-							"{D5AA18A7-7ACD-4792-B039-6C620A151BAD}"
-						]
-					}
-				}
-			],
 			"InstanceProperties":
 			[
 				{
@@ -191,19 +167,6 @@
 			[
 				{
 					"Name": "MethodAction"
-				}
-			],
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{D8C0D4D4-F8C6-4B92-A2C1-8BF16B16203D}"
-						]
-					}
 				}
 			]
 		},
@@ -275,19 +238,6 @@
 					"Name": "Method"
 				}
 			],
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{C2B3A2FA-25A0-45B4-91F2-22D00C4008AF}"
-						]
-					}
-				}
-			],
 			"InstanceProperties":
 			[
 				{
@@ -316,16 +266,6 @@
 			],
 			"Properties":
 			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{8B5CFF09-F929-4BAD-A0EE-BCBBA20807D6}"
-						]
-					}
-				},
 				{
 					"Name": "Description",
 					"Value":

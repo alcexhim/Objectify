@@ -604,19 +604,6 @@
 					"Name": "InstanceTitleableObject"
 				}
 			],
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{BEA3084E-7A0B-47C3-89A1-6E287172284A}"
-						]
-					}
-				}
-			],
 			"InstanceProperties":
 			[
 				{
@@ -894,19 +881,6 @@
 				},
 				{
 					"Name": "InstanceTitleableObject"
-				}
-			],
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{A73F4267-FBEC-4C6B-A831-544972FCFA54}"
-						]
-					}
 				}
 			],
 			"InstanceProperties":

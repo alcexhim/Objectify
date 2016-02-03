@@ -10,19 +10,6 @@
 					"Name": "Class"
 				}
 			],
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{EC9D2CA1-5629-4F9E-A74B-CC3AE0B6633F}"
-						]
-					}
-				}
-			],
 			"InstanceProperties":
 			[
 				{
@@ -48,19 +35,6 @@
 				{
 					"Name": "Class"
 				}
-			],
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{4A5E4CC0-D674-43EC-A0E7-531706378820}"
-						]
-					}
-				}
 			]
 		},
 		{
@@ -73,19 +47,6 @@
 				},
 				{
 					"Name": "InstanceTitleableObject"
-				}
-			],
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{7DDAB0C9-BC56-4213-AB4E-9C5EF2C841F4}"
-						]
-					}
 				}
 			],
 			"InstanceProperties":
@@ -117,19 +78,6 @@
 				{
 					"Name": "MenuItem"
 				}
-			],
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{57A0737B-F7C8-4DD4-8326-47519137D265}"
-						]
-					}
-				}
 			]
 		},
 		{
@@ -142,19 +90,6 @@
 				},
 				{
 					"Name": "InstanceTitleableObject"
-				}
-			],
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{9A4FCD63-F11F-4312-A59C-2160F19A06BB}"
-						]
-					}
 				}
 			]
 		}

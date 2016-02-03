@@ -36,20 +36,7 @@
 			"Instances":
 			[
 				{
-					"ID": "{C64F1F96-D87B-4526-9F04-1A55AAA91202}",
-					"PropertyValues":
-					[
-						{
-							"Name": "Values",
-							"Value":
-							{
-								"Instances":
-								[
-									"{410FCF87-26E3-41F1-887A-1D1CC391E52B}"
-								]
-							}
-						}
-					]
+					"ID": "{C64F1F96-D87B-4526-9F04-1A55AAA91202}"
 				}
 			]
 		}

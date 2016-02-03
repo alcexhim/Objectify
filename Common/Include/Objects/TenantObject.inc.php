@@ -927,8 +927,18 @@
 			if ($relLabeledBy != null)
 			{
 				$insts = $relLabeledBy->GetDestinationInstances();
-				$str = $insts[0]->ToString();
-				return $str;
+				
+				$instRelationship_HasValue = TenantObjectInstance::GetByGlobalIdentifier("{F9B60C00-FF1D-438F-AC74-6EDFA8DD7324}");
+				$relHasValue = Relationship::GetBySourceInstance($insts[0], $instRelationship_HasValue);
+				if (count($relHasValue) > 0)
+				{
+					$relHasValue = $relHasValue[0];
+					
+					$insts = $relHasValue->GetDestinationInstances();
+					
+					$str = $insts[0]->ToString();
+					return $str;
+				}
 			}
 			return "";
 			

@@ -4,19 +4,6 @@
 		{
 			"ID": "{5D081079-E136-406A-A728-7472937A6E5E}",
 			"Name": "File",
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"Value":
-					{
-						"Instances":
-						[
-							"{CF576B15-BFD8-43D3-B0F7-AA29E3BCCF8E}"
-						]
-					}
-				}
-			],
 			"InstanceProperties":
 			[
 				{

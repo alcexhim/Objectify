@@ -5,9 +5,15 @@
 	use Phast\CancelEventArgs;
 	use Phast\WebControls\FormViewItemText;
 	
+	use Phast\WebControls\ListViewItem;
+	use Phast\WebControls\ListViewItemColumn;
+	
+	use Objectify\Objects\Relationship;
 	use Objectify\Objects\TenantObjectInstance;
+	
 	use Objectify\WebControls\FormViewItemInstance;
-				
+	use Objectify\WebControls\InstanceDisplayWidget;
+	
 	class ModifyInstancePage extends PhastPage
 	{
 		public function OnInitializing(CancelEventArgs $e)
@@ -22,7 +28,12 @@
 			$litInstanceObjectID = $e->RenderingPage->GetControlByID("litInstanceObjectID");
 			$litInstanceObjectID->Value = $inst->ParentObject->ToString();
 			
-			$fv = $e->RenderingPage->GetControlByID("fvInstanceProperties");
+			$tbsTabs = $e->RenderingPage->GetControlByID("tbsTabs");
+			
+			
+			$tabInstanceProperties = $tbsTabs->GetTabByID("tabInstanceProperties");
+			
+			$fv = $tabInstanceProperties->GetControlByID("fvInstanceProperties");
 			
 			$instanceProperties = $inst->ParentObject->GetInstanceProperties();
 			foreach ($instanceProperties as $prop)
@@ -68,6 +79,31 @@
 						break;
 					}
 				}
+			}
+			
+			$tabRelationships = $tbsTabs->GetTabByID("tabRelationships");
+			$lvRelationships = $tabRelationships->GetControlByID("lvRelationships");
+			$rels = Relationship::GetBySourceInstance($inst);
+			foreach ($rels as $rel)
+			{
+				$lvi = new ListViewItem(array
+				(
+					new ListViewItemColumn("lvcRelationship", function($sender)
+					{
+						$iv = new InstanceDisplayWidget($sender->ExtraData);
+						$iv->Render();
+					}, null, $rel->RelationshipInstance),
+					new ListViewItemColumn("lvcDestinationInstances", function($sender)
+					{
+						foreach ($sender->ExtraData as $inst)
+						{
+							$iv = new InstanceDisplayWidget($inst);
+							$iv->Render();
+							echo ("<br />");
+						}
+					}, null, $rel->GetDestinationInstances())
+				));
+				$lvRelationships->Items[] = $lvi;
 			}
 		}
 	}

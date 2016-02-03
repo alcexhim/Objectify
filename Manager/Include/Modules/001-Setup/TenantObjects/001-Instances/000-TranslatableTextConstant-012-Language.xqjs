@@ -36,20 +36,7 @@
 			"Instances":
 			[
 				{
-					"ID": "{9319207A-02B7-4927-ACAB-57F85019AA3F}",
-					"PropertyValues":
-					[
-						{
-							"Name": "Values",
-							"Value":
-							{
-								"Instances":
-								[
-									"{D573044A-4E7F-490C-864E-BD9EC0188A78}"
-								]
-							}
-						}
-					]
+					"ID": "{9319207A-02B7-4927-ACAB-57F85019AA3F}"
 				}
 			]
 		}

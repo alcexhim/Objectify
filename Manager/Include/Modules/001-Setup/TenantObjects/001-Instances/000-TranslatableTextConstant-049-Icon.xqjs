@@ -36,20 +36,7 @@
 			"Instances":
 			[
 				{
-					"ID": "{3B2CA86A-D332-416E-8AED-C203046A407C}",
-					"PropertyValues":
-					[
-						{
-							"Name": "Values",
-							"Value":
-							{
-								"Instances":
-								[
-									"{5E95CF95-58F0-41EF-8651-88A39766FE21}"
-								]
-							}
-						}
-					]
+					"ID": "{3B2CA86A-D332-416E-8AED-C203046A407C}"
 				}
 			]
 		}

@@ -13,20 +13,6 @@
 					"Name": "InstanceTitleableObject"
 				}
 			],
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"DataTypeName": "MultipleInstance",
-					"Value":
-					{
-						"Instances":
-						[
-							"{34142FCB-172C-490A-AF03-FF8451D00CAF}"
-						]
-					}
-				}
-			],
 			"Instances":
 			[
 				{
@@ -55,20 +41,6 @@
 			[
 				{
 					"Name": "Class"
-				}
-			],
-			"Properties":
-			[
-				{
-					"Name": "Title",
-					"DataTypeName": "MultipleInstance",
-					"Value":
-					{
-						"Instances":
-						[
-							"{739C26BC-740F-4CB0-BCB1-2A28FA570E7D}"
-						]
-					}
 				}
 			],
 			"InstanceProperties":
