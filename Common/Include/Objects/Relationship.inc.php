@@ -174,6 +174,7 @@ use Phast\Data\DataSystem;
 		/**
 		 * Gets all the Relationships associated with the specified source instance.
 		 * @param unknown $inst
+		 * @return Relationship[]
 		 */
 		public static function GetBySourceInstance($inst, $relationshipInstance = null)
 		{

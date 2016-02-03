@@ -140,68 +140,40 @@
 		
 		public function GetParentObjects()
 		{
-			$pdo = DataSystem::GetPDO();
-			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectParentObjects WHERE parentobject_ObjectID = :parentobject_ObjectID";
-			$statement = $pdo->prepare($query);
-			
-			$result = $statement->execute(array
-			(
-				":parentobject_ObjectID" => $this->ID
-			));
-			
-			if ($result === false)
-			{
-				$ei = $statement->errorInfo();
-				Objectify::Log("Database error when trying to retrieve a list of parent objects from a child object.", array
-				(
-					"DatabaseError" => $ei[2] . " (" . $ei[1] . ")",
-					"Query" => $query,
-					"Object ID" => $obj->ID
-				));
-				return null;
-			}
-			
-			$count = $statement->rowCount();
+			$instRel_Class__has_super_Class = TenantObjectInstance::GetByGlobalIdentifier("{100F0308-855D-4EC5-99FA-D8976CA20053}");
+			$instThisClass = TenantObjectInstance::GetByGlobalIdentifier($this->GlobalIdentifier);
+			$rels = Relationship::GetBySourceInstance($instThisClass, $instRel_Class__has_super_Class);
+			$rels = $rels[0];
+
 			$retval = array();
 			
-			for ($i = 0; $i < $count; $i++)
+			if ($rels != null)
 			{
-				$values = $statement->fetch(PDO::FETCH_ASSOC);
-				$retval[] = TenantObject::GetByID($values["parentobject_ParentObjectID"]);
+				$instTargets = $rels->GetDestinationInstances();
+				foreach ($instTargets as $inst)
+				{
+					$retval[] = TenantObject::GetByGlobalIdentifier($inst->GlobalIdentifier);
+				}
 			}
 			return $retval;
 		}
 		
 		public function GetChildObjects()
 		{
-			$pdo = DataSystem::GetPDO();
-			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectParentObjects WHERE parentobject_ParentObjectID = :parentobject_ParentObjectID";
-			$statement = $pdo->prepare($query);
+			$instRel_Class__has_sub_Class = TenantObjectInstance::GetByGlobalIdentifier("{C14BC80D-879C-4E6F-9123-E8DFB13F4666}");
+			$instThisClass = TenantObjectInstance::GetByGlobalIdentifier($this->GlobalIdentifier);
+			$rels = Relationship::GetBySourceInstance($instThisClass, $instRel_Class__has_sub_Class);
+			$rels = $rels[0];
 			
-			$result = $statement->execute(array
-			(
-				":parentobject_ParentObjectID" => $this->ID
-			));
-			
-			if ($result === false)
-			{
-				$ei = $statement->errorInfo();
-				Objectify::Log("Database error when trying to retrieve a list of parent objects from a child object.", array
-				(
-					"DatabaseError" => $ei[2] . " (" . $ei[1] . ")",
-					"Query" => $query,
-					"Object ID" => $obj->ID
-				));
-				return null;
-			}
-			
-			$count = $statement->rowCount();
 			$retval = array();
 			
-			for ($i = 0; $i < $count; $i++)
+			if ($rels != null)
 			{
-				$values = $statement->fetch(PDO::FETCH_ASSOC);
-				$retval[] = TenantObject::GetByID($values["parentobject_ObjectID"]);
+				$instTargets = $rels->GetDestinationInstances();
+				foreach ($instTargets as $inst)
+				{
+					$retval[] = TenantObject::GetByGlobalIdentifier($inst->GlobalIdentifier);
+				}
 			}
 			return $retval;
 		}
@@ -212,29 +184,17 @@
 		 */
 		public function AddParentObject($obj)
 		{
-			$pdo = DataSystem::GetPDO();
-			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectParentObjects (parentobject_TenantID, parentobject_ObjectID, parentobject_ParentObjectID) VALUES (:parentobject_TenantID, :parentobject_ObjectID, :parentobject_ParentObjectID)";
-			$statement = $pdo->prepare($query);
+			$instRel_Class__has_super_Class = TenantObjectInstance::GetByGlobalIdentifier("{100F0308-855D-4EC5-99FA-D8976CA20053}");
+			$instRel_Class__has_sub_Class = TenantObjectInstance::GetByGlobalIdentifier("{C14BC80D-879C-4E6F-9123-E8DFB13F4666}");
 			
-			$result = $statement->execute(array
-			(
-				":parentobject_TenantID" => $this->Tenant->ID,
-				":parentobject_ObjectID" => $this->ID,
-				":parentobject_ParentObjectID" => $obj->ID
-			));
+			$instThisClass = TenantObjectInstance::GetByGlobalIdentifier($this->GlobalIdentifier);
+			$instThatClass = TenantObjectInstance::GetByGlobalIdentifier($obj->GlobalIdentifier);
 			
-			if ($result === false)
-			{
-				$ei = $statement->errorInfo();
-				Objectify::Log("Database error when trying to add a parent object to a child object.", array
-				(
-					"DatabaseError" => $ei[2] . " (" . $ei[1] . ")",
-					"Query" => $query,
-					"Object ID" => $this->ID,
-					"Parent Object ID" => $obj->ID
-				));
-				return false;
-			}
+			$retval = Relationship::Create($instRel_Class__has_super_Class, $instThisClass, $instThatClass);
+			if (!$retval) return false;
+			
+			$retval = Relationship::Create($instRel_Class__has_sub_Class, $instThatClass, $instThisClass);
+			if (!$retval) return false;
 			
 			return true;
 		}

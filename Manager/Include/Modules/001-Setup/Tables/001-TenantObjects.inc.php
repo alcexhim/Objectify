@@ -24,27 +24,6 @@
 	);
 	$tables[] = $tblTenantObjects;
 	
-	$tblTenantObjectParentObjects = new Table("TenantObjectParentObjects", "parentobject_", array
-	(
-		// 			$name, $dataType, $size, $value, $allowNull, $primaryKey, $autoIncrement
-		new Column("TenantID", "INT", null, null, false),
-		new Column("ObjectID", "INT", null, null, false),
-		new Column("ParentObjectID", "INT", null, null, false)
-	));
-	$tblTenantObjectParentObjects->PrimaryKey = new TableKey(array
-	(
-		new TableKeyColumn("TenantID"),
-		new TableKeyColumn("ObjectID"),
-		new TableKeyColumn("ParentObjectID")
-	));
-	$tblTenantObjectParentObjects->ForeignKeys = array
-	(
-		new TableForeignKey("TenantID", new TableForeignKeyColumn($tblTenants, "ID")),
-		new TableForeignKey("ObjectID", new TableForeignKeyColumn($tblTenantObjects, "ID")),
-		new TableForeignKey("ParentObjectID", new TableForeignKeyColumn($tblTenantObjects, "ID"))
-	);
-	$tables[] = $tblTenantObjectParentObjects;
-	
 	// Available static properties for the objects.
 	$tblTenantObjectProperties = new Table("TenantObjectProperties", "property_", array
 	(
