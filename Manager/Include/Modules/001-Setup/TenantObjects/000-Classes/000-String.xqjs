@@ -230,34 +230,58 @@
 			]
 		},
 		{
-			"Name": "Class",
-			"Properties":
+			"Name": "Relationship",
+			"Instances":
 			[
 				{
-					"Name": "InstanceDisplayTitle",
-					"DataTypeName": "SingleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
+					"ID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+					"Comment": "Class.instance labeled by String",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "Class"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
 							{
 								"Name": "String"
 							}
-						]
-					}
-				}
-			]
-		},
-		{
-			"Name": "Relationship",
-			"Properties":
-			[
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "instance labeled by"
+						}
+					]
+				},
 				{
-					"Name": "InstanceDisplayTitle",
-					"Value":
-					{
-						"Instance": "{69FA0360-4747-49BC-8B82-06CD121B6F36}"
-					}
+					"ID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+					"Comment": "String.labels instance of Class",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "String"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "Class"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "labels instance of"
+						}
+					]
 				}
 			]
 		}

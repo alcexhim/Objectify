@@ -48,16 +48,6 @@
 					"Name": "Class"
 				}
 			],
-			"Properties":
-			[
-				{
-					"Name": "InstanceDisplayTitle",
-					"Value":
-					{
-						"Instance": "{9FE564A4-53AE-45B4-8110-BF732164C683}" 
-					}
-				}
-			],
 			"InstanceProperties":
 			[
 				{

@@ -79,16 +79,6 @@
 					"Name": "Class"
 				}
 			],
-			"Properties":
-			[
-				{
-					"Name": "InstanceDisplayTitle",
-					"Value":
-					{
-						"Instance": "{2E113B59-CFF0-4F08-A5B2-1E5061491AC5}"
-					}
-				}
-			],
 			"InstanceProperties":
 			[
 				{
@@ -295,19 +285,6 @@
 							}
 						}
 					]
-				}
-			]
-		},
-		{
-			"Name": "InstancePropertyStringComponent",
-			"Properties":
-			[
-				{
-					"Name": "InstanceDisplayTitle",
-					"Value":
-					{
-						"Instance": "{EB4F9366-4EC8-4A5E-A932-B6A8A222A416}"
-					}
 				}
 			]
 		},
@@ -658,17 +635,6 @@
 		},
 		{
 			"Name": "InstanceTitleableObject",
-			"Properties":
-			[
-				{
-					"Name": "InstanceDisplayTitle",
-					"DataTypeName": "SingleInstance",
-					"Value":
-					{
-						"Instance": "{AA37C17F-CDB8-4ED2-BE87-3388DF4825BB}"
-					}
-				}
-			],
 			"InstanceProperties":
 			[
 				{

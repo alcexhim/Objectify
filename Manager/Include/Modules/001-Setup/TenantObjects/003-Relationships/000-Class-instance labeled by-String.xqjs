@@ -1,0 +1,75 @@
+{
+	"Relationships":
+	[
+		{
+			"Comment": "Class `Relationship`.instance labeled by String",
+			"RelationshipInstance": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+			"InverseRelationshipInstance": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+			"SourceInstance": "{9B0A80F9-C325-4D36-997C-FB4106204648}",
+			"DestinationInstances":
+			[
+				"{69FA0360-4747-49BC-8B82-06CD121B6F36}"
+			]
+		},
+		{
+			"Comment": "Class `Translatable Text Constant`.instance labeled by String",
+			"RelationshipInstance": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+			"InverseRelationshipInstance": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+			"SourceInstance": "{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}",
+			"DestinationInstances":
+			[
+				"{2E113B59-CFF0-4F08-A5B2-1E5061491AC5}"
+			]
+		},
+		{
+			"Comment": "Class `Instance Property String Component`.instance labeled by String",
+			"RelationshipInstance": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+			"InverseRelationshipInstance": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+			"SourceInstance": "{D37439E3-1138-4148-9946-379695B9B945}",
+			"DestinationInstances":
+			[
+				"{EB4F9366-4EC8-4A5E-A932-B6A8A222A416}"
+			]
+		},
+		{
+			"Comment": "Class `Instance Titleable Object`.instance labeled by String",
+			"RelationshipInstance": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+			"InverseRelationshipInstance": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+			"SourceInstance": "{DD658EAB-9A3D-4ED1-8631-E3A5A336A7B6}",
+			"DestinationInstances":
+			[
+				"{AA37C17F-CDB8-4ED2-BE87-3388DF4825BB}"
+			]
+		},
+		{
+			"Comment": "Class `Method Action`.instance labeled by String",
+			"RelationshipInstance": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+			"InverseRelationshipInstance": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+			"SourceInstance": "{084A6D58-32C9-4A5F-9D2B-86C46F74E522}",
+			"DestinationInstances":
+			[
+				"{8833DA21-F5A4-4794-AE0D-724D744F12EC}"
+			]
+		},
+		{
+			"Comment": "Class `User`.instance labeled by String",
+			"RelationshipInstance": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+			"InverseRelationshipInstance": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+			"SourceInstance": "{9C6871C1-9A7F-4A3A-900E-69D1D9E24486}",
+			"DestinationInstances":
+			[
+				"{344CC8C6-EC17-4568-BACA-D55C77B2B0BF}"
+			]
+		},
+		{
+			"Comment": "Class `Tenant`.instance labeled by String",
+			"RelationshipInstance": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+			"InverseRelationshipInstance": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+			"SourceInstance": "{703F9D65-C584-4D9F-A656-D0E3C247FF1F}",
+			"DestinationInstances":
+			[
+				"{9FE564A4-53AE-45B4-8110-BF732164C683}"
+			]
+		}
+	]
+}

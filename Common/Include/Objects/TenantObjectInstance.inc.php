@@ -246,6 +246,13 @@
 		public function ToString()
 		{
 			// First get the Instance Display Title on the parent object and see if we have a format
+			$rels = Relationship::GetBySourceInstance($this, KnownRelationships::get___Class__instance_labeled_by__String());
+			if (count($rels) > 0)
+			{
+				$text = print_r($rels, true);
+				return $text;
+			}
+			
 			$propInstanceDisplayTitle = $this->ParentObject->GetPropertyValue("InstanceDisplayTitle");
 			if ($propInstanceDisplayTitle != null)
 			{
