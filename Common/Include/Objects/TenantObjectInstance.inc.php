@@ -249,37 +249,38 @@
 			$rels = Relationship::GetBySourceInstance($this, KnownRelationships::get___Class__instance_labeled_by__String());
 			if (count($rels) > 0)
 			{
-				$text = print_r($rels, true);
-				return $text;
-			}
-			
-			$propInstanceDisplayTitle = $this->ParentObject->GetPropertyValue("InstanceDisplayTitle");
-			if ($propInstanceDisplayTitle != null)
-			{
-				$propInstanceDisplayTitle_Value = $propInstanceDisplayTitle->GetInstance();
-				if ($propInstanceDisplayTitle_Value != null)
+				$rels = $rels[0];
+				$insts = $rels->GetDestinationInstances();
+				$inst = $insts[0];
+				
+				if ($inst->ParentObject->Name == "String")
 				{
-					$components = $propInstanceDisplayTitle_Value->GetPropertyValue("Components");
+					$components = $inst->GetPropertyValue("Components");
 					if ($components === null)
 					{
 						trigger_error("XquizIT: Instance Display Title - Components property is NULL");
 						return "";
 					}
-					$componentInstances = $components->GetInstances();
+					
+					$insts = $components->GetInstances();
 					$retval = "";
-					foreach ($componentInstances as $inst)
+					foreach ($insts as $inst)
 					{
 						switch ($inst->ParentObject->Name)
 						{
 							case "TextConstantStringComponent":
 							{
+								$retval .= "[TextConstantStringComponent] ";
 								$value = $inst->GetPropertyValue("Value");
 								$retval .= $value;
 								break;
 							}
 							case "InstancePropertyStringComponent":
 							{
+								$retval .= "[InstancePropertyStringComponent] ";
 								$propertyName = $inst->GetPropertyValue("PropertyName");
+								$retval .= "`" . $propertyName . "`";
+								
 								$propertyValue = $this->GetPropertyValue($propertyName);
 								if (is_object($propertyValue))
 								{
@@ -315,7 +316,10 @@
 						}
 					}
 					return $retval;
+					
+					$text = print_r($insts, true);
 				}
+				return $text;
 			}
 			
 			/*
