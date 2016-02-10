@@ -246,7 +246,8 @@
 		public function ToString()
 		{
 			// First get the Instance Display Title on the parent object and see if we have a format
-			$rels = Relationship::GetBySourceInstance($this, KnownRelationships::get___Class__instance_labeled_by__String());
+			$parentObjectInstance = TenantObjectInstance::GetByGlobalIdentifier($this->ParentObject->GlobalIdentifier);
+			$rels = Relationship::GetBySourceInstance($parentObjectInstance, KnownRelationships::get___Class__instance_labeled_by__String());
 			if (count($rels) > 0)
 			{
 				$rels = $rels[0];
@@ -263,25 +264,21 @@
 					}
 					
 					$insts = $components->GetInstances();
-					$retval = "";
 					foreach ($insts as $inst)
 					{
 						switch ($inst->ParentObject->Name)
 						{
 							case "TextConstantStringComponent":
 							{
-								$retval .= "[TextConstantStringComponent] ";
 								$value = $inst->GetPropertyValue("Value");
 								$retval .= $value;
 								break;
 							}
 							case "InstancePropertyStringComponent":
 							{
-								$retval .= "[InstancePropertyStringComponent] ";
 								$propertyName = $inst->GetPropertyValue("PropertyName");
-								$retval .= "`" . $propertyName . "`";
+								$propertyValue = $this->GetPropertyValue($propertyName, "[" . $propertyName . " on " . $this->ParentObject->Name . "]");
 								
-								$propertyValue = $this->GetPropertyValue($propertyName);
 								if (is_object($propertyValue))
 								{
 									switch (get_class($propertyValue))
@@ -315,11 +312,12 @@
 							}
 						}
 					}
-					return $retval;
-					
-					$text = print_r($insts, true);
 				}
-				return $text;
+				return $retval;
+			}
+			else
+			{
+				return "[" . $this->ParentObject->Name . "]";
 			}
 			
 			/*

@@ -2,6 +2,26 @@
 	"Relationships":
 	[
 		{
+			"Comment": "Class `Attribute`.instance labeled by String",
+			"RelationshipInstance": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+			"InverseRelationshipInstance": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+			"SourceInstance": "{F9CD7751-EF62-4F7C-8A28-EBE90B8F46AA}",
+			"DestinationInstances":
+			[
+				"{6894DC7E-F471-4F5C-88E6-B8016259817F}"
+			]
+		},
+		{
+			"Comment": "Class `Boolean Attribute`.instance labeled by String - REMOVE WHEN RELATIONSHIP INHERITANCE IS FINISHED",
+			"RelationshipInstance": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+			"InverseRelationshipInstance": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+			"SourceInstance": "{EA830448-A403-4ED9-A3D3-048D5D5C3A03}",
+			"DestinationInstances":
+			[
+				"{6894DC7E-F471-4F5C-88E6-B8016259817F}"
+			]
+		},
+		{
 			"Comment": "Class `Relationship`.instance labeled by String",
 			"RelationshipInstance": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
 			"InverseRelationshipInstance": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
@@ -19,6 +39,16 @@
 			"DestinationInstances":
 			[
 				"{2E113B59-CFF0-4F08-A5B2-1E5061491AC5}"
+			]
+		},
+		{
+			"Comment": "Class `Translatable Text Constant Value`.instance labeled by String",
+			"RelationshipInstance": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+			"InverseRelationshipInstance": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+			"SourceInstance": "{6D38E757-EC18-43AD-9C35-D15BB446C0E1}",
+			"DestinationInstances":
+			[
+				"{BBE5E586-FC28-451A-8495-B0CDA6203E03}"
 			]
 		},
 		{

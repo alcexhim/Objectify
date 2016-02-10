@@ -44,6 +44,16 @@
 							"Value": "Values"
 						}
 					]
+				},
+				{
+					"ID": "{9CE143E4-410F-4373-9BAF-778CEB794C66}",
+					"PropertyValues":
+					[
+						{
+							"Name": "PropertyName",
+							"Value": "Value"
+						}
+					]
 				}
 			]
 		},
@@ -53,7 +63,7 @@
 			[
 				{
 					"ID": "{2E113B59-CFF0-4F08-A5B2-1E5061491AC5}",
-					"Comment": "Translatable Text Constant.get Description",
+					"Comment": "Translatable Text Constant.get Values",
 					"PropertyValues":
 					[
 						{
@@ -63,6 +73,23 @@
 								"Instances":
 								[
 									"{76D2CE0D-AA4D-460B-B844-2BD76EF9902B}"
+								]
+							}
+						}
+					]
+				},
+				{
+					"ID": "{BBE5E586-FC28-451A-8495-B0CDA6203E03}",
+					"Comment": "Translatable Text Constant Value.get Value",
+					"PropertyValues":
+					[
+						{
+							"Name": "Components",
+							"Value":
+							{
+								"Instances":
+								[
+									"{9CE143E4-410F-4373-9BAF-778CEB794C66}"
 								]
 							}
 						}
