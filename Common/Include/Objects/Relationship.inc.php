@@ -173,7 +173,8 @@ use Phast\Data\DataSystem;
 		
 		/**
 		 * Gets all the Relationships associated with the specified source instance.
-		 * @param unknown $inst
+		 * @param TenantObjectInstance $inst The source instance whose relationships should be retrieved.
+		 * @param TenantObjectInstance $relationshipInstance The instance of the Relationship to retrieve.
 		 * @return Relationship[]
 		 */
 		public static function GetBySourceInstance($inst, $relationshipInstance = null)
