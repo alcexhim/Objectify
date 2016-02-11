@@ -944,6 +944,16 @@
 						$objs = $this->LoadPostXQJS($tenantObjectFileName);
 					}
 					
+					// finally do some post-processing, such as adding attributes, etc.
+					$objClasses = TenantObject::Get();
+					
+					$instAttribute_Name = TenantObjectInstance::GetByGlobalIdentifier("{9153A637-992E-4712-ADF2-B03F0D9EDEA6}");
+					foreach ($objClasses as $obj)
+					{
+						$instThisClass = TenantObjectInstance::GetByGlobalIdentifier($obj->GlobalIdentifier);
+						$instThisClass->SetAttributeValue($instAttribute_Name, $obj->Name);
+					}
+					
 					echo("{");
 					echo("\"Result\": \"Success\"");
 					echo("}");
