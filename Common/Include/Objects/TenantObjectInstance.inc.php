@@ -96,6 +96,96 @@
 			return TenantObjectInstance::GetByAssoc($values);
 		}
 		
+		/* ********** BEGIN: New Attribute functions to replace deprecated Property functions ********** */
+		
+		/**
+		 * Gets the value of the specified Attribute for this Instance as of the given date.
+		 * @param TenantObjectInstance|string $attribute
+		 * @param mixed $defaultValue
+		 * @param \DateTime $effectiveDateTime
+		 */
+		public function GetAttributeValue($attribute, $defaultValue = null, $effectiveDateTime = null)
+		{
+			$pdo = DataSystem::GetPDO();
+			
+			if (is_string($attribute))
+			{
+				
+			}
+			else if (is_object($attribute))
+			{
+				if (get_class($attribute) != "Objectify\\Objects\\TenantObjectInstance")
+				{
+					
+				}
+			}
+			else
+			{
+				return false;
+			}
+			
+			$paramz = array
+			(
+				":attval_TenantID" => $this->ParentObject->Tenant->ID,
+				":attval_InstanceID" => $this->ID,
+				":attval_AttributeInstanceID" => $attribute->ID
+			);
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "AttributeValues WHERE "
+				. "attval_TenantID = :attval_TenantID"
+				. " AND attval_InstanceID = :attval_InstanceID"
+				. " AND attval_AttributeInstanceID = :attval_AttributeInstanceID";
+			
+			if ($effectiveDateTime != null)
+			{
+				$query .= " AND attval_EffectiveDateTime <= :attval_EffectiveDateTime";
+			}
+			$query .= " ORDER BY attval_EffectiveDateTime DESC";
+			$query .= " LIMIT 1";
+			
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute($paramz);
+			
+			if ($result === false)
+			{
+				return false;
+			}
+			
+			$count = $statement->rowCount();
+			if ($count == 0) return false;
+			
+			$values = $statement->fetch(PDO::FETCH_ASSOC);
+			return $values["attval_Value"];
+		}
+		
+		/**
+		 * Sets the value of the specified Attribute for this Instance to the given value.
+		 * @param TenantObjectInstance|string $attribute
+		 * @param mixed $value
+		 */
+		public function SetAttributeValue($attribute, $value)
+		{
+			$pdo = DataSystem::GetPDO();
+			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "AttributeValues ("
+				. "attval_TenantID, attval_AttributeInstanceID, attval_InstanceID, attval_EffectiveDateTime, attval_UserInstanceID, attval_Value"
+				. ") VALUES ("
+				. ":attval_TenantID, :attval_AttributeInstanceID, :attval_InstanceID, NOW(), :attval_UserInstanceID, :attval_Value"
+				. ")";
+			
+			$user = User::GetCurrent();
+			
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				":attval_TenantID" => $this->ParentObject->Tenant->ID,
+				":attval_AttributeInstanceID" => $attribute->ID,
+				":attval_InstanceID" => $this->ID,
+				":attval_UserInstanceID" => ($user == null ? null : $user->ID),
+				":attval_Value" => $value
+			));
+		}
+		
+		/* ********** END: New Attribute functions to replace deprecated Property functions ********** */
+		
 		public function GetPropertyValue($property, $defaultValue = null)
 		{
 			$pdo = DataSystem::GetPDO();

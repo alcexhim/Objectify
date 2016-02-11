@@ -1,0 +1,15 @@
+{
+	"Relationships":
+	[
+		{
+			"Comment": "Attribute.has Text Attribute `Name`",
+			"RelationshipInstance": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+			"InverseRelationshipInstance": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
+			"SourceInstance": "{F9CD7751-EF62-4F7C-8A28-EBE90B8F46AA}",
+			"DestinationInstances":
+			[
+				"{9153A637-992E-4712-ADF2-B03F0D9EDEA6}"
+			]
+		}
+	]
+}

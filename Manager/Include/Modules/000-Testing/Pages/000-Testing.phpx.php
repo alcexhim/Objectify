@@ -11,7 +11,8 @@
 	use Objectify\Objects\Objectify;
 	
 	use Phast\Utilities\Stopwatch;
-			
+use Objectify\Objects\TenantObjectInstance;
+				
 	class TestingPage extends PhastPage
 	{
 		public function OnInitializing(CancelEventArgs $e)
@@ -44,8 +45,18 @@
 			print_r($insts);
 			*/
 			
+			/*
 			$rels = Relationship::Get();
 			print_r($rels);
+			*/
+			
+			// test attributes
+			$objClass = TenantObject::GetByName("Class");
+			$instClass = TenantObjectInstance::GetByGlobalIdentifier($objClass->GlobalIdentifier);
+			
+			$instAttribute_Name = TenantObjectInstance::GetByGlobalIdentifier("{9153A637-992E-4712-ADF2-B03F0D9EDEA6}");
+			
+			$instClass->SetAttributeValue($instAttribute_Name, "Class");
 			
 			return;
 			

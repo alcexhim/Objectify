@@ -182,22 +182,32 @@ use Objectify\Objects\Relationship;
 			$tabAttributes = $tbsTabs->GetTabByID("tabAttributes");
 			$lvAttributes = $tabAttributes->GetControlByID("lvAttributes");
 
-			$instRelAtt = TenantObjectInstance::GetByID(4);
+			$instRelAtt = TenantObjectInstance::GetByGlobalIdentifier("{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}");
 			$relsAtts = Relationship::GetBySourceInstance($instThisObject, $instRelAtt);
+			$rel = $relsAtts[0];
+			$insts = $rel->GetDestinationInstances();
 			
-			foreach ($relsAtts as $rel)
+			foreach ($insts as $inst)
 			{
 				$lvi = new ListViewItem(array
 				(
 					new ListViewItemColumn("lvcAttribute", function($sender)
 					{
-						$iv = new InstanceDisplayWidget($sender->ExtraData[0]);
+						$iv = new InstanceDisplayWidget($sender->ExtraData);
 						$iv->Render();
-					}, null, $rel->GetDestinationInstances()),
+					}, null, $inst),
 					new ListViewItemColumn("lvcValue", function($sender)
 					{
-						echo("(empty)");
-					}, null, $rel->GetDestinationInstances())
+						$val = $sender->ExtraData["ThisObject"]->GetAttributeValue($sender->ExtraData["ThisAttribute"]);
+						if ($val == null)
+						{
+							echo("<!-- (empty) -->");
+						}
+						else
+						{
+							echo ($val);
+						}
+					}, null, array("ThisObject" => $instThisObject, "ThisAttribute" => $inst))
 				));
 				$lvAttributes->Items[] = $lvi;
 			}

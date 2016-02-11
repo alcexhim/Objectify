@@ -5,7 +5,16 @@
 			"Name": "TextAttribute",
 			"Instances":
 			[
-				
+				{
+					"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Name",
+							"Value": "Name"
+						}
+					]
+				}
 			]
 		}
 	]
