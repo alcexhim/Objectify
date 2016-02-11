@@ -792,6 +792,9 @@
 		 */
 		public function GetInstances()
 		{
+			// don't return instances for Class object since... you're gonna have a bad time
+			if ($this->ID == 1) return array();
+			
 			$pdo = DataSystem::GetPDO();
 			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances WHERE instance_ObjectID = :instance_ObjectID AND instance_TenantID = :instance_TenantID";
 			$paramz = array
