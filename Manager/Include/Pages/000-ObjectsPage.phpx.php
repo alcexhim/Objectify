@@ -15,7 +15,7 @@
 	
 	use Objectify\WebControls\InstanceDisplayWidget;
 	use Objectify\WebControls\ObjectDisplayWidget;
-use Objectify\Objects\Relationship;
+	use Objectify\Objects\Relationship;
 		
 	class ObjectModifyPage extends PhastPage
 	{
@@ -185,33 +185,36 @@ use Objectify\Objects\Relationship;
 			$instRelAtt = TenantObjectInstance::GetByGlobalIdentifier("{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}");
 			$relsAtts = Relationship::GetBySourceInstance($instThisObject, $instRelAtt);
 			$rel = $relsAtts[0];
-			$insts = $rel->GetDestinationInstances();
 			
-			foreach ($insts as $inst)
+			if ($rel != null)
 			{
-				$lvi = new ListViewItem(array
-				(
-					new ListViewItemColumn("lvcAttribute", function($sender)
-					{
-						$iv = new InstanceDisplayWidget($sender->ExtraData);
-						$iv->Render();
-					}, null, $inst),
-					new ListViewItemColumn("lvcValue", function($sender)
-					{
-						$val = $sender->ExtraData["ThisObject"]->GetAttributeValue($sender->ExtraData["ThisAttribute"]);
-						if ($val == null)
+				$insts = $rel->GetDestinationInstances();
+				
+				foreach ($insts as $inst)
+				{
+					$lvi = new ListViewItem(array
+					(
+						new ListViewItemColumn("lvcAttribute", function($sender)
 						{
-							echo("<!-- (empty) -->");
-						}
-						else
+							$iv = new InstanceDisplayWidget($sender->ExtraData);
+							$iv->Render();
+						}, null, $inst),
+						new ListViewItemColumn("lvcValue", function($sender)
 						{
-							echo ($val);
-						}
-					}, null, array("ThisObject" => $instThisObject, "ThisAttribute" => $inst))
-				));
-				$lvAttributes->Items[] = $lvi;
+							$val = $sender->ExtraData["ThisObject"]->GetAttributeValue($sender->ExtraData["ThisAttribute"]);
+							if ($val == null)
+							{
+								echo("<!-- (empty) -->");
+							}
+							else
+							{
+								echo ($val);
+							}
+						}, null, array("ThisObject" => $instThisObject, "ThisAttribute" => $inst))
+					));
+					$lvAttributes->Items[] = $lvi;
+				}
 			}
-			
 			
 			$tabRelationships = $tbsTabs->GetTabByID("tabRelationships");
 			$lvRelationships = $tabRelationships->GetControlByID("lvRelationships");
