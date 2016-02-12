@@ -178,7 +178,7 @@ use Phast\Data\DataSystem;
 		 * @param boolean $includeParentObjects DO NOT SET THIS TO TRUE. YOU WILL BREAK EVERYTHING.
 		 * @return Relationship[]
 		 */
-		public static function GetBySourceInstance($inst, $relationshipInstance = null, $includeParentObjects = false)
+		public static function GetBySourceInstance($inst, $relationshipInstance = null, $includeParentObjects = false, $maxParentObjectLevels = 1)
 		{
 			$pdo = DataSystem::GetPDO();
 			$paramz = array
@@ -188,7 +188,7 @@ use Phast\Data\DataSystem;
 			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Relationships WHERE (relationship_SourceInstanceID = :relationship_SourceInstanceID";
 			if ($includeParentObjects)
 			{
-				self::Build_Get_Relationship_Query($query, $paramz, TenantObject::GetByGlobalIdentifier($inst->GlobalIdentifier));
+				self::Build_Get_Relationship_Query($query, $paramz, TenantObject::GetByGlobalIdentifier($inst->GlobalIdentifier), $maxParentObjectLevels);
 			}
 			$query .= ")";
 			
@@ -219,9 +219,10 @@ use Phast\Data\DataSystem;
 		 * @param unknown $paramz
 		 * @param TenantObject $parentObject
 		 */
-		private static function Build_Get_Relationship_Query(&$query, &$paramz, $parentObject, $level = 0)
+		private static function Build_Get_Relationship_Query(&$query, &$paramz, $parentObject, $level = 0, $maxParentObjectLevels = 1)
 		{
 			if ($parentObject == null) return;
+			if ($level > $maxParentObjectLevels) return;
 			
 			$parentObjects = $parentObject->GetParentObjects();
 			$parentObjectCount = count($parentObjects);
@@ -229,7 +230,7 @@ use Phast\Data\DataSystem;
 			{
 				$query .= " OR relationship_SourceInstanceID = :relationship_SourceInstanceID" . $parentObjects[$i]->ID;
 				$paramz[":relationship_SourceInstanceID" . $parentObjects[$i]->ID] = $parentObjects[$i]->ID;
-				self::Build_Get_Relationship_Query($query, $paramz, $parentObjects[$i], $level + 1);
+				self::Build_Get_Relationship_Query($query, $paramz, $parentObjects[$i], $level + 1, $maxParentObjectLevels);
 			}
 		}
 		
