@@ -339,21 +339,6 @@
 			$parentObjectInstance = TenantObjectInstance::GetByGlobalIdentifier($this->ParentObject->GlobalIdentifier);
 			$rels = Relationship::GetBySourceInstance($parentObjectInstance, KnownRelationships::get___Class__instance_labeled_by__String());
 			
-			if (count($rels) == 0)
-			{
-				// TODO: fortify this; it doesn't actually traverse the parent object hierarchy
-				$parentObjects = $this->ParentObject->GetParentObjects();
-				foreach ($parentObjects as $po)
-				{
-					$poinst = TenantObjectInstance::GetByGlobalIdentifier($po->GlobalIdentifier);
-					$rels = Relationship::GetBySourceInstance($poinst, KnownRelationships::get___Class__instance_labeled_by__String());
-					if (count($rels) > 0)
-					{
-						break;
-					}
-				}
-			}
-			
 			if (count($rels) > 0)
 			{
 				$rels = $rels[0];
