@@ -15,9 +15,40 @@ use Objectify\Objects\TenantObjectInstance;
 				
 	class TestingPage extends PhastPage
 	{
+		private function RecursivePrintParentObjects($po, $level = 0)
+		{
+			for ($i = 0; $i < $level; $i++)
+			{
+				echo ("\t");
+			}
+			echo ($po->Name . "\r\n");
+			$pos = $po->GetParentObjects();
+			foreach ($pos as $ppo)
+			{
+				$this->RecursivePrintParentObjects($ppo, $level + 1);
+			}
+		}
+		
 		public function OnInitializing(CancelEventArgs $e)
 		{
 			header("Content-Type: text/plain");
+			
+
+			$po = TenantObject::GetByName("TextAttribute");
+			
+			$this->RecursivePrintParentObjects($po);
+			
+			echo ("\r\n\r\n");
+			
+			$poinst = TenantObjectInstance::GetByGlobalIdentifier($po->GlobalIdentifier);
+			
+			$rels = Relationship::GetBySourceInstance($poinst);
+			foreach ($rels as $rel)
+			{
+				echo ($rel->RelationshipInstance->ToString() . "\r\n");
+			}
+			echo("\r\n\r\n");
+			die();
 			
 			/*
 			// test getting relationships for classes
