@@ -131,7 +131,7 @@ use Phast\Data\DataSystem;
 			$item->Tenant = Tenant::GetByID($values["relationship_TenantID"]);
 			$item->RelationshipInstance = TenantObjectInstance::GetByID($values["relationship_RelationshipInstanceID"]);
 			$item->SourceInstance = TenantObjectInstance::GetByID($values["relationship_SourceInstanceID"]);
-			$item->IsSingular = ($values["relationship_IsSingular"] == 1);
+			// $item->IsSingular = ($values["relationship_IsSingular"] == 1);
 			return $item;
 		}
 		public static function Get()
@@ -175,17 +175,23 @@ use Phast\Data\DataSystem;
 		 * Gets all the Relationships associated with the specified source instance.
 		 * @param TenantObjectInstance $inst The source instance whose relationships should be retrieved.
 		 * @param TenantObjectInstance $relationshipInstance The instance of the Relationship to retrieve.
+		 * @param boolean $includeParentObjects DO NOT SET THIS TO TRUE. YOU WILL BREAK EVERYTHING.
 		 * @return Relationship[]
 		 */
-		public static function GetBySourceInstance($inst, $relationshipInstance = null)
+		public static function GetBySourceInstance($inst, $relationshipInstance = null, $includeParentObjects = false)
 		{
 			$pdo = DataSystem::GetPDO();
-			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Relationships WHERE relationship_SourceInstanceID = :relationship_SourceInstanceID";
-			
 			$paramz = array
 			(
 				":relationship_SourceInstanceID" => $inst->ID
 			);
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Relationships WHERE (relationship_SourceInstanceID = :relationship_SourceInstanceID";
+			if ($includeParentObjects)
+			{
+				self::Build_Get_Relationship_Query($query, $paramz, TenantObject::GetByGlobalIdentifier($inst->GlobalIdentifier));
+			}
+			$query .= ")";
+			
 			if ($relationshipInstance != null)
 			{
 				$query .= " AND relationship_RelationshipInstanceID = :relationship_RelationshipInstanceID";
@@ -205,6 +211,26 @@ use Phast\Data\DataSystem;
 				$retval[] = $item;
 			}
 			return $retval;
+		}
+		
+		/**
+		 * Builds a "Get Relationship Query"
+		 * @param unknown $query
+		 * @param unknown $paramz
+		 * @param TenantObject $parentObject
+		 */
+		private static function Build_Get_Relationship_Query(&$query, &$paramz, $parentObject, $level = 0)
+		{
+			if ($parentObject == null) return;
+			
+			$parentObjects = $parentObject->GetParentObjects();
+			$parentObjectCount = count($parentObjects);
+			for ($i = 0; $i < $parentObjectCount; $i++)
+			{
+				$query .= " OR relationship_SourceInstanceID = :relationship_SourceInstanceID" . $parentObjects[$i]->ID;
+				$paramz[":relationship_SourceInstanceID" . $parentObjects[$i]->ID] = $parentObjects[$i]->ID;
+				self::Build_Get_Relationship_Query($query, $paramz, $parentObjects[$i], $level + 1);
+			}
 		}
 		
 		/**
