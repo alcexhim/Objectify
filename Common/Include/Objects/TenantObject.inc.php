@@ -143,16 +143,19 @@
 			$instRel_Class__has_super_Class = TenantObjectInstance::GetByGlobalIdentifier("{100F0308-855D-4EC5-99FA-D8976CA20053}");
 			$instThisClass = TenantObjectInstance::GetByGlobalIdentifier($this->GlobalIdentifier);
 			$rels = Relationship::GetBySourceInstance($instThisClass, $instRel_Class__has_super_Class, false);
-			$rels = $rels[0];
 			
 			$retval = array();
 			
-			if ($rels != null)
+			if (count($rels) > 0)
 			{
-				$instTargets = $rels->GetDestinationInstances();
-				foreach ($instTargets as $inst)
+				$rels = $rels[0];
+				if ($rels != null)
 				{
-					$retval[] = TenantObject::GetByGlobalIdentifier($inst->GlobalIdentifier);
+					$instTargets = $rels->GetDestinationInstances();
+					foreach ($instTargets as $inst)
+					{
+						$retval[] = TenantObject::GetByGlobalIdentifier($inst->GlobalIdentifier);
+					}
 				}
 			}
 			return $retval;
