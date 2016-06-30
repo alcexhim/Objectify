@@ -34,6 +34,16 @@
 							"Value": "EndDate"
 						}
 					]
+				},
+				{
+					"ID": "{0DD670AF-498D-4FEC-A2CF-20E3E56EB732}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Name",
+							"Value": "CreationDate"
+						}
+					]
 				}
 			]
 		}
