@@ -692,6 +692,11 @@
 			return $value;
 		}
 		
+		/**
+		 * Creates a default tenant with the specified tenant name.
+		 * @param string $tenantName The name (URL) of the tenant to create.
+		 * @return TenantObjectInstance the instance of the created Tenant
+		 */
 		private function CreateDefaultTenant($tenantName)
 		{
 			$objTenant = TenantObject::GetByName("Tenant");
@@ -735,6 +740,16 @@
 				new TenantObjectInstancePropertyValue("LoginFooterText", new MultipleInstanceProperty(array($instLanguageEnglish_LoginFooterText)))
 			));
 			*/
+			
+			// create the relationship: Tenant.has login header Translatable Text Constant
+			Relationship::Create(TenantObjectInstance::GetByGlobalIdentifier("{41D66ACB-AFDE-4B6F-892D-E66255F10DEB}"), $instTenant, array($instTTC_LoginHeaderText));
+			// create the relationship: Tenant.has login footer Translatable Text Constant
+			Relationship::Create(TenantObjectInstance::GetByGlobalIdentifier("{A6203B6B-5BEB-4008-AE49-DB5E7DDBA45B}"), $instTenant, array($instTTC_LoginFooterText));
+			// create the relationship: Translatable Text Constant.is login header for Tenant
+			Relationship::Create(TenantObjectInstance::GetByGlobalIdentifier("{F1AD1C66-340C-44D6-B9DE-A62573D20048}"), $instTTC_LoginHeaderText, array($instTenant));
+			// create the relationship: Translatable Text Constant.is login footer for Tenant
+			Relationship::Create(TenantObjectInstance::GetByGlobalIdentifier("{54DCAB4B-A74E-4597-8CD6-8895D33CAF6F}"), $instTTC_LoginFooterText, array($instTenant));
+			
 			return $instTenant;
 		}
 		

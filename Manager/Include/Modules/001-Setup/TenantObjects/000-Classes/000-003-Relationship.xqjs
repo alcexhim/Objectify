@@ -226,6 +226,127 @@
 							"Value": "has sub"
 						}
 					]
+				},
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				{
+					"ID": "{41D66ACB-AFDE-4B6F-892D-E66255F10DEB}",
+					"Comment": "Tenant.has login header Translatable Text Constant",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "Tenant"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "TranslatableTextConstant"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "has login header"
+						}
+					]
+				},
+				{
+					"ID": "{A6203B6B-5BEB-4008-AE49-DB5E7DDBA45B}",
+					"Comment": "Tenant.has login footer Translatable Text Constant",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "Tenant"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "TranslatableTextConstant"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "has login footer"
+						}
+					]
+				},
+				{
+					"ID": "{F1AD1C66-340C-44D6-B9DE-A62573D20048}",
+					"Comment": "Translatable Text Constant.is login header for Tenant",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "TranslatableTextConstant"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "Tenant"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "is login header for"
+						}
+					]
+				},
+				{
+					"ID": "{54DCAB4B-A74E-4597-8CD6-8895D33CAF6F}",
+					"Comment": "Translatable Text Constant.is login footer for Tenant",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "TranslatableTextConstant"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "Tenant"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "is login footer for"
+						}
+					]
 				}
 			]
 		}
