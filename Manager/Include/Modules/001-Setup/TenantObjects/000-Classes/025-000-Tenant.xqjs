@@ -82,26 +82,26 @@
 				},
 				{
 					"Name": "LoginHeaderText",
-					"DataTypeName": "MultipleInstance",
+					"DataTypeName": "SingleInstance",
 					"Value":
 					{
 						"ValidObjects":
 						[
 							{
-								"Name": "TranslatableTextConstantValue"
+								"Name": "TranslatableTextConstant"
 							}
 						]
 					}
 				},
 				{
 					"Name": "LoginFooterText",
-					"DataTypeName": "MultipleInstance",
+					"DataTypeName": "SingleInstance",
 					"Value":
 					{
 						"ValidObjects":
 						[
 							{
-								"Name": "TranslatableTextConstantValue"
+								"Name": "TranslatableTextConstant"
 							}
 						]
 					}

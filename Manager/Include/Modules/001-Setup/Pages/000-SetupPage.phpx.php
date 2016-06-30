@@ -700,6 +700,7 @@
 			$instsLanguage = $objLanguage->GetInstances();
 			$instLanguageEnglish = $instsLanguage[0];
 			
+			$objTranslatableTextConstant = TenantObject::GetByName("TranslatableTextConstant");
 			$objLanguageString = TenantObject::GetByName("TranslatableTextConstantValue");
 			
 			$instLanguageEnglish_LoginHeaderText = $objLanguageString->CreateInstance(array
@@ -707,17 +708,25 @@
 				new TenantObjectInstancePropertyValue("Language", new SingleInstanceProperty($instLanguageEnglish)),
 				new TenantObjectInstancePropertyValue("Value", "Welcome to Your New Tenant")
 			));
+			$instTTC_LoginHeaderText = $objTranslatableTextConstant->CreateInstance(array
+			(
+				new TenantObjectInstancePropertyValue("Values", new MultipleInstanceProperty(array($instLanguageEnglish_LoginHeaderText)))
+			));
 			
 			$instLanguageEnglish_LoginFooterText = $objLanguageString->CreateInstance(array
 			(
 				new TenantObjectInstancePropertyValue("Language", new SingleInstanceProperty($instLanguageEnglish)),
 				new TenantObjectInstancePropertyValue("Value", "Once you're logged in, you can customize the 'Login Header Text' and 'Login Footer Text' properties of your new tenant.")
 			));
+			$instTTC_LoginFooterText = $objTranslatableTextConstant->CreateInstance(array
+			(
+				new TenantObjectInstancePropertyValue("Values", new MultipleInstanceProperty(array($instLanguageEnglish_LoginFooterText)))
+			));
 			
 			$instTenant = $objTenant->GetInstanceByGlobalIdentifier("{F2C9D4A9-9EFB-4263-84DB-66A9DA65AD00}");
 			$instTenant->SetPropertyValue("TenantURL", $tenantName);
-			$instTenant->SetPropertyValue("LoginHeaderText", new MultipleInstanceProperty(array($instLanguageEnglish_LoginHeaderText)));
-			$instTenant->SetPropertyValue("LoginFooterText", new MultipleInstanceProperty(array($instLanguageEnglish_LoginFooterText)));
+			$instTenant->SetPropertyValue("LoginHeaderText", new SingleInstanceProperty($instTTC_LoginHeaderText));
+			$instTenant->SetPropertyValue("LoginFooterText", new SingleInstanceProperty($instTTC_LoginFooterText));
 			/*
 			$instTenant = $objTenant->CreateInstance(array
 			(

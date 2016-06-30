@@ -31,12 +31,12 @@
 				
 				$paraTopText = $e->RenderingPage->GetControlByID("paraTopText");
 				
-				$instsLoginHeaderText = $instTenant->GetPropertyValue("LoginHeaderText", "")->GetInstances();
-				$paraTopText->Content = $instsLoginHeaderText[0]->ToString();
+				$instLoginHeaderText = $instTenant->GetPropertyValue("LoginHeaderText", "")->GetInstance();
+				$paraTopText->Content = $instLoginHeaderText->ToString();
 				
 				$paraBottomText = $e->RenderingPage->GetControlByID("paraBottomText");
-				$instsLoginFooterText = $instTenant->GetPropertyValue("LoginFooterText", "")->GetInstances();
-				$paraBottomText->Content = $instsLoginFooterText[0]->ToString();
+				$instLoginFooterText = $instTenant->GetPropertyValue("LoginFooterText", "")->GetInstance();
+				$paraBottomText->Content = $instLoginFooterText->ToString();
 			}
 			
 			if ($_SERVER["REQUEST_METHOD"] == "POST")
