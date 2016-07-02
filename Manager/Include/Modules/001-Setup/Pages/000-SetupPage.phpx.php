@@ -53,68 +53,72 @@
 			$inst_Class_has_sub_Class = Instance::GetByGlobalIdentifier("{C14BC80D-879C-4E6F-9123-E8DFB13F4666}");
 			$inst_Class_has_super_Class = Instance::GetByGlobalIdentifier("{100F0308-855D-4EC5-99FA-D8976CA20053}");
 			
-			if ($filedata->Objects != null)
-			{
-				foreach ($filedata->Objects as $obj_data)
+			if (isset($filedata->Objects)) {
+				if ($filedata->Objects != null)
 				{
-					if (isset($obj_data->Name))
+					foreach ($filedata->Objects as $obj_data)
 					{
-						$obj = TenantObject::GetByName($obj_data->Name);
-						$instObj = Instance::GetByGlobalIdentifier($obj->GlobalIdentifier);
-						
-						if (isset($obj_data->ParentObjects))
+						if (isset($obj_data->Name))
 						{
-							foreach ($obj_data->ParentObjects as $pobj_data)
+							$obj = TenantObject::GetByName($obj_data->Name);
+							$instObj = Instance::GetByGlobalIdentifier($obj->GlobalIdentifier);
+							
+							if (isset($obj_data->ParentObjects))
 							{
-								$pobj = TenantObject::GetByName($pobj_data->Name);
-								$instPObj = Instance::GetByGlobalIdentifier($pobj->GlobalIdentifier);
-								
-								Relationship::Create($inst_Class_has_sub_Class, $instPObj, $instObj);
-								Relationship::Create($inst_Class_has_super_Class, $instObj, $instPObj);
+								foreach ($obj_data->ParentObjects as $pobj_data)
+								{
+									$pobj = TenantObject::GetByName($pobj_data->Name);
+									$instPObj = Instance::GetByGlobalIdentifier($pobj->GlobalIdentifier);
+									
+									Relationship::Create($inst_Class_has_sub_Class, $instPObj, $instObj);
+									Relationship::Create($inst_Class_has_super_Class, $instObj, $instPObj);
+								}
 							}
 						}
 					}
 				}
 			}
-			if ($filedata->Relationships != null)
-			{
-				foreach ($filedata->Relationships as $rel)
+			if (isset($filedata->Relationships)) {
+				if ($filedata->Relationships != null)
 				{
-					$instRelationship = Instance::GetByGlobalIdentifier($rel->RelationshipInstance);
-					$instSource = Instance::GetByGlobalIdentifier($rel->SourceInstance);
-					
-					$instDests = array();
-					foreach ($rel->DestinationInstances as $iid)
+					foreach ($filedata->Relationships as $rel)
 					{
-						$instDest = Instance::GetByGlobalIdentifier($iid);
-						$instDests[] = $instDest;
-					}
-					
-					Objectify::Log("Creating a new Relationship", array
-					(
-						"Relationship Instance GID" => $rel->RelationshipInstance,
-						"Source Instance GID" => $rel->SourceInstance,
-						"Relationship Instance DBID" => $instRelationship->ID,
-						"Source Instance DBID" => $instSource->ID
-					));
-					
-					Relationship::Create($instRelationship, $instSource, $instDests);
-					
-					if (isset($rel->InverseRelationshipInstance))
-					{
-						$instInverseRelationship = Instance::GetByGlobalIdentifier($rel->InverseRelationshipInstance);
+						$instRelationship = Instance::GetByGlobalIdentifier($rel->RelationshipInstance);
+						$instSource = Instance::GetByGlobalIdentifier($rel->SourceInstance);
 						
-						foreach ($instDests as $instDest)
+						$instDests = array();
+						foreach ($rel->DestinationInstances as $iid)
 						{
-							Objectify::Log("Creating a new Relationship", array
-							(
-								"Relationship Instance GID" => $rel->RelationshipInstance,
-								"Source Instance GID" => $instDest->GlobalIdentifier,
-								"Relationship Instance DBID" => $instRelationship->ID,
-								"Source Instance DBID" => $instDest->ID
-							));
+							$instDest = Instance::GetByGlobalIdentifier($iid);
+							$instDests[] = $instDest;
+						}
+						
+						Objectify::Log("Creating a new Relationship", array
+						(
+							"Relationship Instance GID" => $rel->RelationshipInstance,
+							"Source Instance GID" => $rel->SourceInstance,
+							"Relationship Instance DBID" => $instRelationship->ID,
+							"Source Instance DBID" => $instSource->ID
+						));
+						
+						Relationship::Create($instRelationship, $instSource, $instDests);
+						
+						if (isset($rel->InverseRelationshipInstance))
+						{
+							$instInverseRelationship = Instance::GetByGlobalIdentifier($rel->InverseRelationshipInstance);
 							
-							Relationship::Create($instInverseRelationship, $instDest, $instSource);
+							foreach ($instDests as $instDest)
+							{
+								Objectify::Log("Creating a new Relationship", array
+								(
+									"Relationship Instance GID" => $rel->RelationshipInstance,
+									"Source Instance GID" => $instDest->GlobalIdentifier,
+									"Relationship Instance DBID" => $instRelationship->ID,
+									"Source Instance DBID" => $instDest->ID
+								));
+								
+								Relationship::Create($instInverseRelationship, $instDest, $instSource);
+							}
 						}
 					}
 				}
