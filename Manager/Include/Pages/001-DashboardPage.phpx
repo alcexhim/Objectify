@@ -24,6 +24,22 @@
 							<wfx:Panel CssClass="Primary" Title="Tenants">
 								<ContentControls>
 									<wfx:Disclosure ID="dscActiveTenants" Title="Active Tenants (0)" Expanded="true">
+										<!--
+											below should be an ofx:ListView with the properties:
+												{
+													objects: [ Tenant ],
+													columns:
+													[
+														{ field: Name },
+														{ field: Activation Date },
+														{ field: Termination Date }
+													]
+												}
+											 
+											 where	"Name" is a "Text Attribute" on Tenant object,
+											 		"Activation Date" is a "Date Attribute" on Tenant object,
+											 	and "Termination Date" is a "Date Attribute" on Tenant object
+										-->
 										<wfx:ListView ID="lvTenantsActive" Width="100%">
 											<Columns>
 												<wfx:ListViewColumn ID="lvcTenantName" Title="Tenant name" />
