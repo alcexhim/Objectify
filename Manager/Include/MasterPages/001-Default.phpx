@@ -8,16 +8,16 @@
 				<Reference TagPrefix="ofx" NamespacePath="Objectify\WebControls" />
 			</References>
 			<Scripts>
-				<Script ContentType="text/javascript" FileName="~/Scripts/Controls/ObjectDisplayWidget.js" />
-				<Script ContentType="text/javascript" FileName="~/Scripts/Controls/InstanceDisplayWidget.js" />
-				<Script ContentType="text/javascript" FileName="~/Scripts/Controls/InstanceBrowser.js" />
+				<Script ContentType="text/javascript" FileName="~/../Scripts/Controls/ObjectDisplayWidget.js" />
+				<Script ContentType="text/javascript" FileName="~/../Scripts/Controls/InstanceDisplayWidget.js" />
+				<Script ContentType="text/javascript" FileName="~/../Scripts/Controls/InstanceBrowser.js" />
 				
-				<Script ContentType="text/javascript" FileName="~/Scripts/Objects/TenantObject.js" />
-				<Script ContentType="text/javascript" FileName="~/Scripts/Objects/TenantObjectInstance.js" />
+				<Script ContentType="text/javascript" FileName="~/../Scripts/Objects/TenantObject.js" />
+				<Script ContentType="text/javascript" FileName="~/../Scripts/Objects/TenantObjectInstance.js" />
 			</Scripts>
 			<StyleSheets>
 				<StyleSheet FileName="$(Configuration:System.StaticPath)/StyleSheets/$(Configuration:Application.ThemeName|Slate)/Main.css" />
-				<StyleSheet FileName="~/StyleSheets/Main.css" />
+				<StyleSheet FileName="~/../StyleSheets/Main.css" />
 			</StyleSheets>
 			<Content>
 				<html:Navigation CssClass="Top">
