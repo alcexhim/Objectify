@@ -21,7 +21,7 @@
 	use Objectify\Objects\Relationship;
 	
 	use UniversalEditor\ObjectModels\Markup\MarkupTagElement;
-	
+		
 	class SetupPage extends PhastPage
 	{
 		private function CreateDefaultSecurityPrivilegesAndGroups()
@@ -734,6 +734,10 @@
 			
 			$instTenant = $objTenant->GetInstanceByGlobalIdentifier("{F2C9D4A9-9EFB-4263-84DB-66A9DA65AD00}");
 			$instTenant->SetPropertyValue("TenantURL", $tenantName);
+			
+			$instAttributeName = Instance::GetByGlobalIdentifier("{9153A637-992E-4712-ADF2-B03F0D9EDEA6}");
+			$instTenant->SetAttributeValue($instAttributeName, $tenantName);
+			
 			// $instTenant->SetPropertyValue("LoginHeaderText", new SingleInstanceProperty($instTTC_LoginHeaderText));
 			// $instTenant->SetPropertyValue("LoginFooterText", new SingleInstanceProperty($instTTC_LoginFooterText));
 			/*
