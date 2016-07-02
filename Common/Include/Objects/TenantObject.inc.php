@@ -698,9 +698,15 @@
 		{
 			$instrel_Tenant_has_Attribute = Instance::GetByGlobalIdentifier("{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}");
 			$rels = Relationship::GetBySourceInstance($this->GetThisInstance(), $instrel_Tenant_has_Attribute);
-			$rel = $rels[0];
-			
-			$insts = $rel->GetDestinationInstances();
+			if (count($rels) > 0)
+			{
+				$rel = $rels[0];
+				$insts = $rel->GetDestinationInstances();
+			}
+			else
+			{
+				$insts = array();
+			}
 			return $insts;
 		}
 		
