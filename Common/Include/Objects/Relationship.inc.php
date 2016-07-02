@@ -19,12 +19,12 @@ use Phast\Data\DataSystem;
 		public $Tenant;
 		/**
 		 * The instance that specifies the relationship between the source and the target. Must be an instance of Relationship class (1$3).
-		 * @var TenantObjectInstance
+		 * @var Instance
 		 */
 		public $RelationshipInstance;
 		/**
 		 * The source of this relationship.
-		 * @var TenantObjectInstance
+		 * @var Instance
 		 */
 		public $SourceInstance;
 		
@@ -48,7 +48,7 @@ use Phast\Data\DataSystem;
 			for ($i = 0; $i < $count; $i++)
 			{
 				$values = $statement->fetch(PDO::FETCH_ASSOC);
-				$item = TenantObjectInstance::GetByAssoc($values);
+				$item = Instance::GetByAssoc($values);
 				$retval[] = $item;
 			}
 			return $retval;
@@ -56,7 +56,7 @@ use Phast\Data\DataSystem;
 		
 		/**
 		 * Adds the specified instance as a target for this Relationship.
-		 * @param TenantObjectInstance|TenantObjectInstance[] $inst
+		 * @param Instance|Instance[] $inst
 		 */
 		public function AddDestinationInstance($inst)
 		{
@@ -72,7 +72,7 @@ use Phast\Data\DataSystem;
 			}
 			else if (is_object($inst))
 			{
-				if (get_class($inst) === "Objectify\\Objects\\TenantObjectInstance")
+				if (get_class($inst) === "Objectify\\Objects\\Instance")
 				{
 					$pdo = DataSystem::GetPDO();
 					$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "RelationshipTargets (target_RelationshipID, target_DestinationInstanceID) VALUES (:target_RelationshipID, :target_DestinationInstanceID)";
@@ -129,8 +129,8 @@ use Phast\Data\DataSystem;
 			$item = new Relationship();
 			$item->ID = $values["relationship_ID"];
 			$item->Tenant = Tenant::GetByID($values["relationship_TenantID"]);
-			$item->RelationshipInstance = TenantObjectInstance::GetByID($values["relationship_RelationshipInstanceID"]);
-			$item->SourceInstance = TenantObjectInstance::GetByID($values["relationship_SourceInstanceID"]);
+			$item->RelationshipInstance = Instance::GetByID($values["relationship_RelationshipInstanceID"]);
+			$item->SourceInstance = Instance::GetByID($values["relationship_SourceInstanceID"]);
 			// $item->IsSingular = ($values["relationship_IsSingular"] == 1);
 			return $item;
 		}
@@ -173,8 +173,8 @@ use Phast\Data\DataSystem;
 		
 		/**
 		 * Gets all the Relationships associated with the specified source instance.
-		 * @param TenantObjectInstance $inst The source instance whose relationships should be retrieved.
-		 * @param TenantObjectInstance $relationshipInstance The instance of the Relationship to retrieve.
+		 * @param Instance $inst The source instance whose relationships should be retrieved.
+		 * @param Instance $relationshipInstance The instance of the Relationship to retrieve.
 		 * @param boolean $includeParentObjects DO NOT SET THIS TO TRUE. YOU WILL BREAK EVERYTHING.
 		 * @return Relationship[]
 		 */
@@ -236,9 +236,9 @@ use Phast\Data\DataSystem;
 		
 		/**
 		 * Creates a Relationship between a source instance and one or more destination instances.
-		 * @param TenantObjectInstance $relationshipInstance Instance of the Relationship (1$3) to create.
-		 * @param TenantObjectInstance $sourceInstance Source instance to associate with this Relationship.
-		 * @param TenantObjectInstance[] $destinationInstances Array of target instances to associate with this Relationship.
+		 * @param Instance $relationshipInstance Instance of the Relationship (1$3) to create.
+		 * @param Instance $sourceInstance Source instance to associate with this Relationship.
+		 * @param Instance[] $destinationInstances Array of target instances to associate with this Relationship.
 		 */
 		public static function Create($relationshipInstance, $sourceInstance, $destinationInstances, $tenant = null)
 		{
@@ -262,8 +262,8 @@ use Phast\Data\DataSystem;
 			
 			if (is_object($relationshipInstance) && is_object($sourceInstance))
 			{
-				if (!((get_class($relationshipInstance) === "Objectify\\Objects\\TenantObjectInstance")
-						&& (get_class($sourceInstance) === "Objectify\\Objects\\TenantObjectInstance")))
+				if (!((get_class($relationshipInstance) === "Objectify\\Objects\\Instance")
+						&& (get_class($sourceInstance) === "Objectify\\Objects\\Instance")))
 				{
 					Objectify::Log("Relationship instance or source instance invalid - are not Instances");
 					return false;

@@ -14,7 +14,7 @@
 	use Objectify\Objects\DataType;
 	use Objectify\Objects\Tenant;
 	use Objectify\Objects\TenantObject;
-	use Objectify\Objects\TenantObjectInstance;
+	use Objectify\Objects\Instance;
 	use Objectify\Objects\TenantObjectInstancePropertyValue;
 	use Objectify\Objects\MultipleInstanceProperty;
 	use Objectify\Objects\SingleInstanceProperty;
@@ -50,8 +50,8 @@
 			$filedatastr = file_get_contents($filename);
 			$filedata = json_decode($filedatastr);
 			
-			$inst_Class_has_sub_Class = TenantObjectInstance::GetByGlobalIdentifier("{C14BC80D-879C-4E6F-9123-E8DFB13F4666}");
-			$inst_Class_has_super_Class = TenantObjectInstance::GetByGlobalIdentifier("{100F0308-855D-4EC5-99FA-D8976CA20053}");
+			$inst_Class_has_sub_Class = Instance::GetByGlobalIdentifier("{C14BC80D-879C-4E6F-9123-E8DFB13F4666}");
+			$inst_Class_has_super_Class = Instance::GetByGlobalIdentifier("{100F0308-855D-4EC5-99FA-D8976CA20053}");
 			
 			if ($filedata->Objects != null)
 			{
@@ -60,14 +60,14 @@
 					if (isset($obj_data->Name))
 					{
 						$obj = TenantObject::GetByName($obj_data->Name);
-						$instObj = TenantObjectInstance::GetByGlobalIdentifier($obj->GlobalIdentifier);
+						$instObj = Instance::GetByGlobalIdentifier($obj->GlobalIdentifier);
 						
 						if (isset($obj_data->ParentObjects))
 						{
 							foreach ($obj_data->ParentObjects as $pobj_data)
 							{
 								$pobj = TenantObject::GetByName($pobj_data->Name);
-								$instPObj = TenantObjectInstance::GetByGlobalIdentifier($pobj->GlobalIdentifier);
+								$instPObj = Instance::GetByGlobalIdentifier($pobj->GlobalIdentifier);
 								
 								Relationship::Create($inst_Class_has_sub_Class, $instPObj, $instObj);
 								Relationship::Create($inst_Class_has_super_Class, $instObj, $instPObj);
@@ -80,13 +80,13 @@
 			{
 				foreach ($filedata->Relationships as $rel)
 				{
-					$instRelationship = TenantObjectInstance::GetByGlobalIdentifier($rel->RelationshipInstance);
-					$instSource = TenantObjectInstance::GetByGlobalIdentifier($rel->SourceInstance);
+					$instRelationship = Instance::GetByGlobalIdentifier($rel->RelationshipInstance);
+					$instSource = Instance::GetByGlobalIdentifier($rel->SourceInstance);
 					
 					$instDests = array();
 					foreach ($rel->DestinationInstances as $iid)
 					{
-						$instDest = TenantObjectInstance::GetByGlobalIdentifier($iid);
+						$instDest = Instance::GetByGlobalIdentifier($iid);
 						$instDests[] = $instDest;
 					}
 					
@@ -102,7 +102,7 @@
 					
 					if (isset($rel->InverseRelationshipInstance))
 					{
-						$instInverseRelationship = TenantObjectInstance::GetByGlobalIdentifier($rel->InverseRelationshipInstance);
+						$instInverseRelationship = Instance::GetByGlobalIdentifier($rel->InverseRelationshipInstance);
 						
 						foreach ($instDests as $instDest)
 						{
@@ -533,7 +533,7 @@
 					if (isset($propDef->Value->Instance))
 					{
 						$id = Objectify::SanitizeGlobalIdentifier($propDef->Value->Instance);
-						$instance = TenantObjectInstance::GetByGlobalIdentifier($id);
+						$instance = Instance::GetByGlobalIdentifier($id);
 					}
 					
 					$value = new SingleInstanceProperty($instance, $validObjects);
@@ -547,7 +547,7 @@
 						foreach ($propDef->Value->Instances as $instId)
 						{
 							$id = Objectify::SanitizeGlobalIdentifier($instId);
-							$instances[] = TenantObjectInstance::GetByGlobalIdentifier($id);
+							$instances[] = Instance::GetByGlobalIdentifier($id);
 						}
 					}
 					
@@ -655,7 +655,7 @@
 							foreach ($elemInstancesItems as $elemInstance)
 							{
 								$attID = $elemInstance->GetAttribute("ID");
-								$instances[] = TenantObjectInstance::GetByGlobalIdentifier($attID->Value);
+								$instances[] = Instance::GetByGlobalIdentifier($attID->Value);
 							}
 						}
 			
@@ -670,7 +670,7 @@
 						if ($elemInstance != null)
 						{
 							$attID = $elemInstance->GetAttribute("ID");
-							$instance = TenantObjectInstance::GetByGlobalIdentifier($attID->Value);
+							$instance = Instance::GetByGlobalIdentifier($attID->Value);
 						}
 						
 						$value = new SingleInstanceProperty($instance, $validObjects);
@@ -695,7 +695,7 @@
 		/**
 		 * Creates a default tenant with the specified tenant name.
 		 * @param string $tenantName The name (URL) of the tenant to create.
-		 * @return TenantObjectInstance the instance of the created Tenant
+		 * @return Instance the instance of the created Tenant
 		 */
 		private function CreateDefaultTenant($tenantName)
 		{
@@ -742,13 +742,13 @@
 			*/
 			
 			// create the relationship: Tenant.has login header Translatable Text Constant
-			Relationship::Create(TenantObjectInstance::GetByGlobalIdentifier("{41D66ACB-AFDE-4B6F-892D-E66255F10DEB}"), $instTenant, array($instTTC_LoginHeaderText));
+			Relationship::Create(Instance::GetByGlobalIdentifier("{41D66ACB-AFDE-4B6F-892D-E66255F10DEB}"), $instTenant, array($instTTC_LoginHeaderText));
 			// create the relationship: Tenant.has login footer Translatable Text Constant
-			Relationship::Create(TenantObjectInstance::GetByGlobalIdentifier("{A6203B6B-5BEB-4008-AE49-DB5E7DDBA45B}"), $instTenant, array($instTTC_LoginFooterText));
+			Relationship::Create(Instance::GetByGlobalIdentifier("{A6203B6B-5BEB-4008-AE49-DB5E7DDBA45B}"), $instTenant, array($instTTC_LoginFooterText));
 			// create the relationship: Translatable Text Constant.is login header for Tenant
-			Relationship::Create(TenantObjectInstance::GetByGlobalIdentifier("{F1AD1C66-340C-44D6-B9DE-A62573D20048}"), $instTTC_LoginHeaderText, array($instTenant));
+			Relationship::Create(Instance::GetByGlobalIdentifier("{F1AD1C66-340C-44D6-B9DE-A62573D20048}"), $instTTC_LoginHeaderText, array($instTenant));
 			// create the relationship: Translatable Text Constant.is login footer for Tenant
-			Relationship::Create(TenantObjectInstance::GetByGlobalIdentifier("{54DCAB4B-A74E-4597-8CD6-8895D33CAF6F}"), $instTTC_LoginFooterText, array($instTenant));
+			Relationship::Create(Instance::GetByGlobalIdentifier("{54DCAB4B-A74E-4597-8CD6-8895D33CAF6F}"), $instTTC_LoginFooterText, array($instTenant));
 			
 			return $instTenant;
 		}
@@ -758,7 +758,7 @@
 			$objUser = TenantObject::GetByName("User");
 			$objSecurityGroup = TenantObject::GetByName("SecurityGroup");
 			
-			$instSecurityGroup_SystemAdministrator = TenantObjectInstance::GetByGlobalIdentifier("{0E57B7A3-FE6D-4B40-843B-F20580441242}");
+			$instSecurityGroup_SystemAdministrator = Instance::GetByGlobalIdentifier("{0E57B7A3-FE6D-4B40-843B-F20580441242}");
 			
 			$objLanguage = TenantObject::GetByName("Language");
 			$objLanguageString = TenantObject::GetByName("TranslatableTextConstantValue");
@@ -971,10 +971,10 @@
 					// finally do some post-processing, such as adding attributes, etc.
 					$objClasses = TenantObject::Get();
 					
-					$instAttribute_Name = TenantObjectInstance::GetByGlobalIdentifier("{9153A637-992E-4712-ADF2-B03F0D9EDEA6}");
+					$instAttribute_Name = Instance::GetByGlobalIdentifier("{9153A637-992E-4712-ADF2-B03F0D9EDEA6}");
 					foreach ($objClasses as $obj)
 					{
-						$instThisClass = TenantObjectInstance::GetByGlobalIdentifier($obj->GlobalIdentifier);
+						$instThisClass = Instance::GetByGlobalIdentifier($obj->GlobalIdentifier);
 						$instThisClass->SetAttributeValue($instAttribute_Name, $obj->Name);
 					}
 					

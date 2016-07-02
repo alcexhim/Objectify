@@ -11,7 +11,7 @@
 	
 	use Objectify\Objects\TenantObject;
 	use Objectify\Objects\MultipleInstanceProperty;
-	use Objectify\Objects\TenantObjectInstance;
+	use Objectify\Objects\Instance;
 	
 	class InstanceDisplayWidget extends WebControl
 	{
@@ -31,7 +31,7 @@
 		{
 			if ($this->CurrentInstance == null)
 			{
-				$this->CurrentInstance = TenantObjectInstance::GetByID($this->InstanceID);
+				$this->CurrentInstance = Instance::GetByID($this->InstanceID);
 			}
 			
 			if ($this->CurrentInstance != null)

@@ -7,7 +7,7 @@
 	use Phast\WebControls\TextBoxItem;
 	
 	use Objectify\Objects\TenantObject;
-	use Objectify\Objects\TenantObjectInstance;
+	use Objectify\Objects\Instance;
 			
 	class InstanceBrowser extends TextBox
 	{
@@ -24,13 +24,13 @@
 		public $ValidObjectNames;
 		
 		/**
-		 * The TenantObjectInstances that are selected.
-		 * @var TenantObjectInstance[]
+		 * The Instances that are selected.
+		 * @var Instance[]
 		 */
 		public $SelectedInstances;
 
 		/**
-		 * Determines if more than one TenantObjectInstance may be selected from this InstanceBrowser.
+		 * Determines if more than one Instance may be selected from this InstanceBrowser.
 		 * @var boolean
 		 */
 		public $MultiSelect;

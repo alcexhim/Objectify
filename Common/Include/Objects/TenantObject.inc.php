@@ -140,8 +140,8 @@
 		
 		public function GetParentObjects()
 		{
-			$instRel_Class__has_super_Class = TenantObjectInstance::GetByGlobalIdentifier("{100F0308-855D-4EC5-99FA-D8976CA20053}");
-			$instThisClass = TenantObjectInstance::GetByGlobalIdentifier($this->GlobalIdentifier);
+			$instRel_Class__has_super_Class = Instance::GetByGlobalIdentifier("{100F0308-855D-4EC5-99FA-D8976CA20053}");
+			$instThisClass = Instance::GetByGlobalIdentifier($this->GlobalIdentifier);
 			$rels = Relationship::GetBySourceInstance($instThisClass, $instRel_Class__has_super_Class, false);
 			
 			$retval = array();
@@ -163,8 +163,8 @@
 		
 		public function GetChildObjects()
 		{
-			$instRel_Class__has_sub_Class = TenantObjectInstance::GetByGlobalIdentifier("{C14BC80D-879C-4E6F-9123-E8DFB13F4666}");
-			$instThisClass = TenantObjectInstance::GetByGlobalIdentifier($this->GlobalIdentifier);
+			$instRel_Class__has_sub_Class = Instance::GetByGlobalIdentifier("{C14BC80D-879C-4E6F-9123-E8DFB13F4666}");
+			$instThisClass = Instance::GetByGlobalIdentifier($this->GlobalIdentifier);
 			$rels = Relationship::GetBySourceInstance($instThisClass, $instRel_Class__has_sub_Class);
 			$rels = $rels[0];
 			
@@ -187,11 +187,11 @@
 		 */
 		public function AddParentObject($obj)
 		{
-			$instRel_Class__has_super_Class = TenantObjectInstance::GetByGlobalIdentifier("{100F0308-855D-4EC5-99FA-D8976CA20053}");
-			$instRel_Class__has_sub_Class = TenantObjectInstance::GetByGlobalIdentifier("{C14BC80D-879C-4E6F-9123-E8DFB13F4666}");
+			$instRel_Class__has_super_Class = Instance::GetByGlobalIdentifier("{100F0308-855D-4EC5-99FA-D8976CA20053}");
+			$instRel_Class__has_sub_Class = Instance::GetByGlobalIdentifier("{C14BC80D-879C-4E6F-9123-E8DFB13F4666}");
 			
-			$instThisClass = TenantObjectInstance::GetByGlobalIdentifier($this->GlobalIdentifier);
-			$instThatClass = TenantObjectInstance::GetByGlobalIdentifier($obj->GlobalIdentifier);
+			$instThisClass = Instance::GetByGlobalIdentifier($this->GlobalIdentifier);
+			$instThatClass = Instance::GetByGlobalIdentifier($obj->GlobalIdentifier);
 			
 			$retval = Relationship::Create($instRel_Class__has_super_Class, $instThisClass, $instThatClass);
 			if (!$retval) return false;
@@ -271,11 +271,11 @@
 		 * Creates an instance of this Objectify object with the specified properties.
 		 * @param TenantObjectInstancePropertyValue[] $properties
 		 * @param string $globalIdentifier The global identifier for this instance.
-		 * @return TenantObjectInstance
+		 * @return Instance
 		 */
 		public function CreateInstance($properties, $globalIdentifier = null)
 		{
-			$inst = new TenantObjectInstance($this);
+			$inst = new Instance($this);
 			if ($globalIdentifier == null)
 			{
 				// $globalIdentifier = \uuid_create(\UUID_TYPE_RANDOM);
@@ -689,6 +689,12 @@
 			return $values[0];
 		}
 		
+		public function GetAttributes()
+		{
+			$retval = array();
+			return $retval;
+		}
+		
 		public function GetInstance($parameters)
 		{
 			// $defaultLanguage = $objLanguage->GetInstance(array
@@ -774,7 +780,7 @@
 			for ($i = 0; $i < $count; $i++)
 			{
 				$values = $statement->fetch(PDO::FETCH_ASSOC);
-				$inst = TenantObjectInstance::GetByAssoc($values);
+				$inst = Instance::GetByAssoc($values);
 				$found = true;
 				foreach ($parameters as $parameter)
 				{
@@ -791,7 +797,7 @@
 		
 		/**
 		 * Gets all instances of the current TenantObject.
-		 * @return TenantObjectInstance[]
+		 * @return Instance[]
 		 */
 		public function GetInstances()
 		{
@@ -825,7 +831,7 @@
 			for ($i = 0; $i < $count; $i++)
 			{
 				$values = $statement->fetch(PDO::FETCH_ASSOC);
-				$retval[] = TenantObjectInstance::GetByAssoc($values);
+				$retval[] = Instance::GetByAssoc($values);
 			}
 			return $retval;
 		}
@@ -833,10 +839,10 @@
 		public function GetInstanceByInstanceID($instanceID)
 		{
 			$iDs = stripos($instanceID, "$");
-			if ($iDs === null) return TenantObjectInstance::GetByID($instanceID);
+			if ($iDs === null) return Instance::GetByID($instanceID);
 			$instanceIDParts = explode("$", $instanceID);
 			if ($instanceIDParts[0] != $this->ID) return null;
-			return TenantObjectInstance::GetByID($instanceIDParts[1]);
+			return Instance::GetByID($instanceIDParts[1]);
 		}
 
 		public function GetInstanceByGlobalIdentifier($globalIdentifier)
@@ -875,7 +881,7 @@
 			}
 			
 			$values = $statement->fetch(PDO::FETCH_ASSOC);
-			$retval = TenantObjectInstance::GetByAssoc($values);
+			$retval = Instance::GetByAssoc($values);
 			return $retval;
 		}
 		
@@ -885,8 +891,8 @@
 			// without takes 23 spins, a difference of +3
 			// so getting the Title property is slower, but not by much...
 			
-			$instObject = TenantObjectInstance::GetByGlobalIdentifier($this->GlobalIdentifier);
-			$instRelationship_LabeledBy = TenantObjectInstance::GetByGlobalIdentifier("{B8BDB905-69DD-49CD-B557-0781F7EF2C50}");
+			$instObject = Instance::GetByGlobalIdentifier($this->GlobalIdentifier);
+			$instRelationship_LabeledBy = Instance::GetByGlobalIdentifier("{B8BDB905-69DD-49CD-B557-0781F7EF2C50}");
 			$relLabeledBy = Relationship::GetBySourceInstance($instObject, $instRelationship_LabeledBy);
 			$relLabeledBy = $relLabeledBy[0];
 			
@@ -894,7 +900,7 @@
 			{
 				$insts = $relLabeledBy->GetDestinationInstances();
 				
-				$instRelationship_HasValue = TenantObjectInstance::GetByGlobalIdentifier("{F9B60C00-FF1D-438F-AC74-6EDFA8DD7324}");
+				$instRelationship_HasValue = Instance::GetByGlobalIdentifier("{F9B60C00-FF1D-438F-AC74-6EDFA8DD7324}");
 				$relHasValue = Relationship::GetBySourceInstance($insts[0], $instRelationship_HasValue);
 				if (count($relHasValue) > 0)
 				{

@@ -120,9 +120,9 @@ EOD
 		new Record(array
 		(
 			new RecordColumn("Name", "SingleInstance"),
-			new RecordColumn("Description", "Represents a property that returns a single TenantObjectInstance object."),
+			new RecordColumn("Description", "Represents a property that returns a single Instance object."),
 			new RecordColumn("EncoderCodeBlob", <<<'EOD'
-// $input should be a TenantObjectInstance
+// $input should be an Instance
 if ($input == null)
 {
 	$bt = debug_backtrace();
@@ -153,7 +153,7 @@ return $output;
 EOD
 ),
 			new RecordColumn("DecoderCodeBlob", <<<'EOD'
-// $input should be a String in the format t0,t1,t2:i0,i1,i2,i3... where tx is an ID of a TenantObject that is valid in the property and ix is an ID of a TenantObjectInstance
+// $input should be a String in the format t0,t1,t2:i0,i1,i2,i3... where tx is an ID of a TenantObject that is valid in the property and ix is an ID of a Instance
 // encode the property by simply storing the instance ID of each instance, separated by commas, in the property value.
 $dcb = explode(":", $input);
 $validObjects = explode(",", $dcb[0]);
@@ -168,7 +168,7 @@ for ($i = 0; $i < $count; $i++)
 }
 
 // assign the instance
-$output->SetInstance(TenantObjectInstance::GetByID($instance));
+$output->SetInstance(Instance::GetByID($instance));
 return $output;
 EOD
 ),
@@ -210,9 +210,9 @@ EOD
 		new Record(array
 		(
 			new RecordColumn("Name", "MultipleInstance"),
-			new RecordColumn("Description", "Represents a property that returns an array of TenantObjectInstance objects."),
+			new RecordColumn("Description", "Represents a property that returns an array of Instance objects."),
 			new RecordColumn("EncoderCodeBlob", <<<'EOD'
-// $input should be an array of TenantObjectInstance objects
+// $input should be an array of Instance objects
 // encode the property by simply storing the instance ID of each instance, separated by commas, in the property value. the list of valid
 // object types is stored in the first part of the property, separated by a colon.
 if ($input == null)
@@ -249,7 +249,7 @@ return $output;
 EOD
 ),
 			new RecordColumn("DecoderCodeBlob", <<<'EOD'
-// $input should be a String in the format t0,t1,t2:i0,i1,i2,i3... where tx is an ID of a TenantObject that is valid in the property and ix is an ID of a TenantObjectInstance
+// $input should be a String in the format t0,t1,t2:i0,i1,i2,i3... where tx is an ID of a TenantObject that is valid in the property and ix is an ID of a Instance
 // encode the property by simply storing the instance ID of each instance, separated by commas, in the property value.
 if ($input == "")
 {
@@ -274,7 +274,7 @@ for ($i = 0; $i < $count; $i++)
 $count = count($instances);
 for ($i = 0; $i < $count; $i++)
 {
-	$output->AddInstance(TenantObjectInstance::GetByID($instances[$i]));
+	$output->AddInstance(Instance::GetByID($instances[$i]));
 }
 return $output;
 EOD

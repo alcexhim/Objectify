@@ -79,7 +79,7 @@ class DataType
 		$q .= 'use Objectify\Objects\MultipleInstanceProperty; ';
 		$q .= 'use Objectify\Objects\SingleInstanceProperty; ';
 		$q .= 'use Objectify\Objects\TenantObject; ';
-		$q .= 'use Objectify\Objects\TenantObjectInstance; ';
+		$q .= 'use Objectify\Objects\Instance; ';
 		$q .= '$x = function($input) { ' . $this->EncoderCodeBlob . ' };';
 		// trigger_error("calling EncoderCodeBlob on DataType '" . $this->Name . "'", E_USER_NOTICE);
 		eval($q);
@@ -93,7 +93,7 @@ class DataType
 		$q .= 'use Objectify\Objects\MultipleInstanceProperty; ';
 		$q .= 'use Objectify\Objects\SingleInstanceProperty; ';
 		$q .= 'use Objectify\Objects\TenantObject; ';
-		$q .= 'use Objectify\Objects\TenantObjectInstance; ';
+		$q .= 'use Objectify\Objects\Instance; ';
 		$q .= '$x = function($input) { ' . $this->DecoderCodeBlob . ' };';
 		// trigger_error("calling DecoderCodeBlob on DataType '" . $this->Name . "'", E_USER_NOTICE);
 		eval($q);
@@ -106,7 +106,7 @@ class DataType
 		$q .= 'use Objectify\Objects\MultipleInstanceProperty; ';
 		$q .= 'use Objectify\Objects\SingleInstanceProperty; ';
 		$q .= 'use Objectify\Objects\TenantObject; ';
-		$q .= 'use Objectify\Objects\TenantObjectInstance; ';
+		$q .= 'use Objectify\Objects\Instance; ';
 		$q .= '$x = function($input) { ' . $this->ColumnRendererCodeBlob . ' };';
 		// trigger_error("calling ColumnRendererCodeBlob on DataType '" . $this->Name . "'", E_USER_NOTICE);
 		eval($q);
@@ -120,7 +120,7 @@ class DataType
 		$q .= 'use Objectify\Objects\MultipleInstanceProperty; ';
 		$q .= 'use Objectify\Objects\SingleInstanceProperty; ';
 		$q .= 'use Objectify\Objects\TenantObject; ';
-		$q .= 'use Objectify\Objects\TenantObjectInstance; ';
+		$q .= 'use Objectify\Objects\Instance; ';
 		$q .= '$x = function($input, $name) { ' . $this->EditorRendererCodeBlob . ' };';
 		// trigger_error("calling EditorRendererCodeBlob on DataType '" . $this->Name . "'", E_USER_NOTICE);
 		

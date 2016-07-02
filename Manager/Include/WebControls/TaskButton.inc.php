@@ -12,7 +12,7 @@
 	
 	use Objectify\Objects\TenantObject;
 	use Objectify\Objects\MultipleInstanceProperty;
-	use Objectify\Objects\TenantObjectInstance;
+	use Objectify\Objects\Instance;
 	
 	class TaskButton extends Button
 	{
@@ -38,7 +38,7 @@
 			}
 			else if ($this->InstanceGlobalIdentifier != null)
 			{
-				$inst = TenantObjectInstance::GetByGlobalIdentifier($this->InstanceGlobalIdentifier);
+				$inst = Instance::GetByGlobalIdentifier($this->InstanceGlobalIdentifier);
 				$this->Attributes[] = new WebControlAttribute("data-instance-id", $inst->ID);
 			}
 			parent::RenderBeginTag();

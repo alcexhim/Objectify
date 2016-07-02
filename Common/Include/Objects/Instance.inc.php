@@ -6,10 +6,10 @@
 	
 	use PDO;
 	
-	class TenantObjectInstance
+	class Instance
 	{
 		/**
-		 * The internal identifier of this TenantObjectInstance in the database.
+		 * The internal identifier of this Instance in the database.
 		 * @var int
 		 */
 		public $ID;
@@ -54,7 +54,7 @@
 		
 		public static function GetByAssoc($values)
 		{
-			$item = new TenantObjectInstance(TenantObject::GetByID($values["instance_ObjectID"]));
+			$item = new Instance(TenantObject::GetByID($values["instance_ObjectID"]));
 			$item->ID = $values["instance_ID"];
 			$item->GlobalIdentifier = $values["instance_GlobalIdentifier"];
 			return $item;
@@ -75,7 +75,7 @@
 			if ($statement->rowCount() == 0) return null;
 			
 			$values = $statement->fetch(PDO::FETCH_ASSOC);
-			return TenantObjectInstance::GetByAssoc($values);
+			return Instance::GetByAssoc($values);
 		}
 		
 		public static function GetByGlobalIdentifier($globalIdentifier)
@@ -93,14 +93,14 @@
 			if ($statement->rowCount() == 0) return null;
 			
 			$values = $statement->fetch(PDO::FETCH_ASSOC);
-			return TenantObjectInstance::GetByAssoc($values);
+			return Instance::GetByAssoc($values);
 		}
 		
 		/* ********** BEGIN: New Attribute functions to replace deprecated Property functions ********** */
 		
 		/**
 		 * Gets the value of the specified Attribute for this Instance as of the given date.
-		 * @param TenantObjectInstance|string $attribute
+		 * @param Instance|string $attribute
 		 * @param mixed $defaultValue
 		 * @param \DateTime $effectiveDateTime
 		 */
@@ -114,7 +114,7 @@
 			}
 			else if (is_object($attribute))
 			{
-				if (get_class($attribute) != "Objectify\\Objects\\TenantObjectInstance")
+				if (get_class($attribute) != "Objectify\\Objects\\Instance")
 				{
 					
 				}
@@ -159,7 +159,7 @@
 		
 		/**
 		 * Sets the value of the specified Attribute for this Instance to the given value.
-		 * @param TenantObjectInstance|string $attribute
+		 * @param Instance|string $attribute
 		 * @param mixed $value
 		 */
 		public function SetAttributeValue($attribute, $value)
@@ -336,7 +336,7 @@
 		public function ToString()
 		{
 			// First get the Instance Display Title on the parent object and see if we have a format
-			$parentObjectInstance = TenantObjectInstance::GetByGlobalIdentifier($this->ParentObject->GlobalIdentifier);
+			$parentObjectInstance = Instance::GetByGlobalIdentifier($this->ParentObject->GlobalIdentifier);
 			$rels = Relationship::GetBySourceInstance($parentObjectInstance, KnownRelationships::get___Class__instance_labeled_by__String());
 			
 			if (count($rels) > 0)

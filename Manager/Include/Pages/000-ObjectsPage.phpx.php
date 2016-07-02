@@ -11,7 +11,7 @@
 	use Phast\WebControls\ListViewItemColumn;
 	
 	use Objectify\Objects\TenantObject;
-	use Objectify\Objects\TenantObjectInstance;
+	use Objectify\Objects\Instance;
 	
 	use Objectify\WebControls\InstanceDisplayWidget;
 	use Objectify\WebControls\ObjectDisplayWidget;
@@ -177,12 +177,12 @@
 				$lvInstanceProperties->Items[] = $lvi;
 			}
 			
-			$instThisObject = TenantObjectInstance::GetByGlobalIdentifier($this->CurrentObject->GlobalIdentifier);
+			$instThisObject = Instance::GetByGlobalIdentifier($this->CurrentObject->GlobalIdentifier);
 			
 			$tabAttributes = $tbsTabs->GetTabByID("tabAttributes");
 			$lvAttributes = $tabAttributes->GetControlByID("lvAttributes");
 
-			$instRelAtt = TenantObjectInstance::GetByGlobalIdentifier("{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}");
+			$instRelAtt = Instance::GetByGlobalIdentifier("{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}");
 			$relsAtts = Relationship::GetBySourceInstance($instThisObject, $instRelAtt);
 			$rel = $relsAtts[0];
 			

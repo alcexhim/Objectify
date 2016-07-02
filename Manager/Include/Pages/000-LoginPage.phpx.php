@@ -13,11 +13,11 @@
 	use Objectify\Objects\User;
 	use Objectify\Objects\MultipleInstanceProperty;
 	use Objectify\Objects\SingleInstanceProperty;
-
+	use Objectify\Objects\Relationship;
+	use Objectify\Objects\Instance;
+	
 	use Phast\RandomStringGenerator;
 	use Phast\RandomStringGeneratorCharacterSets;
-use Objectify\Objects\Relationship;
-use Objectify\Objects\TenantObjectInstance;
 					
 	class LoginPage extends PhastPage
 	{
@@ -31,8 +31,8 @@ use Objectify\Objects\TenantObjectInstance;
 					new TenantObjectInstancePropertyValue("TenantURL", System::GetTenantName())
 				));
 
-				$instRel_Tenant__has_login_header_TTC = TenantObjectInstance::GetByGlobalIdentifier("{41D66ACB-AFDE-4B6F-892D-E66255F10DEB}");
-				$instRel_Tenant__has_login_footer_TTC = TenantObjectInstance::GetByGlobalIdentifier("{A6203B6B-5BEB-4008-AE49-DB5E7DDBA45B}");
+				$instRel_Tenant__has_login_header_TTC = Instance::GetByGlobalIdentifier("{41D66ACB-AFDE-4B6F-892D-E66255F10DEB}");
+				$instRel_Tenant__has_login_footer_TTC = Instance::GetByGlobalIdentifier("{A6203B6B-5BEB-4008-AE49-DB5E7DDBA45B}");
 				
 				$paraTopText = $e->RenderingPage->GetControlByID("paraTopText");
 

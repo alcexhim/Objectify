@@ -9,7 +9,7 @@
 	use Phast\WebControls\ListViewItemColumn;
 	
 	use Objectify\Objects\Relationship;
-	use Objectify\Objects\TenantObjectInstance;
+	use Objectify\Objects\Instance;
 	
 	use Objectify\WebControls\FormViewItemInstance;
 	use Objectify\WebControls\InstanceDisplayWidget;
@@ -22,7 +22,7 @@
 			$litInstanceID = $e->RenderingPage->GetControlByID("litInstanceID");
 			
 			$iidParts = explode("$", $iid);
-			$inst = TenantObjectInstance::GetByID($iidParts[1]);
+			$inst = Instance::GetByID($iidParts[1]);
 			$litInstanceID->Value = $inst->ToString();
 			
 			$litInstanceObjectID = $e->RenderingPage->GetControlByID("litInstanceObjectID");
