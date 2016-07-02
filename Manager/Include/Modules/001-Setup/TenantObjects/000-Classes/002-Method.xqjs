@@ -62,23 +62,6 @@
 		},
 		
 		{
-			"Name": "InstancePropertyStringComponent",
-			"Instances":
-			[
-				{
-					"ID": "{04F267AB-7BF4-4851-AE01-B57FA6F330E7}",
-					"PropertyValues":
-					[
-						{
-							"Name": "PropertyName",
-							"Value": "Title"
-						}
-					]
-				}
-			]
-		},
-		
-		{
 			"Name": "String",
 			"Instances":
 			[

@@ -19,13 +19,6 @@
 				{
 					"Name": "StringComponent"
 				}
-			],
-			"InstanceProperties":
-			[
-				{
-					"Name": "PropertyName",
-					"DataTypeName": "Text"
-				}
 			]
 		},
 		{
@@ -121,50 +114,50 @@
 			[
 				{
 					"ID": "{0795FC31-589E-4219-9F20-3924132376A9}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "PropertyName",
+							"ID": "{A294F77C-8A89-419E-B494-8BFCC80DB634}",
 							"Value": "Name"
 						}
 					]
 				},
 				{
 					"ID": "{9DD1CDE1-6DAD-452D-9A07-9DE1CC32A396}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "PropertyName",
+							"ID": "{A294F77C-8A89-419E-B494-8BFCC80DB634}",
 							"Value": "SourceObject"
 						}
 					]
 				},
 				{
 					"ID": "{CD44D6DB-9C7F-4AE3-A1D8-FA6135EB3689}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "PropertyName",
+							"ID": "{A294F77C-8A89-419E-B494-8BFCC80DB634}",
 							"Value": "RelationshipType"
 						}
 					]
 				},
 				{
 					"ID": "{7734AD93-8328-421B-BD78-E353EEFB0879}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "PropertyName",
+							"ID": "{A294F77C-8A89-419E-B494-8BFCC80DB634}",
 							"Value": "DestinationObject"
 						}
 					]
 				},
 				{
 					"ID": "{B324D93A-738C-48BF-854F-A1C038BE5BA5}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "PropertyName",
+							"ID": "{A294F77C-8A89-419E-B494-8BFCC80DB634}",
 							"Value": "Name"
 						}
 					]

@@ -694,6 +694,16 @@
 			return Instance::GetByGlobalIdentifier($this->GlobalIdentifier);
 		}
 		
+		public function GetAttribute($name)
+		{
+			$insts = $this->GetAttributes();
+			foreach ($insts as $inst) {
+				if ($inst->GetPropertyValue("Name") == $name) {
+					return $inst;
+				}
+			}
+			return null;
+		}
 		public function GetAttributes()
 		{
 			$instrel_Tenant_has_Attribute = Instance::GetByGlobalIdentifier("{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}");
@@ -708,6 +718,38 @@
 				$insts = array();
 			}
 			return $insts;
+		}
+		
+		public function GetInstanceUsingAttributes($parameters)
+		{
+			if (!is_array($parameters))
+			{
+				Objectify::Log("No parameters were specified by which to extract a single instance of the object.", array
+				(
+					"Object" => $this->Name
+				));
+				return null;
+			}
+			
+			$insts = $this->GetInstances();
+			$atts = $this->GetAttributes();
+			
+			$retval = array();
+			// TODO: figure out what the @#$! this is
+			foreach ($atts as $att)
+			{
+				foreach ($parameters as $parm) {
+					if ($att->GetPropertyValue("Name") == $parm->Property) {
+						foreach ($insts as $inst) {	
+							if ($inst->GetAttributeValue($att) == $parm->Value) {
+								$retval[] = $inst;
+							}
+						}
+					}
+				}
+			}
+			
+			return $retval;
 		}
 		
 		/**
@@ -774,7 +816,9 @@
 				Objectify::Log("Database error when trying to obtain an instance of an object on the tenant.", array
 				(
 					"DatabaseError" => $ei[2] . " (" . $ei[1] . ")",
-					"Query" => $query
+					"Query" => $query,
+					"Object ID" => $this->ID,
+					"Tenant ID" => $this->Tenant->ID
 				));
 				return null;
 			}

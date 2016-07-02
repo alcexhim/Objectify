@@ -37,20 +37,20 @@
 			[
 				{
 					"ID": "{76D2CE0D-AA4D-460B-B844-2BD76EF9902B}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "PropertyName",
+							"ID": "{A294F77C-8A89-419E-B494-8BFCC80DB634}",
 							"Value": "Values"
 						}
 					]
 				},
 				{
 					"ID": "{9CE143E4-410F-4373-9BAF-778CEB794C66}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "PropertyName",
+							"ID": "{A294F77C-8A89-419E-B494-8BFCC80DB634}",
 							"Value": "Value"
 						}
 					]
@@ -179,7 +179,7 @@
 				},
 				{
 					"ID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
-					"Comment": "Class.labeled by Translatable Text Constant",
+					"Comment": "Class.has title Translatable Text Constant",
 					"PropertyValues":
 					[
 						{
@@ -198,13 +198,13 @@
 						},
 						{
 							"Name": "RelationshipType",
-							"Value": "labeled by"
+							"Value": "has title"
 						}
 					]
 				},
 				{
 					"ID": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
-					"Comment": "Translatable Text Constant.is label for Class",
+					"Comment": "Translatable Text Constant.title for Class",
 					"PropertyValues":
 					[
 						{
@@ -223,7 +223,57 @@
 						},
 						{
 							"Name": "RelationshipType",
-							"Value": "is label for"
+							"Value": "title for"
+						}
+					]
+				},
+				{
+					"ID": "{3B29DC78-B30A-46AA-9B20-2573239CECD9}",
+					"Comment": "Class.has description Translatable Text Constant",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "Class"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "TranslatableTextConstant"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "has description"
+						}
+					]
+				},
+				{
+					"ID": "{D4592057-BACF-44D0-9BB9-348B42A49D96}",
+					"Comment": "Translatable Text Constant.description for Class",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "TranslatableTextConstant"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "Class"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "description for"
 						}
 					]
 				}
@@ -273,20 +323,20 @@
 			[
 				{
 					"ID": "{6933F902-9C87-4D9B-8B25-AD4214A87420}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "PropertyName",
+							"ID": "{A294F77C-8A89-419E-B494-8BFCC80DB634}",
 							"Value": "PropertyName"
 						}
 					]
 				},
 				{
 					"ID": "{03166067-EBEA-4153-80B4-E0847D166EB2}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "PropertyName",
+							"ID": "{A294F77C-8A89-419E-B494-8BFCC80DB634}",
 							"Value": "Title"
 						}
 					]
@@ -719,23 +769,12 @@
 					"Name": "InstanceTitleableObject"
 				}
 			],
-			"InstanceProperties":
-			[
-				{
-					"Name": "Name",
-					"DataTypeName": "Text"
-				}
-			],
 			"Instances":
 			[
 				{
 					"ID": "{9547EB35-07FB-4B64-B82C-6DA1989B9165}",
 					"PropertyValues":
 					[
-						{
-							"Name": "Name",
-							"Value": "System"
-						},
 						{
 							"Name": "Title",
 							"Value":
@@ -746,16 +785,19 @@
 								]
 							}
 						}
+					],
+					"AttributeValues":
+					[
+						{
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+							"Value": "System"
+						}
 					]
 				},
 				{
 					"ID": "{63D91CCD-D196-4C3A-8609-6DF371E2406F}",
 					"PropertyValues":
 					[
-						{
-							"Name": "Name",
-							"Value": "Custom"
-						},
 						{
 							"Name": "Title",
 							"Value":
@@ -766,27 +808,70 @@
 								]
 							}
 						}
+					],
+					"AttributeValues":
+					[
+						{
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+							"Value": "Custom"
+						}
 					]
 				}
 			]
 		},
 		{
-			"Name": "Class",
-			"Properties":
+			"Name": "Relationship",
+			"Instances":
 			[
 				{
-					"Name": "Source",
-					"DataTypeName": "SingleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
+					"ID": "{B62F9B81-799B-4ABE-A4AF-29B45347DE54}",
+					"Comment": "Class.has Object Source",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "Class"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
 							{
 								"Name": "ObjectSource"
 							}
-						],
-						"Instance": "{9547EB35-07FB-4B64-B82C-6DA1989B9165}"
-					}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "has"
+						}
+					]
+				},
+				{
+					"ID": "{FBB9391D-C4A2-4326-9F85-7801F377253C}",
+					"Comment": "Object Source.for Class",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "ObjectSource"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "Class"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "for"
+						}
+					]
 				}
 			]
 		}

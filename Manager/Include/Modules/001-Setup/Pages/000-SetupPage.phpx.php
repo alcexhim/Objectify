@@ -52,7 +52,56 @@
 			
 			$inst_Class_has_sub_Class = Instance::GetByGlobalIdentifier("{C14BC80D-879C-4E6F-9123-E8DFB13F4666}");
 			$inst_Class_has_super_Class = Instance::GetByGlobalIdentifier("{100F0308-855D-4EC5-99FA-D8976CA20053}");
+
+			// Set up Relationships first
+			if (isset($filedata->Relationships)) {
+				if ($filedata->Relationships != null)
+				{
+					foreach ($filedata->Relationships as $rel)
+					{
+						$instRelationship = Instance::GetByGlobalIdentifier($rel->RelationshipInstance);
+						$instSource = Instance::GetByGlobalIdentifier($rel->SourceInstance);
 			
+						$instDests = array();
+						foreach ($rel->DestinationInstances as $iid)
+						{
+							$instDest = Instance::GetByGlobalIdentifier($iid);
+							$instDests[] = $instDest;
+						}
+						/*
+						 Objectify::Log("Creating a new Relationship", array
+						 (
+						 "Relationship Instance GID" => $rel->RelationshipInstance,
+						 "Source Instance GID" => $rel->SourceInstance,
+						 "Relationship Instance DBID" => $instRelationship->ID,
+						 "Source Instance DBID" => $instSource->ID
+						 ));
+						 */
+						Relationship::Create($instRelationship, $instSource, $instDests);
+			
+						if (isset($rel->InverseRelationshipInstance))
+						{
+							$instInverseRelationship = Instance::GetByGlobalIdentifier($rel->InverseRelationshipInstance);
+								
+							foreach ($instDests as $instDest)
+							{
+								/*
+								 Objectify::Log("Creating a new Relationship", array
+								 (
+								 "Relationship Instance GID" => $rel->RelationshipInstance,
+								 "Source Instance GID" => $instDest->GlobalIdentifier,
+								 "Relationship Instance DBID" => $instRelationship->ID,
+								 "Source Instance DBID" => $instDest->ID
+								 ));
+								 */
+								Relationship::Create($instInverseRelationship, $instDest, $instSource);
+							}
+						}
+					}
+				}
+			}
+			
+			// Now check Objects for parent-child relationships
 			if (isset($filedata->Objects)) {
 				if ($filedata->Objects != null)
 				{
@@ -74,50 +123,39 @@
 									Relationship::Create($inst_Class_has_super_Class, $instObj, $instPObj);
 								}
 							}
-						}
-					}
-				}
-			}
-			if (isset($filedata->Relationships)) {
-				if ($filedata->Relationships != null)
-				{
-					foreach ($filedata->Relationships as $rel)
-					{
-						$instRelationship = Instance::GetByGlobalIdentifier($rel->RelationshipInstance);
-						$instSource = Instance::GetByGlobalIdentifier($rel->SourceInstance);
-						
-						$instDests = array();
-						foreach ($rel->DestinationInstances as $iid)
-						{
-							$instDest = Instance::GetByGlobalIdentifier($iid);
-							$instDests[] = $instDest;
-						}
-						
-						Objectify::Log("Creating a new Relationship", array
-						(
-							"Relationship Instance GID" => $rel->RelationshipInstance,
-							"Source Instance GID" => $rel->SourceInstance,
-							"Relationship Instance DBID" => $instRelationship->ID,
-							"Source Instance DBID" => $instSource->ID
-						));
-						
-						Relationship::Create($instRelationship, $instSource, $instDests);
-						
-						if (isset($rel->InverseRelationshipInstance))
-						{
-							$instInverseRelationship = Instance::GetByGlobalIdentifier($rel->InverseRelationshipInstance);
 							
-							foreach ($instDests as $instDest)
+							// Then check Object Instances for attribute values
+							if (is_array($obj_data->Instances))
 							{
-								Objectify::Log("Creating a new Relationship", array
-								(
-									"Relationship Instance GID" => $rel->RelationshipInstance,
-									"Source Instance GID" => $instDest->GlobalIdentifier,
-									"Relationship Instance DBID" => $instRelationship->ID,
-									"Source Instance DBID" => $instDest->ID
-								));
-								
-								Relationship::Create($instInverseRelationship, $instDest, $instSource);
+								$count = count($obj_data->Instances);
+								for ($i = 0; $i < $count; $i++)
+								{
+									$pobj_data = $obj_data->Instances[$i];
+									$instPObj = Instance::GetByGlobalIdentifier($pobj_data->ID);
+									
+									if (isset($pobj_data->AttributeValues))
+									{
+										if (is_array($pobj_data->AttributeValues))
+										{
+											foreach ($pobj_data->AttributeValues as $attval)
+											{
+												if (isset($attval->ID))
+												{
+													$instatt = Instance::GetByGlobalIdentifier($attval->ID);
+													if ($instatt == null)
+													{
+														trigger_error("[FAIL] setting attribute with id '" . $attval->ID . "' on inst '" . $pobj_data->ID . "' to '" . $attval->Value . "'");
+													}
+													else
+													{
+														$value = $attval->Value;
+														$instPObj->SetAttributeValue($instatt, $value);
+													}
+												}
+											}
+										}
+									}
+								}
 							}
 						}
 					}
@@ -156,6 +194,10 @@
 						}
 						$retval[] = $obj;
 					}
+					
+					// TODO: don't add parent objects before the "has sub Class" and "has super Class" relationships
+					//       are created to handle parent objects
+					// parent objects can be handled simply by inheritance
 					
 					if (isset($objdef->ParentObjects))
 					{
@@ -250,7 +292,7 @@
 							if (!isset($instDef->ID)) continue;
 							
 							$id = Objectify::SanitizeGlobalIdentifier($instDef->ID);
-							$inst = $obj->GetInstanceByGlobalIdentifier($id);
+							$inst = $obj->GetInstanceByGlobalIdentifier($id, true);
 							if ($inst == null)
 							{
 								$inst = $obj->CreateInstance(null, $id);
@@ -733,7 +775,6 @@
 			));
 			
 			$instTenant = $objTenant->GetInstanceByGlobalIdentifier("{F2C9D4A9-9EFB-4263-84DB-66A9DA65AD00}");
-			$instTenant->SetPropertyValue("TenantURL", $tenantName);
 			
 			$instAttributeName = Instance::GetByGlobalIdentifier("{9153A637-992E-4712-ADF2-B03F0D9EDEA6}");
 			$instTenant->SetAttributeValue($instAttributeName, $tenantName);
@@ -964,10 +1005,17 @@
 					// $this->CreateDefaultSecurityPrivilegesAndGroups();
 					
 					$objs = TenantObject::Get();
+					$instrel_Class__has_created_by__User = Instance::GetByGlobalIdentifier("{D1A25625-C90F-4A73-A6F2-AFB530687705}");
 					foreach ($objs as $obj)
 					{
-						$obj->SetPropertyValue("CreationUser", new MultipleInstanceProperty(array($inst_xq_environments), null));
-						$obj->SetPropertyValue("CreationTimestamp", date());
+						$instobj = $obj->GetThisInstance();
+						
+						Relationship::Create($instrel_Class__has_created_by__User, $instobj, array($inst_xq_environments));
+						
+						$attCreationDate = $obj->GetAttribute("CreationDate");
+						if ($attCreationDate != null) {
+							$instobj->SetAttributeValue($attCreationDate, date());
+						}
 					}
 					
 					$tenantObjectFileNames = glob(dirname(__FILE__) . "/../TenantObjects/*/*.xqjs");
@@ -983,6 +1031,11 @@
 					foreach ($objClasses as $obj)
 					{
 						$instThisClass = Instance::GetByGlobalIdentifier($obj->GlobalIdentifier);
+						if ($instThisClass == null)
+						{
+							trigger_error("inst with gid " . $obj->GlobalIdentifier . " not found");
+							continue;
+						}
 						$instThisClass->SetAttributeValue($instAttribute_Name, $obj->Name);
 					}
 					

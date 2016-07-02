@@ -1,0 +1,15 @@
+{
+	"Relationships":
+	[
+		{
+			"Comment": "Class.has Task 'Redirect Task'",
+			"RelationshipInstance": "{4D8670E1-2AF1-4E7C-9C87-C910BD7B319B}",
+			"InverseRelationshipInstance": "{F6D05235-AAA8-4DC0-8D3A-A0F336B39F01}",
+			"SourceInstance": "{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}",
+			"DestinationInstances":
+			[
+				"{16D35AE0-5F0A-4D06-A14A-8D08E85BFA37}"
+			]
+		}
+	]
+}

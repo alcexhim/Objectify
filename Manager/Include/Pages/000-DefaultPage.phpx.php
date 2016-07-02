@@ -18,7 +18,7 @@ use Objectify\Objects\User;
 			$instUser = User::GetCurrent();
 			if ($instUser != null)
 			{
-				$defaultRedirectURL = $instUser->GetPropertyValue("DefaultRedirectURL", null);
+				$defaultRedirectURL = $instUser->GetAttributeValue("DefaultRedirectURL", null);
 				if ($defaultRedirectURL != null)
 				{
 					System::Redirect($defaultRedirectURL);
@@ -27,7 +27,7 @@ use Objectify\Objects\User;
 				}
 			}
 			
-			$propDefaultRedirectURL = $instTenant->GetPropertyValue("DefaultRedirectURL");
+			$propDefaultRedirectURL = $instTenant->GetAttributeValue("DefaultRedirectURL");
 			if ($propDefaultRedirectURL != null)
 			{
 				System::Redirect($propDefaultRedirectURL);

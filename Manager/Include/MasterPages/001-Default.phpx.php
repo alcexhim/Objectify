@@ -8,12 +8,15 @@
 	use Objectify\Objects\Tenant;
 	use Objectify\Objects\TenantObject;
 	use Objectify\Objects\TenantObjectInstancePropertyValue;
+	use Objectify\Objects\Relationship;
+	use Objectify\Objects\Instance;
+	use Objectify\Objects\KnownRelationships;
 	
 	use Phast\WebControls\MenuItemCommand;
-use Phast\WebControls\MenuItemSeparator;
-use Phast\WebControls\MenuItemHeader;
-use Phast\WebControlAttribute;
-					
+	use Phast\WebControls\MenuItemSeparator;
+	use Phast\WebControls\MenuItemHeader;
+	use Phast\WebControlAttribute;
+	
 	class DefaultPage extends PhastPage
 	{
 		public function OnInitializing($e)
@@ -43,11 +46,25 @@ use Phast\WebControlAttribute;
 			$tenantName = System::GetTenantName();
 			
 			$objTenant = TenantObject::GetByName("Tenant");
-			$instTenant = $objTenant->GetInstance(array
+			$instTenant = $objTenant->GetInstanceUsingAttributes(array
 			(
-				new TenantObjectInstancePropertyValue("TenantURL", $tenantName)
+				new TenantObjectInstancePropertyValue("Name", $tenantName)
 			));
-			$instSidebarMenuItems = $instTenant->GetPropertyValue("SidebarMenuItems")->GetInstances();
+			$instTenant = $instTenant[0];
+			
+			/*
+			
+			if ($instTenant == null) {
+				echo ("Tenant not found: " . $tenantName); die();
+			}
+			*/
+			
+			$instRel__Tenant__has__Sidebar_Menu_Items = KnownRelationships::get___Tenant__has_sidebar__Menu_Item();
+			$rels = Relationship::GetBySourceInstance($instTenant, $instRel__Tenant__has__Sidebar_Menu_Items);
+			$rel = $rels[0];
+			
+			$instSidebarMenuItems = $rel->GetDestinationInstances();
+			
 			foreach ($instSidebarMenuItems as $instSidebarMenuItem)
 			{
 				switch ($instSidebarMenuItem->ParentObject->Name)
@@ -71,7 +88,7 @@ use Phast\WebControlAttribute;
 								}
 							}
 						}
-						$mi->TargetURL = $instSidebarMenuItem->GetPropertyValue("TargetURL");
+						$mi->TargetURL = $instSidebarMenuItem->GetAttributeValue("TargetURL");
 						break;
 					}
 					case "MenuItemSeparator":

@@ -26,9 +26,9 @@
 			$objTenant = TenantObject::GetByName("Tenant");
 			if ($objTenant != null)
 			{
-				$instTenant = $objTenant->GetInstance(array
+				$instTenant = $objTenant->GetInstanceUsingAttributes(array
 				(
-					new TenantObjectInstancePropertyValue("TenantURL", System::GetTenantName())
+					new TenantObjectInstancePropertyValue("Name", System::GetTenantName())
 				));
 
 				$instRel_Tenant__has_login_header_TTC = Instance::GetByGlobalIdentifier("{41D66ACB-AFDE-4B6F-892D-E66255F10DEB}");
@@ -37,22 +37,26 @@
 				$paraTopText = $e->RenderingPage->GetControlByID("paraTopText");
 
 				$relsHeader = Relationship::GetBySourceInstance($instTenant, $instRel_Tenant__has_login_header_TTC);
-				$relsHeaderInsts = $relsHeader[0]->GetDestinationInstances();
-				
-				// $instLoginHeaderText = $instTenant->GetPropertyValue("LoginHeaderText", "")->GetInstance();
-				$instLoginHeaderText = $relsHeaderInsts[0];
-				
-				$paraTopText->Content = $instLoginHeaderText->ToString();
+				if ($relsHeader != null && count($relsHeader) > 0) {
+					$relsHeaderInsts = $relsHeader[0]->GetDestinationInstances();
+					
+					// $instLoginHeaderText = $instTenant->GetPropertyValue("LoginHeaderText", "")->GetInstance();
+					$instLoginHeaderText = $relsHeaderInsts[0];
+					
+					$paraTopText->Content = $instLoginHeaderText->ToString();
+				}
 				
 				$paraBottomText = $e->RenderingPage->GetControlByID("paraBottomText");
 				
 				$relsFooter = Relationship::GetBySourceInstance($instTenant, $instRel_Tenant__has_login_footer_TTC);
-				$relsFooterInsts = $relsFooter[0]->GetDestinationInstances();
-				
-				// $instLoginFooterText = $instTenant->GetPropertyValue("LoginFooterText", "")->GetInstance();
-				$instLoginFooterText = $relsFooterInsts[0];
-				
-				$paraBottomText->Content = $instLoginFooterText->ToString();
+				if ($relsFooter != null && count($relsFooter) > 0) {
+					$relsFooterInsts = $relsFooter[0]->GetDestinationInstances();
+					
+					// $instLoginFooterText = $instTenant->GetPropertyValue("LoginFooterText", "")->GetInstance();
+					$instLoginFooterText = $relsFooterInsts[0];
+					
+					$paraBottomText->Content = $instLoginFooterText->ToString();
+				}
 			}
 			
 			if ($_SERVER["REQUEST_METHOD"] == "POST")

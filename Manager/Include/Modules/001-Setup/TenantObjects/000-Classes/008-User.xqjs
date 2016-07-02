@@ -7,20 +7,20 @@
 			[
 				{
 					"ID": "{91EB4F16-9E36-4EED-8E02-921DF802DC15}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "PropertyName",
+							"ID": "{A294F77C-8A89-419E-B494-8BFCC80DB634}",
 							"Value": "UserName"
 						}
 					]
 				},
 				{
 					"ID": "{BAE9E054-ED1E-4DE7-A70B-33A437591D80}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "PropertyName",
+							"ID": "{A294F77C-8A89-419E-B494-8BFCC80DB634}",
 							"Value": "DisplayName"
 						}
 					]
@@ -130,25 +130,6 @@
 				{
 					"Name": "User",
 					"DataTypeName": "SingleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "User"
-							}
-						]
-					}
-				}
-			]
-		},
-		{
-			"Name": "Class",
-			"Properties":
-			[
-				{
-					"Name": "CreationUser",
-					"DataTypeName": "MultipleInstance",
 					"Value":
 					{
 						"ValidObjects":

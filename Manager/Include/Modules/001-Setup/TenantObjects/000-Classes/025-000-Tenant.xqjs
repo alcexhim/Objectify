@@ -7,10 +7,10 @@
 			[
 				{
 					"ID": "{2AB66547-7C22-41C5-8620-53FC524CCEAF}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "PropertyName",
+							"ID": "{A294F77C-8A89-419E-B494-8BFCC80DB634}",
 							"Value": "TenantURL"
 						}
 					]
@@ -51,23 +51,6 @@
 			"InstanceProperties":
 			[
 				{
-					"Name": "TenantURL",
-					"DataTypeName": "Text"
-				},
-				{
-					"Name": "DataCenters",
-					"DataTypeName": "MultipleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "DataCenter"
-							}
-						]
-					}
-				},
-				{
 					"Name": "LogoImage",
 					"DataTypeName": "SingleInstance",
 					"Value":
@@ -79,50 +62,6 @@
 							}
 						]
 					}
-				},
-				{
-					"Name": "PaymentPlan",
-					"DataTypeName": "SingleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "PaymentPlan"
-							}
-						]
-					}
-				},
-				{
-					"Name": "TenantType",
-					"DataTypeName": "SingleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "TenantType"
-							}
-						]
-					}
-				},
-				{
-					"Name": "SidebarMenuItems",
-					"DataTypeName": "MultipleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "MenuItem"
-							}
-						]
-					}
-				},
-				{
-					"Name": "DefaultRedirectURL",
-					"DataTypeName": "Text",
-					"DefaultValue": "~/dashboard"
 				}
 			],
 			"Instances":
@@ -130,10 +69,10 @@
 				{
 					"ID": "{F2C9D4A9-9EFB-4263-84DB-66A9DA65AD00}",
 					"Comment": "This is the initial Tenant instance used by the Setup routine",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "DefaultRedirectURL",
+							"ID": "{A1D39058-E934-4DBC-9179-EFAECFDD8B48}",
 							"Value": "~/dashboard"
 						}
 					]

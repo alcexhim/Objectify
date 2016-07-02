@@ -1,0 +1,25 @@
+{
+	"Relationships":
+	[
+		{
+			"Comment": "Redirect Task.has Text Attribute `Target URL`",
+			"RelationshipInstance": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+			"InverseRelationshipInstance": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
+			"SourceInstance": "{B9C1E04A-FABB-4DEE-A56A-E3AA308237A1}",
+			"DestinationInstances":
+			[
+				"{970F79A0-9EFE-4E7D-9286-9908C6F06A67}"
+			]
+		},
+		{
+			"Comment": "Menu Item Command.has Text Attribute `Target URL`",
+			"RelationshipInstance": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+			"InverseRelationshipInstance": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
+			"SourceInstance": "{9D3EDE23-6DB9-4664-9145-ABCBD3A0A2C2}",
+			"DestinationInstances":
+			[
+				"{970F79A0-9EFE-4E7D-9286-9908C6F06A67}"
+			]
+		}
+	]
+}

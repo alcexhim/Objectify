@@ -347,6 +347,256 @@
 							"Value": "is login footer for"
 						}
 					]
+				},
+				{
+					"ID": "{D1A25625-C90F-4A73-A6F2-AFB530687705}",
+					"Comment": "Class.has created by User",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "Class"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "User"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "has created by"
+						}
+					]
+				},
+				{
+					"ID": "{04DD2E6B-EA57-4840-8DD5-F0AA943C37BB}",
+					"Comment": "User.created Class",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "User"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "Class"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "created"
+						}
+					]
+				},
+				{
+					"ID": "{CE4EA0D6-955D-4894-BACB-549B76D38E26}",
+					"Comment": "Tenant.has Data Center",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "Tenant"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "DataCenter"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "has"
+						}
+					]
+				},
+				{
+					"ID": "{2374530A-8C7E-4A1C-8AFD-08A6805F89E5}",
+					"Comment": "Data Center.for Tenant",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "DataCenter"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "Tenant"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "for"
+						}
+					]
+				},
+				{
+					"ID": "{050AF695-B568-4463-AB0A-543209D4374B}",
+					"Comment": "Tenant.has Payment Plan",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "Tenant"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "PaymentPlan"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "has"
+						}
+					]
+				},
+				{
+					"ID": "{85B40E4B-849B-4006-A9C0-4E201B25975F}",
+					"Comment": "Payment Plan.for Tenant",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "PaymentPlan"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "Tenant"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "for"
+						}
+					]
+				},
+				{
+					"ID": "{D3963A58-BA8F-4CB4-AB0F-6B51C3852F26}",
+					"Comment": "Tenant.has Tenant Type",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "Tenant"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "TenantType"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "has"
+						}
+					]
+				},
+				{
+					"ID": "{DD52A3F3-7312-4492-BF89-F4434CB439D0}",
+					"Comment": "Tenant Type.for Tenant",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "TenantType"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "Tenant"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "for"
+						}
+					]
+				},
+				{
+					"ID": "{D62DFB9F-48D5-4697-AAAD-1CAD0EA7ECFA}",
+					"Comment": "Tenant.has sidebar Menu Item",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "Tenant"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "MenuItem"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "has sidebar"
+						}
+					]
+				},
+				{
+					"ID": "{4E0A8C3D-5D10-44E5-A6D7-31F262711E01}",
+					"Comment": "Menu Item.sidebar for Tenant",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "MenuItem"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "Tenant"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "sidebar for"
+						}
+					]
 				}
 			]
 		}

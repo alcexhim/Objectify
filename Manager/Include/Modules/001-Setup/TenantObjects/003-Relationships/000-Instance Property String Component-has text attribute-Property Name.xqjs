@@ -1,0 +1,15 @@
+{
+	"Relationships":
+	[
+		{
+			"Comment": "Class `Instance Property String Component`.has Text Attribute `Property Name`",
+			"RelationshipInstance": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+			"InverseRelationshipInstance": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
+			"SourceInstance": "{D37439E3-1138-4148-9946-379695B9B945}",
+			"DestinationInstances":
+			[
+				"{A294F77C-8A89-419E-B494-8BFCC80DB634}"
+			]
+		}
+	]
+}
