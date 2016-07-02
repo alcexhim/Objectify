@@ -16,7 +16,9 @@
 
 	use Phast\RandomStringGenerator;
 	use Phast\RandomStringGeneratorCharacterSets;
-			
+use Objectify\Objects\Relationship;
+use Objectify\Objects\TenantObjectInstance;
+					
 	class LoginPage extends PhastPage
 	{
 		public function OnInitializing(CancelEventArgs $e)
@@ -28,14 +30,28 @@
 				(
 					new TenantObjectInstancePropertyValue("TenantURL", System::GetTenantName())
 				));
+
+				$instRel_Tenant__has_login_header_TTC = TenantObjectInstance::GetByGlobalIdentifier("{41D66ACB-AFDE-4B6F-892D-E66255F10DEB}");
+				$instRel_Tenant__has_login_footer_TTC = TenantObjectInstance::GetByGlobalIdentifier("{A6203B6B-5BEB-4008-AE49-DB5E7DDBA45B}");
 				
 				$paraTopText = $e->RenderingPage->GetControlByID("paraTopText");
+
+				$relsHeader = Relationship::GetBySourceInstance($instTenant, $instRel_Tenant__has_login_header_TTC);
+				$relsHeaderInsts = $relsHeader[0]->GetDestinationInstances();
 				
-				$instLoginHeaderText = $instTenant->GetPropertyValue("LoginHeaderText", "")->GetInstance();
+				// $instLoginHeaderText = $instTenant->GetPropertyValue("LoginHeaderText", "")->GetInstance();
+				$instLoginHeaderText = $relsHeaderInsts[0];
+				
 				$paraTopText->Content = $instLoginHeaderText->ToString();
 				
 				$paraBottomText = $e->RenderingPage->GetControlByID("paraBottomText");
-				$instLoginFooterText = $instTenant->GetPropertyValue("LoginFooterText", "")->GetInstance();
+				
+				$relsFooter = Relationship::GetBySourceInstance($instTenant, $instRel_Tenant__has_login_footer_TTC);
+				$relsFooterInsts = $relsFooter[0]->GetDestinationInstances();
+				
+				// $instLoginFooterText = $instTenant->GetPropertyValue("LoginFooterText", "")->GetInstance();
+				$instLoginFooterText = $relsFooterInsts[0];
+				
 				$paraBottomText->Content = $instLoginFooterText->ToString();
 			}
 			

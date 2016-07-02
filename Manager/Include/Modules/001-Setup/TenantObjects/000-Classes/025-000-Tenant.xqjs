@@ -81,32 +81,6 @@
 					}
 				},
 				{
-					"Name": "LoginHeaderText",
-					"DataTypeName": "SingleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "TranslatableTextConstant"
-							}
-						]
-					}
-				},
-				{
-					"Name": "LoginFooterText",
-					"DataTypeName": "SingleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "TranslatableTextConstant"
-							}
-						]
-					}
-				},
-				{
 					"Name": "PaymentPlan",
 					"DataTypeName": "SingleInstance",
 					"Value":

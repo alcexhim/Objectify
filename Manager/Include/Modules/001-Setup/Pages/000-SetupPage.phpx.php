@@ -730,8 +730,8 @@
 			
 			$instTenant = $objTenant->GetInstanceByGlobalIdentifier("{F2C9D4A9-9EFB-4263-84DB-66A9DA65AD00}");
 			$instTenant->SetPropertyValue("TenantURL", $tenantName);
-			$instTenant->SetPropertyValue("LoginHeaderText", new SingleInstanceProperty($instTTC_LoginHeaderText));
-			$instTenant->SetPropertyValue("LoginFooterText", new SingleInstanceProperty($instTTC_LoginFooterText));
+			// $instTenant->SetPropertyValue("LoginHeaderText", new SingleInstanceProperty($instTTC_LoginHeaderText));
+			// $instTenant->SetPropertyValue("LoginFooterText", new SingleInstanceProperty($instTTC_LoginFooterText));
 			/*
 			$instTenant = $objTenant->CreateInstance(array
 			(
