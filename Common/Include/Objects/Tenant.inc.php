@@ -161,5 +161,14 @@
 			return $values[0];
 		}
 		
+		/**
+		 * Gets the Instance representation of this Tenant.
+		 * @return Instance The Instance representation of this Tenant.
+		 */
+		public function GetThisInstance()
+		{
+			return Instance::GetByGlobalIdentifier($this->GlobalIdentifier);
+		}
+		
 	}
 ?>
