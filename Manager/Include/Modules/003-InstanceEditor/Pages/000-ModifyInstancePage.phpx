@@ -12,6 +12,14 @@
 								<wfx:FormView ID="fvInstanceProperties">
 								</wfx:FormView>
 							</wfx:TabPage>
+							<wfx:TabPage ID="tabAttributes" Title="Attributes">
+								<wfx:ListView ID="lvAttributes">
+									<Columns>
+										<wfx:ListViewColumn ID="lvcAttribute" Title="Attribute" />
+										<wfx:ListViewColumn ID="lvcValue" Title="Value" />
+									</Columns>
+								</wfx:ListView>
+							</wfx:TabPage>
 							<wfx:TabPage ID="tabRelationships" Title="Relationships">
 								<wfx:ListView ID="lvRelationships">
 									<Columns>

@@ -116,7 +116,6 @@
 			{
 				if (get_class($attribute) != "Objectify\\Objects\\Instance")
 				{
-					
 				}
 			}
 			else
@@ -151,7 +150,7 @@
 			}
 			
 			$count = $statement->rowCount();
-			if ($count == 0) return false;
+			if ($count == 0) return $defaultValue;
 			
 			$values = $statement->fetch(PDO::FETCH_ASSOC);
 			return $values["attval_Value"];

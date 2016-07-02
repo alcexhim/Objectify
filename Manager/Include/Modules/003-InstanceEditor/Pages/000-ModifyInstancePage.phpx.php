@@ -81,6 +81,26 @@
 				}
 			}
 			
+			$tabAttributes = $tbsTabs->GetTabByID("tabAttributes");
+			$lvAttributes = $tabAttributes->GetControlByID("lvAttributes");
+			
+			$atts = $inst->ParentObject->GetAttributes();
+			foreach ($atts as $att)
+			{
+				$lvi = new ListViewItem(array
+				(
+					new ListViewItemColumn("lvcAttribute", function($sender)
+					{
+						if ($sender->ExtraData != null) {
+							$iv = new InstanceDisplayWidget($sender->ExtraData);
+							$iv->Render();
+						}
+					}, null, $att),
+					new ListViewItemColumn("lvcValue", $inst->GetAttributeValue($att), null)
+				));
+				$lvAttributes->Items[] = $lvi;
+			}
+			
 			$tabRelationships = $tbsTabs->GetTabByID("tabRelationships");
 			$lvRelationships = $tabRelationships->GetControlByID("lvRelationships");
 			$rels = Relationship::GetBySourceInstance($inst);

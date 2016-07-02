@@ -689,12 +689,26 @@
 			return $values[0];
 		}
 		
-		public function GetAttributes()
+		public function GetThisInstance()
 		{
-			$retval = array();
-			return $retval;
+			return Instance::GetByGlobalIdentifier($this->GlobalIdentifier);
 		}
 		
+		public function GetAttributes()
+		{
+			$instrel_Tenant_has_Attribute = Instance::GetByGlobalIdentifier("{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}");
+			$rels = Relationship::GetBySourceInstance($this->GetThisInstance(), $instrel_Tenant_has_Attribute);
+			$rel = $rels[0];
+			
+			$insts = $rel->GetDestinationInstances();
+			return $insts;
+		}
+		
+		/**
+		 * Extracts a single instance of this TenantObject which matches the given parameters.
+		 * @param TenantObjectInstancePropertyValue[] $parameters Parameters to search for.
+		 * @return Instance
+		 */
 		public function GetInstance($parameters)
 		{
 			// $defaultLanguage = $objLanguage->GetInstance(array
