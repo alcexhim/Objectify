@@ -15,7 +15,7 @@
 	use Objectify\Tenant\MasterPages\WebPage;
 	
 	use Objectify\Objects\TenantObject;
-use Objectify\WebControls\InstanceDisplayWidget;
+	use Objectify\WebControls\InstanceDisplayWidget;
 		
 	class DashboardPage extends PhastPage
 	{
