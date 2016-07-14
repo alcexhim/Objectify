@@ -19,9 +19,10 @@
 	use Objectify\Objects\MultipleInstanceProperty;
 	use Objectify\Objects\SingleInstanceProperty;
 	use Objectify\Objects\Relationship;
+	use Objectify\Objects\KnownRelationships;
 	
 	use UniversalEditor\ObjectModels\Markup\MarkupTagElement;
-		
+	
 	class SetupPage extends PhastPage
 	{
 		private function CreateDefaultSecurityPrivilegesAndGroups()
@@ -1006,11 +1007,20 @@
 					
 					$objs = TenantObject::Get();
 					$instrel_Class__has_created_by__User = Instance::GetByGlobalIdentifier("{D1A25625-C90F-4A73-A6F2-AFB530687705}");
+
+					$instRel_Class__has__Object_Source = KnownRelationships::get___Class__has__Object_Source();
+					$instRel_Object_Source__for__Class = KnownRelationships::get___Object_Source__for__Class();
+					
+					$instObjectSource_System = Instance::GetByGlobalIdentifier("{9547EB35-07FB-4B64-B82C-6DA1989B9165}");
+
 					foreach ($objs as $obj)
 					{
 						$instobj = $obj->GetThisInstance();
 						
 						Relationship::Create($instrel_Class__has_created_by__User, $instobj, array($inst_xq_environments));
+						
+						Relationship::Create($instRel_Class__has__Object_Source, $instobj, array($instObjectSource_System));
+						Relationship::Create($instRel_Object_Source__for__Class, $instObjectSource_System, array($instobj));
 						
 						$attCreationDate = $obj->GetAttribute("CreationDate");
 						if ($attCreationDate != null) {
