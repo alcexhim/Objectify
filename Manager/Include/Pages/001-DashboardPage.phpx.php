@@ -37,6 +37,7 @@
 			
 			foreach ($tenants as $tenant)
 			{
+				$tenantURL = $tenant->GetAttributeValue("TenantURL");
 				$lvi = new ListViewItem();
 				$lvi->Columns[] = new ListViewItemColumn("lvcTenantName", function($sender)
 				{
@@ -45,9 +46,9 @@
 					$adw = new InstanceDisplayWidget($tenant);
 					/*
 					$adw = new AdditionalDetailWidget();
-					$adw->Text = $tenant->GetPropertyValue("TenantURL");
+					$adw->Text = $tenantURL;
 					$adw->ClassTitle = "Tenant";
-					$adw->TargetURL = "~/tenants/launch/" . $tenant->GetPropertyValue("TenantURL");
+					$adw->TargetURL = "~/tenants/launch/" . $tenantURL;
 					$adw->TargetFrame = "_blank";
 					$adw->MenuItems = array
 					(
@@ -55,24 +56,24 @@
 						(
 							// Modify Tenant (101) : for Instance (1332) : of Tenant (15724)
 							// ~/o/15724/i/1332/t/101
-							new MenuItemCommand("Modify", "~/tenants/modify/" . $tenant->GetPropertyValue("TenantURL")),
-							new MenuItemCommand("Clone", "~/tenants/clone/" . $tenant->GetPropertyValue("TenantURL")),
-							new MenuItemCommand("Delete", "~/tenants/delete/" . $tenant->GetPropertyValue("TenantURL"))
+							new MenuItemCommand("Modify", "~/tenants/modify/" . $tenantURL),
+							new MenuItemCommand("Clone", "~/tenants/clone/" . $tenantURL),
+							new MenuItemCommand("Delete", "~/tenants/delete/" . $tenantURL)
 						)),
 						new MenuItemCommand("Migration", null, null, null, array
 						(
-							new MenuItemCommand("Create", "~/migration/create/" . $tenant->GetPropertyValue("TenantURL"))
+							new MenuItemCommand("Create", "~/migration/create/" . $tenantURL)
 						)),
 						new MenuItemCommand("Reporting", null, null, null, array
 						(
-							new MenuItemCommand("Create Custom Report from Here", "~/tenants/modify/" . $tenant->GetPropertyValue("TenantURL")),
-							new MenuItemCommand("Related Reports", "~/tenants/delete/" . $tenant->GetPropertyValue("TenantURL")),
-							new MenuItemCommand("Report Fields and Values", "~/tenants/delete/" . $tenant->GetPropertyValue("TenantURL"))
+							new MenuItemCommand("Create Custom Report from Here", "~/tenants/modify/" . $tenantURL),
+							new MenuItemCommand("Related Reports", "~/tenants/delete/" . $tenantURL),
+							new MenuItemCommand("Report Fields and Values", "~/tenants/delete/" . $tenantURL)
 						))
 					);
 					*/
 					$adw->Render();
-				}, $tenant->GetPropertyValue("TenantURL"), $tenant);
+				}, $tenantURL, $tenant);
 				$lvi->Columns[] = new ListViewItemColumn("lvcTenantType", "");
 				
 				$str = "";
