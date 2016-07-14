@@ -25,6 +25,9 @@
 			$inst = Instance::GetByID($iidParts[1]);
 			$litInstanceID->Value = $inst->ToString();
 			
+			$litGlobalIdentifier = $e->RenderingPage->GetControlByID("litGlobalIdentifier");
+			$litGlobalIdentifier->Value = $inst->GlobalIdentifier;
+			
 			$litInstanceObjectID = $e->RenderingPage->GetControlByID("litInstanceObjectID");
 			$litInstanceObjectID->Value = $inst->ParentObject->ToString();
 			
@@ -36,6 +39,7 @@
 			$fv = $tabInstanceProperties->GetControlByID("fvInstanceProperties");
 			
 			$instanceProperties = $inst->ParentObject->GetInstanceProperties();
+			
 			foreach ($instanceProperties as $prop)
 			{
 				$value = $inst->GetPropertyValue($prop);
@@ -47,28 +51,30 @@
 						$fvi = new FormViewItemInstance("prop" . $prop->ID, "prop" . $prop->ID, $prop->Name, $prop->DefaultValue);
 						$fvi->MultiSelect = ($prop->DataType->Name == "MultipleInstance");
 						
-						if ($value == null) continue;
-						
-						if ($prop->DataType->Name == "MultipleInstance")
+						if ($value != null)
 						{
-							$insts = $value->GetInstances();
-						}
-						else if ($prop->DataType->Name == "SingleInstance")
-						{
-							$insts = array($value->GetInstance());
-						}
-						
-						if (is_array($insts))
-						{
-							foreach ($insts as $instt)
+							
+							if ($prop->DataType->Name == "MultipleInstance")
 							{
-								$fvi->SelectedInstances[] = $instt;
+								$insts = $value->GetInstances();
 							}
-						}
-						
-						foreach ($value->ValidObjects as $obj)
-						{
-							$fvi->ValidObjects[] = $obj;
+							else if ($prop->DataType->Name == "SingleInstance")
+							{
+								$insts = array($value->GetInstance());
+							}
+							
+							if (is_array($insts))
+							{
+								foreach ($insts as $instt)
+								{
+									$fvi->SelectedInstances[] = $instt;
+								}
+							}
+							
+							foreach ($value->ValidObjects as $obj)
+							{
+								$fvi->ValidObjects[] = $obj;
+							}
 						}
 						$fv->Items[] = $fvi;
 						break;
@@ -96,7 +102,9 @@
 							$iv->Render();
 						}
 					}, null, $att),
-					new ListViewItemColumn("lvcValue", $inst->GetAttributeValue($att), null)
+					
+					// HACK HACK HACK: Figure out why the string "System" gets wiped out when in a ListViewItemColumn
+					new ListViewItemColumn("lvcValue", " " . $inst->GetAttributeValue($att), null)
 				));
 				$lvAttributes->Items[] = $lvi;
 			}

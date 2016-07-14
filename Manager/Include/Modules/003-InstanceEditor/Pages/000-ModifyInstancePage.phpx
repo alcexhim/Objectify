@@ -6,6 +6,13 @@
 					<html:Heading Level="1">Edit Instance: <html:Literal ID="litInstanceObjectID" /></html:Heading>
 					<html:Heading Level="2"><html:Literal ID="litInstanceID" /></html:Heading>
 					
+					<table>
+						<tr>
+							<td>Global identifier:</td>
+							<td><html:Literal ID="litGlobalIdentifier" /></td>
+						</tr>
+					</table>
+					
 					<wfx:TabContainer ID="tbsTabs" SelectedTabID="tabInstanceProperties">
 						<TabPages>
 							<wfx:TabPage ID="tabInstanceProperties" Title="Instance Properties (legacy)">
