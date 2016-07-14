@@ -36,6 +36,7 @@
 			if ($method == null)
 			{
 				trigger_error("XquizIT: method not found" . (isset($methodName) ? (" " . $methodName) : ""));
+				return null;
 			}
 			
 			if ($parameters == null) $parameters = array();
