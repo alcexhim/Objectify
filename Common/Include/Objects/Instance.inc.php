@@ -110,9 +110,10 @@
 			
 			if (is_string($attribute))
 			{
-				
+				$attribute = $this->ParentObject->GetAttribute($attribute);
 			}
-			else if (is_object($attribute))
+			
+			if (is_object($attribute))
 			{
 				if (get_class($attribute) != "Objectify\\Objects\\Instance")
 				{
@@ -364,10 +365,32 @@
 								$retval .= $value;
 								break;
 							}
+							case "InstanceAttributeStringComponent":
+							{
+								$propertyName = $inst->GetAttributeValue("PropertyName");
+								$propertyValue = $this->GetAttributeValue($propertyName, "[ATT: " . $propertyName . " on " . $this->ParentObject->Name . "]");
+								return $propertyValue;
+							}
 							case "InstancePropertyStringComponent":
 							{
-								$propertyName = $inst->GetPropertyValue("PropertyName");
+								$propertyName = $inst->GetAttributeValue("PropertyName");
 								$propertyValue = $this->GetPropertyValue($propertyName, "[" . $propertyName . " on " . $this->ParentObject->Name . "]");
+								
+								if ($propertyName == "Values" && $this->ParentObject->Name == "TranslatableTextConstant")
+								{
+									// HACK: look up the "has Translatable Text Constant Value" relationship for this TTC
+									$retval = "";
+									$instrel = KnownRelationships::get___Translatable_Text_Constant__has__Translatable_Text_Constant_Value();
+									
+									$rels = Relationship::GetBySourceInstance($this, $instrel);
+									if (count($rels) > 0)
+									{
+										$rels = $rels[0];
+										$insts = $rels->GetDestinationInstances();
+										$insts = $insts[0];
+										return $insts->ToString();
+									}
+								}
 								
 								if (is_object($propertyValue))
 								{
@@ -407,6 +430,17 @@
 			}
 			else
 			{
+				// HACK HACK HACK UGLY HACK REMOVE WHEN WE HAVE ATTRIBUTES WORKING CORRECTLY
+				$propval_Name = $this->GetPropertyValue("Name");
+				if ($propval_Name != null) return $propval_Name;
+				// end ugly hack
+
+				// HACK HACK HACK UGLY HACK REMOVE WHEN WE HAVE ATTRIBUTES WORKING CORRECTLY
+				$instAttName = Instance::GetByGlobalIdentifier("{9153A637-992E-4712-ADF2-B03F0D9EDEA6}");
+				$propval_Name = $this->GetAttributeValue($instAttName);
+				if ($propval_Name != null) return $propval_Name;
+				// end ugly hack
+				
 				return "[" . $this->ParentObject->Name . "]";
 			}
 			
