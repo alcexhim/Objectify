@@ -273,7 +273,7 @@
 		 * @param string $globalIdentifier The global identifier for this instance.
 		 * @return Instance
 		 */
-		public function CreateInstance($properties, $globalIdentifier = null)
+		public function CreateInstance($properties = null, $globalIdentifier = null)
 		{
 			$inst = new Instance($this);
 			if ($globalIdentifier == null)
@@ -717,9 +717,25 @@
 			{
 				$insts = array();
 			}
+			/*
+			$parentObjects = $this->GetParentObjects();
+			foreach ($parentObjects as $pobj)
+			{
+				$insts2 = $pobj->GetAttributes();
+				foreach ($insts2 as $inst)
+				{
+					$insts[] = $inst;
+				}
+			}
+			*/
 			return $insts;
 		}
 		
+		/**
+		 * 
+		 * @param unknown $parameters
+		 * @return Instance[]
+		 */
 		public function GetInstanceUsingAttributes($parameters)
 		{
 			if (!is_array($parameters))
@@ -909,7 +925,7 @@
 			return Instance::GetByID($instanceIDParts[1]);
 		}
 
-		public function GetInstanceByGlobalIdentifier($globalIdentifier)
+		public function GetInstanceByGlobalIdentifier($globalIdentifier, $suppressComplaints = false)
 		{
 			$globalIdentifier = Objectify::SanitizeGlobalIdentifier($globalIdentifier);
 			$pdo = DataSystem::GetPDO();
@@ -936,11 +952,14 @@
 			$count = $statement->rowCount();
 			if ($count == 0)
 			{
-				Objectify::Log("An instance with the specified Global Identifier was not found.", array
-				(
-					"Query" => $query,
-					"Instance Global Identifier" => $globalIdentifier
-				));
+				if (!$suppressComplaints)
+				{
+					Objectify::Log("An instance with the specified Global Identifier was not found.", array
+					(
+						"Query" => $query,
+						"Instance Global Identifier" => $globalIdentifier
+					));
+				}
 				return $retval;
 			}
 			
