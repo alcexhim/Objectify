@@ -32,7 +32,8 @@
 	(
 		// 			$name, $dataType, $size, $value, $allowNull, $primaryKey, $autoIncrement
 		new Column("RelationshipID", "INT", null, null, false),
-		new Column("DestinationInstanceID", "INT", null, null, false)
+		new Column("DestinationInstanceID", "INT", null, null, false),
+		new Column("Order", "INT", null, 0, false)
 	));
 	$tblRelationshipTargets->PrimaryKey = new TableKey(array
 	(

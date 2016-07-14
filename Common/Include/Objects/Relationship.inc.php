@@ -36,7 +36,8 @@ use Phast\Data\DataSystem;
 			$pdo = DataSystem::GetPDO();
 			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances, " . System::GetConfigurationValue("Database.TablePrefix") . "RelationshipTargets"
 				. " WHERE " . System::GetConfigurationValue("Database.TablePrefix") . "RelationshipTargets.target_RelationshipID = :target_RelationshipID"
-				. " AND " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances.instance_ID = " . System::GetConfigurationValue("Database.TablePrefix") . "RelationshipTargets.target_DestinationInstanceID";
+				. " AND " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances.instance_ID = " . System::GetConfigurationValue("Database.TablePrefix") . "RelationshipTargets.target_DestinationInstanceID"
+				. " ORDER BY target_Order";
 			
 			$statement = $pdo->prepare($query);
 			$result = $statement->execute(array
@@ -45,6 +46,7 @@ use Phast\Data\DataSystem;
 			));
 			$count = $statement->rowCount();
 			$retval = array();
+			
 			for ($i = 0; $i < $count; $i++)
 			{
 				$values = $statement->fetch(PDO::FETCH_ASSOC);
@@ -58,7 +60,7 @@ use Phast\Data\DataSystem;
 		 * Adds the specified instance as a target for this Relationship.
 		 * @param Instance|Instance[] $inst
 		 */
-		public function AddDestinationInstance($inst)
+		public function AddDestinationInstance($inst, $order = null)
 		{
 			if (is_array($inst))
 			{
@@ -75,14 +77,36 @@ use Phast\Data\DataSystem;
 				if (get_class($inst) === "Objectify\\Objects\\Instance")
 				{
 					$pdo = DataSystem::GetPDO();
-					$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "RelationshipTargets (target_RelationshipID, target_DestinationInstanceID) VALUES (:target_RelationshipID, :target_DestinationInstanceID)";
+					
+					if ($order == null)
+					{
+						$query = "SELECT MAX(target_Order) FROM " . System::GetConfigurationValue("Database.TablePrefix") . "RelationshipTargets WHERE target_RelationshipID = :target_RelationshipID";
+						$statement = $pdo->prepare($query);
+						$result = $statement->execute(array
+						(
+							":target_RelationshipID" => $this->ID
+						));
+						if ($result !== false)
+						{
+							$count = $statement->rowCount();
+							$order = 0;
+							if ($count > 0) 
+							{
+								$values = $statement->fetch(PDO::FETCH_NUM);
+								$order = $values[0] + 1;
+							}
+						}
+					}
+					
+					$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "RelationshipTargets (target_RelationshipID, target_DestinationInstanceID, target_Order) VALUES (:target_RelationshipID, :target_DestinationInstanceID, :target_Order)";
 					$statement = $pdo->prepare($query);
 					$result = $statement->execute(array
 					(
 						":target_RelationshipID" => $this->ID,
-						":target_DestinationInstanceID" => $inst->ID
+						":target_DestinationInstanceID" => $inst->ID,
+						":target_Order" => ($order == null ? 0 : $order)
 					));
-						
+					
 					if ($statement->errorCode() != 0)
 					{
 						$ei = $statement->errorInfo();
