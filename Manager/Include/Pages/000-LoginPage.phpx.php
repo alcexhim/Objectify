@@ -26,10 +26,11 @@
 			$objTenant = TenantObject::GetByName("Tenant");
 			if ($objTenant != null)
 			{
-				$instTenant = $objTenant->GetInstanceUsingAttributes(array
+				$instTenants = $objTenant->GetInstanceUsingAttributes(array
 				(
 					new TenantObjectInstancePropertyValue("Name", System::GetTenantName())
 				));
+				$instTenant = $instTenants[0];
 
 				$instRel_Tenant__has_login_header_TTC = Instance::GetByGlobalIdentifier("{41D66ACB-AFDE-4B6F-892D-E66255F10DEB}");
 				$instRel_Tenant__has_login_footer_TTC = Instance::GetByGlobalIdentifier("{A6203B6B-5BEB-4008-AE49-DB5E7DDBA45B}");
