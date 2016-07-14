@@ -2,7 +2,7 @@
 	"Relationships":
 	[
 		{
-			"Comment": "Class `Class`.labeled by Translatable Text Constant `Class`",
+			"Comment": "Class `Class`.has title Translatable Text Constant `Class`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}",
@@ -13,7 +13,7 @@
 		},
 		
 		{
-			"Comment": "Class `Attribute`.labeled by Translatable Text Constant `Attribute`",
+			"Comment": "Class `Attribute`.has title Translatable Text Constant `Attribute`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{F9CD7751-EF62-4F7C-8A28-EBE90B8F46AA}",
@@ -23,7 +23,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Relationship`.labeled by Translatable Text Constant `Relationship`",
+			"Comment": "Class `Relationship`.has title Translatable Text Constant `Relationship`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{9B0A80F9-C325-4D36-997C-FB4106204648}",
@@ -33,7 +33,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Text Attribute`.labeled by Translatable Text Constant `Text Attribute`",
+			"Comment": "Class `Text Attribute`.has title Translatable Text Constant `Text Attribute`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{C2F36542-60C3-4B9E-9A96-CA9B309C43AF}",
@@ -43,7 +43,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Boolean Attribute`.labeled by Translatable Text Constant `Boolean Attribute`",
+			"Comment": "Class `Boolean Attribute`.has title Translatable Text Constant `Boolean Attribute`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{EA830448-A403-4ED9-A3D3-048D5D5C3A03}",
@@ -53,7 +53,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Date Attribute`.labeled by Translatable Text Constant `Date Attribute`",
+			"Comment": "Class `Date Attribute`.has title Translatable Text Constant `Date Attribute`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{0B7B1812-DFB4-4F25-BF6D-CEB0E1DF8744}",
@@ -63,7 +63,7 @@
 			]
 		},
 		{
-			"Comment": "Class `String Component`.labeled by Translatable Text Constant `String Component`",
+			"Comment": "Class `String Component`.has title Translatable Text Constant `String Component`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{F9E2B671-13F5-4172-A568-725ACD8BBFAB}",
@@ -73,7 +73,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Instance Property String Component`.labeled by Translatable Text Constant `Instance Property String Component`",
+			"Comment": "Class `Instance Property String Component`.has title Translatable Text Constant `Instance Property String Component`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{D37439E3-1138-4148-9946-379695B9B945}",
@@ -83,7 +83,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Text Constant String Component`.labeled by Translatable Text Constant `Text Constant String Component`",
+			"Comment": "Class `Text Constant String Component`.has title Translatable Text Constant `Text Constant String Component`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{9934049D-048F-42AC-9B0F-539618A8057A}",
@@ -93,7 +93,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Translatable Text Constant String Component`.labeled by Translatable Text Constant `Translatable Text Constant String Component`",
+			"Comment": "Class `Translatable Text Constant String Component`.has title Translatable Text Constant `Translatable Text Constant String Component`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{895AF8DB-1138-40FF-94ED-13E5FA2AB9BA}",
@@ -104,7 +104,7 @@
 		},
 		
 		{
-			"Comment": "Class `String`.labeled by Translatable Text Constant `String`",
+			"Comment": "Class `String`.has title Translatable Text Constant `String`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{5AECB489-DBC2-432E-86AF-6BE349317238}",
@@ -114,7 +114,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Instance Titleable Object`.labeled by Translatable Text Constant `Instance Titleable Object`",
+			"Comment": "Class `Instance Titleable Object`.has title Translatable Text Constant `Instance Titleable Object`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{DD658EAB-9A3D-4ED1-8631-E3A5A336A7B6}",
@@ -124,7 +124,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Language`.labeled by Translatable Text Constant `Language`",
+			"Comment": "Class `Language`.has title Translatable Text Constant `Language`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{61102B47-9B2F-4CF3-9840-D168B84CF1E5}",
@@ -134,7 +134,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Translatable Text Constant Value`.labeled by Translatable Text Constant `Translatable Text Constant Value`",
+			"Comment": "Class `Translatable Text Constant Value`.has title Translatable Text Constant `Translatable Text Constant Value`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{6D38E757-EC18-43AD-9C35-D15BB446C0E1}",
@@ -144,7 +144,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Translatable Text Constant`.labeled by Translatable Text Constant `Translatable Text Constant`",
+			"Comment": "Class `Translatable Text Constant`.has title Translatable Text Constant `Translatable Text Constant`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}",
@@ -154,7 +154,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Object Source`.labeled by Translatable Text Constant `Object Source`",
+			"Comment": "Class `Object Source`.has title Translatable Text Constant `Object Source`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{8EE7024D-ED87-4D99-BF21-10E09AF5566D}",
@@ -164,7 +164,17 @@
 			]
 		},
 		{
-			"Comment": "Class `Method Action`.labeled by Translatable Text Constant `Method Action`",
+			"Comment": "`System` Object Source.has title Translatable Text Constant `System`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
+			"SourceInstance": "{8EE7024D-ED87-4D99-BF21-10E09AF5566D}",
+			"DestinationInstances":
+			[
+				"{73AB917D-7C1A-49F2-B278-67AED75EF7D8}"
+			]
+		},
+		{
+			"Comment": "Class `Method Action`.has title Translatable Text Constant `Method Action`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{084A6D58-32C9-4A5F-9D2B-86C46F74E522}",
@@ -174,7 +184,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Method`.labeled by Translatable Text Constant `Method`",
+			"Comment": "Class `Method`.has title Translatable Text Constant `Method`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{D2813913-80B6-4DD6-9AD6-56D989169734}",
@@ -184,7 +194,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Call Method Method Action`.labeled by Translatable Text Constant `Call Method Method Action`",
+			"Comment": "Class `Call Method Method Action`.has title Translatable Text Constant `Call Method Method Action`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{795DD1D3-0744-459D-87BD-62C70F1F5CBA}",
@@ -194,7 +204,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Sequence Method`.labeled by Translatable Text Constant `Sequence Method`",
+			"Comment": "Class `Sequence Method`.has title Translatable Text Constant `Sequence Method`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{8BF91515-89EA-4633-80D3-C096A38E7B89}",
@@ -204,7 +214,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Server Side Script Method`.labeled by Translatable Text Constant `Server Side Script Method`",
+			"Comment": "Class `Server Side Script Method`.has title Translatable Text Constant `Server Side Script Method`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{C9A4BF32-9176-4409-A016-9A263C3F2657}",
@@ -214,7 +224,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Task`.labeled by Translatable Text Constant `Task`",
+			"Comment": "Class `Task`.has title Translatable Text Constant `Task`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{D4F2564B-2D11-4A5C-8AA9-AF52D4EACC13}",
@@ -224,7 +234,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Redirect Task`.labeled by Translatable Text Constant `Redirect Task`",
+			"Comment": "Class `Redirect Task`.has title Translatable Text Constant `Redirect Task`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{B9C1E04A-FABB-4DEE-A56A-E3AA308237A1}",
@@ -234,7 +244,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Security Permission`.labeled by Translatable Text Constant `Security Permission`",
+			"Comment": "Class `Security Permission`.has title Translatable Text Constant `Security Permission`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{8EA7D1D3-6FC8-40C9-98C6-F72798307E9F}",
@@ -244,7 +254,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Security Group`.labeled by Translatable Text Constant `Security Group`",
+			"Comment": "Class `Security Group`.has title Translatable Text Constant `Security Group`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{498CCFD4-8D94-4EF4-B947-1D07ECC9342B}",
@@ -254,7 +264,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Tenant Type`.labeled by Translatable Text Constant `Tenant Type`",
+			"Comment": "Class `Tenant Type`.has title Translatable Text Constant `Tenant Type`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{5670953C-7367-4065-9AC2-46555342DC72}",
@@ -264,7 +274,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Login Device Type`.labeled by Translatable Text Constant `Login Device Type`",
+			"Comment": "Class `Login Device Type`.has title Translatable Text Constant `Login Device Type`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{C1FCE2B8-93EA-4575-95A7-8D4C3527AF63}",
@@ -274,7 +284,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Login Authentication Type`.labeled by Translatable Text Constant `Login Authentication Type`",
+			"Comment": "Class `Login Authentication Type`.has title Translatable Text Constant `Login Authentication Type`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{688F229C-488B-415C-8576-A47D15E02AB0}",
@@ -284,7 +294,7 @@
 			]
 		},
 		{
-			"Comment": "Class `User Login`.labeled by Translatable Text Constant `User Login`",
+			"Comment": "Class `User Login`.has title Translatable Text Constant `User Login`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{64F4BCDB-38D0-4373-BA30-8AE99AF1A5F7}",
@@ -294,7 +304,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Measurement Unit`.labeled by Translatable Text Constant `Measurement Unit`",
+			"Comment": "Class `Measurement Unit`.has title Translatable Text Constant `Measurement Unit`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{62693026-B7A0-40B5-92AE-038A2B264F33}",
@@ -304,7 +314,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Measurement`.labeled by Translatable Text Constant `Measurement`",
+			"Comment": "Class `Measurement`.has title Translatable Text Constant `Measurement`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{9FAED5A9-040D-4718-92C0-FBE2385F2A97}",
@@ -314,7 +324,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Style Property`.labeled by Translatable Text Constant `Style Property`",
+			"Comment": "Class `Style Property`.has title Translatable Text Constant `Style Property`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{A5688B41-343C-4D9E-8DE9-EAD92EC44E12}",
@@ -324,7 +334,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Style Rule`.labeled by Translatable Text Constant `Style Rule`",
+			"Comment": "Class `Style Rule`.has title Translatable Text Constant `Style Rule`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{C269A1F3-E014-4230-B78D-38EAF6EA8A81}",
@@ -334,7 +344,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Style`.labeled by Translatable Text Constant `Style`",
+			"Comment": "Class `Style`.has title Translatable Text Constant `Style`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{A48C843A-B24B-4BC3-BE6F-E2D069229B0A}",
@@ -344,7 +354,7 @@
 			]
 		},
 		{
-			"Comment": "Class `User`.labeled by Translatable Text Constant `User`",
+			"Comment": "Class `User`.has title Translatable Text Constant `User`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{9C6871C1-9A7F-4A3A-900E-69D1D9E24486}",
@@ -354,7 +364,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Page Component`.labeled by Translatable Text Constant `Page Component`",
+			"Comment": "Class `Page Component`.has title Translatable Text Constant `Page Component`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{EF4D4027-6904-4773-9013-22CEDC169F00}",
@@ -364,7 +374,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Page Component`.labeled by Translatable Text Constant `Page Component`",
+			"Comment": "Class `Page Component`.has title Translatable Text Constant `Page Component`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{EF4D4027-6904-4773-9013-22CEDC169F00}",
@@ -374,7 +384,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Container Page Component`.labeled by Translatable Text Constant `Container Page Component`",
+			"Comment": "Class `Container Page Component`.has title Translatable Text Constant `Container Page Component`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{6AD6BD1C-7D1C-4AC9-9642-FEBC61E9D6FF}",
@@ -384,7 +394,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Sequential Container Orientation`.labeled by Translatable Text Constant `Sequential Container Orientation`",
+			"Comment": "Class `Sequential Container Orientation`.has title Translatable Text Constant `Sequential Container Orientation`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{DDC61BCA-022D-43EF-9A94-D79BA9FEC5C8}",
@@ -394,7 +404,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Sequential Container Page Component`.labeled by Translatable Text Constant `Sequential Container Page Component`",
+			"Comment": "Class `Sequential Container Page Component`.has title Translatable Text Constant `Sequential Container Page Component`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{A66D9AE2-3BEC-4083-A5CB-7DE3B03A9CC7}",
@@ -404,7 +414,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Paragraph Page Component`.labeled by Translatable Text Constant `Paragraph Page Component`",
+			"Comment": "Class `Paragraph Page Component`.has title Translatable Text Constant `Paragraph Page Component`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{ADFF93CE-9E85-4168-A7D4-5239B99BE36D}",
@@ -414,7 +424,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Image Page Component`.labeled by Translatable Text Constant `Image Page Component`",
+			"Comment": "Class `Image Page Component`.has title Translatable Text Constant `Image Page Component`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{798B67FA-D4BE-42B9-B4BD-6F8E02C953C0}",
@@ -424,7 +434,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Panel Page Component`.labeled by Translatable Text Constant `Panel Page Component`",
+			"Comment": "Class `Panel Page Component`.has title Translatable Text Constant `Panel Page Component`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{D349C489-9684-4A5A-9843-B906A7F803BC}",
@@ -434,7 +444,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Heading Page Component`.labeled by Translatable Text Constant `Heading Page Component`",
+			"Comment": "Class `Heading Page Component`.has title Translatable Text Constant `Heading Page Component`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{FD86551E-E4CE-4B8B-95CB-BEC1E6A0EE2B}",
@@ -444,7 +454,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Page`.labeled by Translatable Text Constant `Page`",
+			"Comment": "Class `Page`.has title Translatable Text Constant `Page`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{D9626359-48E3-4840-A089-CD8DA6731690}",
@@ -454,7 +464,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Report`.labeled by Translatable Text Constant `Report`",
+			"Comment": "Class `Report`.has title Translatable Text Constant `Report`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{19D947B6-CE82-4EEE-92EC-A4E01E27F2DB}",
@@ -464,7 +474,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Report Column`.labeled by Translatable Text Constant `Report Column`",
+			"Comment": "Class `Report Column`.has title Translatable Text Constant `Report Column`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{655A04D9-FE35-4F89-9AAB-B8FA34989D03}",
@@ -474,7 +484,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Standard Report`.labeled by Translatable Text Constant `Standard Report`",
+			"Comment": "Class `Standard Report`.has title Translatable Text Constant `Standard Report`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{FDF4A498-DE83-417D-BA01-707372125C8D}",
@@ -484,7 +494,7 @@
 			]
 		},
 		{
-			"Comment": "Class `File`.labeled by Translatable Text Constant `File`",
+			"Comment": "Class `File`.has title Translatable Text Constant `File`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{5D081079-E136-406A-A728-7472937A6E5E}",
@@ -494,7 +504,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Icon`.labeled by Translatable Text Constant `Icon`",
+			"Comment": "Class `Icon`.has title Translatable Text Constant `Icon`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{67BD594B-E8B0-4752-8796-D7A369513FBF}",
@@ -504,7 +514,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Font Awesome Icon`.labeled by Translatable Text Constant `Font Awesome Icon`",
+			"Comment": "Class `Font Awesome Icon`.has title Translatable Text Constant `Font Awesome Icon`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{2B71F9EE-E843-46ED-B07D-B0424767A921}",
@@ -514,7 +524,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Image Icon`.labeled by Translatable Text Constant `Image Icon`",
+			"Comment": "Class `Image Icon`.has title Translatable Text Constant `Image Icon`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{AEBB7B6A-917F-4D62-AED8-279E758ED203}",
@@ -524,7 +534,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Menu`.labeled by Translatable Text Constant `Menu`",
+			"Comment": "Class `Menu`.has title Translatable Text Constant `Menu`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{06E7806D-9384-4EA5-B5D1-350A51552773}",
@@ -534,7 +544,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Menu Item`.labeled by Translatable Text Constant `Menu Item`",
+			"Comment": "Class `Menu Item`.has title Translatable Text Constant `Menu Item`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{1E9D38B9-1B07-4EF9-BAD7-43DEB25AEB83}",
@@ -544,7 +554,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Command Menu Item`.labeled by Translatable Text Constant `Command Menu Item`",
+			"Comment": "Class `Command Menu Item`.has title Translatable Text Constant `Command Menu Item`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{9D3EDE23-6DB9-4664-9145-ABCBD3A0A2C2}",
@@ -554,7 +564,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Separator Menu Item`.labeled by Translatable Text Constant `Separator Menu Item`",
+			"Comment": "Class `Separator Menu Item`.has title Translatable Text Constant `Separator Menu Item`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{798DECAB-5119-49D7-B0AD-D4BF45807188}",
@@ -564,7 +574,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Header Menu Item`.labeled by Translatable Text Constant `Header Menu Item`",
+			"Comment": "Class `Header Menu Item`.has title Translatable Text Constant `Header Menu Item`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{1F148873-8A97-4409-A79B-C19D5D380CA4}",
@@ -574,7 +584,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Dashboard`.labeled by Translatable Text Constant `Dashboard`",
+			"Comment": "Class `Dashboard`.has title Translatable Text Constant `Dashboard`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{896B529C-452D-42AC-98C5-170ED4F826C6}",
@@ -584,7 +594,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Dashboard Content`.labeled by Translatable Text Constant `Dashboard Content`",
+			"Comment": "Class `Dashboard Content`.has title Translatable Text Constant `Dashboard Content`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{D1A60533-1B5A-422E-9739-4551FDEC48BF}",
@@ -594,7 +604,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Report Dashboard Content`.labeled by Translatable Text Constant `Report Dashboard Content`",
+			"Comment": "Class `Report Dashboard Content`.has title Translatable Text Constant `Report Dashboard Content`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{F3D52C9C-8A4E-4D5B-85BC-FD8EF8B87805}",
@@ -604,7 +614,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Data Center`.labeled by Translatable Text Constant `Data Center`",
+			"Comment": "Class `Data Center`.has title Translatable Text Constant `Data Center`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{7E3C9A3A-23D7-4811-9711-EE0BF92F1F63}",
@@ -614,7 +624,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Payment Plan`.labeled by Translatable Text Constant `Payment Plan`",
+			"Comment": "Class `Payment Plan`.has title Translatable Text Constant `Payment Plan`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{622C2C7B-B1C5-45F8-999C-370DC98D138D}",
@@ -624,7 +634,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Tenant`.labeled by Translatable Text Constant `Tenant`",
+			"Comment": "Class `Tenant`.has title Translatable Text Constant `Tenant`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{703F9D65-C584-4D9F-A656-D0E3C247FF1F}",
@@ -634,7 +644,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Layout`.labeled by Translatable Text Constant `Layout`",
+			"Comment": "Class `Layout`.has title Translatable Text Constant `Layout`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{BCDB6FFD-D2F2-4B63-BD7E-9C2CCD9547E0}",
@@ -644,7 +654,7 @@
 			]
 		},
 		{
-			"Comment": "Class `Package`.labeled by Translatable Text Constant `Package`",
+			"Comment": "Class `Package`.has title Translatable Text Constant `Package`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 			"SourceInstance": "{6A1F66F7-8EA6-43D1-B2AF-198F63B84710}",
