@@ -25,6 +25,7 @@
 	(
 		new TableKeyColumn("TenantID"),
 		new TableKeyColumn("AttributeInstanceID"),
+		new TableKeyColumn("InstanceID"),
 		new TableKeyColumn("EffectiveDateTime")
 	));
 	$tblAttributeValues->ForeignKeys = array
