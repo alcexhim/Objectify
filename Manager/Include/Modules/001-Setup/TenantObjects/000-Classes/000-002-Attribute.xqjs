@@ -9,13 +9,6 @@
 				{
 					"Name": "Class"
 				}
-			],
-			"InstanceProperties":
-			[
-				{
-					"Name": "Name",
-					"DataTypeName": "Text"
-				}
 			]
 		}
 	]

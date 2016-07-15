@@ -7,120 +7,120 @@
 			[
 				{
 					"ID": "{F1A06573-C447-4D85-B4E7-54A438C4A960}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "Name",
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "Singular"
 						}
 					]
 				},
 				{
 					"ID": "{A1C0255D-3E8D-47D7-A186-1C93C93D4667}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "Name",
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "Abstract"
 						}
 					]
 				},
 				{
 					"ID": "{9A3A0719-64C2-484F-A55E-22CD4597D9FD}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "Name",
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "Static"
 						}
 					]
 				},
 				{
 					"ID": "{0B3CA089-8F63-4D62-BFFC-D524B2A16B8D}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "Name",
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "Set"
 						}
 					]
 				},
 				{
 					"ID": "{09D23735-7067-4560-843E-1092F0A57BD6}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "Name",
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "Build"
 						}
 					]
 				},
 				{
 					"ID": "{9F6F4296-2FCD-4B7E-AB09-D25F47D0C54C}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "Name",
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "True"
 						}
 					]
 				},
 				{
 					"ID": "{7410EC44-4A40-43B9-BCFC-CFDB8979F992}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "Name",
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "This instance equal to Instance Parm"
 						}
 					]
 				},
 				{
 					"ID": "{E61F769D-E1FB-4A70-835A-4ACB010DBE6E}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "Name",
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "Allow Negative"
 						}
 					]
 				},
 				{
 					"ID": "{06AA6922-360A-49A5-AC17-BC0C91149C24}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "Name",
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "Static Only"
 						}
 					]
 				},
 				{
 					"ID": "{C89BDA1A-CC54-417E-8138-40A47B965147}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "Name",
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "Add References"
 						}
 					]
 				},
 				{
 					"ID": "{FEDABDEF-C69A-4944-B454-5C3B7EE646C6}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "Name",
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "Clear Execution Metric Results"
 						}
 					]
 				},
 				{
 					"ID": "{40A05D59-4F7B-46BF-9352-67FC3E5FB2C1}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "Name",
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "Global"
 						}
 					]

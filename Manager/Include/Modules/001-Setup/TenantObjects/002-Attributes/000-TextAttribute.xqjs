@@ -7,13 +7,6 @@
 			[
 				{
 					"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
-					"PropertyValues":
-					[
-						{
-							"Name": "Name",
-							"Value": "Name"
-						}
-					],
 					"AttributeValues":
 					[
 						{
@@ -24,60 +17,60 @@
 				},
 				{
 					"ID": "{A294F77C-8A89-419E-B494-8BFCC80DB634}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "Name",
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "PropertyName"
 						}
 					]
 				},
 				{
 					"ID": "{970F79A0-9EFE-4E7D-9286-9908C6F06A67}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "Name",
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "TargetURL"
 						}
 					]
 				},
 				{
 					"ID": "{A1D39058-E934-4DBC-9179-EFAECFDD8B48}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "Name",
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "DefaultRedirectURL"
 						}
 					]
 				},
 				{
 					"ID": "{960FAF02-5C59-40F7-91A7-20012A99D9ED}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "Name",
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "UserName"
 						}
 					]
 				},
 				{
 					"ID": "{F377FC29-4DF1-4AFB-9643-4191F37A00A9}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "Name",
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "PasswordHash"
 						}
 					]
 				},
 				{
 					"ID": "{8C5A99BC-40ED-4FA2-B23F-F373C1F3F4BE}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "Name",
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "PasswordSalt"
 						}
 					]

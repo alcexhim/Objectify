@@ -696,9 +696,10 @@
 		
 		public function GetAttribute($name)
 		{
+			$instatt_Name = Instance::GetByGlobalIdentifier("{9153A637-992E-4712-ADF2-B03F0D9EDEA6}");
 			$insts = $this->GetAttributes();
 			foreach ($insts as $inst) {
-				if ($inst->GetPropertyValue("Name") == $name) {
+				if ($inst->GetAttributeValue($instatt_Name) == $name) {
 					return $inst;
 				}
 			}
@@ -755,7 +756,7 @@
 			foreach ($atts as $att)
 			{
 				foreach ($parameters as $parm) {
-					if ($att->GetPropertyValue("Name") == $parm->Property) {
+					if ($att->GetAttributeValue("Name") == $parm->Property) {
 						foreach ($insts as $inst) {	
 							if ($inst->GetAttributeValue($att) == $parm->Value) {
 								$retval[] = $inst;
