@@ -10,6 +10,16 @@
 			[
 				"{A294F77C-8A89-419E-B494-8BFCC80DB634}"
 			]
+		},
+		{
+			"Comment": "Class `Instance Attribute String Component`.has Text Attribute `Property Name`",
+			"RelationshipInstance": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+			"InverseRelationshipInstance": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
+			"SourceInstance": "{623565D5-5AEE-49ED-A5A9-0CFE670507BC}",
+			"DestinationInstances":
+			[
+				"{A294F77C-8A89-419E-B494-8BFCC80DB634}"
+			]
 		}
 	]
 }

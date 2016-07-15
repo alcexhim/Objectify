@@ -22,6 +22,16 @@
 			]
 		},
 		{
+			"ID": "{623565D5-5AEE-49ED-A5A9-0CFE670507BC}",
+			"Name": "InstanceAttributeStringComponent",
+			"ParentObjects":
+			[
+				{
+					"Name": "StringComponent"
+				}
+			]
+		},
+		{
 			"ID": "{9934049D-048F-42AC-9B0F-539618A8057A}",
 			"Name": "TextConstantStringComponent",
 			"ParentObjects":
