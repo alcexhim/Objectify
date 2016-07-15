@@ -1,0 +1,15 @@
+{
+	"Relationships":
+	[
+		{
+			"Comment": "Class `SS - Server-Side Script Method`.has description Translatable Text Constant",
+			"RelationshipInstance": "{3B29DC78-B30A-46AA-9B20-2573239CECD9}",
+			"InverseRelationshipInstance": "{D4592057-BACF-44D0-9BB9-348B42A49D96}",
+			"SourceInstance": "{C9A4BF32-9176-4409-A016-9A263C3F2657}",
+			"DestinationInstances":
+			[
+				"{8E4924CC-F09D-488A-80A6-7000B21510C0}"
+			]
+		}
+	]
+}

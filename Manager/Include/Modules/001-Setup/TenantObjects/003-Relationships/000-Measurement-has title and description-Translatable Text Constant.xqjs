@@ -1,0 +1,215 @@
+{
+	"Relationships":
+	[
+		{
+			"Comment": "Class `Measurement Unit`.has Text Attribute `CSS Value`",
+			"RelationshipInstance": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+			"InverseRelationshipInstance": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
+			"SourceInstance": "{62693026-B7A0-40B5-92AE-038A2B264F33}",
+			"DestinationInstances":
+			[
+				"{C0DD4A42-F503-4EB3-8034-7C428B1B8803}"
+			]
+		},
+		{
+			"Comment": "Class `Measurement Unit`.instance labeled by String",
+			"RelationshipInstance": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+			"InverseRelationshipInstance": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+			"SourceInstance": "{62693026-B7A0-40B5-92AE-038A2B264F33}",
+			"DestinationInstances":
+			[
+				"{D94917FA-EA53-4398-BC77-F6CAAEADB9FD}"
+			]
+		},
+		
+		
+		{
+			"Comment": "Measurement `Centimeters`.has title Translatable Text Constant `Class`",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
+			"SourceInstance": "{BBBB1E24-8C0F-48B5-8529-7BB522415D35}",
+			"DestinationInstances":
+			[
+				"{D3D86C8F-A1B2-4792-94F8-017A5FD22BF4}"
+			]
+		},
+		{
+			"Comment": "Measurement `Centimeters`.has description Translatable Text Constant `Class`",
+			"RelationshipInstance": "{3B29DC78-B30A-46AA-9B20-2573239CECD9}",
+			"InverseRelationshipInstance": "{D4592057-BACF-44D0-9BB9-348B42A49D96}",
+			"SourceInstance": "{BBBB1E24-8C0F-48B5-8529-7BB522415D35}",
+			"DestinationInstances":
+			[
+				"{E8607E63-E16B-4864-9F65-2607447FBF58}"
+			]
+		},
+		
+		{
+			"Comment": "Measurement `Em`.has title Translatable Text Constant",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
+			"SourceInstance": "{D55BF6E0-D6DB-43CA-909E-C66E25328F4E}",
+			"DestinationInstances":
+			[
+				"{CCF074BA-155C-4BCF-A4C5-D06085502A70}"
+			]
+		},
+		{
+			"Comment": "Measurement `Em`.has description Translatable Text Constant",
+			"RelationshipInstance": "{3B29DC78-B30A-46AA-9B20-2573239CECD9}",
+			"InverseRelationshipInstance": "{D4592057-BACF-44D0-9BB9-348B42A49D96}",
+			"SourceInstance": "{D55BF6E0-D6DB-43CA-909E-C66E25328F4E}",
+			"DestinationInstances":
+			[
+				"{8D8F415F-E095-4DEF-B52C-9FA370BCE7D1}"
+			]
+		},
+		
+		{
+			"Comment": "Measurement `Ex`.has title Translatable Text Constant",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
+			"SourceInstance": "{912A40FE-778C-4004-9685-1F2BF8618026}",
+			"DestinationInstances":
+			[
+				"{2552F66B-0DBE-41EB-8A80-76DE8575A468}"
+			]
+		},
+		{
+			"Comment": "Measurement `Ex`.has description Translatable Text Constant",
+			"RelationshipInstance": "{3B29DC78-B30A-46AA-9B20-2573239CECD9}",
+			"InverseRelationshipInstance": "{D4592057-BACF-44D0-9BB9-348B42A49D96}",
+			"SourceInstance": "{912A40FE-778C-4004-9685-1F2BF8618026}",
+			"DestinationInstances":
+			[
+				"{B5725DB6-A805-4BAF-B512-90A40F97B19A}"
+			]
+		},
+		
+		{
+			"Comment": "Measurement `Inches`.has title Translatable Text Constant",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
+			"SourceInstance": "{6D670E0D-536C-46DF-801A-2DFFA086350F}",
+			"DestinationInstances":
+			[
+				"{77C7CC0E-18D5-46F1-A848-3BB3A3BAE798}"
+			]
+		},
+		{
+			"Comment": "Measurement `Inches`.has description Translatable Text Constant",
+			"RelationshipInstance": "{3B29DC78-B30A-46AA-9B20-2573239CECD9}",
+			"InverseRelationshipInstance": "{D4592057-BACF-44D0-9BB9-348B42A49D96}",
+			"SourceInstance": "{6D670E0D-536C-46DF-801A-2DFFA086350F}",
+			"DestinationInstances":
+			[
+				"{CFF6C955-4832-4298-92E7-9467FEC61B91}"
+			]
+		},
+		
+		{
+			"Comment": "Measurement `Millimeters`.has title Translatable Text Constant",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
+			"SourceInstance": "{180B1276-BD0D-43A6-BD3D-8A0D4043FFCE}",
+			"DestinationInstances":
+			[
+				"{E18E5EF1-7AF4-4FB1-9AED-917C24DF5092}"
+			]
+		},
+		{
+			"Comment": "Measurement `Millimeters`.has description Translatable Text Constant",
+			"RelationshipInstance": "{3B29DC78-B30A-46AA-9B20-2573239CECD9}",
+			"InverseRelationshipInstance": "{D4592057-BACF-44D0-9BB9-348B42A49D96}",
+			"SourceInstance": "{180B1276-BD0D-43A6-BD3D-8A0D4043FFCE}",
+			"DestinationInstances":
+			[
+				"{3293C7EC-7900-4953-8031-24464F7DC0B3}"
+			]
+		},
+		
+		{
+			"Comment": "Measurement `Percentage`.has title Translatable Text Constant",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
+			"SourceInstance": "{5DF5DE6A-819F-4880-9F48-098CB7F67FA2}",
+			"DestinationInstances":
+			[
+				"{F3E3CF84-8133-4B54-BE39-9EC2B6888BAE}"
+			]
+		},
+		{
+			"Comment": "Measurement `Percentage`.has description Translatable Text Constant",
+			"RelationshipInstance": "{3B29DC78-B30A-46AA-9B20-2573239CECD9}",
+			"InverseRelationshipInstance": "{D4592057-BACF-44D0-9BB9-348B42A49D96}",
+			"SourceInstance": "{5DF5DE6A-819F-4880-9F48-098CB7F67FA2}",
+			"DestinationInstances":
+			[
+				"{94D32217-87E4-478D-AAC6-C3451C977F4A}"
+			]
+		},
+		
+		{
+			"Comment": "Measurement `Picas`.has title Translatable Text Constant",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
+			"SourceInstance": "{D0A462FC-683C-4C14-945F-F8F0B02C472F}",
+			"DestinationInstances":
+			[
+				"{4E658CD0-775B-4A7F-A876-78CBAB0FB445}"
+			]
+		},
+		{
+			"Comment": "Measurement `Picas`.has description Translatable Text Constant",
+			"RelationshipInstance": "{3B29DC78-B30A-46AA-9B20-2573239CECD9}",
+			"InverseRelationshipInstance": "{D4592057-BACF-44D0-9BB9-348B42A49D96}",
+			"SourceInstance": "{D0A462FC-683C-4C14-945F-F8F0B02C472F}",
+			"DestinationInstances":
+			[
+				"{23C39C3A-A8E7-4836-9C3E-CA5EAE118855}"
+			]
+		},
+		
+		{
+			"Comment": "Measurement `Pixels`.has title Translatable Text Constant",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
+			"SourceInstance": "{A945C259-06AC-428C-BE8B-7B54B1911A2A}",
+			"DestinationInstances":
+			[
+				"{1BC069A9-C223-477A-AACC-08462AE37090}"
+			]
+		},
+		{
+			"Comment": "Measurement `Pixels`.has description Translatable Text Constant",
+			"RelationshipInstance": "{3B29DC78-B30A-46AA-9B20-2573239CECD9}",
+			"InverseRelationshipInstance": "{D4592057-BACF-44D0-9BB9-348B42A49D96}",
+			"SourceInstance": "{A945C259-06AC-428C-BE8B-7B54B1911A2A}",
+			"DestinationInstances":
+			[
+				"{05A39315-0AA9-4198-8283-0CCC1E2C28AE}"
+			]
+		},
+		
+		{
+			"Comment": "Measurement `Points`.has title Translatable Text Constant",
+			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
+			"SourceInstance": "{33027987-0466-439A-B53B-1950FD65EA03}",
+			"DestinationInstances":
+			[
+				"{716D4C16-040F-4EBB-A920-DDF88765A017}"
+			]
+		},
+		{
+			"Comment": "Measurement `Points`.has description Translatable Text Constant",
+			"RelationshipInstance": "{3B29DC78-B30A-46AA-9B20-2573239CECD9}",
+			"InverseRelationshipInstance": "{D4592057-BACF-44D0-9BB9-348B42A49D96}",
+			"SourceInstance": "{33027987-0466-439A-B53B-1950FD65EA03}",
+			"DestinationInstances":
+			[
+				"{6B0AA372-0CC1-49C0-A038-F22DEBB12E60}"
+			]
+		}
+	]
+}

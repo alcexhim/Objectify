@@ -74,6 +74,16 @@
 							"Value": "PasswordSalt"
 						}
 					]
+				},
+				{
+					"ID": "{C0DD4A42-F503-4EB3-8034-7C428B1B8803}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+							"Value": "CSSValue"
+						}
+					]
 				}
 			]
 		}

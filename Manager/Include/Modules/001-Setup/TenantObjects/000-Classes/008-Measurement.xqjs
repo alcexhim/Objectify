@@ -2,6 +2,45 @@
 	"Objects":
 	[
 		{
+			"Name": "ExtractSingleInstanceStringComponent",
+			"Instances":
+			[
+				{
+					"ID": "{EB941FB3-0CF6-44DD-B693-7A108F8B89D3}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{A294F77C-8A89-419E-B494-8BFCC80DB634}",
+							"Value": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "String",
+			"Instances":
+			[
+				{
+					"ID": "{D94917FA-EA53-4398-BC77-F6CAAEADB9FD}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Components",
+							"Value":
+							{
+								"Instances":
+								[
+									"{EB941FB3-0CF6-44DD-B693-7A108F8B89D3}"
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+		
+		{
 			"Name": "TranslatableTextConstantValue",
 			"Instances":
 			[
@@ -599,272 +638,96 @@
 			[
 				{
 					"Name": "Class"
-				},
-				{
-					"Name": "InstanceTitleableObject"
-				}
-			],
-			"InstanceProperties":
-			[
-				{
-					"Name": "Description",
-					"DataTypeName": "SingleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "TranslatableTextConstant"
-							}
-						]
-					}
-				},
-				{
-					"Name": "CSSValue",
-					"DataTypeName": "Text"
 				}
 			],
 			"Instances":
 			[
 				{
 					"ID": "{BBBB1E24-8C0F-48B5-8529-7BB522415D35}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{D3D86C8F-A1B2-4792-94F8-017A5FD22BF4}"
-								]
-							}
-						},
-						{
-							"Name": "Description",
-							"Value":
-							{
-								"Instance": "{E8607E63-E16B-4864-9F65-2607447FBF58}"
-							}
-						},
-						{
-							"Name": "CSSValue",
+							"ID": "{C0DD4A42-F503-4EB3-8034-7C428B1B8803}",
 							"Value": "cm"
 						}
 					]
 				},
 				{
 					"ID": "{D55BF6E0-D6DB-43CA-909E-C66E25328F4E}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{CCF074BA-155C-4BCF-A4C5-D06085502A70}"
-								]
-							}
-						},
-						{
-							"Name": "Description",
-							"Value":
-							{
-								"Instance": "{8D8F415F-E095-4DEF-B52C-9FA370BCE7D1}"
-							}
-						},
-						{
-							"Name": "CSSValue",
+							"ID": "{C0DD4A42-F503-4EB3-8034-7C428B1B8803}",
 							"Value": "em"
 						}
 					]
 				},
 				{
 					"ID": "{912A40FE-778C-4004-9685-1F2BF8618026}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{2552F66B-0DBE-41EB-8A80-76DE8575A468}"
-								]
-							}
-						},
-						{
-							"Name": "Description",
-							"Value":
-							{
-								"Instance": "{B5725DB6-A805-4BAF-B512-90A40F97B19A}"
-							}
-						},
-						{
-							"Name": "CSSValue",
+							"ID": "{C0DD4A42-F503-4EB3-8034-7C428B1B8803}",
 							"Value": "ex"
 						}
 					]
 				},
 				{
 					"ID": "{6D670E0D-536C-46DF-801A-2DFFA086350F}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{77C7CC0E-18D5-46F1-A848-3BB3A3BAE798}"
-								]
-							}
-						},
-						{
-							"Name": "Description",
-							"Value":
-							{
-								"Instance": "{CFF6C955-4832-4298-92E7-9467FEC61B91}"
-							}
-						},
-						{
-							"Name": "CSSValue",
+							"ID": "{C0DD4A42-F503-4EB3-8034-7C428B1B8803}",
 							"Value": "in"
 						}
 					]
 				},
 				{
 					"ID": "{180B1276-BD0D-43A6-BD3D-8A0D4043FFCE}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{E18E5EF1-7AF4-4FB1-9AED-917C24DF5092}"
-								]
-							}
-						},
-						{
-							"Name": "Description",
-							"Value":
-							{
-								"Instance": "{3293C7EC-7900-4953-8031-24464F7DC0B3}"
-							}
-						},
-						{
-							"Name": "CSSValue",
+							"ID": "{C0DD4A42-F503-4EB3-8034-7C428B1B8803}",
 							"Value": "mm"
 						}
 					]
 				},
 				{
 					"ID": "{5DF5DE6A-819F-4880-9F48-098CB7F67FA2}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{F3E3CF84-8133-4B54-BE39-9EC2B6888BAE}"
-								]
-							}
-						},
-						{
-							"Name": "Description",
-							"Value":
-							{
-								"Instance": "{94D32217-87E4-478D-AAC6-C3451C977F4A}"
-							}
-						},
-						{
-							"Name": "CSSValue",
+							"ID": "{C0DD4A42-F503-4EB3-8034-7C428B1B8803}",
 							"Value": "%"
 						}
 					]
 				},
 				{
 					"ID": "{D0A462FC-683C-4C14-945F-F8F0B02C472F}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{4E658CD0-775B-4A7F-A876-78CBAB0FB445}"
-								]
-							}
-						},
-						{
-							"Name": "Description",
-							"Value":
-							{
-								"Instance": "{23C39C3A-A8E7-4836-9C3E-CA5EAE118855}"
-							}
-						},
-						{
-							"Name": "CSSValue",
+							"ID": "{C0DD4A42-F503-4EB3-8034-7C428B1B8803}",
 							"Value": "pc"
 						}
 					]
 				},
 				{
 					"ID": "{A945C259-06AC-428C-BE8B-7B54B1911A2A}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{1BC069A9-C223-477A-AACC-08462AE37090}"
-								]
-							}
-						},
-						{
-							"Name": "Description",
-							"Value":
-							{
-								"Instance": "{05A39315-0AA9-4198-8283-0CCC1E2C28AE}"
-							}
-						},
-						{
-							"Name": "CSSValue",
+							"ID": "{C0DD4A42-F503-4EB3-8034-7C428B1B8803}",
 							"Value": "px"
 						}
 					]
 				},
 				{
 					"ID": "{33027987-0466-439A-B53B-1950FD65EA03}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{716D4C16-040F-4EBB-A920-DDF88765A017}"
-								]
-							}
-						},
-						{
-							"Name": "Description",
-							"Value":
-							{
-								"Instance": "{6B0AA372-0CC1-49C0-A038-F22DEBB12E60}"
-							}
-						},
-						{
-							"Name": "CSSValue",
+							"ID": "{C0DD4A42-F503-4EB3-8034-7C428B1B8803}",
 							"Value": "pt"
 						}
 					]

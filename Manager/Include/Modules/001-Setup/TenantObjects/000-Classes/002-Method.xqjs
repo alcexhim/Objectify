@@ -237,16 +237,6 @@
 					"Name": "Method"
 				}
 			],
-			"Properties":
-			[
-				{
-					"Name": "Description",
-					"Value":
-					{
-						"Instance": "{8E4924CC-F09D-488A-80A6-7000B21510C0}"
-					}
-				}
-			],
 			"InstanceProperties":
 			[
 				{

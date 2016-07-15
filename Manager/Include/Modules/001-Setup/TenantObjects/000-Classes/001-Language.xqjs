@@ -299,25 +299,6 @@
 			]
 		},
 		{
-			"Name": "Class",
-			"Properties":
-			[
-				{
-					"Name": "Description",
-					"DataTypeName": "SingleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "TranslatableTextConstant"
-							}
-						]
-					}
-				}
-			]
-		},
-		{
 			"Name": "InstancePropertyStringComponent",
 			"Instances":
 			[
