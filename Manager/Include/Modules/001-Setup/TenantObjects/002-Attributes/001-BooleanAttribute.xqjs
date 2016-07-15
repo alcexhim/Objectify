@@ -114,6 +114,16 @@
 							"Value": "Clear Execution Metric Results"
 						}
 					]
+				},
+				{
+					"ID": "{40A05D59-4F7B-46BF-9352-67FC3E5FB2C1}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Name",
+							"Value": "Global"
+						}
+					]
 				}
 			]
 		}

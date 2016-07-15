@@ -51,6 +51,36 @@
 							"Value": "DefaultRedirectURL"
 						}
 					]
+				},
+				{
+					"ID": "{960FAF02-5C59-40F7-91A7-20012A99D9ED}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Name",
+							"Value": "UserName"
+						}
+					]
+				},
+				{
+					"ID": "{F377FC29-4DF1-4AFB-9643-4191F37A00A9}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Name",
+							"Value": "PasswordHash"
+						}
+					]
+				},
+				{
+					"ID": "{8C5A99BC-40ED-4FA2-B23F-F373C1F3F4BE}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Name",
+							"Value": "PasswordSalt"
+						}
+					]
 				}
 			]
 		}

@@ -71,17 +71,21 @@
 					$inst = null;
 					if ($objUser != null)
 					{
-						$inst = $objUser->GetInstance(array
+						$insts = $objUser->GetInstanceUsingAttributes(array
 						(
 							new TenantObjectInstancePropertyValue("UserName", $username)
 						));
+						$inst = $insts[0];
 					}
 					
 					if ($inst != null)
 					{
 						// we have an instance, validate the password
-						$passwordSalt = $inst->GetPropertyValue("PasswordSalt");
-						$passwordHash = $inst->GetPropertyValue("PasswordHash");
+						$attPasswordSalt = Instance::GetByGlobalIdentifier("{8C5A99BC-40ED-4FA2-B23F-F373C1F3F4BE}");
+						$attPasswordHash = Instance::GetByGlobalIdentifier("{F377FC29-4DF1-4AFB-9643-4191F37A00A9}");
+						
+						$passwordSalt = $inst->GetAttributeValue($attPasswordSalt);
+						$passwordHash = $inst->GetAttributeValue($attPasswordHash);
 						
 						$expectedPasswordHash = hash("sha512", $password . $passwordSalt);
 						

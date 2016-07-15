@@ -2,7 +2,7 @@
 	"Objects":
 	[
 		{
-			"Name": "InstancePropertyStringComponent",
+			"Name": "InstanceAttributeStringComponent",
 			"Instances":
 			[
 				{
@@ -14,7 +14,13 @@
 							"Value": "UserName"
 						}
 					]
-				},
+				}
+			]
+		},
+		{
+			"Name": "InstancePropertyStringComponent",
+			"Instances":
+			[
 				{
 					"ID": "{BAE9E054-ED1E-4DE7-A70B-33A437591D80}",
 					"AttributeValues":
@@ -65,10 +71,6 @@
 			"InstanceProperties":
 			[
 				{
-					"Name": "UserName",
-					"DataTypeName": "Text"
-				},
-				{
 					"Name": "DisplayName",
 					"DataTypeName": "MultipleInstance",
 					"Value":
@@ -80,18 +82,6 @@
 							}
 						]
 					}
-				},
-				{
-					"Name": "PasswordHash",
-					"DataTypeName": "Text"
-				},
-				{
-					"Name": "PasswordSalt",
-					"DataTypeName": "Text"
-				},
-				{
-					"Name": "IsGlobal",
-					"DataTypeName": "Boolean"
 				},
 				{
 					"Name": "Logins",

@@ -1,0 +1,45 @@
+{
+	"Relationships":
+	[
+		{
+			"Comment": "User.has Text Attribute `User Name`",
+			"RelationshipInstance": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+			"InverseRelationshipInstance": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
+			"SourceInstance": "{9C6871C1-9A7F-4A3A-900E-69D1D9E24486}",
+			"DestinationInstances":
+			[
+				"{960FAF02-5C59-40F7-91A7-20012A99D9ED}"
+			]
+		},
+		{
+			"Comment": "User.has Text Attribute `Password Hash`",
+			"RelationshipInstance": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+			"InverseRelationshipInstance": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
+			"SourceInstance": "{9C6871C1-9A7F-4A3A-900E-69D1D9E24486}",
+			"DestinationInstances":
+			[
+				"{F377FC29-4DF1-4AFB-9643-4191F37A00A9}"
+			]
+		},
+		{
+			"Comment": "User.has Text Attribute `Password Salt`",
+			"RelationshipInstance": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+			"InverseRelationshipInstance": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
+			"SourceInstance": "{9C6871C1-9A7F-4A3A-900E-69D1D9E24486}",
+			"DestinationInstances":
+			[
+				"{8C5A99BC-40ED-4FA2-B23F-F373C1F3F4BE}"
+			]
+		},
+		{
+			"Comment": "User.has Boolean Attribute `Global`",
+			"RelationshipInstance": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+			"InverseRelationshipInstance": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
+			"SourceInstance": "{9C6871C1-9A7F-4A3A-900E-69D1D9E24486}",
+			"DestinationInstances":
+			[
+				"{40A05D59-4F7B-46BF-9352-67FC3E5FB2C1}"
+			]
+		}
+	]
+}

@@ -826,30 +826,20 @@
 			(
 				new TenantObjectInstancePropertyValue
 				(
-					"UserName",
-					$username
-				),
-				new TenantObjectInstancePropertyValue
-				(
 					"DisplayName",
 					new MultipleInstanceProperty(array($instEnglish_SystemAdministrator), null)
-				),
-				new TenantObjectInstancePropertyValue
-				(
-					"PasswordHash",
-					$passwordHash
-				),
-				new TenantObjectInstancePropertyValue
-				(
-					"PasswordSalt",
-					$passwordSalt
-				),
-				new TenantObjectInstancePropertyValue
-				(
-					"IsGlobal",
-					true
 				)
 			));
+			
+			$instAttribute_UserName = Instance::GetByGlobalIdentifier("{960FAF02-5C59-40F7-91A7-20012A99D9ED}");
+			$instAttribute_PasswordHash = Instance::GetByGlobalIdentifier("{F377FC29-4DF1-4AFB-9643-4191F37A00A9}");
+			$instAttribute_PasswordSalt = Instance::GetByGlobalIdentifier("{8C5A99BC-40ED-4FA2-B23F-F373C1F3F4BE}");
+			$instAttribute_Global = Instance::GetByGlobalIdentifier("{40A05D59-4F7B-46BF-9352-67FC3E5FB2C1}");
+			
+			$instUser->SetAttributeValue($instAttribute_UserName, $username);
+			$instUser->SetAttributeValue($instAttribute_PasswordHash, $passwordHash);
+			$instUser->SetAttributeValue($instAttribute_PasswordSalt, $passwordSalt);
+			$instUser->SetAttributeValue($instAttribute_Global, true);
 			
 			$instUser->SetPropertyValue("SecurityGroups", new MultipleInstanceProperty(
 			array
