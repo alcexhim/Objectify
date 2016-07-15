@@ -22,6 +22,16 @@
 			]
 		},
 		{
+			"ID": "{FCECCE4E-8D05-485A-AE34-B1B45E766661}",
+			"Name": "ExtractSingleInstanceStringComponent",
+			"ParentObjects":
+			[
+				{
+					"Name": "StringComponent"
+				}
+			]
+		},
+		{
 			"ID": "{623565D5-5AEE-49ED-A5A9-0CFE670507BC}",
 			"Name": "InstanceAttributeStringComponent",
 			"ParentObjects":

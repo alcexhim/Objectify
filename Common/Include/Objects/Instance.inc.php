@@ -372,6 +372,21 @@
 								$retval .= $propertyValue;
 								break;
 							}
+							case "ExtractSingleInstanceStringComponent":
+							{
+								// Extracts a single instance from the given Relationship.
+								$propertyName = $inst->GetAttributeValue("PropertyName");
+								
+								$instRel = Instance::GetByGlobalIdentifier($propertyName);
+								$rels = Relationship::GetBySourceInstance($this, $instRel);
+								$rel = $rels[0];
+								$insts = $rel->GetDestinationInstances();
+								$inst = $insts[0];
+								
+								$propertyValue = $inst->ToString();
+								$retval .= $propertyValue;
+								break;
+							}
 							case "InstancePropertyStringComponent":
 							{
 								$propertyName = $inst->GetAttributeValue("PropertyName");

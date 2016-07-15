@@ -18,7 +18,7 @@
 			]
 		},
 		{
-			"Name": "InstancePropertyStringComponent",
+			"Name": "ExtractSingleInstanceStringComponent",
 			"Instances":
 			[
 				{
@@ -27,7 +27,7 @@
 					[
 						{
 							"ID": "{A294F77C-8A89-419E-B494-8BFCC80DB634}",
-							"Value": "DisplayName"
+							"Value": "{6C29856C-3B10-4F5B-A291-DD3CA4C04A2F}"
 						}
 					]
 				}
