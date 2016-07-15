@@ -812,6 +812,7 @@
 			
 			$objLanguage = TenantObject::GetByName("Language");
 			$objLanguageString = TenantObject::GetByName("TranslatableTextConstantValue");
+			$objTranslatableTextConstant = TenantObject::GetByName("TranslatableTextConstant");
 			
 			$instLangs = $objLanguage->GetInstances();
 			$lang = $instLangs[0];
@@ -822,14 +823,13 @@
 				new TenantObjectInstancePropertyValue("Value", $displayName)
 			));
 			
-			$instUser = $objUser->CreateInstance(array
-			(
-				new TenantObjectInstancePropertyValue
-				(
-					"DisplayName",
-					new MultipleInstanceProperty(array($instEnglish_SystemAdministrator), null)
-				)
-			));
+			$instTTC_SystemAdministrator = $objTranslatableTextConstant->CreateInstance();
+			Relationship::Create(KnownRelationships::get___Translatable_Text_Constant__has__Translatable_Text_Constant_Value(), $instTTC_SystemAdministrator, array($instEnglish_SystemAdministrator));
+			
+			$instUser = $objUser->CreateInstance();
+			
+			Relationship::Create(KnownRelationships::get___User__has_display_name__Translatable_Text_Constant(), $instUser, array($instTTC_SystemAdministrator));
+			Relationship::Create(KnownRelationships::get___Translatable_Text_Constant__display_name_for__User(), $instTTC_SystemAdministrator, array($instUser));
 			
 			$instAttribute_UserName = Instance::GetByGlobalIdentifier("{960FAF02-5C59-40F7-91A7-20012A99D9ED}");
 			$instAttribute_PasswordHash = Instance::GetByGlobalIdentifier("{F377FC29-4DF1-4AFB-9643-4191F37A00A9}");

@@ -40,5 +40,19 @@
 			$inst = Instance::GetByGlobalIdentifier(self::Relationship___Menu_Item__sidebar_for__Tenant);
 			return $inst;
 		}
+
+		const Relationship___User__has_display_name__Translatable_Text_Constant = "{6C29856C-3B10-4F5B-A291-DD3CA4C04A2F}";
+		const Relationship___Translatable_Text_Constant__display_name_for__User = "{C0B4140B-92C1-4D52-B6DA-8E818A83F3FA}";
+		public static function get___User__has_display_name__Translatable_Text_Constant()
+		{
+			$inst = Instance::GetByGlobalIdentifier(self::Relationship___User__has_display_name__Translatable_Text_Constant);
+			return $inst;
+		}
+		public static function get___Translatable_Text_Constant__display_name_for__User()
+		{
+			$inst = Instance::GetByGlobalIdentifier(self::Relationship___Translatable_Text_Constant__display_name_for__User);
+			return $inst;
+		}
+		
 	}
 ?>

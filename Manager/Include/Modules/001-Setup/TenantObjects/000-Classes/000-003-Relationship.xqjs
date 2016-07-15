@@ -597,6 +597,57 @@
 							"Value": "sidebar for"
 						}
 					]
+				},
+				
+				{
+					"ID": "{6C29856C-3B10-4F5B-A291-DD3CA4C04A2F}",
+					"Comment": "User.has display name Translatable Text Constant",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "User"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "TranslatableTextConstant"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "has display name"
+						}
+					]
+				},
+				{
+					"ID": "{C0B4140B-92C1-4D52-B6DA-8E818A83F3FA}",
+					"Comment": "Translatable Text Constant.display name for User",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "TranslatableTextConstant"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "User"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "display name for"
+						}
+					]
 				}
 			]
 		}
