@@ -83,20 +83,6 @@
 							}
 						]
 					}
-				},
-				{
-					"Name": "SecurityGroups",
-					"Comment": "The security groups this User is a member of",
-					"DataTypeName": "MultipleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "SecurityGroup"
-							}
-						]
-					}
 				}
 			]
 		},

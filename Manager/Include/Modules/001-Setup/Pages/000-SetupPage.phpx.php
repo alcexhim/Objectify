@@ -841,15 +841,8 @@
 			$instUser->SetAttributeValue($instAttribute_PasswordSalt, $passwordSalt);
 			$instUser->SetAttributeValue($instAttribute_Global, true);
 			
-			$instUser->SetPropertyValue("SecurityGroups", new MultipleInstanceProperty(
-			array
-			(
-				$instSecurityGroup_SystemAdministrator
-			),
-			array
-			(
-				$objSecurityGroup
-			)));
+			Relationship::Create(KnownRelationships::get___User__has__Security_Group(), $instUser, array($instSecurityGroup_SystemAdministrator));
+			Relationship::Create(KnownRelationships::get___Security_Group__for__User(), $instSecurityGroup_SystemAdministrator, array($instUser));
 			
 			return $instUser;
 		}

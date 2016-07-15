@@ -57,19 +57,6 @@
 							}
 						]
 					}
-				},
-				{
-					"Name": "Permissions",
-					"DataTypeName": "MultipleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "SecurityPermission"
-							}
-						]
-					}
 				}
 			],
 			"Instances":
@@ -88,39 +75,8 @@
 									"{616E5840-4DA4-4C99-B470-8F464465C2DB}"
 								]
 							}
-						},
-						{
-							"Name": "Permissions",
-							"Value":
-							{
-								"Instances":
-								[
-									"{36156720-B166-47E8-AA45-073EE789AD59}"
-								]
-							}
 						}
 					]
-				}
-			]
-		},
-		
-		{
-			"Name": "Class",
-			"Properties":
-			[
-				{
-					"Name": "SecurityGroups",
-					"Comment": "Security Groups securing this Object",
-					"DataType": "MultipleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "SecurityGroup"
-							}
-						]
-					}
 				}
 			]
 		}

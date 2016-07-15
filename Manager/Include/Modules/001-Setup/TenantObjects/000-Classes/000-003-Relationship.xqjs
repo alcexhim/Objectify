@@ -648,6 +648,106 @@
 							"Value": "display name for"
 						}
 					]
+				},
+				{
+					"ID": "{1921D642-84EC-4E16-B568-9C333909C018}",
+					"Comment": "User.has Security Group",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "User"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "SecurityGroup"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "has"
+						}
+					]
+				},
+				{
+					"ID": "{EDC79A23-3324-472D-B2F8-8CB9D2CF9C5D}",
+					"Comment": "Security Group.for User",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "SecurityGroup"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "User"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "for"
+						}
+					]
+				},
+				{
+					"ID": "{5E305133-1380-4736-93E4-6B280B35FCE3}",
+					"Comment": "Security Group.has Security Permission",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "SecurityGroup"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "SecurityPermission"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "has"
+						}
+					]
+				},
+				{
+					"ID": "{52DAC6FC-7E3A-4B09-B3FC-205FF38FE952}",
+					"Comment": "Security Permission.for Security Group",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "SecurityPermission"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "SecurityGroup"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "for"
+						}
+					]
 				}
 			]
 		}

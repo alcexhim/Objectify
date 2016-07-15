@@ -53,6 +53,32 @@
 			$inst = Instance::GetByGlobalIdentifier(self::Relationship___Translatable_Text_Constant__display_name_for__User);
 			return $inst;
 		}
+
+		const Relationship___User__has__Security_Group = "{1921D642-84EC-4E16-B568-9C333909C018}";
+		const Relationship___Security_Group__for__User = "{EDC79A23-3324-472D-B2F8-8CB9D2CF9C5D}";
+		public static function get___User__has__Security_Group()
+		{
+			$inst = Instance::GetByGlobalIdentifier(self::Relationship___User__has__Security_Group);
+			return $inst;
+		}
+		public static function get___Security_Group__for__User()
+		{
+			$inst = Instance::GetByGlobalIdentifier(self::Relationship___Security_Group__for__User);
+			return $inst;
+		}
+
+		const Relationship___Security_Group__has__Security_Permission = "{5E305133-1380-4736-93E4-6B280B35FCE3}";
+		const Relationship___Security_Permission__for__Security_Group = "{52DAC6FC-7E3A-4B09-B3FC-205FF38FE952}";
+		public static function get___Security_Group__has__Security_Permission()
+		{
+			$inst = Instance::GetByGlobalIdentifier(self::Relationship___Security_Group__has__Security_Permission);
+			return $inst;
+		}
+		public static function get___Security_Permission__for__Security_Group()
+		{
+			$inst = Instance::GetByGlobalIdentifier(self::Relationship___Security_Permission__for__Security_Group);
+			return $inst;
+		}
 		
 	}
 ?>
