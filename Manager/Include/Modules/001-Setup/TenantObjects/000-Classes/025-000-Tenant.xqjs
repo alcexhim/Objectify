@@ -2,7 +2,7 @@
 	"Objects":
 	[
 		{
-			"Name": "InstancePropertyStringComponent",
+			"Name": "InstanceAttributeStringComponent",
 			"Instances":
 			[
 				{
@@ -11,7 +11,7 @@
 					[
 						{
 							"ID": "{A294F77C-8A89-419E-B494-8BFCC80DB634}",
-							"Value": "TenantURL"
+							"Value": "Name"
 						}
 					]
 				}
