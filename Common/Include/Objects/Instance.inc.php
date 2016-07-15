@@ -134,13 +134,15 @@
 				. "attval_TenantID = :attval_TenantID"
 				. " AND attval_InstanceID = :attval_InstanceID"
 				. " AND attval_AttributeInstanceID = :attval_AttributeInstanceID";
-			
+
+			if ($effectiveDateTime == null) $effectiveDateTime = date("Y-m-d H:i:s");
 			if ($effectiveDateTime != null)
 			{
 				$query .= " AND attval_EffectiveDateTime <= :attval_EffectiveDateTime";
+				$paramz[":attval_EffectiveDateTime"] = $effectiveDateTime;
 			}
+			
 			$query .= " ORDER BY attval_EffectiveDateTime DESC";
-			$query .= " LIMIT 1";
 			
 			$statement = $pdo->prepare($query);
 			$result = $statement->execute($paramz);
@@ -154,6 +156,7 @@
 			if ($count == 0) return $defaultValue;
 			
 			$values = $statement->fetch(PDO::FETCH_ASSOC);
+			
 			return $values["attval_Value"];
 		}
 		
