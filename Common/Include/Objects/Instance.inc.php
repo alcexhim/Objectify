@@ -369,7 +369,8 @@
 							{
 								$propertyName = $inst->GetAttributeValue("PropertyName");
 								$propertyValue = $this->GetAttributeValue($propertyName, "[ATT: " . $propertyName . " on " . $this->ParentObject->Name . "]");
-								return $propertyValue;
+								$retval .= $propertyValue;
+								break;
 							}
 							case "InstancePropertyStringComponent":
 							{
