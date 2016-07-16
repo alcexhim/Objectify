@@ -10,6 +10,14 @@
 		const Relationship___Tenant__has_sidebar__Menu_Item = "{D62DFB9F-48D5-4697-AAAD-1CAD0EA7ECFA}";
 		const Relationship___Menu_Item__sidebar_for__Tenant = "{4E0A8C3D-5D10-44E5-A6D7-31F262711E01}";
 		
+
+		const Relationship___Class__has_title__Translatable_Text_Constant = "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}";
+		public static function get___Class__has_title__Translatable_Text_Constant()
+		{
+			$inst = Instance::GetByGlobalIdentifier(self::Relationship___Class__has_title__Translatable_Text_Constant);
+			return $inst;
+		}
+		
 		public static function get___Class__instance_labeled_by__String()
 		{
 			$instRelationship__Class__instance_labeled_by_String = Instance::GetByGlobalIdentifier(self::Relationship___Class__instance_labeled_by__String);
@@ -78,6 +86,17 @@
 		{
 			$inst = Instance::GetByGlobalIdentifier(self::Relationship___Security_Permission__for__Security_Group);
 			return $inst;
+		}
+		
+		const Relationship___Class__has_owner__User = "{D1A25625-C90F-4A73-A6F2-AFB530687705}";
+		const Relationship___User__owner_for__Class = "{04DD2E6B-EA57-4840-8DD5-F0AA943C37BB}";
+		public static function get___Class__has_owner__User()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Class__has_owner__User);
+		}
+		public static function get___User__owner_for__Class()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___User__owner_for__Class);
 		}
 		
 	}
