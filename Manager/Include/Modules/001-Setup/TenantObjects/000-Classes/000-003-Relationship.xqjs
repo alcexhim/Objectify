@@ -349,56 +349,6 @@
 					]
 				},
 				{
-					"ID": "{D1A25625-C90F-4A73-A6F2-AFB530687705}",
-					"Comment": "Class.has created by User",
-					"PropertyValues":
-					[
-						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "Class"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "User"
-							}
-						},
-						{
-							"Name": "RelationshipType",
-							"Value": "has created by"
-						}
-					]
-				},
-				{
-					"ID": "{04DD2E6B-EA57-4840-8DD5-F0AA943C37BB}",
-					"Comment": "User.created Class",
-					"PropertyValues":
-					[
-						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "User"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "Class"
-							}
-						},
-						{
-							"Name": "RelationshipType",
-							"Value": "created"
-						}
-					]
-				},
-				{
 					"ID": "{CE4EA0D6-955D-4894-BACB-549B76D38E26}",
 					"Comment": "Tenant.has Data Center",
 					"PropertyValues":
