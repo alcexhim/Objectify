@@ -147,8 +147,7 @@
 	{
 		public function OnInitializing(CancelEventArgs $e)
 		{
-			User::ReleaseLoginToken();
-			
+			unset($_SESSION["Authentication.LoginToken"]);
 			unset($_SESSION["LoginRedirectURL"]);
 			System::Redirect("~/");
 		}
