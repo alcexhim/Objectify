@@ -55,6 +55,10 @@
 			return $id;
 		}
 		
+		private static $pdo_statement_log = null;
+		private static $pdo_statement_log_backtrace = null;
+		private static $pdo_statement_log_parameter = null;
+		
 		public static function Log($message, $params = null, $severity = LogMessageSeverity::Error)
 		{
 			$bt = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS);
@@ -63,13 +67,18 @@
 			
 			$pdo = DataSystem::GetPDO();
 			
-			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "DebugMessages "
-				. "(message_Content, message_SeverityID, message_Timestamp, message_IPAddress)"
-				. " VALUES "
-				. "(:message_Content, :message_SeverityID, NOW(), :message_IPAddress)";
+			if (self::$pdo_statement_log == null)
+			{
+				$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "DebugMessages "
+					. "(message_Content, message_SeverityID, message_Timestamp, message_IPAddress)"
+					. " VALUES "
+					. "(:message_Content, :message_SeverityID, NOW(), :message_IPAddress)";
+				
+				$statement = $pdo->prepare($query);
+				self::$pdo_statement_log = $statement;
+			}
 			
-			$statement = $pdo->prepare($query);
-			$result = $statement->execute(array
+			$result = self::$pdo_statement_log->execute(array
 			(
 				":message_Content" => $message,
 				":message_SeverityID" => $severity,
@@ -80,13 +89,18 @@
 			
 			foreach ($bt as $bti)
 			{
-				$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "DebugMessageBacktraces "
-				. "(bt_MessageID, bt_FileName, bt_LineNumber)"
-				. " VALUES "
-				. "(:bt_MessageID, :bt_FileName, :bt_LineNumber)";
+				if (self::$pdo_statement_log_backtrace == null)
+				{
+					$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "DebugMessageBacktraces "
+					. "(bt_MessageID, bt_FileName, bt_LineNumber)"
+					. " VALUES "
+					. "(:bt_MessageID, :bt_FileName, :bt_LineNumber)";
+					
+					$statement = $pdo->prepare($query);
+					self::$pdo_statement_log_backtrace = $statement;
+				}
 				
-				$statement = $pdo->prepare($query);
-				$result = $statement->execute(array
+				$result = self::$pdo_statement_log_backtrace->execute(array
 				(
 					":bt_MessageID" => $msgid,
 					":bt_FileName" => $bti["file"],
@@ -96,9 +110,18 @@
 			
 			foreach ($params as $key => $value)
 			{
-				$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "DebugMessageParameters (mp_MessageID, mp_Name, mp_Value) VALUES (:mp_MessageID, :mp_Name, :mp_Value)";
-				$statement = $pdo->prepare($query);
-				$result = $statement->execute(array
+				if (self::$pdo_statement_log_parameter == null)
+				{
+					$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "DebugMessageParameters "
+					. "(mp_MessageID, mp_Name, mp_Value)"
+					. " VALUES "
+					. "(:mp_MessageID, :mp_Name, :mp_Value)";
+					
+					$statement = $pdo->prepare($query);
+					self::$pdo_statement_log_parameter = $statement;
+				}
+				
+				$result = self::$pdo_statement_log_parameter->execute(array
 				(
 					":mp_MessageID" => $msgid,
 					":mp_Name" => $key,
