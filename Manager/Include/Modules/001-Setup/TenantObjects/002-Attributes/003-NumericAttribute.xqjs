@@ -1,0 +1,21 @@
+{
+	"Objects":
+	[
+		{
+			"Name": "NumericAttribute",
+			"Instances":
+			[
+				{
+					"ID": "{B88E5262-6B99-401C-896C-34283AB58AED}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+							"Value": "Value"
+						}
+					]
+				}
+			]
+		}
+	]
+}

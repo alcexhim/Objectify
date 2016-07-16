@@ -1,0 +1,15 @@
+{
+	"Objects":
+	[
+		{
+			"ID": "{9DE86AF1-EFD6-4B71-9DCC-202F247C94CB}",
+			"Name": "NumericAttribute",
+			"ParentObjects":
+			[
+				{
+					"Name": "Attribute"
+				}
+			]
+		}
+	]
+}
