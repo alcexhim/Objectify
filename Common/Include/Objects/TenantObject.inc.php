@@ -976,8 +976,7 @@
 			// so getting the Title property is slower, but not by much...
 			
 			$instObject = Instance::GetByGlobalIdentifier($this->GlobalIdentifier);
-			$instRelationship_LabeledBy = Instance::GetByGlobalIdentifier("{B8BDB905-69DD-49CD-B557-0781F7EF2C50}");
-			$relLabeledBy = Relationship::GetBySourceInstance($instObject, $instRelationship_LabeledBy);
+			$relLabeledBy = Relationship::GetBySourceInstance($instObject, KnownRelationships::get___Class__has_title__Translatable_Text_Constant());
 			$relLabeledBy = $relLabeledBy[0];
 			
 			if ($relLabeledBy != null)
@@ -991,6 +990,9 @@
 					$relHasValue = $relHasValue[0];
 					
 					$insts = $relHasValue->GetDestinationInstances();
+					
+					// we should do this once we have deprecated Properties on TTC
+					// $str = $insts[0]->GetAttributeValue("Value");
 					
 					$str = $insts[0]->ToString();
 					return $str;
