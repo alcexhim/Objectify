@@ -741,29 +741,62 @@
 			[
 				{
 					"Name": "Class"
-				},
-				{
-					"Name": "InstanceTitleableObject"
 				}
-			],
-			"InstanceProperties":
+			]
+		},
+		{
+			"Name": "Relationship",
+			"Instances":
 			[
 				{
-					"Name": "Unit",
-					"DataTypeName": "SingleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
+					"ID": "{C9720082-1F40-406D-80B7-81C1B690354D}",
+					"Comment": "Measurement.has Measurement Unit",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "Measurement"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
 							{
 								"Name": "MeasurementUnit"
 							}
-						]
-					}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "has"
+						}
+					]
 				},
 				{
-					"Name": "Value",
-					"DataTypeName": "Number"
+					"ID": "{3117CB16-6860-48B6-8E21-3655A121E695}",
+					"Comment": "Measurement Unit.for Measurement",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "MeasurementUnit"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "Measurement"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "for"
+						}
+					]
 				}
 			]
 		}
