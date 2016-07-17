@@ -73,8 +73,11 @@
 					{
 						$mi = new MenuItemCommand();
 						
-						$instsTitle = $instSidebarMenuItem->GetPropertyValue("Title")->GetInstances();
-						$mi->Title = $instsTitle[0]->ToString();
+						$rels = Relationship::GetBySourceInstance($instSidebarMenuItem, KnownRelationships::get___Menu_Item_Command__has_title__Translatable_Text_Constant());
+						$insts = $rels[0]->GetDestinationInstances();
+						$inst = $insts[0];
+						
+						$mi->Title = $inst->ToString();
 						
 						$instIcon = $instSidebarMenuItem->GetPropertyValue("Icon")->GetInstance();
 						if ($instIcon != null)
@@ -99,8 +102,12 @@
 					case "MenuItemHeader":
 					{
 						$mi = new MenuItemHeader();
-						$instsTitle = $instSidebarMenuItem->GetPropertyValue("Title")->GetInstances();
-						$mi->Title = $instsTitle[0]->ToString();
+						
+						$rels = Relationship::GetBySourceInstance($instSidebarMenuItem, KnownRelationships::get___Menu_Item_Command__has_title__Translatable_Text_Constant());
+						$insts = $rels[0]->GetDestinationInstances();
+						$inst = $insts[0];
+						
+						$mi->Title = $inst->ToString();
 						break;
 					}
 				}

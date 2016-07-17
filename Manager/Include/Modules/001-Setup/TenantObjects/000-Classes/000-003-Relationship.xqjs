@@ -698,6 +698,56 @@
 							"Value": "for"
 						}
 					]
+				},
+				{
+					"ID": "{65E3C87E-A2F7-4A33-9FA7-781EFA801E02}",
+					"Comment": "Menu Item.has title Translatable Text Constant",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "MenuItem"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "TranslatableTextConstant"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "has"
+						}
+					]
+				},
+				{
+					"ID": "{901A5427-6344-40F4-B81C-D905EA152EB9}",
+					"Comment": "Translatable Text Constant.title for Menu Item",
+					"PropertyValues":
+					[
+						{
+							"Name": "SourceObject",
+							"Value":
+							{
+								"Name": "TranslatableTextConstant"
+							}
+						},
+						{
+							"Name": "DestinationObject",
+							"Value":
+							{
+								"Name": "MenuItem"
+							}
+						},
+						{
+							"Name": "RelationshipType",
+							"Value": "for"
+						}
+					]
 				}
 			]
 		}

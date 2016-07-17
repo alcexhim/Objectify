@@ -109,5 +109,16 @@
 		{
 			return Instance::GetByGlobalIdentifier(self::Relationship___Relationship__for__Extract_Single_Instance_String_Component);
 		}
+		
+		const Relationship___Menu_Item_Command__has_title__Translatable_Text_Constant = "{65E3C87E-A2F7-4A33-9FA7-781EFA801E02}";
+		const Relationship___Translatable_Text_Constant__title_for__Menu_Item_Command = "{901A5427-6344-40F4-B81C-D905EA152EB9}";
+		public static function get___Menu_Item_Command__has_title__Translatable_Text_Constant()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Menu_Item_Command__has_title__Translatable_Text_Constant);
+		}
+		public static function get___Translatable_Text_Constant__title_for__Menu_Item_Command()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Translatable_Text_Constant__title_for__Menu_Item_Command);
+		}
 	}
 ?>

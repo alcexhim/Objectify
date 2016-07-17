@@ -2,292 +2,74 @@
 	"Objects":
 	[
 		{
-			"Name": "TranslatableTextConstantValue",
-			"Instances":
-			[
-				{
-					"ID": "{40E17597-0AEB-4C56-BBAB-FC600E1196DD}",
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_MenuItemHeader_Overview_Title" 
-						}
-					],
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Overview"
-						}
-					]
-				},
-				{
-					"ID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_MenuItemCommand_Dashboard_Title" 
-						}
-					],
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Dashboard"
-						}
-					]
-				},
-				{
-					"ID": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_MenuItemHeader_Reports_Title" 
-						}
-					],
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Reports"
-						}
-					]
-				},
-				{
-					"ID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_MenuItemCommand_Objects_Title" 
-						}
-					],
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Objects"
-						}
-					]
-				},
-				{
-					"ID": "{E81D9358-CFA9-447C-854E-4A95BE22210D}",
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_MenuItemHeader_HelpAndSupport_Title" 
-						}
-					],
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Help and Support"
-						}
-					]
-				},
-				{
-					"ID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_MenuItemCommand_Documentation_Title" 
-						}
-					],
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Documentation"
-						}
-					]
-				},
-				{
-					"ID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_MenuItemCommand_SupportCenter_Title" 
-						}
-					],
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Support Center"
-						}
-					]
-				},
-				{
-					"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_MenuItemCommand_Developer_Title" 
-						}
-					],
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Developer"
-						}
-					]
-				},
-				{
-					"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_MenuItemCommand_Migrate_Title" 
-						}
-					],
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Migrate Packages"
-						}
-					]
-				}
-			]
-		},
-		{
 			"Name": "MenuItemHeader",
 			"Instances":
 			[
 				{
 					"ID": "{D135F145-36DC-4482-8130-872D1A8AA551}",
-					"PropertyValues":
+					"TranslatableValues":
 					[
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{40E17597-0AEB-4C56-BBAB-FC600E1196DD}"
-								]
-							}
+							"RelationshipID": "{65E3C87E-A2F7-4A33-9FA7-781EFA801E02}",
+							"InverseRelationshipID": "{901A5427-6344-40F4-B81C-D905EA152EB9}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Overview"
+								}
+							]
 						}
 					]
 				},
 				{
 					"ID": "{7855FB37-1F75-4FA0-B3EE-5EE2D463E39F}",
-					"PropertyValues":
+					"TranslatableValues":
 					[
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}"
-								]
-							}
+							"RelationshipID": "{65E3C87E-A2F7-4A33-9FA7-781EFA801E02}",
+							"InverseRelationshipID": "{901A5427-6344-40F4-B81C-D905EA152EB9}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Reports"
+								}
+							]
 						}
 					]
 				},
 				{
 					"ID": "{4723BA97-2321-485A-B3F1-346716C1A3E1}",
-					"PropertyValues":
+					"TranslatableValues":
 					[
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{E81D9358-CFA9-447C-854E-4A95BE22210D}"
-								]
-							}
+							"RelationshipID": "{65E3C87E-A2F7-4A33-9FA7-781EFA801E02}",
+							"InverseRelationshipID": "{901A5427-6344-40F4-B81C-D905EA152EB9}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Help and Support"
+								}
+							]
 						}
 					]
 				},
 				{
 					"ID": "{EC5BC2CD-F400-4064-B7E8-DA2CADDCD2A9}",
-					"PropertyValues":
+					"TranslatableValues":
 					[
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}"
-								]
-							}
+							"RelationshipID": "{65E3C87E-A2F7-4A33-9FA7-781EFA801E02}",
+							"InverseRelationshipID": "{901A5427-6344-40F4-B81C-D905EA152EB9}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Developer"
+								}
+							]
 						}
 					]
 				}
@@ -302,21 +84,25 @@
 					"PropertyValues":
 					[
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}"
-								]
-							}
-						},
-						{
 							"Name": "Icon",
 							"Value":
 							{
 								"Instance": "{FC73ECB7-58C7-4E3C-B916-BB0C86864A67}"
 							}
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{65E3C87E-A2F7-4A33-9FA7-781EFA801E02}",
+							"InverseRelationshipID": "{901A5427-6344-40F4-B81C-D905EA152EB9}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Dashboard"
+								}
+							]
 						}
 					],
 					"AttributeValues":
@@ -332,21 +118,25 @@
 					"PropertyValues":
 					[
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{20FFFDE8-11A5-48D6-894B-21C6B234B811}"
-								]
-							}
-						},
-						{
 							"Name": "Icon",
 							"Value":
 							{
 								"Instance": "{41C8C445-A0C9-4245-A05C-3AA282A06985}"
 							}
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{65E3C87E-A2F7-4A33-9FA7-781EFA801E02}",
+							"InverseRelationshipID": "{901A5427-6344-40F4-B81C-D905EA152EB9}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Objects"
+								}
+							]
 						}
 					],
 					"AttributeValues":
@@ -362,21 +152,25 @@
 					"PropertyValues":
 					[
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}"
-								]
-							}
-						},
-						{
 							"Name": "Icon",
 							"Value":
 							{
 								"Instance": "{FA5F164D-04AD-495A-BDFB-BD33E80E22F1}"
 							}
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{65E3C87E-A2F7-4A33-9FA7-781EFA801E02}",
+							"InverseRelationshipID": "{901A5427-6344-40F4-B81C-D905EA152EB9}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Documentation"
+								}
+							]
 						}
 					],
 					"AttributeValues":
@@ -392,21 +186,25 @@
 					"PropertyValues":
 					[
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{A66CD08C-A155-42AF-8995-A1D96C5A0C06}"
-								]
-							}
-						},
-						{
 							"Name": "Icon",
 							"Value":
 							{
 								"Instance": "{92A5E29D-78E2-43FA-96AE-84827C441667}"
 							}
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{65E3C87E-A2F7-4A33-9FA7-781EFA801E02}",
+							"InverseRelationshipID": "{901A5427-6344-40F4-B81C-D905EA152EB9}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Support Center"
+								}
+							]
 						}
 					],
 					"AttributeValues":
@@ -422,21 +220,25 @@
 					"PropertyValues":
 					[
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{71106B12-1934-4834-B0F6-D894637BAEED}"
-								]
-							}
-						},
-						{
 							"Name": "Icon",
 							"Value":
 							{
 								"Instance": "{463C1D88-D2CD-45BA-BEBA-29CFD5509E17}"
 							}
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{65E3C87E-A2F7-4A33-9FA7-781EFA801E02}",
+							"InverseRelationshipID": "{901A5427-6344-40F4-B81C-D905EA152EB9}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Migrate Packages"
+								}
+							]
 						}
 					],
 					"AttributeValues":
