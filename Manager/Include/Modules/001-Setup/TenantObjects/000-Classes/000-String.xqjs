@@ -51,10 +51,10 @@
 				{
 					"ID": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
 					"Comment": "Extract Single Instance String Component.has Relationship",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "RelationshipType",
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "has"
 						}
 					]
@@ -62,10 +62,10 @@
 				{
 					"ID": "{B0111132-8721-405C-967B-0BEFA92CFE9A}",
 					"Comment": "Relationship.for Extract Single Instance String Component",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "RelationshipType",
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "for"
 						}
 					]
@@ -94,6 +94,19 @@
 			[
 				{
 					"Name": "StringComponent"
+				}
+			],
+			"Instances":
+			[
+				{
+					"ID": "{CD44D6DB-9C7F-4AE3-A1D8-FA6135EB3689}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{A294F77C-8A89-419E-B494-8BFCC80DB634}",
+							"Value": "RelationshipType"
+						}
+					]
 				}
 			],
 			"TranslatableValues":
@@ -212,16 +225,6 @@
 					]
 				},
 				{
-					"ID": "{CD44D6DB-9C7F-4AE3-A1D8-FA6135EB3689}",
-					"AttributeValues":
-					[
-						{
-							"ID": "{A294F77C-8A89-419E-B494-8BFCC80DB634}",
-							"Value": "RelationshipType"
-						}
-					]
-				},
-				{
 					"ID": "{B324D93A-738C-48BF-854F-A1C038BE5BA5}",
 					"AttributeValues":
 					[
@@ -315,10 +318,10 @@
 				{
 					"ID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
 					"Comment": "Class.instance labeled by String",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "RelationshipType",
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "instance labeled by"
 						}
 					]
@@ -326,10 +329,10 @@
 				{
 					"ID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
 					"Comment": "String.labels instance of Class",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "RelationshipType",
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "labels instance of"
 						}
 					]

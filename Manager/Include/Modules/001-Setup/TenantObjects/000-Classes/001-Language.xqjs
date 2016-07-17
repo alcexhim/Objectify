@@ -120,10 +120,10 @@
 				{
 					"ID": "{F9B60C00-FF1D-438F-AC74-6EDFA8DD7324}",
 					"Comment": "Translatable Text Constant.has Translatable Text Constant Value",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "RelationshipType",
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "has"
 						}
 					]
@@ -131,10 +131,10 @@
 				{
 					"ID": "{20C70FA4-5258-480D-A61A-4A5BC9C5F990}",
 					"Comment": "Translatable Text Constant Value.for Translatable Text Constant Value",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "RelationshipType",
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "for"
 						}
 					]
@@ -142,10 +142,10 @@
 				{
 					"ID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 					"Comment": "Class.has title Translatable Text Constant",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "RelationshipType",
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "has title"
 						}
 					]
@@ -153,10 +153,10 @@
 				{
 					"ID": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 					"Comment": "Translatable Text Constant.title for Class",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "RelationshipType",
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "title for"
 						}
 					]
@@ -164,10 +164,10 @@
 				{
 					"ID": "{3B29DC78-B30A-46AA-9B20-2573239CECD9}",
 					"Comment": "Class.has description Translatable Text Constant",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "RelationshipType",
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "has description"
 						}
 					]
@@ -175,10 +175,10 @@
 				{
 					"ID": "{D4592057-BACF-44D0-9BB9-348B42A49D96}",
 					"Comment": "Translatable Text Constant.description for Class",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "RelationshipType",
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "description for"
 						}
 					]
@@ -685,10 +685,10 @@
 				{
 					"ID": "{B62F9B81-799B-4ABE-A4AF-29B45347DE54}",
 					"Comment": "Class.has Object Source",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "RelationshipType",
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "has"
 						}
 					]
@@ -696,10 +696,10 @@
 				{
 					"ID": "{FBB9391D-C4A2-4326-9F85-7801F377253C}",
 					"Comment": "Object Source.for Class",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "RelationshipType",
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "for"
 						}
 					]

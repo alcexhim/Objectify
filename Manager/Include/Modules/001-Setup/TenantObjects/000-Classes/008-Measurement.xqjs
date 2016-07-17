@@ -744,10 +744,10 @@
 				{
 					"ID": "{C9720082-1F40-406D-80B7-81C1B690354D}",
 					"Comment": "Measurement.has Measurement Unit",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "RelationshipType",
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "has"
 						}
 					]
@@ -755,10 +755,10 @@
 				{
 					"ID": "{3117CB16-6860-48B6-8E21-3655A121E695}",
 					"Comment": "Measurement Unit.for Measurement",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "RelationshipType",
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "for"
 						}
 					]

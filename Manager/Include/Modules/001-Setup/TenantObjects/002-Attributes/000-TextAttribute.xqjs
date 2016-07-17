@@ -84,6 +84,16 @@
 							"Value": "CSSValue"
 						}
 					]
+				},
+				{
+					"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+							"Value": "RelationshipType"
+						}
+					]
 				}
 			]
 		}

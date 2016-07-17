@@ -86,10 +86,10 @@
 				{
 					"ID": "{D1A25625-C90F-4A73-A6F2-AFB530687705}",
 					"Comment": "Class.has owner User",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "RelationshipType",
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "has owner"
 						}
 					]
@@ -97,10 +97,10 @@
 				{
 					"ID": "{04DD2E6B-EA57-4840-8DD5-F0AA943C37BB}",
 					"Comment": "User.owner for Class",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "RelationshipType",
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "owner for"
 						}
 					]
