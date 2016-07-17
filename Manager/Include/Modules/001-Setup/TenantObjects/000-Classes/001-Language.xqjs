@@ -2,16 +2,6 @@
 	"Objects":
 	[
 		{
-			"ID": "{DD658EAB-9A3D-4ED1-8631-E3A5A336A7B6}",
-			"Name": "InstanceTitleableObject",
-			"ParentObjects":
-			[
-				{
-					"Name": "Class"
-				}
-			]
-		},
-		{
 			"ID": "{61102B47-9B2F-4CF3-9840-D168B84CF1E5}",
 			"Name": "Language",
 			"ParentObjects":
@@ -692,32 +682,7 @@
 			]
 		},
 		{
-			"Name": "InstanceTitleableObject",
-			"InstanceProperties":
-			[
-				{
-					"Name": "Title",
-					"DataTypeName": "MultipleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "TranslatableTextConstantValue"
-							}
-						]
-					}
-				}
-			]
-		},
-		{
 			"Name": "Language",
-			"ParentObjects":
-			[
-				{
-					"Name": "InstanceTitleableObject"
-				}
-			],
 			"Instances":
 			[
 				{
@@ -745,9 +710,6 @@
 			[
 				{
 					"Name": "Class"
-				},
-				{
-					"Name": "InstanceTitleableObject"
 				}
 			],
 			"Instances":

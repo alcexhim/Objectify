@@ -104,16 +104,6 @@
 			]
 		},
 		{
-			"Comment": "Class `Instance Titleable Object`.has title Translatable Text Constant `Instance Titleable Object`",
-			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
-			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
-			"SourceInstance": "{DD658EAB-9A3D-4ED1-8631-E3A5A336A7B6}",
-			"DestinationInstances":
-			[
-				"{1A2C623A-F50B-4788-B6E9-6BDFFB43D059}"
-			]
-		},
-		{
 			"Comment": "Class `Language`.has title Translatable Text Constant `Language`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",

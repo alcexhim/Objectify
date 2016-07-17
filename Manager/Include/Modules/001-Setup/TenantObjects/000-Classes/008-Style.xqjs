@@ -82,9 +82,6 @@
 			[
 				{
 					"Name": "Class"
-				},
-				{
-					"Name": "InstanceTitleableObject"
 				}
 			],
 			"InstanceProperties":
@@ -165,9 +162,6 @@
 			[
 				{
 					"Name": "Class"
-				},
-				{
-					"Name": "InstanceTitleableObject"
 				}
 			],
 			"InstanceProperties":
@@ -198,9 +192,6 @@
 			[
 				{
 					"Name": "Class"
-				},
-				{
-					"Name": "InstanceTitleableObject"
 				}
 			],
 			"InstanceProperties":

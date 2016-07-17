@@ -110,9 +110,6 @@
 			[
 				{
 					"Name": "Class"
-				},
-				{
-					"Name": "InstanceTitleableObject"
 				}
 			],
 			"InstanceProperties":

@@ -114,9 +114,6 @@
 			[
 				{
 					"Name": "Class"
-				},
-				{
-					"Name": "InstanceTitleableObject"
 				}
 			],
 			"InstanceProperties":
@@ -237,9 +234,6 @@
 			[
 				{
 					"Name": "PageComponent"
-				},
-				{
-					"Name": "InstanceTitleableObject"
 				}
 			],
 			"InstanceProperties":
@@ -292,9 +286,6 @@
 			[
 				{
 					"Name": "PageComponent"
-				},
-				{
-					"Name": "InstanceTitleableObject"
 				}
 			],
 			"InstanceProperties":

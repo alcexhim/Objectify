@@ -350,9 +350,6 @@
 			[
 				{
 					"Name": "Class"
-				},
-				{
-					"Name": "InstanceTitleableObject"
 				}
 			],
 			"Instances":
