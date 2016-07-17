@@ -53,16 +53,6 @@
 			]
 		},
 		{
-			"Comment": "Class `Date Attribute`.has title Translatable Text Constant `Date Attribute`",
-			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
-			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
-			"SourceInstance": "{0B7B1812-DFB4-4F25-BF6D-CEB0E1DF8744}",
-			"DestinationInstances":
-			[
-				"{373E04D3-34BA-4EEA-BFC1-3A280B63AE7E}"
-			]
-		},
-		{
 			"Comment": "Class `String Component`.has title Translatable Text Constant `String Component`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
