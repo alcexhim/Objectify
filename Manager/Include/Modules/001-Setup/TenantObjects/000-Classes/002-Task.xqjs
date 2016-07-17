@@ -255,20 +255,6 @@
 					"PropertyValues":
 					[
 						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "Class"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "Task"
-							}
-						},
-						{
 							"Name": "RelationshipType",
 							"Value": "has"
 						}
@@ -279,20 +265,6 @@
 					"Comment": "Task.for Class",
 					"PropertyValues":
 					[
-						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "Task"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "Class"
-							}
-						},
 						{
 							"Name": "RelationshipType",
 							"Value": "for"

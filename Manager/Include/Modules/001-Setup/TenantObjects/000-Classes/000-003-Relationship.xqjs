@@ -13,14 +13,6 @@
 			"InstanceProperties":
 			[
 				{
-					"Name": "SourceObject",
-					"DataTypeName": "ObjectReference"
-				},
-				{
-					"Name": "DestinationObject",
-					"DataTypeName": "ObjectReference"
-				},
-				{
 					"Name": "RelationshipType",
 					"DataTypeName": "Text"
 				}
@@ -28,24 +20,26 @@
 			"Instances":
 			[
 				{
+					"ID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+					"Comment": "Relationship.has source Class"
+				},
+				{
+					"ID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+					"Comment": "Class.source for Relationship"
+				},
+				{
+					"ID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+					"Comment": "Relationship.has destination Class"
+				},
+				{
+					"ID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+					"Comment": "Class.destination for Relationship"
+				},
+				{
 					"ID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
 					"Comment": "Class.has Attribute",
 					"PropertyValues":
 					[
-						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "Class"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "Attribute"
-							}
-						},
 						{
 							"Name": "RelationshipType",
 							"Value": "has"
@@ -58,20 +52,6 @@
 					"PropertyValues":
 					[
 						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "Attribute"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "Class"
-							}
-						},
-						{
 							"Name": "RelationshipType",
 							"Value": "for"
 						}
@@ -82,20 +62,6 @@
 					"Comment": "Class.has Relationship",
 					"PropertyValues":
 					[
-						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "Class"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "Relationship"
-							}
-						},
 						{
 							"Name": "RelationshipType",
 							"Value": "has"
@@ -108,20 +74,6 @@
 					"PropertyValues":
 					[
 						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "Relationship"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "Class"
-							}
-						},
-						{
 							"Name": "RelationshipType",
 							"Value": "for"
 						}
@@ -132,20 +84,6 @@
 					"Comment": "Relationship.has sibling Relationship",
 					"PropertyValues":
 					[
-						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "Relationship"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "Relationship"
-							}
-						},
 						{
 							"Name": "RelationshipType",
 							"Value": "has sibling"
@@ -158,20 +96,6 @@
 					"PropertyValues":
 					[
 						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "Relationship"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "Relationship"
-							}
-						},
-						{
 							"Name": "RelationshipType",
 							"Value": "is sibling"
 						}
@@ -183,20 +107,6 @@
 					"PropertyValues":
 					[
 						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "Class"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "Class"
-							}
-						},
-						{
 							"Name": "RelationshipType",
 							"Value": "has super"
 						}
@@ -207,20 +117,6 @@
 					"Comment": "Class.has sub Class",
 					"PropertyValues":
 					[
-						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "Class"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "Class"
-							}
-						},
 						{
 							"Name": "RelationshipType",
 							"Value": "has sub"
@@ -254,20 +150,6 @@
 					"PropertyValues":
 					[
 						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "Tenant"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "TranslatableTextConstant"
-							}
-						},
-						{
 							"Name": "RelationshipType",
 							"Value": "has login header"
 						}
@@ -278,20 +160,6 @@
 					"Comment": "Tenant.has login footer Translatable Text Constant",
 					"PropertyValues":
 					[
-						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "Tenant"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "TranslatableTextConstant"
-							}
-						},
 						{
 							"Name": "RelationshipType",
 							"Value": "has login footer"
@@ -304,20 +172,6 @@
 					"PropertyValues":
 					[
 						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "TranslatableTextConstant"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "Tenant"
-							}
-						},
-						{
 							"Name": "RelationshipType",
 							"Value": "is login header for"
 						}
@@ -328,20 +182,6 @@
 					"Comment": "Translatable Text Constant.is login footer for Tenant",
 					"PropertyValues":
 					[
-						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "TranslatableTextConstant"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "Tenant"
-							}
-						},
 						{
 							"Name": "RelationshipType",
 							"Value": "is login footer for"
@@ -354,20 +194,6 @@
 					"PropertyValues":
 					[
 						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "Tenant"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "DataCenter"
-							}
-						},
-						{
 							"Name": "RelationshipType",
 							"Value": "has"
 						}
@@ -378,20 +204,6 @@
 					"Comment": "Data Center.for Tenant",
 					"PropertyValues":
 					[
-						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "DataCenter"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "Tenant"
-							}
-						},
 						{
 							"Name": "RelationshipType",
 							"Value": "for"
@@ -404,20 +216,6 @@
 					"PropertyValues":
 					[
 						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "Tenant"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "PaymentPlan"
-							}
-						},
-						{
 							"Name": "RelationshipType",
 							"Value": "has"
 						}
@@ -428,20 +226,6 @@
 					"Comment": "Payment Plan.for Tenant",
 					"PropertyValues":
 					[
-						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "PaymentPlan"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "Tenant"
-							}
-						},
 						{
 							"Name": "RelationshipType",
 							"Value": "for"
@@ -454,20 +238,6 @@
 					"PropertyValues":
 					[
 						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "Tenant"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "TenantType"
-							}
-						},
-						{
 							"Name": "RelationshipType",
 							"Value": "has"
 						}
@@ -478,20 +248,6 @@
 					"Comment": "Tenant Type.for Tenant",
 					"PropertyValues":
 					[
-						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "TenantType"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "Tenant"
-							}
-						},
 						{
 							"Name": "RelationshipType",
 							"Value": "for"
@@ -504,20 +260,6 @@
 					"PropertyValues":
 					[
 						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "Tenant"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "MenuItem"
-							}
-						},
-						{
 							"Name": "RelationshipType",
 							"Value": "has sidebar"
 						}
@@ -528,20 +270,6 @@
 					"Comment": "Menu Item.sidebar for Tenant",
 					"PropertyValues":
 					[
-						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "MenuItem"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "Tenant"
-							}
-						},
 						{
 							"Name": "RelationshipType",
 							"Value": "sidebar for"
@@ -555,20 +283,6 @@
 					"PropertyValues":
 					[
 						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "User"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "TranslatableTextConstant"
-							}
-						},
-						{
 							"Name": "RelationshipType",
 							"Value": "has display name"
 						}
@@ -579,20 +293,6 @@
 					"Comment": "Translatable Text Constant.display name for User",
 					"PropertyValues":
 					[
-						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "TranslatableTextConstant"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "User"
-							}
-						},
 						{
 							"Name": "RelationshipType",
 							"Value": "display name for"
@@ -605,20 +305,6 @@
 					"PropertyValues":
 					[
 						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "User"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "SecurityGroup"
-							}
-						},
-						{
 							"Name": "RelationshipType",
 							"Value": "has"
 						}
@@ -629,20 +315,6 @@
 					"Comment": "Security Group.for User",
 					"PropertyValues":
 					[
-						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "SecurityGroup"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "User"
-							}
-						},
 						{
 							"Name": "RelationshipType",
 							"Value": "for"
@@ -655,20 +327,6 @@
 					"PropertyValues":
 					[
 						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "SecurityGroup"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "SecurityPermission"
-							}
-						},
-						{
 							"Name": "RelationshipType",
 							"Value": "has"
 						}
@@ -679,20 +337,6 @@
 					"Comment": "Security Permission.for Security Group",
 					"PropertyValues":
 					[
-						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "SecurityPermission"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "SecurityGroup"
-							}
-						},
 						{
 							"Name": "RelationshipType",
 							"Value": "for"
@@ -705,20 +349,6 @@
 					"PropertyValues":
 					[
 						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "MenuItem"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "TranslatableTextConstant"
-							}
-						},
-						{
 							"Name": "RelationshipType",
 							"Value": "has"
 						}
@@ -729,20 +359,6 @@
 					"Comment": "Translatable Text Constant.title for Menu Item",
 					"PropertyValues":
 					[
-						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "TranslatableTextConstant"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "MenuItem"
-							}
-						},
 						{
 							"Name": "RelationshipType",
 							"Value": "for"

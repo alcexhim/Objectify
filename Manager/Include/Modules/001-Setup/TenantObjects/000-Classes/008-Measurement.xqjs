@@ -747,20 +747,6 @@
 					"PropertyValues":
 					[
 						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "Measurement"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "MeasurementUnit"
-							}
-						},
-						{
 							"Name": "RelationshipType",
 							"Value": "has"
 						}
@@ -771,20 +757,6 @@
 					"Comment": "Measurement Unit.for Measurement",
 					"PropertyValues":
 					[
-						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "MeasurementUnit"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "Measurement"
-							}
-						},
 						{
 							"Name": "RelationshipType",
 							"Value": "for"

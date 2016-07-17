@@ -1,0 +1,1054 @@
+{
+	"Relationships":
+	[
+		{
+			"Comment": "Relationship `Relationship.has source Class`.has source Class `Relationship`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"DestinationInstances":
+			[
+				"{9B0A80F9-C325-4D36-997C-FB4106204648}"
+			]
+		},
+		{
+			"Comment": "Relationship `Relationship.has source Class`.has destination Class `Class`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"DestinationInstances":
+			[
+				"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Class.source for Relationship`.has source Class `Class`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"DestinationInstances":
+			[
+				"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+			]
+		},
+		{
+			"Comment": "Relationship `Class.source for Relationship`.has destination Class `Relationship`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"DestinationInstances":
+			[
+				"{9B0A80F9-C325-4D36-997C-FB4106204648}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Relationship.has destination Class`.has source Class `Relationship`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"DestinationInstances":
+			[
+				"{9B0A80F9-C325-4D36-997C-FB4106204648}"
+			]
+		},
+		{
+			"Comment": "Relationship `Relationship.has destination Class`.has destination Class `Class`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"DestinationInstances":
+			[
+				"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Class.destination for Relationship`.has source Class `Class`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"DestinationInstances":
+			[
+				"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+			]
+		},
+		{
+			"Comment": "Relationship `Class.destination for Relationship`.has destination Class `Relationship`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"DestinationInstances":
+			[
+				"{9B0A80F9-C325-4D36-997C-FB4106204648}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Class.has Attribute`.has source Class `Class`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+			"DestinationInstances":
+			[
+				"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+			]
+		},
+		{
+			"Comment": "Relationship `Class.has Attribute`.has destination Class `Attribute`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+			"DestinationInstances":
+			[
+				"{F9CD7751-EF62-4F7C-8A28-EBE90B8F46AA}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Attribute.for Class`.has source Class `Attribute`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
+			"DestinationInstances":
+			[
+				"{F9CD7751-EF62-4F7C-8A28-EBE90B8F46AA}"
+			]
+		},
+		{
+			"Comment": "Relationship `Attribute.for Class`.has destination Class `Class`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
+			"DestinationInstances":
+			[
+				"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Class.has Relationship`.has source Class `Class`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{3997CAAD-3BFA-4EA6-9CFA-2AA63E20F08D}",
+			"DestinationInstances":
+			[
+				"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+			]
+		},
+		{
+			"Comment": "Relationship `Class.has Relationship`.has destination Class `Relationship`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{3997CAAD-3BFA-4EA6-9CFA-2AA63E20F08D}",
+			"DestinationInstances":
+			[
+				"{9B0A80F9-C325-4D36-997C-FB4106204648}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Relationship.for Class`.has source Class `Relationship`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{C00BD63F-10DA-4751-B8EA-0905436EA098}",
+			"DestinationInstances":
+			[
+				"{9B0A80F9-C325-4D36-997C-FB4106204648}"
+			]
+		},
+		{
+			"Comment": "Relationship `Relationship.for Class`.has destination Class `Class`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{C00BD63F-10DA-4751-B8EA-0905436EA098}",
+			"DestinationInstances":
+			[
+				"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Relationship.has sibling Relationship`.has source Class `Relationship`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+			"DestinationInstances":
+			[
+				"{9B0A80F9-C325-4D36-997C-FB4106204648}"
+			]
+		},
+		{
+			"Comment": "Relationship `Relationship.has sibling Relationship`.has destination Class `Relationship`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+			"DestinationInstances":
+			[
+				"{9B0A80F9-C325-4D36-997C-FB4106204648}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Relationship.is sibling Relationship`.has source Class `Relationship`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{FA08B2A4-71E2-44CB-9252-8CE336E2E1AD}",
+			"DestinationInstances":
+			[
+				"{9B0A80F9-C325-4D36-997C-FB4106204648}"
+			]
+		},
+		{
+			"Comment": "Relationship `Relationship.is sibling Relationship`.has destination Class `Relationship`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{FA08B2A4-71E2-44CB-9252-8CE336E2E1AD}",
+			"DestinationInstances":
+			[
+				"{9B0A80F9-C325-4D36-997C-FB4106204648}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Class.has super Class`.has source Class `Class`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{100F0308-855D-4EC5-99FA-D8976CA20053}",
+			"DestinationInstances":
+			[
+				"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+			]
+		},
+		{
+			"Comment": "Relationship `Class.has super Class`.has destination Class `Class`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{100F0308-855D-4EC5-99FA-D8976CA20053}",
+			"DestinationInstances":
+			[
+				"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Class.has sub Class`.has source Class `Class`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{C14BC80D-879C-4E6F-9123-E8DFB13F4666}",
+			"DestinationInstances":
+			[
+				"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+			]
+		},
+		{
+			"Comment": "Relationship `Class.has sub Class`.has destination Class `Class`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{C14BC80D-879C-4E6F-9123-E8DFB13F4666}",
+			"DestinationInstances":
+			[
+				"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Tenant.has login header Translatable Text Constant`.has source Class `Tenant`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{41D66ACB-AFDE-4B6F-892D-E66255F10DEB}",
+			"DestinationInstances":
+			[
+				"{703F9D65-C584-4D9F-A656-D0E3C247FF1F}"
+			]
+		},
+		{
+			"Comment": "Relationship `Tenant.has login header Translatable Text Constant`.has destination Class `Translatable Text Constant`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{41D66ACB-AFDE-4B6F-892D-E66255F10DEB}",
+			"DestinationInstances":
+			[
+				"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Tenant.has login footer Translatable Text Constant`.has source Class `Tenant`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{A6203B6B-5BEB-4008-AE49-DB5E7DDBA45B}",
+			"DestinationInstances":
+			[
+				"{703F9D65-C584-4D9F-A656-D0E3C247FF1F}"
+			]
+		},
+		{
+			"Comment": "Relationship `Tenant.has login footer Translatable Text Constant`.has destination Class `Translatable Text Constant`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{A6203B6B-5BEB-4008-AE49-DB5E7DDBA45B}",
+			"DestinationInstances":
+			[
+				"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Translatable Text Constant.is login header for Tenant`.has source Class `Translatable Text Constant`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{F1AD1C66-340C-44D6-B9DE-A62573D20048}",
+			"DestinationInstances":
+			[
+				"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+			]
+		},
+		{
+			"Comment": "Relationship `Translatable Text Constant.is login header for Tenant`.has destination Class `Tenant`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{F1AD1C66-340C-44D6-B9DE-A62573D20048}",
+			"DestinationInstances":
+			[
+				"{703F9D65-C584-4D9F-A656-D0E3C247FF1F}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Translatable Text Constant.is login footer for Tenant`.has source Class `Translatable Text Constant`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{54DCAB4B-A74E-4597-8CD6-8895D33CAF6F}",
+			"DestinationInstances":
+			[
+				"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+			]
+		},
+		{
+			"Comment": "Relationship `Translatable Text Constant.is login footer for Tenant`.has destination Class `Tenant`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{54DCAB4B-A74E-4597-8CD6-8895D33CAF6F}",
+			"DestinationInstances":
+			[
+				"{703F9D65-C584-4D9F-A656-D0E3C247FF1F}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Tenant.has Data Center`.has source Class `Tenant`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{CE4EA0D6-955D-4894-BACB-549B76D38E26}",
+			"DestinationInstances":
+			[
+				"{703F9D65-C584-4D9F-A656-D0E3C247FF1F}"
+			]
+		},
+		{
+			"Comment": "Relationship `Tenant.has Data Center`.has destination Class `Data Center`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{CE4EA0D6-955D-4894-BACB-549B76D38E26}",
+			"DestinationInstances":
+			[
+				"{7E3C9A3A-23D7-4811-9711-EE0BF92F1F63}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Data Center.for Tenant`.has source Class `Data Center`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{2374530A-8C7E-4A1C-8AFD-08A6805F89E5}",
+			"DestinationInstances":
+			[
+				"{7E3C9A3A-23D7-4811-9711-EE0BF92F1F63}"
+			]
+		},
+		{
+			"Comment": "Relationship `Data Center.for Tenant`.has destination Class `Tenant`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{2374530A-8C7E-4A1C-8AFD-08A6805F89E5}",
+			"DestinationInstances":
+			[
+				"{703F9D65-C584-4D9F-A656-D0E3C247FF1F}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Tenant.has Payment Plan`.has source Class `Tenant`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{050AF695-B568-4463-AB0A-543209D4374B}",
+			"DestinationInstances":
+			[
+				"{703F9D65-C584-4D9F-A656-D0E3C247FF1F}"
+			]
+		},
+		{
+			"Comment": "Relationship `Tenant.has Payment Plan`.has destination Class `Payment Plan`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{050AF695-B568-4463-AB0A-543209D4374B}",
+			"DestinationInstances":
+			[
+				"{622C2C7B-B1C5-45F8-999C-370DC98D138D}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Payment Plan.for Tenant`.has source Class `Payment Plan`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{85B40E4B-849B-4006-A9C0-4E201B25975F}",
+			"DestinationInstances":
+			[
+				"{622C2C7B-B1C5-45F8-999C-370DC98D138D}"
+			]
+		},
+		{
+			"Comment": "Relationship `Payment Plan.for Tenant`.has destination Class `Tenant`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{85B40E4B-849B-4006-A9C0-4E201B25975F}",
+			"DestinationInstances":
+			[
+				"{703F9D65-C584-4D9F-A656-D0E3C247FF1F}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Tenant.has Tenant Type`.has source Class `Tenant`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{D3963A58-BA8F-4CB4-AB0F-6B51C3852F26}",
+			"DestinationInstances":
+			[
+				"{703F9D65-C584-4D9F-A656-D0E3C247FF1F}"
+			]
+		},
+		{
+			"Comment": "Relationship `Tenant.has Tenant Type`.has destination Class `Tenant Type`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{D3963A58-BA8F-4CB4-AB0F-6B51C3852F26}",
+			"DestinationInstances":
+			[
+				"{5670953C-7367-4065-9AC2-46555342DC72}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Tenant Type.for Tenant`.has source Class `Tenant Type`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{DD52A3F3-7312-4492-BF89-F4434CB439D0}",
+			"DestinationInstances":
+			[
+				"{5670953C-7367-4065-9AC2-46555342DC72}"
+			]
+		},
+		{
+			"Comment": "Relationship `Tenant Type.for Tenant`.has destination Class `Tenant`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{DD52A3F3-7312-4492-BF89-F4434CB439D0}",
+			"DestinationInstances":
+			[
+				"{703F9D65-C584-4D9F-A656-D0E3C247FF1F}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Tenant.has sidebar Menu Item`.has source Class `Tenant`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{D62DFB9F-48D5-4697-AAAD-1CAD0EA7ECFA}",
+			"DestinationInstances":
+			[
+				"{703F9D65-C584-4D9F-A656-D0E3C247FF1F}"
+			]
+		},
+		{
+			"Comment": "Relationship `Tenant.has sidebar Menu Item`.has destination Class `Menu Item`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{D62DFB9F-48D5-4697-AAAD-1CAD0EA7ECFA}",
+			"DestinationInstances":
+			[
+				"{1E9D38B9-1B07-4EF9-BAD7-43DEB25AEB83}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Menu Item.sidebar for Tenant`.has source Class `Menu Item`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{4E0A8C3D-5D10-44E5-A6D7-31F262711E01}",
+			"DestinationInstances":
+			[
+				"{1E9D38B9-1B07-4EF9-BAD7-43DEB25AEB83}"
+			]
+		},
+		{
+			"Comment": "Relationship `Menu Item.sidebar for Tenant`.has destination Class `Tenant`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{4E0A8C3D-5D10-44E5-A6D7-31F262711E01}",
+			"DestinationInstances":
+			[
+				"{703F9D65-C584-4D9F-A656-D0E3C247FF1F}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `User.has display name Translatable Text Constant`.has source Class `User`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{6C29856C-3B10-4F5B-A291-DD3CA4C04A2F}",
+			"DestinationInstances":
+			[
+				"{9C6871C1-9A7F-4A3A-900E-69D1D9E24486}"
+			]
+		},
+		{
+			"Comment": "Relationship `User.has display name Translatable Text Constant`.has destination Class `Translatable Text Constant`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{6C29856C-3B10-4F5B-A291-DD3CA4C04A2F}",
+			"DestinationInstances":
+			[
+				"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Translatable Text Constant.display name for User`.has source Class `Translatable Text Constant`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{C0B4140B-92C1-4D52-B6DA-8E818A83F3FA}",
+			"DestinationInstances":
+			[
+				"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+			]
+		},
+		{
+			"Comment": "Relationship `Translatable Text Constant.display name for User` has destination Class `User`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{C0B4140B-92C1-4D52-B6DA-8E818A83F3FA}",
+			"DestinationInstances":
+			[
+				"{9C6871C1-9A7F-4A3A-900E-69D1D9E24486}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `User.has Security Group`.has source Class `User`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{1921D642-84EC-4E16-B568-9C333909C018}",
+			"DestinationInstances":
+			[
+				"{9C6871C1-9A7F-4A3A-900E-69D1D9E24486}"
+			]
+		},
+		{
+			"Comment": "Relationship `User.has Security Group`.has destination Class `Security Group`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{1921D642-84EC-4E16-B568-9C333909C018}",
+			"DestinationInstances":
+			[
+				"{498CCFD4-8D94-4EF4-B947-1D07ECC9342B}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Security Group.for User`.has source Class `Security Group`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{EDC79A23-3324-472D-B2F8-8CB9D2CF9C5D}",
+			"DestinationInstances":
+			[
+				"{498CCFD4-8D94-4EF4-B947-1D07ECC9342B}"
+			]
+		},
+		{
+			"Comment": "Relationship `Security Group.for User` has destination Class `User`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{EDC79A23-3324-472D-B2F8-8CB9D2CF9C5D}",
+			"DestinationInstances":
+			[
+				"{9C6871C1-9A7F-4A3A-900E-69D1D9E24486}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Security Group.has Security Permission`.has source Class `Security Group`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{5E305133-1380-4736-93E4-6B280B35FCE3}",
+			"DestinationInstances":
+			[
+				"{498CCFD4-8D94-4EF4-B947-1D07ECC9342B}"
+			]
+		},
+		{
+			"Comment": "Relationship `Security Group.has Security Permission`.has destination Class `Security Permission`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{5E305133-1380-4736-93E4-6B280B35FCE3}",
+			"DestinationInstances":
+			[
+				"{8EA7D1D3-6FC8-40C9-98C6-F72798307E9F}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Security Permission.for Security Group`.has source Class `Security Permission`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{52DAC6FC-7E3A-4B09-B3FC-205FF38FE952}",
+			"DestinationInstances":
+			[
+				"{8EA7D1D3-6FC8-40C9-98C6-F72798307E9F}"
+			]
+		},
+		{
+			"Comment": "Relationship `Security Permission.for Security Group` has destination Class `Security Group`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{52DAC6FC-7E3A-4B09-B3FC-205FF38FE952}",
+			"DestinationInstances":
+			[
+				"{498CCFD4-8D94-4EF4-B947-1D07ECC9342B}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Menu Item.has title Translatable Text Constant`.has source Class `Menu Item`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{65E3C87E-A2F7-4A33-9FA7-781EFA801E02}",
+			"DestinationInstances":
+			[
+				"{1E9D38B9-1B07-4EF9-BAD7-43DEB25AEB83}"
+			]
+		},
+		{
+			"Comment": "Relationship `Menu Item.has title Translatable Text Constant`.has destination Class `Translatable Text Constant`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{65E3C87E-A2F7-4A33-9FA7-781EFA801E02}",
+			"DestinationInstances":
+			[
+				"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Translatable Text Constant.title for Menu Item`.has source Class `Translatable Text Constant`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{901A5427-6344-40F4-B81C-D905EA152EB9}",
+			"DestinationInstances":
+			[
+				"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+			]
+		},
+		{
+			"Comment": "Relationship `Translatable Text Constant.title for Menu Item` has destination Class `Menu Item`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{901A5427-6344-40F4-B81C-D905EA152EB9}",
+			"DestinationInstances":
+			[
+				"{1E9D38B9-1B07-4EF9-BAD7-43DEB25AEB83}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Extract Single Instance String Component.has Relationship`.has source Class `Extract Single Instance String Component`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
+			"DestinationInstances":
+			[
+				"{FCECCE4E-8D05-485A-AE34-B1B45E766661}"
+			]
+		},
+		{
+			"Comment": "Relationship `Extract Single Instance String Component.has Relationship`.has destination Class `Relationship`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
+			"DestinationInstances":
+			[
+				"{9B0A80F9-C325-4D36-997C-FB4106204648}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Relationship.for Extract Single Instance String Component`.has source Class `Relationship`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{B0111132-8721-405C-967B-0BEFA92CFE9A}",
+			"DestinationInstances":
+			[
+				"{9B0A80F9-C325-4D36-997C-FB4106204648}"
+			]
+		},
+		{
+			"Comment": "Relationship `Relationship.for Extract Single Instance String Component` has destination Class `Extract Single Instance String Component`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{B0111132-8721-405C-967B-0BEFA92CFE9A}",
+			"DestinationInstances":
+			[
+				"{FCECCE4E-8D05-485A-AE34-B1B45E766661}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Class.instance labeled by String`.has source Class `Class`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+			"DestinationInstances":
+			[
+				"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+			]
+		},
+		{
+			"Comment": "Relationship `Class.instance labeled by String`.has destination Class `String`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+			"DestinationInstances":
+			[
+				"{5AECB489-DBC2-432E-86AF-6BE349317238}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `String.labels instance of Class`.has source Class `String`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+			"DestinationInstances":
+			[
+				"{5AECB489-DBC2-432E-86AF-6BE349317238}"
+			]
+		},
+		{
+			"Comment": "Relationship `String.labels instance of Class` has destination Class `Class`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+			"DestinationInstances":
+			[
+				"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Translatable Text Constant.has Translatable Text Constant Value`.has source Class `Translatable Text Constant`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{F9B60C00-FF1D-438F-AC74-6EDFA8DD7324}",
+			"DestinationInstances":
+			[
+				"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+			]
+		},
+		{
+			"Comment": "Relationship `Translatable Text Constant.has Translatable Text Constant Value`.has destination Class `Translatable Text Constant Value`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{F9B60C00-FF1D-438F-AC74-6EDFA8DD7324}",
+			"DestinationInstances":
+			[
+				"{6D38E757-EC18-43AD-9C35-D15BB446C0E1}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Translatable Text Constant Value.for Translatable Text Constant`.has source Class `Translatable Text Constant Value`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{20C70FA4-5258-480D-A61A-4A5BC9C5F990}",
+			"DestinationInstances":
+			[
+				"{6D38E757-EC18-43AD-9C35-D15BB446C0E1}"
+			]
+		},
+		{
+			"Comment": "Relationship `Translatable Text Constant Value.for Translatable Text Constant` has destination Class `Translatable Text Constant`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{20C70FA4-5258-480D-A61A-4A5BC9C5F990}",
+			"DestinationInstances":
+			[
+				"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Class.has title Translatable Text Constant`.has source Class `Class`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"DestinationInstances":
+			[
+				"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+			]
+		},
+		{
+			"Comment": "Relationship `Class.has title Translatable Text Constant`.has destination Class `Translatable Text Constant`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+			"DestinationInstances":
+			[
+				"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Translatable Text Constant.title for Class`.has source Class `Translatable Text Constant`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
+			"DestinationInstances":
+			[
+				"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+			]
+		},
+		{
+			"Comment": "Relationship `Translatable Text Constant.title for Class` has destination Class `Class`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
+			"DestinationInstances":
+			[
+				"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Class.has description Translatable Text Constant`.has source Class `Class`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{3B29DC78-B30A-46AA-9B20-2573239CECD9}",
+			"DestinationInstances":
+			[
+				"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+			]
+		},
+		{
+			"Comment": "Relationship `Class.has description Translatable Text Constant`.has destination Class `Translatable Text Constant`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{3B29DC78-B30A-46AA-9B20-2573239CECD9}",
+			"DestinationInstances":
+			[
+				"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Translatable Text Constant.description for Class`.has source Class `Translatable Text Constant`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{D4592057-BACF-44D0-9BB9-348B42A49D96}",
+			"DestinationInstances":
+			[
+				"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+			]
+		},
+		{
+			"Comment": "Relationship `Translatable Text Constant.description for Class` has destination Class `Class`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{D4592057-BACF-44D0-9BB9-348B42A49D96}",
+			"DestinationInstances":
+			[
+				"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Class.has Object Source`.has source Class `Class`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{B62F9B81-799B-4ABE-A4AF-29B45347DE54}",
+			"DestinationInstances":
+			[
+				"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+			]
+		},
+		{
+			"Comment": "Relationship `Class.has Object Source`.has destination Class `Object Source`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{B62F9B81-799B-4ABE-A4AF-29B45347DE54}",
+			"DestinationInstances":
+			[
+				"{8EE7024D-ED87-4D99-BF21-10E09AF5566D}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Object Source.for Class`.has source Class `Object Source`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{FBB9391D-C4A2-4326-9F85-7801F377253C}",
+			"DestinationInstances":
+			[
+				"{8EE7024D-ED87-4D99-BF21-10E09AF5566D}"
+			]
+		},
+		{
+			"Comment": "Relationship `Object Source.for Class` has destination Class `Class`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{FBB9391D-C4A2-4326-9F85-7801F377253C}",
+			"DestinationInstances":
+			[
+				"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Class.has Task`.has source Class `Class`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{4D8670E1-2AF1-4E7C-9C87-C910BD7B319B}",
+			"DestinationInstances":
+			[
+				"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+			]
+		},
+		{
+			"Comment": "Relationship `Class.has Task`.has destination Class `Task`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{4D8670E1-2AF1-4E7C-9C87-C910BD7B319B}",
+			"DestinationInstances":
+			[
+				"{D4F2564B-2D11-4A5C-8AA9-AF52D4EACC13}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Task.for Class`.has source Class `Task`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{F6D05235-AAA8-4DC0-8D3A-A0F336B39F01}",
+			"DestinationInstances":
+			[
+				"{D4F2564B-2D11-4A5C-8AA9-AF52D4EACC13}"
+			]
+		},
+		{
+			"Comment": "Relationship `Task.for Class` has destination Class `Class`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{F6D05235-AAA8-4DC0-8D3A-A0F336B39F01}",
+			"DestinationInstances":
+			[
+				"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Measurement.has Measurement Unit`.has source Class `Measurement`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{C9720082-1F40-406D-80B7-81C1B690354D}",
+			"DestinationInstances":
+			[
+				"{9FAED5A9-040D-4718-92C0-FBE2385F2A97}"
+			]
+		},
+		{
+			"Comment": "Relationship `Measurement.has Measurement Unit`.has destination Class `Measurement Unit`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{C9720082-1F40-406D-80B7-81C1B690354D}",
+			"DestinationInstances":
+			[
+				"{62693026-B7A0-40B5-92AE-038A2B264F33}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Measurement Unit.for Measurement`.has source Class `Measurement Unit`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{3117CB16-6860-48B6-8E21-3655A121E695}",
+			"DestinationInstances":
+			[
+				"{62693026-B7A0-40B5-92AE-038A2B264F33}"
+			]
+		},
+		{
+			"Comment": "Relationship `Measurement Unit.for Measurement` has destination Class `Measurement`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{3117CB16-6860-48B6-8E21-3655A121E695}",
+			"DestinationInstances":
+			[
+				"{9FAED5A9-040D-4718-92C0-FBE2385F2A97}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Class.has owner User`.has source Class `Class`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{D1A25625-C90F-4A73-A6F2-AFB530687705}",
+			"DestinationInstances":
+			[
+				"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+			]
+		},
+		{
+			"Comment": "Relationship `Class.has owner User`.has destination Class `User`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{D1A25625-C90F-4A73-A6F2-AFB530687705}",
+			"DestinationInstances":
+			[
+				"{9C6871C1-9A7F-4A3A-900E-69D1D9E24486}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `User.owner for Class`.has source Class `User`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{04DD2E6B-EA57-4840-8DD5-F0AA943C37BB}",
+			"DestinationInstances":
+			[
+				"{9C6871C1-9A7F-4A3A-900E-69D1D9E24486}"
+			]
+		},
+		{
+			"Comment": "Relationship `User.owner for Class` has destination Class `Class`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{04DD2E6B-EA57-4840-8DD5-F0AA943C37BB}",
+			"DestinationInstances":
+			[
+				"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+			]
+		}
+	]
+}

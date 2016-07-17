@@ -89,22 +89,8 @@
 					"PropertyValues":
 					[
 						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "Class"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "User"
-							}
-						},
-						{
 							"Name": "RelationshipType",
-							"Value": "has created by"
+							"Value": "has owner"
 						}
 					]
 				},
@@ -114,22 +100,8 @@
 					"PropertyValues":
 					[
 						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "User"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "Class"
-							}
-						},
-						{
 							"Name": "RelationshipType",
-							"Value": "created"
+							"Value": "owner for"
 						}
 					]
 				}

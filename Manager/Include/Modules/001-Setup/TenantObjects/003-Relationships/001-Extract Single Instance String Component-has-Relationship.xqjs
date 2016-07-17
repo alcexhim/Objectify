@@ -30,6 +30,26 @@
 			[
 				"{6C29856C-3B10-4F5B-A291-DD3CA4C04A2F}"
 			]
+		},
+		{
+			"Comment": "Extract Single Instance String Component.has Relationship",
+			"RelationshipInstance": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
+			"InverseRelationshipInstance": "{B0111132-8721-405C-967B-0BEFA92CFE9A}",
+			"SourceInstance": "{9DD1CDE1-6DAD-452D-9A07-9DE1CC32A396}",
+			"DestinationInstances":
+			[
+				"{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}"
+			]
+		},
+		{
+			"Comment": "Extract Single Instance String Component.has Relationship",
+			"RelationshipInstance": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
+			"InverseRelationshipInstance": "{B0111132-8721-405C-967B-0BEFA92CFE9A}",
+			"SourceInstance": "{7734AD93-8328-421B-BD78-E353EEFB0879}",
+			"DestinationInstances":
+			[
+				"{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}"
+			]
 		}
 	]
 }

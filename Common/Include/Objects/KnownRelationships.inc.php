@@ -120,5 +120,26 @@
 		{
 			return Instance::GetByGlobalIdentifier(self::Relationship___Translatable_Text_Constant__title_for__Menu_Item_Command);
 		}
+		
+		const Relationship___Relationship__has_source__Class = "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}";
+		const Relationship___Class__source_for__Relationship = "{20FFFDE8-11A5-48D6-894B-21C6B234B811}";
+		public static function get___Relationship__has_source__Class()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Relationship__has_source__Class);
+		}
+		public static function get___Class__source_for__Relationship()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Class__source_for__Relationship);
+		}
+		const Relationship___Relationship__has_destination__Class = "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}";
+		const Relationship___Class__destination_for__Relationship = "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}";
+		public static function get___Relationship__has_destination__Class()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Relationship__has_destination__Class);
+		}
+		public static function get___Class__destination_for__Relationship()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Class__destination_for__Relationship);
+		}
 	}
 ?>

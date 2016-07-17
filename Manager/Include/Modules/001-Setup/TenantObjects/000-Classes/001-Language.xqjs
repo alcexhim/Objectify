@@ -123,20 +123,6 @@
 					"PropertyValues":
 					[
 						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "TranslatableTextConstant"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "TranslatableTextConstantValue"
-							}
-						},
-						{
 							"Name": "RelationshipType",
 							"Value": "has"
 						}
@@ -147,20 +133,6 @@
 					"Comment": "Translatable Text Constant Value.for Translatable Text Constant Value",
 					"PropertyValues":
 					[
-						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "TranslatableTextConstantValue"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "TranslatableTextConstant"
-							}
-						},
 						{
 							"Name": "RelationshipType",
 							"Value": "for"
@@ -173,20 +145,6 @@
 					"PropertyValues":
 					[
 						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "Class"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "TranslatableTextConstant"
-							}
-						},
-						{
 							"Name": "RelationshipType",
 							"Value": "has title"
 						}
@@ -197,20 +155,6 @@
 					"Comment": "Translatable Text Constant.title for Class",
 					"PropertyValues":
 					[
-						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "TranslatableTextConstant"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "Class"
-							}
-						},
 						{
 							"Name": "RelationshipType",
 							"Value": "title for"
@@ -223,20 +167,6 @@
 					"PropertyValues":
 					[
 						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "Class"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "TranslatableTextConstant"
-							}
-						},
-						{
 							"Name": "RelationshipType",
 							"Value": "has description"
 						}
@@ -247,20 +177,6 @@
 					"Comment": "Translatable Text Constant.description for Class",
 					"PropertyValues":
 					[
-						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "TranslatableTextConstant"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "Class"
-							}
-						},
 						{
 							"Name": "RelationshipType",
 							"Value": "description for"
@@ -772,20 +688,6 @@
 					"PropertyValues":
 					[
 						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "Class"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "ObjectSource"
-							}
-						},
-						{
 							"Name": "RelationshipType",
 							"Value": "has"
 						}
@@ -796,20 +698,6 @@
 					"Comment": "Object Source.for Class",
 					"PropertyValues":
 					[
-						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "ObjectSource"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "Class"
-							}
-						},
 						{
 							"Name": "RelationshipType",
 							"Value": "for"

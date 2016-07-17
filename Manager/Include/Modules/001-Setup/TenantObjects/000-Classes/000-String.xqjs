@@ -54,20 +54,6 @@
 					"PropertyValues":
 					[
 						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "ExtractSingleInstanceStringComponent"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "Relationship"
-							}
-						},
-						{
 							"Name": "RelationshipType",
 							"Value": "has"
 						}
@@ -78,20 +64,6 @@
 					"Comment": "Relationship.for Extract Single Instance String Component",
 					"PropertyValues":
 					[
-						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "Relationship"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "ExtractSingleInstanceStringComponent"
-							}
-						},
 						{
 							"Name": "RelationshipType",
 							"Value": "for"
@@ -106,6 +78,12 @@
 			[
 				{
 					"ID": "{E2F11C41-51F1-4DB2-A16F-C384267A8598}"
+				},
+				{
+					"ID": "{9DD1CDE1-6DAD-452D-9A07-9DE1CC32A396}"
+				},
+				{
+					"ID": "{7734AD93-8328-421B-BD78-E353EEFB0879}"
 				}
 			]
 		},
@@ -234,32 +212,12 @@
 					]
 				},
 				{
-					"ID": "{9DD1CDE1-6DAD-452D-9A07-9DE1CC32A396}",
-					"AttributeValues":
-					[
-						{
-							"ID": "{A294F77C-8A89-419E-B494-8BFCC80DB634}",
-							"Value": "SourceObject"
-						}
-					]
-				},
-				{
 					"ID": "{CD44D6DB-9C7F-4AE3-A1D8-FA6135EB3689}",
 					"AttributeValues":
 					[
 						{
 							"ID": "{A294F77C-8A89-419E-B494-8BFCC80DB634}",
 							"Value": "RelationshipType"
-						}
-					]
-				},
-				{
-					"ID": "{7734AD93-8328-421B-BD78-E353EEFB0879}",
-					"AttributeValues":
-					[
-						{
-							"ID": "{A294F77C-8A89-419E-B494-8BFCC80DB634}",
-							"Value": "DestinationObject"
 						}
 					]
 				},
@@ -360,20 +318,6 @@
 					"PropertyValues":
 					[
 						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "Class"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "String"
-							}
-						},
-						{
 							"Name": "RelationshipType",
 							"Value": "instance labeled by"
 						}
@@ -384,20 +328,6 @@
 					"Comment": "String.labels instance of Class",
 					"PropertyValues":
 					[
-						{
-							"Name": "SourceObject",
-							"Value":
-							{
-								"Name": "String"
-							}
-						},
-						{
-							"Name": "DestinationObject",
-							"Value":
-							{
-								"Name": "Class"
-							}
-						},
 						{
 							"Name": "RelationshipType",
 							"Value": "labels instance of"
