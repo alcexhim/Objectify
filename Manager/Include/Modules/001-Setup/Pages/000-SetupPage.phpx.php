@@ -53,7 +53,10 @@
 			
 			$inst_Class_has_sub_Class = Instance::GetByGlobalIdentifier("{C14BC80D-879C-4E6F-9123-E8DFB13F4666}");
 			$inst_Class_has_super_Class = Instance::GetByGlobalIdentifier("{100F0308-855D-4EC5-99FA-D8976CA20053}");
-
+			
+			$objLanguageString = TenantObject::GetByName("TranslatableTextConstantValue");
+			$objTranslatableTextConstant = TenantObject::GetByName("TranslatableTextConstant");
+			
 			// Set up Relationships first
 			if (isset($filedata->Relationships)) {
 				if ($filedata->Relationships != null)
@@ -112,50 +115,81 @@
 						{
 							$obj = TenantObject::GetByName($obj_data->Name);
 							$instObj = Instance::GetByGlobalIdentifier($obj->GlobalIdentifier);
-							
-							if (isset($obj_data->ParentObjects))
+						}
+						else if (isset($obj_data->ID))
+						{
+							$instObj = Instance::GetByGlobalIdentifier($obj_data->ID);
+						}
+						
+						if (isset($obj_data->ParentObjects))
+						{
+							foreach ($obj_data->ParentObjects as $pobj_data)
 							{
-								foreach ($obj_data->ParentObjects as $pobj_data)
-								{
-									$pobj = TenantObject::GetByName($pobj_data->Name);
-									$instPObj = Instance::GetByGlobalIdentifier($pobj->GlobalIdentifier);
-									
-									Relationship::Create($inst_Class_has_sub_Class, $instPObj, $instObj);
-									Relationship::Create($inst_Class_has_super_Class, $instObj, $instPObj);
-								}
+								$pobj = TenantObject::GetByName($pobj_data->Name);
+								$instPObj = Instance::GetByGlobalIdentifier($pobj->GlobalIdentifier);
+								
+								Relationship::Create($inst_Class_has_sub_Class, $instPObj, $instObj);
+								Relationship::Create($inst_Class_has_super_Class, $instObj, $instPObj);
 							}
-							
-							// Then check Object Instances for attribute values
-							if (is_array($obj_data->Instances))
+						}
+						
+						// Then check Object Instances for attribute values
+						if (is_array($obj_data->Instances))
+						{
+							$count = count($obj_data->Instances);
+							for ($i = 0; $i < $count; $i++)
 							{
-								$count = count($obj_data->Instances);
-								for ($i = 0; $i < $count; $i++)
+								$pobj_data = $obj_data->Instances[$i];
+								$instPObj = Instance::GetByGlobalIdentifier($pobj_data->ID);
+								
+								if (isset($pobj_data->AttributeValues))
 								{
-									$pobj_data = $obj_data->Instances[$i];
-									$instPObj = Instance::GetByGlobalIdentifier($pobj_data->ID);
-									
-									if (isset($pobj_data->AttributeValues))
+									if (is_array($pobj_data->AttributeValues))
 									{
-										if (is_array($pobj_data->AttributeValues))
+										foreach ($pobj_data->AttributeValues as $attval)
 										{
-											foreach ($pobj_data->AttributeValues as $attval)
+											if (isset($attval->ID))
 											{
-												if (isset($attval->ID))
+												$instatt = Instance::GetByGlobalIdentifier($attval->ID);
+												if ($instatt == null)
 												{
-													$instatt = Instance::GetByGlobalIdentifier($attval->ID);
-													if ($instatt == null)
-													{
-														trigger_error("[FAIL] setting attribute with id '" . $attval->ID . "' on inst '" . $pobj_data->ID . "' to '" . $attval->Value . "'");
-													}
-													else
-													{
-														$value = $attval->Value;
-														$instPObj->SetAttributeValue($instatt, $value);
-													}
+													trigger_error("[FAIL] setting attribute with id '" . $attval->ID . "' on inst '" . $pobj_data->ID . "' to '" . $attval->Value . "'");
+												}
+												else
+												{
+													$value = $attval->Value;
+													$instPObj->SetAttributeValue($instatt, $value);
 												}
 											}
 										}
 									}
+								}
+							}
+						}
+						
+						// Then check for translatable values
+						if (isset($obj_data->TranslatableValues))
+						{
+							if (is_array($obj_data->TranslatableValues))
+							{
+								foreach ($obj_data->TranslatableValues as $transval)
+								{
+									$instRelationship = Instance::GetByGlobalIdentifier($transval->RelationshipID);
+									$instTTC_Value = $objTranslatableTextConstant->CreateInstance();
+									
+									foreach ($transval->Values as $val)
+									{
+										$instLanguage = Instance::GetByGlobalIdentifier($val->LanguageInstanceID);
+										
+										$instLanguage_Value = $objLanguageString->CreateInstance(array
+										(
+											new TenantObjectInstancePropertyValue("Language", $instLanguage),
+											new TenantObjectInstancePropertyValue("Value", $val->Value)
+										));
+										
+										Relationship::Create(KnownRelationships::get___Translatable_Text_Constant__has__Translatable_Text_Constant_Value(), $instTTC_Value, array($instLanguage_Value));
+									}
+									Relationship::Create($instRelationship, $instObj, $instTTC_Value);
 								}
 							}
 						}
