@@ -971,71 +971,8 @@
 		
 		public function ToString()
 		{
-			// return $this->Name;	// this takes 20 spins
-			// without takes 23 spins, a difference of +3
-			// so getting the Title property is slower, but not by much...
-			
 			$instObject = Instance::GetByGlobalIdentifier($this->GlobalIdentifier);
-			$relLabeledBy = Relationship::GetBySourceInstance($instObject, KnownRelationships::get___Class__has_title__Translatable_Text_Constant());
-			$relLabeledBy = $relLabeledBy[0];
-			
-			if ($relLabeledBy != null)
-			{
-				$insts = $relLabeledBy->GetDestinationInstances();
-				
-				$instRelationship_HasValue = Instance::GetByGlobalIdentifier("{F9B60C00-FF1D-438F-AC74-6EDFA8DD7324}");
-				$relHasValue = Relationship::GetBySourceInstance($insts[0], $instRelationship_HasValue);
-				if (count($relHasValue) > 0)
-				{
-					$relHasValue = $relHasValue[0];
-					
-					$insts = $relHasValue->GetDestinationInstances();
-					
-					// we should do this once we have deprecated Properties on TTC
-					// $str = $insts[0]->GetAttributeValue("Value");
-					
-					$str = $insts[0]->ToString();
-					return $str;
-				}
-			}
-			return "";
-			
-			$propTitle = $this->GetPropertyValue("Title");
-			if ($propTitle != null)
-			{
-				$insts = $propTitle->GetInstances();
-				$objLanguage = TenantObject::GetByName("Language");
-				
-				if ($objLanguage == null)
-				{
-					Objectify::Log("The 'Language' object is missing! You may need to re-install Objectify.");
-				}
-				else
-				{
-					$defaultLanguage = $objLanguage->GetInstance(array
-					(
-						new TenantObjectInstancePropertyValue("Code", "en-US")
-					));
-					
-					// TODO: figure out how not to loop through all the instances
-					// e.g. $inst = $propTitle->GetInstance(array(new TenantObjectInstancePropertyValue("Language", ...)))
-					foreach ($insts as $inst)
-					{
-						$propLang = $inst->GetPropertyValue("Language");
-						if ($propLang == null)
-						{
-							Objectify::Log("The 'Language' instance property is missing! You may need to re-install Objectify.", array
-							(
-								"Global Identifier" => $inst->GlobalIdentifier,
-								"Object" => $inst->ParentObject->Name
-							));
-							continue;
-						}
-						if ($propLang->GetInstance() == $defaultLanguage) return $inst->GetPropertyValue("Value");
-					}
-				}
-			}
-			return $this->Name;
+			return $instObject->ToString();
 		}
 	}
 ?>
