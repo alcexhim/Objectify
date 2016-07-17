@@ -2,6 +2,16 @@
 	"Relationships":
 	[
 		{
+			"Comment": "Class `Text Constant String Component`.has Text Attribute `Value`",
+			"RelationshipInstance": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+			"InverseRelationshipInstance": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
+			"SourceInstance": "{9934049D-048F-42AC-9B0F-539618A8057A}",
+			"DestinationInstances":
+			[
+				"{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}"
+			]
+		},
+		{
 			"Comment": "Class `Instance Property String Component`.has Text Attribute `Property Name`",
 			"RelationshipInstance": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
 			"InverseRelationshipInstance": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",

@@ -94,6 +94,16 @@
 							"Value": "RelationshipType"
 						}
 					]
+				},
+				{
+					"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+							"Value": "Value"
+						}
+					]
 				}
 			]
 		}

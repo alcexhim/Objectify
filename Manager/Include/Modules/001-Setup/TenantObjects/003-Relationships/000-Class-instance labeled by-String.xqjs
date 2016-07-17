@@ -62,13 +62,13 @@
 			]
 		},
 		{
-			"Comment": "Class `Instance Titleable Object`.instance labeled by String",
+			"Comment": "Class `Text Constant String Component`.instance labeled by String",
 			"RelationshipInstance": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
 			"InverseRelationshipInstance": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
-			"SourceInstance": "{DD658EAB-9A3D-4ED1-8631-E3A5A336A7B6}",
+			"SourceInstance": "{9934049D-048F-42AC-9B0F-539618A8057A}",
 			"DestinationInstances":
 			[
-				"{AA37C17F-CDB8-4ED2-BE87-3388DF4825BB}"
+				"{DD658EAB-9A3D-4ED1-8631-E3A5A336A7B6}"
 			]
 		},
 		{

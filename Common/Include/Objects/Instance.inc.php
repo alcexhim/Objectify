@@ -364,7 +364,8 @@
 						{
 							case "TextConstantStringComponent":
 							{
-								$value = $inst->GetPropertyValue("Value");
+								$attValue = Instance::GetByGlobalIdentifier("{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}");
+								$value = $inst->GetAttributeValue($attValue);
 								$retval .= $value;
 								break;
 							}

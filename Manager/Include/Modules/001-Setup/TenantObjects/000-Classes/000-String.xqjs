@@ -107,6 +107,16 @@
 							"Value": "RelationshipType"
 						}
 					]
+				},
+				{
+					"ID": "{E81D9358-CFA9-447C-854E-4A95BE22210D}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{A294F77C-8A89-419E-B494-8BFCC80DB634}",
+							"Value": "Value"
+						}
+					]
 				}
 			],
 			"TranslatableValues":
@@ -132,41 +142,34 @@
 					"Name": "StringComponent"
 				}
 			],
-			"InstanceProperties":
-			[
-				{
-					"Name": "Value",
-					"DataTypeName": "Text"
-				}
-			],
 			"Instances":
 			[
 				{
 					"ID": "{FEE39766-9A0D-49A2-A29F-45C17989DCF6}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "Value",
+							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
 							"Value": "/"
 						}
 					]
 				},
 				{
 					"ID": "{936E4426-5995-4713-BDEE-BF4F7BA2AFAE}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "Value",
+							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
 							"Value": " "
 						}
 					]
 				},
 				{
 					"ID": "{1BC6AC2B-7C3F-46EB-88F7-47F7070ED1DD}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "Value",
+							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
 							"Value": "."
 						}
 					]
@@ -304,6 +307,22 @@
 								"Instances":
 								[
 									"{E2F11C41-51F1-4DB2-A16F-C384267A8598}"
+								]
+							}
+						}
+					]
+				},
+				{
+					"ID": "{DD658EAB-9A3D-4ED1-8631-E3A5A336A7B6}",
+					"PropertyValues":
+					[
+						{
+							"Name": "Components",
+							"Value":
+							{
+								"Instances":
+								[
+									"{E81D9358-CFA9-447C-854E-4A95BE22210D}"
 								]
 							}
 						}
