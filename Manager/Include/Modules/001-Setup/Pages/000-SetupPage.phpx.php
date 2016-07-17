@@ -1063,7 +1063,7 @@
 						$instobj = $obj->GetThisInstance();
 						
 						Relationship::Create($instrel_Class__has_owner__User, $instobj, array($inst_xq_environments));
-						Relationship::Create($instrel_User__owner_for__Class, $instobj, array($inst_xq_environments));
+						Relationship::Create($instrel_User__owner_for__Class, $inst_xq_environments, array($instobj));
 						
 						Relationship::Create($instRel_Class__has__Object_Source, $instobj, array($instObjectSource_System));
 						Relationship::Create($instRel_Object_Source__for__Class, $instObjectSource_System, array($instobj));
