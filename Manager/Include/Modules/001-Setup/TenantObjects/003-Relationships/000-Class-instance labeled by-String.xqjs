@@ -2,6 +2,16 @@
 	"Relationships":
 	[
 		{
+			"Comment": "Class `Class`.instance labeled by String",
+			"RelationshipInstance": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+			"InverseRelationshipInstance": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+			"SourceInstance": "{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}",
+			"DestinationInstances":
+			[
+				"{DFF37594-DFC2-4269-A04B-510385B615A4}"
+			]
+		},
+		{
 			"Comment": "Class `Attribute`.instance labeled by String",
 			"RelationshipInstance": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
 			"InverseRelationshipInstance": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
