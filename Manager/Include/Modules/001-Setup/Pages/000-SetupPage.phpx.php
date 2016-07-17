@@ -134,58 +134,97 @@
 						}
 						
 						// Then check Object Instances for attribute values
-						if (is_array($obj_data->Instances))
+						if (isset($obj_data->Instances))
 						{
-							$count = count($obj_data->Instances);
-							for ($i = 0; $i < $count; $i++)
+							if (is_array($obj_data->Instances))
 							{
-								$pobj_data = $obj_data->Instances[$i];
-								$instPObj = Instance::GetByGlobalIdentifier($pobj_data->ID);
-								
-								// Then check for translatable values (Instance)
-								if (isset($pobj_data->TranslatableValues))
+								$count = count($obj_data->Instances);
+								for ($i = 0; $i < $count; $i++)
 								{
-									if (is_array($pobj_data->TranslatableValues))
+									$pobj_data = $obj_data->Instances[$i];
+									$instPObj = Instance::GetByGlobalIdentifier($pobj_data->ID);
+									
+									if (isset($pobj_data->Relationships))
 									{
-										foreach ($pobj_data->TranslatableValues as $transval)
+										if (is_array($pobj_data->Relationships))
 										{
-											$instRelationship = Instance::GetByGlobalIdentifier($transval->RelationshipID);
-											$instTTC_Value = $objTranslatableTextConstant->CreateInstance();
-												
-											foreach ($transval->Values as $val)
+											foreach ($pobj_data->Relationships as $rel)
 											{
-												$instLanguage = Instance::GetByGlobalIdentifier($val->LanguageInstanceID);
-								
-												$instLanguage_Value = $objLanguageString->CreateInstance(array
-												(
-													new TenantObjectInstancePropertyValue("Language", $instLanguage),
-													new TenantObjectInstancePropertyValue("Value", $val->Value)
-												));
+												trigger_error("REL creating " . $rel->RelationshipID);
+												$instRelationship = Instance::GetByGlobalIdentifier($rel->RelationshipID);
+												$instInverseRelationship = null;
+												if (isset($rel->InverseRelationshipID))
+												{
+													$instInverseRelationship = Instance::GetByGlobalIdentifier($rel->InverseRelationshipID);
+												}
 												
-												Relationship::Create(KnownRelationships::get___Translatable_Text_Constant__has__Translatable_Text_Constant_Value(), $instTTC_Value, array($instLanguage_Value));
+												if (isset($rel->DestinationInstances))
+												{
+													if (is_array($rel->DestinationInstances))
+													{
+														$array = array();
+														foreach ($rel->DestinationInstances as $destinstID)
+														{
+															$destinst = Instance::GetByGlobalIdentifier($destinstID);
+															$array[] = $destinst;
+															
+															if ($instInverseRelationship != null)
+															{
+																Relationship::Create($instInverseRelationship, $destinst, array($instPObj));
+															}
+														}
+														Relationship::Create($instRelationship, $instPObj, $array);
+													}
+												}
 											}
-											Relationship::Create($instRelationship, $instPObj, $instTTC_Value);
 										}
 									}
-								}
-								
-								if (isset($pobj_data->AttributeValues))
-								{
-									if (is_array($pobj_data->AttributeValues))
+									
+									// Then check for translatable values (Instance)
+									if (isset($pobj_data->TranslatableValues))
 									{
-										foreach ($pobj_data->AttributeValues as $attval)
+										if (is_array($pobj_data->TranslatableValues))
 										{
-											if (isset($attval->ID))
+											foreach ($pobj_data->TranslatableValues as $transval)
 											{
-												$instatt = Instance::GetByGlobalIdentifier($attval->ID);
-												if ($instatt == null)
+												$instRelationship = Instance::GetByGlobalIdentifier($transval->RelationshipID);
+												$instTTC_Value = $objTranslatableTextConstant->CreateInstance();
+													
+												foreach ($transval->Values as $val)
 												{
-													trigger_error("[FAIL] setting attribute with id '" . $attval->ID . "' on inst '" . $pobj_data->ID . "' to '" . $attval->Value . "'");
+													$instLanguage = Instance::GetByGlobalIdentifier($val->LanguageInstanceID);
+									
+													$instLanguage_Value = $objLanguageString->CreateInstance(array
+													(
+														new TenantObjectInstancePropertyValue("Language", $instLanguage),
+														new TenantObjectInstancePropertyValue("Value", $val->Value)
+													));
+													
+													Relationship::Create(KnownRelationships::get___Translatable_Text_Constant__has__Translatable_Text_Constant_Value(), $instTTC_Value, array($instLanguage_Value));
 												}
-												else
+												Relationship::Create($instRelationship, $instPObj, $instTTC_Value);
+											}
+										}
+									}
+									
+									if (isset($pobj_data->AttributeValues))
+									{
+										if (is_array($pobj_data->AttributeValues))
+										{
+											foreach ($pobj_data->AttributeValues as $attval)
+											{
+												if (isset($attval->ID))
 												{
-													$value = $attval->Value;
-													$instPObj->SetAttributeValue($instatt, $value);
+													$instatt = Instance::GetByGlobalIdentifier($attval->ID);
+													if ($instatt == null)
+													{
+														trigger_error("[FAIL] setting attribute with id '" . $attval->ID . "' on inst '" . $pobj_data->ID . "' to '" . $attval->Value . "'");
+													}
+													else
+													{
+														$value = $attval->Value;
+														$instPObj->SetAttributeValue($instatt, $value);
+													}
 												}
 											}
 										}
