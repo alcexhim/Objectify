@@ -142,6 +142,33 @@
 								$pobj_data = $obj_data->Instances[$i];
 								$instPObj = Instance::GetByGlobalIdentifier($pobj_data->ID);
 								
+								// Then check for translatable values (Instance)
+								if (isset($pobj_data->TranslatableValues))
+								{
+									if (is_array($pobj_data->TranslatableValues))
+									{
+										foreach ($pobj_data->TranslatableValues as $transval)
+										{
+											$instRelationship = Instance::GetByGlobalIdentifier($transval->RelationshipID);
+											$instTTC_Value = $objTranslatableTextConstant->CreateInstance();
+												
+											foreach ($transval->Values as $val)
+											{
+												$instLanguage = Instance::GetByGlobalIdentifier($val->LanguageInstanceID);
+								
+												$instLanguage_Value = $objLanguageString->CreateInstance(array
+												(
+													new TenantObjectInstancePropertyValue("Language", $instLanguage),
+													new TenantObjectInstancePropertyValue("Value", $val->Value)
+												));
+												
+												Relationship::Create(KnownRelationships::get___Translatable_Text_Constant__has__Translatable_Text_Constant_Value(), $instTTC_Value, array($instLanguage_Value));
+											}
+											Relationship::Create($instRelationship, $instPObj, $instTTC_Value);
+										}
+									}
+								}
+								
 								if (isset($pobj_data->AttributeValues))
 								{
 									if (is_array($pobj_data->AttributeValues))
@@ -167,7 +194,7 @@
 							}
 						}
 						
-						// Then check for translatable values
+						// Then check for translatable values (Object)
 						if (isset($obj_data->TranslatableValues))
 						{
 							if (is_array($obj_data->TranslatableValues))
