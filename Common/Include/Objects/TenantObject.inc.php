@@ -972,6 +972,7 @@
 		public function ToString()
 		{
 			$instObject = Instance::GetByGlobalIdentifier($this->GlobalIdentifier);
+			if ($instObject == null) return "no inst for Object '" . $this->Name . "'";
 			return $instObject->ToString();
 		}
 	}

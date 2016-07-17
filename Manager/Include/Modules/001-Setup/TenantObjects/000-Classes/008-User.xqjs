@@ -32,21 +32,20 @@
 			[
 				{
 					"ID": "{344CC8C6-EC17-4568-BACA-D55C77B2B0BF}",
-					"PropertyValues":
+					"Relationships":
 					[
 						{
-							"Name": "Components",
-							"Value":
-							{
-								"Instances":
-								[
-									"{91EB4F16-9E36-4EED-8E02-921DF802DC15}",
-									"{936E4426-5995-4713-BDEE-BF4F7BA2AFAE}",
-									"{FEE39766-9A0D-49A2-A29F-45C17989DCF6}",
-									"{936E4426-5995-4713-BDEE-BF4F7BA2AFAE}",
-									"{BAE9E054-ED1E-4DE7-A70B-33A437591D80}"
-								]
-							}
+							"Comment": "String.has String Component",
+							"RelationshipID": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
+							"InverseRelationshipID": "{40E17597-0AEB-4C56-BBAB-FC600E1196DD}",
+							"DestinationInstances":
+							[
+								"{91EB4F16-9E36-4EED-8E02-921DF802DC15}",
+								"{936E4426-5995-4713-BDEE-BF4F7BA2AFAE}",
+								"{FEE39766-9A0D-49A2-A29F-45C17989DCF6}",
+								"{936E4426-5995-4713-BDEE-BF4F7BA2AFAE}",
+								"{BAE9E054-ED1E-4DE7-A70B-33A437591D80}"
+							]
 						}
 					]
 				}

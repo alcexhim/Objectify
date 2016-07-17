@@ -385,6 +385,28 @@
 							"Value": "for"
 						}
 					]
+				},
+				{
+					"ID": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
+					"Comment": "String.has String Component",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has"
+						}
+					]
+				},
+				{
+					"ID": "{40E17597-0AEB-4C56-BBAB-FC600E1196DD}",
+					"Comment": "String Component.for String",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "for"
+						}
+					]
 				}
 			]
 		}

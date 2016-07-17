@@ -54,34 +54,32 @@
 				{
 					"ID": "{2E113B59-CFF0-4F08-A5B2-1E5061491AC5}",
 					"Comment": "Translatable Text Constant.get Values",
-					"PropertyValues":
+					"Relationships":
 					[
 						{
-							"Name": "Components",
-							"Value":
-							{
-								"Instances":
-								[
-									"{76D2CE0D-AA4D-460B-B844-2BD76EF9902B}"
-								]
-							}
+							"Comment": "String.has String Component",
+							"RelationshipID": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
+							"InverseRelationshipID": "{40E17597-0AEB-4C56-BBAB-FC600E1196DD}",
+							"DestinationInstances":
+							[
+								"{76D2CE0D-AA4D-460B-B844-2BD76EF9902B}"
+							]
 						}
 					]
 				},
 				{
 					"ID": "{BBE5E586-FC28-451A-8495-B0CDA6203E03}",
 					"Comment": "Translatable Text Constant Value.get Value",
-					"PropertyValues":
+					"Relationships":
 					[
 						{
-							"Name": "Components",
-							"Value":
-							{
-								"Instances":
-								[
-									"{9CE143E4-410F-4373-9BAF-778CEB794C66}"
-								]
-							}
+							"Comment": "String.has String Component",
+							"RelationshipID": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
+							"InverseRelationshipID": "{40E17597-0AEB-4C56-BBAB-FC600E1196DD}",
+							"DestinationInstances":
+							[
+								"{9CE143E4-410F-4373-9BAF-778CEB794C66}"
+							]
 						}
 					]
 				}
@@ -236,17 +234,16 @@
 			[
 				{
 					"ID": "{AA37C17F-CDB8-4ED2-BE87-3388DF4825BB}",
-					"PropertyValues":
+					"Relationships":
 					[
 						{
-							"Name": "Components",
-							"Value":
-							{
-								"Instances":
-								[
-									"{03166067-EBEA-4153-80B4-E0847D166EB2}"
-								]
-							}
+							"Comment": "String.has String Component",
+							"RelationshipID": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
+							"InverseRelationshipID": "{40E17597-0AEB-4C56-BBAB-FC600E1196DD}",
+							"DestinationInstances":
+							[
+								"{03166067-EBEA-4153-80B4-E0847D166EB2}"
+							]
 						}
 					]
 				}

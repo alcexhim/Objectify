@@ -141,5 +141,16 @@
 		{
 			return Instance::GetByGlobalIdentifier(self::Relationship___Class__destination_for__Relationship);
 		}
+		
+		const Relationship___String__has__String_Component = "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}";
+		const Relationship___String_Component__for__String = "{40E17597-0AEB-4C56-BBAB-FC600E1196DD}";
+		public static function get___String__has__String_Component()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___String__has__String_Component);
+		}
+		public static function get___String_Component__for__String()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___String_Component__for__String);
+		}
 	}
 ?>

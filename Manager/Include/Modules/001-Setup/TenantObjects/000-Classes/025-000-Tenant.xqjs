@@ -23,17 +23,16 @@
 			[
 				{
 					"ID": "{9FE564A4-53AE-45B4-8110-BF732164C683}",
-					"PropertyValues":
+					"Relationships":
 					[
 						{
-							"Name": "Components",
-							"Value":
-							{
-								"Instances":
-								[
-									"{2AB66547-7C22-41C5-8620-53FC524CCEAF}"
-								]
-							}
+							"Comment": "String.has String Component",
+							"RelationshipID": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
+							"InverseRelationshipID": "{40E17597-0AEB-4C56-BBAB-FC600E1196DD}",
+							"DestinationInstances":
+							[
+								"{2AB66547-7C22-41C5-8620-53FC524CCEAF}"
+							]
 						}
 					]
 				}

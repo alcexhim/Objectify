@@ -350,28 +350,24 @@
 				
 				if ($inst->ParentObject->Name == "String")
 				{
-					$components = $inst->GetPropertyValue("Components");
-					if ($components === null)
-					{
-						trigger_error("XquizIT: Instance Display Title - Components property is NULL");
-						return "";
-					}
+					$rels = Relationship::GetBySourceInstance($inst, KnownRelationships::get___String__has__String_Component());
+					$rels = $rels[0];
+					$componentInsts = $rels->GetDestinationInstances();
 					
-					$insts = $components->GetInstances();
-					foreach ($insts as $inst)
+					foreach ($componentInsts as $componentInst)
 					{
-						switch ($inst->ParentObject->Name)
+						switch ($componentInst->ParentObject->Name)
 						{
 							case "TextConstantStringComponent":
 							{
 								$attValue = Instance::GetByGlobalIdentifier("{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}");
-								$value = $inst->GetAttributeValue($attValue);
+								$value = $componentInst->GetAttributeValue($attValue);
 								$retval .= $value;
 								break;
 							}
 							case "InstanceAttributeStringComponent":
 							{
-								$propertyName = $inst->GetAttributeValue("PropertyName");
+								$propertyName = $componentInst->GetAttributeValue("PropertyName");
 								$propertyValue = $this->GetAttributeValue($propertyName, "[ATT: " . $propertyName . " on " . $this->ParentObject->Name . "]");
 								$retval .= $propertyValue;
 								break;
@@ -380,7 +376,7 @@
 							{
 								// Extracts a single instance from the given Relationship.
 								
-								$rels = Relationship::GetBySourceInstance($inst, KnownRelationships::get___Extract_Single_Instance_String_Component__has__Relationship());
+								$rels = Relationship::GetBySourceInstance($componentInst, KnownRelationships::get___Extract_Single_Instance_String_Component__has__Relationship());
 								$rel = $rels[0];
 								$insts = $rel->GetDestinationInstances();
 								$instRel = $insts[0];
@@ -409,7 +405,7 @@
 							}
 							case "InstancePropertyStringComponent":
 							{
-								$propertyName = $inst->GetAttributeValue("PropertyName");
+								$propertyName = $componentInst->GetAttributeValue("PropertyName");
 								$propertyValue = $this->GetPropertyValue($propertyName, "[" . $propertyName . " on " . $this->ParentObject->Name . "]");
 								
 								if ($propertyName == "Values" && $this->ParentObject->Name == "TranslatableTextConstant")

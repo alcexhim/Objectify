@@ -1059,6 +1059,48 @@
 			[
 				"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
 			]
+		},
+		
+		{
+			"Comment": "Relationship `String.has String Component`.has source Class `String`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
+			"DestinationInstances":
+			[
+				"{69FA0360-4747-49BC-8B82-06CD121B6F36}"
+			]
+		},
+		{
+			"Comment": "Relationship `String.has String Component`.has destination Class `String Component`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
+			"DestinationInstances":
+			[
+				"{F9E2B671-13F5-4172-A568-725ACD8BBFAB}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `String Component.for String`.has source Class `String Component`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{40E17597-0AEB-4C56-BBAB-FC600E1196DD}",
+			"DestinationInstances":
+			[
+				"{F9E2B671-13F5-4172-A568-725ACD8BBFAB}"
+			]
+		},
+		{
+			"Comment": "Relationship `String Component.for String` has destination Class `String`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{40E17597-0AEB-4C56-BBAB-FC600E1196DD}",
+			"DestinationInstances":
+			[
+				"{69FA0360-4747-49BC-8B82-06CD121B6F36}"
+			]
 		}
 	]
 }
