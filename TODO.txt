@@ -1,3 +1,36 @@
+Field "Report Name"
+	.has Field Source "'Name' on 'Report'" [Attribute Field Source]
+		The Field Source is what gets updated when this field is edited in a UI Task.
+		
+	.has title Translatable Text Constant "Report Name"
+	.has description Translatable Text Constant "The name of this report"
+
+Task "Edit Report"
+	.has summary Field "Report Name"
+	.has summary Field "Report Type"
+	.has summary Field "Data Source"
+	.has summary Field "Data Source Type"
+	.has summary Field "Primary Business Object"
+	
+	.has detail Tab "Columns"
+	.has detail Tab "Sort"
+	.has detail Tab "Filter"
+	.has detail Tab "Prompts"
+	.has detail Tab "Output"
+	.has detail Tab "Share"
+	.has detail Tab "Advanced"
+
+Tab "Filter"
+	.has Component "Specify the filter condition..." [Label Page Component]
+	.has Component "filter list" [Instance List Editor Page Component]
+
+Instance List Editor Page Component "filter list"
+	;
+
+
+
+
+
 create "Calculated String" object inherits from "Calculated Field"
 
 Object should have an object property "Instance Title" of type MultipleInstance:"Calculated String"
