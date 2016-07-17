@@ -6,14 +6,7 @@
 			"Instances":
 			[
 				{
-					"ID": "{EB941FB3-0CF6-44DD-B693-7A108F8B89D3}",
-					"AttributeValues":
-					[
-						{
-							"ID": "{A294F77C-8A89-419E-B494-8BFCC80DB634}",
-							"Value": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}"
-						}
-					]
+					"ID": "{EB941FB3-0CF6-44DD-B693-7A108F8B89D3}"
 				}
 			]
 		},

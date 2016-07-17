@@ -22,14 +22,7 @@
 			"Instances":
 			[
 				{
-					"ID": "{BAE9E054-ED1E-4DE7-A70B-33A437591D80}",
-					"AttributeValues":
-					[
-						{
-							"ID": "{A294F77C-8A89-419E-B494-8BFCC80DB634}",
-							"Value": "{6C29856C-3B10-4F5B-A291-DD3CA4C04A2F}"
-						}
-					]
+					"ID": "{BAE9E054-ED1E-4DE7-A70B-33A437591D80}"
 				}
 			]
 		},

@@ -378,13 +378,29 @@
 							case "ExtractSingleInstanceStringComponent":
 							{
 								// Extracts a single instance from the given Relationship.
-								$propertyName = $inst->GetAttributeValue("PropertyName");
 								
-								$instRel = Instance::GetByGlobalIdentifier($propertyName);
-								$rels = Relationship::GetBySourceInstance($this, $instRel);
+								$rels = Relationship::GetBySourceInstance($inst, KnownRelationships::get___Extract_Single_Instance_String_Component__has__Relationship());
 								$rel = $rels[0];
 								$insts = $rel->GetDestinationInstances();
+								$instRel = $insts[0];
+								
+								// $propertyName = $inst->GetAttributeValue("PropertyName");
+								
+								// $instRel = Instance::GetByGlobalIdentifier($propertyName);
+								$rels = Relationship::GetBySourceInstance($this, $instRel);
+								$rel = $rels[0];
+								if ($rel == null)
+								{
+									$retval .= "[ESI: no rels found for " . $instRel->GetInstanceID() . " on " . $this->GetInstanceID() . "]";
+									break;
+								}
+								$insts = $rel->GetDestinationInstances();
 								$inst = $insts[0];
+								if ($inst == null)
+								{
+									$retval .= "[ESI: no insts found for " . $instRel->GetInstanceID() . " on " . $this->GetInstanceID() . "]";
+									break;
+								}
 								
 								$propertyValue = $inst->ToString();
 								$retval .= $propertyValue;

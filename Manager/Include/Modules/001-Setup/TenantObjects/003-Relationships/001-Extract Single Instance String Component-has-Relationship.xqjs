@@ -1,0 +1,35 @@
+{
+	"Relationships":
+	[
+		{
+			"Comment": "Extract Single Instance String Component.has Relationship",
+			"RelationshipInstance": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
+			"InverseRelationshipInstance": "{B0111132-8721-405C-967B-0BEFA92CFE9A}",
+			"SourceInstance": "{E2F11C41-51F1-4DB2-A16F-C384267A8598}",
+			"DestinationInstances":
+			[
+				"{B8BDB905-69DD-49CD-B557-0781F7EF2C50}"
+			]
+		},
+		{
+			"Comment": "Extract Single Instance String Component.has Relationship",
+			"RelationshipInstance": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
+			"InverseRelationshipInstance": "{B0111132-8721-405C-967B-0BEFA92CFE9A}",
+			"SourceInstance": "{EB941FB3-0CF6-44DD-B693-7A108F8B89D3}",
+			"DestinationInstances":
+			[
+				"{B8BDB905-69DD-49CD-B557-0781F7EF2C50}"
+			]
+		},
+		{
+			"Comment": "Extract Single Instance String Component.has Relationship",
+			"RelationshipInstance": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
+			"InverseRelationshipInstance": "{B0111132-8721-405C-967B-0BEFA92CFE9A}",
+			"SourceInstance": "{BAE9E054-ED1E-4DE7-A70B-33A437591D80}",
+			"DestinationInstances":
+			[
+				"{6C29856C-3B10-4F5B-A291-DD3CA4C04A2F}"
+			]
+		}
+	]
+}

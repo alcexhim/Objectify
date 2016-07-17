@@ -99,5 +99,15 @@
 			return Instance::GetByGlobalIdentifier(self::Relationship___User__owner_for__Class);
 		}
 		
+		const Relationship___Extract_Single_Instance_String_Component__has__Relationship = "{5E499753-F50F-4A9E-BF53-DC013820499C}";
+		const Relationship___Relationship__for__Extract_Single_Instance_String_Component = "{B0111132-8721-405C-967B-0BEFA92CFE9A}";
+		public static function get___Extract_Single_Instance_String_Component__has__Relationship()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Extract_Single_Instance_String_Component__has__Relationship);
+		}
+		public static function get___Relationship__for__Extract_Single_Instance_String_Component()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Relationship__for__Extract_Single_Instance_String_Component);
+		}
 	}
 ?>
