@@ -59,7 +59,7 @@
 			
 			// Set up Relationships first
 			if (isset($filedata->Relationships)) {
-				if ($filedata->Relationships != null)
+				if (is_array($filedata->Relationships))
 				{
 					foreach ($filedata->Relationships as $rel)
 					{
@@ -130,6 +130,42 @@
 								
 								Relationship::Create($inst_Class_has_sub_Class, $instPObj, $instObj);
 								Relationship::Create($inst_Class_has_super_Class, $instObj, $instPObj);
+							}
+						}
+						
+
+						if (isset($obj_data->Relationships))
+						{
+							if (is_array($obj_data->Relationships))
+							{
+								foreach ($obj_data->Relationships as $rel)
+								{
+									$instRelationship = Instance::GetByGlobalIdentifier($rel->RelationshipID);
+									$instInverseRelationship = null;
+									if (isset($rel->InverseRelationshipID))
+									{
+										$instInverseRelationship = Instance::GetByGlobalIdentifier($rel->InverseRelationshipID);
+									}
+						
+									if (isset($rel->DestinationInstances))
+									{
+										if (is_array($rel->DestinationInstances))
+										{
+											$array = array();
+											foreach ($rel->DestinationInstances as $destinstID)
+											{
+												$destinst = Instance::GetByGlobalIdentifier($destinstID);
+												$array[] = $destinst;
+													
+												if ($instInverseRelationship != null)
+												{
+													Relationship::Create($instInverseRelationship, $destinst, array($instObj));
+												}
+											}
+											Relationship::Create($instRelationship, $instObj, $array);
+										}
+									}
+								}
 							}
 						}
 						
