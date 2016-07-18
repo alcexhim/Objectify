@@ -9,6 +9,19 @@
 				{
 					"Name": "Class"
 				}
+			],
+			"Relationships":
+			[
+				{
+					"Comment": "Language.has Attribute 'LocaleID' [Numeric Attribute], 'Code' [Text Attribute]",
+					"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+					"InverseRelationshipID": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
+					"DestinationInstances":
+					[
+						"{B31887C6-B16E-457F-814A-071C9CBCAB98}",
+						"{93742C80-CDF7-4700-A03B-718F92B2666C}"
+					]
+				}
 			]
 		},
 		{
@@ -251,29 +264,18 @@
 		},
 		{
 			"Name": "Language",
-			"InstanceProperties":
-			[
-				{
-					"Name": "LocaleID",
-					"DataTypeName": "Text"
-				},
-				{
-					"Name": "Code",
-					"DataTypeName": "Text"
-				}
-			],
 			"Instances":
 			[
 				{
 					"ID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "LocaleID",
+							"ID": "{B31887C6-B16E-457F-814A-071C9CBCAB98}",
 							"Value": "1033"
 						},
 						{
-							"Name": "Code",
+							"ID": "{93742C80-CDF7-4700-A03B-718F92B2666C}",
 							"Value": "en-US"
 						}
 					]

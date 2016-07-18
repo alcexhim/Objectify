@@ -14,6 +14,16 @@
 							"Value": "Value"
 						}
 					]
+				},
+				{
+					"ID": "{B31887C6-B16E-457F-814A-071C9CBCAB98}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+							"Value": "LocaleID"
+						}
+					]
 				}
 			]
 		}
