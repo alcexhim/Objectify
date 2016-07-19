@@ -19,11 +19,12 @@
 		public function OnInitializing(CancelEventArgs $e)
 		{
 			$iid = $this->Page->GetPathVariableValue("instanceID");
-			$litInstanceID = $e->RenderingPage->GetControlByID("litInstanceID");
-			
 			$iidParts = explode("$", $iid);
 			$inst = Instance::GetByID($iidParts[1]);
-			$litInstanceID->Value = $inst->ToString();
+			
+			$idwMain = $e->RenderingPage->GetControlByID("idwMain");
+			$idwMain->ShowURL = false;
+			$idwMain->CurrentInstance = $inst;
 			
 			$litGlobalIdentifier = $e->RenderingPage->GetControlByID("litGlobalIdentifier");
 			$litGlobalIdentifier->Value = $inst->GlobalIdentifier;

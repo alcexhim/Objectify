@@ -4,7 +4,7 @@
 			<Content>
 				<wfx:Section PlaceholderID="Content">
 					<html:Heading Level="1">Edit Instance: <html:Literal ID="litInstanceObjectID" /></html:Heading>
-					<html:Heading Level="2"><html:Literal ID="litInstanceID" /></html:Heading>
+					<html:Heading Level="2"><ofx:InstanceDisplayWidget ID="idwMain" ShowURL="false" /></html:Heading>
 					
 					<table>
 						<tr>
