@@ -27,13 +27,17 @@
 			$ibSearch = $e->RenderingPage->GetControlByID("ibSearch");
 			$ibSearch->ValidObjects[] = TenantObject::GetByName("Task");
 			
-			if (User::GetCurrent() == null)
+			$DisableLoginPage = System::GetConfigurationValue("Application.DisableLoginPage", false);
+			if (!$DisableLoginPage)
 			{
-				if ($e->RenderingPage->GetServerVariableValue("RequireLogin") !== "false")
+				if (User::GetCurrent() == null)
 				{
-					System::RedirectToLoginPage();
-					$e->Cancel = true;
-					return;
+					if ($e->RenderingPage->GetServerVariableValue("RequireLogin") !== "false")
+					{
+						System::RedirectToLoginPage();
+						$e->Cancel = true;
+						return;
+					}
 				}
 			}
 			
