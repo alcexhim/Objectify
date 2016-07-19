@@ -45,6 +45,25 @@
 			)); // Tenant Manager
 		}
 		
+		private function ProcessRelationshipsXQJS($instRelationship, $destinationInstances, $instObj, $instInverseRelationship = null)
+		{
+			if (is_array($destinationInstances))
+			{
+				$array = array();
+				foreach ($destinationInstances as $destinstID)
+				{
+					$destinst = Instance::GetByGlobalIdentifier($destinstID);
+					$array[] = $destinst;
+						
+					if ($instInverseRelationship != null)
+					{
+						Relationship::Create($instInverseRelationship, $destinst, array($instObj));
+					}
+				}
+				Relationship::Create($instRelationship, $instObj, $array);
+			}
+		}
+		
 		private function LoadPostXQJS($filename)
 		{
 			$retval = array();
@@ -149,21 +168,7 @@
 						
 									if (isset($rel->DestinationInstances))
 									{
-										if (is_array($rel->DestinationInstances))
-										{
-											$array = array();
-											foreach ($rel->DestinationInstances as $destinstID)
-											{
-												$destinst = Instance::GetByGlobalIdentifier($destinstID);
-												$array[] = $destinst;
-													
-												if ($instInverseRelationship != null)
-												{
-													Relationship::Create($instInverseRelationship, $destinst, array($instObj));
-												}
-											}
-											Relationship::Create($instRelationship, $instObj, $array);
-										}
+										$this->ProcessRelationshipsXQJS($instRelationship, $rel->DestinationInstances, $instObj, $instInverseRelationship);
 									}
 								}
 							}
@@ -196,21 +201,7 @@
 												
 												if (isset($rel->DestinationInstances))
 												{
-													if (is_array($rel->DestinationInstances))
-													{
-														$array = array();
-														foreach ($rel->DestinationInstances as $destinstID)
-														{
-															$destinst = Instance::GetByGlobalIdentifier($destinstID);
-															$array[] = $destinst;
-															
-															if ($instInverseRelationship != null)
-															{
-																Relationship::Create($instInverseRelationship, $destinst, array($instPObj));
-															}
-														}
-														Relationship::Create($instRelationship, $instPObj, $array);
-													}
+													$this->ProcessRelationshipsXQJS($instRelationship, $rel->DestinationInstances, $instPObj, $instInverseRelationship);
 												}
 											}
 										}
