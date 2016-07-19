@@ -18,6 +18,32 @@
 			]
 		},
 		{
+			"Name": "Relationship",
+			"Instances":
+			[
+				{
+					"ID": "{419047F8-852B-4A4D-B161-A8BD022FD8EB}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has"
+						}
+					]
+				},
+				{
+					"ID": "{AA2D3B51-4153-4599-A983-6B4A13ADCBCB}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "for"
+						}
+					]
+				}
+			]
+		},
+		{
 			"ID": "{6A1F66F7-8EA6-43D1-B2AF-198F63B84710}",
 			"Name": "Package",
 			"ParentObjects":
@@ -26,24 +52,16 @@
 					"Name": "Class"
 				}
 			],
-			"Properties":
+			"Relationships":
 			[
 				{
-					"Name": "Layouts",
-					"DataTypeName": "MultipleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "Layout"
-							}
-						],
-						"Instances":
-						[
-							"{3E45AA17-6E8E-41DB-9C94-E84B4B4176E8}"
-						]
-					}
+					"Comment": "Class `Package`.has Layout `...`",
+					"RelationshipID": "{419047F8-852B-4A4D-B161-A8BD022FD8EB}",
+					"InverseRelationshipID": "{AA2D3B51-4153-4599-A983-6B4A13ADCBCB}",
+					"DestinationInstances":
+					[
+						"{3E45AA17-6E8E-41DB-9C94-E84B4B4176E8}"
+					]
 				}
 			],
 			"InstanceProperties":
@@ -74,6 +92,50 @@
 						]
 					}
 				}
+			]
+		}
+	],
+	"Relationships":
+	[
+		{
+			"Comment": "Relationship `Package.has Layout`.has source Class `Package`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{419047F8-852B-4A4D-B161-A8BD022FD8EB}",
+			"DestinationInstances":
+			[
+				"{6A1F66F7-8EA6-43D1-B2AF-198F63B84710}"
+			]
+		},
+		{
+			"Comment": "Relationship `Package.has Layout`.has destination Class `Layout`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{419047F8-852B-4A4D-B161-A8BD022FD8EB}",
+			"DestinationInstances":
+			[
+				"{BCDB6FFD-D2F2-4B63-BD7E-9C2CCD9547E0}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Layout. for Package`.has source Class `Layout`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{AA2D3B51-4153-4599-A983-6B4A13ADCBCB}",
+			"DestinationInstances":
+			[
+				"{BCDB6FFD-D2F2-4B63-BD7E-9C2CCD9547E0}"
+			]
+		},
+		{
+			"Comment": "Relationship `Layout.for Package` has destination Class `Package`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{AA2D3B51-4153-4599-A983-6B4A13ADCBCB}",
+			"DestinationInstances":
+			[
+				"{6A1F66F7-8EA6-43D1-B2AF-198F63B84710}"
 			]
 		}
 	]
