@@ -407,6 +407,28 @@
 							"Value": "for"
 						}
 					]
+				},
+				{
+					"ID": "{52B65829-4A3F-44FB-BEE8-D9A240F1E9C9}",
+					"Comment": "Method.has title Translatable Text Constant",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has title"
+						}
+					]
+				},
+				{
+					"ID": "{8EBE8D2C-FB89-41A0-9AB6-FBA78323D5B9}",
+					"Comment": "Translatable Text Constant.title for Method",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "title for"
+						}
+					]
 				}
 			]
 		}

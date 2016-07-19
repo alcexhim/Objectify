@@ -1101,6 +1101,50 @@
 			[
 				"{69FA0360-4747-49BC-8B82-06CD121B6F36}"
 			]
+		},
+		
+		
+		{
+			"Comment": "Relationship `Method.has title Translatable Text Constant`.has source Class `Method`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{52B65829-4A3F-44FB-BEE8-D9A240F1E9C9}",
+			"DestinationInstances":
+			[
+				"{D2813913-80B6-4DD6-9AD6-56D989169734}"
+			]
+		},
+		{
+			"Comment": "Relationship `Method.has title Translatable Text Constant`.has destination Class `Translatable Text Constant`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{52B65829-4A3F-44FB-BEE8-D9A240F1E9C9}",
+			"DestinationInstances":
+			[
+				"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Translatable Text Constant.title for Method`.has source Class `Translatable Text Constant`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{8EBE8D2C-FB89-41A0-9AB6-FBA78323D5B9}",
+			"DestinationInstances":
+			[
+				"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+			]
+		},
+		{
+			"Comment": "Relationship `Translatable Text Constant.title for Method` has destination Class `Menu Item`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{8EBE8D2C-FB89-41A0-9AB6-FBA78323D5B9}",
+			"DestinationInstances":
+			[
+				"{D2813913-80B6-4DD6-9AD6-56D989169734}"
+			]
 		}
+		
 	]
 }

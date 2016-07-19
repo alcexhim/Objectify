@@ -26,11 +26,11 @@
 				$methodName = $method;
 				
 				$objMethod = TenantObject::GetByName("Method");
-				$instMethod = $objMethod->GetInstance(array
+				$instsMethod = $objMethod->GetInstanceUsingAttributes(array
 				(
 					new TenantObjectInstancePropertyValue("Name", $method)
 				));
-				$method = $instMethod;
+				$method = $instsMethod[0];
 			}
 			
 			if ($method == null)
@@ -40,7 +40,7 @@
 			}
 			
 			if ($parameters == null) $parameters = array();
-			$codeblob = $method->GetPropertyValue("CodeBlob");
+			$codeblob = $method->GetAttributeValue("CodeBlob");
 			return eval($codeblob);
 		}
 		

@@ -120,11 +120,16 @@
 					"Name": "Class"
 				}
 			],
-			"InstanceProperties":
+			"Relationships":
 			[
 				{
-					"Name": "Name",
-					"DataTypeName": "Text"
+					"Comment": "Class `Method`.has Text Attribute `Name`",
+					"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+					"InverseRelationshipID": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
+					"DestinationInstances":
+					[
+						"{9153A637-992E-4712-ADF2-B03F0D9EDEA6}"
+					]
 				}
 			]
 		},
@@ -136,64 +141,6 @@
 			[
 				{
 					"Name": "MethodAction"
-				}
-			]
-		},
-		
-		{
-			"Name": "TranslatableTextConstantValue",
-			"Instances":
-			[
-				{
-					"ID": "{CAC2B62B-47F1-44F9-8C68-45EC64CE3C92}",
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "get Login Token for currently logged-in User"
-						}
-					]
-				},
-				{
-					"ID": "{8EBE8D2C-FB89-41A0-9AB6-FBA78323D5B9}",
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "PMP - Print Method Parameters"
-						}
-					]
-				},
-				{
-					"ID": "{52B65829-4A3F-44FB-BEE8-D9A240F1E9C9}",
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "get Instance Titleable Object for Instance parm"
-						}
-					]
 				}
 			]
 		},
@@ -258,84 +205,110 @@
 					"Name": "Method"
 				}
 			],
-			"InstanceProperties":
+			"Relationships":
 			[
 				{
-					"Name": "CodeBlob",
-					"DataTypeName": "Text"
+					"Comment": "Class `Method`.has Text Attribute `Name`",
+					"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+					"InverseRelationshipID": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
+					"DestinationInstances":
+					[
+						"{9153A637-992E-4712-ADF2-B03F0D9EDEA6}"
+					]
+				},
+				{
+					"Comment": "Class `SS - Server-Side Script Method`.has Text Attribute `Code Blob`",
+					"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+					"InverseRelationshipID": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
+					"DestinationInstances":
+					[
+						"{CAC2B62B-47F1-44F9-8C68-45EC64CE3C92}"
+					]
 				}
 			],
 			"Instances":
 			[
 				{
 					"ID": "{0E45F38E-9868-4F5E-B91C-35FABE484E00}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "Name",
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "GetInstanceDisplayTitleForInstanceParm"
 						},
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{52B65829-4A3F-44FB-BEE8-D9A240F1E9C9}"
-								]
-							}
-						},
-						{
-							"Name": "CodeBlob",
+							"ID": "{CAC2B62B-47F1-44F9-8C68-45EC64CE3C92}",
 							"Value": "echo('Not implemented yet !!!');"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{52B65829-4A3F-44FB-BEE8-D9A240F1E9C9}",
+							"InverseRelationshipID": "{8EBE8D2C-FB89-41A0-9AB6-FBA78323D5B9}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "get Instance Display Title for Instance parm"
+								}
+							]
 						}
 					]
 				},
 				{
 					"ID": "{7FFB4808-60B3-4442-B343-B6CA2FE3B0DE}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "Name",
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "TEST_PrintMethodArguments"
 						},
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{8EBE8D2C-FB89-41A0-9AB6-FBA78323D5B9}"
-								]
-							}
-						},
-						{
-							"Name": "CodeBlob",
+							"ID": "{CAC2B62B-47F1-44F9-8C68-45EC64CE3C92}",
 							"Value": "print_r($parameters);"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{52B65829-4A3F-44FB-BEE8-D9A240F1E9C9}",
+							"InverseRelationshipID": "{8EBE8D2C-FB89-41A0-9AB6-FBA78323D5B9}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "PMP - Print Method Parameters"
+								}
+							]
 						}
 					]
 				},
 				{
 					"ID": "{944C1459-1757-4F76-8A8B-F9E617AEC5FB}",
-					"PropertyValues":
+					"AttributeValues":
 					[
 						{
-							"Name": "Name",
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "GetLoginTokenForCurrentUser"
 						},
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{CAC2B62B-47F1-44F9-8C68-45EC64CE3C92}"
-								]
-							}
-						},
-						{
-							"Name": "CodeBlob",
+							"ID": "{CAC2B62B-47F1-44F9-8C68-45EC64CE3C92}",
 							"Value": "if (isset($_SESSION['Authentication.LoginToken'])) { return $_SESSION['Authentication.LoginToken']; } else { return null; }"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{52B65829-4A3F-44FB-BEE8-D9A240F1E9C9}",
+							"InverseRelationshipID": "{8EBE8D2C-FB89-41A0-9AB6-FBA78323D5B9}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "get Login Token for currently logged-in User"
+								}
+							]
 						}
 					]
 				}
