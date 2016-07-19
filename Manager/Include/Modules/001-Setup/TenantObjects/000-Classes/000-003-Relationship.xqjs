@@ -429,6 +429,28 @@
 							"Value": "title for"
 						}
 					]
+				},
+				{
+					"ID": "{51550210-074D-487B-B950-E3630EE81C49}",
+					"Comment": "Object Source.has title Translatable Text Constant",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has title"
+						}
+					]
+				},
+				{
+					"ID": "{DD5DA156-07A6-46C6-B3F8-5BDE2089FB86}",
+					"Comment": "Translatable Text Constant.title for Object Source",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "title for"
+						}
+					]
 				}
 			]
 		}

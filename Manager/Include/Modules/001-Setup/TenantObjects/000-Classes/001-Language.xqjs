@@ -335,54 +335,6 @@
 					[
 						{
 							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_ObjectSource_System_Title" 
-						}
-					],
-					"ID": "{DD5DA156-07A6-46C6-B3F8-5BDE2089FB86}",
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "System"
-						}
-					]
-				},
-				{
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_ObjectSource_Custom_Title" 
-						}
-					],
-					"ID": "{51550210-074D-487B-B950-E3630EE81C49}",
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Custom"
-						}
-					]
-				},
-				{
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
 							"Value": "LanguageString_English_Language_English_Title" 
 						}
 					],
@@ -631,47 +583,49 @@
 			[
 				{
 					"ID": "{9547EB35-07FB-4B64-B82C-6DA1989B9165}",
-					"PropertyValues":
-					[
-						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{DD5DA156-07A6-46C6-B3F8-5BDE2089FB86}"
-								]
-							}
-						}
-					],
 					"AttributeValues":
 					[
 						{
 							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "System"
 						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{51550210-074D-487B-B950-E3630EE81C49}",
+							"InverseRelationshipID": "{DD5DA156-07A6-46C6-B3F8-5BDE2089FB86}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "System"
+								}
+							]
+						}
 					]
 				},
 				{
 					"ID": "{63D91CCD-D196-4C3A-8609-6DF371E2406F}",
-					"PropertyValues":
-					[
-						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{51550210-074D-487B-B950-E3630EE81C49}"
-								]
-							}
-						}
-					],
 					"AttributeValues":
 					[
 						{
 							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "Custom"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{51550210-074D-487B-B950-E3630EE81C49}",
+							"InverseRelationshipID": "{DD5DA156-07A6-46C6-B3F8-5BDE2089FB86}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Custom"
+								}
+							]
 						}
 					]
 				}

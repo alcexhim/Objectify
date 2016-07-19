@@ -1144,6 +1144,92 @@
 			[
 				"{D2813913-80B6-4DD6-9AD6-56D989169734}"
 			]
+		},
+		
+		
+		{
+			"Comment": "Relationship `Object Source.has title Translatable Text Constant`.has source Class `Object Source`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{51550210-074D-487B-B950-E3630EE81C49}",
+			"DestinationInstances":
+			[
+				"{8EE7024D-ED87-4D99-BF21-10E09AF5566D}"
+			]
+		},
+		{
+			"Comment": "Relationship `Object Source.has title Translatable Text Constant`.has destination Class `Translatable Text Constant`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{51550210-074D-487B-B950-E3630EE81C49}",
+			"DestinationInstances":
+			[
+				"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Translatable Text Constant.title for Object Source`.has source Class `Translatable Text Constant`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{DD5DA156-07A6-46C6-B3F8-5BDE2089FB86}",
+			"DestinationInstances":
+			[
+				"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+			]
+		},
+		{
+			"Comment": "Relationship `Translatable Text Constant.title for Object Source` has destination Class `Object Source`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{DD5DA156-07A6-46C6-B3F8-5BDE2089FB86}",
+			"DestinationInstances":
+			[
+				"{8EE7024D-ED87-4D99-BF21-10E09AF5566D}"
+			]
+		},
+		
+		
+		{
+			"Comment": "Relationship `Sequential Container Page Component.has Sequential Container Orientation`.has source Class `Sequential Container Page Component`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{DD55F506-8718-4240-A894-21346656E804}",
+			"DestinationInstances":
+			[
+				"{A66D9AE2-3BEC-4083-A5CB-7DE3B03A9CC7}"
+			]
+		},
+		{
+			"Comment": "Relationship `Sequential Container Page Component.has Sequential Container Orientation`.has destination Class `Sequential Container Orientation`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{DD55F506-8718-4240-A894-21346656E804}",
+			"DestinationInstances":
+			[
+				"{DDC61BCA-022D-43EF-9A94-D79BA9FEC5C8}"
+			]
+		},
+		
+		{
+			"Comment": "Relationship `Sequential Container Orientation.for Sequential Container Page Component`.has source Class `Sequential Container Orientation`",
+			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+			"SourceInstance": "{F8F4EBFE-605C-4F68-99F7-83AEF3FF1AF2}",
+			"DestinationInstances":
+			[
+				"{DDC61BCA-022D-43EF-9A94-D79BA9FEC5C8}"
+			]
+		},
+		{
+			"Comment": "Relationship `Sequential Container Orientation.for Sequential Container Page Component` has destination Class `Sequential Container Page Component`",
+			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+			"SourceInstance": "{F8F4EBFE-605C-4F68-99F7-83AEF3FF1AF2}",
+			"DestinationInstances":
+			[
+				"{A66D9AE2-3BEC-4083-A5CB-7DE3B03A9CC7}"
+			]
 		}
 		
 	]

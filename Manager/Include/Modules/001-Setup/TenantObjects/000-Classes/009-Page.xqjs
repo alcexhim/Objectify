@@ -116,17 +116,29 @@
 					"Name": "Class"
 				}
 			],
-			"InstanceProperties":
+			"Relationships":
 			[
 				{
-					"Name": "Value",
-					"DataTypeName": "Text"
+					"Comment": "Class `Sequential Container Orientation`.has Text Attribute `Name`",
+					"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+					"InverseRelationshipID": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
+					"DestinationInstances":
+					[
+						"{9153A637-992E-4712-ADF2-B03F0D9EDEA6}"
+					]
 				}
 			],
 			"Instances":
 			[
 				{
 					"ID": "{9B7B7F14-0925-456D-98E6-E3FFEFDC272C}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+							"Value": "Horizontal"
+						}
+					],
 					"PropertyValues":
 					[
 						{
@@ -138,15 +150,18 @@
 									"{F606C9F1-1A58-430A-B37C-14DC3A4393A6}"
 								]
 							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Horizontal"
 						}
 					]
 				},
 				{
 					"ID": "{96423CAA-260E-453A-B609-E8090897EDDF}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+							"Value": "Vertical"
+						}
+					],
 					"PropertyValues":
 					[
 						{
@@ -158,10 +173,6 @@
 									"{29C02384-57B0-45F5-9C15-747F9DFD2C69}"
 								]
 							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Vertical"
 						}
 					]
 				}
@@ -174,22 +185,6 @@
 			[
 				{
 					"Name": "ContainerPageComponent"
-				}
-			],
-			"InstanceProperties":
-			[
-				{
-					"Name": "Orientation",
-					"DataTypeName": "SingleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "SequentialContainerOrientation"
-							}
-						]
-					}
 				}
 			]
 		},
@@ -664,20 +659,53 @@
 			]
 		},
 		{
+			"Name": "Relationship",
+			"Instances":
+			[
+				{
+					"Comment": "Sequential Container Page Component.has Sequential Container Orientation",
+					"ID": "{DD55F506-8718-4240-A894-21346656E804}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has"
+						}
+					]
+				},
+				{
+					"Comment": "Orientation.for Sequential Container Page Component",
+					"ID": "{F8F4EBFE-605C-4F68-99F7-83AEF3FF1AF2}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "for"
+						}
+					]
+				}
+			]
+		},
+		{
 			"Name": "SequentialContainerPageComponent",
 			"Instances":
 			[
 				{
 					"ID": "{E7C69CF3-CB71-43D8-91AB-B8F5030350AB}",
-					"PropertyValues":
+					"Relationships":
 					[
 						{
-							"Name": "Orientation",
-							"Value":
-							{
-								"Instance": "{9B7B7F14-0925-456D-98E6-E3FFEFDC272C}"
-							}
-						},
+							"Comment": "Sequential Container Page Component.has Sequential Container Orientation",
+							"RelationshipID": "{DD55F506-8718-4240-A894-21346656E804}",
+							"InverseRelationshipID": "{F8F4EBFE-605C-4F68-99F7-83AEF3FF1AF2}",
+							"DestinationInstances":
+							[
+								"{9B7B7F14-0925-456D-98E6-E3FFEFDC272C}"
+							]
+						}
+					],
+					"PropertyValues":
+					[
 						{
 							"Name": "Components",
 							"Value":

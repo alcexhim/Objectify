@@ -84,11 +84,16 @@
 					"Name": "Class"
 				}
 			],
-			"InstanceProperties":
+			"Relationships":
 			[
 				{
-					"Name": "CSSPropertyName",
-					"DataTypeName": "Text"
+					"Comment": "Class `Style Property`.has Text Attribute `CSS Value`",
+					"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+					"InverseRelationshipID": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
+					"DestinationInstances":
+					[
+						"{C0DD4A42-F503-4EB3-8034-7C428B1B8803}"
+					]
 				}
 			],
 			"Instances":
@@ -106,9 +111,12 @@
 									"{8F33A8D4-74F8-4A90-AADE-6EDFF1D561DE}"
 								]
 							}
-						},
+						}
+					],
+					"AttributeValues":
+					[
 						{
-							"Name": "CSSPropertyName",
+							"ID": "{C0DD4A42-F503-4EB3-8034-7C428B1B8803}",
 							"Value": "text-align"
 						}
 					]
@@ -126,9 +134,12 @@
 									"{8CD4BAF5-C762-42B2-8BCC-CC5BC82F40CD}"
 								]
 							}
-						},
+						}
+					],
+					"AttributeValues":
+					[
 						{
-							"Name": "CSSPropertyName",
+							"ID": "{C0DD4A42-F503-4EB3-8034-7C428B1B8803}",
 							"Value": "font-size"
 						}
 					]
@@ -146,9 +157,12 @@
 									"{847CA108-F881-4FF0-A1AF-F1933BF12E19}"
 								]
 							}
-						},
+						}
+					],
+					"AttributeValues":
+					[
 						{
-							"Name": "CSSPropertyName",
+							"ID": "{C0DD4A42-F503-4EB3-8034-7C428B1B8803}",
 							"Value": "padding"
 						}
 					]
@@ -162,6 +176,18 @@
 			[
 				{
 					"Name": "Class"
+				}
+			],
+			"Relationships":
+			[
+				{
+					"Comment": "Class `Style Rule`.has Text Attribute `Value`",
+					"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+					"InverseRelationshipID": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
+					"DestinationInstances":
+					[
+						"{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}"
+					]
 				}
 			],
 			"InstanceProperties":
@@ -178,10 +204,6 @@
 							}
 						]
 					}
-				},
-				{
-					"Name": "Value",
-					"DataTypeName": "Text"
 				}
 			]
 		},
