@@ -24,6 +24,21 @@
 					<wfx:Button CssClass="ApplicationButton">
 					</wfx:Button>
 					<ofx:InstanceBrowser CssClass="SearchBox" ID="ibSearch" ValidObjectNames="Task" />
+					<div class="NotificationTray">
+						<div style="background-image: url('/objectify/Images/Avatar_Default.png'); background-repeat: no-repeat; width: 48px; height: 48px; display: inline-block; border: solid 1px #aaaaaa; border-radius: 48px; vertical-align: baseline" class="UserImage">&nbsp;</div>
+						<wfx:Button ID="cmdUserMenu" Text="User Name" DropDownRequired="True">
+							<DropDownControls>
+								<div style="background-color: #FFFFFF; border: solid 1px #aaaaaa">
+									<wfx:Menu ID="TrayMenu">
+										<Items>
+											<wfx:MenuItemHeader Title="User Name" />
+											<wfx:MenuItemCommand TargetURL="~/account/logout" Title="Log Out" IconName="" />
+										</Items>
+									</wfx:Menu>
+								</div>
+							</DropDownControls>
+						</wfx:Button>
+					</div>
 				</html:Navigation>
 				<wfx:Sidebar ID="sidebar">
 					<wfx:Menu ID="sidebarMenu">

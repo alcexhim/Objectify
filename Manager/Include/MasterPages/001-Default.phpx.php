@@ -27,10 +27,11 @@
 			$ibSearch = $e->RenderingPage->GetControlByID("ibSearch");
 			$ibSearch->ValidObjects[] = TenantObject::GetByName("Task");
 			
+			$CurrentUser = User::GetCurrent();
 			$DisableLoginPage = System::GetConfigurationValue("Application.DisableLoginPage", false);
 			if (!$DisableLoginPage)
 			{
-				if (User::GetCurrent() == null)
+				if ($CurrentUser == null)
 				{
 					if ($e->RenderingPage->GetServerVariableValue("RequireLogin") !== "false")
 					{
@@ -43,6 +44,17 @@
 			
 			$sidebar = $this->Page->GetControlByID("sidebar");
 			$sidebarMenu = $sidebar->GetControlByID("sidebarMenu");
+			
+			$cmdUserMenu = $this->Page->GetControlByID("cmdUserMenu");
+			
+			if ($CurrentUser != null)
+			{
+				$cmdUserMenu->Text = $CurrentUser->ToString();
+			}
+			else
+			{
+				$cmdUserMenu->Visible = false;
+			}
 			
 			// TODO: Add your items here (load from Tenant.Sidebar Menu Items property?)
 			
