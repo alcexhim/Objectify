@@ -18,6 +18,9 @@
 		public $CurrentInstance;
 		public $InstanceID;
 		
+		public $ShowURL;
+		public $ShowText;
+		
 		public function __construct($instance)
 		{
 			parent::__construct();
@@ -25,6 +28,9 @@
 			$this->CurrentInstance = $instance;
 			$this->TagName = "div";
 			$this->ClassList[] = "InstanceDisplayWidget";
+			
+			$this->ShowURL = true;
+			$this->ShowText = true;
 		}
 		
 		protected function RenderBeginTag()
@@ -39,6 +45,9 @@
 				$this->Attributes[] = new WebControlAttribute("data-instance-id", $this->CurrentInstance->ID);
 				
 				$adw = new AdditionalDetailWidget();
+				$adw->ShowText = $this->ShowText;
+				$adw->ShowURL = $this->ShowURL;
+				
 				$iid = $this->CurrentInstance->GetInstanceID();
 				$iid = str_replace('$', '\\$', $iid);
 				$adw->TargetURL = "~/instances/modify/" . $iid;

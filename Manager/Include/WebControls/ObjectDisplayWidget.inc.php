@@ -18,6 +18,9 @@
 		public $ObjectID;
 		public $ObjectName;
 		
+		public $ShowURL;
+		public $ShowText;
+		
 		public function __construct($object)
 		{
 			parent::__construct();
@@ -25,6 +28,9 @@
 			$this->CurrentObject = $object;
 			$this->TagName = "div";
 			$this->ClassList[] = "ObjectDisplayWidget";
+			
+			$this->ShowURL = true;
+			$this->ShowText = true;
 		}
 		
 		protected function RenderBeginTag()
@@ -49,6 +55,8 @@
 				$adw->Text = $this->CurrentObject->ToString();
 				
 				$adw->ClassTitle = "Object";
+				$adw->ShowText = $this->ShowText;
+				$adw->ShowURL = $this->ShowURL;
 				
 				/*
 				$propTasks = $this->CurrentObject->GetPropertyValue("Tasks");
