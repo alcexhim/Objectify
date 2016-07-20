@@ -152,5 +152,16 @@
 		{
 			return Instance::GetByGlobalIdentifier(self::Relationship___String_Component__for__String);
 		}
+		
+		const Relationship___Class__has__Task = "{4D8670E1-2AF1-4E7C-9C87-C910BD7B319B}";
+		const Relationship___Task__for__Class = "{F6D05235-AAA8-4DC0-8D3A-A0F336B39F01}";
+		public static function get___Class__has__Task()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Class__has__Task);
+		}
+		public static function get___Task__for__Class()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Task__for__Class);
+		}
 	}
 ?>
