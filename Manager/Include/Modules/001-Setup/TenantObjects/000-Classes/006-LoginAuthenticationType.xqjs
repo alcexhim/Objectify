@@ -2,342 +2,70 @@
 	"Objects":
 	[
 		{
-			"Name": "TranslatableTextConstantValue",
+			"Name": "Relationship",
 			"Instances":
 			[
 				{
 					"ID": "{A9BE2FF8-8251-4822-A9FF-726FC2DDBABE}",
-					"IntegrationIDs":
+					"Comment": "Login Authentication Type.has title Translatable Text Constant",
+					"AttributeValues":
 					[
 						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_LoginAuthenticationType_UserNamePassword_Title" 
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has title"
 						}
 					],
-					"PropertyValues":
+					"Relationships":
 					[
 						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
+							"Comment": ".has source Class `Login Authentication Type`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{688F229C-488B-415C-8576-A47D15E02AB0}"
+							]
 						},
 						{
-							"Name": "Value",
-							"Value": "User Name Password"
+							"Comment": ".has destination Class `Translatable Text Constant`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+							]
 						}
 					]
 				},
 				{
 					"ID": "{59221689-89C5-4AE0-8DC4-C7D3D6C31C7C}",
-					"IntegrationIDs":
+					"Comment": "Translatable Text Constant.title for Login Authentication Type",
+					"AttributeValues":
 					[
 						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_LoginAuthenticationType_DelegatedAuthentication_Title" 
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "title for"
 						}
 					],
-					"PropertyValues":
+					"Relationships":
 					[
 						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
+							"Comment": ".has source Class `Translatable Text Constant`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+							]
 						},
 						{
-							"Name": "Value",
-							"Value": "Delegated Authentication"
-						}
-					]
-				},
-				{
-					"ID": "{DA7686B6-3803-4F15-97F6-7F8F3AE16668}",
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_LoginAuthenticationType_SAML_Title" 
-						}
-					],
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "SAML"
-						}
-					]
-				},
-				{
-					"ID": "{ADE5A3C3-A84E-4798-BC5B-E08F21380208}",
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_LoginAuthenticationType_Proxy_Title" 
-						}
-					],
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Proxy"
-						}
-					]
-				},
-				{
-					"ID": "{403B2264-4393-4B7B-90C4-F066605982B3}",
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_LoginAuthenticationType_Trusted_Title" 
-						}
-					],
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Trusted"
-						}
-					]
-				},
-				{
-					"ID": "{BE633A67-4A1C-42B1-BC86-7C6A5C020D27}",
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_LoginAuthenticationType_SessionID_Title" 
-						}
-					],
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "Session ID"
-						}
-					]
-				},
-				{
-					"ID": "{C79A6041-FC94-41A5-9860-D443C60FA7DE}",
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_LoginAuthenticationType_X509_Title" 
-						}
-					],
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "X.509"
-						}
-					]
-				},
-				{
-					"ID": "{223B4073-F417-49CD-BCA1-0E0749144B9D}",
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_LoginAuthenticationType_DelegationStarted_Title" 
-						}
-					],
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "DelegationStarted"
-						}
-					]
-				},
-				{
-					"ID": "{38E70546-EB2F-4A2E-A2FA-9E290C1835A8}",
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_LoginAuthenticationType_DelegationEnded_Title" 
-						}
-					],
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "DelegationEnded"
-						}
-					]
-				},
-				{
-					"ID": "{AD8C5FAE-2444-4700-896E-C5F968C0F85B}",
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_LoginAuthenticationType_OAuth_Title" 
-						}
-					],
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "OAuth"
-						}
-					]
-				},
-				{
-					"ID": "{1DD64A89-9947-4BA3-85AA-12D2EAED80DC}",
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_LoginAuthenticationType_OAuth_Title" 
-						}
-					],
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "User Name Password + Challenge Questions"
-						}
-					]
-				},
-				{
-					"ID": "{56E339BD-6189-4BAC-AB83-999543FB8060}",
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_LoginAuthenticationType_OAuth_Title" 
-						}
-					],
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "InterOms"
-						}
-					]
-				},
-				{
-					"ID": "{9DC77CE3-869D-4E6C-A649-7A662FB5026D}",
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_LoginAuthenticationType_OAuth_Title" 
-						}
-					],
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "User Name Password + One Time Passcode"
-						}
-					]
-				},
-				{
-					"ID": "{8C528FB0-4063-47B0-BC56-85E387A41BD2}",
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_LoginAuthenticationType_OAuth_Title" 
-						}
-					],
-					"PropertyValues":
-					[
-						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
-						{
-							"Name": "Value",
-							"Value": "OAuth 2.0"
+							"Comment": ".has destination Class `Login Authentication Type`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{688F229C-488B-415C-8576-A47D15E02AB0}"
+							]
 						}
 					]
 				}
@@ -356,225 +84,239 @@
 			[
 				{
 					"ID": "{A0B4E2AE-705F-4AFD-9A00-06E4A7B44385}",
-					"PropertyValues":
+					"TranslatableValues":
 					[
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{A9BE2FF8-8251-4822-A9FF-726FC2DDBABE}"
-								]
-							}
+							"RelationshipID": "{A9BE2FF8-8251-4822-A9FF-726FC2DDBABE}",
+							"InverseRelationshipID": "{59221689-89C5-4AE0-8DC4-C7D3D6C31C7C}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "User Name Password"
+								}
+							]
 						}
 					]
 				},
 				{
 					"ID": "{73083E29-94F4-4C5E-BAC4-24210B43E1B5}",
-					"PropertyValues":
+					"TranslatableValues":
 					[
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{59221689-89C5-4AE0-8DC4-C7D3D6C31C7C}"
-								]
-							}
+							"RelationshipID": "{A9BE2FF8-8251-4822-A9FF-726FC2DDBABE}",
+							"InverseRelationshipID": "{59221689-89C5-4AE0-8DC4-C7D3D6C31C7C}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Delegated Authentication"
+								}
+							]
 						}
 					]
 				},
 				{
 					"ID": "{F4781211-7B59-465F-A9C4-A74B972213AA}",
-					"PropertyValues":
+					"TranslatableValues":
 					[
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{DA7686B6-3803-4F15-97F6-7F8F3AE16668}"
-								]
-							}
+							"RelationshipID": "{A9BE2FF8-8251-4822-A9FF-726FC2DDBABE}",
+							"InverseRelationshipID": "{59221689-89C5-4AE0-8DC4-C7D3D6C31C7C}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "SAML"
+								}
+							]
 						}
 					]
 				},
 				{
 					"ID": "{648B3E0D-20A4-4156-832A-BB33A38A254F}",
-					"PropertyValues":
+					"TranslatableValues":
 					[
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{ADE5A3C3-A84E-4798-BC5B-E08F21380208}"
-								]
-							}
+							"RelationshipID": "{A9BE2FF8-8251-4822-A9FF-726FC2DDBABE}",
+							"InverseRelationshipID": "{59221689-89C5-4AE0-8DC4-C7D3D6C31C7C}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Proxy"
+								}
+							]
 						}
 					]
 				},
 				{
 					"ID": "{FB1F6507-8054-47D4-80AD-5A0C4D65BC22}",
-					"PropertyValues":
+					"TranslatableValues":
 					[
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{403B2264-4393-4B7B-90C4-F066605982B3}"
-								]
-							}
+							"RelationshipID": "{A9BE2FF8-8251-4822-A9FF-726FC2DDBABE}",
+							"InverseRelationshipID": "{59221689-89C5-4AE0-8DC4-C7D3D6C31C7C}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Trusted"
+								}
+							]
 						}
 					]
 				},
 				{
 					"ID": "{CA9B5401-4C66-4AAB-90DA-80C4037F5DEF}",
-					"PropertyValues":
+					"TranslatableValues":
 					[
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{BE633A67-4A1C-42B1-BC86-7C6A5C020D27}"
-								]
-							}
+							"RelationshipID": "{A9BE2FF8-8251-4822-A9FF-726FC2DDBABE}",
+							"InverseRelationshipID": "{59221689-89C5-4AE0-8DC4-C7D3D6C31C7C}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Session ID"
+								}
+							]
 						}
 					]
 				},
 				{
 					"ID": "{9F5D76A5-CB0B-4A92-9415-7501ABD8F7B6}",
-					"PropertyValues":
+					"TranslatableValues":
 					[
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{C79A6041-FC94-41A5-9860-D443C60FA7DE}"
-								]
-							}
+							"RelationshipID": "{A9BE2FF8-8251-4822-A9FF-726FC2DDBABE}",
+							"InverseRelationshipID": "{59221689-89C5-4AE0-8DC4-C7D3D6C31C7C}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "X.509"
+								}
+							]
 						}
 					]
 				},
 				{
 					"ID": "{5443F0FB-1BBC-4897-BCF7-67114EE2E7B6}",
-					"PropertyValues":
+					"TranslatableValues":
 					[
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{223B4073-F417-49CD-BCA1-0E0749144B9D}"
-								]
-							}
+							"RelationshipID": "{A9BE2FF8-8251-4822-A9FF-726FC2DDBABE}",
+							"InverseRelationshipID": "{59221689-89C5-4AE0-8DC4-C7D3D6C31C7C}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "DelegationStarted"
+								}
+							]
 						}
 					]
 				},
 				{
 					"ID": "{6D21C006-4BBC-49FF-A9B3-9AE2BFF177C9}",
-					"PropertyValues":
+					"TranslatableValues":
 					[
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{38E70546-EB2F-4A2E-A2FA-9E290C1835A8}"
-								]
-							}
+							"RelationshipID": "{A9BE2FF8-8251-4822-A9FF-726FC2DDBABE}",
+							"InverseRelationshipID": "{59221689-89C5-4AE0-8DC4-C7D3D6C31C7C}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "DelegationEnded"
+								}
+							]
 						}
 					]
 				},
 				{
 					"ID": "{6C680677-7787-4A93-97ED-1BE7EF3D44ED}",
-					"PropertyValues":
+					"TranslatableValues":
 					[
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{AD8C5FAE-2444-4700-896E-C5F968C0F85B}"
-								]
-							}
+							"RelationshipID": "{A9BE2FF8-8251-4822-A9FF-726FC2DDBABE}",
+							"InverseRelationshipID": "{59221689-89C5-4AE0-8DC4-C7D3D6C31C7C}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "OAuth"
+								}
+							]
 						}
 					]
 				},
 				{
 					"ID": "{36A7E25D-F5D7-4AE3-BDA1-6859B6BD7A98}",
-					"PropertyValues":
+					"TranslatableValues":
 					[
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{1DD64A89-9947-4BA3-85AA-12D2EAED80DC}"
-								]
-							}
+							"RelationshipID": "{A9BE2FF8-8251-4822-A9FF-726FC2DDBABE}",
+							"InverseRelationshipID": "{59221689-89C5-4AE0-8DC4-C7D3D6C31C7C}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "User Name Password + Challenge Questions"
+								}
+							]
 						}
 					]
 				},
 				{
 					"ID": "{AC617F03-E71B-44EB-B783-874A134E5EB0}",
-					"PropertyValues":
+					"TranslatableValues":
 					[
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{56E339BD-6189-4BAC-AB83-999543FB8060}"
-								]
-							}
+							"RelationshipID": "{A9BE2FF8-8251-4822-A9FF-726FC2DDBABE}",
+							"InverseRelationshipID": "{59221689-89C5-4AE0-8DC4-C7D3D6C31C7C}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "InterOms"
+								}
+							]
 						}
 					]
 				},
 				{
 					"ID": "{4947CF20-83DE-4BAE-8DC4-9A605F317F08}",
-					"PropertyValues":
+					"TranslatableValues":
 					[
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{9DC77CE3-869D-4E6C-A649-7A662FB5026D}"
-								]
-							}
+							"RelationshipID": "{A9BE2FF8-8251-4822-A9FF-726FC2DDBABE}",
+							"InverseRelationshipID": "{59221689-89C5-4AE0-8DC4-C7D3D6C31C7C}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "User Name Password + One Time Passcode"
+								}
+							]
 						}
 					]
 				},
 				{
 					"ID": "{90A0A1E7-A1D4-4953-977E-E1E71E224D54}",
-					"PropertyValues":
+					"TranslatableValues":
 					[
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{8C528FB0-4063-47B0-BC56-85E387A41BD2}"
-								]
-							}
+							"RelationshipID": "{A9BE2FF8-8251-4822-A9FF-726FC2DDBABE}",
+							"InverseRelationshipID": "{59221689-89C5-4AE0-8DC4-C7D3D6C31C7C}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "OAuth 2.0"
+								}
+							]
 						}
 					]
 				}

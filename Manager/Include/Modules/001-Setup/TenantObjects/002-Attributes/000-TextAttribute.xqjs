@@ -124,6 +124,26 @@
 							"Value": "CodeBlob"
 						}
 					]
+				},
+				{
+					"ID": "{91E97088-3946-4354-A5D5-84CF3E66D91A}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+							"Value": "BaseURL"
+						}
+					]
+				},
+				{
+					"ID": "{8E4924CC-F09D-488A-80A6-7000B21510C0}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+							"Value": "ImageURL"
+						}
+					]
 				}
 			]
 		}

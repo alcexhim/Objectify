@@ -146,11 +146,16 @@
 					"Name": "Icon"
 				}
 			],
-			"InstanceProperties":
+			"Relationships":
 			[
 				{
-					"Name": "IconName",
-					"DataTypeName": "Text"
+					"Comment": "Font Awesome Icon.has Text Attribute `Name`",
+					"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+					"InverseRelationshipID": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
+					"DestinationInstances":
+					[
+						"{9153A637-992E-4712-ADF2-B03F0D9EDEA6}"
+					]
 				}
 			],
 			"Instances":
@@ -168,9 +173,12 @@
 									"{E16BFD3B-2F2C-431F-A7E1-BC2ADC6A3746}"
 								]
 							}
-						},
+						}
+					],
+					"AttributeValues":
+					[
 						{
-							"Name": "IconName",
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "tachometer"
 						}
 					]
@@ -188,9 +196,12 @@
 									"{026D6615-5639-4AF1-B692-C33557EF4363}"
 								]
 							}
-						},
+						}
+					],
+					"AttributeValues":
+					[
 						{
-							"Name": "IconName",
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "cubes"
 						}
 					]
@@ -208,9 +219,12 @@
 									"{CC278DA3-5729-42A5-BD0F-1C597AE38D6C}"
 								]
 							}
-						},
+						}
+					],
+					"AttributeValues":
+					[
 						{
-							"Name": "IconName",
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "book"
 						}
 					]
@@ -228,9 +242,12 @@
 									"{0A630A62-7123-42BE-8EE0-021862C76F04}"
 								]
 							}
-						},
+						}
+					],
+					"AttributeValues":
+					[
 						{
-							"Name": "IconName",
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "life-ring"
 						}
 					]
@@ -248,9 +265,12 @@
 									"{E16B2BDB-3935-4D1D-8070-028BEFE40D9E}"
 								]
 							}
-						},
+						}
+					],
+					"AttributeValues":
+					[
 						{
-							"Name": "IconName",
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "paper-plane-o"
 						}
 					]
@@ -266,11 +286,16 @@
 					"Name": "Icon"
 				}
 			],
-			"InstanceProperties":
+			"Relationships":
 			[
 				{
-					"Name": "ImageURL",
-					"DataTypeName": "Text"
+					"Comment": "Image Icon.has Text Attribute `ImageURL`",
+					"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+					"InverseRelationshipID": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
+					"DestinationInstances":
+					[
+						"{8E4924CC-F09D-488A-80A6-7000B21510C0}"
+					]
 				}
 			]
 		}
