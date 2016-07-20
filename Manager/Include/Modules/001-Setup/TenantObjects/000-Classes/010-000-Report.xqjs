@@ -13,7 +13,7 @@
 		},
 		{
 			"ID": "{655A04D9-FE35-4F89-9AAB-B8FA34989D03}",
-			"Name": "ReportColumn",
+			"Name": "ReportField",
 			"ParentObjects":
 			[
 				{
