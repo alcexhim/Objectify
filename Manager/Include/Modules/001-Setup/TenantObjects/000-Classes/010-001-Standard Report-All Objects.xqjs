@@ -1,0 +1,30 @@
+{
+	"Objects":
+	[
+		{
+			"Name": "StandardReport",
+			"Instances":
+			[
+				{
+					"ID": "{7CA0EFA9-6849-4AAE-BF81-F055C006853B}",
+					"Comment": "Standard Report - All Objects",
+					"TranslatableValues":
+					[
+						{
+							"Comment": "Report `All Objects`.has title Translatable Text Constant",
+							"RelationshipID": "{DF93EFB0-8B5E-49E7-8BC0-553F9E7602F9}",
+							"InverseRelationshipID": "{2C4EA43B-6242-4370-9FF2-A78994702BCD}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "All Objects"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}
