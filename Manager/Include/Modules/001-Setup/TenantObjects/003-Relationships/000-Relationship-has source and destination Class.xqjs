@@ -390,48 +390,6 @@
 		},
 		
 		{
-			"Comment": "Relationship `Tenant.has Payment Plan`.has source Class `Tenant`",
-			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-			"SourceInstance": "{050AF695-B568-4463-AB0A-543209D4374B}",
-			"DestinationInstances":
-			[
-				"{703F9D65-C584-4D9F-A656-D0E3C247FF1F}"
-			]
-		},
-		{
-			"Comment": "Relationship `Tenant.has Payment Plan`.has destination Class `Payment Plan`",
-			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-			"SourceInstance": "{050AF695-B568-4463-AB0A-543209D4374B}",
-			"DestinationInstances":
-			[
-				"{622C2C7B-B1C5-45F8-999C-370DC98D138D}"
-			]
-		},
-		
-		{
-			"Comment": "Relationship `Payment Plan.for Tenant`.has source Class `Payment Plan`",
-			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-			"SourceInstance": "{85B40E4B-849B-4006-A9C0-4E201B25975F}",
-			"DestinationInstances":
-			[
-				"{622C2C7B-B1C5-45F8-999C-370DC98D138D}"
-			]
-		},
-		{
-			"Comment": "Relationship `Payment Plan.for Tenant`.has destination Class `Tenant`",
-			"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-			"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-			"SourceInstance": "{85B40E4B-849B-4006-A9C0-4E201B25975F}",
-			"DestinationInstances":
-			[
-				"{703F9D65-C584-4D9F-A656-D0E3C247FF1F}"
-			]
-		},
-		
-		{
 			"Comment": "Relationship `Tenant.has Tenant Type`.has source Class `Tenant`",
 			"RelationshipInstance": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
 			"InverseRelationshipInstance": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",

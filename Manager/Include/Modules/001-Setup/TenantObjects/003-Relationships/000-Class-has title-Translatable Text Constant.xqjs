@@ -604,16 +604,6 @@
 			]
 		},
 		{
-			"Comment": "Class `Payment Plan`.has title Translatable Text Constant `Payment Plan`",
-			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
-			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
-			"SourceInstance": "{622C2C7B-B1C5-45F8-999C-370DC98D138D}",
-			"DestinationInstances":
-			[
-				"{A99DC9CE-C5BA-49FC-AECC-D5C9C8C0F74B}"
-			]
-		},
-		{
 			"Comment": "Class `Tenant`.has title Translatable Text Constant `Tenant`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",

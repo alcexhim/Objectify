@@ -232,28 +232,6 @@
 					]
 				},
 				{
-					"ID": "{050AF695-B568-4463-AB0A-543209D4374B}",
-					"Comment": "Tenant.has Payment Plan",
-					"AttributeValues":
-					[
-						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "has"
-						}
-					]
-				},
-				{
-					"ID": "{85B40E4B-849B-4006-A9C0-4E201B25975F}",
-					"Comment": "Payment Plan.for Tenant",
-					"AttributeValues":
-					[
-						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "for"
-						}
-					]
-				},
-				{
 					"ID": "{D3963A58-BA8F-4CB4-AB0F-6B51C3852F26}",
 					"Comment": "Tenant.has Tenant Type",
 					"AttributeValues":

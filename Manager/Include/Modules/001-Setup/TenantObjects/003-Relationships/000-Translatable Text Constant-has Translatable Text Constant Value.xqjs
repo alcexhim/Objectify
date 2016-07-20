@@ -592,16 +592,6 @@
 			]
 		},
 		{
-			"Comment": "Translatable Text Constant `Payment Plan`.has Translatable Text Constant Value `Payment Plan (English - United States)`",
-			"RelationshipInstance": "{F9B60C00-FF1D-438F-AC74-6EDFA8DD7324}",
-			"InverseRelationshipInstance": "{20C70FA4-5258-480D-A61A-4A5BC9C5F990}",
-			"SourceInstance": "{A99DC9CE-C5BA-49FC-AECC-D5C9C8C0F74B}",
-			"DestinationInstances":
-			[
-				"{C0B0CE3D-4AA6-417E-93F0-AAF39FDC191A}"
-			]
-		},
-		{
 			"Comment": "Translatable Text Constant `Tenant`.has Translatable Text Constant Value `Tenant (English - United States)`",
 			"RelationshipInstance": "{F9B60C00-FF1D-438F-AC74-6EDFA8DD7324}",
 			"InverseRelationshipInstance": "{20C70FA4-5258-480D-A61A-4A5BC9C5F990}",
