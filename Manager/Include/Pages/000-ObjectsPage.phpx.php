@@ -30,7 +30,8 @@
 			$this->CurrentObject = TenantObject::GetByID($e->RenderingPage->GetPathVariableValue("objectID"));
 			
 			$idwObjectTitleHeading = $e->RenderingPage->GetControlByID("idwObjectTitleHeading");
-			$idwObjectTitleHeading->CurrentObject = $this->CurrentObject;
+			$idwObjectTitleHeading->CurrentInstance = $this->CurrentObject->GetThisInstance();
+			$idwObjectTitleHeading->ShowURL = false;
 			
 			$tbsTabs = $e->RenderingPage->GetControlByID("tbsTabs");
 			$tabGeneralInformation = $tbsTabs->GetTabByID("tabGeneralInformation");
