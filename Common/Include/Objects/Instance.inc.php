@@ -183,6 +183,14 @@
 				return false;
 			}
 			
+			if (is_object($value))
+			{
+				if (get_class($value) == "DateTime")
+				{
+					$value = $value->format("Y-m-d H:i:s");
+				}
+			}
+			
 			$pdo = DataSystem::GetPDO();
 			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "AttributeValues ("
 				. "attval_TenantID, attval_AttributeInstanceID, attval_InstanceID, attval_EffectiveDateTime, attval_UserInstanceID, attval_Value"
