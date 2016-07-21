@@ -22,7 +22,8 @@
 	use Objectify\Objects\KnownRelationships;
 	
 	use UniversalEditor\ObjectModels\Markup\MarkupTagElement;
-	
+use Objectify\Objects\KnownAttributes;
+		
 	class SetupPage extends PhastPage
 	{
 		private function CreateDefaultSecurityPrivilegesAndGroups()
@@ -216,16 +217,16 @@
 											{
 												$instRelationship = Instance::GetByGlobalIdentifier($transval->RelationshipID);
 												$instTTC_Value = $objTranslatableTextConstant->CreateInstance();
-													
+												
 												foreach ($transval->Values as $val)
 												{
 													$instLanguage = Instance::GetByGlobalIdentifier($val->LanguageInstanceID);
-									
-													$instLanguage_Value = $objLanguageString->CreateInstance(array
-													(
-														new TenantObjectInstancePropertyValue("Language", $instLanguage),
-														new TenantObjectInstancePropertyValue("Value", $val->Value)
-													));
+													
+													$instLanguage_Value = $objLanguageString->CreateInstance();
+													$instLanguage_Value->SetAttributeValue(KnownAttributes::get___Text___Value(), $val->Value);
+													
+													Relationship::Create(KnownRelationships::get___Translatable_Text_Constant_Value__has__Language(), $instLanguage_Value, array($instLanguage));
+													Relationship::Create(KnownRelationships::get___Language__for__Translatable_Text_Constant_Value(), $instLanguage, array($instLanguage_Value));
 													
 													Relationship::Create(KnownRelationships::get___Translatable_Text_Constant__has__Translatable_Text_Constant_Value(), $instTTC_Value, array($instLanguage_Value));
 												}
@@ -274,11 +275,11 @@
 									{
 										$instLanguage = Instance::GetByGlobalIdentifier($val->LanguageInstanceID);
 										
-										$instLanguage_Value = $objLanguageString->CreateInstance(array
-										(
-											new TenantObjectInstancePropertyValue("Language", $instLanguage),
-											new TenantObjectInstancePropertyValue("Value", $val->Value)
-										));
+										$instLanguage_Value = $objLanguageString->CreateInstance();
+										$instLanguage_Value->SetAttributeValue(KnownAttributes::get___Text___Value(), $val->Value);
+
+										Relationship::Create(KnownRelationships::get___Translatable_Text_Constant_Value__has__Language(), $instLanguage_Value, array($instLanguage));
+										Relationship::Create(KnownRelationships::get___Language__for__Translatable_Text_Constant_Value(), $instLanguage, array($instLanguage_Value));
 										
 										Relationship::Create(KnownRelationships::get___Translatable_Text_Constant__has__Translatable_Text_Constant_Value(), $instTTC_Value, array($instLanguage_Value));
 									}
@@ -882,25 +883,21 @@
 			$objTranslatableTextConstant = TenantObject::GetByName("TranslatableTextConstant");
 			$objLanguageString = TenantObject::GetByName("TranslatableTextConstantValue");
 			
-			$instLanguageEnglish_LoginHeaderText = $objLanguageString->CreateInstance(array
-			(
-				new TenantObjectInstancePropertyValue("Language", new SingleInstanceProperty($instLanguageEnglish)),
-				new TenantObjectInstancePropertyValue("Value", "Welcome to Your New Tenant")
-			));
-			$instTTC_LoginHeaderText = $objTranslatableTextConstant->CreateInstance(array
-			(
-				new TenantObjectInstancePropertyValue("Values", new MultipleInstanceProperty(array($instLanguageEnglish_LoginHeaderText)))
-			));
+			$instLanguageEnglish_LoginHeaderText = $objLanguageString->CreateInstance();
+			$instLanguageEnglish_LoginHeaderText->SetAttributeValue(KnownAttributes::get___Text___Value(), "Welcome to Your New Tenant");
 			
-			$instLanguageEnglish_LoginFooterText = $objLanguageString->CreateInstance(array
-			(
-				new TenantObjectInstancePropertyValue("Language", new SingleInstanceProperty($instLanguageEnglish)),
-				new TenantObjectInstancePropertyValue("Value", "Once you're logged in, you can customize the 'Login Header Text' and 'Login Footer Text' properties of your new tenant.")
-			));
-			$instTTC_LoginFooterText = $objTranslatableTextConstant->CreateInstance(array
-			(
-				new TenantObjectInstancePropertyValue("Values", new MultipleInstanceProperty(array($instLanguageEnglish_LoginFooterText)))
-			));
+			Relationship::Create(KnownRelationships::get___Translatable_Text_Constant_Value__has__Language(), $instLanguageEnglish_LoginHeaderText, array($instLanguageEnglish));
+			Relationship::Create(KnownRelationships::get___Language__for__Translatable_Text_Constant_Value(), $instLanguageEnglish, array($instLanguageEnglish_LoginHeaderText));
+			
+			$instTTC_LoginHeaderText = $objTranslatableTextConstant->CreateInstance();
+			
+			$instLanguageEnglish_LoginFooterText = $objLanguageString->CreateInstance();
+			$instLanguageEnglish_LoginFooterText->SetAttributeValue(KnownAttributes::get___Text___Value(), "Once you're logged in, you can customize the 'Login Header Text' and 'Login Footer Text' properties of your new tenant.");
+													
+			Relationship::Create(KnownRelationships::get___Translatable_Text_Constant_Value__has__Language(), $instLanguageEnglish_LoginFooterText, array($instLanguageEnglish));
+			Relationship::Create(KnownRelationships::get___Language__for__Translatable_Text_Constant_Value(), $instLanguageEnglish, array($instLanguageEnglish_LoginFooterText));
+			
+			$instTTC_LoginFooterText = $objTranslatableTextConstant->CreateInstance();
 			
 			$instTenant = $objTenant->GetInstanceByGlobalIdentifier("{F2C9D4A9-9EFB-4263-84DB-66A9DA65AD00}");
 			
@@ -946,9 +943,11 @@
 			
 			$instEnglish_SystemAdministrator = $objLanguageString->CreateInstance(array
 			(
-				new TenantObjectInstancePropertyValue("Language", $lang),
 				new TenantObjectInstancePropertyValue("Value", $displayName)
 			));
+			
+			Relationship::Create(KnownRelationships::get___Translatable_Text_Constant_Value__has__Language(), $instEnglish_SystemAdministrator, array($lang));
+			Relationship::Create(KnownRelationships::get___Language__for__Translatable_Text_Constant_Value(), $lang, array($instEnglish_SystemAdministrator));
 			
 			$instTTC_SystemAdministrator = $objTranslatableTextConstant->CreateInstance();
 			Relationship::Create(KnownRelationships::get___Translatable_Text_Constant__has__Translatable_Text_Constant_Value(), $instTTC_SystemAdministrator, array($instEnglish_SystemAdministrator));

@@ -24,6 +24,16 @@
 							"Value": "LocaleID"
 						}
 					]
+				},
+				{
+					"ID": "{8C528FB0-4063-47B0-BC56-85E387A41BD2}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+							"Value": "Level"
+						}
+					]
 				}
 			]
 		}

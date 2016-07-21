@@ -19,7 +19,9 @@
 	
 	use Objectify\Objects\TenantObject;
 	use Objectify\Objects\TenantObjectInstance;
-	
+	use Objectify\Objects\KnownRelationships;
+use Objectify\Objects\Relationship;
+			
 	class PagePage extends PhastPage
 	{
 		/**
@@ -36,10 +38,15 @@
 				case "ParagraphPageComponent":
 				{
 					$para = new Paragraph();
-					$propText = $instComponent->GetPropertyValue("Text");
-					if ($propText != null)
+					
+					$rels = Relationship::GetBySourceInstance($instComponent, KnownRelationships::get___Paragraph_Page_Component__has_text__Translatable_Text_Constant());
+					$rel = $rels[0];
+					if ($rel != null)
 					{
-						$para->Content = $propText;
+						$insts = $rel->GetDestinationInstances();
+						$inst = $insts[0];
+						
+						$para->Content = $inst->ToString();
 					}
 					$ctl = $para;
 					break;
@@ -47,11 +54,18 @@
 				case "HeadingPageComponent":
 				{
 					$hdr = new Heading();
-					$hdr->Level = $instComponent->GetPropertyValue("Level");
-					$propTitle = $instComponent->GetPropertyValue("Title");
-					if ($propTitle != null)
+					$hdr->Level = $instComponent->GetAttributeValue("Level");
+
+					$rels = Relationship::GetBySourceInstance($instComponent, KnownRelationships::get___Heading_Page_Component__has_text__Translatable_Text_Constant());
+					$rel = $rels[0];
+					if ($rel != null)
 					{
-						$hdr->Content = $propTitle->GetInstances()[0]->ToString();
+						$insts = $rel->GetDestinationInstances();
+						$inst = $insts[0];
+						if ($inst != null)
+						{
+							$hdr->Content = $inst->ToString();
+						}
 					}
 					$ctl = $hdr;
 					break;
@@ -70,14 +84,24 @@
 				case "ImagePageComponent":
 				{
 					$img = new Image();
-					$img->ImageUrl = $instComponent->GetPropertyValue("ImageFileName");
+					$img->ImageUrl = $instComponent->GetAttributeValue("ImageURL");
 					$ctl = $img;
 					break;
 				}
 				case "SequentialContainerPageComponent":
 				{
-					$instOrientation = $instComponent->GetPropertyValue("Orientation")->GetInstance();
-					$orientation = $instOrientation->GetPropertyValue("Value");
+					$orientation = "Vertical";
+					$rels = Relationship::GetBySourceInstance($instComponent, KnownRelationships::get___Sequential_Container_Page_Component__has__Sequential_Container_Orientation());
+					$rel = $rels[0];
+					if ($rel != null)
+					{
+						$insts = $rel->GetDestinationInstances();
+						$inst = $insts[0];
+						if ($inst != null)
+						{
+							
+						}
+					}
 					
 					$divSequentialContainer = new HTMLControl("div");
 					$divSequentialContainer->ClassList[] = "SequentialContainer";
@@ -95,44 +119,66 @@
 				}
 			}
 
-			switch (get_class($ctl))
+			switch ($instComponent->ParentObject->Name)
 			{
-				case "Phast\\WebControls\\Panel":
+				case "PanelPageComponent":
 				{
-					$instHeaderComponents = $instComponent->GetPropertyValue("HeaderComponents");
-					if ($instHeaderComponents !== null)
+					$relsHeaderComponents = Relationship::GetBySourceInstance($instComponent, KnownRelationships::get___Panel_Page_Component__has_header__Page_Component());
+					$relHeaderComponents = $relsHeaderComponents[0];
+					if ($relHeaderComponents != null)
 					{
-						$instHeaderComponents = $instHeaderComponents->GetInstances();
+						$instHeaderComponents = $relHeaderComponents->GetDestinationInstances();
 						foreach ($instHeaderComponents as $instComponent1)
 						{
 							$ctl1 = $this->CreatePageComponent($instComponent1);
 							$ctl->HeaderControls[] = $ctl1;
 						}
 					}
-					
-					$instContentComponents = $instComponent->GetPropertyValue("ContentComponents");
-					if ($instContentComponents !== null)
+
+					$relsContentComponents = Relationship::GetBySourceInstance($instComponent, KnownRelationships::get___Panel_Page_Component__has_content__Page_Component());
+					$relContentComponents = $relsContentComponents[0];
+					if ($relContentComponents != null)
 					{
-						$instContentComponents = $instContentComponents->GetInstances();
+						$instContentComponents = $relContentComponents->GetDestinationInstances();
 						foreach ($instContentComponents as $instComponent1)
 						{
 							$ctl1 = $this->CreatePageComponent($instComponent1);
 							$ctl->ContentControls[] = $ctl1;
 						}
 					}
-					
-					$instFooterComponents = $instComponent->GetPropertyValue("FooterComponents");
-					if ($instFooterComponents !== null)
+
+					$relsFooterComponents = Relationship::GetBySourceInstance($instComponent, KnownRelationships::get___Panel_Page_Component__has_footer__Page_Component());
+					$relFooterComponents = $relsFooterComponents[0];
+					if ($relFooterComponents != null)
 					{
-						$instFooterComponents = $instFooterComponents->GetInstances();
+						$instFooterComponents = $relFooterComponents->GetDestinationInstances();
 						foreach ($instFooterComponents as $instComponent1)
 						{
 							$ctl1 = $this->CreatePageComponent($instComponent1);
-							$ctl->ContentControls[] = $ctl1;
+							$ctl->FooterControls[] = $ctl1;
 						}
 					}
 					break;
 				}
+				case "SequentialContainerPageComponent":
+				{
+					$relsComponents = Relationship::GetBySourceInstance($instComponent, KnownRelationships::get___Sequential_Container_Page_Component__has__Page_Component());
+					$relComponents = $relsComponents[0];
+					if ($relComponents != null)
+					{
+						$instComponents = $relComponents->GetDestinationInstances();
+						foreach ($instComponents as $instComponent1)
+						{
+							$ctl1 = $this->CreatePageComponent($instComponent1);
+							$ctl->Controls[] = $ctl1;
+						}
+					}
+					break;
+				}
+			}
+			
+			switch (get_class($ctl))
+			{
 				default:
 				{
 					$instComponents = $instComponent->GetPropertyValue("Components");
@@ -153,10 +199,11 @@
 			{
 				$ctl->Attributes[] = new WebControlAttribute("data-instance-id", $instComponent->GetInstanceID());
 				
-				$propStyles = $instComponent->GetPropertyValue("Styles");
-				if ($propStyles != null)
+				$relsStyles = Relationship::GetBySourceInstance($instComponent, KnownRelationships::get___Page_Component__has__Style());
+				$relStyles = $relsStyles[0];
+				if ($relStyles != null)
 				{
-					$instStyles = $propStyles->GetInstances();
+					$instStyles = $relStyles->GetDestinationInstances();
 					foreach ($instStyles as $instStyle)
 					{
 						$ctl->ClassList[] = $instStyle->GetPropertyValue("ClassName");
@@ -173,7 +220,7 @@
 									$propStyleProperty = $propStyleProperty->GetInstance();
 									$cssPropertyName = $propStyleProperty->GetPropertyValue("CSSPropertyName");
 								}
-								
+					
 								$cssPropertyValue = $instRule->GetPropertyValue("Value");
 								$ctl->StyleRules[] = new WebStyleSheetRule($cssPropertyName, $cssPropertyValue);
 							}
@@ -202,26 +249,27 @@
 				return;
 			}
 			
-			$instPageStyles = $instPage->GetPropertyValue("Styles");
-			if ($instPageStyles != null)
+			$relsStyles = Relationship::GetBySourceInstance($instPage, KnownRelationships::get___Page__has__Style());
+			$relStyles = $relsStyles[0];
+			if ($relStyles != null)
 			{
-				$instPageStyles = $instPageStyles->GetInstances();
-				foreach ($instPageStyles as $instPageStyle)
+				$instStyles = $relStyles->GetDestinationInstances();
+				foreach ($instStyles as $instStyle)
 				{
-					$propClassName = $instPageStyle->GetPropertyValue("ClassName");
+					$propClassName = $instStyle->GetPropertyValue("ClassName");
 					if ($propClassName !== null) $this->Page->ClassList[] = $propClassName;
 				}
 			}
 			
-			$instPageComponents = $instPage->GetPropertyValue("Components");
-			if ($instPageComponents != null)
+			$relsComponents = Relationship::GetBySourceInstance($instPage, KnownRelationships::get___Page__has__Page_Component());
+			$relComponents = $relsComponents[0];
+			if ($relComponents != null)
 			{
-				$instPageComponents = $instPageComponents->GetInstances();
-				
+				$instComponents = $relComponents->GetDestinationInstances();
 				// cycle through page components and render them
-				foreach ($instPageComponents as $instPageComponent)
+				foreach ($instComponents as $instComponent)
 				{
-					$ctl = $this->CreatePageComponent($instPageComponent);
+					$ctl = $this->CreatePageComponent($instComponent);
 					$this->Page->Controls[] = $ctl;
 				}
 			}

@@ -39,28 +39,82 @@
 			]
 		},
 		{
+			"Name": "Relationship",
+			"Instances":
+			[
+				{
+					"ID": "{4C399E80-ECA2-4A68-BFB4-26A5E6E97047}",
+					"Comment": "Tenant.has logo image File",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has logo image"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Tenant`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{703F9D65-C584-4D9F-A656-D0E3C247FF1F}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `File`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{5D081079-E136-406A-A728-7472937A6E5E}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{A6E61265-6681-4AA7-A183-BEDF27DC5CD8}",
+					"Comment": "File.logo image for Tenant",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "logo image for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `File`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{5D081079-E136-406A-A728-7472937A6E5E}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Tenant`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{703F9D65-C584-4D9F-A656-D0E3C247FF1F}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
 			"ID": "{703F9D65-C584-4D9F-A656-D0E3C247FF1F}",
 			"Name": "Tenant",
 			"ParentObjects":
 			[
 				{
 					"Name": "Class"
-				}
-			],
-			"InstanceProperties":
-			[
-				{
-					"Name": "LogoImage",
-					"DataTypeName": "SingleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "File"
-							}
-						]
-					}
 				}
 			],
 			"Instances":

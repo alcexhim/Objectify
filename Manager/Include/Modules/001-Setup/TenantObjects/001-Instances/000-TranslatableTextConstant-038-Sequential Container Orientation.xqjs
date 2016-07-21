@@ -14,17 +14,21 @@
 							"Value": "LanguageString_English_SequentialContainerOrientation_Title" 
 						}
 					],
-					"PropertyValues":
+					"Relationships":
 					[
 						{
-							"Name": "Language",
-							"Value":
-							{
-								"Instance": "{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							}
-						},
+							"RelationshipID": "{3655AEC2-E2C9-4DDE-8D98-0C4D3CE1E569}",
+							"InverseRelationshipID": "{032C3549-C2FC-4512-B98A-C2D0BBCF78D0}",
+							"DestinationInstances":
+							[
+								"{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							]
+						}
+					],
+					"AttributeValues":
+					[
 						{
-							"Name": "Value",
+							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
 							"Value": "Sequential Container Orientation"
 						}
 					]

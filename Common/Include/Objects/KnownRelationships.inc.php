@@ -153,6 +153,17 @@
 			return Instance::GetByGlobalIdentifier(self::Relationship___String_Component__for__String);
 		}
 		
+		const Relationship___Translatable_Text_Constant_Value__has__Language = "{3655AEC2-E2C9-4DDE-8D98-0C4D3CE1E569}";
+		const Relationship___Language__for__Translatable_Text_Constant_Value = "{032C3549-C2FC-4512-B98A-C2D0BBCF78D0}";
+		public static function get___Translatable_Text_Constant_Value__has__Language()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Translatable_Text_Constant_Value__has__Language);
+		}
+		public static function get___Language__for__Translatable_Text_Constant_Value()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Language__for__Translatable_Text_Constant_Value);
+		}
+		
 		const Relationship___Class__has__Task = "{4D8670E1-2AF1-4E7C-9C87-C910BD7B319B}";
 		const Relationship___Task__for__Class = "{F6D05235-AAA8-4DC0-8D3A-A0F336B39F01}";
 		public static function get___Class__has__Task()
@@ -174,5 +185,123 @@
 		{
 			return Instance::GetByGlobalIdentifier(self::Relationship___User__for__User_Login);
 		}
+		
+		const Relationship___Sequential_Container_Page_Component__has__Sequential_Container_Orientation = "{DD55F506-8718-4240-A894-21346656E804}";
+		const Relationship___Sequential_Container_Orientation__for__Sequential_Container_Page_Component = "{F8F4EBFE-605C-4F68-99F7-83AEF3FF1AF2}";
+		public static function get___Sequential_Container_Page_Component__has__Sequential_Container_Orientation()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Sequential_Container_Page_Component__has__Sequential_Container_Orientation);
+		}
+		public static function get___Sequential_Container_Orientation__for__Sequential_Container_Page_Component()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Sequential_Container_Orientation__for__Sequential_Container_Page_Component);
+		}
+		
+		
+		
+		
+
+		const Relationship___Panel_Page_Component__has_header__Page_Component = "{223B4073-F417-49CD-BCA1-0E0749144B9D}";
+		const Relationship___Page_Component__header_for__Panel_Page_Component = "{38E70546-EB2F-4A2E-A2FA-9E290C1835A8}";
+		public static function get___Panel_Page_Component__has_header__Page_Component()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Panel_Page_Component__has_header__Page_Component);
+		}
+		public static function get___Page_Component__header_for__Panel_Page_Component()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Page_Component__header_for__Panel_Page_Component);
+		}
+
+		const Relationship___Panel_Page_Component__has_content__Page_Component = "{AD8C5FAE-2444-4700-896E-C5F968C0F85B}";
+		const Relationship___Page_Component__content_for__Panel_Page_Component = "{1DD64A89-9947-4BA3-85AA-12D2EAED80DC}";
+		public static function get___Panel_Page_Component__has_content__Page_Component()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Panel_Page_Component__has_content__Page_Component);
+		}
+		public static function get___Page_Component__content_for__Panel_Page_Component()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Page_Component__content_for__Panel_Page_Component);
+		}
+		
+		const Relationship___Panel_Page_Component__has_footer__Page_Component = "{56E339BD-6189-4BAC-AB83-999543FB8060}";
+		const Relationship___Page_Component__footer_for__Panel_Page_Component = "{9DC77CE3-869D-4E6C-A649-7A662FB5026D}";
+		public static function get___Panel_Page_Component__has_footer__Page_Component()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Panel_Page_Component__has_footer__Page_Component);
+		}
+		public static function get___Page_Component__footer_for__Panel_Page_Component()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Page_Component__footer_for__Panel_Page_Component);
+		}
+		
+		
+
+
+		const Relationship___Sequential_Container_Page_Component__has__Page_Component = "{CB7B8162-1C9E-4E72-BBB8-C1C37CA69CD5}";
+		const Relationship___Page_Component__for__Sequential_Container_Page_Component = "{E33F11EE-4417-4890-AD89-7BB3DB739918}";
+		public static function get___Sequential_Container_Page_Component__has__Page_Component()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Sequential_Container_Page_Component__has__Page_Component);
+		}
+		public static function get___Page_Component__for__Sequential_Container_Page_Component()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Page_Component__for__Sequential_Container_Page_Component);
+		}
+		
+		const Relationship___Page__has__Style = "{6E6E1A85-3EA9-4939-B13E-CBF645CB8B59}";
+		const Relationship___Style__for__Page = "{A608FC55-4D41-47F6-B021-38DFBAF29521}";
+		public static function get___Page__has__Style()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Page__has__Style);
+		}
+		public static function get___Style__for__Page()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Style__for__Page);
+		}
+		
+		const Relationship___Page__has__Page_Component = "{24F6C596-D77D-4754-B023-00321DEBA924}";
+		const Relationship___Page_Component__for__Page = "{2519A689-1184-4E24-8006-22FE3F7DB229}";
+		public static function get___Page__has__Page_Component()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Page__has__Page_Component);
+		}
+		public static function get___Page_Component__for__Page()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Page_Component__for__Page);
+		}
+
+		const Relationship___Page_Component__has__Style = "{818CFF50-7D42-43B2-B6A7-92C3C54D450D}";
+		const Relationship___Style__has__Page_Component = "{007563E7-7277-4436-8C82-06D5F156D8E1}";
+		public static function get___Page_Component__has__Style()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Page_Component__has__Style);
+		}
+		public static function get___Style__has__Page_Component()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Style__has__Page_Component);
+		}
+		
+		const Relationship___Heading_Page_Component__has_text__Translatable_Text_Constant = "{C5027DC2-53EE-4FC0-9BA6-F2B883F7DAD8}";
+		const Relationship___Translatable_Text_Constant__text_for__Heading_Page_Component = "{29C02384-57B0-45F5-9C15-747F9DFD2C69}";
+		public static function get___Heading_Page_Component__has_text__Translatable_Text_Constant()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Heading_Page_Component__has_text__Translatable_Text_Constant);
+		}
+		public static function get___Translatable_Text_Constant__text_for__Heading_Page_Component()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Translatable_Text_Constant__text_for__Heading_Page_Component);
+		}
+		
+		const Relationship___Paragraph_Page_Component__has_text__Translatable_Text_Constant = "{0E002E6F-AA79-457C-93B8-2CCE1AEF5F7E}";
+		const Relationship___Translatable_Text_Constant__text_for__Paragraph_Page_Component = "{5E75000D-2421-4AD4-9E5F-B9FDD9CB4744}";
+		public static function get___Paragraph_Page_Component__has_text__Translatable_Text_Constant()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Paragraph_Page_Component__has_text__Translatable_Text_Constant);
+		}
+		public static function get___Translatable_Text_Constant__text_for__Paragraph_Page_Component()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Translatable_Text_Constant__text_for__Paragraph_Page_Component);
+		}
+		
 	}
 ?>

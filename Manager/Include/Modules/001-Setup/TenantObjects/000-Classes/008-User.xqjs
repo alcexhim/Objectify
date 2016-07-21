@@ -59,23 +59,6 @@
 				{
 					"Name": "Class"
 				}
-			],
-			"InstanceProperties":
-			[
-				{
-					"Name": "Logins",
-					"Comment": "This should be a Fetch Multiple Instances field that fetches the instances from UserLogin object that have their User property set to this User instance",
-					"DataTypeName": "MultipleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "UserLogin"
-							}
-						]
-					}
-				}
 			]
 		},
 		{
