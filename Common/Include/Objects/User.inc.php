@@ -30,8 +30,17 @@
 			
 			foreach ($instUserLogins as $instUserLogin)
 			{
-				$tokenCompare = $instUserLogin->GetPropertyValue("Token");
-				if ($tokenCompare == $token) return $instUserLogin->GetPropertyValue("User")->GetInstance();
+				$tokenCompare = $instUserLogin->GetAttributeValue("Token");
+				if ($tokenCompare == $token)
+				{
+					$rels = Relationship::GetBySourceInstance($instUserLogin, KnownRelationships::get___User_Login__has__User());
+					$rel = $rels[0];
+					if ($rel == null) continue;
+					
+					$insts = $rel->GetDestinationInstances();
+					$inst = $insts[0];
+					return $inst;
+				}
 			}
 			return null;
 		}

@@ -163,5 +163,16 @@
 		{
 			return Instance::GetByGlobalIdentifier(self::Relationship___Task__for__Class);
 		}
+		
+		const Relationship___User_Login__has__User = "{85B40E4B-849B-4006-A9C0-4E201B25975F}";
+		const Relationship___User__for__User_Login = "{C79A6041-FC94-41A5-9860-D443C60FA7DE}";
+		public static function get___User_Login__has__User()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___User_Login__has__User);
+		}
+		public static function get___User__for__User_Login()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___User__for__User_Login);
+		}
 	}
 ?>

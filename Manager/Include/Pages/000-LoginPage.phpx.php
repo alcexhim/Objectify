@@ -18,7 +18,8 @@
 	
 	use Phast\RandomStringGenerator;
 	use Phast\RandomStringGeneratorCharacterSets;
-					
+use Objectify\Objects\KnownRelationships;
+						
 	class LoginPage extends PhastPage
 	{
 		public function OnInitializing(CancelEventArgs $e)
@@ -101,15 +102,14 @@
 						$_SESSION["Authentication.LoginToken"] = $user_LoginToken;
 						
 						$objUserLogin = TenantObject::GetByName("UserLogin");
-						$objUserLogin->CreateInstance(array
-						(
-							new TenantObjectInstancePropertyValue("Token", $user_LoginToken),
-							new TenantObjectInstancePropertyValue("SignonTime", (new \DateTime())),
-							new TenantObjectInstancePropertyValue("User", new SingleInstanceProperty($inst, array($objUser))),
-							new TenantObjectInstancePropertyValue("SignoffTime", null),
-							new TenantObjectInstancePropertyValue("DeviceType", new SingleInstanceProperty(null, array($objDeviceType))),
-							new TenantObjectInstancePropertyValue("IPAddress", $_SERVER["REMOTE_ADDR"])
-						));
+						$instUserLogin = $objUserLogin->CreateInstance();
+						
+						$instUserLogin->SetAttributeValue("Token", $user_LoginToken);
+						$instUserLogin->SetAttributeValue("StartDate", new \DateTime());
+						$instUserLogin->SetAttributeValue("IPAddress", $_SERVER["REMOTE_ADDR"]);
+						
+						Relationship::Create(KnownRelationships::get___User_Login__has__User(), $instUserLogin, array($inst));
+						Relationship::Create(KnownRelationships::get___User__for__User_Login(), $inst, array($instUserLogin));
 					}
 					
 					$user = User::GetCurrent(); // User::GetByCredentials($username, $password);

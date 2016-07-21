@@ -144,6 +144,26 @@
 							"Value": "ImageURL"
 						}
 					]
+				},
+				{
+					"ID": "{DA7686B6-3803-4F15-97F6-7F8F3AE16668}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+							"Value": "Token"
+						}
+					]
+				},
+				{
+					"ID": "{ADE5A3C3-A84E-4798-BC5B-E08F21380208}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+							"Value": "IPAddress"
+						}
+					]
 				}
 			]
 		}
