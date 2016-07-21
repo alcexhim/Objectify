@@ -167,6 +167,22 @@
 		 */
 		public function SetAttributeValue($attribute, $value)
 		{
+			if (is_string($attribute))
+			{
+				$attribute = $this->ParentObject->GetAttribute($attribute);
+			}
+			
+			if (is_object($attribute))
+			{
+				if (get_class($attribute) != "Objectify\\Objects\\Instance")
+				{
+				}
+			}
+			else
+			{
+				return false;
+			}
+			
 			$pdo = DataSystem::GetPDO();
 			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "AttributeValues ("
 				. "attval_TenantID, attval_AttributeInstanceID, attval_InstanceID, attval_EffectiveDateTime, attval_UserInstanceID, attval_Value"
