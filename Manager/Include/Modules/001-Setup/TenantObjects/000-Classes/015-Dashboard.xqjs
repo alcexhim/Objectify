@@ -2,28 +2,82 @@
 	"Objects":
 	[
 		{
+			"Name": "Relationship",
+			"Instances":
+			[
+				{
+					"Comment": "Dashboard.has Dashboard Content",
+					"ID": "{6D1C6E4D-8D36-4E18-9256-363105AC09B1}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Dashboard`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{896B529C-452D-42AC-98C5-170ED4F826C6}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Dashboard Content`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{D1A60533-1B5A-422E-9739-4551FDEC48BF}"
+							]
+						}
+					]
+				},
+				{
+					"Comment": "Dashboard Content.for Dashboard",
+					"ID": "{44F0C7EF-A715-4833-84DC-D64347B9D6A5}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Dashboard Content`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{D1A60533-1B5A-422E-9739-4551FDEC48BF}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Dashboard`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{896B529C-452D-42AC-98C5-170ED4F826C6}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
 			"ID": "{896B529C-452D-42AC-98C5-170ED4F826C6}",
 			"Name": "Dashboard",
 			"ParentObjects":
 			[
 				{
 					"Name": "Class"
-				}
-			],
-			"InstanceProperties":
-			[
-				{
-					"Name": "Items",
-					"DataTypeName": "MultipleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "DashboardContent"
-							}
-						]
-					}
 				}
 			]
 		},

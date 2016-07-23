@@ -2,28 +2,146 @@
 	"Objects":
 	[
 		{
+			"Name": "Relationship",
+			"Instances":
+			[
+				{
+					"ID": "{A477DE49-DBBA-46E5-BA81-1C9DC9D95E10}",
+					"Comment": "Menu.has Menu Item",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Menu`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{06E7806D-9384-4EA5-B5D1-350A51552773}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Menu Item`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{1E9D38B9-1B07-4EF9-BAD7-43DEB25AEB83}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{55092EA2-D183-4EDA-99B8-2684B77EE704}",
+					"Comment": "Menu Item.for Menu",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Menu Item`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{1E9D38B9-1B07-4EF9-BAD7-43DEB25AEB83}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Menu`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{06E7806D-9384-4EA5-B5D1-350A51552773}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{8859DAEF-01F7-46FA-8F3E-7B2F28E0A520}",
+					"Comment": "Command Menu Item.has Icon",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Command Menu Item`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{9D3EDE23-6DB9-4664-9145-ABCBD3A0A2C2}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Icon`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{67BD594B-E8B0-4752-8796-D7A369513FBF}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{6D3D6F9E-CDAE-4D0E-B5B2-BC2BA333F746}",
+					"Comment": "Icon.for Command Menu Item",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Icon`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{67BD594B-E8B0-4752-8796-D7A369513FBF}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Command Menu Item`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{9D3EDE23-6DB9-4664-9145-ABCBD3A0A2C2}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
 			"ID": "{06E7806D-9384-4EA5-B5D1-350A51552773}",
 			"Name": "Menu",
 			"ParentObjects":
 			[
 				{
 					"Name": "Class"
-				}
-			],
-			"InstanceProperties":
-			[
-				{
-					"Name": "Items",
-					"DataTypeName": "MultipleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "MenuItem"
-							}
-						]
-					}
 				}
 			]
 		},
@@ -44,22 +162,6 @@
 			[
 				{
 					"Name": "MenuItem"
-				}
-			],
-			"InstanceProperties":
-			[
-				{
-					"Name": "Icon",
-					"DataTypeName": "SingleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "Icon"
-							}
-						]
-					}
 				}
 			]
 		},

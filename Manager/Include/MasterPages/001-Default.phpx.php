@@ -95,15 +95,21 @@
 						
 						$mi->Title = $inst->ToString();
 						
-						$instIcon = $instSidebarMenuItem->GetPropertyValue("Icon")->GetInstance();
-						if ($instIcon != null)
+						$relsIcon = Relationship::GetBySourceInstance($instSidebarMenuItem, KnownRelationships::get___Command_Menu_Item__has__Icon());
+						$relIcon = $relsIcon[0];
+						if ($relIcon != null)
 						{
-							switch ($instIcon->ParentObject->Name)
+							$instIcons = $relIcon->GetDestinationInstances();
+							$instIcon = $instIcons[0];
+							if ($instIcon != null)
 							{
-								case "IconFontAwesome":
+								switch ($instIcon->ParentObject->Name)
 								{
-									$mi->IconName = $instIcon->GetPropertyValue("IconName");
-									break;
+									case "IconFontAwesome":
+									{
+										$mi->IconName = $instIcon->GetPropertyValue("IconName");
+										break;
+									}
 								}
 							}
 						}

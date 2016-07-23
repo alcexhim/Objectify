@@ -551,145 +551,127 @@
 			[
 				{
 					"ID": "{E8607E63-E16B-4864-9F65-2607447FBF58}",
-					"PropertyValues":
+					"Relationships":
 					[
 						{
-							"Name": "Values",
-							"Value":
-							{
-								"Instances":
-								[
-									"{0BF7CC86-C0F8-4EC4-98F3-929BE9529BB8}"
-								]
-							}
+							"RelationshipID": "{F9B60C00-FF1D-438F-AC74-6EDFA8DD7324}",
+							"InverseRelationshipID": "{20C70FA4-5258-480D-A61A-4A5BC9C5F990}",
+							"DestinationInstances":
+							[
+								"{0BF7CC86-C0F8-4EC4-98F3-929BE9529BB8}"
+							]
 						}
 					]
 				},
 				{
 					"ID": "{8D8F415F-E095-4DEF-B52C-9FA370BCE7D1}",
-					"PropertyValues":
+					"Relationships":
 					[
 						{
-							"Name": "Values",
-							"Value":
-							{
-								"Instances":
-								[
-									"{59272367-7213-478B-AFD2-7A694D6B915D}"
-								]
-							}
+							"RelationshipID": "{F9B60C00-FF1D-438F-AC74-6EDFA8DD7324}",
+							"InverseRelationshipID": "{20C70FA4-5258-480D-A61A-4A5BC9C5F990}",
+							"DestinationInstances":
+							[
+								"{59272367-7213-478B-AFD2-7A694D6B915D}"
+							]
 						}
 					]
 				},
 				{
 					"ID": "{B5725DB6-A805-4BAF-B512-90A40F97B19A}",
-					"PropertyValues":
+					"Relationships":
 					[
 						{
-							"Name": "Values",
-							"Value":
-							{
-								"Instances":
-								[
-									"{956831DF-1801-42B6-AAE3-CD3DC376EA43}"
-								]
-							}
+							"RelationshipID": "{F9B60C00-FF1D-438F-AC74-6EDFA8DD7324}",
+							"InverseRelationshipID": "{20C70FA4-5258-480D-A61A-4A5BC9C5F990}",
+							"DestinationInstances":
+							[
+								"{956831DF-1801-42B6-AAE3-CD3DC376EA43}"
+							]
 						}
 					]
 				},
 				{
 					"ID": "{CFF6C955-4832-4298-92E7-9467FEC61B91}",
-					"PropertyValues":
+					"Relationships":
 					[
 						{
-							"Name": "Values",
-							"Value":
-							{
-								"Instances":
-								[
-									"{136766CD-5B0E-4100-A830-B419582774CE}"
-								]
-							}
+							"RelationshipID": "{F9B60C00-FF1D-438F-AC74-6EDFA8DD7324}",
+							"InverseRelationshipID": "{20C70FA4-5258-480D-A61A-4A5BC9C5F990}",
+							"DestinationInstances":
+							[
+								"{136766CD-5B0E-4100-A830-B419582774CE}"
+							]
 						}
 					]
 				},
 				{
 					"ID": "{3293C7EC-7900-4953-8031-24464F7DC0B3}",
-					"PropertyValues":
+					"Relationships":
 					[
 						{
-							"Name": "Values",
-							"Value":
-							{
-								"Instances":
-								[
-									"{39B0D963-4BE0-49C8-BFA2-607051CB0101}"
-								]
-							}
+							"RelationshipID": "{F9B60C00-FF1D-438F-AC74-6EDFA8DD7324}",
+							"InverseRelationshipID": "{20C70FA4-5258-480D-A61A-4A5BC9C5F990}",
+							"DestinationInstances":
+							[
+								"{39B0D963-4BE0-49C8-BFA2-607051CB0101}"
+							]
 						}
 					]
 				},
 				{
 					"ID": "{94D32217-87E4-478D-AAC6-C3451C977F4A}",
-					"PropertyValues":
+					"Relationships":
 					[
 						{
-							"Name": "Values",
-							"Value":
-							{
-								"Instances":
-								[
-									"{39A0D313-A6DA-40BD-A7EC-B0EECD03B191}"
-								]
-							}
+							"RelationshipID": "{F9B60C00-FF1D-438F-AC74-6EDFA8DD7324}",
+							"InverseRelationshipID": "{20C70FA4-5258-480D-A61A-4A5BC9C5F990}",
+							"DestinationInstances":
+							[
+								"{39A0D313-A6DA-40BD-A7EC-B0EECD03B191}"
+							]
 						}
 					]
 				},
 				{
 					"ID": "{23C39C3A-A8E7-4836-9C3E-CA5EAE118855}",
-					"PropertyValues":
+					"Relationships":
 					[
 						{
-							"Name": "Values",
-							"Value":
-							{
-								"Instances":
-								[
-									"{E6EC799B-5F02-4681-B0A0-4863313B2EED}"
-								]
-							}
+							"RelationshipID": "{F9B60C00-FF1D-438F-AC74-6EDFA8DD7324}",
+							"InverseRelationshipID": "{20C70FA4-5258-480D-A61A-4A5BC9C5F990}",
+							"DestinationInstances":
+							[
+								"{E6EC799B-5F02-4681-B0A0-4863313B2EED}"
+							]
 						}
 					]
 				},
 				{
 					"ID": "{05A39315-0AA9-4198-8283-0CCC1E2C28AE}",
-					"PropertyValues":
+					"Relationships":
 					[
 						{
-							"Name": "Values",
-							"Value":
-							{
-								"Instances":
-								[
-									"{F67A7438-9D65-4C91-BED7-A2458979FB56}"
-								]
-							}
+							"RelationshipID": "{F9B60C00-FF1D-438F-AC74-6EDFA8DD7324}",
+							"InverseRelationshipID": "{20C70FA4-5258-480D-A61A-4A5BC9C5F990}",
+							"DestinationInstances":
+							[
+								"{F67A7438-9D65-4C91-BED7-A2458979FB56}"
+							]
 						}
 					]
 				},
 				{
 					"ID": "{6B0AA372-0CC1-49C0-A038-F22DEBB12E60}",
-					"PropertyValues":
+					"Relationships":
 					[
 						{
-							"Name": "Values",
-							"Value":
-							{
-								"Instances":
-								[
-									"{DEC15A1B-A8C7-4842-91AF-0862ED9613B8}"
-								]
-							}
+							"RelationshipID": "{F9B60C00-FF1D-438F-AC74-6EDFA8DD7324}",
+							"InverseRelationshipID": "{20C70FA4-5258-480D-A61A-4A5BC9C5F990}",
+							"DestinationInstances":
+							[
+								"{DEC15A1B-A8C7-4842-91AF-0862ED9613B8}"
+							]
 						}
 					]
 				}

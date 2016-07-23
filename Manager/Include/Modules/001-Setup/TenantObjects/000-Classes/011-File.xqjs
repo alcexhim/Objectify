@@ -4,15 +4,34 @@
 		{
 			"ID": "{5D081079-E136-406A-A728-7472937A6E5E}",
 			"Name": "File",
-			"InstanceProperties":
+			"Relationships":
 			[
 				{
-					"Name": "FileName",
-					"DataTypeName": "Text"
+					"Comment": "Class `File`.has Attribute `Name` [Text Attribute]",
+					"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+					"InverseRelationshipID": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
+					"DestinationInstances":
+					[
+						"{9153A637-992E-4712-ADF2-B03F0D9EDEA6}"
+					]
 				},
 				{
-					"Name": "FileData",
-					"DataTypeName": "Binary"
+					"Comment": "Class `File`.has Attribute `Date Created` [Date Attribute]",
+					"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+					"InverseRelationshipID": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
+					"DestinationInstances":
+					[
+						"{A1C0255D-3E8D-47D7-A186-1C93C93D4667}"
+					]
+				},
+				{
+					"Comment": "Class `File`.has Attribute `Value` [Text Attribute]",
+					"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+					"InverseRelationshipID": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
+					"DestinationInstances":
+					[
+						"{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}"
+					]
 				}
 			]
 		}

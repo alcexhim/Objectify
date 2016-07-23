@@ -2,6 +2,56 @@
 	"Objects":
 	[
 		{
+			"Name": "Relationship",
+			"Instances":
+			[
+				{
+					"ID": "{79AAE09C-5690-471C-8442-1B230610456C}",
+					"Comment": "Tenant Type.has title Translatable Text Constant",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has title"
+						}
+					]
+				},
+				{
+					"ID": "{FBEAE730-6E4F-4EFB-83A2-3ACA02C1F947}",
+					"Comment": "Translatable Text Constant.title for Tenant Type",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "title for"
+						}
+					]
+				},
+				{
+					"ID": "{5FBD0BB8-0296-498A-A3C3-07A458CE5792}",
+					"Comment": "Tenant Type.has description Translatable Text Constant",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has description"
+						}
+					]
+				},
+				{
+					"ID": "{F152D032-B059-4397-BF62-C3FF9C922043}",
+					"Comment": "Translatable Text Constant.description for Tenant Type",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "description for"
+						}
+					]
+				}
+			]
+		},
+		{
 			"ID": "{5670953C-7367-4065-9AC2-46555342DC72}",
 			"Name": "TenantType",
 			"ParentObjects":
@@ -10,73 +60,65 @@
 					"Name": "Class"
 				}
 			],
-			"InstanceProperties":
-			[
-				{
-					"Name": "Description",
-					"DataTypeName": "MultipleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "TranslatableTextConstantValue"
-							}
-						]
-					}
-				}
-			],
 			"Instances":
 			[
 				{
 					"ID": "{5535F488-6C8E-42BC-86A3-664D70411A2A}",
-					"PropertyValues":
+					"TranslatableValues":
 					[
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{FBEAE730-6E4F-4EFB-83A2-3ACA02C1F947}"
-								]
-							}
+							"Comment": ".has title Translatable Text Constant",
+							"RelationshipID": "{79AAE09C-5690-471C-8442-1B230610456C}",
+							"InverseRelationshipID": "{FBEAE730-6E4F-4EFB-83A2-3ACA02C1F947}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Production"
+								}
+							]
 						},
 						{
-							"Name": "Description",
-							"Value":
-							{
-								"Instances":
-								[
-									"{79AAE09C-5690-471C-8442-1B230610456C}"
-								]
-							}
+							"Comment": ".has description Translatable Text Constant",
+							"RelationshipID": "{5FBD0BB8-0296-498A-A3C3-07A458CE5792}",
+							"InverseRelationshipID": "{F152D032-B059-4397-BF62-C3FF9C922043}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "The production tenant type. Usually the only tenant type visible to regular users. Add more (such as production, development, sandbox, sandbox preview, implementation preview, implementation) as needed."
+								}
+							]
 						}
 					]
 				},
 				{
 					"ID": "{B4F900F1-2C22-41FD-AAB9-7C956663256F}",
-					"PropertyValues":
+					"TranslatableValues":
 					[
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"{84032F2C-B347-4529-8D2E-FA68F4497D7C}"
-								]
-							}
+							"Comment": ".has title Translatable Text Constant",
+							"RelationshipID": "{79AAE09C-5690-471C-8442-1B230610456C}",
+							"InverseRelationshipID": "{FBEAE730-6E4F-4EFB-83A2-3ACA02C1F947}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Development"
+								}
+							]
 						},
 						{
-							"Name": "Description",
-							"Value":
-							{
-								"Instances":
-								[
-									"{142296C4-22CE-4996-ACE4-E2DB9B83A706}"
-								]
-							}
+							"Comment": ".has description Translatable Text Constant",
+							"RelationshipID": "{5FBD0BB8-0296-498A-A3C3-07A458CE5792}",
+							"InverseRelationshipID": "{F152D032-B059-4397-BF62-C3FF9C922043}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "The development tenant type. Usually used to create new features and modules before pushing them to production. Add more (such as production, development, sandbox, sandbox preview, implementation preview, implementation) as needed."
+								}
+							]
 						}
 					]
 				}

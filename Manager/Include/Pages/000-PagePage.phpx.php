@@ -21,7 +21,8 @@
 	use Objectify\Objects\TenantObjectInstance;
 	use Objectify\Objects\KnownRelationships;
 use Objectify\Objects\Relationship;
-			
+use Objectify\Objects\KnownAttributes;
+				
 	class PagePage extends PhastPage
 	{
 		/**
@@ -208,21 +209,29 @@ use Objectify\Objects\Relationship;
 					{
 						$ctl->ClassList[] = $instStyle->GetPropertyValue("ClassName");
 						
-						$instRules = $instStyle->GetPropertyValue("Rules");
-						if ($instRules != null)
+						$rels = Relationship::GetBySourceInstance($instStyle, KnownRelationships::get___Style__has__Style_Rule());
+						$rel = $rels[0];
+						if ($rel != null)
 						{
-							$instRules = $instRules->GetInstances();
-							foreach ($instRules as $instRule)
+							$instRules = $rel->GetDestinationInstances();
+							if ($instRules != null)
 							{
-								$propStyleProperty = $instRule->GetPropertyValue("StyleProperty");
-								if ($propStyleProperty != null)
+								foreach ($instRules as $instRule)
 								{
-									$propStyleProperty = $propStyleProperty->GetInstance();
-									$cssPropertyName = $propStyleProperty->GetPropertyValue("CSSPropertyName");
+									$relsStyleProperty = Relationship::GetBySourceInstance($instRule, KnownRelationships::get___Style_Rule__has__Style_Property());
+									$relStyleProperty = $relsStyleProperty[0];
+									if ($relStyleProperty != null)
+									{
+										$instStyleProperty = $relStyleProperty->GetDestinationInstances();
+										$instStyleProperty = $instStyleProperty[0];
+										if ($instStyleProperty != null)
+										{
+											$cssPropertyName = $instStyleProperty->GetAttributeValue(KnownAttributes::get___Text___CSSValue());
+											$cssPropertyValue = $instRule->GetAttributeValue(KnownAttributes::get___Text___Value());
+											$ctl->StyleRules[] = new WebStyleSheetRule($cssPropertyName, $cssPropertyValue);
+										}
+									}
 								}
-					
-								$cssPropertyValue = $instRule->GetPropertyValue("Value");
-								$ctl->StyleRules[] = new WebStyleSheetRule($cssPropertyName, $cssPropertyValue);
 							}
 						}
 					}

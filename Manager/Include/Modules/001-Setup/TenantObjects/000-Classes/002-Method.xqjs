@@ -45,22 +45,6 @@
 				{
 					"Name": "Class"
 				}
-			],
-			"InstanceProperties":
-			[
-				{
-					"Name": "Title",
-					"DataTypeName": "SingleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "String"
-							}
-						]
-					}
-				}
 			]
 		},
 		
@@ -124,28 +108,83 @@
 		},
 		
 		{
+			"Name": "Relationship",
+			"Instances":
+			[
+				{
+					"Comment": "Sequence Method.has Method Action",
+					"ID": "{75EC2A49-C715-4F89-A501-78869BD3758F}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Sequence Method`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{8BF91515-89EA-4633-80D3-C096A38E7B89}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Method Action`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{084A6D58-32C9-4A5F-9D2B-86C46F74E522}"
+							]
+						}
+					]
+				},
+				{
+					"Comment": "Method Action.for Sequence Method",
+					"ID": "{A9D63995-E2F3-474E-B3D2-1E4BA806726C}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Method Action`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{084A6D58-32C9-4A5F-9D2B-86C46F74E522}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Sequence Method`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{8BF91515-89EA-4633-80D3-C096A38E7B89}"
+							]
+						}
+					]
+				}
+			]
+		},
+		
+		{
 			"ID": "{8BF91515-89EA-4633-80D3-C096A38E7B89}",
 			"Name": "SequenceMethod",
 			"ParentObjects":
 			[
 				{
 					"Name": "Method"
-				}
-			],
-			"InstanceProperties":
-			[
-				{
-					"Name": "Actions",
-					"DataTypeName": "MultipleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "MethodAction"
-							}
-						]
-					}
 				}
 			]
 		},

@@ -186,6 +186,76 @@
 			]
 		},
 		{
+			"Name": "Relationship",
+			"Instances":
+			[
+				{
+					"Comment": "Style Rule.has Style Property",
+					"ID": "{B69C2708-E78D-413A-B491-ABB6F1D2A6E0}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Style Rule`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{C269A1F3-E014-4230-B78D-38EAF6EA8A81}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Style Property`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{A5688B41-343C-4D9E-8DE9-EAD92EC44E12}"
+							]
+						}
+					]
+				},
+				{
+					"Comment": "Style Property.for Style Rule",
+					"ID": "{DF43F7A5-8175-4E23-9801-8299EA55B356}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Style Property`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{A5688B41-343C-4D9E-8DE9-EAD92EC44E12}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Style Rule`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{C269A1F3-E014-4230-B78D-38EAF6EA8A81}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
 			"ID": "{C269A1F3-E014-4230-B78D-38EAF6EA8A81}",
 			"Name": "StyleRule",
 			"ParentObjects":
@@ -205,21 +275,139 @@
 						"{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}"
 					]
 				}
-			],
-			"InstanceProperties":
+			]
+		},
+		{
+			"Name": "Relationship",
+			"Instances":
 			[
 				{
-					"Name": "StyleProperty",
-					"DataTypeName": "SingleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "StyleProperty"
-							}
-						]
-					}
+					"Comment": "Style.has Style Rule",
+					"ID": "{4CC8A654-B2DF-4B17-A956-24939530790E}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Style`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{A48C843A-B24B-4BC3-BE6F-E2D069229B0A}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Style Rule`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{C269A1F3-E014-4230-B78D-38EAF6EA8A81}"
+							]
+						}
+					]
+				},
+				{
+					"Comment": "Style Rule.for Style",
+					"ID": "{32276525-126A-412F-A10F-1368312D2EAB}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Style Rule`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{C269A1F3-E014-4230-B78D-38EAF6EA8A81}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Style`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{A48C843A-B24B-4BC3-BE6F-E2D069229B0A}"
+							]
+						}
+					]
+				},
+				{
+					"Comment": "Style.has title Translatable Text Constant",
+					"ID": "{963233D5-88F6-41F0-9DE0-63BAB95FA228}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has title"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Style`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{A48C843A-B24B-4BC3-BE6F-E2D069229B0A}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Translatable Text Constant`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+							]
+						}
+					]
+				},
+				{
+					"Comment": "Translatable Text Constant.title for Style",
+					"ID": "{13CA9CF4-DAD3-48FB-9546-8929CF9DDA38}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "title for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Translatable Text Constant`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Style`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{A48C843A-B24B-4BC3-BE6F-E2D069229B0A}"
+							]
+						}
+					]
 				}
 			]
 		},
@@ -232,24 +420,16 @@
 					"Name": "Class"
 				}
 			],
-			"InstanceProperties":
+			"Relationships":
 			[
 				{
-					"Name": "ClassName",
-					"DataTypeName": "Text"
-				},
-				{
-					"Name": "Rules",
-					"DataTypeName": "MultipleInstance",
-					"Value":
-					{
-						"ValidObjects":
-						[
-							{
-								"Name": "StyleRule"
-							}
-						]
-					}
+					"Comment": "Class `Style`.has Attribute `Class Name` [Text Attribute]",
+					"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+					"InverseRelationshipID": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
+					"DestinationInstances":
+					[
+						"{0F42BCB6-549A-4407-BB91-DD147443F68F}"
+					]
 				}
 			]
 		}

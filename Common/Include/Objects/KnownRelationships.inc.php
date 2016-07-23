@@ -303,5 +303,38 @@
 			return Instance::GetByGlobalIdentifier(self::Relationship___Translatable_Text_Constant__text_for__Paragraph_Page_Component);
 		}
 		
+		const Relationship___Command_Menu_Item__has__Icon = "{8859DAEF-01F7-46FA-8F3E-7B2F28E0A520}";
+		const Relationship___Icon__for__Command_Menu_Item = "{6D3D6F9E-CDAE-4D0E-B5B2-BC2BA333F746}";
+		public static function get___Command_Menu_Item__has__Icon()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Command_Menu_Item__has__Icon);
+		}
+		public static function get___Icon__for__Command_Menu_Item()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Icon__for__Command_Menu_Item);
+		}
+		
+		const Relationship___Style__has__Style_Rule = "{4CC8A654-B2DF-4B17-A956-24939530790E}";
+		const Relationship___Style_Rule__for__Style = "{32276525-126A-412F-A10F-1368312D2EAB}";
+		public static function get___Style__has__Style_Rule()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Style__has__Style_Rule);
+		}
+		public static function get___Style_Rule__for__Style()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Style_Rule__for__Style);
+		}
+		
+		const Relationship___Style_Rule__has__Style_Property = "{B69C2708-E78D-413A-B491-ABB6F1D2A6E0}";
+		const Relationship___Style_Property__for__Style_Rule = "{DF43F7A5-8175-4E23-9801-8299EA55B356}";
+		public static function get___Style_Rule__has__Style_Property()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Style_Rule__has__Style_Property);
+		}
+		public static function get___Style_Property__for__Style_Rule()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Style_Property__for__Style_Rule);
+		}
+		
 	}
 ?>
