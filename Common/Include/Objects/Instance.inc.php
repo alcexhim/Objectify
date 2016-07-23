@@ -65,7 +65,7 @@
 			if (!is_numeric($id)) return null;
 			
 			$pdo = DataSystem::GetPDO();
-			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances WHERE instance_ID = :instance_ID";
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Instances WHERE instance_ID = :instance_ID";
 			$statement = $pdo->prepare($query);
 			$result = $statement->execute(array
 			(
@@ -83,7 +83,7 @@
 			$globalIdentifier = Objectify::SanitizeGlobalIdentifier($globalIdentifier);
 			
 			$pdo = DataSystem::GetPDO();
-			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances WHERE instance_GlobalIdentifier = :instance_GlobalIdentifier";
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Instances WHERE instance_GlobalIdentifier = :instance_GlobalIdentifier";
 			$statement = $pdo->prepare($query);
 			$result = $statement->execute(array
 			(
@@ -325,11 +325,11 @@
 			$pdo = DataSystem::GetPDO();
 			if ($this->ID == null)
 			{
-				$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances (instance_TenantID, instance_ObjectID, instance_GlobalIdentifier) VALUES (:instance_TenantID, :instance_ObjectID, :instance_GlobalIdentifier)";
+				$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "Instances (instance_TenantID, instance_ObjectID, instance_GlobalIdentifier) VALUES (:instance_TenantID, :instance_ObjectID, :instance_GlobalIdentifier)";
 			}
 			else
 			{
-				$query = "UPDATE " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances SET instance_ObjectID = :instance_ObjectID, instance_GlobalIdentifier = :instance_GlobalIdentifier WHERE instance_ID = :instance_ID AND instance_TenantID = :instance_TenantID";
+				$query = "UPDATE " . System::GetConfigurationValue("Database.TablePrefix") . "Instances SET instance_ObjectID = :instance_ObjectID, instance_GlobalIdentifier = :instance_GlobalIdentifier WHERE instance_ID = :instance_ID AND instance_TenantID = :instance_TenantID";
 			}
 			
 			$statement = $pdo->prepare($query);

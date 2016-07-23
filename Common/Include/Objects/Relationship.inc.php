@@ -34,9 +34,9 @@ use Phast\Data\DataSystem;
 		public function GetDestinationInstances()
 		{
 			$pdo = DataSystem::GetPDO();
-			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances, " . System::GetConfigurationValue("Database.TablePrefix") . "RelationshipTargets"
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Instances, " . System::GetConfigurationValue("Database.TablePrefix") . "RelationshipTargets"
 				. " WHERE " . System::GetConfigurationValue("Database.TablePrefix") . "RelationshipTargets.target_RelationshipID = :target_RelationshipID"
-				. " AND " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances.instance_ID = " . System::GetConfigurationValue("Database.TablePrefix") . "RelationshipTargets.target_DestinationInstanceID"
+				. " AND " . System::GetConfigurationValue("Database.TablePrefix") . "Instances.instance_ID = " . System::GetConfigurationValue("Database.TablePrefix") . "RelationshipTargets.target_DestinationInstanceID"
 				. " ORDER BY target_Order";
 			
 			$statement = $pdo->prepare($query);

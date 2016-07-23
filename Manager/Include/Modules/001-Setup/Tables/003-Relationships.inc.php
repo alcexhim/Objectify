@@ -22,8 +22,8 @@
 	$tblRelationships->ForeignKeys = array
 	(
 		new TableForeignKey("TenantID", new TableForeignKeyColumn($tblTenants, "ID")),
-		new TableForeignKey("RelationshipInstanceID", new TableForeignKeyColumn($tblTenantObjectInstances, "ID")),
-		new TableForeignKey("SourceInstanceID", new TableForeignKeyColumn($tblTenantObjectInstances, "ID"))
+		new TableForeignKey("RelationshipInstanceID", new TableForeignKeyColumn($tblInstances, "ID")),
+		new TableForeignKey("SourceInstanceID", new TableForeignKeyColumn($tblInstances, "ID"))
 	);
 	$tables[] = $tblRelationships;
 	
@@ -43,7 +43,7 @@
 	$tblRelationshipTargets->ForeignKeys = array
 	(
 		new TableForeignKey("RelationshipID", new TableForeignKeyColumn($tblRelationships, "ID")),
-		new TableForeignKey("DestinationInstanceID", new TableForeignKeyColumn($tblTenantObjectInstances, "ID"))
+		new TableForeignKey("DestinationInstanceID", new TableForeignKeyColumn($tblInstances, "ID"))
 	);
 	$tables[] = $tblRelationshipTargets;
 ?>

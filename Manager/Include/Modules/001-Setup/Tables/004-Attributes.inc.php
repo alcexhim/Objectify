@@ -31,8 +31,8 @@
 	$tblAttributeValues->ForeignKeys = array
 	(
 		new TableForeignKey("TenantID", new TableForeignKeyColumn($tblTenants, "ID")),
-		new TableForeignKey("InstanceID", new TableForeignKeyColumn($tblTenantObjectInstances, "ID")),
-		new TableForeignKey("AttributeInstanceID", new TableForeignKeyColumn($tblTenantObjectInstances, "ID"))
+		new TableForeignKey("InstanceID", new TableForeignKeyColumn($tblInstances, "ID")),
+		new TableForeignKey("AttributeInstanceID", new TableForeignKeyColumn($tblInstances, "ID"))
 	);
 	$tables[] = $tblAttributeValues;
 ?>

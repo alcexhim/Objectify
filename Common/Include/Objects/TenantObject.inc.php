@@ -245,7 +245,7 @@
 			$obj = TenantObject::GetByName($name);
 			if ($obj == null) return null;
 			
-			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances (";
+			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "Instances (";
 			$query .= "instance_TenantID, instance_ObjectID, instance_GlobalIdentifier";
 			$query .= ") VALUES (";
 			$query .= ":instance_TenantID, :instance_ObjectID, :instance_GlobalIdentifier";
@@ -300,7 +300,7 @@
 		public function GetNextInstanceID()
 		{
 			$pdo = DataSystem::GetPDO();
-			$query = "SELECT COUNT(instance_ID) FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances WHERE instance_ObjectID = :instance_ObjectID AND instance_TenantID = :instance_TenantID";
+			$query = "SELECT COUNT(instance_ID) FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Instances WHERE instance_ObjectID = :instance_ObjectID AND instance_TenantID = :instance_TenantID";
 			$statement = $pdo->prepare($query);
 			$result = $statement->execute(array
 			(
@@ -531,7 +531,7 @@
 		public function CountInstances($max = null)
 		{
 			$pdo = DataSystem::GetPDO();
-			$query = "SELECT COUNT(instance_ID) FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances WHERE instance_ObjectID = :instance_ObjectID";
+			$query = "SELECT COUNT(instance_ID) FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Instances WHERE instance_ObjectID = :instance_ObjectID";
 			$statement = $pdo->prepare($query);
 			$statement->execute(array
 			(
@@ -650,11 +650,11 @@
 			}
 			
 			$pdo = DataSystem::GetPDO();
-			$query =	"SELECT " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances.* " .
-						" FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances, " .
+			$query =	"SELECT " . System::GetConfigurationValue("Database.TablePrefix") . "Instances.* " .
+						" FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Instances, " .
 						System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstancePropertyValues" .
-						" WHERE (" . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances.instance_ObjectID = :instance_ObjectID" .
-						" AND " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances.instance_TenantID = :instance_TenantID)";
+						" WHERE (" . System::GetConfigurationValue("Database.TablePrefix") . "Instances.instance_ObjectID = :instance_ObjectID" .
+						" AND " . System::GetConfigurationValue("Database.TablePrefix") . "Instances.instance_TenantID = :instance_TenantID)";
 			
 			foreach ($parameters as $parm)
 			{
@@ -743,7 +743,7 @@
 			if ($this->ID == 1) return array();
 			
 			$pdo = DataSystem::GetPDO();
-			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances WHERE instance_ObjectID = :instance_ObjectID AND instance_TenantID = :instance_TenantID";
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Instances WHERE instance_ObjectID = :instance_ObjectID AND instance_TenantID = :instance_TenantID";
 			$paramz = array
 			(
 				":instance_ObjectID" => $this->ID,
@@ -787,7 +787,7 @@
 		{
 			$globalIdentifier = Objectify::SanitizeGlobalIdentifier($globalIdentifier);
 			$pdo = DataSystem::GetPDO();
-			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstances WHERE instance_GlobalIdentifier = :instance_GlobalIdentifier";
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Instances WHERE instance_GlobalIdentifier = :instance_GlobalIdentifier";
 			$statement = $pdo->prepare($query);
 			$result = $statement->execute(array
 			(
