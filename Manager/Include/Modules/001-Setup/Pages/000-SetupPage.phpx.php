@@ -876,53 +876,9 @@ use Objectify\Objects\KnownAttributes;
 		{
 			$objTenant = TenantObject::GetByName("Tenant");
 			
-			$objLanguage = TenantObject::GetByName("Language");
-			$instsLanguage = $objLanguage->GetInstances();
-			$instLanguageEnglish = $instsLanguage[0];
-			
-			$objTranslatableTextConstant = TenantObject::GetByName("TranslatableTextConstant");
-			$objLanguageString = TenantObject::GetByName("TranslatableTextConstantValue");
-			
-			$instLanguageEnglish_LoginHeaderText = $objLanguageString->CreateInstance();
-			$instLanguageEnglish_LoginHeaderText->SetAttributeValue(KnownAttributes::get___Text___Value(), "Welcome to Your New Tenant");
-			
-			Relationship::Create(KnownRelationships::get___Translatable_Text_Constant_Value__has__Language(), $instLanguageEnglish_LoginHeaderText, array($instLanguageEnglish));
-			Relationship::Create(KnownRelationships::get___Language__for__Translatable_Text_Constant_Value(), $instLanguageEnglish, array($instLanguageEnglish_LoginHeaderText));
-			
-			$instTTC_LoginHeaderText = $objTranslatableTextConstant->CreateInstance();
-			
-			$instLanguageEnglish_LoginFooterText = $objLanguageString->CreateInstance();
-			$instLanguageEnglish_LoginFooterText->SetAttributeValue(KnownAttributes::get___Text___Value(), "Once you're logged in, you can customize the 'Login Header Text' and 'Login Footer Text' properties of your new tenant.");
-													
-			Relationship::Create(KnownRelationships::get___Translatable_Text_Constant_Value__has__Language(), $instLanguageEnglish_LoginFooterText, array($instLanguageEnglish));
-			Relationship::Create(KnownRelationships::get___Language__for__Translatable_Text_Constant_Value(), $instLanguageEnglish, array($instLanguageEnglish_LoginFooterText));
-			
-			$instTTC_LoginFooterText = $objTranslatableTextConstant->CreateInstance();
-			
 			$instTenant = $objTenant->GetInstanceByGlobalIdentifier("{F2C9D4A9-9EFB-4263-84DB-66A9DA65AD00}");
-			
 			$instAttributeName = Instance::GetByGlobalIdentifier("{9153A637-992E-4712-ADF2-B03F0D9EDEA6}");
 			$instTenant->SetAttributeValue($instAttributeName, $tenantName);
-			
-			// $instTenant->SetPropertyValue("LoginHeaderText", new SingleInstanceProperty($instTTC_LoginHeaderText));
-			// $instTenant->SetPropertyValue("LoginFooterText", new SingleInstanceProperty($instTTC_LoginFooterText));
-			/*
-			$instTenant = $objTenant->CreateInstance(array
-			(
-				new TenantObjectInstancePropertyValue("TenantURL", $tenantName),
-				new TenantObjectInstancePropertyValue("LoginHeaderText", new MultipleInstanceProperty(array($instLanguageEnglish_LoginHeaderText))),
-				new TenantObjectInstancePropertyValue("LoginFooterText", new MultipleInstanceProperty(array($instLanguageEnglish_LoginFooterText)))
-			));
-			*/
-			
-			// create the relationship: Tenant.has login header Translatable Text Constant
-			Relationship::Create(Instance::GetByGlobalIdentifier("{41D66ACB-AFDE-4B6F-892D-E66255F10DEB}"), $instTenant, array($instTTC_LoginHeaderText));
-			// create the relationship: Tenant.has login footer Translatable Text Constant
-			Relationship::Create(Instance::GetByGlobalIdentifier("{A6203B6B-5BEB-4008-AE49-DB5E7DDBA45B}"), $instTenant, array($instTTC_LoginFooterText));
-			// create the relationship: Translatable Text Constant.is login header for Tenant
-			Relationship::Create(Instance::GetByGlobalIdentifier("{F1AD1C66-340C-44D6-B9DE-A62573D20048}"), $instTTC_LoginHeaderText, array($instTenant));
-			// create the relationship: Translatable Text Constant.is login footer for Tenant
-			Relationship::Create(Instance::GetByGlobalIdentifier("{54DCAB4B-A74E-4597-8CD6-8895D33CAF6F}"), $instTTC_LoginFooterText, array($instTenant));
 			
 			return $instTenant;
 		}

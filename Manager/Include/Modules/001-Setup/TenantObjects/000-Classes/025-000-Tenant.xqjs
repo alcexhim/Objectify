@@ -128,6 +128,31 @@
 							"ID": "{A1D39058-E934-4DBC-9179-EFAECFDD8B48}",
 							"Value": "~/dashboard"
 						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{41D66ACB-AFDE-4B6F-892D-E66255F10DEB}",
+							"InverseRelationshipID": "{F1AD1C66-340C-44D6-B9DE-A62573D20048}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Welcome to Your New Tenant"
+								}
+							]
+						},
+						{
+							"RelationshipID": "{A6203B6B-5BEB-4008-AE49-DB5E7DDBA45B}",
+							"InverseRelationshipID": "{54DCAB4B-A74E-4597-8CD6-8895D33CAF6F}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Once you're logged in, you can customize the 'Login Header Text' and 'Login Footer Text' properties of your new tenant."
+								}
+							]
+						}
 					]
 				}
 			]
