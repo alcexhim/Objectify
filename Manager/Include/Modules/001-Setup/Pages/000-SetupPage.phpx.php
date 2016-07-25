@@ -1057,13 +1057,6 @@ use Objectify\Objects\KnownAttributes;
 					{
 						require($tenantObjectFileName);
 					}
-
-					$inst_xq_environments = $this->CreateDefaultUser("xq-environments", null, null, "XquizIT Environment Automation");
-					$inst_xq_developer = $this->CreateDefaultUser("xq-developer", null, null, "Developer Generic User");
-					$inst_xq_support = $this->CreateDefaultUser("xq-support", null, null, "XquizIT Support");
-					// implementer accounts go here?
-					$inst_xq_configurator = $this->CreateDefaultUser("xq-configurator", null, null, "XquizIT Configurator");
-					$inst_xq_implementer = $this->CreateDefaultUser("xq-implementer", null, null, "XquizIT Implementer");
 					
 					$instDefaultUser = $this->CreateDefaultUser($Administrator_UserName, $Administrator_PasswordHash, $Administrator_PasswordSalt, "System Administrator");
 					$instDefaultTenant = $this->CreateDefaultTenant("default");
@@ -1078,6 +1071,7 @@ use Objectify\Objects\KnownAttributes;
 					$instRel_Object_Source__for__Class = KnownRelationships::get___Object_Source__for__Class();
 					
 					$instObjectSource_System = Instance::GetByGlobalIdentifier("{9547EB35-07FB-4B64-B82C-6DA1989B9165}");
+					$inst_xq_environments = Instance::GetByGlobalIdentifier("{B066A54B-B160-4510-A805-436D3F90C2E6}");
 
 					foreach ($objs as $obj)
 					{

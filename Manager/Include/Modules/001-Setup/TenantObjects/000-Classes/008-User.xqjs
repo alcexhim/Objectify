@@ -59,6 +59,189 @@
 				{
 					"Name": "Class"
 				}
+			],
+			"Instances":
+			[
+				{
+					"ID": "{B066A54B-B160-4510-A805-436D3F90C2E6}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{960FAF02-5C59-40F7-91A7-20012A99D9ED}",
+							"Value": "xq-environments"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{6C29856C-3B10-4F5B-A291-DD3CA4C04A2F}",
+							"InverseRelationshipID": "{C0B4140B-92C1-4D52-B6DA-8E818A83F3FA}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "XquizIT Environment Automation"
+								}
+							]
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": "User.has Security Group",
+							"RelationshipID": "{1921D642-84EC-4E16-B568-9C333909C018}",
+							"InverseRelationshipID": "{EDC79A23-3324-472D-B2F8-8CB9D2CF9C5D}",
+							"DestinationInstances":
+							[
+								"{0E57B7A3-FE6D-4B40-843B-F20580441242}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{098DDA82-CD04-4B53-8C75-89D420EA6902}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{960FAF02-5C59-40F7-91A7-20012A99D9ED}",
+							"Value": "xq-developer"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{6C29856C-3B10-4F5B-A291-DD3CA4C04A2F}",
+							"InverseRelationshipID": "{C0B4140B-92C1-4D52-B6DA-8E818A83F3FA}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Developer Generic User"
+								}
+							]
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": "User.has Security Group",
+							"RelationshipID": "{1921D642-84EC-4E16-B568-9C333909C018}",
+							"InverseRelationshipID": "{EDC79A23-3324-472D-B2F8-8CB9D2CF9C5D}",
+							"DestinationInstances":
+							[
+								"{0E57B7A3-FE6D-4B40-843B-F20580441242}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{232A8CBF-0D2B-4BDA-BE86-3E2FA25A3FB5}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{960FAF02-5C59-40F7-91A7-20012A99D9ED}",
+							"Value": "xq-support"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{6C29856C-3B10-4F5B-A291-DD3CA4C04A2F}",
+							"InverseRelationshipID": "{C0B4140B-92C1-4D52-B6DA-8E818A83F3FA}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "XquizIT Support"
+								}
+							]
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": "User.has Security Group",
+							"RelationshipID": "{1921D642-84EC-4E16-B568-9C333909C018}",
+							"InverseRelationshipID": "{EDC79A23-3324-472D-B2F8-8CB9D2CF9C5D}",
+							"DestinationInstances":
+							[
+								"{0E57B7A3-FE6D-4B40-843B-F20580441242}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{FB20A79C-EAA2-4A98-A1DA-BDC351854694}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{960FAF02-5C59-40F7-91A7-20012A99D9ED}",
+							"Value": "xq-configurator"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{6C29856C-3B10-4F5B-A291-DD3CA4C04A2F}",
+							"InverseRelationshipID": "{C0B4140B-92C1-4D52-B6DA-8E818A83F3FA}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "XquizIT Configurator"
+								}
+							]
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": "User.has Security Group",
+							"RelationshipID": "{1921D642-84EC-4E16-B568-9C333909C018}",
+							"InverseRelationshipID": "{EDC79A23-3324-472D-B2F8-8CB9D2CF9C5D}",
+							"DestinationInstances":
+							[
+								"{0E57B7A3-FE6D-4B40-843B-F20580441242}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{63F2EF51-DC73-48EC-856A-6FBBEDE01A8A}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{960FAF02-5C59-40F7-91A7-20012A99D9ED}",
+							"Value": "xq-implementer"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{6C29856C-3B10-4F5B-A291-DD3CA4C04A2F}",
+							"InverseRelationshipID": "{C0B4140B-92C1-4D52-B6DA-8E818A83F3FA}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "XquizIT Implementer"
+								}
+							]
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": "User.has Security Group",
+							"RelationshipID": "{1921D642-84EC-4E16-B568-9C333909C018}",
+							"InverseRelationshipID": "{EDC79A23-3324-472D-B2F8-8CB9D2CF9C5D}",
+							"DestinationInstances":
+							[
+								"{0E57B7A3-FE6D-4B40-843B-F20580441242}"
+							]
+						}
+					]
+				}
 			]
 		},
 		{
