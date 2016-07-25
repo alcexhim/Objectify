@@ -300,7 +300,7 @@
 		public function GetNextInstanceID()
 		{
 			$pdo = DataSystem::GetPDO();
-			$query = "SELECT COUNT(instance_ID) FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Instances WHERE instance_ObjectID = :instance_ObjectID AND instance_TenantID = :instance_TenantID";
+			$query = "SELECT MAX(instance_ID) + 1 FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Instances WHERE instance_ObjectID = :instance_ObjectID AND instance_TenantID = :instance_TenantID";
 			$statement = $pdo->prepare($query);
 			$result = $statement->execute(array
 			(
