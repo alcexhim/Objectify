@@ -29,7 +29,22 @@ use Phast\Data\DataSystem;
 		public $SourceInstance;
 		
 		/**
+		 * Gets the first target of this Relationship. 
+		 * @return Instance
+		 */
+		public function GetDestinationInstance()
+		{
+			$insts = $this->GetDestinationInstances();
+			if (count($insts) > 0)
+			{
+				return $insts[0];
+			}
+			return null;
+		}
+		
+		/**
 		 * Gets the target(s) of this Relationship.
+		 * @return Instance[]
 		 */
 		public function GetDestinationInstances()
 		{
@@ -214,12 +229,15 @@ use Phast\Data\DataSystem;
 			{
 				self::Build_Get_Relationship_Query($query, $paramz, TenantObject::GetByGlobalIdentifier($inst->GlobalIdentifier), $maxParentObjectLevels);
 			}
-			$query .= ")";
+			$query .= ") AND (:relationship_RelationshipInstanceID IS NULL OR relationship_RelationshipInstanceID = :relationship_RelationshipInstanceID)";
 			
 			if ($relationshipInstance != null)
 			{
-				$query .= " AND relationship_RelationshipInstanceID = :relationship_RelationshipInstanceID";
 				$paramz[":relationship_RelationshipInstanceID"] = $relationshipInstance->ID;
+			}
+			else
+			{
+				$paramz[":relationship_RelationshipInstanceID"] = null;
 			}
 			
 			$statement = $pdo->prepare($query);
