@@ -60,40 +60,59 @@
 			return $item;
 		}
 		
+		private static $instancesByID;
 		public static function GetByID($id)
 		{
+			if (Instance::$instancesByID == null)
+			{
+				Instance::$instancesByID = array();
+			}
 			if (!is_numeric($id)) return null;
 			
-			$pdo = DataSystem::GetPDO();
-			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Instances WHERE instance_ID = :instance_ID";
-			$statement = $pdo->prepare($query);
-			$result = $statement->execute(array
-			(
-				":instance_ID" => $id
-			));
-			if ($result === false) return null;
-			if ($statement->rowCount() == 0) return null;
-			
-			$values = $statement->fetch(PDO::FETCH_ASSOC);
-			return Instance::GetByAssoc($values);
+			if (!array_key_exists($id, Instance::$instancesByID))
+			{
+				$pdo = DataSystem::GetPDO();
+				$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Instances WHERE instance_ID = :instance_ID";
+				$statement = $pdo->prepare($query);
+				$result = $statement->execute(array
+				(
+					":instance_ID" => $id
+				));
+				if ($result === false) return null;
+				if ($statement->rowCount() == 0) return null;
+				
+				$values = $statement->fetch(PDO::FETCH_ASSOC);
+				Instance::$instancesByID[$id] = Instance::GetByAssoc($values);
+			}
+			return Instance::$instancesByID[$id];
 		}
 		
+		private static $instancesByGID;
 		public static function GetByGlobalIdentifier($globalIdentifier)
 		{
+			if (Instance::$instancesByGID == null)
+			{
+				Instance::$instancesByGID = array();
+			}
+			
 			$globalIdentifier = Objectify::SanitizeGlobalIdentifier($globalIdentifier);
 			
-			$pdo = DataSystem::GetPDO();
-			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Instances WHERE instance_GlobalIdentifier = :instance_GlobalIdentifier";
-			$statement = $pdo->prepare($query);
-			$result = $statement->execute(array
-			(
-				":instance_GlobalIdentifier" => $globalIdentifier
-			));
-			if ($result === false) return null;
-			if ($statement->rowCount() == 0) return null;
-			
-			$values = $statement->fetch(PDO::FETCH_ASSOC);
-			return Instance::GetByAssoc($values);
+			if (!array_key_exists($globalIdentifier, Instance::$instancesByGID))
+			{
+				$pdo = DataSystem::GetPDO();
+				$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Instances WHERE instance_GlobalIdentifier = :instance_GlobalIdentifier";
+				$statement = $pdo->prepare($query);
+				$result = $statement->execute(array
+				(
+					":instance_GlobalIdentifier" => $globalIdentifier
+				));
+				if ($result === false) return null;
+				if ($statement->rowCount() == 0) return null;
+				
+				$values = $statement->fetch(PDO::FETCH_ASSOC);
+				Instance::$instancesByGID[$globalIdentifier] = Instance::GetByAssoc($values);
+			}
+			return Instance::$instancesByGID[$globalIdentifier]; 
 		}
 		
 		/* ********** BEGIN: New Attribute functions to replace deprecated Property functions ********** */
