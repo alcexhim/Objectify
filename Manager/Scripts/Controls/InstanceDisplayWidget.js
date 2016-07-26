@@ -11,6 +11,7 @@ function InstanceDisplayWidget(parentElement)
 	}
 	
 	var odwParent = this;
+	var instid = this.ParentElement.getAttribute("data-instance-id");
 	
 	this.__ShowContextMenu = function(e)
 	{
@@ -28,7 +29,7 @@ function InstanceDisplayWidget(parentElement)
 			alert(odwParent.TextElement.innerHTML);
 		}));
 		menu.Items.push(new MenuItemSeparator());
-		menu.Items.push(new MenuItemCommand("CopyInstanceID", "Copy Instance ID", function()
+		menu.Items.push(new MenuItemCommand("CopyInstanceID", "Copy Instance ID (" + instid + ")", function()
 		{
 			
 		}));
@@ -37,16 +38,16 @@ function InstanceDisplayWidget(parentElement)
 			
 		}));
 		menu.Items.push(new MenuItemSeparator());
-		menu.Items.push(new MenuItemCommand("ModifyInstance", "Modify Instance", function()
+		menu.Items.push(new MenuItemCommand("ModifyInstance", "Modify Instance (" + instid + ")", function()
 		{
-			
+			window.location.href = System.ExpandRelativePath("~/instances/modify/" + instid);
 		}));
 		menu.Items.push(new MenuItemCommand("ModifyInstanceInNewWindow", "Modify Instance in New Window", function()
 		{
-			
+			window.open(System.ExpandRelativePath("~/instances/modify/" + instid));
 		}));
 		menu.Items.push(new MenuItemSeparator());
-		menu.Items.push(new MenuItemCommand("SearchInstanceID", "Search Instance ID", function()
+		menu.Items.push(new MenuItemCommand("SearchInstanceID", "Search Instance ID (" + instid + ")", function()
 		{
 			
 		}));
