@@ -13,12 +13,8 @@
 						</tr>
 					</table>
 					
-					<wfx:TabContainer ID="tbsTabs" SelectedTabID="tabInstanceProperties">
+					<wfx:TabContainer ID="tbsTabs" SelectedTabID="tabAttributes">
 						<TabPages>
-							<wfx:TabPage ID="tabInstanceProperties" Title="Instance Properties (legacy)">
-								<wfx:FormView ID="fvInstanceProperties">
-								</wfx:FormView>
-							</wfx:TabPage>
 							<wfx:TabPage ID="tabAttributes" Title="Attributes">
 								<wfx:ListView ID="lvAttributes">
 									<Columns>

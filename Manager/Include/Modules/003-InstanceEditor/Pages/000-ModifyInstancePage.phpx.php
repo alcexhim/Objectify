@@ -34,60 +34,6 @@
 			
 			$tbsTabs = $e->RenderingPage->GetControlByID("tbsTabs");
 			
-			
-			$tabInstanceProperties = $tbsTabs->GetTabByID("tabInstanceProperties");
-			
-			$fv = $tabInstanceProperties->GetControlByID("fvInstanceProperties");
-			
-			$instanceProperties = $inst->ParentObject->GetInstanceProperties();
-			
-			foreach ($instanceProperties as $prop)
-			{
-				$value = $inst->GetPropertyValue($prop);
-				switch ($prop->DataType->Name)
-				{
-					case "SingleInstance":
-					case "MultipleInstance":
-					{
-						$fvi = new FormViewItemInstance("prop" . $prop->ID, "prop" . $prop->ID, $prop->Name, $prop->DefaultValue);
-						$fvi->MultiSelect = ($prop->DataType->Name == "MultipleInstance");
-						
-						if ($value != null)
-						{
-							
-							if ($prop->DataType->Name == "MultipleInstance")
-							{
-								$insts = $value->GetInstances();
-							}
-							else if ($prop->DataType->Name == "SingleInstance")
-							{
-								$insts = array($value->GetInstance());
-							}
-							
-							if (is_array($insts))
-							{
-								foreach ($insts as $instt)
-								{
-									$fvi->SelectedInstances[] = $instt;
-								}
-							}
-							
-							foreach ($value->ValidObjects as $obj)
-							{
-								$fvi->ValidObjects[] = $obj;
-							}
-						}
-						$fv->Items[] = $fvi;
-						break;
-					}
-					case "Text":
-					{
-						$fv->Items[] = new FormViewItemText("prop" . $prop->ID, "prop" . $prop->ID, $prop->Name, $value);
-						break;
-					}
-				}
-			}
-			
 			$tabAttributes = $tbsTabs->GetTabByID("tabAttributes");
 			$lvAttributes = $tabAttributes->GetControlByID("lvAttributes");
 			
