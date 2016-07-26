@@ -52,6 +52,33 @@
 			return $this->ParentObject->ID . "$" . $this->ID;
 		}
 		
+		/**
+		 * 
+		 * @param Instance $relationshipInstance
+		 * @param boolean $includeParentObjects
+		 * @param number $maxParentObjectLevels
+		 * @return Relationship
+		 */
+		public function GetRelationship($relationshipInstance, $includeParentObjects = false, $maxParentObjectLevels = 1)
+		{
+			$rels = $this->GetRelationships($relationshipInstance, $includeParentObjects, $maxParentObjectLevels);
+			if (count($rels) == 0) return null;
+			
+			return $rels[0];
+		}
+		/**
+		 * 
+		 * @param Instance $relationshipInstance
+		 * @param boolean $includeParentObjects
+		 * @param number $maxParentObjectLevels
+		 * @return Relationship[]
+		 */
+		public function GetRelationships($relationshipInstance, $includeParentObjects = false, $maxParentObjectLevels = 1)
+		{
+			$rels = Relationship::GetBySourceInstance($this, $relationshipInstance, $includeParentObjects, $maxParentObjectLevels);
+			return $rels;
+		}
+		
 		public static function GetByAssoc($values)
 		{
 			$item = new Instance(TenantObject::GetByID($values["instance_ObjectID"]));
@@ -232,113 +259,6 @@
 		
 		/* ********** END: New Attribute functions to replace deprecated Property functions ********** */
 		
-		public function GetPropertyValue($property, $defaultValue = null)
-		{
-			$pdo = DataSystem::GetPDO();
-			
-			if (is_string($property))
-			{
-				$property = $this->ParentObject->GetInstanceProperty($property);
-			}
-			if ($property == null) return $defaultValue;
-			
-			$query = "SELECT propval_Value FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstancePropertyValues WHERE propval_TenantID = :propval_TenantID AND propval_ObjectID = :propval_ObjectID AND propval_InstanceID = :propval_InstanceID AND propval_PropertyID = :propval_PropertyID";
-			$statement = $pdo->prepare($query);
-			$result = $statement->execute(array
-			(
-				":propval_TenantID" => $this->ParentObject->Tenant->ID,
-				":propval_ObjectID" => $this->ParentObject->ID,
-				":propval_InstanceID" => $this->ID,
-				":propval_PropertyID" => $property->ID
-			));
-			
-			if ($result === false) return $defaultValue;
-			
-			$count = $statement->rowCount();
-			if ($count == 0) return $defaultValue;
-			
-			$values = $statement->fetch(PDO::FETCH_ASSOC);
-			return $property->Decode($values["propval_Value"]);
-		}
-		public function SetPropertyValue($property, $value)
-		{
-			$pdo = DataSystem::GetPDO();
-			
-			if (is_string($property))
-			{
-				$property = $this->ParentObject->GetInstanceProperty($property);
-			}
-			if ($property == null) return false;
-
-			if (is_object($parentObjects))
-			{
-				if (
-						get_class($value) == "Objectify\\Objects\\MultipleInstanceProperty"
-					|| get_class($value) == "Objectify\\Objects\\SingleInstanceProperty"
-					)
-				{
-					if ($value->ValidObjects == null)
-					{
-						$oldvalue = $this->GetPropertyValue($property);
-						$value->ValidObjects = $oldvalue->ValidObjects;
-					}
-				}
-			}
-			
-			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstancePropertyValues (propval_TenantID, propval_ObjectID, propval_InstanceID, propval_PropertyID, propval_Value) VALUES (:propval_TenantID, :propval_ObjectID, :propval_InstanceID, :propval_PropertyID, :propval_Value)";
-			$query .= " ON DUPLICATE KEY UPDATE ";
-			$query .= "propval_PropertyID = values(propval_PropertyID), ";
-			$query .= "propval_Value = values(propval_Value)";
-			
-			$statement = $pdo->prepare($query);
-			$result = $statement->execute(array
-			(
-				":propval_TenantID" => $this->ParentObject->Tenant->ID,
-				":propval_ObjectID" => $this->ParentObject->ID,
-				":propval_InstanceID" => $this->ID,
-				":propval_PropertyID" => $property->ID,
-				":propval_Value" => $property->Encode($value)
-			));
-			
-			if ($result === false) return false;
-			
-			return true;
-		}
-		public function HasPropertyValue($property)
-		{
-			$pdo = DataSystem::GetPDO();
-			
-			if (is_string($property))
-			{
-				if ($this->ParentObject->HasInstanceProperty($property))
-				{
-					$property = $this->ParentObject->GetInstanceProperty($property);
-				}
-				else
-				{
-					$property = null;
-				}
-			}
-			if ($property == null) return false;
-			
-			$query = "SELECT COUNT(propval_Value) FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjectInstancePropertyValues WHERE propval_TenantID = :propval_TenantID AND propval_ObjectID = :propval_ObjectID AND propval_InstanceID = :propval_InstanceID AND propval_PropertyID = :propval_PropertyID";
-			$statement = $pdo->prepare($query);
-			$result = $statement->execute(array
-			(
-				":propval_TenantID" => $this->ParentObject->Tenant->ID,
-				":propval_ObjectID" => $this->ParentObject->ID,
-				":propval_InstanceID" => $this->ID,
-				":propval_PropertyID" => $property->ID
-			));
-			if ($result === false) return false;
-			
-			$count = $statement->rowCount();
-			if ($count == 0) return false;
-			
-			$values = $statement->fetch(PDO::FETCH_NUM);
-			return ($values[0] > 0);
-		}
-		
 		public function Update()
 		{
 			$pdo = DataSystem::GetPDO();
@@ -449,7 +369,7 @@
 							case "InstancePropertyStringComponent":
 							{
 								$propertyName = $componentInst->GetAttributeValue("PropertyName");
-								$propertyValue = $this->GetPropertyValue($propertyName, "[" . $propertyName . " on " . $this->ParentObject->Name . "]");
+								$propertyValue = "[PROPERTY:" . $propertyName . " on " . $this->ParentObject->Name . "]";
 								
 								if ($propertyName == "Values" && $this->ParentObject->Name == "TranslatableTextConstant")
 								{
@@ -505,11 +425,6 @@
 			}
 			else
 			{
-				// HACK HACK HACK UGLY HACK REMOVE WHEN WE HAVE ATTRIBUTES WORKING CORRECTLY
-				$propval_Name = $this->GetPropertyValue("Name");
-				if ($propval_Name != null) return $propval_Name;
-				// end ugly hack
-
 				// HACK HACK HACK UGLY HACK REMOVE WHEN WE HAVE ATTRIBUTES WORKING CORRECTLY
 				$instAttName = Instance::GetByGlobalIdentifier("{9153A637-992E-4712-ADF2-B03F0D9EDEA6}");
 				$propval_Name = $this->GetAttributeValue($instAttName);

@@ -44,13 +44,13 @@
 				new ListViewColumn("lvcInstance", "Instance")
 			);
 			
-			$props = $this->Object->GetInstanceProperties();
+			$props = $this->Object->GetAttributes();
 			
 			if ($this->AutoGenerateColumns)
 			{
 				foreach ($props as $prop)
 				{
-					$this->Columns[] = new ListViewColumn("lvcProperty" . $prop->ID, $prop->Name);
+					$this->Columns[] = new ListViewColumn("lvcProperty" . $prop->ID, $prop->ToString());
 				}
 			}
 			
@@ -71,36 +71,9 @@
 				{
 					$lvi->Columns[] = new ListViewItemColumn("lvcProperty" . $prop->ID, function($col)
 					{
-						$propval = $col->ExtraData["inst"]->GetPropertyValue($col->ExtraData["prop"]);
-						if (is_object($propval))
-						{
-							if (get_class($propval) == "Objectify\\Objects\\SingleInstanceProperty")
-							{
-								$inst = $propval->GetInstance();
-								$odw = new InstanceDisplayWidget($inst);
-								$odw->Render();
-							}
-							else if (get_class($propval) == "Objectify\\Objects\\MultipleInstanceProperty")
-							{
-								$insts2 = $propval->GetInstances();
-								foreach ($insts2 as $inst2)
-								{
-									$odw = new InstanceDisplayWidget($inst2);
-									$odw->Render();
-									echo("<br />");
-								}
-							}
-							else if (get_class($propval) == "Objectify\\Objects\\TenantObject")
-							{
-								$odw = new ObjectDisplayWidget($propval);
-								$odw->Render();
-							}
-						}
-						else
-						{
-							echo($propval);
-						}
-					}, $inst->GetPropertyValue($prop), array("inst" => $inst, "prop" => $prop));
+						$propval = $col->ExtraData["inst"]->GetAttributeValue($col->ExtraData["prop"]);
+						echo($propval);
+					}, $inst->GetAttributeValue($prop), array("inst" => $inst, "prop" => $prop));
 				} 
 				$this->Items[] = $lvi; 
 			}
