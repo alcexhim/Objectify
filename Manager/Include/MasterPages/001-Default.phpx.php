@@ -24,9 +24,6 @@
 			$e->RenderingPage->ClassList[] = "EnableHeader";
 			$e->RenderingPage->ClassList[] = "EnableSidebar";
 			
-			$ibSearch = $e->RenderingPage->GetControlByID("ibSearch");
-			$ibSearch->ValidObjects[] = TenantObject::GetByName("Task");
-			
 			$CurrentUser = User::GetCurrent();
 			$DisableLoginPage = System::GetConfigurationValue("Application.DisableLoginPage", false);
 			if (!$DisableLoginPage)
