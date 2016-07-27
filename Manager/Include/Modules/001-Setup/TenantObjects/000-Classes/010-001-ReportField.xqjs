@@ -54,6 +54,15 @@
 					[
 						"{98A36370-2CE5-4707-B99A-B3F856FE0834}"
 					]
+				},
+				{
+					"Comment": "Class `Relationship Report Field`.has summary Report Field `Target Relationship`",
+					"RelationshipID": "{D11050AD-7376-4AB7-84DE-E8D0336B74D2}",
+					"InverseRelationshipID": "{FAD8F8B8-B0E2-4852-A6E9-A272C041DC4E}",
+					"DestinationInstances":
+					[
+						"{7EE0EA2C-0EDD-4AE4-9F8D-C3FBE92DE0E0}"
+					]
 				}
 			],
 			"Instances":
@@ -218,6 +227,66 @@
 							"DestinationInstances":
 							[
 								"{D1A25625-C90F-4A73-A6F2-AFB530687705}"
+							]
+						}
+					]
+				},
+				{
+					"Comment": "Target Relationship for Relationship Report Field",
+					"ID": "{7EE0EA2C-0EDD-4AE4-9F8D-C3FBE92DE0E0}",
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{6780BFC2-DBC0-40AE-83EE-BFEF979F0054}",
+							"InverseRelationshipID": "{8AAAEF67-2CB8-4CC1-B854-F95E353848D1}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Target Relationship"
+								}
+							]
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": "Relationship Report Field.has target Relationship",
+							"RelationshipID": "{134B2790-F6DF-4F97-9AB5-9878C4A715E5}",
+							"InverseRelationshipID": "{AF8AB7F2-5581-4891-8C6F-92ACD8AFB1B4}",
+							"DestinationInstances":
+							[
+								"{134B2790-F6DF-4F97-9AB5-9878C4A715E5}"
+							]
+						}
+					]
+				},
+				{
+					"Comment": "Language for Translatable Text Constant Value",
+					"ID": "{9DA34BD8-AEC3-4CA0-B0B0-6E9F65595B2A}",
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{6780BFC2-DBC0-40AE-83EE-BFEF979F0054}",
+							"InverseRelationshipID": "{8AAAEF67-2CB8-4CC1-B854-F95E353848D1}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Language"
+								}
+							]
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": "Relationship Report Field.has target Relationship",
+							"RelationshipID": "{134B2790-F6DF-4F97-9AB5-9878C4A715E5}",
+							"InverseRelationshipID": "{AF8AB7F2-5581-4891-8C6F-92ACD8AFB1B4}",
+							"DestinationInstances":
+							[
+								"{3655AEC2-E2C9-4DDE-8D98-0C4D3CE1E569}"
 							]
 						}
 					]

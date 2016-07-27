@@ -32,6 +32,18 @@
 				{
 					"Name": "Class"
 				}
+			],
+			"Relationships":
+			[
+				{
+					"Comment": "Class `Translatable Text Constant Value`.has summary Report Field `Language`",
+					"RelationshipID": "{D11050AD-7376-4AB7-84DE-E8D0336B74D2}",
+					"InverseRelationshipID": "{FAD8F8B8-B0E2-4852-A6E9-A272C041DC4E}",
+					"DestinationInstances":
+					[
+						"{9DA34BD8-AEC3-4CA0-B0B0-6E9F65595B2A}"
+					] 
+				}
 			]
 		},
 		{
