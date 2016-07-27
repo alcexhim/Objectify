@@ -38,5 +38,17 @@
 			}
 			return KnownAttributes::$Attribute___Boolean___Render_as_Text;
 		}
+		
+		const GUID___Attribute___Text___Target_URL = "{970F79A0-9EFE-4E7D-9286-9908C6F06A67}";
+		
+		private static $Attribute___Text___Target_URL;
+		public static function get___Text___Target_URL()
+		{
+			if (KnownAttributes::$Attribute___Text___Target_URL == null)
+			{
+				KnownAttributes::$Attribute___Text___Target_URL = Instance::GetByGlobalIdentifier(KnownAttributes::GUID___Attribute___Text___Target_URL);
+			}
+			return KnownAttributes::$Attribute___Text___Target_URL;
+		}
 	}
 ?>

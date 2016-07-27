@@ -1,0 +1,6 @@
+<Website>
+	<Pages>
+		<Page FileName="instances/execute/$(instanceID)" CodeBehindClassName="Objectify\Manager\Modules\InstanceEditor\Pages\ExecuteInstancePage" MasterPageFileName="Blank">
+		</Page>
+	</Pages>
+</Website>
