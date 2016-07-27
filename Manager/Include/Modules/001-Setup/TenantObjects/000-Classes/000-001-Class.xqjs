@@ -3,7 +3,21 @@
 	[
 		{
 			"ID": "{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}",
-			"Name": "Class"
+			"Name": "Class",
+			"Relationships":
+			[
+				{
+					"Comment": "Class `Class`.has summary Report Field `Name`, `Description`",
+					"RelationshipID": "{D11050AD-7376-4AB7-84DE-E8D0336B74D2}",
+					"InverseRelationshipID": "{FAD8F8B8-B0E2-4852-A6E9-A272C041DC4E}",
+					"DestinationInstances":
+					[
+						"{4CB5C72A-21A2-4B18-A21D-278EBF5C7B91}",
+						"{023FF41D-E77C-4522-A26E-FD9EA65CA38E}",
+						"{5F8A264E-D2B8-40A2-B583-A7ED511C9DD9}"
+					] 
+				}
+			]
 		}
 	]
 }

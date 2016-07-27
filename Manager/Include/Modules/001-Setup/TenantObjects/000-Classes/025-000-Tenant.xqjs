@@ -117,6 +117,18 @@
 					"Name": "Class"
 				}
 			],
+			"Relationships":
+			[
+				{
+					"Comment": "Class `Tenant`.has summary Report Field `Tenant Name`",
+					"RelationshipID": "{D11050AD-7376-4AB7-84DE-E8D0336B74D2}",
+					"InverseRelationshipID": "{FAD8F8B8-B0E2-4852-A6E9-A272C041DC4E}",
+					"DestinationInstances":
+					[
+						"{AB0B6DFB-A03F-4F2B-9082-2D639C110AE6}"
+					] 
+				}
+			],
 			"Instances":
 			[
 				{

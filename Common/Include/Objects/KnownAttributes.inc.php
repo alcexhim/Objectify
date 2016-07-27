@@ -26,5 +26,17 @@
 			}
 			return KnownAttributes::$Attribute___Text___CSSValue;
 		}
+		
+		const GUID___Attribute___Boolean___Render_as_Text = "{15DD9E49-AB6D-44F0-9039-27AF81736406}";
+		
+		private static $Attribute___Boolean___Render_as_Text;
+		public static function get___Boolean___Render_as_Text()
+		{
+			if (KnownAttributes::$Attribute___Boolean___Render_as_Text == null)
+			{
+				KnownAttributes::$Attribute___Boolean___Render_as_Text = Instance::GetByGlobalIdentifier(KnownAttributes::GUID___Attribute___Boolean___Render_as_Text);
+			}
+			return KnownAttributes::$Attribute___Boolean___Render_as_Text;
+		}
 	}
 ?>

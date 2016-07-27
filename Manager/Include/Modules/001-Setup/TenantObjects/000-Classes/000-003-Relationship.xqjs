@@ -10,6 +10,20 @@
 					"Name": "Class"
 				}
 			],
+			"Relationships":
+			[
+				{
+					"Comment": "Class `Relationship`.has summary Report Field `Source Class`, `Relationship Type`, `Destination Class`",
+					"RelationshipID": "{D11050AD-7376-4AB7-84DE-E8D0336B74D2}",
+					"InverseRelationshipID": "{FAD8F8B8-B0E2-4852-A6E9-A272C041DC4E}",
+					"DestinationInstances":
+					[
+						"{98CE6CD2-9CFC-475E-86A2-7FE10E69C2D8}",
+						"{F95F7594-22A9-4E8D-A8BB-E1EA0031A0DC}",
+						"{B90B485E-8A49-4F9E-B33B-D539ADEE8411}"
+					]
+				}
+			],
 			"Instances":
 			[
 				{

@@ -124,6 +124,16 @@
 							"Value": "Global"
 						}
 					]
+				},
+				{
+					"ID": "{15DD9E49-AB6D-44F0-9039-27AF81736406}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+							"Value": "Render as Text"
+						}
+					]
 				}
 			]
 		}
