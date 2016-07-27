@@ -289,10 +289,7 @@
 			$inst->Update();
 			if (is_array($properties))
 			{
-				foreach ($properties as $instprop)
-				{
-					$inst->SetPropertyValue($instprop->Property, $instprop->Value);
-				}
+				trigger_error("XquizIT: calling CreateInstance() with properties for '" . $globalIdentifier . "'");
 			}
 			return $inst;
 		}

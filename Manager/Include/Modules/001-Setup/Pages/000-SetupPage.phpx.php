@@ -432,10 +432,8 @@ use Objectify\Objects\KnownAttributes;
 								foreach ($instDef->PropertyValues as $propValDef)
 								{
 									if (!isset($propValDef->Name)) continue;
-									$prop = $obj->GetInstanceProperty($propValDef->Name);
 									
-									$value = $this->XquizitLoadPropertyValueFromJSON($propValDef, $obj, true, $filename, $prop->DataType->Name);
-									$inst->SetPropertyValue($prop, $value);
+									trigger_error("XquizIT: deprecated property value definition for '" . $propValDef->Name . "' on '" . $id . "'");
 								}
 							}
 						}
