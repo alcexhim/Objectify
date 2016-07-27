@@ -52,12 +52,49 @@
 			]
 		},
 		{
+			"Name": "BooleanAttribute",
+			"Instances":
+			[
+				{
+					"ID": "{AA602558-7E12-4F5A-8F38-B0E3AB933AF4}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+							"Value": "AccountDisabled"
+						}
+					]
+				}
+			]
+		},
+		{
 			"ID": "{9C6871C1-9A7F-4A3A-900E-69D1D9E24486}",
 			"Name": "User",
 			"ParentObjects":
 			[
 				{
 					"Name": "Class"
+				}
+			],
+			"Relationships":
+			[
+				{
+					"Comment": "Class `User`.has Attribute `Account Disabled` [Boolean Attribute]",
+					"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+					"InverseRelationshipID": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
+					"DestinationInstances":
+					[
+						"{AA602558-7E12-4F5A-8F38-B0E3AB933AF4}"
+					]
+				},
+				{
+					"Comment": "Class `User`.has summary Report Field `Account Disabled`",
+					"RelationshipID": "{D11050AD-7376-4AB7-84DE-E8D0336B74D2}",
+					"InverseRelationshipID": "{FAD8F8B8-B0E2-4852-A6E9-A272C041DC4E}",
+					"DestinationInstances":
+					[
+						"{FE5BEBE7-5B56-4C2E-B85E-611B3F448815"
+					]
 				}
 			],
 			"Instances":

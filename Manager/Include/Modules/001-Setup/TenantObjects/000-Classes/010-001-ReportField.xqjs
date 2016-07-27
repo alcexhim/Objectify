@@ -524,6 +524,36 @@
 							]
 						}
 					]
+				},
+				{
+					"Comment": "Account Locked, Disabled, or Expired for User",
+					"ID": "{FE5BEBE7-5B56-4C2E-B85E-611B3F448815}",
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{6780BFC2-DBC0-40AE-83EE-BFEF979F0054}",
+							"InverseRelationshipID": "{8AAAEF67-2CB8-4CC1-B854-F95E353848D1}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Account Locked, Disabled, or Expired"
+								}
+							]
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": "Attribute Report Field.has target Attribute `Account Disabled`",
+							"RelationshipID": "{37964301-26FD-41D8-8661-1F73684C0E0A}",
+							"InverseRelationshipID": "{09E6A707-9833-4167-B563-4F232BE2E29D}",
+							"DestinationInstances":
+							[
+								"{AA602558-7E12-4F5A-8F38-B0E3AB933AF4}"
+							]
+						}
+					]
 				}
 			]
 		},
