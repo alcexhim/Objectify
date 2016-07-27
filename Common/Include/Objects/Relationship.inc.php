@@ -49,9 +49,8 @@ use Phast\Data\DataSystem;
 		public function GetDestinationInstances()
 		{
 			$pdo = DataSystem::GetPDO();
-			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Instances, " . System::GetConfigurationValue("Database.TablePrefix") . "RelationshipTargets"
+			$query = "SELECT target_DestinationInstanceID FROM " . System::GetConfigurationValue("Database.TablePrefix") . "RelationshipTargets"
 				. " WHERE " . System::GetConfigurationValue("Database.TablePrefix") . "RelationshipTargets.target_RelationshipID = :target_RelationshipID"
-				. " AND " . System::GetConfigurationValue("Database.TablePrefix") . "Instances.instance_ID = " . System::GetConfigurationValue("Database.TablePrefix") . "RelationshipTargets.target_DestinationInstanceID"
 				. " ORDER BY target_Order";
 			
 			$statement = $pdo->prepare($query);
@@ -65,7 +64,7 @@ use Phast\Data\DataSystem;
 			for ($i = 0; $i < $count; $i++)
 			{
 				$values = $statement->fetch(PDO::FETCH_ASSOC);
-				$item = Instance::GetByAssoc($values);
+				$item = Instance::GetByID($values["target_DestinationInstanceID"]);
 				$retval[] = $item;
 			}
 			return $retval;
