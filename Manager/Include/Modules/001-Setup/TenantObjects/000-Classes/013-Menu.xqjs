@@ -136,6 +136,49 @@
 			]
 		},
 		{
+			"Name": "ExtractSingleInstanceStringComponent",
+			"Instances":
+			[
+				{
+					"ID": "{0D0B2BAF-982E-4FFF-AA86-5E58594C69FF}",
+					"Relationships":
+					[
+						{
+							"Comment": "Extract Single Instance String Component.has Relationship",
+							"RelationshipID": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
+							"InverseRelationshipID": "{B0111132-8721-405C-967B-0BEFA92CFE9A}",
+							"DestinationInstances":
+							[
+								"{65E3C87E-A2F7-4A33-9FA7-781EFA801E02}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "String",
+			"Instances":
+			[
+				{
+					"ID": "{E2E48032-DF8D-45F5-8865-A4A8DE8F28B2}",
+					"Comment": "Menu Item.instance labeled by String",
+					"Relationships":
+					[
+						{
+							"Comment": "String.has String Component",
+							"RelationshipID": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
+							"InverseRelationshipID": "{40E17597-0AEB-4C56-BBAB-FC600E1196DD}",
+							"DestinationInstances":
+							[
+								"{0D0B2BAF-982E-4FFF-AA86-5E58594C69FF}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
 			"ID": "{06E7806D-9384-4EA5-B5D1-350A51552773}",
 			"Name": "Menu",
 			"ParentObjects":
@@ -163,6 +206,18 @@
 				{
 					"Name": "MenuItem"
 				}
+			],
+			"Relationships":
+			[
+				{
+					"Comment": "Class `Menu Item Command`.instance labeled by String",
+					"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+					"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+					"DestinationInstances":
+					[
+						"{E2E48032-DF8D-45F5-8865-A4A8DE8F28B2}"
+					]
+				}
 			]
 		},
 		{
@@ -182,6 +237,18 @@
 			[
 				{
 					"Name": "MenuItem"
+				}
+			],
+			"Relationships":
+			[
+				{
+					"Comment": "Class `Menu Item Header`.instance labeled by String",
+					"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+					"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+					"DestinationInstances":
+					[
+						"{E2E48032-DF8D-45F5-8865-A4A8DE8F28B2}"
+					]
 				}
 			]
 		}
