@@ -114,7 +114,7 @@
 								else
 								{
 									$instAttribute = $relTarget->GetDestinationInstance();
-									echo($extraData->GetAttributeValue($instAttribute));
+									echo($extraData->GetAttributeValue($instAttribute, "(empty)"));
 								}
 							}
 							else if ($instSummaryReportField->ParentObject->Name == "RelationshipReportField")
