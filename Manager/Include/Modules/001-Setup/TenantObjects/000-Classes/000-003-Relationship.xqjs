@@ -22,6 +22,15 @@
 						"{F95F7594-22A9-4E8D-A8BB-E1EA0031A0DC}",
 						"{B90B485E-8A49-4F9E-B33B-D539ADEE8411}"
 					]
+				},
+				{
+					"Comment": "Class `Relationship`.has Attribute `Singular` [Boolean Attribute]",
+					"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+					"InverseRelationshipID": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
+					"DestinationInstances":
+					[
+						"{F1A06573-C447-4D85-B4E7-54A438C4A960}"
+					]
 				}
 			],
 			"Instances":
