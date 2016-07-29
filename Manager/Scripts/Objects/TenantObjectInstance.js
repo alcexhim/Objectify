@@ -19,6 +19,10 @@ function TenantObjectInstance()
 	this.ID = null;
 	this.DisplayTitle = null;
 	this.GlobalIdentifier = null;
+	this.GetInstanceID = function()
+	{
+		return this.ParentObjectID + "$" + this.ID;
+	};
 	this.ToString = function()
 	{
 		return this.DisplayTitle;
