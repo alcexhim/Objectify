@@ -347,6 +347,28 @@
 			return Instance::GetByGlobalIdentifier(self::Relationship___Report_Field__summary_for__Class);
 		}
 		
+		const Relationship___Report__has_title__Translatable_Text_Constant = "{DF93EFB0-8B5E-49E7-8BC0-553F9E7602F9}";
+		const Relationship___Translatable_Text_Constant__title_for__Report = "{2C4EA43B-6242-4370-9FF2-A78994702BCD}";
+		public static function get___Report__has_title__Translatable_Text_Constant()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Report__has_title__Translatable_Text_Constant);
+		}
+		public static function get___Translatable_Text_Constant__title_for__Report()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Translatable_Text_Constant__title_for__Report);
+		}
+		
+		const Relationship___Report__has__Report_Field = "{7A8F57F1-A4F3-4BAF-84A5-E893FD79447D}";
+		const Relationship___Report_Field__for__Report = "{3FA19854-CF0F-4656-B80B-54EF633503E0}";
+		public static function get___Report__has__Report_Field()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Report__has__Report_Field);
+		}
+		public static function get___Report_Field__for__Report()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Report_Field__for__Report);
+		}
+		
 		const Relationship___Report_Field__has_title__Translatable_Text_Constant = "{6780BFC2-DBC0-40AE-83EE-BFEF979F0054}";
 		const Relationship___Translatable_Text_Constant__title_for__Report_Field = "{8AAAEF67-2CB8-4CC1-B854-F95E353848D1}";
 		public static function get___Report_Field__has_title__Translatable_Text_Constant()
