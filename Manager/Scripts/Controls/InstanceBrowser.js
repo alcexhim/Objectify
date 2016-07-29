@@ -20,7 +20,7 @@ function InstanceBrowser(parentElement)
 					{
 						for (var j = 0; j < e2.Items.length; j++)
 						{
-							sender.Items.Add({ "Title": e2.Items[j].ToString(), "Value": e2.Items[j].ID });
+							sender.Items.Add({ "Title": e2.Items[j].ToString(), "Value": e2.Items[j].ID, "TargetURL": System.ExpandRelativePath("~/instances/execute/" + e2.Items[j].GetInstanceID()) });
 						}
 						sender.SetLoading(false);
 					});
