@@ -320,17 +320,18 @@
 							"Value": "~/objects/#/delete"
 						}
 					],
-					"PropertyValues":
+					"TranslatableValues":
 					[
 						{
-							"Name": "Title",
-							"Value":
-							{
-								"Instances":
-								[
-									"Delete Object"
-								]
-							}
+							"RelationshipID": "{D97AE03C-261F-4060-A06D-985E26FA662C}",
+							"InverseRelationshipID": "{4E5D363F-6984-4BD5-8E76-AAB598C1B09D}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Delete Object"
+								}
+							]
 						}
 					]
 				}
