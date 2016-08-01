@@ -15,6 +15,27 @@
 		},
 		
 		{
+			"Name": "ExtractSingleInstanceStringComponent",
+			"Instances":
+			[
+				{
+					"ID": "{04F267AB-7BF4-4851-AE01-B57FA6F330E7}",
+					"Relationships":
+					[
+						{
+							"RelationshipID": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
+							"InverseRelationshipID": "{B0111132-8721-405C-967B-0BEFA92CFE9A}",
+							"DestinationInstances":
+							[
+								"{52B65829-4A3F-44FB-BEE8-D9A240F1E9C9}"
+							]
+						}
+					]
+				}
+			]
+		},
+		
+		{
 			"Name": "String",
 			"Instances":
 			[
@@ -72,12 +93,195 @@
 		},
 		
 		{
+			"ID": "{CB36098E-B9BF-4D22-87FA-4186EC632C89}",
+			"Name": "MethodBinding",
+			"ParentObjects":
+			[
+				{
+					"Name": "Class"
+				}
+			],
+			"TranslatableValues":
+			[
+				{
+					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+					"InverseRelationshipID": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
+					"Values":
+					[
+						{
+							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+							"Value": "Method Binding"
+						}
+					]
+				}
+			]
+		},
+		
+		{
 			"ID": "{795DD1D3-0744-459D-87BD-62C70F1F5CBA}",
 			"Name": "CallMethodMethodAction",
 			"ParentObjects":
 			[
 				{
 					"Name": "MethodAction"
+				}
+			]
+		},
+		
+		{
+			"Name": "Relationship",
+			"Instances":
+			[
+				{
+					"ID": "{BC4B71B9-6168-4B58-95D4-A56ED78CA965}",
+					"Comment": "Assign Attribute Method.has Attribute",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Assign Attribute Method`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{3312A789-3B7A-4478-B329-4FF781504F9C}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Attribute`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{F9CD7751-EF62-4F7C-8A28-EBE90B8F46AA}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{C238C7D8-B8C8-419F-9F71-35C1B96FB724}",
+					"Comment": "Attribute.for Assign Attribute Method",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Attribute`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{F9CD7751-EF62-4F7C-8A28-EBE90B8F46AA}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Assign Attribute Method`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{3312A789-3B7A-4478-B329-4FF781504F9C}"
+							]
+						}
+					]
+				}
+			]
+		},
+		
+		{
+			"ID": "{AADC20F9-7559-429B-AEF0-97E059295C76}",
+			"Name": "ReturnInstanceSetMethodBinding",
+			"ParentObjects":
+			[
+				{
+					"Name": "MethodBinding"
+				}
+			],
+			"TranslatableValues":
+			[
+				{
+					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+					"InverseRelationshipID": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
+					"Values":
+					[
+						{
+							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+							"Value": "Return Instance Set Method Binding"
+						}
+					]
+				}
+			]
+		},
+		
+		{
+			"ID": "{30FB6BA6-2BBB-41D2-B91A-709C00A07790}",
+			"Name": "ReturnAttributeMethodBinding",
+			"ParentObjects":
+			[
+				{
+					"Name": "MethodBinding"
+				}
+			],
+			"TranslatableValues":
+			[
+				{
+					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+					"InverseRelationshipID": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
+					"Values":
+					[
+						{
+							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+							"Value": "Return Attribute Method Binding"
+						}
+					]
+				}
+			]
+		},
+		
+		{
+			"ID": "{3312A789-3B7A-4478-B329-4FF781504F9C}",
+			"Name": "AssignAttributeMethod",
+			"ParentObjects":
+			[
+				{
+					"Name": "Method"
+				}
+			],
+			"Relationships":
+			[
+				{
+					"Comment": "Class `Method`.instance labeled by String",
+					"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+					"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+					"DestinationInstances":
+					[
+						"{8833DA21-F5A4-4794-AE0D-724D744F12EC}"
+					]
+				}
+			],
+			"TranslatableValues":
+			[
+				{
+					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+					"InverseRelationshipID": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
+					"Values":
+					[
+						{
+							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+							"Value": "AA - Assign Attribute Method"
+						}
+					]
 				}
 			]
 		},
@@ -91,6 +295,18 @@
 					"Name": "Method"
 				}
 			],
+			"Relationships":
+			[
+				{
+					"Comment": "Class `Method`.instance labeled by String",
+					"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+					"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+					"DestinationInstances":
+					[
+						"{8833DA21-F5A4-4794-AE0D-724D744F12EC}"
+					]
+				}
+			],
 			"TranslatableValues":
 			[
 				{
@@ -101,6 +317,33 @@
 						{
 							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
 							"Value": "CT - Control Transaction Method"
+						}
+					]
+				}
+			],
+			"Instances":
+			[
+				{
+					"ID": "{4E92D64E-AC91-4ABF-8052-96366DF93996}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+							"Value": "create_instance"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{52B65829-4A3F-44FB-BEE8-D9A240F1E9C9}",
+							"InverseRelationshipID": "{8EBE8D2C-FB89-41A0-9AB6-FBA78323D5B9}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "create instance"
+								}
+							]
 						}
 					]
 				}
@@ -181,6 +424,18 @@
 		{
 			"ID": "{8BF91515-89EA-4633-80D3-C096A38E7B89}",
 			"Name": "SequenceMethod",
+			"Relationships":
+			[
+				{
+					"Comment": "Class `Method`.instance labeled by String",
+					"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+					"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+					"DestinationInstances":
+					[
+						"{8833DA21-F5A4-4794-AE0D-724D744F12EC}"
+					]
+				}
+			],
 			"ParentObjects":
 			[
 				{
@@ -199,6 +454,15 @@
 			],
 			"Relationships":
 			[
+				{
+					"Comment": "Class `Method`.instance labeled by String",
+					"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+					"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+					"DestinationInstances":
+					[
+						"{8833DA21-F5A4-4794-AE0D-724D744F12EC}"
+					]
+				},
 				{
 					"Comment": "Class `Method`.has Text Attribute `Name`",
 					"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
