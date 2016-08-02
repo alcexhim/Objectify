@@ -402,5 +402,59 @@
 			return Instance::GetByGlobalIdentifier(self::Relationship___Relationship__target_for__Relationship_Report_Field);
 		}
 		
+		const Relationship___Task__has_title__Translatable_Text_Constant = "{D97AE03C-261F-4060-A06D-985E26FA662C}";
+		const Relationship___Translatable_Text_Constant__title_for__Task = "{4E5D363F-6984-4BD5-8E76-AAB598C1B09D}";
+		public static function get___Task__has_title__Translatable_Text_Constant()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Task__has_title__Translatable_Text_Constant);
+		}
+		public static function get___Translatable_Text_Constant__title_for__Task()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Translatable_Text_Constant__title_for__Task);
+		}
+		
+		const Relationship___Prompt__has_title__Translatable_Text_Constant = "{6B25BD5F-9B06-42D1-ACC6-2FA1A2248965}";
+		const Relationship___Translatable_Text_Constant__title_for__Prompt = "{9FE0E4B7-875A-4F43-9037-E1D443D4F798}";
+		public static function get___Prompt__has_title__Translatable_Text_Constant()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Prompt__has_title__Translatable_Text_Constant);
+		}
+		public static function get___Translatable_Text_Constant__title_for__Prompt()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Translatable_Text_Constant__title_for__Prompt);
+		}
+		
+		const Relationship___Task__has__Prompt = "{929B106F-7E3E-4D30-BB84-E450A4FED063}";
+		const Relationship___Prompt__for__Task = "{146616A0-A64A-402B-99FB-7548D92E5CBC}";
+		public static function get___Task__has__Prompt()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Task__has__Prompt);
+		}
+		public static function get___Prompt__for__Task()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Prompt__for__Task);
+		}
+		
+		const Relationship___Choice_Prompt__has_valid__Prompt_Value = "{6A260FA9-5F60-442B-8860-814F8EFEA059}";
+		const Relationship___Prompt_Value__valid_for__Choice_Prompt = "{C147D288-4911-4779-9CD0-1E0CA20384D4}";
+		public static function get___Choice_Prompt__has_valid__Prompt_Value()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Choice_Prompt__has_valid__Prompt_Value);
+		}
+		public static function get___Prompt_Value__valid_for__Choice_Prompt()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Prompt_Value__valid_for__Choice_Prompt);
+		}
+		
+		const Relationship___Prompt_Value__has_title__Translatable_Text_Constant = "{44659235-BCC3-4674-B813-52D58BFA85D7}";
+		const Relationship___Translatable_Text_Constant__title_for__Prompt_Value = "{28C32F20-C317-4C48-B314-378440D68C0F}";
+		public static function get___Prompt_Value__has_title__Translatable_Text_Constant()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Prompt_Value__has_title__Translatable_Text_Constant);
+		}
+		public static function get___Translatable_Text_Constant__title_for__Prompt_Value()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Translatable_Text_Constant__title_for__Prompt_Value);
+		}
 	}
 ?>
