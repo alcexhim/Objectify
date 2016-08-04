@@ -68,6 +68,70 @@
 							]
 						}
 					]
+				},
+				{
+					"ID": "{A9387898-9DC0-4006-94F1-1FB02EB3ECD7}",
+					"Comment": "Task.has instructions Translatable Text Constant",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has instructions"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Task`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{D4F2564B-2D11-4A5C-8AA9-AF52D4EACC13}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Translatable Text Constant`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{686DD398-709D-48D6-9229-3C79D617EC23}",
+					"Comment": "Translatable Text Constant.instructions for Task",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "instructions for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Translatable Text Constant`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Task`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{D4F2564B-2D11-4A5C-8AA9-AF52D4EACC13}"
+							]
+						}
+					]
 				}
 			]
 		},
@@ -858,6 +922,7 @@
 					"TranslatableValues":
 					[
 						{
+							"Comment": ".has title Translatable Text Constant",
 							"RelationshipID": "{D97AE03C-261F-4060-A06D-985E26FA662C}",
 							"InverseRelationshipID": "{4E5D363F-6984-4BD5-8E76-AAB598C1B09D}",
 							"Values":
@@ -865,6 +930,18 @@
 								{
 									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
 									"Value": "Create Report"
+								}
+							]
+						},
+						{
+							"Comment": ".has instructions Translatable Text Constant",
+							"RelationshipID": "{A9387898-9DC0-4006-94F1-1FB02EB3ECD7}",
+							"InverseRelationshipID": "{686DD398-709D-48D6-9229-3C79D617EC23}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Creates a Report to display data in a variety of different formats."
 								}
 							]
 						}
