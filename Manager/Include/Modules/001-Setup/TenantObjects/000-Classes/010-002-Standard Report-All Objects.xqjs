@@ -22,6 +22,18 @@
 								}
 							]
 						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": "Standard Report.has Report Field `Title for Class`",
+							"RelationshipID": "{7A8F57F1-A4F3-4BAF-84A5-E893FD79447D}",
+							"InverseRelationshipID": "{3FA19854-CF0F-4656-B80B-54EF633503E0}",
+							"DestinationInstances":
+							[
+								"{4CB5C72A-21A2-4B18-A21D-278EBF5C7B91}"
+							]
+						}
 					]
 				}
 			]
