@@ -1,6 +1,7 @@
 <?php
 
 require("Phast/Compilers/StyleSheet/Internal/LessStyleSheetCompiler.inc.php");
+require("Phast/Compilers/StyleSheet/Internal/Formatters/CompressedFormatter.inc.php");
 
 use Phast\Compilers\StyleSheet\Internal\LessStyleSheetCompiler;
 use Phast\Compilers\StyleSheet\Internal\Formatters\CompressedFormatter;
