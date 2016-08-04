@@ -1,5 +1,133 @@
 <Website>
 	<Pages>
-		<Page FileName="testing" CodeBehindClassName="Objectify\Tenant\Pages\TestingPage" />
+		<Page FileName="testing" CodeBehindClassName="Objectify\Tenant\Pages\TestingPage" MasterPageFileName="Default">
+			<Content>
+				<wfx:Section PlaceholderID="Content">
+					
+					<div class="ColumnContainer TwoColumn">
+						<div class="Column">
+							<wfx:Panel Title="Donut Graph">
+								<ContentControls>
+									<div class="pwt-Graph pwt-Graph-Donut">
+										<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="585" height="342">
+											<g class="pwt-Graph-Slice Darker" data-title="In-Store Sales" data-value="30">
+												<path class="Curve" stroke-width="2" d="M292.5,282.5A109,109,0,0,0,395.4220648142984,209.38939361930437" stroke="#0b62a4" fill="none"></path>
+												<path class="Slice" stroke-width="3" d="M292.5,285.5A112,112,0,0,0,398.25478219450844,210.377175095065L442.16190158776413,225.6877879693554A158.5,158.5,0,0,1,292.5,332Z" stroke="#ffffff"></path>
+											</g>
+											
+											<g class="pwt-Graph-Slice" data-title="Online Sales" data-value="60">
+												<path class="Curve" stroke-width="2" d="M395.4220648142984,209.38939361930437A109,109,0,0,0,194.72069250765188,125.33147265779414" fill="none"></path>
+												<path class="Slice" stroke-width="3" d="M398.25478219450844,210.377175095065A112,112,0,0,0,192.02951890694504,124.00573337314628L145.8310387614778,101.24720898669122A163.5,163.5,0,0,1,446.88309722144754,227.33409042895653Z" stroke="#ffffff" style=""></path>
+											</g>
+											
+											<g class="pwt-Graph-Slice Lighter" data-title="Phone Sales" data-value="10">
+												<path class="Curve" stroke-width="2" d="M194.72069250765188,125.33147265779414A109,109,0,0,0,292.46575664063926,282.49999462106564" stroke="#679dc6" fill="none"></path>
+												<path class="Slice" stroke-width="3" d="M192.02951890694504,124.00573337314628A112,112,0,0,0,292.4648141628587,285.4999944730216L292.4502057572598,331.9999921783386A158.5,158.5,0,0,1,150.31632809598918,103.45677446110433Z" stroke="#ffffff" fill="#679dc6" style=""></path>
+											</g>
+											
+											<text class="Title" x="292.5" y="163.5">
+												<tspan dy="5">In-Store Sales</tspan>
+											</text>
+											<text class="Value" y="183.5" x="292.5">
+												<tspan dy="5">30</tspan>
+											</text>
+										</svg>
+									</div>
+								</ContentControls>
+							</wfx:Panel>
+						</div>
+						<div class="Column">
+							<wfx:Panel Title="Bar Graph">
+								<ContentControls>
+									<div class="pwt-Graph pwt-Graph-Bar">
+										<svg style="overflow: hidden; position: relative; top: -0.75px;" xmlns="http://www.w3.org/2000/svg" width="585" version="1.1" height="342">
+											<text font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px Arial" text-anchor="end" y="308" x="33.5" style="text-anchor: end; font: 12px sans-serif;">
+												<tspan dy="4">0</tspan>
+											</text>
+											<path stroke-width="0.5" d="M46,308H560" stroke="#aaaaaa" fill="none" style=""></path>
+				
+											<text font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px Arial" text-anchor="end" y="237.25" x="33.5" style="text-anchor: end; font: 12px sans-serif;">
+												<tspan dy="4">25</tspan>
+											</text>
+											<path stroke-width="0.5" d="M46,237.25H560" stroke="#aaaaaa" fill="none" style=""></path>
+				
+											<text font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px Arial" text-anchor="end" y="166.5" x="33.5" style="text-anchor: end; font: 12px sans-serif;">
+												<tspan dy="4">50</tspan>
+											</text>
+											<path stroke-width="0.5" d="M46,166.5H560" stroke="#aaaaaa" fill="none" style=""></path>
+											
+											<text font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px Arial" text-anchor="end" y="95.75" x="33.5" style="text-anchor: end; font: 12px sans-serif;">
+												<tspan dy="4">75</tspan>
+											</text>
+											<path stroke-width="0.5" d="M46,95.75H560" stroke="#aaaaaa" fill="none" style=""></path>
+											
+											<text font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px Arial" text-anchor="end" y="25" x="33.5" style="text-anchor: end; font: 12px sans-serif;">
+												<tspan dy="4">100</tspan>
+											</text>
+											<path stroke-width="0.5" d="M46,25H560" stroke="#aaaaaa" fill="none" style=""></path>
+											
+											<g class="pwt-Graph-Axis-Bottom">
+												<text font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px Arial" text-anchor="middle" y="330" x="523.2857142857142" style="text-anchor: middle; font: 12px sans-serif;">
+													<tspan dy="4">2012</tspan>
+												</text>
+												<text font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px Arial" text-anchor="middle" y="330" x="376.42857142857144" style="text-anchor: middle; font: 12px sans-serif;">
+													<tspan dy="4">2010</tspan>
+												</text>
+												<text font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px Arial" text-anchor="middle" y="330" x="229.57142857142858" style="text-anchor: middle; font: 12px sans-serif;">
+													<tspan dy="4">2008</tspan>
+												</text>
+												<text font-weight="normal" font-family="sans-serif" font-size="12px" fill="#888888" stroke="none" font="10px Arial" text-anchor="middle" y="330" x="82.71428571428572" style="text-anchor: middle; font: 12px sans-serif;">
+													<tspan dy="4">2006</tspan>
+												</text>
+											</g>
+											
+											<g class="pwt-Graph-Slice">
+												<rect ry="0" rx="0" r="0" height="283" width="26.035714285714285" y="25" x="55.17857142857143"></rect>
+												<rect ry="0" rx="0" r="0" height="254.70000000000002" width="26.035714285714285" y="53.29999999999998" x="84.21428571428572"></rect>
+											</g>
+											<g class="pwt-Graph-Slice">
+												<rect ry="0" rx="0" r="0" height="212.25" width="26.035714285714285" y="95.75" x="128.60714285714286"></rect>
+												<rect ry="0" rx="0" r="0" height="183.95000000000002" width="26.035714285714285" y="124.04999999999998" x="157.64285714285714"></rect>
+											</g>
+											<g class="pwt-Graph-Slice">
+												<rect ry="0" rx="0" r="0" height="141.5" width="26.035714285714285" y="166.5" x="202.03571428571428"></rect>
+												<rect ry="0" rx="0" r="0" height="113.19999999999999" width="26.035714285714285" y="194.8" x="231.07142857142856"></rect>
+											</g>
+											<g class="pwt-Graph-Slice">
+												<rect ry="0" rx="0" r="0" height="212.25" width="26.035714285714285" y="95.75" x="275.4642857142857"></rect>
+												<rect ry="0" rx="0" r="0" height="183.95000000000002" width="26.035714285714285" y="124.04999999999998" x="304.5"></rect>
+											</g>
+											<g class="pwt-Graph-Slice">
+												<rect ry="0" rx="0" r="0" height="141.5" width="26.035714285714285" y="166.5" x="348.89285714285717"></rect>
+												<rect ry="0" rx="0" r="0" height="113.19999999999999" width="26.035714285714285" y="194.8" x="377.92857142857144"></rect>
+											</g>
+											<g class="pwt-Graph-Slice">
+												<rect ry="0" rx="0" r="0" height="212.25" width="26.035714285714285" y="95.75" x="422.3214285714286"></rect>
+												<rect ry="0" rx="0" r="0" height="183.95000000000002" width="26.035714285714285" y="124.04999999999998" x="451.3571428571429"></rect>
+											</g>
+											<g class="pwt-Graph-Slice">
+												<rect ry="0" rx="0" r="0" height="283" width="26.035714285714285" y="25" x="495.75"></rect>
+												<rect ry="0" rx="0" r="0" height="254.70000000000002" width="26.035714285714285" y="53.29999999999998" x="524.7857142857143"></rect>
+											</g>
+										</svg>
+										<div style="left: 478.786px; top: 135px;" class="pwt-Graph-Popup">
+											<div class="Title">2012</div>
+											<div class="Value" style="color: #0b62a4">
+											  Series A:
+											  100
+											</div>
+											<div class="Value" style="color: #7a92a3">
+											  Series B:
+											  90
+											</div>
+										</div>
+									</div>
+								</ContentControls>
+							</wfx:Panel>
+						</div>
+					</div>
+				</wfx:Section>
+			</Content>
+		</Page>
 	</Pages>
 </Website>

@@ -31,6 +31,8 @@ use Objectify\Objects\TenantObjectInstance;
 		
 		public function OnInitializing(CancelEventArgs $e)
 		{
+			return;
+			
 			header("Content-Type: text/plain");
 			
 
