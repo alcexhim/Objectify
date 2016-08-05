@@ -456,5 +456,16 @@
 		{
 			return Instance::GetByGlobalIdentifier(self::Relationship___Translatable_Text_Constant__title_for__Prompt_Value);
 		}
+		
+		const Relationship___Instance_Prompt__has_valid__Class = "{D5BD754B-F401-4FD8-A707-82684E7E25F0}";
+		const Relationship___Class__valid_for__Instance_Prompt = "{9D7628CC-D888-4311-A5F7-6EEA17FF6A86}";
+		public static function get___Instance_Prompt__has_valid__Class()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Instance_Prompt__has_valid__Class);
+		}
+		public static function get___Class__valid_for__Instance_Prompt()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Class__valid_for__Instance_Prompt);
+		}
 	}
 ?>
