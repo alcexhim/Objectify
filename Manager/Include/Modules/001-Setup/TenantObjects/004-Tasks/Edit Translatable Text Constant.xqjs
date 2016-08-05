@@ -1,0 +1,86 @@
+{
+	"Objects":
+	[
+		{
+			"Name": "InstancePrompt",
+			"Instances":
+			[
+				{
+					"ID": "{F7FAE258-6C3B-440F-A363-E762372715AA}",
+					"TranslatableValues":
+					[
+						{
+							"Comment": "Prompt.has title Translatable Text Constant",
+							"RelationshipID": "{6B25BD5F-9B06-42D1-ACC6-2FA1A2248965}",
+							"InverseRelationshipID": "{9FE0E4B7-875A-4F43-9037-E1D443D4F798}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Translatable Text Constant"
+								}
+							]
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": "Instance Prompt.has valid Class",
+							"RelationshipID": "{D5BD754B-F401-4FD8-A707-82684E7E25F0}",
+							"InverseRelationshipID": "{9D7628CC-D888-4311-A5F7-6EEA17FF6A86}",
+							"DestinationInstances":
+							[
+								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "UITask",
+			"Instances":
+			[
+				{
+					"ID": "{B8EBDB8D-8E58-40C0-93C4-AAB80EE1318E}",
+					"TranslatableValues":
+					[
+						{
+							"Comment": "Task.has title Translatable Text Constant",
+							"RelationshipID": "{D97AE03C-261F-4060-A06D-985E26FA662C}",
+							"InverseRelationshipID": "{4E5D363F-6984-4BD5-8E76-AAB598C1B09D}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Edit Translatable Text Constant"
+								}
+							]
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": "Task.has Prompt `Translatable Text Constant`",
+							"RelationshipID": "{929B106F-7E3E-4D30-BB84-E450A4FED063}",
+							"InverseRelationshipID": "{146616A0-A64A-402B-99FB-7548D92E5CBC}",
+							"DestinationInstances":
+							[
+								"{F7FAE258-6C3B-440F-A363-E762372715AA}"
+							]
+						},
+						{
+							"Comment": "Task.has Security Group `System Administrators`",
+							"RelationshipID": "{A1264E04-93FD-47C1-BE00-CA42CD0AAD55}",
+							"InverseRelationshipID": "{F93509A7-7DB1-443E-A669-4A34E318C695}",
+							"DestinationInstances":
+							[
+								"{0E57B7A3-FE6D-4B40-843B-F20580441242}"
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

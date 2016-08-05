@@ -132,6 +132,70 @@
 							]
 						}
 					]
+				},
+				{
+					"ID": "{A1264E04-93FD-47C1-BE00-CA42CD0AAD55}",
+					"Comment": "Task.secured by Security Group",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "secured by"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Task`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{D4F2564B-2D11-4A5C-8AA9-AF52D4EACC13}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Security Group`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{498CCFD4-8D94-4EF4-B947-1D07ECC9342B}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{F93509A7-7DB1-443E-A669-4A34E318C695}",
+					"Comment": "Security Group.secures Task",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "secures"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Security Group`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{498CCFD4-8D94-4EF4-B947-1D07ECC9342B}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Task`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{D4F2564B-2D11-4A5C-8AA9-AF52D4EACC13}"
+							]
+						}
+					]
 				}
 			]
 		},
