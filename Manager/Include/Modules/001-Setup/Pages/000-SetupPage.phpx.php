@@ -895,10 +895,8 @@ use Objectify\Objects\KnownAttributes;
 			$instLangs = $objLanguage->GetInstances();
 			$lang = $instLangs[0];
 			
-			$instEnglish_SystemAdministrator = $objLanguageString->CreateInstance(array
-			(
-				new TenantObjectInstancePropertyValue("Value", $displayName)
-			));
+			$instEnglish_SystemAdministrator = $objLanguageString->CreateInstance();
+			$instEnglish_SystemAdministrator->SetAttributeValue(KnownAttributes::get___Text___Value(), $displayName);
 			
 			Relationship::Create(KnownRelationships::get___Translatable_Text_Constant_Value__has__Language(), $instEnglish_SystemAdministrator, array($lang));
 			Relationship::Create(KnownRelationships::get___Language__for__Translatable_Text_Constant_Value(), $lang, array($instEnglish_SystemAdministrator));
