@@ -1001,8 +1001,7 @@
 						},
 						{
 							"Comment": ".has destination Class `Page Component`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
 							"DestinationInstances":
 							[
 								"{EF4D4027-6904-4773-9013-22CEDC169F00}"
@@ -1033,8 +1032,8 @@
 						},
 						{
 							"Comment": ".has destination Class `UI Task`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
 							"DestinationInstances":
 							[
 								"{BFD07772-178C-4885-A6CE-C85076C8461C}"
