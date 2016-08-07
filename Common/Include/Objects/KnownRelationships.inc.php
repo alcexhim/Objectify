@@ -3,6 +3,28 @@
 	
 	class KnownRelationships
 	{
+		const Relationship___Class__has__Attribute = "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}";
+		const Relationship___Attribute__for__Class = "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}";
+		public static function get___Class__has__Attribute()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Class__has__Attribute);
+		}
+		public static function get___Attribute__for__Class()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Attribute__for__Class);
+		}
+
+		const Relationship___Relationship__has_sibling__Relationship = "{656110FF-4502-48B8-A7F3-D07F017AEA3F}";
+		const Relationship___Relationship__sibling_for__Relationship = "{FA08B2A4-71E2-44CB-9252-8CE336E2E1AD}";
+		public static function get___Relationship__has_sibling__Relationship()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Relationship__has_sibling__Relationship);
+		}
+		public static function get___Relationship__sibling_for__Relationship()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Relationship__sibling_for__Relationship);
+		}
+		
 		const Relationship___Class__instance_labeled_by__String = "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}";
 		const Relationship___Translatable_Text_Constant__has__Translatable_Text_Constant_Value = "{F9B60C00-FF1D-438F-AC74-6EDFA8DD7324}";
 		const Relationship___Class__has__Object_Source = "{B62F9B81-799B-4ABE-A4AF-29B45347DE54}";
@@ -466,6 +488,17 @@
 		public static function get___Class__valid_for__Instance_Prompt()
 		{
 			return Instance::GetByGlobalIdentifier(self::Relationship___Class__valid_for__Instance_Prompt);
+		}
+		
+		const Relationship___Relationship_Editor_Page_Component__has__Report_Field = "{1540634D-EB44-48F8-88B8-17B7DCBBD006}";
+		const Relationship___Report_Field__for__Relationship_Editor_Page_Component = "{51C8837D-FF85-4647-A0F6-BE5D0AED51B5}";
+		public static function get___Relationship_Editor_Page_Component__has__Report_Field()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Relationship_Editor_Page_Component__has__Report_Field);
+		}
+		public static function get___Report_Field__for__Relationship_Editor_Page_Component()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Report_Field__for__Relationship_Editor_Page_Component);
 		}
 	}
 ?>
