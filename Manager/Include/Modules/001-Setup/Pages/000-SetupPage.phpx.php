@@ -166,6 +166,14 @@ use Objectify\Objects\KnownAttributes;
 									{
 										$instInverseRelationship = Instance::GetByGlobalIdentifier($rel->InverseRelationshipID);
 									}
+									else
+									{
+										$relSibling = $instRelationship->GetRelationship(KnownRelationships::get___Relationship__has_sibling__Relationship());
+										if ($relSibling != null)
+										{
+											$instInverseRelationship = $relSibling->GetDestinationInstance();
+										}
+									}
 						
 									if (isset($rel->DestinationInstances))
 									{

@@ -44,6 +44,17 @@
 							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "has source"
 						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{20FFFDE8-11A5-48D6-894B-21C6B234B811}"
+							]
+						}
 					]
 				},
 				{
@@ -65,6 +76,17 @@
 						{
 							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "has destination"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{A66CD08C-A155-42AF-8995-A1D96C5A0C06}"
+							]
 						}
 					]
 				},
@@ -88,6 +110,17 @@
 							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "has"
 						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{71106B12-1934-4834-B0F6-D894637BAEED}"
+							]
+						}
 					]
 				},
 				{
@@ -109,6 +142,17 @@
 						{
 							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "has"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{C00BD63F-10DA-4751-B8EA-0905436EA098}"
+							]
 						}
 					]
 				},
@@ -132,6 +176,17 @@
 							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "has sibling"
 						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{FA08B2A4-71E2-44CB-9252-8CE336E2E1AD}"
+							]
+						}
 					]
 				},
 				{
@@ -141,7 +196,7 @@
 					[
 						{
 							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "is sibling"
+							"Value": "sibling for"
 						}
 					]
 				},
@@ -153,6 +208,17 @@
 						{
 							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "has super"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{C14BC80D-879C-4E6F-9123-E8DFB13F4666}"
+							]
 						}
 					]
 				},
@@ -197,16 +263,16 @@
 							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "has login header"
 						}
-					]
-				},
-				{
-					"ID": "{A6203B6B-5BEB-4008-AE49-DB5E7DDBA45B}",
-					"Comment": "Tenant.has login footer Translatable Text Constant",
-					"AttributeValues":
+					],
+					"Relationships":
 					[
 						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "has login footer"
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{F1AD1C66-340C-44D6-B9DE-A62573D20048}"
+							]
 						}
 					]
 				},
@@ -218,6 +284,28 @@
 						{
 							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "is login header for"
+						}
+					]
+				},
+				{
+					"ID": "{A6203B6B-5BEB-4008-AE49-DB5E7DDBA45B}",
+					"Comment": "Tenant.has login footer Translatable Text Constant",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has login footer"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{54DCAB4B-A74E-4597-8CD6-8895D33CAF6F}"
+							]
 						}
 					]
 				},
@@ -241,6 +329,17 @@
 							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "has"
 						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{2374530A-8C7E-4A1C-8AFD-08A6805F89E5}"
+							]
+						}
 					]
 				},
 				{
@@ -263,6 +362,17 @@
 							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "has"
 						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{DD52A3F3-7312-4492-BF89-F4434CB439D0}"
+							]
+						}
 					]
 				},
 				{
@@ -284,6 +394,17 @@
 						{
 							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "has sidebar"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{4E0A8C3D-5D10-44E5-A6D7-31F262711E01}"
+							]
 						}
 					]
 				},
@@ -308,6 +429,17 @@
 							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "has display name"
 						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{C0B4140B-92C1-4D52-B6DA-8E818A83F3FA}"
+							]
+						}
 					]
 				},
 				{
@@ -329,6 +461,17 @@
 						{
 							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "has"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{EDC79A23-3324-472D-B2F8-8CB9D2CF9C5D}"
+							]
 						}
 					]
 				},
@@ -352,6 +495,17 @@
 							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "has"
 						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{52DAC6FC-7E3A-4B09-B3FC-205FF38FE952}"
+							]
+						}
 					]
 				},
 				{
@@ -373,6 +527,17 @@
 						{
 							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "has"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{901A5427-6344-40F4-B81C-D905EA152EB9}"
+							]
 						}
 					]
 				},
@@ -396,6 +561,17 @@
 							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "has"
 						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{40E17597-0AEB-4C56-BBAB-FC600E1196DD}"
+							]
+						}
 					]
 				},
 				{
@@ -418,6 +594,17 @@
 							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "has title"
 						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{8EBE8D2C-FB89-41A0-9AB6-FBA78323D5B9}"
+							]
+						}
 					]
 				},
 				{
@@ -439,6 +626,17 @@
 						{
 							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "has title"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{DD5DA156-07A6-46C6-B3F8-5BDE2089FB86}"
+							]
 						}
 					]
 				},
