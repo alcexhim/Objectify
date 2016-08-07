@@ -500,5 +500,17 @@
 		{
 			return Instance::GetByGlobalIdentifier(self::Relationship___Report_Field__for__Relationship_Editor_Page_Component);
 		}
+		
+		const Relationship___Tenant__has_logo_image__File = "{4C399E80-ECA2-4A68-BFB4-26A5E6E97047}";
+		const Relationship___File__logo_image_for__Tenant = "{A6E61265-6681-4AA7-A183-BEDF27DC5CD8}";
+		public static function get___Tenant__has_logo_image__File()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Tenant__has_logo_image__File);
+		}
+		public static function get___File__logo_image_for__Tenant()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___File__logo_image_for__Tenant);
+		}
+		
 	}
 ?>

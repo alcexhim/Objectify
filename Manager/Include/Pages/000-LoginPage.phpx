@@ -3,7 +3,7 @@
 		<Page Title="Log In" FileName="account/login" CodeBehindClassName="Objectify\Tenant\Pages\LoginPage" MasterPageFileName="Blank" CssClass="LoginPage">
 			<Content>
 				<wfx:Section PlaceholderID="Content">
-					<html:Image ImageUrl="~/Images/Header" />
+					<html:Image ID="imageHeader" />
 					<div style="text-align: center; font-size: 14pt; padding: 16px;">
 						<html:Paragraph ID="paraTopText">Welcome to the XquizIT Shared Development tenant</html:Paragraph>
 					</div>

@@ -19,7 +19,8 @@
 	use Phast\RandomStringGenerator;
 	use Phast\RandomStringGeneratorCharacterSets;
 use Objectify\Objects\KnownRelationships;
-						
+use Objectify\Objects\KnownAttributes;
+							
 	class LoginPage extends PhastPage
 	{
 		public function OnInitializing(CancelEventArgs $e)
@@ -32,7 +33,16 @@ use Objectify\Objects\KnownRelationships;
 					new TenantObjectInstancePropertyValue("Name", System::GetTenantName())
 				));
 				$instTenant = $instTenants[0];
-
+				
+				$imageHeader = $e->RenderingPage->GetControlByID("imageHeader");
+				$relLogoImage = $instTenant->GetRelationship(KnownRelationships::get___Tenant__has_logo_image__File());
+				if ($relLogoImage != null)
+				{
+					$instLogoImage = $relLogoImage->GetDestinationInstance();
+					$value = $instLogoImage->GetAttributeValue(KnownAttributes::get___Text___Value());
+					$imageHeader->ImageUrl = "data:image/png;base64," . $value;
+				}
+				
 				$instRel_Tenant__has_login_header_TTC = Instance::GetByGlobalIdentifier("{41D66ACB-AFDE-4B6F-892D-E66255F10DEB}");
 				$instRel_Tenant__has_login_footer_TTC = Instance::GetByGlobalIdentifier("{A6203B6B-5BEB-4008-AE49-DB5E7DDBA45B}");
 				
