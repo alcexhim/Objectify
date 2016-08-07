@@ -167,12 +167,66 @@
 			]
 		},
 		{
+			"Name": "ExtractSingleInstanceStringComponent",
+			"Instances":
+			[
+				{
+					"ID": "{4E73EEA2-BD64-4ECD-B328-99A2779B2FB5}",
+					"Relationships":
+					[
+						{
+							"Comment": "Extract Single Instance String Component.has Relationship",
+							"RelationshipID": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
+							"InverseRelationshipID": "{B0111132-8721-405C-967B-0BEFA92CFE9A}",
+							"DestinationInstances":
+							[
+								"{099B644B-76D4-4654-BDE7-3CBCCA418169}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "String",
+			"Instances":
+			[
+				{
+					"ID": "{30965725-28BA-45FA-8578-804A4FDDA149}",
+					"Relationships":
+					[
+						{
+							"Comment": "String.has String Component",
+							"RelationshipID": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
+							"InverseRelationshipID": "{40E17597-0AEB-4C56-BBAB-FC600E1196DD}",
+							"DestinationInstances":
+							[
+								"{4E73EEA2-BD64-4ECD-B328-99A2779B2FB5}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
 			"ID": "{498CCFD4-8D94-4EF4-B947-1D07ECC9342B}",
 			"Name": "SecurityGroup",
 			"ParentObjects":
 			[
 				{
 					"Name": "Class"
+				}
+			],
+			"Relationships":
+			[
+				{
+					"Comment": ".instance labeled by String",
+					"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+					"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+					"DestinationInstances":
+					[
+						"{30965725-28BA-45FA-8578-804A4FDDA149}"
+					]
 				}
 			],
 			"Instances":
