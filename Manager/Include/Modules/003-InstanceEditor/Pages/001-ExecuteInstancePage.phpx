@@ -1,6 +1,9 @@
 <Website>
 	<Pages>
-		<Page FileName="instances/execute/$(instanceID)" CodeBehindClassName="Objectify\Manager\Modules\InstanceEditor\Pages\ExecuteInstancePage" MasterPageFileName="Default">
+		<Page FileName="instances/execute/$(instanceID)/$(paramstr)" CodeBehindClassName="Objectify\Manager\Modules\InstanceEditor\Pages\ExecuteInstancePage" MasterPageFileName="Default">
+			<Scripts>
+				<Script ContentType="text/javascript" FileName="~/../Include/Modules/003-InstanceEditor/Pages/001-ExecuteInstancePage.phpx.js" />
+			</Scripts>
 			<Content>
 				<wfx:Section PlaceholderID="Content">
 					<html:Heading ID="headTitle" Level="1" />
@@ -10,6 +13,9 @@
 					
 					<wfx:ListView ID="lvReport" EnableRender="false">
 					</wfx:ListView>
+					
+					<html:Layer ID="layerContent">
+					</html:Layer>
 					
 					<div class="PageFooter">
 						<wfx:Button ID="cmdSubmit" Text="Submit" CssClass="Primary" />

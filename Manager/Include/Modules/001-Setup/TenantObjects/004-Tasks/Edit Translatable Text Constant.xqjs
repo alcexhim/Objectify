@@ -38,6 +38,37 @@
 			]
 		},
 		{
+			"Name": "RelationshipEditorPageComponent",
+			"Instances":
+			[
+				{
+					"ID": "{4BFC6123-B5D0-48CD-BC5A-F1E69331A300}",
+					"Relationships":
+					[
+						{
+							"Comment": "Relationship Editor Page Component.has target Relationship",
+							"RelationshipID": "{54FBD056-0BD4-44F4-921C-11FB0C77996E}",
+							"InverseRelationshipID": "{5296BC07-15F4-4B84-B94A-D4FBF0228983}",
+							"DestinationInstances":
+							[
+								"{F9B60C00-FF1D-438F-AC74-6EDFA8DD7324}"
+							]
+						},
+						{
+							"Comment": "Relationship Editor Page Component.has Report Field `Language`, `Value`",
+							"RelationshipID": "{1540634D-EB44-48F8-88B8-17B7DCBBD006}",
+							"InverseRelationshipID": "{51C8837D-FF85-4647-A0F6-BE5D0AED51B5}",
+							"DestinationInstances":
+							[
+								"{9DA34BD8-AEC3-4CA0-B0B0-6E9F65595B2A}",
+								"{7F825488-60CE-4AF1-B832-F68EFEB695C4}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
 			"Name": "UITask",
 			"Instances":
 			[
@@ -76,6 +107,15 @@
 							"DestinationInstances":
 							[
 								"{0E57B7A3-FE6D-4B40-843B-F20580441242}"
+							]
+						},
+						{
+							"Comment": "UI Task.has Page Component",
+							"RelationshipID": "{D2949AF7-249A-4FFB-9A54-252CD9D06C51}",
+							"InverseRelationshipID": "{C76E8C98-5C54-48DF-B1F0-637DB84B5989}",
+							"DestinationInstances":
+							[
+								"{4BFC6123-B5D0-48CD-BC5A-F1E69331A300}"
 							]
 						}
 					]

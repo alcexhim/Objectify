@@ -4,80 +4,129 @@
 	use Phast\Parser\PhastPage;
 	use Phast\CancelEventArgs;
 	use Phast\System;
-	
-	use Objectify\Objects\Instance;
-	use Objectify\Objects\KnownAttributes;
-	use Objectify\Objects\KnownRelationships;
-	
+
 	use Phast\WebControls\ListViewColumn;
 	use Phast\WebControls\FormViewItemText;
 	use Phast\WebControls\FormViewItemChoice;
 	use Phast\WebControls\FormViewItemChoiceValue;
+	
+	use Objectify\Objects\Instance;
+	use Objectify\Objects\KnownAttributes;
+	use Objectify\Objects\KnownRelationships;
+	use Objectify\Objects\TenantObject;
+	
+	use Objectify\WebControls\InstanceListView;
+	use Objectify\WebControls\RelationshipListView;
 	
 	class ExecuteInstancePage extends PhastPage
 	{
 		public function OnInitializing(CancelEventArgs $e)
 		{
 			$iid = $this->Page->GetPathVariableValue("instanceID");
+			$paramstr = $this->Page->GetPathVariableValue("paramstr");
+			
 			$iidParts = explode("$", $iid);
 			$inst = Instance::GetByID($iidParts[1]);
 			
 			$fvPrompts = $e->RenderingPage->GetControlByID("fvPrompts");
-			
-			$relPrompts = $inst->GetRelationship(KnownRelationships::get___Task__has__Prompt());
-			if ($relPrompts != null)
+			if ($paramstr != null)
 			{
-				$instPrompts = $relPrompts->GetDestinationInstances();
+				$paramstr = base64_decode($paramstr);
+				$json = json_decode($paramstr);
 				
-				foreach ($instPrompts as $instPrompt)
+				$fvPrompts->EnableRender = false;
+				
+				$layerContent = $e->RenderingPage->GetControlByID("layerContent");
+				
+				$lv = new RelationshipListView();
+				$lv->EnableAddRemoveRows = true;
+				$lv->Instance = Instance::GetByGlobalIdentifier($json->Parameters[0]->Value[0]);
+				$lv->Relationship = Instance::GetByGlobalIdentifier("F9B60C00FF1D438FAC746EDFA8DD7324");
+				$layerContent->Controls[] = $lv;
+			}
+			else
+			{
+				$relPrompts = $inst->GetRelationship(KnownRelationships::get___Task__has__Prompt());
+				if ($relPrompts != null)
 				{
-					$fvi = null;
+					$instPrompts = $relPrompts->GetDestinationInstances();
 					
-					switch ($instPrompt->ParentObject->Name)
+					foreach ($instPrompts as $instPrompt)
 					{
-						case "ChoicePrompt":
+						$fvi = null;
+						
+						switch ($instPrompt->ParentObject->Name)
 						{
-							$fvi = new FormViewItemChoice();
-							$fvi->RequireSelectionFromChoices = true;
-							$relChoices = $instPrompt->GetRelationship(KnownRelationships::get___Choice_Prompt__has_valid__Prompt_Value());
-							$instChoices = $relChoices->GetDestinationInstances();
-							
-							foreach ($instChoices as $instChoice)
+							case "ChoicePrompt":
 							{
-								$item = new FormViewItemChoiceValue();
+								$fvi = new FormViewItemChoice();
+								$fvi->RequireSelectionFromChoices = true;
+								$relChoices = $instPrompt->GetRelationship(KnownRelationships::get___Choice_Prompt__has_valid__Prompt_Value());
+								$instChoices = $relChoices->GetDestinationInstances();
 								
-								$relPromptValueTitle = $instChoice->GetRelationship(KnownRelationships::get___Prompt_Value__has_title__Translatable_Text_Constant());
-								if ($relPromptValueTitle != null)
+								foreach ($instChoices as $instChoice)
 								{
-									$instPromptValueTitle = $relPromptValueTitle->GetDestinationInstance();
-									$item->Title = $instPromptValueTitle->ToString();
+									$item = new FormViewItemChoiceValue();
+									
+									$relPromptValueTitle = $instChoice->GetRelationship(KnownRelationships::get___Prompt_Value__has_title__Translatable_Text_Constant());
+									if ($relPromptValueTitle != null)
+									{
+										$instPromptValueTitle = $relPromptValueTitle->GetDestinationInstance();
+										$item->Title = $instPromptValueTitle->ToString();
+									}
+									// $item->Value = $instChoice->GetInstanceID();
+									$item->Value = $instChoice->GlobalIdentifier;
+									$fvi->Items[] = $item;
 								}
-								// $item->Value = $instChoice->GetInstanceID();
-								$item->Value = $instChoice->GlobalIdentifier;
-								$fvi->Items[] = $item;
+								break;
 							}
-							break;
-						}
-						default:
-						{
-							$fvi = new FormViewItemText();
-							break;
-						}
-					}
-					
-					if ($fvi != null)
-					{
-						$rel = $instPrompt->GetRelationship(KnownRelationships::get___Prompt__has_title__Translatable_Text_Constant());
-						if ($rel != null)
-						{
-							$instTitle = $rel->GetDestinationInstance();
-							$fvi->Title = $instTitle->ToString();
+							case "InstancePrompt":
+							{
+								$fvi = new FormViewItemChoice();
+								$fvi->RequireSelectionFromChoices = true;
+								$relChoices = $instPrompt->GetRelationship(KnownRelationships::get___Instance_Prompt__has_valid__Class());
+								$instChoices = $relChoices->GetDestinationInstances();
+								
+								foreach ($instChoices as $instChoice)
+								{
+									$instObj = TenantObject::GetByGlobalIdentifier($instChoice->GlobalIdentifier);
+									$instObjInsts = $instObj->GetInstances();
+									
+									foreach ($instObjInsts as $instObjInst)
+									{
+										$item = new FormViewItemChoiceValue();
+										
+										$item->Title = $instObjInst->ToString();
+										// $item->Value = $instObjInsts->GetInstanceID();
+										$item->Value = $instObjInst->GlobalIdentifier;
+										$fvi->Items[] = $item;
+									}
+								}
+								break;
+							}
+							default:
+							{
+								$fvi = new FormViewItemText();
+								break;
+							}
 						}
 						
-						$fvPrompts->Items[] = $fvi;
+						if ($fvi != null)
+						{
+							$fvi->ID = $instPrompt->GetInstanceID();
+							
+							$rel = $instPrompt->GetRelationship(KnownRelationships::get___Prompt__has_title__Translatable_Text_Constant());
+							if ($rel != null)
+							{
+								$instTitle = $rel->GetDestinationInstance();
+								$fvi->Title = $instTitle->ToString();
+							}
+							
+							$fvPrompts->Items[] = $fvi;
+						}
 					}
-				}
-			}				
+				}				
+			}
 			
 			if ($inst->ParentObject->Name == "UITask")
 			{
