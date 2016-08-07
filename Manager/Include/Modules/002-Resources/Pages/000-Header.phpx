@@ -1,5 +1,0 @@
-<Website>
-	<Pages>
-		<Page FileName="Images/Header" MasterPageFileName="Blank" CodeBehindClassName="Objectify\Tenant\Resources\Pages\HeaderPage" />
-	</Pages>
-</Website>
