@@ -2,6 +2,15 @@
 	"Objects":
 	[
 		{
+			"Name": "ReportDataSource",
+			"Instances":
+			[
+				{
+					"ID": "{C6C62D56-CD40-474C-B727-44FB1930485A}"
+				}
+			]
+		},
+		{
 			"Name": "StandardReport",
 			"Instances":
 			[
