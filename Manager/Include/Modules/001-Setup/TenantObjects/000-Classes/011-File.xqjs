@@ -4,6 +4,12 @@
 		{
 			"ID": "{5D081079-E136-406A-A728-7472937A6E5E}",
 			"Name": "File",
+			"ParentObjects":
+			[
+				{
+					"Name": "Class"
+				}
+			],
 			"Relationships":
 			[
 				{
