@@ -31,6 +31,9 @@
 									</Columns>
 								</wfx:ListView>
 							</wfx:TabPage>
+							<wfx:TabPage ID="tabInstances" Title="Instances" Visible="false">
+								<ofx:InstanceListView ID="ilvInstances" />
+							</wfx:TabPage>
 						</TabPages>
 					</wfx:TabContainer>
 					

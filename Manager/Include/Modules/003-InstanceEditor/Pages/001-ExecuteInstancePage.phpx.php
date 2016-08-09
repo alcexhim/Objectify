@@ -17,7 +17,18 @@
 	
 	use Objectify\WebControls\InstanceListView;
 	use Objectify\WebControls\RelationshipListView;
-	
+use Phast\WebControls\ListView;
+use Phast\HTMLControls\HTMLControlTable;
+use Phast\HTMLControl;
+use Phast\WebStyleSheetRule;
+use Phast\WebControls\Menu;
+use Phast\WebControls\MenuItemHeader;
+use Phast\WebControls\MenuItemCommand;
+use Objectify\Objects\Objectify;
+use Phast\WebControls\ListViewItem;
+use Phast\WebControls\ListViewItemColumn;
+use Objectify\WebControls\InstanceDisplayWidget;
+												
 	class ExecuteInstancePage extends PhastPage
 	{
 		public function OnInitializing(CancelEventArgs $e)
@@ -27,6 +38,10 @@
 			
 			$iidParts = explode("$", $iid);
 			$inst = Instance::GetByID($iidParts[1]);
+			
+			$idwObjectTitleHeading = $e->RenderingPage->GetControlByID("idwObjectTitleHeading");
+			$idwObjectTitleHeading->CurrentInstance = $inst;
+			$idwObjectTitleHeading->ShowURL = false;
 			
 			$fvPrompts = $e->RenderingPage->GetControlByID("fvPrompts");
 			if ($paramstr != null)
@@ -131,10 +146,6 @@
 			if ($inst->ParentObject->Name == "UITask")
 			{
 				// execute teh report
-				$headTitle = $e->RenderingPage->GetControlByID("headTitle");
-				$rel = $inst->GetRelationship(KnownRelationships::get___Task__has_title__Translatable_Text_Constant());
-				$instTitle = $rel->GetDestinationInstance();
-				$headTitle->Content = $instTitle->ToString();
 			}
 			else if ($inst->ParentObject->Name == "RedirectTask")
 			{
@@ -145,24 +156,112 @@
 			else if ($inst->ParentObject->Name == "StandardReport")
 			{
 				// execute teh report
-				$headTitle = $e->RenderingPage->GetControlByID("headTitle");
-				$rel = $inst->GetRelationship(KnownRelationships::get___Report__has_title__Translatable_Text_Constant());
-				$instTitle = $rel->GetDestinationInstance();
-				$headTitle->Content = $instTitle->ToString();
-
-				$lvReport = $e->RenderingPage->GetControlByID("lvReport");
-				$lvReport->EnableRender = true;
+				$layerContent = $e->RenderingPage->GetControlByID("layerContent");
 				
+				$table = new HTMLControlTable();
+				$table->Width = "100%";
+				
+				$tr = new HTMLControl("tr");
+
+				// load in faceted filters if we have them. Report Facets give us one-click access to commonly-used
+				// filters.
+				$relFacets = $inst->GetRelationship(KnownRelationships::get___Report__has__Report_Facet());
+				if ($relFacets != null)
+				{
+					$td = new HTMLControl("td");
+					$td->Width = "200px";
+					$td->StyleRules[] = new WebStyleSheetRule("vertical-align", "top");
+					
+					$mnuFacets = new Menu();
+					$instsFacets = $relFacets->GetDestinationInstances();
+					foreach ($instsFacets as $instFacet)
+					{
+						$mnuFacets->Items[] = new MenuItemHeader($instFacet->ToString());
+						
+						$relFacetOptions = $instFacet->GetRelationship(KnownRelationships::get___Report_Facet__has__Report_Facet_Option());
+						if ($relFacetOptions != null)
+						{
+							$instsFacetOptions = $relFacetOptions->GetDestinationInstances();
+							foreach ($instsFacetOptions as $instFacetOption)
+							{
+								$mnuFacets->Items[] = new MenuItemCommand($instFacetOption->ToString());
+							}
+						}
+					}
+					
+					$td->Controls[] = $mnuFacets;
+					$tr->Controls[] = $td;
+				}
+				
+				$relDataSource = $inst->GetRelationship(KnownRelationships::get___Report__has__Report_Data_Source());
+				if ($relDataSource == null) return;
+				
+				$instDataSource = $relDataSource->GetDestinationInstance();
+				$relSourceMethod = $instDataSource->GetRelationship(KnownRelationships::get___Report_Data_Source__has_source__Method());
+				if ($relSourceMethod == null) return;
+				
+				$instSourceMethod = $relSourceMethod->GetDestinationInstance();
+				$instsRow = Objectify::ExecuteMethod($instSourceMethod);
+				
+				$td = new HTMLControl("td");
+				$td->StyleRules[] = new WebStyleSheetRule("vertical-align", "top");
+				
+				$lvReport = new ListView();
 				$rel = $inst->GetRelationship(KnownRelationships::get___Report__has__Report_Field());
 				if ($rel != null)
 				{
-					$insts = $rel->GetDestinationInstances();
-					foreach ($insts as $inst)
+					$instsReportField = $rel->GetDestinationInstances();
+					foreach ($instsReportField as $instReportField)
 					{
-						$lvReport->Columns[] = new ListViewColumn("ch" . $inst->ID, $inst->ToString());
+						$lvReport->Columns[] = new ListViewColumn("ch" . $instReportField->ID, $instReportField->ToString());
 					}
-					// print_r($insts);
+
+					foreach ($instsRow as $instRow)
+					{
+						$lvi = new ListViewItem();
+						$countReportField = count($instsReportField);
+						for ($i = 0; $i < $countReportField; $i++)
+						{
+							$instReportField = $instsReportField[$i];
+							$lvi->Columns[] = new ListViewItemColumn($lvReport->Columns[$i]->ID, function($sender)
+							{
+								$instRow = $sender->ExtraData[0];
+								$instReportField = $sender->ExtraData[1];
+								
+								$value = Objectify::GetReportFieldValue($instReportField, $instRow);
+								if (is_object($value))
+								{
+								}
+								else
+								{
+									echo ($value);
+								}
+								/*
+								if (is_object($value) && get_class($value) == "Objectify\\Objects\\Instance")
+								{
+									if ($value->HasParentObject(TenantObject::GetByName("Attribute")))
+									{
+										echo($instRow->GetAttributeValue($instAttribute, "(empty)"));
+									}
+									else if ($value->HasParentObject(TenantObject::GetByName("Attribute")))
+									{
+										$idw = new InstanceDisplayWidget($instReportField);
+										$idw->Render();
+									}
+								}
+								*/
+							}, $instRow->ToString(), array($instRow, $instReportField));
+						}
+						$lvReport->Items[] = $lvi;
+					}
 				}
+				$td->Controls[] = $lvReport;
+				
+				$tr->Controls[] = $td;
+				
+				$table->Controls[] = $tr;
+				
+				$layerContent->Controls[] = $table;
 			}
 			else
 			{

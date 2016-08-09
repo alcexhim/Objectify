@@ -13,7 +13,8 @@
 	
 	use Objectify\WebControls\FormViewItemInstance;
 	use Objectify\WebControls\InstanceDisplayWidget;
-	
+use Objectify\Objects\TenantObject;
+		
 	class ModifyInstancePage extends PhastPage
 	{
 		public function OnInitializing(CancelEventArgs $e)
@@ -79,6 +80,15 @@
 					}, null, $rel->GetDestinationInstances())
 				));
 				$lvRelationships->Items[] = $lvi;
+			}
+			
+			$tabInstances = $tbsTabs->GetTabByID("tabInstances");
+			$instObj = TenantObject::GetByGlobalIdentifier($inst->GlobalIdentifier);
+			if ($instObj != null)
+			{
+				$ilvInstances = $tabInstances->GetControlByID("ilvInstances");
+				$ilvInstances->Object = $instObj;
+				$tabInstances->Visible = true;
 			}
 		}
 	}

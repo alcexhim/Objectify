@@ -16,8 +16,102 @@
 	class Objectify
 	{
 		/**
+		 * Gets the value of the specified Report Field as either a Text/Numeric/Date Attribute or a Single/Multiple
+		 * Instance.
+		 * @param Instance $instReportField
+		 * @param Instance $instRow
+		 * @return Instance|string|boolean|number|array|null
+		 */
+		public static function GetReportFieldValue($instReportField, $instRow)
+		{
+			switch ($instReportField->ParentObject->Name)
+			{
+				case "AttributeReportField":
+				{
+					$relTarget = $instReportField->GetRelationship(KnownRelationships::get___Attribute_Report_Field__has_target__Attribute());
+					if ($relTarget == null)
+					{
+						return null;
+					}
+					else
+					{
+						$instAttribute = $relTarget->GetDestinationInstance();
+						return $instAttribute;
+					}
+					break;
+				}
+				case "RelationshipReportField":
+				{
+					$relTarget = $instReportField->GetRelationship(KnownRelationships::get___Relationship_Report_Field__has_target__Relationship());
+					if ($relTarget == null)
+					{
+						return null;
+					}
+					else
+					{
+						$instTarget = $relTarget->GetDestinationInstance();
+						$rel = $instRow->GetRelationship($instTarget);
+						if ($rel == null)
+						{
+							return null;
+						}
+						else
+						{
+							$relinsts = $rel->GetDestinationInstances();
+							$renderAsText = $instReportField->GetAttributeValue(KnownAttributes::get___Boolean___Render_as_Text(), false);
+							if ($renderAsText)
+							{
+								$text = "";
+								foreach ($relinsts as $relinst)
+								{
+									$text .= $relinst->ToString();
+									$text .= "\n";
+								}
+								return $text;
+							}
+							else
+							{
+								return $relinsts;
+							}
+						}
+					}
+					break;
+				}
+			}
+			return null;
+		}
+		
+		/**
+		 * Executes the specified Method Binding.
+		 * @param Instance $methodBinding
+		 */
+		public static function ExecuteMethodBinding($methodBinding)
+		{
+			switch ($methodBinding->ParentObject->Name)
+			{
+				case "ReturnInstanceSetMethodBinding":
+				{
+					$relSourceClass = $methodBinding->GetRelationship(KnownRelationships::get___Return_Instance_Set_Method_Binding__has_source__Class());
+					if ($relSourceClass != null)
+					{
+						$instRet = array();
+						$instsSourceClass = $relSourceClass->GetDestinationInstances();
+						foreach ($instsSourceClass as $instSourceClass)
+						{
+							$obj = TenantObject::GetByGlobalIdentifier($instSourceClass->GlobalIdentifier);
+							$insts = $obj->GetInstances();
+							$instRet = array_merge($instRet, $insts);
+						}
+						return $instRet;
+					}
+					break;
+				}
+			}
+		}
+		
+		/**
 		 * Executes the specified XquizIT method.
-		 * @param TenantObjectInstance $method
+		 * @param Instance $method
 		 */
 		public static function ExecuteMethod($method, $parameters = null)
 		{
@@ -36,6 +130,17 @@
 			if ($method == null)
 			{
 				trigger_error("XquizIT: method not found" . (isset($methodName) ? (" " . $methodName) : ""));
+				return null;
+			}
+			
+			$relBinding = $method->GetRelationship(KnownRelationships::get___Method__has__Method_Binding());
+			if ($relBinding != null)
+			{
+				$instsBinding = $relBinding->GetDestinationInstances();
+				foreach ($instsBinding as $instBinding)
+				{
+					return Objectify::ExecuteMethodBinding($instBinding);
+				}
 				return null;
 			}
 			

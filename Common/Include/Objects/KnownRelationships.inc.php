@@ -197,6 +197,31 @@
 			return Instance::GetByGlobalIdentifier(self::Relationship___Task__for__Class);
 		}
 		
+
+
+		const Relationship___Method__has__Method_Binding = "{D52500F1-1421-4B73-9987-223163BC9C04}";
+		const Relationship___Method_Binding__for__Method = "{B782A592-8AF5-4228-8296-E3D0B24C70A8}";
+		public static function get___Method__has__Method_Binding()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Method__has__Method_Binding);
+		}
+		public static function get___Method_Binding__for__Method()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Method_Binding__for__Method);
+		}
+
+		const Relationship___Return_Instance_Set_Method_Binding__has_source__Class = "{EE7A3049-8E09-410C-84CB-C2C0D652CF40}";
+		const Relationship___Class__source_for__Return_Instance_Set_Method_Binding = "{AA3C3ECA-9963-4877-9D9E-139724B59E14}";
+		public static function get___Return_Instance_Set_Method_Binding__has_source__Class()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Return_Instance_Set_Method_Binding__has_source__Class);
+		}
+		public static function get___Class__source_for__Return_Instance_Set_Method_Binding()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Class__source_for__Return_Instance_Set_Method_Binding);
+		}
+		
+		
 		const Relationship___User_Login__has__User = "{85B40E4B-849B-4006-A9C0-4E201B25975F}";
 		const Relationship___User__for__User_Login = "{C79A6041-FC94-41A5-9860-D443C60FA7DE}";
 		public static function get___User_Login__has__User()
@@ -389,6 +414,50 @@
 		public static function get___Report_Field__for__Report()
 		{
 			return Instance::GetByGlobalIdentifier(self::Relationship___Report_Field__for__Report);
+		}
+		
+		const Relationship___Report__has__Report_Data_Source = "{1DE7B484-F9E3-476A-A9D3-7D2A86B55845}";
+		const Relationship___Report_Data_Source__for__Report = "{05DA3D00-0EAE-454E-A7D9-C7382EDCD15F}";
+		public static function get___Report__has__Report_Data_Source()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Report__has__Report_Data_Source);
+		}
+		public static function get___Report_Data_Source__for__Report()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Report_Data_Source__for__Report);
+		}
+		
+		const Relationship___Report_Data_Source__has_source__Method = "{2D5CB496-5839-46A0-9B94-30D4E2227B56}";
+		const Relationship___Method__source_for__Report_Data_Source = "{1A043080-7AD0-4CCF-AED7-CD88CAA15D94}";
+		public static function get___Report_Data_Source__has_source__Method()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Report_Data_Source__has_source__Method);
+		}
+		public static function get___Method__source_for__Report_Data_Source()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Method__source_for__Report_Data_Source);
+		}
+		
+		const Relationship___Report__has__Report_Facet = "{EA7C6841-FFE0-4230-95CF-87B3D425DC38}";
+		const Relationship___Report_Facet__for__Report = "{EC515BC0-D235-4A1F-A461-72B840B49020}";
+		public static function get___Report__has__Report_Facet()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Report__has__Report_Facet);
+		}
+		public static function get___Report_Facet__for__Report()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Report_Facet__for__Report);
+		}
+		
+		const Relationship___Report_Facet__has__Report_Facet_Option = "{9EE30D06-5BF3-406F-B13A-451F5A609046}";
+		const Relationship___Report_Facet_Option__for__Report_Facet = "{F21B8F49-9F19-497C-9A32-10601BC6FB0F}";
+		public static function get___Report_Facet__has__Report_Facet_Option()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Report_Facet__has__Report_Facet_Option);
+		}
+		public static function get___Report_Facet_Option__for__Report_Facet()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Report_Facet_Option__for__Report_Facet);
 		}
 		
 		const Relationship___Report_Field__has_title__Translatable_Text_Constant = "{6780BFC2-DBC0-40AE-83EE-BFEF979F0054}";

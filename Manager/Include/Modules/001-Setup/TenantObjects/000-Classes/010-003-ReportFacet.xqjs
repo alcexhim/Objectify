@@ -1,0 +1,517 @@
+{
+	"Objects":
+	[
+		{
+			"Name": "Relationship",
+			"Instances":
+			[
+				{
+					"ID": "{EA7C6841-FFE0-4230-95CF-87B3D425DC38}",
+					"Comment": "Report.has Report Facet",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Report`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{19D947B6-CE82-4EEE-92EC-A4E01E27F2DB}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Report Facet`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{B3CE1406-593F-414B-B000-DD5BA06A30B6}"
+							]
+						},
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{EC515BC0-D235-4A1F-A461-72B840B49020}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{EC515BC0-D235-4A1F-A461-72B840B49020}",
+					"Comment": "Report Facet.for Report",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Report Facet`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{B3CE1406-593F-414B-B000-DD5BA06A30B6}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Report`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{19D947B6-CE82-4EEE-92EC-A4E01E27F2DB}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{9EE30D06-5BF3-406F-B13A-451F5A609046}",
+					"Comment": "Report Facet.has Report Facet Option",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Report Facet`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{B3CE1406-593F-414B-B000-DD5BA06A30B6}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Report Facet Option`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{4CFB0305-306E-46DF-8B07-03D4C2DE55F9}"
+							]
+						},
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{F21B8F49-9F19-497C-9A32-10601BC6FB0F}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{F21B8F49-9F19-497C-9A32-10601BC6FB0F}",
+					"Comment": "Report Facet Option.for Report Facet",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Report Facet Option`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{4CFB0305-306E-46DF-8B07-03D4C2DE55F9}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Report Facet`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{B3CE1406-593F-414B-B000-DD5BA06A30B6}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{D182076B-9804-47E1-9ECA-2D028B623525}",
+					"Comment": "Report Facet.has title Translatable Text Constant",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has title"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Report Facet`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{B3CE1406-593F-414B-B000-DD5BA06A30B6}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Translatable Text Constant`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+							]
+						},
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{596E57FF-CE23-4F23-A98F-643DFA2CECD3}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{596E57FF-CE23-4F23-A98F-643DFA2CECD3}",
+					"Comment": "Translatable Text Constant.title for Report Facet",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "title for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Translatable Text Constant`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Report Facet`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{B3CE1406-593F-414B-B000-DD5BA06A30B6}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{3D57D50E-2148-4323-92DF-9B03499A6847}",
+					"Comment": "Report Facet Option.has title Translatable Text Constant",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has title"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Report Facet Option`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{4CFB0305-306E-46DF-8B07-03D4C2DE55F9}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Translatable Text Constant`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+							]
+						},
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{81E6697A-4598-4E28-8C81-D2270709A67D}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{81E6697A-4598-4E28-8C81-D2270709A67D}",
+					"Comment": "Translatable Text Constant.title for Report Facet Option",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "title for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Translatable Text Constant`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Report Facet Option`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{4CFB0305-306E-46DF-8B07-03D4C2DE55F9}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{33F4F820-98B4-4C2C-B8B5-1C62E9210CBE}",
+					"Comment": "Report Facet.has Report Field",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Report Facet`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{B3CE1406-593F-414B-B000-DD5BA06A30B6}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Report Field`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{655A04D9-FE35-4F89-9AAB-B8FA34989D03}"
+							]
+						},
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{011940D5-7786-4E53-91EC-7072582C555E}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{011940D5-7786-4E53-91EC-7072582C555E}",
+					"Comment": "Report Field.for Report Facet",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Report Field`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{655A04D9-FE35-4F89-9AAB-B8FA34989D03}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Report Facet`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{B3CE1406-593F-414B-B000-DD5BA06A30B6}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "ExtractSingleInstanceStringComponent",
+			"Instances":
+			[
+				{
+					"ID": "{5A78F865-6A1F-499A-8508-B972D732AEE5}",
+					"Relationships":
+					[
+						{
+							"Comment": "Extract Single Instance String Component.has Relationship",
+							"RelationshipID": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
+							"InverseRelationshipID": "{B0111132-8721-405C-967B-0BEFA92CFE9A}",
+							"DestinationInstances":
+							[
+								"{D182076B-9804-47E1-9ECA-2D028B623525}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{77A62A6E-E418-4B7E-8FCB-318E64381467}",
+					"Relationships":
+					[
+						{
+							"Comment": "Extract Single Instance String Component.has Relationship",
+							"RelationshipID": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
+							"InverseRelationshipID": "{B0111132-8721-405C-967B-0BEFA92CFE9A}",
+							"DestinationInstances":
+							[
+								"{3D57D50E-2148-4323-92DF-9B03499A6847}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "String",
+			"Instances":
+			[
+				{
+					"ID": "{A5415D78-E43A-4A79-AC1C-83B0A1C9FFBB}",
+					"Relationships":
+					[
+						{
+							"Comment": "String.has String Component",
+							"RelationshipID": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
+							"InverseRelationshipID": "{40E17597-0AEB-4C56-BBAB-FC600E1196DD}",
+							"DestinationInstances":
+							[
+								"{5A78F865-6A1F-499A-8508-B972D732AEE5}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{2C52A6F3-120A-400C-9D1F-107377A32E3B}",
+					"Relationships":
+					[
+						{
+							"Comment": "String.has String Component",
+							"RelationshipID": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
+							"InverseRelationshipID": "{40E17597-0AEB-4C56-BBAB-FC600E1196DD}",
+							"DestinationInstances":
+							[
+								"{77A62A6E-E418-4B7E-8FCB-318E64381467}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"ID": "{B3CE1406-593F-414B-B000-DD5BA06A30B6}",
+			"Name": "ReportFacet",
+			"ParentObjects":
+			[
+				{
+					"Name": "Class"
+				}
+			],
+			"TranslatableValues":
+			[
+				{
+					"Comment": "Class `Report Facet`.has title Translatable Text Constant",
+					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+					"InverseRelationshipID": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
+					"Values":
+					[
+						{
+							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+							"Value": "Report Facet"
+						}
+					]
+				}
+			],
+			"Relationships":
+			[
+				{
+					"Comment": "Class `Report Facet`.instance labeled by String",
+					"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+					"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+					"DestinationInstances":
+					[
+						"{A5415D78-E43A-4A79-AC1C-83B0A1C9FFBB}"
+					]
+				}
+			]
+		},
+		{
+			"ID": "{4CFB0305-306E-46DF-8B07-03D4C2DE55F9}",
+			"Name": "ReportFacetOption",
+			"ParentObjects":
+			[
+				{
+					"Name": "Class"
+				}
+			],
+			"TranslatableValues":
+			[
+				{
+					"Comment": "Class `Report Facet Option`.has title Translatable Text Constant",
+					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+					"InverseRelationshipID": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
+					"Values":
+					[
+						{
+							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+							"Value": "Report Facet Option"
+						}
+					]
+				}
+			],
+			"Relationships":
+			[
+				{
+					"Comment": "Class `Report Facet Option`.instance labeled by String",
+					"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+					"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+					"DestinationInstances":
+					[
+						"{2C52A6F3-120A-400C-9D1F-107377A32E3B}"
+					]
+				}
+			]
+		}
+	]
+}

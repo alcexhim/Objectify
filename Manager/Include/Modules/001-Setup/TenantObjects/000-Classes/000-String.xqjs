@@ -173,6 +173,26 @@
 							"Value": "."
 						}
 					]
+				},
+				{
+					"ID": "{21CA6A9B-8405-4D8E-AFFD-CF1960397704}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+							"Value": "["
+						}
+					]
+				},
+				{
+					"ID": "{94760D6C-64E9-494C-AFCC-AB4B68344F32}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+							"Value": "]"
+						}
+					]
 				}
 			]
 		},

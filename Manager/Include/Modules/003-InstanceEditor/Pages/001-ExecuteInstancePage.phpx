@@ -6,13 +6,10 @@
 			</Scripts>
 			<Content>
 				<wfx:Section PlaceholderID="Content">
-					<html:Heading ID="headTitle" Level="1" />
+					<h1><ofx:InstanceDisplayWidget ID="idwObjectTitleHeading" /></h1>
 					
 					<wfx:FormView ID="fvPrompts">
 					</wfx:FormView>
-					
-					<wfx:ListView ID="lvReport" EnableRender="false">
-					</wfx:ListView>
 					
 					<html:Layer ID="layerContent">
 					</html:Layer>

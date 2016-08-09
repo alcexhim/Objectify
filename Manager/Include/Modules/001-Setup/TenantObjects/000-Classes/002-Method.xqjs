@@ -118,6 +118,85 @@
 		},
 		
 		{
+			"Name": "Relationship",
+			"Instances":
+			[
+				{
+					"ID": "{D52500F1-1421-4B73-9987-223163BC9C04}",
+					"Comment": "Method.has Method Binding",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Method`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{D2813913-80B6-4DD6-9AD6-56D989169734}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Method Binding`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{CB36098E-B9BF-4D22-87FA-4186EC632C89}"
+							]
+						},
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{B782A592-8AF5-4228-8296-E3D0B24C70A8}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{B782A592-8AF5-4228-8296-E3D0B24C70A8}",
+					"Comment": "Method Binding.for Method",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Method Binding`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{CB36098E-B9BF-4D22-87FA-4186EC632C89}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Method`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{D2813913-80B6-4DD6-9AD6-56D989169734}"
+							]
+						}
+					]
+				}
+			]
+		},
+		
+		{
 			"ID": "{795DD1D3-0744-459D-87BD-62C70F1F5CBA}",
 			"Name": "CallMethodMethodAction",
 			"ParentObjects":
@@ -200,12 +279,207 @@
 		},
 		
 		{
+			"Name": "TextConstantStringComponent",
+			"Instances":
+			[
+				{
+					"ID": "{63FFA896-56A7-477F-A78A-EEF954BB04C5}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+							"Value": "SS"
+						}
+					]
+				},
+				{
+					"ID": "{D117D714-B7F5-4304-A3FB-B287405AB043}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+							"Value": "P"
+						}
+					]
+				},
+				{
+					"ID": "{E3C34504-6050-4F90-A871-8B44A08D9BEB}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+							"Value": "S"
+						}
+					]
+				},
+				{
+					"ID": "{F2E0F0E8-3048-4E67-B523-666332EF9F41}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+							"Value": "rsmb"
+						}
+					]
+				},
+				{
+					"ID": "{E33D7576-F7B9-4A60-9A0E-87065FAA987E}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+							"Value": "ramb"
+						}
+					]
+				}
+			]
+		},
+		
+		{
+			"Name": "Relationship",
+			"Instances":
+			[
+				{
+					"Comment": "Method Binding.has title Translatable Text Constant",
+					"ID": "{940EBFDB-B064-48D7-A55B-873947F4D19A}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has title"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Method Binding`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{CB36098E-B9BF-4D22-87FA-4186EC632C89}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Translatable Text Constant`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+							]
+						},
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{300A3D26-699F-4F1F-9FD4-6A294915EAC8}"
+							]
+						}
+					]
+				},
+				{
+					"Comment": "Translatable Text Constant.title for Method Binding",
+					"ID": "{300A3D26-699F-4F1F-9FD4-6A294915EAC8}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "title for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Translatable Text Constant`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Method Binding`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{CB36098E-B9BF-4D22-87FA-4186EC632C89}"
+							]
+						}
+					]
+				}
+			]
+		},
+		
+		{
+			"Name": "ExtractSingleInstanceStringComponent",
+			"Instances":
+			[
+				{
+					"ID": "{5EB6D9EC-3031-4337-B9DB-7D67B3E4CB86}",
+					"Relationships":
+					[
+						{
+							"RelationshipID": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
+							"InverseRelationshipID": "{B0111132-8721-405C-967B-0BEFA92CFE9A}",
+							"DestinationInstances":
+							[
+								"{940EBFDB-B064-48D7-A55B-873947F4D19A}"
+							]
+						}
+					]
+				}
+			]
+		},
+		
+		{
+			"Name": "String",
+			"Instances":
+			[
+				{
+					"ID": "{A41150B8-0982-492D-BD46-7D1C3E3CFFFB}",
+					"Relationships":
+					[
+						{
+							"Comment": "String.has String Component",
+							"RelationshipID": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
+							"InverseRelationshipID": "{40E17597-0AEB-4C56-BBAB-FC600E1196DD}",
+							"DestinationInstances":
+							[
+								"{5EB6D9EC-3031-4337-B9DB-7D67B3E4CB86}",
+								"{936E4426-5995-4713-BDEE-BF4F7BA2AFAE}",
+								"{21CA6A9B-8405-4D8E-AFFD-CF1960397704}",
+								"{F2E0F0E8-3048-4E67-B523-666332EF9F41}",
+								"{94760D6C-64E9-494C-AFCC-AB4B68344F32}"
+							]
+						}
+					]
+				}
+			]
+		},
+		
+		{
 			"ID": "{AADC20F9-7559-429B-AEF0-97E059295C76}",
 			"Name": "ReturnInstanceSetMethodBinding",
 			"ParentObjects":
 			[
 				{
 					"Name": "MethodBinding"
+				}
+			],
+			"Relationships":
+			[
+				{
+					"Comment": "Class.instance labeled by String",
+					"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+					"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+					"DestinationInstances":
+					[
+						"{A41150B8-0982-492D-BD46-7D1C3E3CFFFB}"
+					]
 				}
 			],
 			"TranslatableValues":
@@ -440,6 +714,109 @@
 			[
 				{
 					"Name": "Method"
+				}
+			]
+		},
+		{
+			"ID": "{130637B4-17A7-4394-8F4D-E83A79114E6C}",
+			"Name": "SelectInstanceSetMethod",
+			"ParentObjects":
+			[
+				{
+					"Name": "Method"
+				}
+			],
+			"TranslatableValues":
+			[
+				{
+					"Comment": "Class.has title Translatable Text Constant",
+					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+					"InverseRelationshipID": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
+					"Values":
+					[
+						{
+							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+							"Value": "SS - Select Instance Set Method"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "Relationship",
+			"Instances":
+			[
+				{
+					"ID": "{EE7A3049-8E09-410C-84CB-C2C0D652CF40}",
+					"Comment": "Return Instance Set Method Binding.has source Class",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has source"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Return Instance Set Method Binding`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{AADC20F9-7559-429B-AEF0-97E059295C76}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Class`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+							]
+						},
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{AA3C3ECA-9963-4877-9D9E-139724B59E14}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{AA3C3ECA-9963-4877-9D9E-139724B59E14}",
+					"Comment": "Class.source for Return Instance Set Method Binding",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "source for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Class`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Return Instance Set Method Binding`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{AADC20F9-7559-429B-AEF0-97E059295C76}"
+							]
+						}
+					]
 				}
 			]
 		},
