@@ -225,12 +225,12 @@
 							]
 						},
 						{
-							"Comment": "Standard Report.has Report Field `Title for Class`",
+							"Comment": "Standard Report.has Report Field `Primary Object`",
 							"RelationshipID": "{7A8F57F1-A4F3-4BAF-84A5-E893FD79447D}",
 							"InverseRelationshipID": "{3FA19854-CF0F-4656-B80B-54EF633503E0}",
 							"DestinationInstances":
 							[
-								"{4CB5C72A-21A2-4B18-A21D-278EBF5C7B91}"
+								"{0D2CC9BE-160D-4D62-A5AE-DAE8AC45DB9B}"
 							]
 						}
 					]

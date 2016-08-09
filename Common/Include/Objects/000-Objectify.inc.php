@@ -26,6 +26,10 @@
 		{
 			switch ($instReportField->ParentObject->Name)
 			{
+				case "PrimaryObjectReportField":
+				{
+					return $instRow;
+				}
 				case "AttributeReportField":
 				{
 					$relTarget = $instReportField->GetRelationship(KnownRelationships::get___Attribute_Report_Field__has_target__Attribute());

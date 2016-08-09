@@ -213,7 +213,12 @@ use Objectify\WebControls\InstanceDisplayWidget;
 					$instsReportField = $rel->GetDestinationInstances();
 					foreach ($instsReportField as $instReportField)
 					{
-						$lvReport->Columns[] = new ListViewColumn("ch" . $instReportField->ID, $instReportField->ToString());
+						$title = $instReportField->ToString();
+						if ($instReportField->ParentObject->Name == "PrimaryObjectReportField")
+						{
+							$title = $instsRow[0]->ParentObject->Name;
+						}
+						$lvReport->Columns[] = new ListViewColumn("ch" . $instReportField->ID, $title);
 					}
 
 					foreach ($instsRow as $instRow)
@@ -231,25 +236,24 @@ use Objectify\WebControls\InstanceDisplayWidget;
 								$value = Objectify::GetReportFieldValue($instReportField, $instRow);
 								if (is_object($value))
 								{
+									if (get_class($value) == "Objectify\\Objects\\Instance")
+									{
+										/*
+										if ($value->HasParentObject(TenantObject::GetByName("Attribute")))
+										{
+											echo($instRow->GetAttributeValue($instAttribute, "(empty)"));
+										}
+										else
+										{
+										*/
+										$idw = new InstanceDisplayWidget($value);
+										$idw->Render();
+									}
 								}
 								else
 								{
 									echo ($value);
 								}
-								/*
-								if (is_object($value) && get_class($value) == "Objectify\\Objects\\Instance")
-								{
-									if ($value->HasParentObject(TenantObject::GetByName("Attribute")))
-									{
-										echo($instRow->GetAttributeValue($instAttribute, "(empty)"));
-									}
-									else if ($value->HasParentObject(TenantObject::GetByName("Attribute")))
-									{
-										$idw = new InstanceDisplayWidget($instReportField);
-										$idw->Render();
-									}
-								}
-								*/
 							}, $instRow->ToString(), array($instRow, $instReportField));
 						}
 						$lvReport->Items[] = $lvi;

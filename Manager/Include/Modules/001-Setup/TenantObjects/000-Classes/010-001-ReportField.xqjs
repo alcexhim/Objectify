@@ -12,6 +12,50 @@
 			]
 		},
 		{
+			"ID": "{59EA0C72-4800-48BA-84A4-DDFE10E5F4D0}",
+			"Name": "PrimaryObjectReportField",
+			"TranslatableValues":
+			[
+				{
+					"Comment": "Class.has title Translatable Text Constant",
+					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+					"InverseRelationshipID": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
+					"Values":
+					[
+						{
+							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+							"Value": "Primary Object Report Field"
+						}
+					]
+				}
+			],
+			"ParentObjects":
+			[
+				{
+					"Name": "ReportField"
+				}
+			],
+			"Relationships":
+			[
+				{
+					"Comment": "Class `Relationship Report Field`.instance labeled by String `Report Field.has title Translatable Text Constant`",
+					"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+					"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+					"DestinationInstances":
+					[
+						"{98A36370-2CE5-4707-B99A-B3F856FE0834}"
+					]
+				}
+			],
+			"Instances":
+			[
+				{
+					"Comment": "Primary Object Report Field Singleton",
+					"ID": "{0D2CC9BE-160D-4D62-A5AE-DAE8AC45DB9B}"
+				}
+			]
+		},
+		{
 			"ID": "{FC4E3BB5-1EA7-44FF-B828-2EA54CDD4ABB}",
 			"Name": "RelationshipReportField",
 			"TranslatableValues":
