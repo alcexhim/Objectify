@@ -43,6 +43,82 @@
 			"Instances":
 			[
 				{
+					"ID": "{E94B6C9D-3307-4858-9726-F24B7DB21E2D}",
+					"Comment": "Tenant.has Tenant Type",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has"
+						},
+						{
+							"ID": "{F1A06573-C447-4D85-B4E7-54A438C4A960}",
+							"Value": true
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Tenant`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{703F9D65-C584-4D9F-A656-D0E3C247FF1F}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Tenant Type`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{5670953C-7367-4065-9AC2-46555342DC72}"
+							]
+						},
+						{
+							"Comment": "Relationship.has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{AA858424-859B-42B3-A76D-FDA986C83845}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{AA858424-859B-42B3-A76D-FDA986C83845}",
+					"Comment": "Tenant Type.for Tenant",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Tenant Type`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{5670953C-7367-4065-9AC2-46555342DC72}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Tenant`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{703F9D65-C584-4D9F-A656-D0E3C247FF1F}"
+							]
+						}
+					]
+				},
+				{
 					"ID": "{4C399E80-ECA2-4A68-BFB4-26A5E6E97047}",
 					"Comment": "Tenant.has logo image File",
 					"AttributeValues":
@@ -185,6 +261,14 @@
 							"DestinationInstances":
 							[
 								"{E6A5D3B3-7E81-41FD-9F5C-1D460175C60E}"
+							]
+						},
+						{
+							"Comment": "Tenant.has Tenant Type",
+							"RelationshipID": "{E94B6C9D-3307-4858-9726-F24B7DB21E2D}",
+							"DestinationInstances":
+							[
+								"{B4F900F1-2C22-41FD-AAB9-7C956663256F}"
 							]
 						}
 					],
