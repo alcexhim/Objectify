@@ -166,7 +166,7 @@ use Objectify\Objects\KnownAttributes;
 									{
 										$instInverseRelationship = Instance::GetByGlobalIdentifier($rel->InverseRelationshipID);
 									}
-									else
+									if ($instInverseRelationship == null)
 									{
 										$relSibling = $instRelationship->GetRelationship(KnownRelationships::get___Relationship__has_sibling__Relationship());
 										if ($relSibling != null)
@@ -174,7 +174,7 @@ use Objectify\Objects\KnownAttributes;
 											$instInverseRelationship = $relSibling->GetDestinationInstance();
 										}
 									}
-						
+									
 									if (isset($rel->DestinationInstances))
 									{
 										$this->ProcessRelationshipsXQJS($instRelationship, $rel->DestinationInstances, $instObj, $instInverseRelationship);
@@ -206,6 +206,17 @@ use Objectify\Objects\KnownAttributes;
 												if (isset($rel->InverseRelationshipID))
 												{
 													$instInverseRelationship = Instance::GetByGlobalIdentifier($rel->InverseRelationshipID);
+												}
+												if ($instInverseRelationship == null)
+												{
+													if ($instRelationship != null)
+													{
+														$relSibling = $instRelationship->GetRelationship(KnownRelationships::get___Relationship__has_sibling__Relationship());
+														if ($relSibling != null)
+														{
+															$instInverseRelationship = $relSibling->GetDestinationInstance();
+														}
+													}
 												}
 												
 												if (isset($rel->DestinationInstances))
