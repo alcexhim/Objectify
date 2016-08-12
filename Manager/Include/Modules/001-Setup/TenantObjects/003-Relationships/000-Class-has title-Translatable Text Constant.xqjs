@@ -174,16 +174,6 @@
 			]
 		},
 		{
-			"Comment": "Class `Call Method Method Action`.has title Translatable Text Constant `Call Method Method Action`",
-			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
-			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
-			"SourceInstance": "{795DD1D3-0744-459D-87BD-62C70F1F5CBA}",
-			"DestinationInstances":
-			[
-				"{8FB46A15-DE06-4F50-95EB-3A5AD71C89B6}"
-			]
-		},
-		{
 			"Comment": "Class `Sequence Method`.has title Translatable Text Constant `Sequence Method`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",

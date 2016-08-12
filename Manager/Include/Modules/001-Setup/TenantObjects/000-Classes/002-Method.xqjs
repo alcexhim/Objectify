@@ -60,7 +60,7 @@
 		
 		{
 			"ID": "{084A6D58-32C9-4A5F-9D2B-86C46F74E522}",
-			"Name": "MethodAction",
+			"Name": "MethodCall",
 			"ParentObjects":
 			[
 				{
@@ -192,17 +192,6 @@
 							]
 						}
 					]
-				}
-			]
-		},
-		
-		{
-			"ID": "{795DD1D3-0744-459D-87BD-62C70F1F5CBA}",
-			"Name": "CallMethodMethodAction",
-			"ParentObjects":
-			[
-				{
-					"Name": "MethodAction"
 				}
 			]
 		},

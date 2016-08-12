@@ -10,7 +10,7 @@
 					[
 						{
 							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_MethodAction_Title" 
+							"Value": "LanguageString_English_MethodCall_Title" 
 						}
 					],
 					"ID": "{4B9417BB-2FEB-40D7-9A4E-6F36C4271F28}",
@@ -29,7 +29,7 @@
 					[
 						{
 							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "Method Action"
+							"Value": "Method Call"
 						}
 					]
 				}
