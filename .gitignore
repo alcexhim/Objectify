@@ -33,3 +33,6 @@ RemoteSystemsTempFiles
 Templates
 Templates.7z
 .recommenders
+
+# ignore excluded Tenant Objects
+Manager/Include/Modules/001-Setup/TenantObjects/*.exclude
