@@ -71,7 +71,7 @@
 				},
 				{
 					"ID": "{6A260FA9-5F60-442B-8860-814F8EFEA059}",
-					"Comment": "Choice Prompt.has valid Prompt Value",
+					"Comment": "Choice Prompt.has valid Prompt Choice",
 					"AttributeValues":
 					[
 						{
@@ -91,7 +91,7 @@
 							]
 						},
 						{
-							"Comment": ".has destination Class `Prompt Value`",
+							"Comment": ".has destination Class `Prompt Choice`",
 							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
 							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
 							"DestinationInstances":
@@ -103,7 +103,7 @@
 				},
 				{
 					"ID": "{C147D288-4911-4779-9CD0-1E0CA20384D4}",
-					"Comment": "Prompt Value.valid for Choice Prompt",
+					"Comment": "Prompt Choice.valid for Choice Prompt",
 					"AttributeValues":
 					[
 						{
@@ -114,7 +114,7 @@
 					"Relationships":
 					[
 						{
-							"Comment": ".has source Class `Prompt Value`",
+							"Comment": ".has source Class `Prompt Choice`",
 							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
 							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
 							"DestinationInstances":
@@ -135,7 +135,7 @@
 				},
 				{
 					"ID": "{44659235-BCC3-4674-B813-52D58BFA85D7}",
-					"Comment": "Prompt Value.has title Translatable Text Constant",
+					"Comment": "Prompt Choice.has title Translatable Text Constant",
 					"AttributeValues":
 					[
 						{
@@ -146,7 +146,7 @@
 					"Relationships":
 					[
 						{
-							"Comment": ".has source Class `Prompt Value`",
+							"Comment": ".has source Class `Prompt Choice`",
 							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
 							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
 							"DestinationInstances":
@@ -167,7 +167,7 @@
 				},
 				{
 					"ID": "{28C32F20-C317-4C48-B314-378440D68C0F}",
-					"Comment": "Translatable Text Constant.title for Prompt Value",
+					"Comment": "Translatable Text Constant.title for Prompt Choice",
 					"AttributeValues":
 					[
 						{
@@ -187,7 +187,7 @@
 							]
 						},
 						{
-							"Comment": ".has destination Class `Prompt Value`",
+							"Comment": ".has destination Class `Prompt Choice`",
 							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
 							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
 							"DestinationInstances":
@@ -279,7 +279,7 @@
 		},
 		{
 			"ID": "{6AE8603F-4883-471F-8D63-75E286BB166B}",
-			"Name": "PromptValue",
+			"Name": "PromptChoice",
 			"ParentObjects":
 			[
 				{
@@ -289,7 +289,7 @@
 			"Relationships":
 			[
 				{
-					"Comment": "Class `Prompt Value`.instance labeled by String",
+					"Comment": "Class `Prompt Choice`.instance labeled by String",
 					"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
 					"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
 					"DestinationInstances":
@@ -307,7 +307,7 @@
 					[
 						{
 							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-							"Value": "Prompt Value"
+							"Value": "Prompt Choice"
 						}
 					]
 				}
@@ -319,7 +319,7 @@
 					"TranslatableValues":
 					[
 						{
-							"Comment": "Prompt Value.has title Translatable Text Constant",
+							"Comment": "Prompt Choice.has title Translatable Text Constant",
 							"RelationshipID": "{44659235-BCC3-4674-B813-52D58BFA85D7}",
 							"InverseRelationshipID": "{28C32F20-C317-4C48-B314-378440D68C0F}",
 							"Values":
@@ -337,7 +337,7 @@
 					"TranslatableValues":
 					[
 						{
-							"Comment": "Prompt Value.has title Translatable Text Constant",
+							"Comment": "Prompt Choice.has title Translatable Text Constant",
 							"RelationshipID": "{44659235-BCC3-4674-B813-52D58BFA85D7}",
 							"InverseRelationshipID": "{28C32F20-C317-4C48-B314-378440D68C0F}",
 							"Values":
@@ -355,7 +355,7 @@
 					"TranslatableValues":
 					[
 						{
-							"Comment": "Prompt Value.has title Translatable Text Constant",
+							"Comment": "Prompt Choice.has title Translatable Text Constant",
 							"RelationshipID": "{44659235-BCC3-4674-B813-52D58BFA85D7}",
 							"InverseRelationshipID": "{28C32F20-C317-4C48-B314-378440D68C0F}",
 							"Values":
@@ -373,7 +373,7 @@
 					"TranslatableValues":
 					[
 						{
-							"Comment": "Prompt Value.has title Translatable Text Constant",
+							"Comment": "Prompt Choice.has title Translatable Text Constant",
 							"RelationshipID": "{44659235-BCC3-4674-B813-52D58BFA85D7}",
 							"InverseRelationshipID": "{28C32F20-C317-4C48-B314-378440D68C0F}",
 							"Values":
@@ -446,7 +446,7 @@
 					"Relationships":
 					[
 						{
-							"Comment": "Choice Prompt.has valid Prompt Value",
+							"Comment": "Choice Prompt.has valid Prompt Choice",
 							"RelationshipID": "{6A260FA9-5F60-442B-8860-814F8EFEA059}",
 							"InverseRelationshipID": "{C147D288-4911-4779-9CD0-1E0CA20384D4}",
 							"DestinationInstances":
@@ -528,6 +528,134 @@
 							]
 						}
 					]
+				},
+				{
+					"Comment": "Prompt Value.has Prompt",
+					"ID": "{7CD62362-DDCE-4BFC-87B9-B5499B0BC141}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Prompt Value`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{9E1BC193-4B9A-4FEC-9807-A7059F4D8080}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Prompt`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{EC889225-416A-4F73-B8D1-2A42B37AF43E}"
+							]
+						}
+					]
+				},
+				{
+					"Comment": "Prompt.for Prompt Value",
+					"ID": "{0E0F60F9-ABA2-4460-BD35-85CC4085F101}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "valid for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Prompt`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{EC889225-416A-4F73-B8D1-2A42B37AF43E}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Prompt Value`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{9E1BC193-4B9A-4FEC-9807-A7059F4D8080}"
+							]
+						}
+					]
+				},
+				{
+					"Comment": "Instance Prompt Value.has Instance",
+					"ID": "{512B518E-A892-44AB-AC35-4E9DBCABFF0B}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Instance Prompt Value`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{0A6E2CF2-97B6-4339-B1DA-1DBBFE9806C6}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Instance`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								""
+							]
+						}
+					]
+				},
+				{
+					"Comment": "Instance.for Instance Prompt Value",
+					"ID": "{1DA962A0-1E0F-4603-9614-21C1B100EA5D}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Instance`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								""
+							]
+						},
+						{
+							"Comment": ".has destination Class `Instance Prompt Value`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{0A6E2CF2-97B6-4339-B1DA-1DBBFE9806C6}"
+							]
+						}
+					]
 				}
 			]
 		},
@@ -540,6 +668,18 @@
 					"Name": "Prompt"
 				}
 			],
+			"Relationships":
+			[
+				{
+					"Comment": "Class `Prompt`.instance labeled by String",
+					"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+					"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+					"DestinationInstances":
+					[
+						"{DB43F472-5DDA-4D6D-983E-929A06EF0112}"
+					]
+				}
+			],
 			"TranslatableValues":
 			[
 				{
@@ -550,6 +690,112 @@
 						{
 							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
 							"Value": "Instance Prompt"
+						}
+					]
+				}
+			],
+			"Instances":
+			[
+				{
+					"ID": "{06210C75-9093-4B3D-ACF2-124C84E95C2A}",
+					"Comment": "Class Instance ID",
+					"TranslatableValues":
+					[
+						{
+							"Comment": "Prompt.has title Translatable Text Constant",
+							"RelationshipID": "{6B25BD5F-9B06-42D1-ACC6-2FA1A2248965}",
+							"InverseRelationshipID": "{9FE0E4B7-875A-4F43-9037-E1D443D4F798}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Class Instance ID"
+								}
+							]
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": "Instance Prompt.has valid Class",
+							"RelationshipID": "{D5BD754B-F401-4FD8-A707-82684E7E25F0}",
+							"Values":
+							[
+								"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"ID": "{9E1BC193-4B9A-4FEC-9807-A7059F4D8080}",
+			"Name": "PromptValue",
+			"ParentObjects":
+			[
+				{
+					"Name": "Class"
+				}
+			],
+			"TranslatableValues":
+			[
+				{
+					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+					"InverseRelationshipID": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
+					"Values":
+					[
+						{
+							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+							"Value": "Prompt Value"
+						}
+					]
+				}
+			]
+		},
+		{
+			"ID": "{0A6E2CF2-97B6-4339-B1DA-1DBBFE9806C6}",
+			"Name": "InstancePromptValue",
+			"ParentObjects":
+			[
+				{
+					"Name": "PromptValue"
+				}
+			],
+			"TranslatableValues":
+			[
+				{
+					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+					"InverseRelationshipID": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
+					"Values":
+					[
+						{
+							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+							"Value": "Instance Prompt Value"
+						}
+					]
+				}
+			],
+			"Instances":
+			[
+				{
+					"ID": "{115847D3-5BBF-4BB6-BF0E-7C1A4484F617}",
+					"Relationships":
+					[
+						{
+							"Comment": "Prompt Value.has Prompt",
+							"RelationshipID": "{7CD62362-DDCE-4BFC-87B9-B5499B0BC141}",
+							"DestinationInstances":
+							[
+								"{06210C75-9093-4B3D-ACF2-124C84E95C2A}"
+							]
+						},
+						{
+							"Comment": "Instance Prompt Value.has Instance",
+							"RelationshipID": "{512B518E-A892-44AB-AC35-4E9DBCABFF0B}",
+							"DestinationInstances":
+							[
+								"{FDF4A498-DE83-417D-BA01-707372125C8D}"
+							]
 						}
 					]
 				}

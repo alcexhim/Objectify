@@ -59,6 +59,157 @@
 		},
 		
 		{
+			"Name": "Relationship",
+			"Instances":
+			[
+				{
+					"ID": "{3D3B601B-4EF0-49F3-AF05-86CEA0F00619}",
+					"Comment": "Method Call.has Method",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Method Call`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{084A6D58-32C9-4A5F-9D2B-86C46F74E522}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Method`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{D2813913-80B6-4DD6-9AD6-56D989169734}"
+							]
+						},
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{794471BC-C639-4DBE-A043-753713DE407D}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{794471BC-C639-4DBE-A043-753713DE407D}",
+					"Comment": "Method.for Method Call",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Method`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{D2813913-80B6-4DD6-9AD6-56D989169734}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Method Call`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{084A6D58-32C9-4A5F-9D2B-86C46F74E522}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{765BD0C9-117D-4D0E-88C9-2CEBD4898135}",
+					"Comment": "Method Call.has Prompt Value",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Method Call`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{084A6D58-32C9-4A5F-9D2B-86C46F74E522}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Prompt Value`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{9E1BC193-4B9A-4FEC-9807-A7059F4D8080}"
+							]
+						},
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{0F7C38FE-403D-4A93-87D8-1F81323FFF03}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{0F7C38FE-403D-4A93-87D8-1F81323FFF03}",
+					"Comment": "Prompt Value.for Method Call",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Prompt Value`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{9E1BC193-4B9A-4FEC-9807-A7059F4D8080}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Method Call`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{084A6D58-32C9-4A5F-9D2B-86C46F74E522}"
+							]
+						}
+					]
+				}
+			]
+		},
+		
+		{
 			"ID": "{084A6D58-32C9-4A5F-9D2B-86C46F74E522}",
 			"Name": "MethodCall",
 			"ParentObjects":
@@ -66,9 +217,33 @@
 				{
 					"Name": "Class"
 				}
+			],
+			"Instances":
+			[
+				{
+					"ID": "{795DD1D3-0744-459D-87BD-62C70F1F5CBA}",
+					"Relationships":
+					[
+						{
+							"Comment": "Method Call.has Method",
+							"RelationshipID": "{3D3B601B-4EF0-49F3-AF05-86CEA0F00619}",
+							"DestinationInstances":
+							[
+								"{4E92D64E-AC91-4ABF-8052-96366DF93996}"
+							]
+						},
+						{
+							"Comment": "Method Call.has Prompt Value",
+							"RelationshipID": "{765BD0C9-117D-4D0E-88C9-2CEBD4898135}",
+							"DestinationInstances":
+							[
+								"{115847D3-5BBF-4BB6-BF0E-7C1A4484F617}"
+							]
+						}
+					]
+				}
 			]
 		},
-		
 		{
 			"ID": "{D2813913-80B6-4DD6-9AD6-56D989169734}",
 			"Name": "Method",

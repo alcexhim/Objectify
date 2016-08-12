@@ -5,6 +5,7 @@
 	use Phast\System;
 	
 	use Phast\Data\DataSystem;
+	use Phast\UUID;
 	
 	class LogMessageSeverity extends Enumeration
 	{
@@ -132,6 +133,27 @@
 		}
 		
 		/**
+		 * Executes a saved Method Call.
+		 * @param Instance $instMethodCall
+		 */
+		public static function ExecuteMethodCall($instMethodCall)
+		{
+			$relMethod = $instMethodCall->GetRelationship(Instance::GetByGlobalIdentifier("3D3B601B4EF049F3AF0586CEA0F00619"));
+			if ($relMethod != null)
+			{
+				$instMethod = $relMethod->GetDestinationInstance();
+				
+				$relPromptValue = $instMethodCall->GetRelationship(Instance::GetByGlobalIdentifier("765BD0C9117D4D0E88C92CEBD4898135"));
+				if ($relPromptValue != null)
+				{
+					$instPromptValues = $relPromptValue->GetDestinationInstances();
+					return Objectify::ExecuteMethod($instMethod, $instPromptValues);
+				}
+			}
+			return null;
+		}
+		
+		/**
 		 * Executes the specified XquizIT method.
 		 * @param Instance $method
 		 */
@@ -153,6 +175,29 @@
 			{
 				trigger_error("XquizIT: method not found" . (isset($methodName) ? (" " . $methodName) : ""));
 				return null;
+			}
+			
+			if ($method->ParentObject->Name == "ControlTransactionMethod")
+			{
+				if ($method->GlobalIdentifier == "4E92D64EAC914ABF805296366DF93996")
+				{
+					// create instance
+					$guid = UUID::Generate();
+					
+					$instPromptValue = $parameters[0];
+					$relHasInstance = $instPromptValue->GetRelationship(Instance::GetByGlobalIdentifier("512B518EA89244ABAC354E9DBCABFF0B"));
+					if ($relHasInstance != null)
+					{
+						$instDest = $relHasInstance->GetDestinationInstance();
+						
+						$obj = TenantObject::GetByGlobalIdentifier($instDest->GlobalIdentifier);
+						$inst = new Instance($obj);
+						$inst->GlobalIdentifier = $guid;
+						
+						$inst->Update();
+					}
+					return;
+				}
 			}
 			
 			$relBinding = $method->GetRelationship(KnownRelationships::get___Method__has__Method_Binding());
