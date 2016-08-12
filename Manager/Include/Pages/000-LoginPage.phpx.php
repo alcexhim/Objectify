@@ -20,7 +20,8 @@
 	use Phast\RandomStringGeneratorCharacterSets;
 use Objectify\Objects\KnownRelationships;
 use Objectify\Objects\KnownAttributes;
-							
+use Objectify\Objects\Objectify;
+								
 	class LoginPage extends PhastPage
 	{
 		public function OnInitializing(CancelEventArgs $e)
@@ -33,6 +34,9 @@ use Objectify\Objects\KnownAttributes;
 					new TenantObjectInstancePropertyValue("Name", System::GetTenantName())
 				));
 				$instTenant = $instTenants[0];
+				
+				$litTenantType = $e->RenderingPage->GetControlByID("litTenantType");
+				$litTenantType->Value = Objectify::GenerateTenantBadgeHTML($instTenant);
 				
 				$imageHeader = $e->RenderingPage->GetControlByID("imageHeader");
 				$relLogoImage = $instTenant->GetRelationship(KnownRelationships::get___Tenant__has_logo_image__File());

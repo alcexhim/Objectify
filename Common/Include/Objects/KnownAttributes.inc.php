@@ -50,5 +50,28 @@
 			}
 			return KnownAttributes::$Attribute___Text___Target_URL;
 		}
+		
+		const GUID___Attribute___Text___BackgroundColor = "{B817BE3B-D0AC-4A60-A98A-97F99E96CC89}";
+		private static $Attribute___Text___BackgroundColor;
+		public static function get___Text___BackgroundColor()
+		{
+			if (KnownAttributes::$Attribute___Text___BackgroundColor == null)
+			{
+				KnownAttributes::$Attribute___Text___BackgroundColor = Instance::GetByGlobalIdentifier(KnownAttributes::GUID___Attribute___Text___BackgroundColor);
+			}
+			return KnownAttributes::$Attribute___Text___BackgroundColor;
+		}
+		
+		const GUID___Attribute___Text___ForegroundColor = "{BB4B6E0D-D9BA-403D-9E81-93E8F7FB31C8}";
+		private static $Attribute___Text___ForegroundColor;
+		public static function get___Text___ForegroundColor()
+		{
+			if (KnownAttributes::$Attribute___Text___ForegroundColor == null)
+			{
+				KnownAttributes::$Attribute___Text___ForegroundColor = Instance::GetByGlobalIdentifier(KnownAttributes::GUID___Attribute___Text___ForegroundColor);
+			}
+			return KnownAttributes::$Attribute___Text___ForegroundColor;
+		}
+		
 	}
 ?>

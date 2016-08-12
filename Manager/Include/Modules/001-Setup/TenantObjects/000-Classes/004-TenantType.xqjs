@@ -2,6 +2,74 @@
 	"Objects":
 	[
 		{
+			"Name": "TextAttribute",
+			"Instances":
+			[
+				{
+					"ID": "{B817BE3B-D0AC-4A60-A98A-97F99E96CC89}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+							"Value": "BackgroundColor"
+						}
+					]
+				},
+				{
+					"ID": "{BB4B6E0D-D9BA-403D-9E81-93E8F7FB31C8}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+							"Value": "ForegroundColor"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "ExtractSingleInstanceStringComponent",
+			"Instances":
+			[
+				{
+					"ID": "{53568BDE-3E4C-4094-B7EE-B5D346B4CD9C}",
+					"Relationships":
+					[
+						{
+							"Comment": "Extract Single Instance String Component.has Relationship",
+							"RelationshipID": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
+							"InverseRelationshipID": "{B0111132-8721-405C-967B-0BEFA92CFE9A}",
+							"DestinationInstances":
+							[
+								"{79AAE09C-5690-471C-8442-1B230610456C}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "String",
+			"Instances":
+			[
+				{
+					"ID": "{B1DEEB97-FECC-413C-A199-BA583B8C0E5A}",
+					"Relationships":
+					[
+						{
+							"Comment": "String.has String Component",
+							"RelationshipID": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
+							"InverseRelationshipID": "{40E17597-0AEB-4C56-BBAB-FC600E1196DD}",
+							"DestinationInstances":
+							[
+								"{53568BDE-3E4C-4094-B7EE-B5D346B4CD9C}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
 			"Name": "Relationship",
 			"Instances":
 			[
@@ -144,10 +212,43 @@
 					"Name": "Class"
 				}
 			],
+			"Relationships":
+			[
+				{
+					"Comment": "Class `Tenant Type`.instance labeled by String",
+					"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+					"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+					"DestinationInstances":
+					[
+						"{B1DEEB97-FECC-413C-A199-BA583B8C0E5A}"
+					]
+				},
+				{
+					"Comment": "Class.has Attribute",
+					"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+					"InverseRelationshipID": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
+					"DestinationInstances":
+					[
+						"{B817BE3B-D0AC-4A60-A98A-97F99E96CC89}",
+						"{BB4B6E0D-D9BA-403D-9E81-93E8F7FB31C8}"
+					]
+				}
+			],
 			"Instances":
 			[
 				{
 					"ID": "{5535F488-6C8E-42BC-86A3-664D70411A2A}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{B817BE3B-D0AC-4A60-A98A-97F99E96CC89}",
+							"Value": "#85C744"
+						},
+						{
+							"ID": "{BB4B6E0D-D9BA-403D-9E81-93E8F7FB31C8}",
+							"Value": "#FFFFFF"
+						}
+					],
 					"TranslatableValues":
 					[
 						{
@@ -177,7 +278,100 @@
 					]
 				},
 				{
+					"ID": "{6A3767FD-6606-426F-B8D9-507B9FFE595C}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{B817BE3B-D0AC-4A60-A98A-97F99E96CC89}",
+							"Value": "#F1C40F"
+						},
+						{
+							"ID": "{BB4B6E0D-D9BA-403D-9E81-93E8F7FB31C8}",
+							"Value": "#FFFFFF"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"Comment": ".has title Translatable Text Constant",
+							"RelationshipID": "{79AAE09C-5690-471C-8442-1B230610456C}",
+							"InverseRelationshipID": "{FBEAE730-6E4F-4EFB-83A2-3ACA02C1F947}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Sandbox"
+								}
+							]
+						},
+						{
+							"Comment": ".has description Translatable Text Constant",
+							"RelationshipID": "{5FBD0BB8-0296-498A-A3C3-07A458CE5792}",
+							"InverseRelationshipID": "{F152D032-B059-4397-BF62-C3FF9C922043}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "The sandbox tenant type. Usually used to create new features and modules before pushing them to production. Add more (such as production, development, sandbox, sandbox preview, implementation preview, implementation) as needed."
+								}
+							]
+						}
+					]
+				},
+				{
+					"ID": "{E860A64C-C156-49E7-80E5-E3BA3CE4D15D}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{B817BE3B-D0AC-4A60-A98A-97F99E96CC89}",
+							"Value": "#2BBCE0"
+						},
+						{
+							"ID": "{BB4B6E0D-D9BA-403D-9E81-93E8F7FB31C8}",
+							"Value": "#FFFFFF"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"Comment": ".has title Translatable Text Constant",
+							"RelationshipID": "{79AAE09C-5690-471C-8442-1B230610456C}",
+							"InverseRelationshipID": "{FBEAE730-6E4F-4EFB-83A2-3ACA02C1F947}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Implementation"
+								}
+							]
+						},
+						{
+							"Comment": ".has description Translatable Text Constant",
+							"RelationshipID": "{5FBD0BB8-0296-498A-A3C3-07A458CE5792}",
+							"InverseRelationshipID": "{F152D032-B059-4397-BF62-C3FF9C922043}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "The implementation tenant type. Usually used to create new features and modules before pushing them to production. Add more (such as production, development, sandbox, sandbox preview, implementation preview, implementation) as needed."
+								}
+							]
+						}
+					]
+				},
+				{
 					"ID": "{B4F900F1-2C22-41FD-AAB9-7C956663256F}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{B817BE3B-D0AC-4A60-A98A-97F99E96CC89}",
+							"Value": "#E73C3C"
+						},
+						{
+							"ID": "{BB4B6E0D-D9BA-403D-9E81-93E8F7FB31C8}",
+							"Value": "#FFFFFF"
+						}
+					],
 					"TranslatableValues":
 					[
 						{

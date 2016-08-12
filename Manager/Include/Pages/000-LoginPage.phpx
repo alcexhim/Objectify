@@ -23,7 +23,14 @@
 								<html:Paragraph ID="paraBottomText">By signing in you agree to the Tenant Administrator Terms and Conditions.</html:Paragraph>
 							</ContentControls>
 							<FooterControls>
-								<wfx:Button CssClass="Primary" ID="cmdSubmit" Text="Continue" UseSubmitBehavior="true" />
+								<div style="text-align: right;">
+									<wfx:Button CssClass="Primary" ID="cmdSubmit" Text="Continue" UseSubmitBehavior="true" />
+									
+									<div style="float: left;">
+										<!--  MADI: Mocha Advanced Database Infrastructure -->
+										<html:Literal ID="litTenantType" />
+									</div>
+								</div>
 							</FooterControls>
 						</wfx:Panel>
 					</html:Form>

@@ -58,8 +58,12 @@
 					<wfx:SectionPlaceholder ID="Content" />
 				</div>
 				<footer>
-					Powered by Objectify<br />
-					Copyright &copy; 2015 Mike Becker's Software<br />
+					<div style="position: absolute; right: 16px; bottom: 8px;">
+						<!--  MADI: Mocha Advanced Database Infrastructure -->
+						<html:Literal ID="litTenantType"></html:Literal>
+					</div>
+					
+					Powered by Mocha &copy; 2015-2016 MBS Business Solutions<br />
 				</footer>
 			</Content>
 		</MasterPage>

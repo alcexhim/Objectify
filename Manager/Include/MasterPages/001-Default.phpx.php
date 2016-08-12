@@ -16,7 +16,9 @@
 	use Phast\WebControls\MenuItemSeparator;
 	use Phast\WebControls\MenuItemHeader;
 	use Phast\WebControlAttribute;
-	
+use Objectify\Objects\KnownAttributes;
+use Objectify\Objects\Objectify;
+			
 	class DefaultPage extends PhastPage
 	{
 		public function OnInitializing($e)
@@ -64,6 +66,9 @@
 				new TenantObjectInstancePropertyValue("Name", $tenantName)
 			));
 			$instTenant = $instTenant[0];
+
+			$litTenantType = $this->Page->GetControlByID("litTenantType");
+			$litTenantType->Value = Objectify::GenerateTenantBadgeHTML($instTenant);
 			
 			/*
 			

@@ -29,6 +29,18 @@
 		const Relationship___Translatable_Text_Constant__has__Translatable_Text_Constant_Value = "{F9B60C00-FF1D-438F-AC74-6EDFA8DD7324}";
 		const Relationship___Class__has__Object_Source = "{B62F9B81-799B-4ABE-A4AF-29B45347DE54}";
 		const Relationship___Object_Source__for__Class = "{FBB9391D-C4A2-4326-9F85-7801F377253C}";
+		
+		const Relationship___Tenant__has__Tenant_Type = "{E94B6C9D-3307-4858-9726-F24B7DB21E2D}";
+		const Relationship___Tenant_Type__for__Tenant = "{AA858424-859B-42B3-A76D-FDA986C83845}";
+		public static function get___Tenant__has__Tenant_Type()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Tenant__has__Tenant_Type);
+		}
+		public static function get___Tenant_Type__for__Tenant()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Tenant_Type__for__Tenant);
+		}
+		
 		const Relationship___Tenant__has_sidebar__Menu_Item = "{D62DFB9F-48D5-4697-AAAD-1CAD0EA7ECFA}";
 		const Relationship___Menu_Item__sidebar_for__Tenant = "{4E0A8C3D-5D10-44E5-A6D7-31F262711E01}";
 		

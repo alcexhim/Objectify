@@ -15,6 +15,24 @@
 	
 	class Objectify
 	{
+		public static function GenerateTenantBadgeHTML($instTenant)
+		{
+			$relTenantType = $instTenant->GetRelationship(KnownRelationships::get___Tenant__has__Tenant_Type());
+			if ($relTenantType != null)
+			{
+				$instTenantType = $relTenantType->GetDestinationInstance();
+				$attTenantTypeBackgroundColor = $instTenantType->GetAttributeValue(KnownAttributes::get___Text___BackgroundColor());
+				$attTenantTypeForegroundColor = $instTenantType->GetAttributeValue(KnownAttributes::get___Text___ForegroundColor());
+				
+				$val = "<div style=\"border-radius: 8px; background-color: " . $attTenantTypeBackgroundColor . "; padding: 8px; color: " . $attTenantTypeForegroundColor . "; display: inline-block;\">";
+				$val .= "<strong>" . $instTenantType->ToString() . "</strong> - 1.0.17.263 (MADI revision: 15365)";
+				$val .= "</div>";
+			
+				return $val;
+			}
+			return "";
+		}
+		
 		/**
 		 * Gets the value of the specified Report Field as either a Text/Numeric/Date Attribute or a Single/Multiple
 		 * Instance.
