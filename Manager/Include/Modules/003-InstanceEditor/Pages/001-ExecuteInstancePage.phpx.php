@@ -250,6 +250,22 @@ use Objectify\WebControls\InstanceDisplayWidget;
 										$idw->Render();
 									}
 								}
+								else if (is_array($value))
+								{
+									foreach ($value as $val)
+									{
+										if (get_class($val) == "Objectify\\Objects\\Instance")
+										{
+											$idw = new InstanceDisplayWidget($val);
+											$idw->Render();
+											echo ("<br />");
+										}
+										else
+										{
+											echo ("<!-- GetReportFieldValue not defined for class `" . get_class($val) . "` -->");
+										}
+									}
+								}
 								else
 								{
 									echo ($value);
