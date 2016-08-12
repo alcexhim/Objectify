@@ -276,6 +276,36 @@
 					]
 				},
 				{
+					"Comment": "Object Source for Class",
+					"ID": "{406E63B4-D868-407D-80E8-2A4D32B97772}",
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{6780BFC2-DBC0-40AE-83EE-BFEF979F0054}",
+							"InverseRelationshipID": "{8AAAEF67-2CB8-4CC1-B854-F95E353848D1}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Source"
+								}
+							]
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": "Relationship Report Field.has target Relationship",
+							"RelationshipID": "{134B2790-F6DF-4F97-9AB5-9878C4A715E5}",
+							"InverseRelationshipID": "{AF8AB7F2-5581-4891-8C6F-92ACD8AFB1B4}",
+							"DestinationInstances":
+							[
+								"{B62F9B81-799B-4ABE-A4AF-29B45347DE54}"
+							]
+						}
+					]
+				},
+				{
 					"Comment": "Target Relationship for Relationship Report Field",
 					"ID": "{7EE0EA2C-0EDD-4AE4-9F8D-C3FBE92DE0E0}",
 					"TranslatableValues":

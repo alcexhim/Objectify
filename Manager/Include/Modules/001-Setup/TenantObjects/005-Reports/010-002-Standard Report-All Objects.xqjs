@@ -225,12 +225,14 @@
 							]
 						},
 						{
-							"Comment": "Standard Report.has Report Field `Primary Object`",
+							"Comment": "Standard Report.has Report Field `Primary Object`, `Created By`, `Object Source`",
 							"RelationshipID": "{7A8F57F1-A4F3-4BAF-84A5-E893FD79447D}",
 							"InverseRelationshipID": "{3FA19854-CF0F-4656-B80B-54EF633503E0}",
 							"DestinationInstances":
 							[
-								"{0D2CC9BE-160D-4D62-A5AE-DAE8AC45DB9B}"
+								"{0D2CC9BE-160D-4D62-A5AE-DAE8AC45DB9B}",
+								"{5F8A264E-D2B8-40A2-B583-A7ED511C9DD9}",
+								"{406E63B4-D868-407D-80E8-2A4D32B97772}"
 							]
 						}
 					]
