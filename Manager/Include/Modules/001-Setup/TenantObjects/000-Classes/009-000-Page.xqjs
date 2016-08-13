@@ -1162,7 +1162,7 @@
 					]
 				},
 				{
-					"Comment": "Sequential Container Page Component.has Page Component",
+					"Comment": "Container Page Component.has Page Component",
 					"ID": "{CB7B8162-1C9E-4E72-BBB8-C1C37CA69CD5}",
 					"AttributeValues":
 					[
@@ -1174,12 +1174,12 @@
 					"Relationships":
 					[
 						{
-							"Comment": ".has source Class `Sequential Container Page Component`",
+							"Comment": ".has source Class `Container Page Component`",
 							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
 							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
 							"DestinationInstances":
 							[
-								"{E7C69CF3-CB71-43D8-91AB-B8F5030350AB}"
+								"{6AD6BD1C-7D1C-4AC9-9642-FEBC61E9D6FF}"
 							]
 						},
 						{
@@ -1194,7 +1194,7 @@
 					]
 				},
 				{
-					"Comment": "Page Component.for Sequential Container Page Component",
+					"Comment": "Page Component.for Container Page Component",
 					"ID": "{E33F11EE-4417-4890-AD89-7BB3DB739918}",
 					"AttributeValues":
 					[
@@ -1220,7 +1220,7 @@
 							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
 							"DestinationInstances":
 							[
-								"{E7C69CF3-CB71-43D8-91AB-B8F5030350AB}"
+								"{6AD6BD1C-7D1C-4AC9-9642-FEBC61E9D6FF}"
 							]
 						}
 					]
@@ -1245,7 +1245,7 @@
 							]
 						},
 						{
-							"Comment": "Sequential Container Page Component.has Page Component",
+							"Comment": "Container Page Component.has Page Component",
 							"RelationshipID": "{CB7B8162-1C9E-4E72-BBB8-C1C37CA69CD5}",
 							"InverseRelationshipID": "{E33F11EE-4417-4890-AD89-7BB3DB739918}",
 							"DestinationInstances":
