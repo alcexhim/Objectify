@@ -185,6 +185,54 @@
 			]
 		},
 		{
+			"Name": "ReportColumn",
+			"Instances":
+			[
+				{
+					"ID": "{A2AFA688-12D5-43D2-974E-7A5E641AF6B7}",
+					"Relationships":
+					[
+						{
+							"Comment": "Report Column.has Report Field",
+							"RelationshipID": "{B9026910-7E91-4EE1-B5F2-D7B740614831}",
+							"DestinationInstances":
+							[
+								"{0D2CC9BE-160D-4D62-A5AE-DAE8AC45DB9B}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{68F22DCF-5770-46D2-9A44-8BC1FBD74539}",
+					"Relationships":
+					[
+						{
+							"Comment": "Report Column.has Report Field",
+							"RelationshipID": "{B9026910-7E91-4EE1-B5F2-D7B740614831}",
+							"DestinationInstances":
+							[
+								"{5F8A264E-D2B8-40A2-B583-A7ED511C9DD9}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{98FBA1B0-83EE-4648-A76E-CBBDEA3E5812}",
+					"Relationships":
+					[
+						{
+							"Comment": "Report Column.has Report Field",
+							"RelationshipID": "{B9026910-7E91-4EE1-B5F2-D7B740614831}",
+							"DestinationInstances":
+							[
+								"{406E63B4-D868-407D-80E8-2A4D32B97772}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
 			"Name": "StandardReport",
 			"Instances":
 			[
@@ -225,14 +273,14 @@
 							]
 						},
 						{
-							"Comment": "Standard Report.has Report Field `Primary Object`, `Created By`, `Object Source`",
+							"Comment": "Standard Report.has Report Column `Primary Object`, `Created By`, `Object Source`",
 							"RelationshipID": "{7A8F57F1-A4F3-4BAF-84A5-E893FD79447D}",
 							"InverseRelationshipID": "{3FA19854-CF0F-4656-B80B-54EF633503E0}",
 							"DestinationInstances":
 							[
-								"{0D2CC9BE-160D-4D62-A5AE-DAE8AC45DB9B}",
-								"{5F8A264E-D2B8-40A2-B583-A7ED511C9DD9}",
-								"{406E63B4-D868-407D-80E8-2A4D32B97772}"
+								"{A2AFA688-12D5-43D2-974E-7A5E641AF6B7}",
+								"{68F22DCF-5770-46D2-9A44-8BC1FBD74539}",
+								"{98FBA1B0-83EE-4648-A76E-CBBDEA3E5812}"
 							]
 						}
 					]
