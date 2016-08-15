@@ -303,6 +303,14 @@
 						{
 							"ID": "{A1D39058-E934-4DBC-9179-EFAECFDD8B48}",
 							"Value": "~/dashboard"
+						},
+						{
+							"ID": "{5D8CAF97-1E4C-495C-8C2D-1DFA26C74C13}",
+							"Value": "1.0.17.270"
+						},
+						{
+							"ID": "{BD8523CA-C003-4F7F-93F6-F4ABECDD1BBE}",
+							"Value": "16032"
 						}
 					],
 					"Relationships":
