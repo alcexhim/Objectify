@@ -25,8 +25,19 @@
 				$attTenantTypeBackgroundColor = $instTenantType->GetAttributeValue(KnownAttributes::get___Text___BackgroundColor());
 				$attTenantTypeForegroundColor = $instTenantType->GetAttributeValue(KnownAttributes::get___Text___ForegroundColor());
 				
+				$attDisplayVersionInBadge = Instance::GetByGlobalIdentifier("{BE5966A4-C4CA-49A6-B504-B6E8759F392D}");
+				$attVersionString = Instance::GetByGlobalIdentifier("{5D8CAF97-1E4C-495C-8C2D-1DFA26C74C13}");
+				$attMADIRevision = Instance::GetByGlobalIdentifier("{BD8523CA-C003-4F7F-93F6-F4ABECDD1BBE}");
+				
+				$versionString = $instTenant->GetAttributeValue($attVersionString, "1.0.17.263");
+				$madiRevision = $instTenant->GetAttributeValue($attMADIRevision, "15365");
+				
 				$val = "<div style=\"border-radius: 8px; background-color: " . $attTenantTypeBackgroundColor . "; padding: 8px; color: " . $attTenantTypeForegroundColor . "; display: inline-block;\">";
-				$val .= "<strong>" . $instTenantType->ToString() . "</strong> - 1.0.17.263 (MADI revision: 15365)";
+				$val .= "<strong>" . $instTenantType->ToString() . "</strong>";
+				if ($instTenantType->GetAttributeValue($attDisplayVersionInBadge, false))
+				{
+					$val .= " - " . $versionString . " (MADI revision: " . $madiRevision . ")";
+				}
 				$val .= "</div>";
 			
 				return $val;
