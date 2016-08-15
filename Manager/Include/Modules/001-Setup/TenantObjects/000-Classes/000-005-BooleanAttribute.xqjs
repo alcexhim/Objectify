@@ -9,6 +9,18 @@
 				{
 					"Name": "Attribute"
 				}
+			],
+			"Relationships":
+			[
+				{
+					"Comment": "Class `Attribute`.instance labeled by String",
+					"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+					"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+					"DestinationInstances":
+					[
+						"{6894DC7E-F471-4F5C-88E6-B8016259817F}"
+					]
+				}
 			]
 		}
 	]
