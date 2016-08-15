@@ -13,6 +13,19 @@
 							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "Date"
 						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Date"
+								}
+							]
+						}
 					]
 				},
 				{
@@ -22,6 +35,19 @@
 						{
 							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "StartDate"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Start Date"
+								}
+							]
 						}
 					]
 				},
@@ -33,6 +59,19 @@
 							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "EndDate"
 						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "End Date"
+								}
+							]
+						}
 					]
 				},
 				{
@@ -42,6 +81,19 @@
 						{
 							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "CreationDate"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Date Created"
+								}
+							]
 						}
 					]
 				}

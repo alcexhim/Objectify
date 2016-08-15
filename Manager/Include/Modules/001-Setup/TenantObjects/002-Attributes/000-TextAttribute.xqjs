@@ -13,6 +13,19 @@
 							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "Name"
 						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Name"
+								}
+							]
+						}
 					]
 				},
 				{
@@ -22,6 +35,19 @@
 						{
 							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "PropertyName"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Property Name"
+								}
+							]
 						}
 					]
 				},
@@ -33,6 +59,19 @@
 							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "TargetURL"
 						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Target URL"
+								}
+							]
+						}
 					]
 				},
 				{
@@ -42,6 +81,19 @@
 						{
 							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "DefaultRedirectURL"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Default Redirect URL"
+								}
+							]
 						}
 					]
 				},
@@ -53,6 +105,19 @@
 							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "UserName"
 						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "User Name"
+								}
+							]
+						}
 					]
 				},
 				{
@@ -62,6 +127,19 @@
 						{
 							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "PasswordHash"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Password Hash"
+								}
+							]
 						}
 					]
 				},
@@ -73,6 +151,19 @@
 							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "PasswordSalt"
 						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Password Salt"
+								}
+							]
+						}
 					]
 				},
 				{
@@ -82,6 +173,19 @@
 						{
 							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "CSSValue"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "CSS Value"
+								}
+							]
 						}
 					]
 				},
@@ -93,6 +197,19 @@
 							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "CSSClassName"
 						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "CSS Class Name"
+								}
+							]
+						}
 					]
 				},
 				{
@@ -102,6 +219,19 @@
 						{
 							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "RelationshipType"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Relationship Type"
+								}
+							]
 						}
 					]
 				},
@@ -113,6 +243,19 @@
 							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "Value"
 						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Value"
+								}
+							]
+						}
 					]
 				},
 				{
@@ -122,6 +265,19 @@
 						{
 							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "Code"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Code"
+								}
+							]
 						}
 					]
 				},
@@ -133,6 +289,19 @@
 							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "CodeBlob"
 						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Code Blob"
+								}
+							]
+						}
 					]
 				},
 				{
@@ -142,6 +311,19 @@
 						{
 							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "BaseURL"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Base URL"
+								}
+							]
 						}
 					]
 				},
@@ -153,6 +335,19 @@
 							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "ImageURL"
 						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Image URL"
+								}
+							]
+						}
 					]
 				},
 				{
@@ -163,6 +358,19 @@
 							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "Token"
 						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Token"
+								}
+							]
+						}
 					]
 				},
 				{
@@ -172,6 +380,19 @@
 						{
 							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 							"Value": "IPAddress"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "IP Address"
+								}
+							]
 						}
 					]
 				}
