@@ -6,6 +6,7 @@
 	use Phast\WebControls\ListViewItem;
 	use Phast\WebControls\ListViewItemColumn;
 	
+	use Objectify\Objects\Objectify;
 	use Objectify\Objects\TenantObject;
 	use Phast\System;
 	
@@ -72,7 +73,14 @@
 					$lvi->Columns[] = new ListViewItemColumn("lvcProperty" . $prop->ID, function($col)
 					{
 						$propval = $col->ExtraData["inst"]->GetAttributeValue($col->ExtraData["prop"]);
-						echo($propval);
+						if (is_object($propval) && get_class($propval) == "DateTime")
+						{
+							echo (Objectify::HTML_FormatDate($propval));
+						}
+						else
+						{
+							echo($propval);
+						}
 					}, $inst->GetAttributeValue($prop), array("inst" => $inst, "prop" => $prop));
 				} 
 				$this->Items[] = $lvi; 

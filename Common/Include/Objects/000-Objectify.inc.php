@@ -16,6 +16,29 @@
 	
 	class Objectify
 	{
+		/**
+		 * Formats the specified DateTime in the current user's preferred format, with the HTML5 date
+		 * tag formatted in its required format. Preferred format is determined by the specified format
+		 * first, then by (User.has preferred Date Time Format) relationship on the currently logged-in
+		 * user, or if that is not set, (Tenant.has preferred Date Time Format) relationship on the
+		 * current tenant.
+		 * 
+		 * This should eventually be replaced by an Objectify BEM - Build Element Method.
+		 * @param \DateTime $datetime
+		 */
+		public static function HTML_FormatDate($datetime, $format = null)
+		{
+			$htmlDateTimeFormat = "Y-m-d\TH:i:s.uP";
+			if ($format == null) $format = "l, F j, Y H:i:s";
+			
+			$preferredDateTimeFormat = $format;
+			
+			$str = "<date datetime=\"" . $datetime->format($htmlDateTimeFormat) . "\">"
+				. $datetime->format($preferredDateTimeFormat)
+				. "</date>";
+			return $str;
+		}
+		
 		public static function GenerateTenantBadgeHTML($instTenant)
 		{
 			$relTenantType = $instTenant->GetRelationship(KnownRelationships::get___Tenant__has__Tenant_Type());
