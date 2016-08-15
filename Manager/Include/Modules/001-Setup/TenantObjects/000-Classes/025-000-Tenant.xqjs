@@ -2,6 +2,58 @@
 	"Objects":
 	[
 		{
+			"Name": "TextAttribute",
+			"Instances":
+			[
+				{
+					"ID": "{5D8CAF97-1E4C-495C-8C2D-1DFA26C74C13}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+							"Value": "SystemVersion"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "System Version"
+								}
+							]
+						}
+					]
+				},
+				{
+					"ID": "{BD8523CA-C003-4F7F-93F6-F4ABECDD1BBE}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+							"Value": "MADIRevision"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "MADI Revision"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
 			"Name": "InstanceAttributeStringComponent",
 			"Instances":
 			[
