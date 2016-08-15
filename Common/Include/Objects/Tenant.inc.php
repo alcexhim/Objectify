@@ -10,14 +10,12 @@
 	{
 		public $ID;
 		public $Name;
-		public $GlobalIdentifier;
 		
 		public static function GetByAssoc($values)
 		{
 			$item = new Tenant();
 			$item->ID = $values["tenant_ID"];
 			$item->Name = $values["tenant_Name"];
-			$item->GlobalIdentifier = $values["tenant_GlobalIdentifier"];
 			return $item;
 		}
 		public static function Get()
@@ -105,16 +103,12 @@
 		
 		public static function Create($name)
 		{
-			$guid = UUID::Generate();
-			$guid = Objectify::SanitizeGlobalIdentifier($guid);
-			
 			$pdo = DataSystem::GetPDO();
-			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "Tenants (tenant_Name, tenant_GlobalIdentifier) VALUES (:tenant_Name, :tenant_GlobalIdentifier)";
+			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "Tenants (tenant_Name) VALUES (:tenant_Name)";
 			$statement = $pdo->prepare($query);
 			$result = $statement->execute(array
 			(
-				":tenant_Name" => $name,
-				":tenant_GlobalIdentifier" => $guid
+				":tenant_Name" => $name
 			));
 			if ($result === false) return null;
 			
@@ -159,15 +153,6 @@
 			
 			$values = $statement->fetch(PDO::FETCH_NUM);
 			return $values[0];
-		}
-		
-		/**
-		 * Gets the Instance representation of this Tenant.
-		 * @return Instance The Instance representation of this Tenant.
-		 */
-		public function GetThisInstance()
-		{
-			return Instance::GetByGlobalIdentifier($this->GlobalIdentifier);
 		}
 		
 	}

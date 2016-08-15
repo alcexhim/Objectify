@@ -14,8 +14,7 @@
 	(
 		// 			$name, $dataType, $size, $value, $allowNull, $primaryKey, $autoIncrement
 		new Column("ID", "INT", null, null, false, true, true),
-		new Column("Name", "VARCHAR", 256, null, false),
-		new Column("GlobalIdentifier", "CHAR", 32, null, true)
+		new Column("Name", "VARCHAR", 256, null, false)
 	));
 	$tables[] = $tblTenants;
 	
