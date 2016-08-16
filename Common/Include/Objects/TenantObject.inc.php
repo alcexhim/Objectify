@@ -519,9 +519,6 @@
 		 */
 		public function GetInstances()
 		{
-			// don't return instances for Class object since... you're gonna have a bad time
-			if ($this->ID == 1) return array();
-			
 			$pdo = DataSystem::GetPDO();
 			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Instances WHERE instance_ObjectID = :instance_ObjectID AND instance_TenantID = :instance_TenantID";
 			$paramz = array
@@ -530,7 +527,11 @@
 				":instance_TenantID" => $this->Tenant->ID
 			);
 			
-			TenantObject::Build_Subclass_Query($query, $paramz, $this, "instance_");
+			if ($this->ID != 1)
+			{
+				TenantObject::Build_Subclass_Query($query, $paramz, $this, "instance_");
+			}
+			
 			$statement = $pdo->prepare($query);
 			$result = $statement->execute($paramz);
 			$retval = array();
