@@ -161,6 +161,12 @@ use Objectify\Objects\KnownAttributes;
 								foreach ($obj_data->Relationships as $rel)
 								{
 									$instRelationship = Instance::GetByGlobalIdentifier($rel->RelationshipID);
+									if ($instRelationship == null)
+									{
+										trigger_error("XquizIT: relationship with gid '" . $rel->RelationshipID . "' not found");
+										continue;
+									}
+									
 									$instInverseRelationship = null;
 									if (isset($rel->InverseRelationshipID))
 									{
