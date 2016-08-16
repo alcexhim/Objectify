@@ -188,15 +188,11 @@
 		public function AddParentObject($obj)
 		{
 			$instRel_Class__has_super_Class = Instance::GetByGlobalIdentifier("{100F0308-855D-4EC5-99FA-D8976CA20053}");
-			$instRel_Class__has_sub_Class = Instance::GetByGlobalIdentifier("{C14BC80D-879C-4E6F-9123-E8DFB13F4666}");
 			
 			$instThisClass = Instance::GetByGlobalIdentifier($this->GlobalIdentifier);
 			$instThatClass = Instance::GetByGlobalIdentifier($obj->GlobalIdentifier);
 			
 			$retval = Relationship::Create($instRel_Class__has_super_Class, $instThisClass, $instThatClass);
-			if (!$retval) return false;
-			
-			$retval = Relationship::Create($instRel_Class__has_sub_Class, $instThatClass, $instThisClass);
 			if (!$retval) return false;
 			
 			return true;
