@@ -74,10 +74,17 @@
 					$instParentObject = $extraData->ParentObject->GetThisInstance();
 					$rels = Relationship::GetBySourceInstance($instParentObject, KnownRelationships::get___Class__has_summary__Report_Field());
 					$rel = $rels[0];
+					
+					echo ("<div class=\"PropertyGrid\">");
+					
+					echo ("<div class=\"Property\">");
+					echo ("<div class=\"PropertyName\">Global Identifier</div>");
+					echo ("<div class=\"PropertyValue\">" . $extraData->GlobalIdentifier . "</div>");
+					echo ("</div>");
+					
 					if ($rel != null)
 					{
 						$instsSummaryReportField = $rel->GetDestinationInstances();
-						echo ("<div class=\"PropertyGrid\">");
 						foreach ($instsSummaryReportField as $instSummaryReportField)
 						{
 							echo ("<div class=\"Property\" data-instance-id=\"" . $instSummaryReportField->GetInstanceID() . "\">");
@@ -160,8 +167,9 @@
 							
 							echo("</div>");
 						}
-						echo("</div>");
 					}
+					
+					echo("</div>");
 				};
 				
 				$this->Controls[] = $adw;
