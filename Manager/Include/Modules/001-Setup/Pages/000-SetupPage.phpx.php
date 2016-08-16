@@ -349,28 +349,6 @@ use Objectify\Objects\KnownAttributes;
 						$retval[] = $obj;
 					}
 					
-					// TODO: don't add parent objects before the "has sub Class" and "has super Class" relationships
-					//       are created to handle parent objects
-					// parent objects can be handled simply by inheritance
-					
-					if (isset($objdef->ParentObjects))
-					{
-						foreach ($objdef->ParentObjects as $parentObjDef)
-						{
-							$parentObject = null;
-							if (isset($parentObjDef->ID))
-							{
-								$id = Objectify::SanitizeGlobalIdentifier($parentObjDef->ID);
-								$parentObject = TenantObject::GetByGlobalIdentifier($id);
-							}
-							else if (isset($parentObjDef->Name))
-							{
-								$parentObject = TenantObject::GetByName($parentObjDef->Name);
-							}
-							if ($parentObject != null) $obj->AddParentObject($parentObject);
-						}
-					}
-					
 					if (isset($objdef->Properties))
 					{
 						foreach ($objdef->Properties as $propDef)
