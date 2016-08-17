@@ -1,0 +1,106 @@
+{
+	"Objects":
+	[
+		{
+			"Name": "Relationship",
+			"Instances":
+			[
+				{
+					"ID": "{A2D5BD0A-1798-4289-8694-996B04F10F21}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has title"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Accordion Page Component`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{7C5BFA21-ED52-4D48-A8A8-182151010381}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Translatable Text Constant`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+							]
+						},
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{61F8637F-4E8C-4A5E-9809-101B26E5CC82}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{61F8637F-4E8C-4A5E-9809-101B26E5CC82}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "title for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Translatable Text Constant`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Accordion Page Component`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{7C5BFA21-ED52-4D48-A8A8-182151010381}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"ID": "{7C5BFA21-ED52-4D48-A8A8-182151010381}",
+			"Name": "AccordionPageComponent",
+			"ParentObjects":
+			[
+				{
+					"Name": "ContainerPageComponent"
+				}
+			],
+			"TranslatableValues":
+			[
+				{
+					"Comment": "Class `Accordion Page Component`.has title Translatable Text Constant",
+					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+					"InverseRelationshipID": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
+					"Values":
+					[
+						{
+							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+							"Value": "Accordion Page Component"
+						}
+					]
+				}
+			]
+		}
+	]
+}
