@@ -50,8 +50,21 @@
 			"Instances":
 			[
 				{
-					"Comment": "Primary Object Report Field Singleton",
-					"ID": "{0D2CC9BE-160D-4D62-A5AE-DAE8AC45DB9B}"
+					"ID": "{0D2CC9BE-160D-4D62-A5AE-DAE8AC45DB9B}",
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{6780BFC2-DBC0-40AE-83EE-BFEF979F0054}",
+							"InverseRelationshipID": "{8AAAEF67-2CB8-4CC1-B854-F95E353848D1}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Primary Object Report Field [Singleton]"
+								}
+							]
+						}
+					]
 				}
 			]
 		},
@@ -246,6 +259,36 @@
 					]
 				},
 				{
+					"Comment": "Superclasses for Class",
+					"ID": "{57ABFD83-0237-4DF7-9429-7C3A32DACD0F}",
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{6780BFC2-DBC0-40AE-83EE-BFEF979F0054}",
+							"InverseRelationshipID": "{8AAAEF67-2CB8-4CC1-B854-F95E353848D1}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Super Classes"
+								}
+							]
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": "Relationship Report Field.has target Relationship",
+							"RelationshipID": "{134B2790-F6DF-4F97-9AB5-9878C4A715E5}",
+							"InverseRelationshipID": "{AF8AB7F2-5581-4891-8C6F-92ACD8AFB1B4}",
+							"DestinationInstances":
+							[
+								"{100F0308-855D-4EC5-99FA-D8976CA20053}"
+							]
+						}
+					]
+				},
+				{
 					"Comment": "Created By for Class",
 					"ID": "{5F8A264E-D2B8-40A2-B583-A7ED511C9DD9}",
 					"TranslatableValues":
@@ -301,6 +344,36 @@
 							"DestinationInstances":
 							[
 								"{B62F9B81-799B-4ABE-A4AF-29B45347DE54}"
+							]
+						}
+					]
+				},
+				{
+					"Comment": "Instances for Class",
+					"ID": "{420B3000-6B84-4107-9BCF-8B212A4AFB0A}",
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{6780BFC2-DBC0-40AE-83EE-BFEF979F0054}",
+							"InverseRelationshipID": "{8AAAEF67-2CB8-4CC1-B854-F95E353848D1}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Instances"
+								}
+							]
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": "Relationship Report Field.has target Relationship",
+							"RelationshipID": "{134B2790-F6DF-4F97-9AB5-9878C4A715E5}",
+							"InverseRelationshipID": "{AF8AB7F2-5581-4891-8C6F-92ACD8AFB1B4}",
+							"DestinationInstances":
+							[
+								"{7EB41D3C-2AE9-4884-83A4-E59441BCAEFB}"
 							]
 						}
 					]
