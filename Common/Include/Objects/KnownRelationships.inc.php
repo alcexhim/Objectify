@@ -3,6 +3,17 @@
 	
 	class KnownRelationships
 	{
+		const Relationship___Class__has__Instance = "{7EB41D3C-2AE9-4884-83A4-E59441BCAEFB}";
+		const Relationship___Instance__for__Class = "{494D5A6D-04BE-477B-8763-E3F57D0DD8C8}";
+		public static function get___Class__has__Instance()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Class__has__Instance);
+		}
+		public static function get___Instance__for__Class()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Instance__for__Class);
+		}
+		
 		const Relationship___Class__has__Attribute = "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}";
 		const Relationship___Attribute__for__Class = "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}";
 		public static function get___Class__has__Attribute()
@@ -417,15 +428,37 @@
 			return Instance::GetByGlobalIdentifier(self::Relationship___Translatable_Text_Constant__title_for__Report);
 		}
 		
-		const Relationship___Report__has__Report_Field = "{7A8F57F1-A4F3-4BAF-84A5-E893FD79447D}";
-		const Relationship___Report_Field__for__Report = "{3FA19854-CF0F-4656-B80B-54EF633503E0}";
-		public static function get___Report__has__Report_Field()
+		const Relationship___Report__has__Report_Column = "{7A8F57F1-A4F3-4BAF-84A5-E893FD79447D}";
+		const Relationship___Report_Column__for__Report = "{3FA19854-CF0F-4656-B80B-54EF633503E0}";
+		public static function get___Report__has__Report_Column()
 		{
-			return Instance::GetByGlobalIdentifier(self::Relationship___Report__has__Report_Field);
+			return Instance::GetByGlobalIdentifier(self::Relationship___Report__has__Report_Column);
 		}
-		public static function get___Report_Field__for__Report()
+		public static function get___Report_Column__for__Report()
 		{
-			return Instance::GetByGlobalIdentifier(self::Relationship___Report_Field__for__Report);
+			return Instance::GetByGlobalIdentifier(self::Relationship___Report_Column__for__Report);
+		}
+		
+		const Relationship___Report_Column__has__Report_Field = "{B9026910-7E91-4EE1-B5F2-D7B740614831}";
+		const Relationship___Report_Field__for__Report_Column = "{B1FF7805-2C61-45D4-AFAE-5161F14FA13F}";
+		public static function get___Report_Column__has__Report_Field()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Report_Column__has__Report_Field);
+		}
+		public static function get___Report_Field__for__Report_Column()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Report_Field__for__Report_Column);
+		}
+
+		const Relationship___Report_Column__has__Report_Column_Option = "{41FFF5F0-B467-4986-A6FD-46FAF4A479E9}";
+		const Relationship___Report_Column_Option__for__Report_Column = "{53B273DD-E239-4B37-9665-FB1A00373AE0}";
+		public static function get___Report_Column__has__Report_Column_Option()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Report_Column__has__Report_Column_Option);
+		}
+		public static function get___Report_Column_Option__for__Report_Column()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Report_Column_Option__for__Report_Column);
 		}
 		
 		const Relationship___Report__has__Report_Data_Source = "{1DE7B484-F9E3-476A-A9D3-7D2A86B55845}";
@@ -516,6 +549,17 @@
 			return Instance::GetByGlobalIdentifier(self::Relationship___Translatable_Text_Constant__title_for__Task);
 		}
 		
+		const Relationship___UI_Task__has__Page_Component = "{D2949AF7-249A-4FFB-9A54-252CD9D06C51}";
+		const Relationship___Page_Component__for__UI_Task = "{C76E8C98-5C54-48DF-B1F0-637DB84B5989}";
+		public static function get___UI_Task__has__Page_Component()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___UI_Task__has__Page_Component);
+		}
+		public static function get___Page_Component__for__UI_Task()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Page_Component__for__UI_Task);
+		}
+		
 		const Relationship___Prompt__has_title__Translatable_Text_Constant = "{6B25BD5F-9B06-42D1-ACC6-2FA1A2248965}";
 		const Relationship___Translatable_Text_Constant__title_for__Prompt = "{9FE0E4B7-875A-4F43-9037-E1D443D4F798}";
 		public static function get___Prompt__has_title__Translatable_Text_Constant()
@@ -582,6 +626,17 @@
 			return Instance::GetByGlobalIdentifier(self::Relationship___Report_Field__for__Relationship_Editor_Page_Component);
 		}
 		
+		const Relationship___Relationship_Editor_Page_Component__has_target__Relationship = "{54FBD056-0BD4-44F4-921C-11FB0C77996E}";
+		const Relationship___Relationship__target_for__Relationship_Editor_Page_Component = "{5296BC07-15F4-4B84-B94A-D4FBF0228983}";
+		public static function get___Relationship_Editor_Page_Component__has_target__Relationship()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Relationship_Editor_Page_Component__has_target__Relationship);
+		}
+		public static function get___Relationship__target_for__Relationship_Editor_Page_Component()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Relationship__target_for__Relationship_Editor_Page_Component);
+		}
+		
 		const Relationship___Tenant__has_logo_image__File = "{4C399E80-ECA2-4A68-BFB4-26A5E6E97047}";
 		const Relationship___File__logo_image_for__Tenant = "{A6E61265-6681-4AA7-A183-BEDF27DC5CD8}";
 		public static function get___Tenant__has_logo_image__File()
@@ -591,6 +646,50 @@
 		public static function get___File__logo_image_for__Tenant()
 		{
 			return Instance::GetByGlobalIdentifier(self::Relationship___File__logo_image_for__Tenant);
+		}
+		
+		const Relationship___Tab_Container_Page_Component__has__Tab_Container_Tab = "{5D22EC45-9E6B-4B77-B79A-E59AEBAECFB9}";
+		const Relationship___Tab_Container_Tab__for__Tab_Container_Page_Component = "{05132E3E-5D47-40F5-B72B-4CBC369CA21C}";
+		public static function get___Tab_Container_Page_Component__has__Tab_Container_Tab()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Tab_Container_Page_Component__has__Tab_Container_Tab);
+		}
+		public static function get___Tab_Container_Tab__for__Tab_Container_Page_Component()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Tab_Container_Tab__for__Tab_Container_Page_Component);
+		}
+		
+		const Relationship___Tab_Container_Tab__has_title__Translatable_Text_Constant = "{447375EF-2FF6-4869-B9C8-0523B5123430}";
+		const Relationship___Translatable_Text_Constant__title_for__Tab_Container_Tab = "{B432F5E6-4127-42B3-96DF-61B0588EF95B}";
+		public static function get___Tab_Container_Tab__has_title__Translatable_Text_Constant()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Tab_Container_Tab__has_title__Translatable_Text_Constant);
+		}
+		public static function get___Translatable_Text_Constant__title_for__Tab_Container_Tab()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Translatable_Text_Constant__title_for__Tab_Container_Tab);
+		}
+		
+		const Relationship___Accordion_Page_Component__has_title__Translatable_Text_Constant = "{A2D5BD0A-1798-4289-8694-996B04F10F21}";
+		const Relationship___Translatable_Text_Constant__title_for__Accordion_Page_Component = "{61F8637F-4E8C-4A5E-9809-101B26E5CC82}";
+		public static function get___Accordion_Page_Component__has_title__Translatable_Text_Constant()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Accordion_Page_Component__has_title__Translatable_Text_Constant);
+		}
+		public static function get___Translatable_Text_Constant__title_for__Accordion_Page_Component()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Translatable_Text_Constant__title_for__Accordion_Page_Component);
+		}
+		
+		const Relationship___Container_Page_Component__has__Page_Component = "{CB7B8162-1C9E-4E72-BBB8-C1C37CA69CD5}";
+		const Relationship___Page_Component__for__Container_Page_Component = "";
+		public static function get___Container_Page_Component__has__Page_Component()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Container_Page_Component__has__Page_Component);
+		}
+		public static function get___Page_Component__for__Container_Page_Component()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Page_Component__for__Container_Page_Component);
 		}
 		
 	}
