@@ -38,7 +38,8 @@
 	$tblRelationshipTargets->PrimaryKey = new TableKey(array
 	(
 		new TableKeyColumn("RelationshipID"),
-		new TableKeyColumn("DestinationInstanceID")
+		new TableKeyColumn("DestinationInstanceID"),
+		new TableKeyColumn("Order")
 	));
 	$tblRelationshipTargets->ForeignKeys = array
 	(
