@@ -202,6 +202,23 @@
 			if ($count == 0) return $defaultValue;
 			
 			$values = $statement->fetch(PDO::FETCH_ASSOC);
+			if ($attribute->ParentObject->Name == "BooleanAttribute")
+			{
+				if ($values["attval_Value"] == null) return null;
+				if ($values["attval_Value"] == 1) return true;
+				return false;
+			}
+			else if ($attribute->ParentObject->Name == "DateAttribute")
+			{
+				if ($values["attval_Value"] == null) return null;
+				$dt = new \DateTime($values["attval_Value"]);
+				return $dt;
+			}
+			else if ($attribute->ParentObject->Name == "NumericAttribute")
+			{
+				// we use floatval here instead of intval because Numeric Attributes can store Float values
+				return floatval($values["attval_Value"]);
+			}
 			
 			return $values["attval_Value"];
 		}
