@@ -210,3 +210,26 @@ TenantObject.GetByName = function(name, callback)
 	};
 	xhr.send(null);
 };
+TenantObject.GetByGlobalIdentifier = function(gid, callback)
+{
+	var xhr = new XMLHttpRequest();
+	var url = "~/api/TenantObject?Action=Retrieve&GlobalIdentifier=" + gid;
+	xhr.open("GET", System.ExpandRelativePath(url));
+	xhr.onreadystatechange = function()
+	{
+		if (xhr.readyState == 4)
+		{
+			var obj = JSON.parse(xhr.responseText);
+			if (obj.Result == "Success")
+			{
+				var item = TenantObject.GetByAssoc(obj.Items[0]);
+				callback(xhr, new TenantObjectEventArgs(true, [item]));
+			}
+			else
+			{
+				callback(xhr, new TenantObjectEventArgs(false));
+			}
+		}
+	};
+	xhr.send(null);
+};

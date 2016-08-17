@@ -99,6 +99,11 @@
 							$item = TenantObject::GetByName($_GET["Name"]);
 							if ($item != null) $items[] = $item;
 						}
+						else if (isset($_GET["GlobalIdentifier"]))
+						{
+							$item = TenantObject::GetByGlobalIdentifier($_GET["GlobalIdentifier"]);
+							if ($item != null) $items[] = $item;
+						}
 						else
 						{
 							$items = TenantObject::Get();

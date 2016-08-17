@@ -12,6 +12,7 @@
 				<Script ContentType="text/javascript" FileName="~/../Scripts/Controls/InstanceDisplayWidget.js" />
 				<Script ContentType="text/javascript" FileName="~/../Scripts/Controls/InstanceBrowser.js" />
 				<Script ContentType="text/javascript" FileName="~/../Scripts/Controls/PropertyGrid.js" />
+				<Script ContentType="text/javascript" FileName="~/../Scripts/Controls/InstanceListDropDown.js" />
 				
 				<Script ContentType="text/javascript" FileName="~/../Scripts/Objects/TenantObject.js" />
 				<Script ContentType="text/javascript" FileName="~/../Scripts/Objects/TenantObjectInstance.js" />

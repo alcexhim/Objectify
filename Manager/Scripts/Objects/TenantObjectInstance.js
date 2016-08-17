@@ -37,3 +37,26 @@ TenantObjectInstance.GetByAssoc = function(obj)
 	item.DisplayTitle = obj.DisplayTitle;
 	return item;
 };
+
+TenantObjectInstance.GetByInstanceID = function(iid, callback)
+{
+	var iidParts = iid.split('$');
+	var classID = iidParts[0];
+	var instanceID = iidParts[1];
+	
+	TenantObject.GetByID(classID, function(sender, e)
+	{
+		console.dir(e.Items);
+		
+		e.Items[0].GetInstances(function(sender1, e1)
+		{
+			for (var i = 0; i < e1.Items.length; i++)
+			{
+				if (e1.Items[i].ID == instanceID)
+				{
+					callback(null, { "Items": [e1.Items[i]] });
+				}
+			}
+		});
+	});
+};
