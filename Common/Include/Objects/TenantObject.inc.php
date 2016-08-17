@@ -283,6 +283,12 @@
 			}
 			$inst->GlobalIdentifier = $globalIdentifier;
 			$inst->Update();
+			
+			$instThisObject = $this->GetThisInstance();
+			
+			Relationship::Create(KnownRelationships::get___Class__has__Instance(), $instThisObject, array($inst));
+			Relationship::Create(KnownRelationships::get___Instance__for__Class(), $inst, array($instThisObject));
+			
 			if (is_array($properties))
 			{
 				trigger_error("XquizIT: calling CreateInstance() with properties for '" . $globalIdentifier . "'");
