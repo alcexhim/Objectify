@@ -203,6 +203,20 @@
 					]
 				},
 				{
+					"ID": "{F14C17EC-BFEB-4006-AD38-8B714CE29DC1}",
+					"Relationships":
+					[
+						{
+							"Comment": "Report Column.has Report Field",
+							"RelationshipID": "{B9026910-7E91-4EE1-B5F2-D7B740614831}",
+							"DestinationInstances":
+							[
+								"{57ABFD83-0237-4DF7-9429-7C3A32DACD0F}"
+							]
+						}
+					]
+				},
+				{
 					"ID": "{68F22DCF-5770-46D2-9A44-8BC1FBD74539}",
 					"Relationships":
 					[
@@ -226,6 +240,28 @@
 							"DestinationInstances":
 							[
 								"{406E63B4-D868-407D-80E8-2A4D32B97772}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{5521EE93-654B-42BE-9A3C-FF72376D583A}",
+					"Relationships":
+					[
+						{
+							"Comment": "Report Column.has Report Field",
+							"RelationshipID": "{B9026910-7E91-4EE1-B5F2-D7B740614831}",
+							"DestinationInstances":
+							[
+								"{420B3000-6B84-4107-9BCF-8B212A4AFB0A}"
+							]
+						},
+						{
+							"Comment": "Report Column.has Report Column Option `Display as Count`",
+							"RelationshipID": "{41FFF5F0-B467-4986-A6FD-46FAF4A479E9}",
+							"DestinationInstances":
+							[
+								"{5C9B4C79-995B-4E6A-81C0-39C174BF9F6D}"
 							]
 						}
 					]
@@ -279,8 +315,10 @@
 							"DestinationInstances":
 							[
 								"{A2AFA688-12D5-43D2-974E-7A5E641AF6B7}",
+								"{F14C17EC-BFEB-4006-AD38-8B714CE29DC1}",
 								"{68F22DCF-5770-46D2-9A44-8BC1FBD74539}",
-								"{98FBA1B0-83EE-4648-A76E-CBBDEA3E5812}"
+								"{98FBA1B0-83EE-4648-A76E-CBBDEA3E5812}",
+								"{5521EE93-654B-42BE-9A3C-FF72376D583A}"
 							]
 						}
 					]
