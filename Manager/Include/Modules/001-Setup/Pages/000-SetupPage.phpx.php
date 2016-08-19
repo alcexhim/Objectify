@@ -1086,6 +1086,13 @@ use Objectify\Objects\KnownAttributes;
 						if ($attCreationDate != null) {
 							$instobj->SetAttributeValue($attCreationDate, date());
 						}
+						
+						$dtNow = new \DateTime();
+						$insts = $obj->GetInstances();
+						foreach ($insts as $inst)
+						{
+							$inst->SetAttributeValue(KnownAttributes::get___Date___CreationDate(), $dtNow);
+						}
 					}
 					
 					$tenantObjectFileNames = glob(dirname(__FILE__) . "/../TenantObjects/*/*.xqjs");

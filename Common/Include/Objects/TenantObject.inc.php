@@ -284,6 +284,8 @@
 			$inst->GlobalIdentifier = $globalIdentifier;
 			$inst->Update();
 			
+			$inst->SetAttributeValue(KnownAttributes::get___Date___CreationDate(), new \DateTime());
+			
 			$instThisObject = $this->GetThisInstance();
 			
 			Relationship::Create(KnownRelationships::get___Class__has__Instance(), $instThisObject, array($inst));

@@ -73,5 +73,16 @@
 			return KnownAttributes::$Attribute___Text___ForegroundColor;
 		}
 		
+		const GUID___Attribute___Date___CreationDate = "{0DD670AF-498D-4FEC-A2CF-20E3E56EB732}";
+		private static $Attribute___Date___CreationDate;
+		public static function get___Date___CreationDate()
+		{
+			if (KnownAttributes::$Attribute___Date___CreationDate == null)
+			{
+				KnownAttributes::$Attribute___Date___CreationDate = Instance::GetByGlobalIdentifier(KnownAttributes::GUID___Attribute___Date___CreationDate);
+			}
+			return KnownAttributes::$Attribute___Date___CreationDate;
+		}
+		
 	}
 ?>
