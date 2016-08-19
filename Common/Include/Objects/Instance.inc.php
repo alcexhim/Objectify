@@ -383,58 +383,6 @@
 								$retval .= $propertyValue;
 								break;
 							}
-							case "InstancePropertyStringComponent":
-							{
-								$propertyName = $componentInst->GetAttributeValue("PropertyName");
-								$propertyValue = "[PROPERTY:" . $propertyName . " on " . $this->ParentObject->Name . "]";
-								
-								if ($propertyName == "Values" && $this->ParentObject->Name == "TranslatableTextConstant")
-								{
-									// HACK: look up the "has Translatable Text Constant Value" relationship for this TTC
-									$retval = "";
-									$instrel = KnownRelationships::get___Translatable_Text_Constant__has__Translatable_Text_Constant_Value();
-									
-									$rels = Relationship::GetBySourceInstance($this, $instrel);
-									if (count($rels) > 0)
-									{
-										$rels = $rels[0];
-										$insts = $rels->GetDestinationInstances();
-										$insts = $insts[0];
-										return $insts->ToString();
-									}
-								}
-								
-								if (is_object($propertyValue))
-								{
-									switch (get_class($propertyValue))
-									{
-										case "Objectify\\Objects\\MultipleInstanceProperty":
-										{
-											$insts = $propertyValue->GetInstances();
-											$instCount = count($insts);
-											$propertyValue = "";
-											for ($i = 0; $i < $instCount; $i++)
-											{
-												$propertyValue .= $insts[$i]->ToString();
-												if ($i < $instCount - 1) $propertyValue .= " ";
-											}
-											break;
-										}
-										case "Objectify\\Objects\\SingleInstanceProperty":
-										{
-											$propertyValue = $propertyValue->GetInstance()->ToString();
-											break;
-										}
-										case "Objectify\\Objects\\TenantObject":
-										{
-											$propertyValue = $propertyValue->ToString();
-											break;
-										}
-									}
-								}
-								$retval .= $propertyValue;
-								break;
-							}
 						}
 					}
 				}

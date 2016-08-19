@@ -12,16 +12,6 @@
 			]
 		},
 		{
-			"ID": "{D37439E3-1138-4148-9946-379695B9B945}",
-			"Name": "InstancePropertyStringComponent",
-			"ParentObjects":
-			[
-				{
-					"Name": "StringComponent"
-				}
-			]
-		},
-		{
 			"ID": "{FCECCE4E-8D05-485A-AE34-B1B45E766661}",
 			"Name": "ExtractSingleInstanceStringComponent",
 			"ParentObjects":
@@ -339,22 +329,6 @@
 		},
 		
 		{
-			"Name": "InstancePropertyStringComponent",
-			"Instances":
-			[
-				{
-					"ID": "{B324D93A-738C-48BF-854F-A1C038BE5BA5}",
-					"AttributeValues":
-					[
-						{
-							"ID": "{A294F77C-8A89-419E-B494-8BFCC80DB634}",
-							"Value": "Name"
-						}
-					]
-				}
-			]
-		},
-		{
 			"Name": "String",
 			"Instances":
 			[
@@ -388,21 +362,6 @@
 							"DestinationInstances":
 							[
 								"{0795FC31-589E-4219-9F20-3924132376A9}"
-							]
-						}
-					]
-				},
-				{
-					"ID": "{2DA28271-5E46-4472-A6F5-910B5DD6F608}",
-					"Relationships":
-					[
-						{
-							"Comment": "String.has String Component",
-							"RelationshipID": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
-							"InverseRelationshipID": "{40E17597-0AEB-4C56-BBAB-FC600E1196DD}",
-							"DestinationInstances":
-							[
-								"{B324D93A-738C-48BF-854F-A1C038BE5BA5}"
 							]
 						}
 					]

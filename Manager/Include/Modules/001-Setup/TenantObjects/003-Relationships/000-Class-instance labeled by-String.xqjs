@@ -32,16 +32,6 @@
 			]
 		},
 		{
-			"Comment": "Class `Translatable Text Constant`.instance labeled by String",
-			"RelationshipInstance": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
-			"InverseRelationshipInstance": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
-			"SourceInstance": "{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}",
-			"DestinationInstances":
-			[
-				"{2E113B59-CFF0-4F08-A5B2-1E5061491AC5}"
-			]
-		},
-		{
 			"Comment": "Class `Translatable Text Constant Value`.instance labeled by String",
 			"RelationshipInstance": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
 			"InverseRelationshipInstance": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
@@ -49,16 +39,6 @@
 			"DestinationInstances":
 			[
 				"{BBE5E586-FC28-451A-8495-B0CDA6203E03}"
-			]
-		},
-		{
-			"Comment": "Class `Instance Property String Component`.instance labeled by String",
-			"RelationshipInstance": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
-			"InverseRelationshipInstance": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
-			"SourceInstance": "{D37439E3-1138-4148-9946-379695B9B945}",
-			"DestinationInstances":
-			[
-				"{EB4F9366-4EC8-4A5E-A932-B6A8A222A416}"
 			]
 		},
 		{

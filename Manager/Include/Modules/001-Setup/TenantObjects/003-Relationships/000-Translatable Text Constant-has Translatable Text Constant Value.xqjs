@@ -72,16 +72,6 @@
 			]
 		},
 		{
-			"Comment": "Translatable Text Constant `Instance Property String Component`.has Translatable Text Constant Value `Instance Property String Component (English - United States)`",
-			"RelationshipInstance": "{F9B60C00-FF1D-438F-AC74-6EDFA8DD7324}",
-			"InverseRelationshipInstance": "{20C70FA4-5258-480D-A61A-4A5BC9C5F990}",
-			"SourceInstance": "{99C0A026-9CE1-44ED-8193-76CE396108A1}",
-			"DestinationInstances":
-			[
-				"{C773E134-D9C3-4524-A908-ACF0F744B4E1}"
-			]
-		},
-		{
 			"Comment": "Translatable Text Constant `Text Constant String Component`.has Translatable Text Constant Value `Text Constant String Component (English - United States)`",
 			"RelationshipInstance": "{F9B60C00-FF1D-438F-AC74-6EDFA8DD7324}",
 			"InverseRelationshipInstance": "{20C70FA4-5258-480D-A61A-4A5BC9C5F990}",

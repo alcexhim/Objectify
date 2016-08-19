@@ -63,16 +63,6 @@
 			]
 		},
 		{
-			"Comment": "Class `Instance Property String Component`.has title Translatable Text Constant `Instance Property String Component`",
-			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
-			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
-			"SourceInstance": "{D37439E3-1138-4148-9946-379695B9B945}",
-			"DestinationInstances":
-			[
-				"{99C0A026-9CE1-44ED-8193-76CE396108A1}"
-			]
-		},
-		{
 			"Comment": "Class `Text Constant String Component`.has title Translatable Text Constant `Text Constant String Component`",
 			"RelationshipInstance": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 			"InverseRelationshipInstance": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
