@@ -152,6 +152,8 @@
 		 */
 		public function GetAttributeValue($attribute, $defaultValue = null, $effectiveDateTime = null)
 		{
+			if ($attribute == null) return false;
+			
 			$pdo = DataSystem::GetPDO();
 			
 			if (is_string($attribute))
