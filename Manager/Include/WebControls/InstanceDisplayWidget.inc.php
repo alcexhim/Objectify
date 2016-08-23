@@ -72,8 +72,6 @@
 				$adw->Content = function($sender, $extraData)
 				{
 					$instParentObject = $extraData->ParentObject->GetThisInstance();
-					$rels = Relationship::GetBySourceInstance($instParentObject, KnownRelationships::get___Class__has_summary__Report_Field());
-					$rel = $rels[0];
 					
 					echo ("<div class=\"PropertyGrid\">");
 					
@@ -81,97 +79,105 @@
 					echo ("<div class=\"PropertyName\">Global Identifier</div>");
 					echo ("<div class=\"PropertyValue\">" . $extraData->GlobalIdentifier . "</div>");
 					echo ("</div>");
-					
-					if ($rel != null)
-					{
-						$instsSummaryReportField = $rel->GetDestinationInstances();
-						foreach ($instsSummaryReportField as $instSummaryReportField)
-						{
-							echo ("<div class=\"Property\" data-instance-id=\"" . $instSummaryReportField->GetInstanceID() . "\">");
 
-							$instReportFieldTitle = null;
-							$relRFTitle = $instSummaryReportField->GetRelationship(KnownRelationships::get___Report_Field__has_title__Translatable_Text_Constant());
-							if ($relRFTitle != null)
+					// 10 spins with preloading fields, 6 spins without
+					// so forcing this to be an AJAX popup is actually faster
+					
+					if (true)
+					{
+						$rels = Relationship::GetBySourceInstance($instParentObject, KnownRelationships::get___Class__has_summary__Report_Field());
+						$rel = $rels[0];
+						
+						if ($rel != null)
+						{
+							$instsSummaryReportField = $rel->GetDestinationInstances();
+							foreach ($instsSummaryReportField as $instSummaryReportField)
 							{
-								$instReportFieldTitle = $relRFTitle->GetDestinationInstance();
-							}
-							
-							echo("<div class=\"PropertyName\"");
-							if ($instReportFieldTitle != null) {
-								// Show Field Properties - Show Field EC
-								echo(" data-instance-id=\"" . $instReportFieldTitle->GetInstanceID() . "\"");
-							}
-							echo(">");
-							
-							if ($instReportFieldTitle != null) {
-								echo($instReportFieldTitle->ToString());
-							}
-							
-							echo ("</div>");
-							
-							echo("<div class=\"PropertyValue\">");
-							
-							if ($instSummaryReportField->ParentObject->Name == "AttributeReportField")
-							{
-								$relTarget = $instSummaryReportField->GetRelationship(KnownRelationships::get___Attribute_Report_Field__has_target__Attribute());
-								if ($relTarget == null)
+								echo ("<div class=\"Property\" data-instance-id=\"" . $instSummaryReportField->GetInstanceID() . "\">");
+	
+								$instReportFieldTitle = null;
+								$relRFTitle = $instSummaryReportField->GetRelationship(KnownRelationships::get___Report_Field__has_title__Translatable_Text_Constant());
+								if ($relRFTitle != null)
 								{
-									echo("(empty)");
+									$instReportFieldTitle = $relRFTitle->GetDestinationInstance();
 								}
-								else
-								{
-									$instAttribute = $relTarget->GetDestinationInstance();
-									echo($extraData->GetAttributeValue($instAttribute, "(empty)"));
+								
+								echo("<div class=\"PropertyName\"");
+								if ($instReportFieldTitle != null) {
+									// Show Field Properties - Show Field EC
+									echo(" data-instance-id=\"" . $instReportFieldTitle->GetInstanceID() . "\"");
 								}
-							}
-							else if ($instSummaryReportField->ParentObject->Name == "RelationshipReportField")
-							{
-								$relTarget = $instSummaryReportField->GetRelationship(KnownRelationships::get___Relationship_Report_Field__has_target__Relationship());
-								if ($relTarget == null)
-								{
-									echo("(empty)");
+								echo(">");
+								
+								if ($instReportFieldTitle != null) {
+									echo($instReportFieldTitle->ToString());
 								}
-								else
+								
+								echo ("</div>");
+								
+								echo("<div class=\"PropertyValue\">");
+								
+								if ($instSummaryReportField->ParentObject->Name == "AttributeReportField")
 								{
-									$instTarget = $relTarget->GetDestinationInstance();
-									$rel = $extraData->GetRelationship($instTarget);
-									if ($rel == null)
+									$relTarget = $instSummaryReportField->GetRelationship(KnownRelationships::get___Attribute_Report_Field__has_target__Attribute());
+									if ($relTarget == null)
 									{
-										echo ("(empty)");
+										echo("(empty)");
 									}
 									else
 									{
-										$relinsts = $rel->GetDestinationInstances();
-										$renderAsText = $instSummaryReportField->GetAttributeValue(KnownAttributes::get___Boolean___Render_as_Text(), false);
-										foreach ($relinsts as $relinst)
+										$instAttribute = $relTarget->GetDestinationInstance();
+										echo($extraData->GetAttributeValue($instAttribute, "(empty)"));
+									}
+								}
+								else if ($instSummaryReportField->ParentObject->Name == "RelationshipReportField")
+								{
+									$relTarget = $instSummaryReportField->GetRelationship(KnownRelationships::get___Relationship_Report_Field__has_target__Relationship());
+									if ($relTarget == null)
+									{
+										echo("(empty)");
+									}
+									else
+									{
+										$instTarget = $relTarget->GetDestinationInstance();
+										$rel = $extraData->GetRelationship($instTarget);
+										if ($rel == null)
 										{
-											if ($renderAsText)
+											echo ("(empty)");
+										}
+										else
+										{
+											$relinsts = $rel->GetDestinationInstances();
+											$renderAsText = $instSummaryReportField->GetAttributeValue(KnownAttributes::get___Boolean___Render_as_Text(), false);
+											foreach ($relinsts as $relinst)
 											{
-												echo ($relinst->ToString());
+												if ($renderAsText)
+												{
+													echo ($relinst->ToString());
+												}
+												else
+												{
+													$adw = new InstanceDisplayWidget($relinst);
+													$adw->Render();
+												}
+												echo("<br />");
 											}
-											else
-											{
-												$adw = new InstanceDisplayWidget($relinst);
-												$adw->Render();
-											}
-											echo("<br />");
 										}
 									}
 								}
+								else
+								{
+									echo ("Get report field Value for '" . $instSummaryReportField->ParentObject->Name . "'");
+								}
+								echo("</div>");
+								
+								echo("</div>");
 							}
-							else
-							{
-								echo ("Get report field Value for '" . $instSummaryReportField->ParentObject->Name . "'");
-							}
-							echo("</div>");
-							
-							echo("</div>");
 						}
 					}
 					
 					echo("</div>");
 				};
-				
 				$this->Controls[] = $adw;
 			}
 			parent::RenderBeginTag();
