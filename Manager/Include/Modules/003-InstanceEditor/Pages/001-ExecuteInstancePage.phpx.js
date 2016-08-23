@@ -9,7 +9,7 @@ window.addEventListener("load", function()
 		if (pathParts.length == 3)
 		{
 			var url = window.location.href;
-			if (url.contains("#"))
+			if (System.StringMethods.Contains(url, "#"))
 			{
 				var i = url.indexOf('#');
 				url = url.substring(0, i);
