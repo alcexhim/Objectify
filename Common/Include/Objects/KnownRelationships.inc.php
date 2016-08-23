@@ -155,6 +155,17 @@
 			return Instance::GetByGlobalIdentifier(self::Relationship___Relationship__for__Extract_Single_Instance_String_Component);
 		}
 		
+		const Relationship___Instance_Attribute_String_Component__has__Attribute = "{E15D4277-69FB-4F19-92DB-8D087F361484}";
+		const Relationship___Attribute__for__Instance_Attribute_String_Component = "{8FAA0115-A513-4B3B-A441-55D9B28EFBB0}";
+		public static function get___Instance_Attribute_String_Component__has__Attribute()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Instance_Attribute_String_Component__has__Attribute);
+		}
+		public static function get___Attribute__for__Instance_Attribute_String_Component()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Attribute__for__Instance_Attribute_String_Component);
+		}
+		
 		const Relationship___Menu_Item_Command__has_title__Translatable_Text_Constant = "{65E3C87E-A2F7-4A33-9FA7-781EFA801E02}";
 		const Relationship___Translatable_Text_Constant__title_for__Menu_Item_Command = "{901A5427-6344-40F4-B81C-D905EA152EB9}";
 		public static function get___Menu_Item_Command__has_title__Translatable_Text_Constant()

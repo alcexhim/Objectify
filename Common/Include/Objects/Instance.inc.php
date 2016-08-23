@@ -347,9 +347,22 @@
 							}
 							case "InstanceAttributeStringComponent":
 							{
-								$propertyName = $componentInst->GetAttributeValue("PropertyName");
-								$propertyValue = $this->GetAttributeValue($propertyName, "[ATT: " . $propertyName . " on " . $this->ParentObject->Name . "]");
-								$retval .= $propertyValue;
+								$relAttributes = $componentInst->GetRelationship(KnownRelationships::get___Instance_Attribute_String_Component__has__Attribute());
+								if ($relAttributes != null)
+								{
+									$instAttribute = $relAttributes->GetDestinationInstance();
+									if ($instAttribute != null)
+									{
+										$propertyValue = $this->GetAttributeValue($instAttribute);
+										$retval .= $propertyValue;
+									}
+								}
+								else
+								{
+									$propertyName = $componentInst->GetAttributeValue("PropertyName");
+									$propertyValue = $this->GetAttributeValue($propertyName, "[ATT: " . $propertyName . " on " . $this->ParentObject->Name . "]");
+									$retval .= $propertyValue;
+								}
 								break;
 							}
 							case "ExtractSingleInstanceStringComponent":
