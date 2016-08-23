@@ -321,6 +321,61 @@
 					]
 				}
 			]
+		},
+		
+		{
+			"Name": "ReturnInstanceSetMethodBinding",
+			"Instances":
+			[
+				{
+					"ID": "{{6933F902-9C87-4D9B-8B25-AD4214A87420}}",
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{940EBFDB-B064-48D7-A55B-873947F4D19A}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "get User instance for Login Token parm"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "SelectInstanceSetMethod",
+			"Instances":
+			[
+				{
+					"ID": "{2E113B59-CFF0-4F08-A5B2-1E5061491AC5}",
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{52B65829-4A3F-44FB-BEE8-D9A240F1E9C9}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "get User instance for Login Token parm"
+								}
+							]
+						}
+					],
+					"Relationships":
+					[
+						{
+							"RelationshipID": "{D52500F1-1421-4B73-9987-223163BC9C04}",
+							"DestinationInstances":
+							[
+								"{6933F902-9C87-4D9B-8B25-AD4214A87420}"
+							]
+						}
+					]
+				}
+			]
 		}
 	]
 }
