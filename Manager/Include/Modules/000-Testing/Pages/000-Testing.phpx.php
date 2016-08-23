@@ -12,7 +12,9 @@
 	
 	use Phast\Utilities\Stopwatch;
 use Objectify\Objects\TenantObjectInstance;
-				
+use Objectify\Objects\Instance;
+use Objectify\Objects\KnownInstances;
+						
 	class TestingPage extends PhastPage
 	{
 		private function RecursivePrintParentObjects($po, $level = 0)
@@ -31,6 +33,11 @@ use Objectify\Objects\TenantObjectInstance;
 		
 		public function OnInitializing(CancelEventArgs $e)
 		{
+			/*
+			$inst = KnownInstances::get___Return_Instance_Set_Method_Binding___This_Instance();
+			print_r($inst);
+			die();
+			*/
 			return;
 			
 			header("Content-Type: text/plain");

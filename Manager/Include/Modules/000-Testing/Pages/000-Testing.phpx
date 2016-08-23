@@ -3,6 +3,12 @@
 		<Page FileName="testing" CodeBehindClassName="Objectify\Tenant\Pages\TestingPage" MasterPageFileName="Default">
 			<Content>
 				<wfx:Section PlaceholderID="Content">
+				
+					<wfx:Panel Title="Progress Bars">
+						<ContentControls>
+							<wfx:ProgressBar MinimumValue="0" MaximumValue="100" CurrentValue="50" Striped="true" Animated="true" />
+						</ContentControls>
+					</wfx:Panel>
 					
 					<div class="ColumnContainer TwoColumn">
 						<div class="Column">
