@@ -329,6 +329,78 @@
 						}
 					]
 				},
+				{
+					"ID": "{2DA28271-5E46-4472-A6F5-910B5DD6F608}",
+					"Comment": "Class.has Method",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Class`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Method`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{D2813913-80B6-4DD6-9AD6-56D989169734}"
+							]
+						},
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{76D2CE0D-AA4D-460B-B844-2BD76EF9902B}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{76D2CE0D-AA4D-460B-B844-2BD76EF9902B}",
+					"Comment": "Method.for Class",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Method`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{D2813913-80B6-4DD6-9AD6-56D989169734}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Class`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+							]
+						}
+					]
+				},
 				
 				
 				
