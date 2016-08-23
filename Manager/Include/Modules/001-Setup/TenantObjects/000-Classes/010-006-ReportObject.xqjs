@@ -1,0 +1,30 @@
+{
+	"Objects":
+	[
+		{
+			"ID": "{FF7D5757-D9D9-48AB-AB04-5932E7341A90}",
+			"Name": "ReportObject",
+			"ParentObjects":
+			[
+				{
+					"Name": "Class"
+				}
+			],
+			"TranslatableValues":
+			[
+				{
+					"Comment": "Class.has title Translatable Text Constant",
+					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+					"InverseRelationshipID": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
+					"Values":
+					[
+						{
+							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+							"Value": "Report Object"
+						}
+					]
+				}
+			]
+		}
+	]
+}
