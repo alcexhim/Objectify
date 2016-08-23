@@ -2,6 +2,7 @@
 	
 	namespace Objectify\Tenant\Pages;
 
+	use Phast\System;
 	use Phast\CancelEventArgs;
 	use Phast\Parser\PhastPage;
 	
@@ -9,15 +10,26 @@
 	use Phast\WebControls\ListViewColumn;
 	use Phast\WebControls\ListViewItem;
 	use Phast\WebControls\ListViewItemColumn;
-	
-	use Objectify\Objects\TenantObject;
+
 	use Objectify\Objects\Instance;
+	use Objectify\Objects\KnownInstances;
 	use Objectify\Objects\Objectify;
 	use Objectify\Objects\Relationship;
+	use Objectify\Objects\TenantObject;
 	
 	use Objectify\WebControls\InstanceDisplayWidget;
 	use Objectify\WebControls\ObjectDisplayWidget;
-	
+		
+	class ObjectBrowsePage extends PhastPage
+	{
+		public function OnInitializing(CancelEventArgs $e)
+		{
+			$inst = KnownInstances::get___Standard_Report___All_Objects();
+			System::Redirect("~/instances/execute/" . $inst->GetInstanceID());
+			die();
+		}
+	}
+
 	class ObjectModifyPage extends PhastPage
 	{
 		/**

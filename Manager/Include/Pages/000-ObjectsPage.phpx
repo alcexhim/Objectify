@@ -39,7 +39,7 @@
 				</wfx:Section>
 			</Content>
 		</Page>
-		<Page Title="View All Objects" FileName="objects" MasterPageFileName="Default">
+		<Page Title="View All Objects" FileName="objects" MasterPageFileName="Default" CodeBehindClassName="Objectify\Tenant\Pages\ObjectBrowsePage">
 			<Content>
 				<wfx:Section PlaceholderID="Content">
 					<ofx:ObjectListView Width="100%">

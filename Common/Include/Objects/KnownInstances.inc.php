@@ -28,6 +28,19 @@
 		{
 			return Instance::GetByGlobalIdentifier(KnownInstances::GUID___Return_Instance_Set_Method_Binding___This_Instance);
 		}
+
+		const GUID___Standard_Report___All_Objects = "{7CA0EFA9-6849-4AAE-BF81-F055C006853B}";
+		/**
+		 * Represents the Instance for "This Instance" [Return Instance Set Method Binding], which returns
+		 * the current instance.
+		 * 
+		 * For example, during Report execution, this is the Instance being referred to by the Primary
+		 * Report Object for the current row.
+		 */
+		public static function get___Standard_Report___All_Objects()
+		{
+			return Instance::GetByGlobalIdentifier(KnownInstances::GUID___Standard_Report___All_Objects);
+		}
 	}
 	
 ?>
