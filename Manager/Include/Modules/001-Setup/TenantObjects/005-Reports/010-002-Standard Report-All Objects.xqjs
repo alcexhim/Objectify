@@ -2,6 +2,20 @@
 	"Objects":
 	[
 		{
+			"Name": "Class",
+			"Relationships":
+			[
+				{
+					"Comment": "Class `Class`.has Method `get all instances for Class parm`",
+					"RelationshipID": "{2DA28271-5E46-4472-A6F5-910B5DD6F608}",
+					"DestinationInstances":
+					[
+						"{B6509D59-536A-4514-A797-184AF5C835F4}"
+					]
+				}
+			]
+		},
+		{
 			"Name": "ReturnInstanceSetMethodBinding",
 			"Instances":
 			[
@@ -42,7 +56,19 @@
 			[
 				{
 					"ID": "{B6509D59-536A-4514-A797-184AF5C835F4}",
-					"Comment": "get all instances where Class instance = 1$1 (Class) (SS*P*S)",
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{52B65829-4A3F-44FB-BEE8-D9A240F1E9C9}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "get all instances for Class parm"
+								}
+							]
+						}
+					],
 					"Relationships":
 					[
 						{
