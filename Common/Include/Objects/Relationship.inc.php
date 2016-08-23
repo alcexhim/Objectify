@@ -76,6 +76,16 @@ use Phast\Data\DataSystem;
 		 */
 		public function AddDestinationInstance($inst, $order = null)
 		{
+			if ($this->RelationshipInstance->GetAttributeValue(KnownAttributes::get___Boolean___Singular(), false))
+			{
+				$destInsts = $this->GetDestinationInstances();
+				if (count($destInsts) > 0)
+				{
+					trigger_error("XquizIT: attempted to add another instance to a Singular relationship");
+					return false;
+				}
+			}
+			
 			if (is_array($inst))
 			{
 				$count = count($inst);

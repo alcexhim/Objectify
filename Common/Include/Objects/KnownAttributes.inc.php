@@ -39,6 +39,18 @@
 			return KnownAttributes::$Attribute___Boolean___Render_as_Text;
 		}
 		
+		const GUID___Attribute___Boolean___Singular = "{F1A06573-C447-4D85-B4E7-54A438C4A960}";
+		
+		private static $Attribute___Boolean___Singular;
+		public static function get___Boolean___Singular()
+		{
+			if (KnownAttributes::$Attribute___Boolean___Singular == null)
+			{
+				KnownAttributes::$Attribute___Boolean___Singular = Instance::GetByGlobalIdentifier(KnownAttributes::GUID___Attribute___Boolean___Singular);
+			}
+			return KnownAttributes::$Attribute___Boolean___Singular;
+		}
+		
 		const GUID___Attribute___Text___Target_URL = "{970F79A0-9EFE-4E7D-9286-9908C6F06A67}";
 		
 		private static $Attribute___Text___Target_URL;
