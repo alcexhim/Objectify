@@ -73,14 +73,7 @@
 					$lvi->Columns[] = new ListViewItemColumn("lvcProperty" . $prop->ID, function($col)
 					{
 						$propval = $col->ExtraData["inst"]->GetAttributeValue($col->ExtraData["prop"]);
-						if (is_object($propval) && get_class($propval) == "DateTime")
-						{
-							echo (Objectify::HTML_FormatDate($propval));
-						}
-						else
-						{
-							echo($propval);
-						}
+						echo(Objectify::HTML_FormatValue($propval));
 					}, $inst->GetAttributeValue($prop), array("inst" => $inst, "prop" => $prop));
 				} 
 				$this->Items[] = $lvi; 

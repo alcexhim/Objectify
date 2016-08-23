@@ -16,6 +16,26 @@
 	
 	class Objectify
 	{
+		public static function HTML_FormatValue($value)
+		{
+			if (is_bool($value))
+			{
+				if ($value)
+				{
+					return "Yes";
+				}
+				else
+				{
+					return "No";
+				}
+			}
+			else if (is_object($value) && get_class($value) == "DateTime")
+			{
+				return Objectify::HTML_FormatDate($value);
+			}
+			return $value;
+		}
+		
 		/**
 		 * Formats the specified DateTime in the current user's preferred format, with the HTML5 date
 		 * tag formatted in its required format. Preferred format is determined by the specified format

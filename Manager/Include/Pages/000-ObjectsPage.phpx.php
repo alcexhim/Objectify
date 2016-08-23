@@ -12,11 +12,12 @@
 	
 	use Objectify\Objects\TenantObject;
 	use Objectify\Objects\Instance;
+	use Objectify\Objects\Objectify;
+	use Objectify\Objects\Relationship;
 	
 	use Objectify\WebControls\InstanceDisplayWidget;
 	use Objectify\WebControls\ObjectDisplayWidget;
-	use Objectify\Objects\Relationship;
-		
+	
 	class ObjectModifyPage extends PhastPage
 	{
 		/**
@@ -74,7 +75,7 @@
 							}
 							else
 							{
-								echo ($val);
+								echo (Objectify::HTML_FormatValue($val));
 							}
 						}, null, array("ThisObject" => $instThisObject, "ThisAttribute" => $inst))
 					));

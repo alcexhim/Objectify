@@ -10,11 +10,12 @@
 	
 	use Objectify\Objects\Relationship;
 	use Objectify\Objects\Instance;
+	use Objectify\Objects\TenantObject;
+	use Objectify\Objects\Objectify;
 	
 	use Objectify\WebControls\FormViewItemInstance;
 	use Objectify\WebControls\InstanceDisplayWidget;
-use Objectify\Objects\TenantObject;
-		
+	
 	class ModifyInstancePage extends PhastPage
 	{
 		public function OnInitializing(CancelEventArgs $e)
@@ -52,7 +53,15 @@ use Objectify\Objects\TenantObject;
 					}, null, $att),
 					
 					// HACK HACK HACK: Figure out why the string "System" gets wiped out when in a ListViewItemColumn
-					new ListViewItemColumn("lvcValue", " " . $inst->GetAttributeValue($att), null)
+					new ListViewItemColumn("lvcValue", function($sender)
+					{
+						$inst = $sender->ExtraData[0];
+						$att = $sender->ExtraData[1];
+						
+						$val = $inst->GetAttributeValue($att);
+						echo (Objectify::HTML_FormatValue($val));
+						
+					}, null, array($inst, $att))
 				));
 				$lvAttributes->Items[] = $lvi;
 			}
