@@ -1,0 +1,88 @@
+{
+	"Objects":
+	[
+		{
+			"ID": "{9934049D-048F-42AC-9B0F-539618A8057A}",
+			"Name": "TextConstantStringComponent",
+			"ParentObjects":
+			[
+				{
+					"Name": "StringComponent"
+				}
+			],
+			"Instances":
+			[
+				{
+					"ID": "{FEE39766-9A0D-49A2-A29F-45C17989DCF6}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+							"Value": "/"
+						}
+					]
+				},
+				{
+					"ID": "{936E4426-5995-4713-BDEE-BF4F7BA2AFAE}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+							"Value": " "
+						}
+					]
+				},
+				{
+					"ID": "{1BC6AC2B-7C3F-46EB-88F7-47F7070ED1DD}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+							"Value": "."
+						}
+					]
+				},
+				{
+					"ID": "{21CA6A9B-8405-4D8E-AFFD-CF1960397704}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+							"Value": "["
+						}
+					]
+				},
+				{
+					"ID": "{94760D6C-64E9-494C-AFCC-AB4B68344F32}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+							"Value": "]"
+						}
+					]
+				},
+				{
+					"ID": "{FBBEEA51-E342-42C8-93B9-098D0548100D}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+							"Value": "("
+						}
+					]
+				},
+				{
+					"ID": "{D85F9F58-79D8-4C2C-BD3F-48B382FC37D7}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+							"Value": ")"
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,15 @@
+{
+	"Objects":
+	[
+		{
+			"ID": "{895AF8DB-1138-40FF-94ED-13E5FA2AB9BA}",
+			"Name": "TranslatableTextConstantStringComponent",
+			"ParentObjects":
+			[
+				{
+					"Name": "StringComponent"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,68 @@
+{
+	"Objects":
+	[
+		{
+			"Name": "Relationship",
+			"Instances":
+			[
+				{
+					"ID": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
+					"Comment": "Extract Single Instance String Component.has Relationship",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has"
+						}
+					]
+				},
+				{
+					"ID": "{B0111132-8721-405C-967B-0BEFA92CFE9A}",
+					"Comment": "Relationship.for Extract Single Instance String Component",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "for"
+						}
+					]
+				}
+			]
+		},
+		{
+			"ID": "{FCECCE4E-8D05-485A-AE34-B1B45E766661}",
+			"Name": "ExtractSingleInstanceStringComponent",
+			"ParentObjects":
+			[
+				{
+					"Name": "StringComponent"
+				}
+			],
+			"TranslatableValues":
+			[
+				{
+					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+					"Values":
+					[
+						{
+							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+							"Value": "Extract Single Instance String Component"
+						}
+					]
+				}
+			],
+			"Instances":
+			[
+				{
+					"ID": "{E2F11C41-51F1-4DB2-A16F-C384267A8598}"
+				},
+				{
+					"ID": "{9DD1CDE1-6DAD-452D-9A07-9DE1CC32A396}"
+				},
+				{
+					"ID": "{7734AD93-8328-421B-BD78-E353EEFB0879}"
+				}
+			]
+		}
+	]
+}

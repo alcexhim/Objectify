@@ -1,0 +1,15 @@
+{
+	"Objects":
+	[
+		{
+			"ID": "{F9E2B671-13F5-4172-A568-725ACD8BBFAB}",
+			"Name": "StringComponent",
+			"ParentObjects":
+			[
+				{
+					"Name": "Class"
+				}
+			]
+		}
+	]
+}
