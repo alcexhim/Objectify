@@ -226,6 +226,12 @@
 		{
 			"ID": "{7BCD0EF6-953D-45E9-948F-EB556A2CCCB6}",
 			"Name": "ReportColumnOption",
+			"ParentObjects":
+			[
+				{
+					"Name": "Class"
+				}
+			],
 			"TranslatableValues":
 			[
 				{

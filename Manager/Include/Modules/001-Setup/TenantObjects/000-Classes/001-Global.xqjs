@@ -4,6 +4,12 @@
 		{
 			"ID": "{B324D93A-738C-48BF-854F-A1C038BE5BA5}",
 			"Name": "Global",
+			"ParentObjects":
+			[
+				{
+					"Name": "Class"
+				}
+			],
 			"TranslatableValues":
 			[
 				{

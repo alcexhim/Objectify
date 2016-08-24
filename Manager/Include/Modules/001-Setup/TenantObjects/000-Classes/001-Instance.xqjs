@@ -4,6 +4,12 @@
 		{
 			"ID": "{263C4882-945F-4DE9-AED8-E0D6516D4903}",
 			"Name": "Instance",
+			"ParentObjects":
+			[
+				{
+					"Name": "Class"
+				}
+			],
 			"TranslatableValues":
 			[
 				{

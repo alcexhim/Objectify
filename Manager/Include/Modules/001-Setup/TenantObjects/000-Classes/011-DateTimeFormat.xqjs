@@ -266,6 +266,12 @@
 		{
 			"ID": "{D2327061-9381-45A5-BE7B-C97A4532492D}",
 			"Name": "DateTimeFormat",
+			"ParentObjects":
+			[
+				{
+					"Name": "Class"
+				}
+			],
 			"TranslatableValues":
 			[
 				{
@@ -575,6 +581,12 @@
 		{
 			"ID": "{49663C8B-04DE-48F0-94CB-1C35B31A941E}",
 			"Name": "DateTimeFormatSegment",
+			"ParentObjects":
+			[
+				{
+					"Name": "Class"
+				}
+			],
 			"TranslatableValues":
 			[
 				{

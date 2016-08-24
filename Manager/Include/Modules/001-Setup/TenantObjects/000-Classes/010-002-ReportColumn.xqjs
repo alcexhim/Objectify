@@ -86,6 +86,12 @@
 		{
 			"ID": "{BEFE99A1-B2EB-4365-A2C9-061C6609037B}",
 			"Name": "ReportColumn",
+			"ParentObjects":
+			[
+				{
+					"Name": "Class"
+				}
+			],
 			"TranslatableValues":
 			[
 				{
