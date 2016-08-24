@@ -306,6 +306,8 @@
 				if ($relDataSource == null) return;
 				
 				$instDataSource = $relDataSource->GetDestinationInstance();
+				if ($instDataSource == null) return;
+				
 				$relSourceMethod = $instDataSource->GetRelationship(KnownRelationships::get___Report_Data_Source__has_source__Method());
 				if ($relSourceMethod == null) return;
 				
