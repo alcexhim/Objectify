@@ -51,7 +51,8 @@ window.addEventListener("load", function()
 			
 			for (var i = 0; i < fv.children.length; i++)
 			{
-				var p = "{\"Name\": \"" + fv.children[i].id + "\", \"Value\":";
+				var iid = fv.children[i].id.substring("FormView_fvPrompts_".length);
+				var p = "{\"IID\": \"" + iid + "\", \"Value\":";
 				
 				var txt = fv.children[i].children[1];
 				if (txt.selectedItems)
