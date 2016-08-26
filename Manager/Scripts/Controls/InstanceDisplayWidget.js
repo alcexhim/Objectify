@@ -79,6 +79,7 @@ function InstanceDisplayWidget(parentElement)
 		menu.Show(e.clientX, e.clientY, odwParent.ParentElement);
 		
 		e.preventDefault();
+		e.stopPropagation();
 		return false;
 	};
 	

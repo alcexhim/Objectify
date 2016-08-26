@@ -20,6 +20,7 @@ function PropertyGridProperty(parentElement)
 		menu.Show(e.clientX, e.clientY, this.ParentElement);
 		
 		e.preventDefault();
+		e.stopPropagation();
 		return false;
 	};
 	
