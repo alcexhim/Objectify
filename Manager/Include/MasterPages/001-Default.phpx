@@ -34,7 +34,8 @@
 									<wfx:Menu ID="TrayMenu">
 										<Items>
 											<wfx:MenuItemHeader Title="User Name" />
-											<wfx:MenuItemCommand TargetURL="~/account/logout" Title="Log Out" IconName="" />
+											<wfx:MenuItemCommand TargetURL="~/account/settings" Title="Preferences" IconName="gears" />
+											<wfx:MenuItemCommand TargetURL="~/account/logout" Title="Log Out" IconName="sign-out" />
 										</Items>
 									</wfx:Menu>
 								</div>
