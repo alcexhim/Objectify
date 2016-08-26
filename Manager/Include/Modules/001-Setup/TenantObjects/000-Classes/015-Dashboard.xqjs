@@ -34,6 +34,14 @@
 							[
 								"{D1A60533-1B5A-422E-9739-4551FDEC48BF}"
 							]
+						},
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{44F0C7EF-A715-4833-84DC-D64347B9D6A5}"
+							]
 						}
 					]
 				},
