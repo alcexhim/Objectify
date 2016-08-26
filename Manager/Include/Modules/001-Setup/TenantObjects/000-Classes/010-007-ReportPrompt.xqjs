@@ -1,0 +1,486 @@
+{
+	"Objects":
+	[
+		{
+			"Name": "Relationship",
+			"Instances":
+			[
+				{
+					"ID": "{5D112697-303F-419F-886F-3F09F0670B07}",
+					"Comment": "Report.has Report Prompt",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Report`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{19D947B6-CE82-4EEE-92EC-A4E01E27F2DB}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Report Prompt`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{B3AAB92F-CC21-4E9C-9EFC-C833303F3CE7}"
+							]
+						},
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{0CDC1092-7454-4662-B345-3585DC5E8754}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{0CDC1092-7454-4662-B345-3585DC5E8754}",
+					"Comment": "Report Prompt.for Report",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Report Prompt`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{B3AAB92F-CC21-4E9C-9EFC-C833303F3CE7}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Report`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{19D947B6-CE82-4EEE-92EC-A4E01E27F2DB}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{922CCB05-61EA-441D-96E0-63D58231D202}",
+					"Comment": "Report Prompt.has Report Field",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Report Prompt`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{B3AAB92F-CC21-4E9C-9EFC-C833303F3CE7}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Report Field`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{655A04D9-FE35-4F89-9AAB-B8FA34989D03}"
+							]
+						},
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{5DED3DB4-6864-45A9-A5FF-8E5A35AD6E6F}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{5DED3DB4-6864-45A9-A5FF-8E5A35AD6E6F}",
+					"Comment": "Report Field.for Report Prompt",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Report Field`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{655A04D9-FE35-4F89-9AAB-B8FA34989D03}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Report Prompt`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{B3AAB92F-CC21-4E9C-9EFC-C833303F3CE7}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{49EB34A4-BE6B-4F55-A14D-80E3E53AEE7C}",
+					"Comment": "Report Prompt.has Report Prompt Qualifier",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Report Prompt`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{B3AAB92F-CC21-4E9C-9EFC-C833303F3CE7}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Report Prompt Qualifier`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{A64D1282-B81E-4EC9-AF02-E0F04FC2B991}"
+							]
+						},
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{8E5C4595-B08A-4B6F-B5FA-8FB79A000F54}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{8E5C4595-B08A-4B6F-B5FA-8FB79A000F54}",
+					"Comment": "Report Prompt Qualifier.for Report Prompt",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Report Prompt Qualifier`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{A64D1282-B81E-4EC9-AF02-E0F04FC2B991}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Report Prompt`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{B3AAB92F-CC21-4E9C-9EFC-C833303F3CE7}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{6C22F3BB-4C77-4617-93FE-34117EE8A023}",
+					"Comment": "Report Prompt Qualifier.has title Translatable Text Constant",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has title"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Report Prompt Qualifier`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{A64D1282-B81E-4EC9-AF02-E0F04FC2B991}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Report Prompt Qualifier`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+							]
+						},
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{F4233563-E43D-422E-B992-A68DEAE12FFE}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{F4233563-E43D-422E-B992-A68DEAE12FFE}",
+					"Comment": "Translatable Text Constant.title for Report Prompt Qualifier",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "title for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Translatable Text Constant`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Report Prompt Qualifier`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{A64D1282-B81E-4EC9-AF02-E0F04FC2B991}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "RelationshipReportField",
+			"Instances":
+			[
+				{
+					"Comment": "Report Field for Report Prompt",
+					"ID": "{0F13D646-13C6-4588-85BF-98F09206C97F}",
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{6780BFC2-DBC0-40AE-83EE-BFEF979F0054}",
+							"InverseRelationshipID": "{8AAAEF67-2CB8-4CC1-B854-F95E353848D1}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Field"
+								}
+							]
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": "Relationship Report Field.has target Relationship",
+							"RelationshipID": "{134B2790-F6DF-4F97-9AB5-9878C4A715E5}",
+							"InverseRelationshipID": "{AF8AB7F2-5581-4891-8C6F-92ACD8AFB1B4}",
+							"DestinationInstances":
+							[
+								"{922CCB05-61EA-441D-96E0-63D58231D202}"
+							]
+						}
+					]
+				},
+				{
+					"Comment": "Prompt Qualifier for Report Prompt",
+					"ID": "{BD08F308-00EE-41D5-8254-8053940144F2}",
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{6780BFC2-DBC0-40AE-83EE-BFEF979F0054}",
+							"InverseRelationshipID": "{8AAAEF67-2CB8-4CC1-B854-F95E353848D1}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Prompt Qualifier"
+								}
+							]
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": "Relationship Report Field.has target Relationship",
+							"RelationshipID": "{134B2790-F6DF-4F97-9AB5-9878C4A715E5}",
+							"InverseRelationshipID": "{AF8AB7F2-5581-4891-8C6F-92ACD8AFB1B4}",
+							"DestinationInstances":
+							[
+								"{49EB34A4-BE6B-4F55-A14D-80E3E53AEE7C}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"ID": "{B3AAB92F-CC21-4E9C-9EFC-C833303F3CE7}",
+			"Name": "ReportPrompt",
+			"ParentObjects":
+			[
+				{
+					"Name": "Class"
+				}
+			],
+			"TranslatableValues":
+			[
+				{
+					"Comment": "Class.has title Translatable Text Constant",
+					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+					"InverseRelationshipID": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
+					"Values":
+					[
+						{
+							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+							"Value": "Report Prompt"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "ExtractSingleInstanceStringComponent",
+			"Instances":
+			[
+				{
+					"ID": "{E9232941-B87E-467D-8AC4-A71CF20CFAB0}",
+					"Relationships":
+					[
+						{
+							"Comment": "Extract Single Instance String Component.has Relationship",
+							"RelationshipID": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
+							"DestinationInstances":
+							[
+								"{6C22F3BB-4C77-4617-93FE-34117EE8A023}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "String",
+			"Instances":
+			[
+				{
+					"ID": "{4A5E8AC7-B51F-47D0-9E75-9FFF90D1E886}",
+					"Relationships":
+					[
+						{
+							"Comment": "String.has String Component",
+							"RelationshipID": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
+							"DestinationInstances":
+							[
+								"{E9232941-B87E-467D-8AC4-A71CF20CFAB0}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"ID": "{A64D1282-B81E-4EC9-AF02-E0F04FC2B991}",
+			"Name": "ReportPromptQualifier",
+			"ParentObjects":
+			[
+				{
+					"Name": "Class"
+				}
+			],
+			"Relationships":
+			[
+				{
+					"Comment": "Class.instance labeled by String",
+					"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+					"DestinationInstances":
+					[
+						"{4A5E8AC7-B51F-47D0-9E75-9FFF90D1E886}"
+					]
+				}
+			],
+			"TranslatableValues":
+			[
+				{
+					"Comment": "Class.has title Translatable Text Constant",
+					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+					"InverseRelationshipID": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
+					"Values":
+					[
+						{
+							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+							"Value": "Report Prompt Qualifier"
+						}
+					]
+				}
+			],
+			"Instances":
+			[
+				{
+					"ID": "{AB257367-35D8-4D77-B259-21F486305FC6}",
+					"TranslatableValues":
+					[
+						{
+							"Comment": "Report Prompt Qualifier.has title Translatable Text Constant",
+							"RelationshipID": "{6C22F3BB-4C77-4617-93FE-34117EE8A023}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Default Prompt"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}
