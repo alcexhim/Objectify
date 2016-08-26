@@ -1,0 +1,5 @@
+<Website>
+	<Pages>
+		<Page FileName="account/settings" CodeBehindClassName="Objectify\Tenant\Pages\SettingsPage" MasterPageFileName="Default" />
+	</Pages>
+</Website>
