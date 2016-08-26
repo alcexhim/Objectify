@@ -1,7 +1,9 @@
 <?php
 	namespace Objectify\WebControls;
 	
+	use Phast\System;
 	use Phast\WebControls\FormViewItem;
+	
 	use Objectify\Objects\TenantObject;
 	use Objectify\Objects\TenantObjectInstance;
 	
@@ -46,21 +48,28 @@
 		
 		protected function CreateControlInternal()
 		{
-			$elem = new InstanceBrowser();
-			$elem->ValidObjectNames = $this->ValidObjectNames;
-			$elem->ValidObjects = $this->ValidObjects;
-			$elem->MultiSelect = $this->MultiSelect;
-			
-			foreach ($this->SelectedInstances as $inst)
+			if ($this->ReadOnly)
 			{
-				$elem->SelectedInstances[] = $inst;
+				$elem = new InstanceDisplayWidget();
+				$elem->CurrentInstance = $this->Value;
 			}
-			
-			$elem->ID = $this->ID;
-			$elem->Name = $this->Name;
-			$elem->InnerHTML = $this->DefaultValue;
-			if (isset($this->Value)) $elem->InnerHTML = System::ExpandRelativePath($this->Value);
-			
+			else
+			{
+				$elem = new InstanceBrowser();
+				$elem->ValidObjectNames = $this->ValidObjectNames;
+				$elem->ValidObjects = $this->ValidObjects;
+				$elem->MultiSelect = $this->MultiSelect;
+				
+				foreach ($this->SelectedInstances as $inst)
+				{
+					$elem->SelectedInstances[] = $inst;
+				}
+				
+				$elem->ID = $this->ID;
+				$elem->Name = $this->Name;
+				$elem->InnerHTML = $this->DefaultValue;
+				if (isset($this->Value)) $elem->InnerHTML = System::ExpandRelativePath($this->Value);
+			}
 			return $elem;
 		}
 	}
