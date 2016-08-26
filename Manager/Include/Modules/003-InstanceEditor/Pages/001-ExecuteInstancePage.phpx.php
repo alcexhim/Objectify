@@ -9,6 +9,7 @@
 	use Phast\WebControls\FormViewItemText;
 	use Phast\WebControls\FormViewItemChoice;
 	use Phast\WebControls\FormViewItemChoiceValue;
+	use Phast\WebControls\FormViewItemLabel;
 	use Phast\WebControls\ListView;
 	use Phast\WebControls\ListViewColumn;
 	use Phast\WebControls\ListViewItem;
@@ -30,7 +31,8 @@
 	use Objectify\Objects\KnownAttributes;
 	use Objectify\Objects\KnownRelationships;
 	use Objectify\Objects\TenantObject;
-	
+
+	use Objectify\WebControls\FormViewItemInstance;
 	use Objectify\WebControls\InstanceDisplayWidget;
 	use Objectify\WebControls\InstanceListView;
 	use Objectify\WebControls\RelationshipListView;
@@ -49,7 +51,7 @@
 			
 					$lv = new RelationshipListView();
 					$lv->EnableAddRemoveRows = true;
-					$lv->Instance = Instance::GetByGlobalIdentifier($json->Parameters[0]->Value[0]);
+					$lv->Instance = Instance::GetByInstanceID($json->Parameters[0]->Value[0]);
 					$lv->Relationship = $instTargetRelationship;
 			
 					$rel_has_Report_Field = $instPageComponent->GetRelationship(KnownRelationships::get___Relationship_Editor_Page_Component__has__Report_Field());
@@ -153,7 +155,39 @@
 				$paramstr = base64_decode($paramstr);
 				$json = json_decode($paramstr);
 				
-				$fvPrompts->EnableRender = false;
+				foreach ($json->Parameters as $parmInfo)
+				{
+					if (isset($parmInfo->ID))
+					{
+						$instParm = Instance::GetByGlobalIdentifier($parmInfo->ID);
+					}
+					else if (isset($parmInfo->IID))
+					{
+						$instParm = Instance::GetByInstanceID($parmInfo->IID);
+					}
+					if ($instParm == null) continue;
+					
+					if (stripos($parmInfo->Value[0], "$") === false)
+					{
+						$parmValue = Instance::GetByGlobalIdentifier($parmInfo->Value[0]);
+					}
+					else
+					{
+						$parmValue = Instance::GetByInstanceID($parmInfo->Value[0]);
+					}
+					if ($parmValue != null)
+					{
+						$item = new FormViewItemInstance();
+						$item->ReadOnly = true;
+						$item->Value = $parmValue;
+					}
+					else
+					{
+						$item = new FormViewItemLabel();
+					}
+					$item->Title = $instParm->ToString();
+					$fvPrompts->Items[] = $item;
+				}
 				
 				$layerContent = $e->RenderingPage->GetControlByID("layerContent");
 				
@@ -222,7 +256,7 @@
 										
 										$item->Title = $instObjInst->ToString();
 										// $item->Value = $instObjInsts->GetInstanceID();
-										$item->Value = $instObjInst->GlobalIdentifier;
+										$item->Value = $instObjInst->GetInstanceID();
 										$fvi->Items[] = $item;
 									}
 								}
