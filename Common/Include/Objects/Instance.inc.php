@@ -114,6 +114,32 @@
 			return Instance::$instancesByID[$id];
 		}
 		
+		public static function GetByInstanceID($instanceID, $tenant = null)
+		{
+			if (!is_string($instanceID)) return null;
+			if ($tenant == null) $tenant = Tenant::GetCurrent();
+			
+			$instanceIDParts = explode("$", $instanceID, 2);
+			if (count($instanceIDParts) != 2) return null;	
+			
+			$pdo = DataSystem::GetPDO();
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Instances WHERE instance_TenantID = :instance_TenantID AND instance_ID = :instance_ID AND instance_ObjectID = :instance_ObjectID";
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				":instance_TenantID" => $tenant->ID,
+				":instance_ObjectID" => $instanceIDParts[0],
+				":instance_ID" => $instanceIDParts[1]
+			));
+			if ($result === false) return null;
+			
+			$count = $statement->rowCount();
+			if ($count == 0) return null;
+				
+			$values = $statement->fetch(PDO::FETCH_ASSOC);
+			return Instance::GetByAssoc($values);
+		}
+		
 		private static $instancesByGID;
 		public static function GetByGlobalIdentifier($globalIdentifier)
 		{
