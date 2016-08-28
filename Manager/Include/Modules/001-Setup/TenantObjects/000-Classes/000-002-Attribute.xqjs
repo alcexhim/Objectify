@@ -10,6 +10,13 @@
 					"Name": "Class"
 				}
 			],
+			"AttributeValues":
+			[
+				{
+					"ID": "{A1C0255D-3E8D-47D7-A186-1C93C93D4667}",
+					"Value": true
+				}
+			],
 			"Relationships":
 			[
 				{
