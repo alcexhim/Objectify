@@ -14,10 +14,10 @@
 					<html:Layer ID="layerContent">
 					</html:Layer>
 					
-					<div class="PageFooter">
+					<html:Layer CssClass="PageFooter" ID="layerFooter">
 						<wfx:Button ID="cmdSubmit" Text="Submit" CssClass="Primary" />
 						<wfx:Button ID="cmdCancel" Text="Cancel" />
-					</div>
+					</html:Layer>
 				</wfx:Section>
 			</Content>
 		</Page>

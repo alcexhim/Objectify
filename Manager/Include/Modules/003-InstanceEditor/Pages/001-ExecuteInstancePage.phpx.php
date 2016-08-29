@@ -197,6 +197,9 @@
 			$idwObjectTitleHeading->CurrentInstance = $inst;
 			// $idwObjectTitleHeading->ShowURL = false;
 			
+			$layerContent = $e->RenderingPage->GetControlByID("layerContent");
+			$layerFooter = $e->RenderingPage->GetControlByID("layerFooter");
+			
 			$fvPrompts = $e->RenderingPage->GetControlByID("fvPrompts");
 			if ($paramstr != null)
 			{
@@ -236,8 +239,6 @@
 					$item->Title = $instParm->ToString();
 					$fvPrompts->Items[] = $item;
 				}
-				
-				$layerContent = $e->RenderingPage->GetControlByID("layerContent");
 				
 				$relPageComponent = $inst->GetRelationship(KnownRelationships::get___UI_Task__has__Page_Component());
 				if ($relPageComponent != null)
@@ -347,6 +348,7 @@
 			else if ($inst->ParentObject->Name == "StandardReport")
 			{
 				// execute teh report
+				$layerFooter->EnableRender = false;
 				
 				$table = new HTMLControlTable();
 				$table->Width = "100%";
