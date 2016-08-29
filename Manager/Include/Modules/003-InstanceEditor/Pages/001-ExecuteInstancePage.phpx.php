@@ -6,10 +6,15 @@
 	use Phast\System;
 	
 	use Phast\WebControls\Disclosure;
-	use Phast\WebControls\FormViewItemText;
+	
+	use Phast\WebControls\FormView;
+	use Phast\WebControls\FormViewItemBoolean;
 	use Phast\WebControls\FormViewItemChoice;
 	use Phast\WebControls\FormViewItemChoiceValue;
+	use Phast\WebControls\FormViewItemDateTime;
 	use Phast\WebControls\FormViewItemLabel;
+	use Phast\WebControls\FormViewItemText;
+	
 	use Phast\WebControls\ListView;
 	use Phast\WebControls\ListViewColumn;
 	use Phast\WebControls\ListViewItem;
@@ -41,6 +46,7 @@
 	{
 		private function CreateControlFromPageComponent($json, $instPageComponent)
 		{
+			$instPrimary = Instance::GetByInstanceID($json->Parameters[0]->Value[0]);
 			$ctl = null;
 			if ($instPageComponent->ParentObject->Name == "RelationshipEditorPageComponent")
 			{
@@ -51,17 +57,59 @@
 			
 					$lv = new RelationshipListView();
 					$lv->EnableAddRemoveRows = true;
-					$lv->Instance = Instance::GetByInstanceID($json->Parameters[0]->Value[0]);
+					$lv->Instance = $instPrimary;
 					$lv->Relationship = $instTargetRelationship;
 			
-					$rel_has_Report_Field = $instPageComponent->GetRelationship(KnownRelationships::get___Relationship_Editor_Page_Component__has__Report_Field());
-					if ($rel_has_Report_Field != null)
+					$rel_has_Report_Column = $instPageComponent->GetRelationship(KnownRelationships::get___Relationship_Editor_Page_Component__has__Report_Column());
+					if ($rel_has_Report_Column != null)
 					{
-						$instReportFields = $rel_has_Report_Field->GetDestinationInstances();
-						$lv->ReportFields = $instReportFields;
+						$instReportColumns = $rel_has_Report_Column->GetDestinationInstances();
+						$lv->ReportColumns = $instReportColumns;
 					}
 			
 					$ctl = $lv;
+				}
+			}
+			else if ($instPageComponent->ParentObject->Name == "AttributeEditorPageComponent")
+			{
+				$relHasTargetAttribute = $instPageComponent->GetRelationship(KnownRelationships::get___Attribute_Editor_Page_Component__has_target__Attribute());
+				if ($relHasTargetAttribute != null)
+				{
+					$instsTargetAttribute = $relHasTargetAttribute->GetDestinationInstances();
+			
+					$fv = new FormView();
+					foreach ($instsTargetAttribute as $instTargetAttribute)
+					{
+						switch ($instTargetAttribute->ParentObject->Name)
+						{
+							case "BooleanAttribute":
+							{
+								$fvi = new FormViewItemBoolean();
+								break;
+							}
+							case "DateAttribute":
+							{
+								$fvi = new FormViewItemDateTime();
+								break;
+							}
+							case "TextAttribute":
+							default:
+							{
+								$fvi = new FormViewItemText();
+								break;
+							}
+						}
+						
+						if ($fvi != null)
+						{
+							$fvi->ID = "fvi_" . $instTargetAttribute->GetInstanceID();
+							$fvi->Title = $instTargetAttribute->ToString();
+							$fvi->Value = $instPrimary->GetAttributeValue($instTargetAttribute);
+							$fv->Items[] = $fvi;
+						}
+					}
+					
+					$ctl = $fv;
 				}
 			}
 			else if ($instPageComponent->ParentObject->Name == "TabContainerPageComponent")
@@ -299,7 +347,6 @@
 			else if ($inst->ParentObject->Name == "StandardReport")
 			{
 				// execute teh report
-				$layerContent = $e->RenderingPage->GetControlByID("layerContent");
 				
 				$table = new HTMLControlTable();
 				$table->Width = "100%";
