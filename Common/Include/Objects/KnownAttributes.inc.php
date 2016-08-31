@@ -96,5 +96,16 @@
 			return KnownAttributes::$Attribute___Date___CreationDate;
 		}
 		
+		const GUID___Attribute___Boolean___BeginAGroup = "{EC62F6E9-CC14-4330-953B-5267FDF92659}";
+		private static $Attribute___Boolean___BeginAGroup;
+		public static function get___Boolean___BeginAGroup()
+		{
+			if (KnownAttributes::$Attribute___Boolean___BeginAGroup == null)
+			{
+				KnownAttributes::$Attribute___Boolean___BeginAGroup = Instance::GetByGlobalIdentifier(KnownAttributes::GUID___Attribute___Boolean___BeginAGroup);
+			}
+			return KnownAttributes::$Attribute___Boolean___BeginAGroup;
+		}
+		
 	}
 ?>
