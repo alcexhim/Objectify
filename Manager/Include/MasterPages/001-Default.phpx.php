@@ -4,21 +4,27 @@
 	use Phast\Parser\PhastPage;
 	use Phast\System;
 	
-	use Objectify\Objects\User;
+	use Objectify\Objects\Instance;
+	use Objectify\Objects\KnownRelationships;
+	use Objectify\Objects\KnownAttributes;
+	use Objectify\Objects\Objectify;
+	use Objectify\Objects\Relationship;
 	use Objectify\Objects\Tenant;
 	use Objectify\Objects\TenantObject;
 	use Objectify\Objects\TenantObjectInstancePropertyValue;
-	use Objectify\Objects\Relationship;
-	use Objectify\Objects\Instance;
-	use Objectify\Objects\KnownRelationships;
-	
+	use Objectify\Objects\User;
+
+	use Phast\HTMLControls\Layer;
+
+	use Phast\WebControls\Menu;
 	use Phast\WebControls\MenuItemCommand;
 	use Phast\WebControls\MenuItemSeparator;
 	use Phast\WebControls\MenuItemHeader;
+	
 	use Phast\WebControlAttribute;
-use Objectify\Objects\KnownAttributes;
-use Objectify\Objects\Objectify;
-			
+	use Phast\WebStyleSheetRule;
+	use Phast\WebStyleSheet;
+	
 	class DefaultPage extends PhastPage
 	{
 		public function OnInitializing($e)
@@ -66,7 +72,67 @@ use Objectify\Objects\Objectify;
 				new TenantObjectInstancePropertyValue("Name", $tenantName)
 			));
 			$instTenant = $instTenant[0];
-
+			
+			// BEGIN: load the application menu items
+			$cmdApplicationButton = $this->Page->GetControlByID("cmdApplicationButton");
+			$layerApplicationMenu = $cmdApplicationButton->DropDownControls[0];
+				
+			$divColumnContainer = new Layer();
+			$divColumnContainer->ClassList[] = "ColumnContainer";
+			
+			$relsTenant__has_application__Menu_Item = $instTenant->GetRelationship(KnownRelationships::get___Tenant__has_application__Menu_Item());
+			if ($relsTenant__has_application__Menu_Item != null)
+			{
+				$divColumn = new Layer();
+				$divColumn->ClassList[] = "Column";
+					
+				$menu = new Menu();
+				
+				$instsApplicationMenuItem = $relsTenant__has_application__Menu_Item->GetDestinationInstances();
+				
+				foreach ($instsApplicationMenuItem as $instMenuItem)
+				{
+					$title = $instMenuItem->ToString();
+					
+					if ($instMenuItem->GetAttributeValue(KnownAttributes::get___Boolean___BeginAGroup(), false))
+					{
+						$divColumn->Controls[] = $menu;
+						$divColumnContainer->Controls[] = $divColumn;
+						
+						$menu = new Menu();
+						
+						$divColumn = new Layer();
+						$divColumn->ClassList[] = "Column";
+					}
+	
+					switch ($instMenuItem->ParentObject->Name)
+					{
+						case "MenuItemHeader":
+						{
+							$menu->Items[] = new MenuItemHeader($title);
+							break;
+						}
+						case "MenuItemCommand":
+						{
+							$menu->Items[] = new MenuItemCommand($title, "~/businesses");
+							break;
+						}
+						default:
+						{
+							$menu->Items[] = new MenuItemHeader("unknown '" . $instMenuItem->ParentObject->Name . "'");
+							break;
+						}
+					}
+				}
+				
+				$divColumn->Controls[] = $menu;
+					
+				$divColumnContainer->Controls[] = $divColumn;
+			}
+			
+			$layerApplicationMenu->Controls[] = $divColumnContainer;
+			// END: load the application menu items
+			
 			$litTenantType = $this->Page->GetControlByID("litTenantType");
 			$litTenantType->Value = Objectify::GenerateTenantBadgeHTML($instTenant);
 			

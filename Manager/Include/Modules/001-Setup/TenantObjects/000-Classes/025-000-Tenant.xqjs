@@ -245,6 +245,150 @@
 							]
 						}
 					]
+				},
+				{
+					"Comment": "Tenant.has application Menu Item",
+					"ID": "{A2CBF7C4-0D70-4DDB-BD28-660011DF1DA6}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has application"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Tenant`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{703F9D65-C584-4D9F-A656-D0E3C247FF1F}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Menu Item`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{1E9D38B9-1B07-4EF9-BAD7-43DEB25AEB83}"
+							]
+						},
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{4311C8CC-8CF6-4C24-95F7-21E2C37602A1}"
+							]
+						}
+					]
+				},
+				{
+					"Comment": "Menu Item.application for Tenant",
+					"ID": "{4311C8CC-8CF6-4C24-95F7-21E2C37602A1}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "application for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Menu Item`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{1E9D38B9-1B07-4EF9-BAD7-43DEB25AEB83}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Tenant`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{703F9D65-C584-4D9F-A656-D0E3C247FF1F}"
+							]
+						}
+					]
+				},
+				{
+					"Comment": "Tenant.has Dashboard",
+					"ID": "{471A3308-3A5E-4F27-967E-D88498068FA1}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Tenant`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{703F9D65-C584-4D9F-A656-D0E3C247FF1F}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Dashboard`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{896B529C-452D-42AC-98C5-170ED4F826C6}"
+							]
+						},
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{617D82EA-AD23-4446-BC30-FA7CC247D7BE}"
+							]
+						}
+					]
+				},
+				{
+					"Comment": "Dashboard.for Tenant",
+					"ID": "{617D82EA-AD23-4446-BC30-FA7CC247D7BE}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Dashboard`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{896B529C-452D-42AC-98C5-170ED4F826C6}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Tenant`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{703F9D65-C584-4D9F-A656-D0E3C247FF1F}"
+							]
+						}
+					]
 				}
 			]
 		},

@@ -52,6 +52,17 @@
 			return Instance::GetByGlobalIdentifier(self::Relationship___Tenant_Type__for__Tenant);
 		}
 		
+		const Relationship___Tenant__has_application__Menu_Item = "{A2CBF7C4-0D70-4DDB-BD28-660011DF1DA6}";
+		const Relationship___Menu_Item__application_for__Tenant = "{4311C8CC-8CF6-4C24-95F7-21E2C37602A1}";
+		public static function get___Tenant__has_application__Menu_Item()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Tenant__has_application__Menu_Item);
+		}
+		public static function get___Menu_Item__application_for__Tenant()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Menu_Item__application_for__Tenant);
+		}
+		
 		const Relationship___Tenant__has_sidebar__Menu_Item = "{D62DFB9F-48D5-4697-AAAD-1CAD0EA7ECFA}";
 		const Relationship___Menu_Item__sidebar_for__Tenant = "{4E0A8C3D-5D10-44E5-A6D7-31F262711E01}";
 		
@@ -626,15 +637,15 @@
 			return Instance::GetByGlobalIdentifier(self::Relationship___Class__valid_for__Instance_Prompt);
 		}
 		
-		const Relationship___Relationship_Editor_Page_Component__has__Report_Field = "{1540634D-EB44-48F8-88B8-17B7DCBBD006}";
-		const Relationship___Report_Field__for__Relationship_Editor_Page_Component = "{51C8837D-FF85-4647-A0F6-BE5D0AED51B5}";
-		public static function get___Relationship_Editor_Page_Component__has__Report_Field()
+		const Relationship___Relationship_Editor_Page_Component__has__Report_Column = "{1540634D-EB44-48F8-88B8-17B7DCBBD006}";
+		const Relationship___Report_Column__for__Relationship_Editor_Page_Component = "{51C8837D-FF85-4647-A0F6-BE5D0AED51B5}";
+		public static function get___Relationship_Editor_Page_Component__has__Report_Column()
 		{
-			return Instance::GetByGlobalIdentifier(self::Relationship___Relationship_Editor_Page_Component__has__Report_Field);
+			return Instance::GetByGlobalIdentifier(self::Relationship___Relationship_Editor_Page_Component__has__Report_Column);
 		}
-		public static function get___Report_Field__for__Relationship_Editor_Page_Component()
+		public static function get___Report_Column__for__Relationship_Editor_Page_Component()
 		{
-			return Instance::GetByGlobalIdentifier(self::Relationship___Report_Field__for__Relationship_Editor_Page_Component);
+			return Instance::GetByGlobalIdentifier(self::Relationship___Report_Column__for__Relationship_Editor_Page_Component);
 		}
 		
 		const Relationship___Relationship_Editor_Page_Component__has_target__Relationship = "{54FBD056-0BD4-44F4-921C-11FB0C77996E}";
@@ -646,6 +657,17 @@
 		public static function get___Relationship__target_for__Relationship_Editor_Page_Component()
 		{
 			return Instance::GetByGlobalIdentifier(self::Relationship___Relationship__target_for__Relationship_Editor_Page_Component);
+		}
+		
+		const Relationship___Attribute_Editor_Page_Component__has_target__Attribute = "{39B8A6F3-45F9-48C7-8175-3B9A79E8ACA0}";
+		const Relationship___Attribute__target_for__Attribute_Editor_Page_Component = "{067DF905-E77E-43B5-8BA8-5FEF16867E15}";
+		public static function get___Attribute_Editor_Page_Component__has_target__Attribute()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Attribute_Editor_Page_Component__has_target__Attribute);
+		}
+		public static function get___Attribute__target_for__Attribute_Editor_Page_Component()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Attribute__target_for__Attribute_Editor_Page_Component);
 		}
 		
 		const Relationship___Tenant__has_logo_image__File = "{4C399E80-ECA2-4A68-BFB4-26A5E6E97047}";
