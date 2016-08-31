@@ -3,25 +3,25 @@
 	
 	use Phast\CancelEventArgs;
 	use Phast\System;
+	use Phast\WebScript;
 	
 	use Phast\Parser\PhastPage;
 	
 	use Objectify\Tenant\MasterPages\WebPage;
+	
+	use Objectify\Objects\Instance;
+	use Objectify\Objects\KnownAttributes;
+	use Objectify\Objects\KnownRelationships;
+	use Objectify\Objects\Objectify;
+	use Objectify\Objects\Relationship;
 	use Objectify\Objects\Tenant;
 	use Objectify\Objects\TenantObject;
 	use Objectify\Objects\TenantObjectInstancePropertyValue;
 	use Objectify\Objects\User;
-	use Objectify\Objects\MultipleInstanceProperty;
-	use Objectify\Objects\SingleInstanceProperty;
-	use Objectify\Objects\Relationship;
-	use Objectify\Objects\Instance;
 	
 	use Phast\RandomStringGenerator;
 	use Phast\RandomStringGeneratorCharacterSets;
-use Objectify\Objects\KnownRelationships;
-use Objectify\Objects\KnownAttributes;
-use Objectify\Objects\Objectify;
-								
+	
 	class LoginPage extends PhastPage
 	{
 		public function OnInitializing(CancelEventArgs $e)
@@ -151,7 +151,8 @@ use Objectify\Objects\Objectify;
 					else
 					{
 						$e->RenderingPage->GetControlByID("fv")->GetItemByID("txtUserName")->Value = $_POST["user_LoginID"];
-						$e->RenderingPage->GetControlByID("alertInvalidCredentials")->EnableRender = true;
+						
+						$this->Page->Scripts[] = WebScript::FromContent("window.addEventListener('load', function() { Notification.Show('Please ensure your CAPS LOCK and NUM LOCK keys are inactive and try again', 'Incorrect user name or password', 'Danger'); });");
 					}
 				}
 			}
