@@ -15,9 +15,13 @@ Hybrid Data Access
 
 The first time a Mocha instance is accessed, it pulls its data from the database and caches it in memory. Further calls to the same object are based off the in-memory representation. Changes to the object are banged immediately into the database.
 
+History
+-------
+* All "Properties" (Properties, InstanceProperties, and PropertyValues XQJS sections) have been removed in favor of Attributes and Relationships. EVERYTHING IS AN INSTANCE!
+
 Things to Do
 ------------
 
-* Eventually, all "Properties" (Properties, InstanceProperties, and PropertyValues XQJS sections) should be removed in favor of Attributes and Relationships. EVERYTHING IS AN INSTANCE!
-
+* Page Components should be generated through `Page Component.has Build Element Method`, rather than relying on hardcoded implementations in multiple locations (PagePage, ExecuteInstancePage, and others actually hard-code multiple DIFFERENT and INCOMPATIBLE implementations of Page Components!)
+   
 * There should be no real distinction, as there has in the past, between "Objects" and "Instances" (of Objects). EVERYTHING IS AN INSTANCE!
