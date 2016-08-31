@@ -218,6 +218,12 @@
 				$methodName = $method;
 				
 				$objMethod = TenantObject::GetByName("Method");
+				if ($objMethod == null)
+				{
+					trigger_error("XquizIT FATAL: required class `Method` not found; drop and recreate system?");
+					return null;
+				}
+				
 				$instsMethod = $objMethod->GetInstanceUsingAttributes(array
 				(
 					new TenantObjectInstancePropertyValue("Name", $method)
