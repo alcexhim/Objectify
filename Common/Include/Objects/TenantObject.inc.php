@@ -413,7 +413,14 @@
 		 */
 		private static function Build_Subclass_Query(&$query, &$paramz, $parentObject, $prefix)
 		{
-			$parentObjects = $parentObject->GetChildObjects();
+			if ($parentObject != null)
+			{
+				$parentObjects = $parentObject->GetChildObjects();
+			}
+			else
+			{
+				$parentObjects = array();
+			}
 			$parentObjectCount = count($parentObjects);
 			for ($i = 0; $i < $parentObjectCount; $i++)
 			{
