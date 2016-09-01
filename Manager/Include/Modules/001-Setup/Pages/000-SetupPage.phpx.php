@@ -1019,7 +1019,7 @@ use Objectify\Objects\KnownAttributes;
 					// this can be set by User property IsGlobal - USE SPARINGLY!!!
 					
 					// First create the initial tenant
-					$tenant = Tenant::Create("default");
+					$tenant = Tenant::Create("default", "{35BF9AC5-0212-4DBA-BB9B-D1A6E9955827}");
 					
 					$_SESSION["CurrentTenantID"] = $tenant->ID;
 					

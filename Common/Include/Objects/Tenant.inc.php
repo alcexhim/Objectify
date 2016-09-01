@@ -10,12 +10,14 @@
 	{
 		public $ID;
 		public $Name;
+		public $ParentTenant;
 		
 		public static function GetByAssoc($values)
 		{
 			$item = new Tenant();
 			$item->ID = $values["tenant_ID"];
 			$item->Name = $values["tenant_Name"];
+			$item->ParentTenant = Tenant::GetByID($values["tenant_ParentTenantID"]);
 			return $item;
 		}
 		public static function Get()
@@ -45,6 +47,22 @@
 			$result = $statement->execute(array
 			(
 				":tenant_ID" => $id
+			));
+			
+			$count = $statement->rowCount();
+			if ($count == 0) return null;
+			
+			$values = $statement->fetch(PDO::FETCH_ASSOC);
+			return Tenant::GetByAssoc($values);
+		}
+		public static function GetByGlobalIdentifier($globalIdentifier)
+		{
+			$pdo = DataSystem::GetPDO();
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Tenants WHERE tenant_GlobalIdentifier = :tenant_GlobalIdentifier";
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute(array
+			(
+				":tenant_GlobalIdentifier" => $globalIdentifier
 			));
 			
 			$count = $statement->rowCount();
@@ -101,14 +119,18 @@
 			return null;
 		}
 		
-		public static function Create($name)
+		public static function Create($name, $globalIdentifier = null, $parentTenant = null)
 		{
 			$pdo = DataSystem::GetPDO();
-			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "Tenants (tenant_Name) VALUES (:tenant_Name)";
+			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "Tenants (tenant_Name, tenant_GlobalIdentifier, tenant_ParentTenantID) VALUES (:tenant_Name, :tenant_GlobalIdentifier, :tenant_ParentTenantID)";
+			
+			$globalIdentifier = Objectify::SanitizeGlobalIdentifier($globalIdentifier);
 			$statement = $pdo->prepare($query);
 			$result = $statement->execute(array
 			(
-				":tenant_Name" => $name
+				":tenant_Name" => $name,
+				":tenant_GlobalIdentifier" => $globalIdentifier,
+				":tenant_ParentTenantID" => ($parentTenant == null ? null : $parentTenant->ID)
 			));
 			if ($result === false) return null;
 			
