@@ -1,0 +1,15 @@
+{
+	"Objects":
+	[
+		{
+			"ID": "{798DECAB-5119-49D7-B0AD-D4BF45807188}",
+			"Name": "MenuItemSeparator",
+			"ParentObjects":
+			[
+				{
+					"Name": "MenuItem"
+				}
+			]
+		}
+	]
+}

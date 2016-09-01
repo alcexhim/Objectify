@@ -1,0 +1,15 @@
+{
+	"Objects":
+	[
+		{
+			"ID": "{06E7806D-9384-4EA5-B5D1-350A51552773}",
+			"Name": "Menu",
+			"ParentObjects":
+			[
+				{
+					"Name": "Class"
+				}
+			]
+		}
+	]
+}

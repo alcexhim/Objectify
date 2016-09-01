@@ -1,0 +1,175 @@
+{
+	"Objects":
+	[
+		{
+			"Name": "Relationship",
+			"Instances":
+			[
+				{
+					"ID": "{A477DE49-DBBA-46E5-BA81-1C9DC9D95E10}",
+					"Comment": "Menu.has Menu Item",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Menu`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{06E7806D-9384-4EA5-B5D1-350A51552773}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Menu Item`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{1E9D38B9-1B07-4EF9-BAD7-43DEB25AEB83}"
+							]
+						},
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{55092EA2-D183-4EDA-99B8-2684B77EE704}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{55092EA2-D183-4EDA-99B8-2684B77EE704}",
+					"Comment": "Menu Item.for Menu",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Menu Item`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{1E9D38B9-1B07-4EF9-BAD7-43DEB25AEB83}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Menu`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{06E7806D-9384-4EA5-B5D1-350A51552773}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "BooleanAttribute",
+			"Instances":
+			[
+				{
+					"ID": "{EC62F6E9-CC14-4330-953B-5267FDF92659}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+							"Value": "BeginAGroup"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Begin a Group"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "ExtractSingleInstanceStringComponent",
+			"Instances":
+			[
+				{
+					"ID": "{0D0B2BAF-982E-4FFF-AA86-5E58594C69FF}",
+					"Relationships":
+					[
+						{
+							"Comment": "Extract Single Instance String Component.has Relationship",
+							"RelationshipID": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
+							"InverseRelationshipID": "{B0111132-8721-405C-967B-0BEFA92CFE9A}",
+							"DestinationInstances":
+							[
+								"{65E3C87E-A2F7-4A33-9FA7-781EFA801E02}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "String",
+			"Instances":
+			[
+				{
+					"ID": "{E2E48032-DF8D-45F5-8865-A4A8DE8F28B2}",
+					"Comment": "Menu Item.instance labeled by String",
+					"Relationships":
+					[
+						{
+							"Comment": "String.has String Component",
+							"RelationshipID": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
+							"InverseRelationshipID": "{40E17597-0AEB-4C56-BBAB-FC600E1196DD}",
+							"DestinationInstances":
+							[
+								"{0D0B2BAF-982E-4FFF-AA86-5E58594C69FF}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"ID": "{1E9D38B9-1B07-4EF9-BAD7-43DEB25AEB83}",
+			"Name": "MenuItem",
+			"ParentObjects":
+			[
+				{
+					"Name": "Class"
+				}
+			],
+			"Relationships":
+			[
+				{
+					"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+					"DestinationInstances":
+					[
+						"{EC62F6E9-CC14-4330-953B-5267FDF92659}"
+					]
+				}
+			]
+		}
+	]
+}
