@@ -79,6 +79,19 @@
 					"Name": "Class"
 				}
 			],
+			"TranslatableValues":
+			[
+				{
+					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+					"Values":
+					[
+						{
+							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+							"Value": "Login Device Type"
+						}
+					]
+				}
+			],
 			"Instances":
 			[
 				{

@@ -7,7 +7,18 @@
 			"TranslatableValues":
 			[
 				{
-					"Comment": "Class `Class`.has description Translatable Text Constant",
+					"Comment": "Class.has title Translatable Text Constant",
+					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+					"Values":
+					[
+						{
+							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+							"Value": "Class"
+						}
+					]
+				},
+				{
+					"Comment": "Class.has description Translatable Text Constant",
 					"RelationshipID": "{3B29DC78-B30A-46AA-9B20-2573239CECD9}",
 					"InverseRelationshipID": "{D4592057-BACF-44D0-9BB9-348B42A49D96}",
 					"Values":

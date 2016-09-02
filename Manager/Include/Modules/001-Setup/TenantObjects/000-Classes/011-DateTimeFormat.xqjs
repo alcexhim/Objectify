@@ -590,9 +590,7 @@
 			"TranslatableValues":
 			[
 				{
-					"Comment": "Class.has title Translatable Text Constant",
 					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
-					"InverseRelationshipID": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 					"Values":
 					[
 						{
