@@ -448,7 +448,7 @@
 			{
 				$insts = $propTitle->GetInstances();
 				
-				$objLanguage = TenantObject::GetByName("Language");
+				$objLanguage = KnownObjects::get___Language();
 				$defaultLanguage = $objLanguage->GetInstance(array
 				(
 					new TenantObjectInstancePropertyValue("Code", "en-US")

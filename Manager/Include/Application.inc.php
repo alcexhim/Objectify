@@ -128,7 +128,7 @@
 		
 		// TODO: Should there be a Method (Objectified) to call when the application launches? What should we call it?
 		// a sequence method essentially calls other methods, so this would be good here
-		// $objSequenceMethod = TenantObject::GetByName("SequenceMethod");
+		// $objSequenceMethod = KnownObjects::get___Sequence_Method();
 		return true;
 	};
 	

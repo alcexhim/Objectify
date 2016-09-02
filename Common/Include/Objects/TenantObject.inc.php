@@ -97,6 +97,8 @@
 			$pdo = DataSystem::GetPDO();
 			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjects WHERE object_GlobalIdentifier = :object_GlobalIdentifier";
 			$statement = $pdo->prepare($query);
+			
+			$globalIdentifier = Objectify::SanitizeGlobalIdentifier($globalIdentifier);
 			$result = $statement->execute(array
 			(
 				":object_GlobalIdentifier" => $globalIdentifier

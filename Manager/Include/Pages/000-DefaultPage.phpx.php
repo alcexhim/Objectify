@@ -3,16 +3,16 @@
 	
 	use Phast\System;
 	use Phast\CancelEventArgs;
-	
 	use Phast\Parser\PhastPage;
-	use Objectify\Objects\TenantObject;
-use Objectify\Objects\User;
-			
+	
+	use Objectify\Objects\KnownObjects;
+	use Objectify\Objects\User;
+				
 	class DefaultPage extends PhastPage
 	{
 		public function OnInitializing(CancelEventArgs $e)
 		{
-			$objTenant = TenantObject::GetByName("Tenant");
+			$objTenant = KnownObjects::get___Tenant();
 			$instTenant = $objTenant->GetInstances()[0];
 			
 			$instUser = User::GetCurrent();

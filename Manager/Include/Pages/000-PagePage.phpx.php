@@ -1,7 +1,6 @@
 <?php
 	namespace Objectify\Tenant\Pages;
 	
-	use Phast\System;
 	use Phast\CancelEventArgs;
 	
 	use Phast\HTMLControl;
@@ -17,17 +16,17 @@
 	
 	use Phast\Parser\PhastPage;
 	
-	use Objectify\Objects\TenantObject;
-	use Objectify\Objects\TenantObjectInstance;
+	use Objectify\Objects\Instance;
+	use Objectify\Objects\KnownAttributes;
+	use Objectify\Objects\KnownObjects;
 	use Objectify\Objects\KnownRelationships;
-use Objectify\Objects\Relationship;
-use Objectify\Objects\KnownAttributes;
-				
+	use Objectify\Objects\Relationship;
+	
 	class PagePage extends PhastPage
 	{
 		/**
 		 * Renders the specified "Page Component" instance.
-		 * @param TenantObjectInstance $instComponent
+		 * @param Instance $instComponent
 		 * @return WebControl
 		 */
 		private function CreatePageComponent($instComponent)
@@ -243,7 +242,7 @@ use Objectify\Objects\KnownAttributes;
 		
 		public function OnInitializing(CancelEventArgs $e)
 		{
-			$objPage = TenantObject::GetByName("Page");
+			$objPage = KnownObjects::get___Page();
 			$pageID = $this->Page->GetPathVariableValue("pageID");
 			$instPage = $objPage->GetInstanceByInstanceID($pageID);
 			

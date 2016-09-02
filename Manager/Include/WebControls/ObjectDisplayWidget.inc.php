@@ -62,7 +62,7 @@
 				$propTasks = $this->CurrentObject->GetPropertyValue("Tasks");
 				if ($propTasks != null)
 				{
-					$objTask = TenantObject::GetByName("Task");
+					$objTask = KnownObjects::get___Task();
 					
 					$insts = $propTasks->GetInstances();
 					foreach ($insts as $inst)

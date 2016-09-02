@@ -7,7 +7,8 @@
 	use Objectify\Objects\TenantObject;
 	use Objectify\Objects\TenantObjectInstancePropertyValue;
 	use Objectify\Objects\User;
-	
+use Objectify\Objects\KnownObjects;
+		
 	class TenantObjectAPI extends PhastPage
 	{
 		
@@ -67,7 +68,7 @@
 						}
 						*/
 						
-						$objTenant = TenantObject::GetByName("Tenant");
+						$objTenant = KnownObjects::get___Tenant();
 						$retval = $objTenant->CreateInstance(array
 						(
 							new TenantObjectInstancePropertyValue("TenantURL", $tenantName)

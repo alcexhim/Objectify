@@ -7,15 +7,13 @@
 	
 	use Phast\Parser\PhastPage;
 	
-	use Objectify\Tenant\MasterPages\WebPage;
-	
 	use Objectify\Objects\Instance;
 	use Objectify\Objects\KnownAttributes;
+	use Objectify\Objects\KnownObjects;
 	use Objectify\Objects\KnownRelationships;
 	use Objectify\Objects\Objectify;
 	use Objectify\Objects\Relationship;
 	use Objectify\Objects\Tenant;
-	use Objectify\Objects\TenantObject;
 	use Objectify\Objects\TenantObjectInstancePropertyValue;
 	use Objectify\Objects\User;
 	
@@ -26,7 +24,7 @@
 	{
 		public function OnInitializing(CancelEventArgs $e)
 		{
-			$objTenant = TenantObject::GetByName("Tenant");
+			$objTenant = KnownObjects::get___Tenant();
 			if ($objTenant != null)
 			{
 				$instTenants = $objTenant->GetInstanceUsingAttributes(array
@@ -82,7 +80,7 @@
 					$username = $_POST["user_LoginID"];
 					$password = $_POST["user_Password"];
 					
-					$objUser = TenantObject::GetByName("User");
+					$objUser = KnownObjects::get___User();
 					$inst = null;
 					if ($objUser != null)
 					{
@@ -115,7 +113,7 @@
 						$user_LoginToken = RandomStringGenerator::Generate(RandomStringGeneratorCharacterSets::AlphaNumericMixedCase, 32);
 						$_SESSION["Authentication.LoginToken"] = $user_LoginToken;
 						
-						$objUserLogin = TenantObject::GetByName("UserLogin");
+						$objUserLogin = KnownObjects::get___User_Login();
 						$instUserLogin = $objUserLogin->CreateInstance();
 						
 						$instUserLogin->SetAttributeValue("Token", $user_LoginToken);

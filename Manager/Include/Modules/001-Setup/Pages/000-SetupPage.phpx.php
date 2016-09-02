@@ -8,8 +8,8 @@
 	use Phast\RandomStringGenerator;
 	use Phast\RandomStringGeneratorCharacterSets;
 	
-	use UniversalEditor\ObjectModels\Markup\XMLParser;
-
+	use Objectify\Objects\KnownAttributes;
+	use Objectify\Objects\KnownObjects;
 	use Objectify\Objects\Objectify;
 	use Objectify\Objects\DataType;
 	use Objectify\Objects\Tenant;
@@ -22,17 +22,16 @@
 	use Objectify\Objects\KnownRelationships;
 	
 	use UniversalEditor\ObjectModels\Markup\MarkupTagElement;
-use Objectify\Objects\KnownAttributes;
-		
+	
 	class SetupPage extends PhastPage
 	{
 		private function CreateDefaultSecurityPrivilegesAndGroups()
 		{
-			$objSecurityPrivilege = TenantObject::GetByName("SecurityPrivilege");
+			$objSecurityPrivilege = KnownObjects::get___Security_Privilege();
 			
 			$instCreateTenant = $objSecurityPrivilege->CreateInstance();
 			
-			$objSecurityGroup = TenantObject::GetByName("SecurityGroup");
+			$objSecurityGroup = KnownObjects::get___Security_Group();
 			
 			$instTenantManager = $objSecurityGroup->CreateInstance(array
 			(
@@ -74,8 +73,8 @@ use Objectify\Objects\KnownAttributes;
 			$inst_Class_has_sub_Class = Instance::GetByGlobalIdentifier("{C14BC80D-879C-4E6F-9123-E8DFB13F4666}");
 			$inst_Class_has_super_Class = Instance::GetByGlobalIdentifier("{100F0308-855D-4EC5-99FA-D8976CA20053}");
 			
-			$objLanguageString = TenantObject::GetByName("TranslatableTextConstantValue");
-			$objTranslatableTextConstant = TenantObject::GetByName("TranslatableTextConstant");
+			$objLanguageString = KnownObjects::get___Translatable_Text_Constant_Value();
+			$objTranslatableTextConstant = KnownObjects::get___Translatable_Text_Constant();
 			
 			// Set up Relationships first
 			if (isset($filedata->Relationships)) {
@@ -672,7 +671,7 @@ use Objectify\Objects\KnownAttributes;
 		 */
 		private function CreateDefaultTenant($tenantName)
 		{
-			$objTenant = TenantObject::GetByName("Tenant");
+			$objTenant = KnownObjects::get___Tenant();
 			
 			$instTenant = $objTenant->GetInstanceByGlobalIdentifier("{F2C9D4A9-9EFB-4263-84DB-66A9DA65AD00}");
 			$instAttributeName = Instance::GetByGlobalIdentifier("{9153A637-992E-4712-ADF2-B03F0D9EDEA6}");
@@ -683,14 +682,14 @@ use Objectify\Objects\KnownAttributes;
 		
 		private function CreateDefaultUser($username, $passwordHash, $passwordSalt, $displayName)
 		{
-			$objUser = TenantObject::GetByName("User");
-			$objSecurityGroup = TenantObject::GetByName("SecurityGroup");
+			$objUser = KnownObjects::get___User();
+			$objSecurityGroup = KnownObjects::get___Security_Group();
 			
 			$instSecurityGroup_SystemAdministrator = Instance::GetByGlobalIdentifier("{0E57B7A3-FE6D-4B40-843B-F20580441242}");
 			
-			$objLanguage = TenantObject::GetByName("Language");
-			$objLanguageString = TenantObject::GetByName("TranslatableTextConstantValue");
-			$objTranslatableTextConstant = TenantObject::GetByName("TranslatableTextConstant");
+			$objLanguage = KnownObjects::get___Language();
+			$objLanguageString = KnownObjects::get___Translatable_Text_Constant_Value();
+			$objTranslatableTextConstant = KnownObjects::get___Translatable_Text_Constant();
 			
 			$instLangs = $objLanguage->GetInstances();
 			$lang = $instLangs[0];

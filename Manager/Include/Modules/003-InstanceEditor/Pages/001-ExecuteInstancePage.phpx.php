@@ -457,7 +457,7 @@
 									if (get_class($value) == "Objectify\\Objects\\Instance")
 									{
 										/*
-										if ($value->HasParentObject(TenantObject::GetByName("Attribute")))
+										if ($value->HasParentObject(KnownObjects::get___Attribute()))
 										{
 											echo($instRow->GetAttributeValue($instAttribute, "(empty)"));
 										}

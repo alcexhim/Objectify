@@ -5,18 +5,14 @@
 	use Phast\Parser\PhastPage;
 	
 	use Phast\WebControls\AdditionalDetailWidget;
-	use Phast\WebControls\AdditionalDetailWidgetDisplayStyle;
-	
 	use Phast\WebControls\ListViewItem;
 	use Phast\WebControls\ListViewItemColumn;
-	
 	use Phast\WebControls\MenuItemCommand;
 	
-	use Objectify\Tenant\MasterPages\WebPage;
+	use Objectify\Objects\KnownObjects;
 	
-	use Objectify\Objects\TenantObject;
 	use Objectify\WebControls\InstanceDisplayWidget;
-		
+	
 	class DashboardPage extends PhastPage
 	{
 		public function OnInitializing($e)
@@ -24,7 +20,7 @@
 			$lvTenantsActive = $this->Page->GetControlByID("lvTenantsActive");
 			$lvTenantsInactive = $this->Page->GetControlByID("lvTenantsInactive");
 			
-			$objTenant = TenantObject::GetByName("Tenant");
+			$objTenant = KnownObjects::get___Tenant();
 			$tenants = $objTenant->GetInstances();
 			
 			$dscActiveTenants = $this->Page->GetControlByID("dscActiveTenants");

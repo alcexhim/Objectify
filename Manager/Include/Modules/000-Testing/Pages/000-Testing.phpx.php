@@ -14,7 +14,8 @@
 use Objectify\Objects\TenantObjectInstance;
 use Objectify\Objects\Instance;
 use Objectify\Objects\KnownInstances;
-						
+use Objectify\Objects\KnownObjects;
+							
 	class TestingPage extends PhastPage
 	{
 		private function RecursivePrintParentObjects($po, $level = 0)
@@ -43,7 +44,7 @@ use Objectify\Objects\KnownInstances;
 			header("Content-Type: text/plain");
 			
 
-			$po = TenantObject::GetByName("TextAttribute");
+			$po = KnownObjects::get___Text_Attribute();
 			
 			$this->RecursivePrintParentObjects($po);
 			
@@ -61,11 +62,11 @@ use Objectify\Objects\KnownInstances;
 			
 			/*
 			// test getting relationships for classes
-			$objRelationship = TenantObject::GetByName("Relationship");
+			$objRelationship = KnownObjects::get___Relationship();
 			
 			// get the `Class.has Attribute` relationship
-			$objClass = TenantObject::GetByName("Class");
-			$objAttribute = TenantObject::GetByName("Attribute");
+			$objClass = KnownObjects::get___Class();
+			$objAttribute = KnownObjects::get___Attribute();
 			
 			$instRelationship_Class__has_Attribute = $objRelationship->GetInstance(array
 			(
@@ -75,7 +76,7 @@ use Objectify\Objects\KnownInstances;
 			));
 			
 			// get all relationship entries for this relationship
-			$objRelationshipEntry = TenantObject::GetByName("RelationshipEntry");
+			$objRelationshipEntry = KnownObjects::get___RelationshipEntry();
 			$insts = $objRelationshipEntry->GetInstances(array
 			(
 				new TenantObjectInstancePropertyValue("Relationship", $instRelationship_Class__has_Attribute)
@@ -91,7 +92,7 @@ use Objectify\Objects\KnownInstances;
 			*/
 			
 			// test attributes
-			$objClass = TenantObject::GetByName("Class");
+			$objClass = KnownObjects::get___Class();
 			$instClass = TenantObjectInstance::GetByGlobalIdentifier($objClass->GlobalIdentifier);
 			
 			$instAttribute_Name = TenantObjectInstance::GetByGlobalIdentifier("{9153A637-992E-4712-ADF2-B03F0D9EDEA6}");
@@ -103,7 +104,7 @@ use Objectify\Objects\KnownInstances;
 			
 			$sw = new Stopwatch();
 			
-			$objMethod = TenantObject::GetByName("Method");
+			$objMethod = KnownObjects::get___Method();
 			$instMethod = $objMethod->GetInstance(array
 			(
 				new TenantObjectInstancePropertyValue("Name", "GetLoginTokenForCurrentUser")

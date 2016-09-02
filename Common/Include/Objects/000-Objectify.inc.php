@@ -217,7 +217,7 @@
 			{
 				$methodName = $method;
 				
-				$objMethod = TenantObject::GetByName("Method");
+				$objMethod = KnownObjects::get___Method();
 				if ($objMethod == null)
 				{
 					trigger_error("XquizIT FATAL: required class `Method` not found; drop and recreate system?");

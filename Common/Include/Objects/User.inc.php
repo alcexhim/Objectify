@@ -1,6 +1,6 @@
 <?php
 	namespace Objectify\Objects;
-			
+	
 	class User
 	{
 		/**
@@ -23,7 +23,7 @@
 		 */
 		public static function GetByLoginToken($token)
 		{
-			$objUserLogin = TenantObject::GetByName("UserLogin");
+			$objUserLogin = KnownObjects::get___User_Login();
 			if ($objUserLogin == null) return null;
 			
 			$instUserLogins = $objUserLogin->GetInstances();

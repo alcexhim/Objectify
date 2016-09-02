@@ -5,13 +5,12 @@
 	use Phast\System;
 	
 	use Objectify\Objects\Instance;
-	use Objectify\Objects\KnownRelationships;
 	use Objectify\Objects\KnownAttributes;
+	use Objectify\Objects\KnownObjects;
+	use Objectify\Objects\KnownRelationships;
 	use Objectify\Objects\Objectify;
 	use Objectify\Objects\Relationship;
 	use Objectify\Objects\Tenant;
-	use Objectify\Objects\TenantObject;
-	use Objectify\Objects\TenantObjectInstancePropertyValue;
 	use Objectify\Objects\User;
 
 	use Phast\HTMLControls\Layer;
@@ -22,9 +21,7 @@
 	use Phast\WebControls\MenuItemHeader;
 	
 	use Phast\WebControlAttribute;
-	use Phast\WebStyleSheetRule;
-	use Phast\WebStyleSheet;
-	
+		
 	class DefaultPage extends PhastPage
 	{
 		public function OnInitializing($e)
@@ -66,11 +63,8 @@
 			$sidebarMenu->Items = array();
 			$tenantName = System::GetTenantName();
 			
-			$objTenant = TenantObject::GetByName("Tenant");
-			$instTenant = $objTenant->GetInstanceUsingAttributes(array
-			(
-				new TenantObjectInstancePropertyValue("Name", $tenantName)
-			));
+			$objTenant = KnownObjects::get___Tenant();
+			$instTenant = $objTenant->GetInstances();
 			$instTenant = $instTenant[0];
 			
 			// BEGIN: load the application menu items
