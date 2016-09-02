@@ -38,11 +38,9 @@
 			}
 		}
 		
-		private function LoadPostXQJS($filename)
+		private function LoadXQJSPost($filedata)
 		{
 			$retval = array();
-			$filedatastr = file_get_contents($filename);
-			$filedata = json_decode($filedatastr);
 			
 			$inst_Class_has_sub_Class = Instance::GetByGlobalIdentifier("{C14BC80D-879C-4E6F-9123-E8DFB13F4666}");
 			$inst_Class_has_super_Class = Instance::GetByGlobalIdentifier("{100F0308-855D-4EC5-99FA-D8976CA20053}");
@@ -290,16 +288,21 @@
 			}
 		}
 		
+		private function LoadXQJSFile($filename)
+		{
+			$filedatastr = file_get_contents($filename);
+			$filedata = json_decode($filedatastr);
+			return $filedata;
+		}
+		
 		/**
 		 * Creates TenantObject(s) from an XquiIT JavaScript Object Notation (JSON) file and returns the array of all TenantObjects that were created.
 		 * @param string $filename The file name to parse as an XquizIT object definition.
 		 * @return TenantObject[]|false
 		 */
-		private function LoadXQJS($filename)
+		private function LoadXQJS($filedata)
 		{
 			$retval = array();
-			$filedatastr = file_get_contents($filename);
-			$filedata = json_decode($filedatastr);
 			
 			if ($filedata->Objects != null)
 			{
@@ -506,12 +509,14 @@
 					$tenant = Tenant::Create("default", "{35BF9AC5-0212-4DBA-BB9B-D1A6E9955827}");
 					
 					$_SESSION["CurrentTenantID"] = $tenant->ID;
+
+					$xqjsData = array();
 					
 					// Create the tenanted objects in directories required before anything else takes place
 					$tenantObjectFileNames = glob(dirname(__FILE__) . "/../TenantObjects/*/*.xqjs");
 					foreach ($tenantObjectFileNames as $tenantObjectFileName)
 					{
-						$objs = $this->LoadXQJS($tenantObjectFileName);
+						$xqjsData[] = $this->LoadXQJSFile($tenantObjectFileName);
 					}
 					$tenantObjectFileNames = glob(dirname(__FILE__) . "/../TenantObjects/*/*.inc.php");
 					foreach ($tenantObjectFileNames as $tenantObjectFileName)
@@ -523,12 +528,17 @@
 					$tenantObjectFileNames = glob(dirname(__FILE__) . "/../TenantObjects/*.xqjs");
 					foreach ($tenantObjectFileNames as $tenantObjectFileName)
 					{
-						$objs = $this->LoadXQJS($tenantObjectFileName);
+						$xqjsData[] = $this->LoadXQJSFile($tenantObjectFileName);
 					}
 					$tenantObjectFileNames = glob(dirname(__FILE__) . "/../TenantObjects/*.inc.php");
 					foreach ($tenantObjectFileNames as $tenantObjectFileName)
 					{
 						require($tenantObjectFileName);
+					}
+					
+					foreach ($xqjsData as $xqjsDataBlock)
+					{
+						$this->LoadXQJS($xqjsDataBlock);
 					}
 					
 					$instDefaultUser = $this->CreateDefaultUser($Administrator_UserName, $Administrator_PasswordHash, $Administrator_PasswordSalt, "System Administrator");
@@ -566,11 +576,11 @@
 							$inst->SetAttributeValue(KnownAttributes::get___Date___CreationDate(), $dtNow);
 						}
 					}
-					
-					$tenantObjectFileNames = glob(dirname(__FILE__) . "/../TenantObjects/*/*.xqjs");
-					foreach ($tenantObjectFileNames as $tenantObjectFileName)
+
+
+					foreach ($xqjsData as $xqjsDataBlock)
 					{
-						$objs = $this->LoadPostXQJS($tenantObjectFileName);
+						$this->LoadXQJSPost($xqjsDataBlock);
 					}
 					
 					// finally do some post-processing, such as adding attributes, etc.
