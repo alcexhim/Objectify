@@ -273,6 +273,17 @@
 								}
 							]
 						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": "Security Group `System Administrator`.has Security Permission `Provision Tenants`",
+							"RelationshipID": "{5E305133-1380-4736-93E4-6B280B35FCE3}",
+							"DestinationInstances":
+							[
+								"{36156720-B166-47E8-AA45-073EE789AD59}"
+							]
+						}
 					]
 				}
 			]

@@ -6,7 +6,18 @@
 			"Instances":
 			[
 				{
-					"ID": "{EB941FB3-0CF6-44DD-B693-7A108F8B89D3}"
+					"ID": "{EB941FB3-0CF6-44DD-B693-7A108F8B89D3}",
+					"Relationships":
+					[
+						{
+							"Comment": "Extract Single Instance String Component.has Relationship",
+							"RelationshipID": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
+							"DestinationInstances":
+							[
+								"{B8BDB905-69DD-49CD-B557-0781F7EF2C50}"
+							]
+						}
+					]
 				}
 			]
 		},
@@ -699,6 +710,25 @@
 					]
 				}
 			],
+			"Relationships":
+			[
+				{
+					"Comment": "Class.has Attribute `CSS Value` [Text Attribute]",
+					"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+					"DestinationInstances":
+					[
+						"{C0DD4A42-F503-4EB3-8034-7C428B1B8803}"
+					]
+				},
+				{
+					"Comment": "Class.instance labeled by String",
+					"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+					"DestinationInstances":
+					[
+						"{D94917FA-EA53-4398-BC77-F6CAAEADB9FD}"
+					]
+				}
+			],
 			"Instances":
 			[
 				{
@@ -708,6 +738,25 @@
 						{
 							"ID": "{C0DD4A42-F503-4EB3-8034-7C428B1B8803}",
 							"Value": "cm"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": "Measurement.has title Translatable Text Constant",
+							"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+							"DestinationInstances":
+							[
+								"{D3D86C8F-A1B2-4792-94F8-017A5FD22BF4}"
+							]
+						},
+						{
+							"Comment": "Measurement.has description Translatable Text Constant",
+							"RelationshipID": "{3B29DC78-B30A-46AA-9B20-2573239CECD9}",
+							"DestinationInstances":
+							[
+								"{E8607E63-E16B-4864-9F65-2607447FBF58}"
+							]
 						}
 					]
 				},
@@ -719,6 +768,25 @@
 							"ID": "{C0DD4A42-F503-4EB3-8034-7C428B1B8803}",
 							"Value": "em"
 						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": "Measurement.has title Translatable Text Constant",
+							"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+							"DestinationInstances":
+							[
+								"{CCF074BA-155C-4BCF-A4C5-D06085502A70}"
+							]
+						},
+						{
+							"Comment": "Measurement.has description Translatable Text Constant",
+							"RelationshipID": "{3B29DC78-B30A-46AA-9B20-2573239CECD9}",
+							"DestinationInstances":
+							[
+								"{8D8F415F-E095-4DEF-B52C-9FA370BCE7D1}"
+							]
+						}
 					]
 				},
 				{
@@ -728,6 +796,25 @@
 						{
 							"ID": "{C0DD4A42-F503-4EB3-8034-7C428B1B8803}",
 							"Value": "ex"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": "Measurement.has title Translatable Text Constant",
+							"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+							"DestinationInstances":
+							[
+								"{2552F66B-0DBE-41EB-8A80-76DE8575A468}"
+							]
+						},
+						{
+							"Comment": "Measurement.has description Translatable Text Constant",
+							"RelationshipID": "{3B29DC78-B30A-46AA-9B20-2573239CECD9}",
+							"DestinationInstances":
+							[
+								"{B5725DB6-A805-4BAF-B512-90A40F97B19A}"
+							]
 						}
 					]
 				},
@@ -739,6 +826,25 @@
 							"ID": "{C0DD4A42-F503-4EB3-8034-7C428B1B8803}",
 							"Value": "in"
 						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": "Measurement.has title Translatable Text Constant",
+							"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+							"DestinationInstances":
+							[
+								"{77C7CC0E-18D5-46F1-A848-3BB3A3BAE798}"
+							]
+						},
+						{
+							"Comment": "Measurement.has description Translatable Text Constant",
+							"RelationshipID": "{3B29DC78-B30A-46AA-9B20-2573239CECD9}",
+							"DestinationInstances":
+							[
+								"{CFF6C955-4832-4298-92E7-9467FEC61B91}"
+							]
+						}
 					]
 				},
 				{
@@ -748,6 +854,25 @@
 						{
 							"ID": "{C0DD4A42-F503-4EB3-8034-7C428B1B8803}",
 							"Value": "mm"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": "Measurement.has title Translatable Text Constant",
+							"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+							"DestinationInstances":
+							[
+								"{E18E5EF1-7AF4-4FB1-9AED-917C24DF5092}"
+							]
+						},
+						{
+							"Comment": "Measurement.has description Translatable Text Constant",
+							"RelationshipID": "{3B29DC78-B30A-46AA-9B20-2573239CECD9}",
+							"DestinationInstances":
+							[
+								"{3293C7EC-7900-4953-8031-24464F7DC0B3}"
+							]
 						}
 					]
 				},
@@ -759,6 +884,25 @@
 							"ID": "{C0DD4A42-F503-4EB3-8034-7C428B1B8803}",
 							"Value": "%"
 						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": "Measurement.has title Translatable Text Constant",
+							"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+							"DestinationInstances":
+							[
+								"{F3E3CF84-8133-4B54-BE39-9EC2B6888BAE}"
+							]
+						},
+						{
+							"Comment": "Measurement.has description Translatable Text Constant",
+							"RelationshipID": "{3B29DC78-B30A-46AA-9B20-2573239CECD9}",
+							"DestinationInstances":
+							[
+								"{94D32217-87E4-478D-AAC6-C3451C977F4A}"
+							]
+						}
 					]
 				},
 				{
@@ -768,6 +912,25 @@
 						{
 							"ID": "{C0DD4A42-F503-4EB3-8034-7C428B1B8803}",
 							"Value": "pc"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": "Measurement.has title Translatable Text Constant",
+							"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+							"DestinationInstances":
+							[
+								"{4E658CD0-775B-4A7F-A876-78CBAB0FB445}"
+							]
+						},
+						{
+							"Comment": "Measurement.has description Translatable Text Constant",
+							"RelationshipID": "{3B29DC78-B30A-46AA-9B20-2573239CECD9}",
+							"DestinationInstances":
+							[
+								"{23C39C3A-A8E7-4836-9C3E-CA5EAE118855}"
+							]
 						}
 					]
 				},
@@ -779,6 +942,25 @@
 							"ID": "{C0DD4A42-F503-4EB3-8034-7C428B1B8803}",
 							"Value": "px"
 						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": "Measurement.has title Translatable Text Constant",
+							"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+							"DestinationInstances":
+							[
+								"{1BC069A9-C223-477A-AACC-08462AE37090}"
+							]
+						},
+						{
+							"Comment": "Measurement.has description Translatable Text Constant",
+							"RelationshipID": "{3B29DC78-B30A-46AA-9B20-2573239CECD9}",
+							"DestinationInstances":
+							[
+								"{05A39315-0AA9-4198-8283-0CCC1E2C28AE}"
+							]
+						}
 					]
 				},
 				{
@@ -788,6 +970,25 @@
 						{
 							"ID": "{C0DD4A42-F503-4EB3-8034-7C428B1B8803}",
 							"Value": "pt"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": "Measurement.has title Translatable Text Constant",
+							"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+							"DestinationInstances":
+							[
+								"{716D4C16-040F-4EBB-A920-DDF88765A017}"
+							]
+						},
+						{
+							"Comment": "Measurement.has description Translatable Text Constant",
+							"RelationshipID": "{3B29DC78-B30A-46AA-9B20-2573239CECD9}",
+							"DestinationInstances":
+							[
+								"{6B0AA372-0CC1-49C0-A038-F22DEBB12E60}"
+							]
 						}
 					]
 				}
@@ -814,6 +1015,17 @@
 						}
 					]
 				}
+			],
+			"Relationships":
+			[
+				{
+					"Comment": "Class.has Attribute `Value` [Numeric Attribute]",
+					"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+					"DestinationInstances":
+					[
+						"{B88E5262-6B99-401C-896C-34283AB58AED}"
+					]
+				}
 			]
 		},
 		{
@@ -829,6 +1041,35 @@
 							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "has"
 						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Measurement`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{9FAED5A9-040D-4718-92C0-FBE2385F2A97}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Measurement Unit`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{62693026-B7A0-40B5-92AE-038A2B264F33}"
+							]
+						},
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{3117CB16-6860-48B6-8E21-3655A121E695}"
+							]
+						}
 					]
 				},
 				{
@@ -839,6 +1080,27 @@
 						{
 							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Measurement Unit`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{62693026-B7A0-40B5-92AE-038A2B264F33}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Measurement`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{9FAED5A9-040D-4718-92C0-FBE2385F2A97}"
+							]
 						}
 					]
 				}

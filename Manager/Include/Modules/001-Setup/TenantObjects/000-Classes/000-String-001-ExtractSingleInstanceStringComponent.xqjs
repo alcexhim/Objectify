@@ -14,6 +14,27 @@
 							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "has"
 						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Extract Single Instance String Component`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{FCECCE4E-8D05-485A-AE34-B1B45E766661}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Relationship`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{9B0A80F9-C325-4D36-997C-FB4106204648}"
+							]
+						}
 					]
 				},
 				{
@@ -24,6 +45,27 @@
 						{
 							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Relationship`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{9B0A80F9-C325-4D36-997C-FB4106204648}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Extract Single Instance String Component`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{FCECCE4E-8D05-485A-AE34-B1B45E766661}"
+							]
 						}
 					]
 				}
@@ -54,13 +96,46 @@
 			"Instances":
 			[
 				{
-					"ID": "{E2F11C41-51F1-4DB2-A16F-C384267A8598}"
+					"ID": "{E2F11C41-51F1-4DB2-A16F-C384267A8598}",
+					"Relationships":
+					[
+						{
+							"Comment": "Extract Single Instance String Component.has Relationship",
+							"RelationshipID": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
+							"DestinationInstances":
+							[
+								"{B8BDB905-69DD-49CD-B557-0781F7EF2C50}"
+							]
+						}
+					]
 				},
 				{
-					"ID": "{9DD1CDE1-6DAD-452D-9A07-9DE1CC32A396}"
+					"ID": "{9DD1CDE1-6DAD-452D-9A07-9DE1CC32A396}",
+					"Relationships":
+					[
+						{
+							"Comment": "Extract Single Instance String Component.has Relationship",
+							"RelationshipID": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
+							"DestinationInstances":
+							[
+								"{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}"
+							]
+						}
+					]
 				},
 				{
-					"ID": "{7734AD93-8328-421B-BD78-E353EEFB0879}"
+					"ID": "{7734AD93-8328-421B-BD78-E353EEFB0879}",
+					"Relationships":
+					[
+						{
+							"Comment": "Extract Single Instance String Component.has Relationship",
+							"RelationshipID": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
+							"DestinationInstances":
+							[
+								"{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}"
+							]
+						}
+					]
 				}
 			]
 		}

@@ -96,6 +96,14 @@
 			"Relationships":
 			[
 				{
+					"Comment": "Class `Menu Item Command`.has Attribute `Target URL` [Text Attribute]",
+					"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+					"DestinationInstances":
+					[
+						"{970F79A0-9EFE-4E7D-9286-9908C6F06A67}"
+					]
+				},
+				{
 					"Comment": "Class `Menu Item Command`.instance labeled by String",
 					"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
 					"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",

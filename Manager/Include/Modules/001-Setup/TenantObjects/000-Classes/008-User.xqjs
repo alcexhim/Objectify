@@ -22,7 +22,18 @@
 			"Instances":
 			[
 				{
-					"ID": "{BAE9E054-ED1E-4DE7-A70B-33A437591D80}"
+					"ID": "{BAE9E054-ED1E-4DE7-A70B-33A437591D80}",
+					"Relationships":
+					[
+						{
+							"Comment": "Extract Single Instance String Component.has Relationship",
+							"RelationshipID": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
+							"DestinationInstances":
+							[
+								"{6C29856C-3B10-4F5B-A291-DD3CA4C04A2F}"
+							]
+						}
+					]
 				}
 			]
 		},
@@ -104,6 +115,26 @@
 			],
 			"Relationships":
 			[
+				{
+					"Comment": "Class.has Attribute `User Name`, `Password Hash`, `Password Salt`, `Global`",
+					"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+					"DestinationInstances":
+					[
+						"{960FAF02-5C59-40F7-91A7-20012A99D9ED}",
+						"{F377FC29-4DF1-4AFB-9643-4191F37A00A9}",
+						"{8C5A99BC-40ED-4FA2-B23F-F373C1F3F4BE}",
+						"{40A05D59-4F7B-46BF-9352-67FC3E5FB2C1}"
+					]
+				},
+				{
+					"Comment": "Class.instance labeled by String",
+					"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+					"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+					"DestinationInstances":
+					[
+						"{344CC8C6-EC17-4568-BACA-D55C77B2B0BF}"
+					]
+				},
 				{
 					"Comment": "Class `User`.has Attribute `Account Disabled` [Boolean Attribute]",
 					"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
@@ -320,6 +351,35 @@
 							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "has owner"
 						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Class`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `User`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{9C6871C1-9A7F-4A3A-900E-69D1D9E24486}"
+							]
+						},
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{04DD2E6B-EA57-4840-8DD5-F0AA943C37BB}"
+							]
+						}
 					]
 				},
 				{
@@ -330,6 +390,27 @@
 						{
 							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
 							"Value": "owner for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `User`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{9C6871C1-9A7F-4A3A-900E-69D1D9E24486}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Class`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+							]
 						}
 					]
 				}
