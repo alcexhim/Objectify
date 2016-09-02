@@ -11,40 +11,14 @@
 	use Objectify\Objects\KnownAttributes;
 	use Objectify\Objects\KnownObjects;
 	use Objectify\Objects\Objectify;
-	use Objectify\Objects\DataType;
 	use Objectify\Objects\Tenant;
 	use Objectify\Objects\TenantObject;
 	use Objectify\Objects\Instance;
-	use Objectify\Objects\TenantObjectInstancePropertyValue;
-	use Objectify\Objects\MultipleInstanceProperty;
-	use Objectify\Objects\SingleInstanceProperty;
 	use Objectify\Objects\Relationship;
 	use Objectify\Objects\KnownRelationships;
 	
-	use UniversalEditor\ObjectModels\Markup\MarkupTagElement;
-	
 	class SetupPage extends PhastPage
 	{
-		private function CreateDefaultSecurityPrivilegesAndGroups()
-		{
-			$objSecurityPrivilege = KnownObjects::get___Security_Privilege();
-			
-			$instCreateTenant = $objSecurityPrivilege->CreateInstance();
-			
-			$objSecurityGroup = KnownObjects::get___Security_Group();
-			
-			$instTenantManager = $objSecurityGroup->CreateInstance(array
-			(
-				new TenantObjectInstancePropertyValue
-				(
-					$objSecurityGroup->GetProperty("SecurityPrivileges"), array
-					(
-						$instCreateTenant
-					)
-				)
-			)); // Tenant Manager
-		}
-		
 		private function ProcessRelationshipsXQJS($instRelationship, $destinationInstances, $instObj, $instInverseRelationship = null)
 		{
 			if (is_array($destinationInstances))
@@ -348,74 +322,6 @@
 						$retval[] = $obj;
 					}
 					
-					if (isset($objdef->Properties))
-					{
-						foreach ($objdef->Properties as $propDef)
-						{
-							if (!isset($propDef->Name)) continue;
-							
-							$property = $obj->GetProperty($propDef->Name);
-							$dataTypeName = null;
-							if ($property != null) $dataTypeName = $property->DataType->Name;
-							
-							$value = $this->XquizitLoadPropertyValueFromJSON($propDef, $obj, false, $filename, $dataTypeName);
-							
-							if ($property == null)
-							{
-								if ($propDef->DataTypeName == null)
-								{
-									Objectify::Log("XquizIT attempted to create a new property without a data type name", array
-									(
-										"Property Name" => $propDef->Name,
-										"Object Name" => $obj->Name,
-										"XquizIT Source File Name" => $filename
-									));
-									continue;
-								}
-								$property = $obj->CreateProperty($propDef->Name, DataType::GetByName($propDef->DataTypeName), $value);
-							}
-							else
-							{
-								$obj->SetPropertyValue($property, $value);
-							}
-						}
-					}
-					
-					if (isset($objdef->InstanceProperties))
-					{
-						foreach ($objdef->InstanceProperties as $propDef)
-						{
-							if (!isset($propDef->Name)) continue;
-							
-							$dataTypeName = null;
-							if ($obj->HasInstanceProperty($propDef->Name))
-							{
-								$dataTypeName = $obj->GetInstanceProperty($propDef->Name)->DataType->Name;
-							}
-							
-							$value = $this->XquizitLoadPropertyValueFromJSON($propDef, $obj, false, $filename, $dataTypeName);
-							
-							if (!$obj->HasInstanceProperty($propDef->Name))
-							{
-								if ($propDef->DataTypeName == null)
-								{
-									Objectify::Log("XquizIT attempted to create a new instance property without a data type name", array
-									(
-										"Property Name" => $propDef->Name,
-										"Object Name" => $obj->Name,
-										"XquizIT Source File Name" => $filename
-									));
-									continue;
-								}
-								$property = $obj->CreateInstanceProperty($propDef->Name, DataType::GetByName($propDef->DataTypeName), $value);
-							}
-							else
-							{
-								$property = $obj->GetInstanceProperty($propDef->Name, false);
-							}
-						}
-					}
-					
 					if (isset($objdef->Instances))
 					{
 						foreach ($objdef->Instances as $instDef)
@@ -444,224 +350,6 @@
 			}
 			
 			return $retval;
-		}
-		
-		private function XquizitLoadPropertyValueFromJSON($propDef, $obj, $isInstanceProperty, $filename, $dataTypeName = null)
-		{
-			if (!isset($propDef->Value)) return null;
-			$value = null;
-			
-			if ($dataTypeName == null) $dataTypeName = $propDef->DataTypeName;
-
-			$validObjects = null;
-			switch ($dataTypeName)
-			{
-				case "SingleInstance":
-				case "MultipleInstance":
-				{					
-					if (isset($propDef->Value->ValidObjects))
-					{
-						$validObjects = array();
-						foreach ($propDef->Value->ValidObjects as $validObject)
-						{
-							if (isset($validObject->Name))
-							{
-								$validObjects[] = TenantObject::GetByName($validObject->Name);
-							}
-							else if (isset($validObject->ID))
-							{
-								$id = Objectify::SanitizeGlobalIdentifier($validObject->ID);
-								$validObjects[] = TenantObject::GetByGlobalIdentifier($id);
-							}
-						}
-					}
-					else
-					{
-						$op = null;
-						if ($isInstanceProperty)
-						{
-							$op = $obj->GetInstanceProperty($propDef->Name);						}
-						else
-						{
-							$op = $obj->GetProperty($propDef->Name);
-						}
-						$className = get_class($op->DefaultValue);
-						if ($className == "Objectify\\Objects\\MultipleInstanceProperty"
-								|| $className == "Objectify\\Objects\\SingleInstanceProperty")
-						{
-							$validObjects = $op->DefaultValue->ValidObjects;
-						}
-					}
-					break;
-				}
-			}
-			
-			switch ($dataTypeName)
-			{
-				case "SingleInstance":
-				{
-					$instance = null;
-					
-					if (isset($propDef->Value->Instance))
-					{
-						$id = Objectify::SanitizeGlobalIdentifier($propDef->Value->Instance);
-						$instance = Instance::GetByGlobalIdentifier($id);
-					}
-					
-					$value = new SingleInstanceProperty($instance, $validObjects);
-					break;
-				}
-				case "MultipleInstance":
-				{
-					$instances = array();
-					if (isset($propDef->Value->Instances))
-					{
-						foreach ($propDef->Value->Instances as $instId)
-						{
-							$id = Objectify::SanitizeGlobalIdentifier($instId);
-							$instances[] = Instance::GetByGlobalIdentifier($id);
-						}
-					}
-					
-					$value = new MultipleInstanceProperty($instances, $validObjects);
-					break;
-				}
-				case "ObjectReference":
-				{
-					$value = TenantObject::GetByName($propDef->Value->Name);
-					break;
-				}
-				default:
-				{
-					$value = $propDef->Value;
-					break;
-				}
-			}
-			return $value;
-		}
-		
-		/**
-		 * Loads a property value from a tag in an Xquizit Markup Language file.
-		 * @param MarkupTagElement $tag
-		 * @param TenantObject $obj
-		 * @param boolean $isInstanceProperty
-		 * @param string $filename
-		 */
-		private function XquizitLoadPropertyValueFromTag($tag, $obj, $isInstanceProperty, $filename)
-		{
-			$attPropertyName = $tag->GetAttribute("Name");
-			$attPropertyValue = $tag->GetAttribute("Value");
-			$value = null;
-			if ($attPropertyValue != null)
-			{
-				$value = $attPropertyValue->Value;
-			}
-			else
-			{
-				$elemPropertyValue = $tag->GetElement(0);
-				if ($elemPropertyValue == null) return null;
-				
-				$validObjects = null;
-				
-				$elemValidObjects = $elemPropertyValue->GetElement("ValidObjects");
-				if ($elemValidObjects != null)
-				{
-					$validObjects = array();
-						
-					$elemValidObjectsItems = $elemValidObjects->GetElements();
-					foreach ($elemValidObjectsItems as $elemValidObjectsItem)
-					{
-						$attName = $elemValidObjectsItem->GetAttribute("Name");
-						$validObjects[] = TenantObject::GetByName($attName->Value);
-					}
-				}
-				else 
-				{
-					if ($obj != null)
-					{
-						$prop = null;
-						if ($isInstanceProperty)
-						{
-							$prop = $obj->GetInstanceProperty($attPropertyName->Value);
-						}
-						else
-						{
-							$prop = $obj->GetProperty($attPropertyName->Value);
-						}
-						
-						if ($prop != null && $prop->DefaultValue != null)
-						{
-							$className = get_class($prop->DefaultValue);
-							if ($className == "Objectify\\Objects\\MultipleInstanceProperty"
-									|| $className == "Objectify\\Objects\\SingleInstanceProperty")
-							{
-								$validObjects = $prop->DefaultValue->ValidObjects;
-							}
-						}
-					}
-				}
-				
-				if ($validObjects == null)
-				{
-					Objectify::Log("XquizIT warning - instance property defined with no valid objects", array
-					(
-						"Property Name" => $attPropertyName->Value,
-						"Object Name" => $obj->Name,
-						"XquizIT Source File Name" => $filename,
-						"Data Type Name" => $elemPropertyValue->Name
-					));
-				}
-				
-				switch ($elemPropertyValue->Name)
-				{
-					case "MultipleInstancePropertyValue":
-					{
-						$instances = null;
-						
-						$elemInstances = $elemPropertyValue->GetElement("Instances");
-						if ($elemInstances != null)
-						{
-							$instances = array();
-			
-							$elemInstancesItems = $elemInstances->GetElements();
-							foreach ($elemInstancesItems as $elemInstance)
-							{
-								$attID = $elemInstance->GetAttribute("ID");
-								$instances[] = Instance::GetByGlobalIdentifier($attID->Value);
-							}
-						}
-			
-						$value = new MultipleInstanceProperty($instances, $validObjects);
-						break;
-					}
-					case "SingleInstancePropertyValue":
-					{
-						$instance = null;
-						
-						$elemInstance = $elemPropertyValue->GetElement("Instance");
-						if ($elemInstance != null)
-						{
-							$attID = $elemInstance->GetAttribute("ID");
-							$instance = Instance::GetByGlobalIdentifier($attID->Value);
-						}
-						
-						$value = new SingleInstanceProperty($instance, $validObjects);
-						break;
-					}
-					default:
-					{
-						Objectify::Log("XquizIT did not know how to parse this data type", array
-						(
-							"Property Name" => $attPropertyName->Value,
-							"Object Name" => $obj->Name,
-							"XquizIT Source File Name" => $filename,
-							"Data Type Name" => $elemPropertyValue->Name
-						));
-						break;
-					}
-				}
-			}
-			return $value;
 		}
 		
 		/**
@@ -845,8 +533,6 @@
 					
 					$instDefaultUser = $this->CreateDefaultUser($Administrator_UserName, $Administrator_PasswordHash, $Administrator_PasswordSalt, "System Administrator");
 					$instDefaultTenant = $this->CreateDefaultTenant("default");
-					
-					// $this->CreateDefaultSecurityPrivilegesAndGroups();
 					
 					$objs = TenantObject::Get();
 					$instrel_Class__has_owner__User = KnownRelationships::get___Class__has_owner__User();
