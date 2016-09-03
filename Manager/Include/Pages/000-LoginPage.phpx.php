@@ -27,11 +27,7 @@
 			$objTenant = KnownObjects::get___Tenant();
 			if ($objTenant != null)
 			{
-				$instTenants = $objTenant->GetInstanceUsingAttributes(array
-				(
-					new TenantObjectInstancePropertyValue("Name", System::GetTenantName())
-				));
-				$instTenant = $instTenants[0];
+				$instTenant = $objTenant->GetInstances()[0];
 				
 				$litTenantType = $e->RenderingPage->GetControlByID("litTenantType");
 				$litTenantType->Value = Objectify::GenerateTenantBadgeHTML($instTenant);
