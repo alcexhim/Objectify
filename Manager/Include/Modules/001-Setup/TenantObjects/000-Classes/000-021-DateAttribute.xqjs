@@ -41,6 +41,124 @@
 						"{6894DC7E-F471-4F5C-88E6-B8016259817F}"
 					]
 				}
+			],
+			"Instances":
+			[
+				{
+					"ID": "{BA83E910-2B69-4056-8D4C-D7E363A7CB62}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+							"Value": "Date"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Date"
+								}
+							]
+						}
+					]
+				},
+				{
+					"ID": "{F23CD242-64DB-4115-AB57-E9C70B0A38DC}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+							"Value": "StartDate"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Start Date"
+								}
+							]
+						}
+					]
+				},
+				{
+					"ID": "{B3AED59A-1977-4CE4-A2F9-891A1CACDEB8}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+							"Value": "EndDate"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "End Date"
+								}
+							]
+						}
+					]
+				},
+				{
+					"ID": "{0DD670AF-498D-4FEC-A2CF-20E3E56EB732}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+							"Value": "CreationDate"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Date Created"
+								}
+							]
+						}
+					]
+				},
+				{
+					"ID": "{499BEAFE-7DF7-4E31-80E0-E881C919E366}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+							"Value": "EffectiveDate"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Effective Date"
+								}
+							]
+						}
+					]
+				}
 			]
 		}
 	]
