@@ -5,9 +5,10 @@
 	use Phast\CancelEventArgs;
 	use Phast\Parser\PhastPage;
 	
+	use Objectify\Objects\KnownAttributes;
 	use Objectify\Objects\KnownObjects;
 	use Objectify\Objects\User;
-				
+	
 	class DefaultPage extends PhastPage
 	{
 		public function OnInitializing(CancelEventArgs $e)
@@ -27,7 +28,7 @@
 				}
 			}
 			
-			$propDefaultRedirectURL = $instTenant->GetAttributeValue("DefaultRedirectURL");
+			$propDefaultRedirectURL = $instTenant->GetAttributeValue(KnownAttributes::get___Text___Default_Redirect_URL());
 			if ($propDefaultRedirectURL != null)
 			{
 				System::Redirect($propDefaultRedirectURL);

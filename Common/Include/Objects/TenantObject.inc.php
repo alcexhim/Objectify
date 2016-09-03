@@ -517,7 +517,7 @@
 			foreach ($atts as $att)
 			{
 				foreach ($parameters as $parm) {
-					if ($att->GetAttributeValue("Name") == $parm->Property) {
+					if ($att->GetAttributeValue(KnownAttributes::get___Text___Name()) == $parm->Property) {
 						foreach ($insts as $inst) {	
 							if ($inst->GetAttributeValue($att) == $parm->Value) {
 								$retval[] = $inst;

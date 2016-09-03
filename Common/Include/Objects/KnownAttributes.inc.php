@@ -3,6 +3,18 @@
 	
 	class KnownAttributes
 	{
+		const GUID___Attribute___Text___Name = "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}";
+		
+		private static $Attribute___Text___Name;
+		public static function get___Text___Name()
+		{
+			if (KnownAttributes::$Attribute___Text___Name == null)
+			{
+				KnownAttributes::$Attribute___Text___Name = Instance::GetByGlobalIdentifier(KnownAttributes::GUID___Attribute___Text___Name);
+			}
+			return KnownAttributes::$Attribute___Text___Name;
+		}
+		
 		const GUID___Attribute___Text___Value = "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}";
 		
 		private static $Attribute___Text___Value;
@@ -105,6 +117,19 @@
 				KnownAttributes::$Attribute___Boolean___BeginAGroup = Instance::GetByGlobalIdentifier(KnownAttributes::GUID___Attribute___Boolean___BeginAGroup);
 			}
 			return KnownAttributes::$Attribute___Boolean___BeginAGroup;
+		}
+		
+		
+		const GUID___Attribute___Text___Default_Redirect_URL = "{A1D39058-E934-4DBC-9179-EFAECFDD8B48}";
+		
+		private static $Attribute___Text___Default_Redirect_URL;
+		public static function get___Text___Default_Redirect_URL()
+		{
+			if (KnownAttributes::$Attribute___Text___Default_Redirect_URL == null)
+			{
+				KnownAttributes::$Attribute___Text___Default_Redirect_URL = Instance::GetByGlobalIdentifier(KnownAttributes::GUID___Attribute___Text___Default_Redirect_URL);
+			}
+			return KnownAttributes::$Attribute___Text___Default_Redirect_URL;
 		}
 		
 	}
