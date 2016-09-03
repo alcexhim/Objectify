@@ -121,6 +121,12 @@
 		
 		public static function Create($name, $globalIdentifier = null, $parentTenant = null)
 		{
+			if (Tenant::GetByName($name) != null)
+			{
+				// prevent creation of tenants with same name
+				return false;
+			}
+			
 			$pdo = DataSystem::GetPDO();
 			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "Tenants (tenant_Name, tenant_GlobalIdentifier, tenant_ParentTenantID) VALUES (:tenant_Name, :tenant_GlobalIdentifier, :tenant_ParentTenantID)";
 			
