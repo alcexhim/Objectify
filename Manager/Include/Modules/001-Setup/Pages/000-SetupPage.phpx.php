@@ -598,6 +598,21 @@
 						$instThisClass->SetAttributeValue($instAttribute_Name, $obj->Name);
 					}
 					
+					// once all attribute value updates are completed, notify that xq-environments was the
+					// user that did the updating
+					$query = "UPDATE " . System::GetConfigurationValue("Database.TablePrefix") . "AttributeValues SET "
+						. "attval_UserTenantID = :attval_UserTenantID, "
+						. "attval_UserObjectID = :attval_UserObjectID, "
+						. "attval_UserInstanceID = :attval_UserInstanceID";
+					
+					$statement = $pdo->prepare($query);
+					$statement->execute(array
+					(
+						":attval_UserTenantID" => 1,
+						":attval_UserObjectID" => $inst_xq_environments->ParentObject->ID,
+						":attval_UserInstanceID" => $inst_xq_environments->ID
+					));
+					
 					echo("{");
 					echo("\"Result\": \"Success\"");
 					echo("}");
