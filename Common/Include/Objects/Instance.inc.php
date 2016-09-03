@@ -14,6 +14,11 @@
 		 */
 		public $ID;
 		/**
+		 * The tenant on which this instance is defined.
+		 * @var Tenant
+		 */
+		public $Tenant;
+		/**
 		 * The parent TenantObject of which this is an instance.
 		 * @var TenantObject
 		 */
@@ -202,11 +207,15 @@
 			(
 				":attval_TenantID" => $this->ParentObject->Tenant->ID,
 				":attval_InstanceID" => $this->ID,
+				// ":attval_AttributeTenantID" => $attribute->Tenant->ID,
+				":attval_AttributeObjectID" => $attribute->ParentObject->ID,
 				":attval_AttributeInstanceID" => $attribute->ID
 			);
 			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "AttributeValues WHERE "
 				. "attval_TenantID = :attval_TenantID"
 				. " AND attval_InstanceID = :attval_InstanceID"
+				// . " AND attval_AttributeTenantID = :attval_AttributeTenantID"
+				. " AND attval_AttributeObjectID = :attval_AttributeObjectID"
 				. " AND attval_AttributeInstanceID = :attval_AttributeInstanceID";
 
 			if ($effectiveDateTime == null) $effectiveDateTime = date("Y-m-d H:i:s");
@@ -284,9 +293,9 @@
 			
 			$pdo = DataSystem::GetPDO();
 			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "AttributeValues ("
-				. "attval_TenantID, attval_AttributeInstanceID, attval_InstanceID, attval_EffectiveDateTime, attval_UserInstanceID, attval_Value"
+				. "attval_TenantID, attval_AttributeTenantID, attval_AttributeObjectID, attval_AttributeInstanceID, attval_InstanceID, attval_EffectiveDateTime, attval_UserInstanceID, attval_Value"
 				. ") VALUES ("
-				. ":attval_TenantID, :attval_AttributeInstanceID, :attval_InstanceID, NOW(), :attval_UserInstanceID, :attval_Value"
+				. ":attval_TenantID, :attval_AttributeTenantID, :attval_AttributeObjectID, :attval_AttributeInstanceID, :attval_InstanceID, NOW(), :attval_UserInstanceID, :attval_Value"
 				. ")";
 			
 			$user = User::GetCurrent();
@@ -295,6 +304,8 @@
 			$result = $statement->execute(array
 			(
 				":attval_TenantID" => $this->ParentObject->Tenant->ID,
+				":attval_AttributeTenantID" => ($attribute->Tenant == null ? null : $attribute->Tenant->ID),
+				":attval_AttributeObjectID" => $attribute->ParentObject->ID,
 				":attval_AttributeInstanceID" => $attribute->ID,
 				":attval_InstanceID" => $this->ID,
 				":attval_UserInstanceID" => ($user == null ? null : $user->ID),
