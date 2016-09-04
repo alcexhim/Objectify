@@ -49,7 +49,7 @@ use Phast\Data\DataSystem;
 		public function GetDestinationInstances()
 		{
 			$pdo = DataSystem::GetPDO();
-			$query = "SELECT target_DestinationInstanceID FROM " . System::GetConfigurationValue("Database.TablePrefix") . "RelationshipTargets"
+			$query = "SELECT target_DestinationTenantID, target_DestinationObjectID, target_DestinationInstanceID FROM " . System::GetConfigurationValue("Database.TablePrefix") . "RelationshipTargets"
 				. " WHERE " . System::GetConfigurationValue("Database.TablePrefix") . "RelationshipTargets.target_RelationshipID = :target_RelationshipID"
 				. " ORDER BY target_Order";
 			
@@ -64,7 +64,7 @@ use Phast\Data\DataSystem;
 			for ($i = 0; $i < $count; $i++)
 			{
 				$values = $statement->fetch(PDO::FETCH_ASSOC);
-				$item = Instance::GetByID($values["target_DestinationInstanceID"]);
+				$item = Instance::GetByID($values["target_DestinationInstanceID"], $values["target_DestinationObjectID"]);
 				$retval[] = $item;
 			}
 			return $retval;
@@ -122,11 +122,13 @@ use Phast\Data\DataSystem;
 						}
 					}
 					
-					$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "RelationshipTargets (target_RelationshipID, target_DestinationInstanceID, target_Order) VALUES (:target_RelationshipID, :target_DestinationInstanceID, :target_Order)";
+					$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "RelationshipTargets (target_RelationshipID, target_DestinationTenantID, target_DestinationObjectID, target_DestinationInstanceID, target_Order) VALUES (:target_RelationshipID, :target_DestinationTenantID, :target_DestinationObjectID, :target_DestinationInstanceID, :target_Order)";
 					$statement = $pdo->prepare($query);
 					$result = $statement->execute(array
 					(
 						":target_RelationshipID" => $this->ID,
+						":target_DestinationTenantID" => $inst->Tenant->ID,
+						":target_DestinationObjectID" => $inst->ParentObject->ID,
 						":target_DestinationInstanceID" => $inst->ID,
 						":target_Order" => ($order == null ? 0 : $order)
 					));
@@ -134,6 +136,7 @@ use Phast\Data\DataSystem;
 					if ($statement->errorCode() != 0)
 					{
 						$ei = $statement->errorInfo();
+						trigger_error("REL_ADD_TARG: " . $ei[2]);
 						Objectify::Log("Database error when trying to add a target instance to a Relationship", array
 						(
 							"Database Error Message" => $ei[2],
@@ -161,11 +164,12 @@ use Phast\Data\DataSystem;
 		public function RemoveDestinationInstance($inst)
 		{
 			$pdo = DataSystem::GetPDO();
-			$query = "DELETE FROM " . System::GetConfigurationValue("Database.TablePrefix") . "RelationshipTargets WHERE target_RelationshipID = :target_RelationshipID AND target_DestinationInstanceID = :target_DestinationInstanceID";
+			$query = "DELETE FROM " . System::GetConfigurationValue("Database.TablePrefix") . "RelationshipTargets WHERE target_RelationshipID = :target_RelationshipID AND target_DestinationObjectID = :target_DestinationObjectID AND target_DestinationInstanceID = :target_DestinationInstanceID";
 			$statement = $pdo->prepare($query);
 			$result = $statement->execute(array
 			(
 				":target_RelationshipID" => $this->ID,
+				":target_DestinationObjectID" => $inst->ParentObject->ID,
 				":target_DestinationInstanceID" => $inst->ID
 			));
 			if ($statement->errorCode() === 0) return true;
@@ -177,8 +181,8 @@ use Phast\Data\DataSystem;
 			$item = new Relationship();
 			$item->ID = $values["relationship_ID"];
 			$item->Tenant = Tenant::GetByID($values["relationship_TenantID"]);
-			$item->RelationshipInstance = Instance::GetByID($values["relationship_RelationshipInstanceID"]);
-			$item->SourceInstance = Instance::GetByID($values["relationship_SourceInstanceID"]);
+			$item->RelationshipInstance = Instance::GetByID($values["relationship_RelationshipInstanceID"], 3);
+			$item->SourceInstance = Instance::GetByID($values["relationship_SourceInstanceID"], $values["relationship_SourceObjectID"]);
 			// $item->IsSingular = ($values["relationship_IsSingular"] == 1);
 			return $item;
 		}
@@ -231,13 +235,16 @@ use Phast\Data\DataSystem;
 			$pdo = DataSystem::GetPDO();
 			$paramz = array
 			(
+				":relationship_SourceObjectID" => $inst->ParentObject->ID,
 				":relationship_SourceInstanceID" => $inst->ID
 			);
-			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Relationships WHERE (relationship_SourceInstanceID = :relationship_SourceInstanceID";
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Relationships WHERE (relationship_SourceObjectID = :relationship_SourceObjectID AND relationship_SourceInstanceID = :relationship_SourceInstanceID";
+			/*
 			if ($includeParentObjects)
 			{
 				self::Build_Get_Relationship_Query($query, $paramz, TenantObject::GetByGlobalIdentifier($inst->GlobalIdentifier), $maxParentObjectLevels);
 			}
+			*/
 			$query .= ") AND (:relationship_RelationshipInstanceID IS NULL OR relationship_RelationshipInstanceID = :relationship_RelationshipInstanceID)";
 			
 			if ($relationshipInstance != null)
@@ -340,12 +347,13 @@ use Phast\Data\DataSystem;
 			}
 			
 			$pdo = DataSystem::GetPDO();
-			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "Relationships (relationship_TenantID, relationship_RelationshipInstanceID, relationship_SourceInstanceID) VALUES (:relationship_TenantID, :relationship_RelationshipInstanceID, :relationship_SourceInstanceID)";
+			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "Relationships (relationship_TenantID, relationship_RelationshipInstanceID, relationship_SourceObjectID, relationship_SourceInstanceID) VALUES (:relationship_TenantID, :relationship_RelationshipInstanceID, :relationship_SourceObjectID, :relationship_SourceInstanceID)";
 			$statement = $pdo->prepare($query);
 			$result = $statement->execute(array
 			(
-				":relationship_TenantID" => $tenant->ID,
 				":relationship_RelationshipInstanceID" => $relationshipInstance->ID,
+				":relationship_TenantID" => $tenant->ID,
+				":relationship_SourceObjectID" => $sourceInstance->ParentObject->ID,
 				":relationship_SourceInstanceID" => $sourceInstance->ID
 			));
 			
@@ -357,8 +365,8 @@ use Phast\Data\DataSystem;
 					"Database Error Message" => $ei[2],
 					"Database Error Code" => $ei[1],
 					"Query" => $query,
-					"Relationship Instance ID" => $relationshipInstance->ID,
-					"Source Instance ID" => $sourceInstance->ID
+					"Relationship Instance ID" => $relationshipInstance->GetInstanceID(),
+					"Source Instance ID" => $sourceInstance->GetInstanceID()
 				));
 				return false;
 			}

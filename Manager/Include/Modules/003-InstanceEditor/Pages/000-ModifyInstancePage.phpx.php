@@ -22,7 +22,7 @@
 		{
 			$iid = $this->Page->GetPathVariableValue("instanceID");
 			$iidParts = explode("$", $iid);
-			$inst = Instance::GetByID($iidParts[1]);
+			$inst = Instance::GetByID($iidParts[1], $iidParts[0]);
 			
 			$idwMain = $e->RenderingPage->GetControlByID("idwMain");
 			$idwMain->ShowURL = false;

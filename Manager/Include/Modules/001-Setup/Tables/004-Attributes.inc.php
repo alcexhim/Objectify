@@ -15,9 +15,10 @@
 	(
 		// 			$name, $dataType, $size, $value, $allowNull, $primaryKey, $autoIncrement
 		new Column("TenantID", "INT", null, null, false),
-		new Column("AttributeTenantID", "INT", null, null, true),
+		new Column("AttributeTenantID", "INT", null, null, false),
 		new Column("AttributeObjectID", "INT", null, null, false),
 		new Column("AttributeInstanceID", "INT", null, null, false),
+		new Column("ObjectID", "INT", null, null, false),
 		new Column("InstanceID", "INT", null, null, false),
 		new Column("EffectiveDateTime", "DATETIME", null, null, false),
 		new Column("UserTenantID", "INT", null, null, true),
@@ -28,22 +29,18 @@
 	$tblAttributeValues->PrimaryKey = new TableKey(array
 	(
 		new TableKeyColumn("TenantID"),
-		// new TableKeyColumn("AttributeTenantID"),
+		new TableKeyColumn("AttributeTenantID"),
 		new TableKeyColumn("AttributeObjectID"),
 		new TableKeyColumn("AttributeInstanceID"),
+		new TableKeyColumn("ObjectID"),
 		new TableKeyColumn("InstanceID"),
 		new TableKeyColumn("EffectiveDateTime")
 	));
 	$tblAttributeValues->ForeignKeys = array
 	(
-		new TableForeignKey("TenantID", new TableForeignKeyColumn($tblTenants, "ID")),
-		new TableForeignKey("AttributeTenantID", new TableForeignKeyColumn($tblTenants, "ID")),
-		new TableForeignKey("AttributeObjectID", new TableForeignKeyColumn($tblInstances, "ID")),
-		new TableForeignKey("AttributeInstanceID", new TableForeignKeyColumn($tblInstances, "ID")),
-		new TableForeignKey("UserTenantID", new TableForeignKeyColumn($tblTenants, "ID")),
-		new TableForeignKey("UserObjectID", new TableForeignKeyColumn($tblInstances, "ID")),
-		new TableForeignKey("UserInstanceID", new TableForeignKeyColumn($tblInstances, "ID")),
-		new TableForeignKey("InstanceID", new TableForeignKeyColumn($tblInstances, "ID"))
+		new TableForeignKey(array("AttributeTenantID", "AttributeObjectID", "AttributeInstanceID"), new TableForeignKeyColumn($tblInstances, array("TenantID", "ObjectID", "ID"))),
+		new TableForeignKey(array("UserTenantID", "UserObjectID", "UserInstanceID"), new TableForeignKeyColumn($tblInstances, array("TenantID", "ObjectID", "ID"))),
+		new TableForeignKey(array("TenantID", "ObjectID", "InstanceID"), new TableForeignKeyColumn($tblInstances, array("TenantID", "ObjectID", "ID")))
 	);
 	$tables[] = $tblAttributeValues;
 ?>

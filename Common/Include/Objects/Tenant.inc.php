@@ -167,20 +167,28 @@
 			return $retval;
 		}
 		
+		private $_nextObjectID;
 		public function GetNextObjectID()
 		{
-			$pdo = DataSystem::GetPDO();
-			$query = "SELECT MAX(object_ID) FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjects WHERE object_TenantID = :object_TenantID";
-			$statement = $pdo->prepare($query);
-			$result = $statement->execute(array
-			(
-				":object_TenantID" => $this->IDD
-			));
-			$count = $statement->rowCount();
-			if ($count == 0) return 0;
+			if ($this->_nextObjectID == null)
+			{
+				$pdo = DataSystem::GetPDO();
+				$query = "SELECT MAX(object_ID) FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjects WHERE object_TenantID = :object_TenantID";
+				$statement = $pdo->prepare($query);
+				$result = $statement->execute(array
+				(
+					":object_TenantID" => $this->ID
+				));
+				
+				$values = $statement->fetch(PDO::FETCH_NUM);
+				$value = $values[0];
+				
+				if ($value == null) $value = 0;
+				$this->_nextObjectID = $value;
+			}
 			
-			$values = $statement->fetch(PDO::FETCH_NUM);
-			return $values[0];
+			$this->_nextObjectID++;
+			return $this->_nextObjectID;
 		}
 		
 	}

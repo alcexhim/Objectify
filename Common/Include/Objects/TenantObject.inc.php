@@ -231,22 +231,33 @@
 			$query .= ")";
 			
 			$statement = $pdo->prepare($query);
+			
+			$objID = $tenant->GetNextObjectID();
 			$result = $statement->execute(array
 			(
-				":object_ID" => $tenant->GetNextObjectID(),
+				":object_ID" => $objID,
 				":object_TenantID" => $tenant->ID,
 				":object_Name" => $name,
 				":object_GlobalIdentifier" => $globalIdentifier
 			));
 			
-			if ($result === false) return null;
-			$obj = TenantObject::GetByName($name);
-			if ($obj == null) return null;
+			if ($result === false)
+			{
+				trigger_error("XquizIT FATAL: could not create object '" . $name . "' (1$" . $objID . ") on tenant " . $tenant->ID);
+				return null;
+			}
+			
+			$obj = TenantObject::GetByName($name, $tenant);
+			if ($obj == null)
+			{
+				trigger_error("XquizIT FATAL: could not find newly-created object '" . $name . "' (1$" . $objID . ") on tenant " . $tenant->ID);
+				return null;
+			}
 			
 			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "Instances (";
-			$query .= "instance_TenantID, instance_ObjectID, instance_GlobalIdentifier";
+			$query .= "instance_ID, instance_TenantID, instance_ObjectID, instance_GlobalIdentifier";
 			$query .= ") VALUES (";
-			$query .= ":instance_TenantID, :instance_ObjectID, :instance_GlobalIdentifier";
+			$query .= ":instance_ID, :instance_TenantID, :instance_ObjectID, :instance_GlobalIdentifier";
 			$query .= ")";
 			
 			$statement = $pdo->prepare($query);
@@ -254,6 +265,7 @@
 			(
 				":instance_TenantID" => $tenant->ID,
 				":instance_ObjectID" => 1,
+				":instance_ID" => $objID,
 				":instance_GlobalIdentifier" => $globalIdentifier
 			));
 			
@@ -284,6 +296,7 @@
 				));
 			}
 			$inst->GlobalIdentifier = $globalIdentifier;
+			$inst->Tenant = $this->Tenant;
 			$inst->Update();
 			
 			$inst->SetAttributeValue(KnownAttributes::get___Date___CreationDate(), new \DateTime());
@@ -303,7 +316,7 @@
 		public function GetNextInstanceID()
 		{
 			$pdo = DataSystem::GetPDO();
-			$query = "SELECT MAX(instance_ID) + 1 FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Instances WHERE instance_ObjectID = :instance_ObjectID AND instance_TenantID = :instance_TenantID";
+			$query = "SELECT MAX(instance_ID) FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Instances WHERE instance_ObjectID = :instance_ObjectID AND instance_TenantID = :instance_TenantID";
 			$statement = $pdo->prepare($query);
 			$result = $statement->execute(array
 			(
@@ -311,18 +324,9 @@
 				":instance_TenantID" => $this->Tenant->ID
 			));
 			
-			$count = $statement->rowCount();
-			if ($count == 0)
-			{
-				return 1;
-			}
-			else
-			{
-				$values = $statement->fetch(PDO::FETCH_NUM);
-				$instanceID = $values[0];
-				
-				return $instanceID + 1;
-			}
+			$values = $statement->fetch(PDO::FETCH_NUM);
+			$instanceID = $values[0];
+			return $instanceID + 1;
 		}
 		
 		public function CreateInstanceProperty($propertyName, $dataType, $defaultValue = null, $isRequired = false)
@@ -452,7 +456,7 @@
 		
 		public function GetThisInstance()
 		{
-			return Instance::GetByGlobalIdentifier($this->GlobalIdentifier);
+			return Instance::GetByGlobalIdentifier($this->GlobalIdentifier, $this->Tenant);
 		}
 		
 		public function GetAttribute($name)

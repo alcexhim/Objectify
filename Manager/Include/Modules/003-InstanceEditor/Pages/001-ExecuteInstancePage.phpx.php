@@ -191,7 +191,7 @@
 			$paramstr = $this->Page->GetPathVariableValue("paramstr");
 			
 			$iidParts = explode("$", $iid);
-			$inst = Instance::GetByID($iidParts[1]);
+			$inst = Instance::GetByID($iidParts[1], $iidParts[0]);
 			
 			$idwObjectTitleHeading = $e->RenderingPage->GetControlByID("idwObjectTitleHeading");
 			$idwObjectTitleHeading->CurrentInstance = $inst;
