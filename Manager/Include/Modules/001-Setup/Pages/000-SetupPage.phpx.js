@@ -24,7 +24,7 @@ window.addEventListener("load", function(e)
 				else
 				{
 					System.ClassList.Remove(document.body, "Loading");
-					alert(obj.Message);
+					alert("(" + obj.Errors[0].Code + "): " + obj.Errors[0].Message + "\r\n\r\n" + obj.Errors[0].Query);
 				}
 				cmdContinue.removeAttribute("disabled");
 			}

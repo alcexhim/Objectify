@@ -484,9 +484,7 @@
 					
 					for ($i = 0; $i < $count; $i++)
 					{
-						echo("{");
-						echo("\"Message\": \"" . DataSystem::$Errors->Items[$i]->Query . "\"");
-						echo("}");
+						echo(json_encode(DataSystem::$Errors->Items[$i]));
 						if ($i < $count - 1)
 						{
 							echo(",");
