@@ -46,26 +46,24 @@
 				
 				$paraTopText = $e->RenderingPage->GetControlByID("paraTopText");
 
-				$relsHeader = Relationship::GetBySourceInstance($instTenant, $instRel_Tenant__has_login_header_TTC);
-				if ($relsHeader != null && count($relsHeader) > 0) {
-					$relsHeaderInsts = $relsHeader[0]->GetDestinationInstances();
-					
-					// $instLoginHeaderText = $instTenant->GetPropertyValue("LoginHeaderText", "")->GetInstance();
-					$instLoginHeaderText = $relsHeaderInsts[0];
-					
-					$paraTopText->Content = $instLoginHeaderText->ToString();
+				$relHeader = $instTenant->GetRelationship($instRel_Tenant__has_login_header_TTC);
+				if ($relHeader != null) {
+					$instLoginHeaderText = $relHeader->GetDestinationInstance();
+					if ($instLoginHeaderText != null)
+					{
+						$paraTopText->Content = $instLoginHeaderText->ToString();
+					}
 				}
 				
 				$paraBottomText = $e->RenderingPage->GetControlByID("paraBottomText");
 				
-				$relsFooter = Relationship::GetBySourceInstance($instTenant, $instRel_Tenant__has_login_footer_TTC);
-				if ($relsFooter != null && count($relsFooter) > 0) {
-					$relsFooterInsts = $relsFooter[0]->GetDestinationInstances();
-					
-					// $instLoginFooterText = $instTenant->GetPropertyValue("LoginFooterText", "")->GetInstance();
-					$instLoginFooterText = $relsFooterInsts[0];
-					
-					$paraBottomText->Content = $instLoginFooterText->ToString();
+				$relFooter = $instTenant->GetRelationship($instRel_Tenant__has_login_footer_TTC);
+				if ($relFooter != null) {
+					$instLoginFooterText = $relFooter->GetDestinationInstance();
+					if ($instLoginFooterText != null)
+					{
+						$paraBottomText->Content = $instLoginFooterText->ToString();
+					}
 				}
 			}
 			
