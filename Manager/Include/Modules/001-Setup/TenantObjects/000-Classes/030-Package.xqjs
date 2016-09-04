@@ -56,8 +56,8 @@
 						},
 						{
 							"Comment": ".has destination Class `Layout`",
-							"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
 							"DestinationInstances":
 							[
 								"{BCDB6FFD-D2F2-4B63-BD7E-9C2CCD9547E0}"
@@ -87,8 +87,8 @@
 						},
 						{
 							"Comment": ".has destination Class `Package`",
-							"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
 							"DestinationInstances":
 							[
 								"{6A1F66F7-8EA6-43D1-B2AF-198F63B84710}"
@@ -97,7 +97,7 @@
 					]
 				},
 				{
-					"Comment": "Package.has ?",
+					"Comment": "Package.has Instance",
 					"ID": "{E15A97DD-2A1D-4DC0-BD6B-A957B63D9802}",
 					"AttributeValues":
 					[
@@ -119,11 +119,11 @@
 						},
 						{
 							"Comment": ".has destination Class `Instance`",
-							"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
 							"DestinationInstances":
 							[
-								""
+								"{263C4882-945F-4DE9-AED8-E0D6516D4903}"
 							]
 						}
 					]
@@ -151,8 +151,8 @@
 						},
 						{
 							"Comment": ".has destination Class `Translatable Text Constant`",
-							"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
 							"DestinationInstances":
 							[
 								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
@@ -183,8 +183,8 @@
 						},
 						{
 							"Comment": ".has destination Class `Package`",
-							"RelationshipInstance": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipInstance": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
 							"DestinationInstances":
 							[
 								"{6A1F66F7-8EA6-43D1-B2AF-198F63B84710}"
