@@ -148,6 +148,7 @@
 				switch ($instSidebarMenuItem->ParentObject->Name)
 				{
 					case "MenuItemCommand":
+					case "MenuItemInstance":
 					{
 						$mi = new MenuItemCommand();
 						
@@ -157,25 +158,41 @@
 						
 						$mi->Title = $inst->ToString();
 						
-						$relsIcon = Relationship::GetBySourceInstance($instSidebarMenuItem, KnownRelationships::get___Command_Menu_Item__has__Icon());
-						$relIcon = $relsIcon[0];
+						$relIcon = $instSidebarMenuItem->GetRelationship(KnownRelationships::get___Command_Menu_Item__has__Icon());
 						if ($relIcon != null)
 						{
-							$instIcons = $relIcon->GetDestinationInstances();
-							$instIcon = $instIcons[0];
+							$instIcon = $relIcon->GetDestinationInstance();
 							if ($instIcon != null)
 							{
 								switch ($instIcon->ParentObject->Name)
 								{
 									case "IconFontAwesome":
 									{
-										$mi->IconName = $instIcon->GetPropertyValue("IconName");
+										$mi->IconName = $instIcon->GetAttributeValue(KnownAttributes::get___Text___Name());
 										break;
 									}
 								}
 							}
 						}
-						$mi->TargetURL = $instSidebarMenuItem->GetAttributeValue("TargetURL");
+						
+						switch ($instSidebarMenuItem->ParentObject->Name)
+						{
+							case "MenuItemCommand":
+							{
+								$mi->TargetURL = $instSidebarMenuItem->GetAttributeValue("TargetURL");
+								break;
+							}
+							case "MenuItemInstance":
+							{
+								$relTarget = $instSidebarMenuItem->GetRelationship(KnownRelationships::get___Instance_Menu_Item__has_target__Instance());
+								if ($relTarget != null)
+								{
+									$instTarget = $relTarget->GetDestinationInstance();
+									$mi->TargetURL = "~/instances/execute/" . $instTarget->GetInstanceID();
+								}
+								break;
+							}
+						}
 						break;
 					}
 					case "MenuItemSeparator":

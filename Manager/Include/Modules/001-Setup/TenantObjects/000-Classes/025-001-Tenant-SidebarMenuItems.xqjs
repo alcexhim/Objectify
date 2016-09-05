@@ -11,7 +11,6 @@
 					[
 						{
 							"RelationshipID": "{65E3C87E-A2F7-4A33-9FA7-781EFA801E02}",
-							"InverseRelationshipID": "{901A5427-6344-40F4-B81C-D905EA152EB9}",
 							"Values":
 							[
 								{
@@ -28,7 +27,6 @@
 					[
 						{
 							"RelationshipID": "{65E3C87E-A2F7-4A33-9FA7-781EFA801E02}",
-							"InverseRelationshipID": "{901A5427-6344-40F4-B81C-D905EA152EB9}",
 							"Values":
 							[
 								{
@@ -81,14 +79,14 @@
 			[
 				{
 					"ID": "{80832D29-809C-45F6-8548-1F552B7E0974}",
-					"PropertyValues":
+					"Relationships":
 					[
 						{
-							"Name": "Icon",
-							"Value":
-							{
-								"Instance": "{FC73ECB7-58C7-4E3C-B916-BB0C86864A67}"
-							}
+							"RelationshipID": "{8859DAEF-01F7-46FA-8F3E-7B2F28E0A520}",
+							"DestinationInstances":
+							[
+								"{FC73ECB7-58C7-4E3C-B916-BB0C86864A67}"
+							]
 						}
 					],
 					"TranslatableValues":
@@ -114,49 +112,15 @@
 					]
 				},
 				{
-					"ID": "{E1B04FF9-5364-47B3-AC5E-300726CF3BE9}",
-					"PropertyValues":
-					[
-						{
-							"Name": "Icon",
-							"Value":
-							{
-								"Instance": "{41C8C445-A0C9-4245-A05C-3AA282A06985}"
-							}
-						}
-					],
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{65E3C87E-A2F7-4A33-9FA7-781EFA801E02}",
-							"InverseRelationshipID": "{901A5427-6344-40F4-B81C-D905EA152EB9}",
-							"Values":
-							[
-								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Objects"
-								}
-							]
-						}
-					],
-					"AttributeValues":
-					[
-						{
-							"ID": "{970F79A0-9EFE-4E7D-9286-9908C6F06A67}",
-							"Value": "~/objects"
-						}
-					]
-				},
-				{
 					"ID": "{D0AB191C-ACC2-4C68-8D2F-06C77369728B}",
-					"PropertyValues":
+					"Relationships":
 					[
 						{
-							"Name": "Icon",
-							"Value":
-							{
-								"Instance": "{FA5F164D-04AD-495A-BDFB-BD33E80E22F1}"
-							}
+							"RelationshipID": "{8859DAEF-01F7-46FA-8F3E-7B2F28E0A520}",
+							"DestinationInstances":
+							[
+								"{FA5F164D-04AD-495A-BDFB-BD33E80E22F1}"
+							]
 						}
 					],
 					"TranslatableValues":
@@ -183,14 +147,14 @@
 				},
 				{
 					"ID": "{C7C2087D-51EB-4DCD-B13A-3577CAD50FA0}",
-					"PropertyValues":
+					"Relationships":
 					[
 						{
-							"Name": "Icon",
-							"Value":
-							{
-								"Instance": "{92A5E29D-78E2-43FA-96AE-84827C441667}"
-							}
+							"RelationshipID": "{8859DAEF-01F7-46FA-8F3E-7B2F28E0A520}",
+							"DestinationInstances":
+							[
+								"{92A5E29D-78E2-43FA-96AE-84827C441667}"
+							]
 						}
 					],
 					"TranslatableValues":
@@ -217,14 +181,14 @@
 				},
 				{
 					"ID": "{529EFFF5-B967-40BA-BF07-B163BD58DFE6}",
-					"PropertyValues":
+					"Relationships":
 					[
 						{
-							"Name": "Icon",
-							"Value":
-							{
-								"Instance": "{463C1D88-D2CD-45BA-BEBA-29CFD5509E17}"
-							}
+							"RelationshipID": "{8859DAEF-01F7-46FA-8F3E-7B2F28E0A520}",
+							"DestinationInstances":
+							[
+								"{463C1D88-D2CD-45BA-BEBA-29CFD5509E17}"
+							]
 						}
 					],
 					"TranslatableValues":
@@ -246,6 +210,53 @@
 						{
 							"ID": "{970F79A0-9EFE-4E7D-9286-9908C6F06A67}",
 							"Value": "~/migrate"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "MenuItemInstance",
+			"Instances":
+			[
+				{
+					"ID": "{E1B04FF9-5364-47B3-AC5E-300726CF3BE9}",
+					"Relationships":
+					[
+						{
+							"RelationshipID": "{C599C20E-F01A-4B12-A919-5DC3B0F545C2}",
+							"DestinationInstances":
+							[
+								"{7CA0EFA9-6849-4AAE-BF81-F055C006853B}"
+							]
+						},
+						{
+							"RelationshipID": "{8859DAEF-01F7-46FA-8F3E-7B2F28E0A520}",
+							"DestinationInstances":
+							[
+								"{41C8C445-A0C9-4245-A05C-3AA282A06985}"
+							]
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{65E3C87E-A2F7-4A33-9FA7-781EFA801E02}",
+							"InverseRelationshipID": "{901A5427-6344-40F4-B81C-D905EA152EB9}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Objects"
+								}
+							]
+						}
+					],
+					"AttributeValues":
+					[
+						{
+							"ID": "{970F79A0-9EFE-4E7D-9286-9908C6F06A67}",
+							"Value": "~/objects"
 						}
 					]
 				}

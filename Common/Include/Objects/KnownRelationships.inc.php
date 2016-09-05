@@ -188,6 +188,17 @@
 			return Instance::GetByGlobalIdentifier(self::Relationship___Translatable_Text_Constant__title_for__Menu_Item_Command);
 		}
 		
+		const Relationship___Instance_Menu_Item__has_target__Instance = "{C599C20E-F01A-4B12-A919-5DC3B0F545C2}";
+		const Relationship___Instance__target_for__Instance_Menu_Item = "{579AF79B-A6BE-4316-9517-903455CE5F99}";
+		public static function get___Instance_Menu_Item__has_target__Instance()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Instance_Menu_Item__has_target__Instance);
+		}
+		public static function get___Instance__target_for__Instance_Menu_Item()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Instance__target_for__Instance_Menu_Item);
+		}
+		
 		const Relationship___Relationship__has_source__Class = "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}";
 		const Relationship___Class__source_for__Relationship = "{20FFFDE8-11A5-48D6-894B-21C6B234B811}";
 		public static function get___Relationship__has_source__Class()
