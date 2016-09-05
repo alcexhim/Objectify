@@ -1,0 +1,181 @@
+{
+	"Objects":
+	[
+		{
+			"ID": "{8EE7024D-ED87-4D99-BF21-10E09AF5566D}",
+			"Name": "ObjectSource",
+			"ParentObjects":
+			[
+				{
+					"Name": "Class"
+				}
+			],
+			"TranslatableValues":
+			[
+				{
+					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+					"Values":
+					[
+						{
+							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+							"Value": "Object Source"
+						}
+					]
+				}
+			],
+			"Relationships":
+			[
+				{
+					"Comment": "Class.has Text Attribute `Name`",
+					"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+					"DestinationInstances":
+					[
+						"{9153A637-992E-4712-ADF2-B03F0D9EDEA6}"
+					]
+				}
+			],
+			"Instances":
+			[
+				{
+					"ID": "{9547EB35-07FB-4B64-B82C-6DA1989B9165}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+							"Value": "System"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{51550210-074D-487B-B950-E3630EE81C49}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "System"
+								}
+							]
+						}
+					]
+				},
+				{
+					"ID": "{062B57B5-D728-4DF8-903A-AD79D843B5CA}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+							"Value": "Delivered"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{51550210-074D-487B-B950-E3630EE81C49}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Delivered"
+								}
+							]
+						}
+					]
+				},
+				{
+					"ID": "{63D91CCD-D196-4C3A-8609-6DF371E2406F}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+							"Value": "Custom"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{51550210-074D-487B-B950-E3630EE81C49}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Custom"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "Relationship",
+			"Instances":
+			[
+				{
+					"ID": "{B62F9B81-799B-4ABE-A4AF-29B45347DE54}",
+					"Comment": "Class.has Object Source",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Class`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Object Source`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{8EE7024D-ED87-4D99-BF21-10E09AF5566D}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{FBB9391D-C4A2-4326-9F85-7801F377253C}",
+					"Comment": "Object Source.for Class",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Object Source`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{8EE7024D-ED87-4D99-BF21-10E09AF5566D}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Class`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}
