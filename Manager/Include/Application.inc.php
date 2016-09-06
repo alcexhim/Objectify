@@ -65,7 +65,7 @@
 		}
 		if ($pdo == null) return false;
 		
-		$query = "SHOW TABLES LIKE '" . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjects'";
+		$query = "SHOW TABLES LIKE '" . System::GetConfigurationValue("Database.TablePrefix") . "Instances'";
 		$statement = $pdo->prepare($query);
 		$result = $statement->execute(array());
 		
