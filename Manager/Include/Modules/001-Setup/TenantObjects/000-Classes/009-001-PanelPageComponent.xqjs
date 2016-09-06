@@ -1,0 +1,298 @@
+{
+	"Objects":
+	[
+		{
+			"Name": "Relationship",
+			"Instances":
+			[
+				{
+					"ID": "{E5B60723-ECE4-46C8-9CD1-E2AFA8D27AF8}",
+					"Comment": "Panel Page Component.has title Translatable Text Constant",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has title"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Panel Page Component`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{D349C489-9684-4A5A-9843-B906A7F803BC}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Translatable Text Constant`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+							]
+						},
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{3A44E0FB-D396-4363-841D-59E735127358}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{3A44E0FB-D396-4363-841D-59E735127358}",
+					"Comment": "Translatable Text Constant.title for Panel Page Component",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "title for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Translatable Text Constant`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Panel Page Component`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{D349C489-9684-4A5A-9843-B906A7F803BC}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{223B4073-F417-49CD-BCA1-0E0749144B9D}",
+					"Comment": "Panel Page Component.has header Page Component",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has header"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Panel Page Component`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{D349C489-9684-4A5A-9843-B906A7F803BC}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Page Component`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{EF4D4027-6904-4773-9013-22CEDC169F00}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{38E70546-EB2F-4A2E-A2FA-9E290C1835A8}",
+					"Comment": "Page Component.header for Panel Page Component",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "header for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Page Component`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{EF4D4027-6904-4773-9013-22CEDC169F00}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Panel Page Component`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{D349C489-9684-4A5A-9843-B906A7F803BC}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{AD8C5FAE-2444-4700-896E-C5F968C0F85B}",
+					"Comment": "Panel Page Component.has content Page Component",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has content"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Panel Page Component`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{D349C489-9684-4A5A-9843-B906A7F803BC}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Page Component`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{EF4D4027-6904-4773-9013-22CEDC169F00}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{1DD64A89-9947-4BA3-85AA-12D2EAED80DC}",
+					"Comment": "Page Component.content for Panel Page Component",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "content for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Page Component`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{EF4D4027-6904-4773-9013-22CEDC169F00}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Panel Page Component`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{D349C489-9684-4A5A-9843-B906A7F803BC}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{56E339BD-6189-4BAC-AB83-999543FB8060}",
+					"Comment": "Panel Page Component.has footer Page Component",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has footer"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Panel Page Component`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{D349C489-9684-4A5A-9843-B906A7F803BC}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Page Component`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{EF4D4027-6904-4773-9013-22CEDC169F00}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{9DC77CE3-869D-4E6C-A649-7A662FB5026D}",
+					"Comment": "Page Component.footer for Panel Page Component",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "footer for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Page Component`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{EF4D4027-6904-4773-9013-22CEDC169F00}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Panel Page Component`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{D349C489-9684-4A5A-9843-B906A7F803BC}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"ID": "{D349C489-9684-4A5A-9843-B906A7F803BC}",
+			"Name": "PanelPageComponent",
+			"ParentObjects":
+			[
+				{
+					"Name": "PageComponent"
+				}
+			],
+			"TranslatableValues":
+			[
+				{
+					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+					"Values":
+					[
+						{
+							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+							"Value": "Panel Page Component"
+						}
+					]
+				}
+			]
+		}
+	]
+}
