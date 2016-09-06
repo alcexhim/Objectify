@@ -183,11 +183,14 @@
 			[
 				{
 					"ID": "{A77F672B-7F9C-4F20-B5CE-1990529407F4}",
-					"AttributeValues":
+					"Relationships":
 					[
 						{
-							"ID": "{8E4924CC-F09D-488A-80A6-7000B21510C0}",
-							"Value": "~/Images/Header.png"
+							"RelationshipID": "{481E3FBE-B82A-4C76-9DDF-D66C6BA8C590}",
+							"DestinationInstances":
+							[
+								"{E6A5D3B3-7E81-41FD-9F5C-1D460175C60E}"
+							]
 						}
 					]
 				}

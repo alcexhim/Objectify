@@ -232,7 +232,20 @@
 				case "ImagePageComponent":
 				{
 					$img = new Image();
-					$img->ImageUrl = $instPageComponent->GetAttributeValue("ImageURL");
+					
+					$relTargetFile = $instPageComponent->GetRelationship(KnownRelationships::get___Image_Page_Component__has_target__File());
+					if ($relTargetFile != null)
+					{
+						$instTargetFile = $relTargetFile->GetDestinationInstance();
+						if ($instTargetFile != null)
+						{
+							$img->ImageUrl = "data:image/png;base64," . $instTargetFile->GetAttributeValue(KnownAttributes::get___Text___Value());
+						}
+					}
+					else
+					{
+						$img->ImageUrl = $instPageComponent->GetAttributeValue("ImageURL");
+					}
 					$ctl = $img;
 					break;
 				}

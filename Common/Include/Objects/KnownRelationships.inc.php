@@ -289,6 +289,17 @@
 			return Instance::GetByGlobalIdentifier(self::Relationship___User__for__User_Login);
 		}
 		
+		const Relationship___Image_Page_Component__has_target__File = "{481E3FBE-B82A-4C76-9DDF-D66C6BA8C590}";
+		const Relationship___File__target_for__Image_Page_Component = "{C5298511-4CB0-47D2-8318-F978E9E15F06}";
+		public static function get___Image_Page_Component__has_target__File()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Image_Page_Component__has_target__File);
+		}
+		public static function get___File__target_for__Image_Page_Component()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___File__target_for__Image_Page_Component);
+		}
+		
 		const Relationship___Sequential_Container_Page_Component__has__Sequential_Container_Orientation = "{DD55F506-8718-4240-A894-21346656E804}";
 		const Relationship___Sequential_Container_Orientation__for__Sequential_Container_Page_Component = "{F8F4EBFE-605C-4F68-99F7-83AEF3FF1AF2}";
 		public static function get___Sequential_Container_Page_Component__has__Sequential_Container_Orientation()
