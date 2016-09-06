@@ -300,9 +300,16 @@
 			return Instance::GetByGlobalIdentifier(self::Relationship___Sequential_Container_Orientation__for__Sequential_Container_Page_Component);
 		}
 		
-		
-		
-		
+		const Relationship___Panel_Page_Component__has_title__Translatable_Text_Constant = "{E5B60723-ECE4-46C8-9CD1-E2AFA8D27AF8}";
+		const Relationship___Translatable_Text_Constant__title_for__Panel_Page_Component = "{3A44E0FB-D396-4363-841D-59E735127358}";
+		public static function get___Panel_Page_Component__has_title__Translatable_Text_Constant()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Panel_Page_Component__has_title__Translatable_Text_Constant);
+		}
+		public static function get___Translatable_Text_Constant__title_for__Panel_Page_Component()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Translatable_Text_Constant__title_for__Panel_Page_Component);
+		}
 
 		const Relationship___Panel_Page_Component__has_header__Page_Component = "{223B4073-F417-49CD-BCA1-0E0749144B9D}";
 		const Relationship___Page_Component__header_for__Panel_Page_Component = "{38E70546-EB2F-4A2E-A2FA-9E290C1835A8}";

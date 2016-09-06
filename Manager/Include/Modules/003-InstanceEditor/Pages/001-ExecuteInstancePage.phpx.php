@@ -18,11 +18,16 @@
 	use Phast\WebControls\Menu;
 	use Phast\WebControls\MenuItemHeader;
 	use Phast\WebControls\MenuItemCommand;
+	
+	use Phast\WebControls\Panel;
 	use Phast\WebControls\TabPage;
 	use Phast\WebControls\TabContainer;
 
 	use Phast\HTMLControl;
+	use Phast\HTMLControls\Image;
+	use Phast\HTMLControls\Paragraph;
 	use Phast\HTMLControls\HTMLControlTable;
+	use Phast\HTMLControls\Heading;
 	
 	use Phast\WebControlAttribute;
 	use Phast\WebStyleSheetRule;
@@ -43,139 +48,311 @@
 		{
 			$instPrimary = Instance::GetByInstanceID($json->Parameters[0]->Value[0]);
 			$ctl = null;
-			if ($instPageComponent->ParentObject->Name == "RelationshipEditorPageComponent")
+			
+			switch ($instPageComponent->ParentObject->Name)
 			{
-				$relHasTargetRelationship = $instPageComponent->GetRelationship(KnownRelationships::get___Relationship_Editor_Page_Component__has_target__Relationship());
-				if ($relHasTargetRelationship != null)
+				case "RelationshipEditorPageComponent":
 				{
-					$instTargetRelationship = $relHasTargetRelationship->GetDestinationInstance();
-			
-					$lv = new RelationshipListView();
-					$lv->EnableAddRemoveRows = true;
-					$lv->Instance = $instPrimary;
-					$lv->Relationship = $instTargetRelationship;
-			
-					$rel_has_Report_Column = $instPageComponent->GetRelationship(KnownRelationships::get___Relationship_Editor_Page_Component__has__Report_Column());
-					if ($rel_has_Report_Column != null)
+					$relHasTargetRelationship = $instPageComponent->GetRelationship(KnownRelationships::get___Relationship_Editor_Page_Component__has_target__Relationship());
+					if ($relHasTargetRelationship != null)
 					{
-						$instReportColumns = $rel_has_Report_Column->GetDestinationInstances();
-						$lv->ReportColumns = $instReportColumns;
-					}
-			
-					$ctl = $lv;
-				}
-			}
-			else if ($instPageComponent->ParentObject->Name == "AttributeEditorPageComponent")
-			{
-				$relHasTargetAttribute = $instPageComponent->GetRelationship(KnownRelationships::get___Attribute_Editor_Page_Component__has_target__Attribute());
-				if ($relHasTargetAttribute != null)
-				{
-					$instsTargetAttribute = $relHasTargetAttribute->GetDestinationInstances();
-			
-					$fv = new FormView();
-					foreach ($instsTargetAttribute as $instTargetAttribute)
-					{
-						switch ($instTargetAttribute->ParentObject->Name)
-						{
-							case "BooleanAttribute":
-							{
-								$fvi = new FormViewItemBoolean();
-								break;
-							}
-							case "DateAttribute":
-							{
-								$fvi = new FormViewItemDateTime();
-								break;
-							}
-							case "TextAttribute":
-							default:
-							{
-								$fvi = new FormViewItemText();
-								break;
-							}
-						}
-						
-						if ($fvi != null)
-						{
-							$fvi->ID = "fvi_" . $instTargetAttribute->GetInstanceID();
-							$fvi->Title = $instTargetAttribute->ToString();
-							$fvi->Value = $instPrimary->GetAttributeValue($instTargetAttribute);
-							$fv->Items[] = $fvi;
-						}
-					}
-					
-					$ctl = $fv;
-				}
-			}
-			else if ($instPageComponent->ParentObject->Name == "TabContainerPageComponent")
-			{
-				$relHasTabContainerTab = $instPageComponent->GetRelationship(KnownRelationships::get___Tab_Container_Page_Component__has__Tab_Container_Tab());
-				if ($relHasTabContainerTab != null)
-				{
-					$tabContainer = new TabContainer();
-					$tabContainer->ID = "TabContainer_" . $instPageComponent->GetInstanceID();
-			
-					$instTabContainerTabs = $relHasTabContainerTab->GetDestinationInstances();
-					foreach ($instTabContainerTabs as $instTabContainerTab)
-					{
-						$tab = new TabPage();
-						$tab->ID = $tabContainer->ID . "_Tab_" . $instTabContainerTab->GetInstanceID();
+						$instTargetRelationship = $relHasTargetRelationship->GetDestinationInstance();
 							
-						$relTitle = $instTabContainerTab->GetRelationship(KnownRelationships::get___Tab_Container_Tab__has_title__Translatable_Text_Constant());
-						if ($relTitle != null)
+						$lv = new RelationshipListView();
+						$lv->EnableAddRemoveRows = true;
+						$lv->Instance = $instPrimary;
+						$lv->Relationship = $instTargetRelationship;
+							
+						$rel_has_Report_Column = $instPageComponent->GetRelationship(KnownRelationships::get___Relationship_Editor_Page_Component__has__Report_Column());
+						if ($rel_has_Report_Column != null)
 						{
-							$instTitle = $relTitle->GetDestinationInstance();
-							$tab->Title = $instTitle->ToString();
+							$instReportColumns = $rel_has_Report_Column->GetDestinationInstances();
+							$lv->ReportColumns = $instReportColumns;
 						}
-						
-						$relComponents = $instTabContainerTab->GetRelationship(KnownRelationships::get___Container_Page_Component__has__Page_Component());
-						if ($relComponents != null)
+							
+						$ctl = $lv;
+					}
+					break;
+				}
+				case "AttributeEditorPageComponent":
+				{
+					$relHasTargetAttribute = $instPageComponent->GetRelationship(KnownRelationships::get___Attribute_Editor_Page_Component__has_target__Attribute());
+					if ($relHasTargetAttribute != null)
+					{
+						$instsTargetAttribute = $relHasTargetAttribute->GetDestinationInstances();
+							
+						$fv = new FormView();
+						foreach ($instsTargetAttribute as $instTargetAttribute)
 						{
-							$instComponents = $relComponents->GetDestinationInstances();
-							foreach ($instComponents as $instComponent)
+							switch ($instTargetAttribute->ParentObject->Name)
 							{
-								$ctl1 = $this->CreateControlFromPageComponent($json, $instComponent);
-								if ($ctl1 != null) $tab->Controls[] = $ctl1;
+								case "BooleanAttribute":
+								{
+									$fvi = new FormViewItemBoolean();
+									break;
+								}
+								case "DateAttribute":
+								{
+									$fvi = new FormViewItemDateTime();
+									break;
+								}
+								case "TextAttribute":
+								default:
+								{
+									$fvi = new FormViewItemText();
+									break;
+								}
+							}
+				
+							if ($fvi != null)
+							{
+								$fvi->ID = "fvi_" . $instTargetAttribute->GetInstanceID();
+								$fvi->Title = $instTargetAttribute->ToString();
+								$fvi->Value = $instPrimary->GetAttributeValue($instTargetAttribute);
+								$fv->Items[] = $fvi;
 							}
 						}
-						$tabContainer->TabPages[] = $tab;
+							
+						$ctl = $fv;
 					}
-					
-					if (count($tabContainer->TabPages) > 0)
+					break;
+				}
+				case "TabContainerPageComponent":
+				{
+					$relHasTabContainerTab = $instPageComponent->GetRelationship(KnownRelationships::get___Tab_Container_Page_Component__has__Tab_Container_Tab());
+					if ($relHasTabContainerTab != null)
 					{
-						$tabContainer->SelectedTab = $tabContainer->TabPages[0];
+						$tabContainer = new TabContainer();
+						$tabContainer->ID = "TabContainer_" . $instPageComponent->GetInstanceID();
+							
+						$instTabContainerTabs = $relHasTabContainerTab->GetDestinationInstances();
+						foreach ($instTabContainerTabs as $instTabContainerTab)
+						{
+							$tab = new TabPage();
+							$tab->ID = $tabContainer->ID . "_Tab_" . $instTabContainerTab->GetInstanceID();
+								
+							$relTitle = $instTabContainerTab->GetRelationship(KnownRelationships::get___Tab_Container_Tab__has_title__Translatable_Text_Constant());
+							if ($relTitle != null)
+							{
+								$instTitle = $relTitle->GetDestinationInstance();
+								$tab->Title = $instTitle->ToString();
+							}
+			
+							$relComponents = $instTabContainerTab->GetRelationship(KnownRelationships::get___Container_Page_Component__has__Page_Component());
+							if ($relComponents != null)
+							{
+								$instComponents = $relComponents->GetDestinationInstances();
+								foreach ($instComponents as $instComponent)
+								{
+									$ctl1 = $this->CreateControlFromPageComponent($json, $instComponent);
+									if ($ctl1 != null) $tab->Controls[] = $ctl1;
+								}
+							}
+							$tabContainer->TabPages[] = $tab;
+						}
+						
+						if (count($tabContainer->TabPages) > 0)
+						{
+							$tabContainer->SelectedTab = $tabContainer->TabPages[0];
+						}
+						$ctl = $tabContainer;
 					}
-					$ctl = $tabContainer;
+					break;
+				}
+				case "AccordionPageComponent":
+				{
+					$accordion = new Disclosure();
+					$accordion->ID = "Accordion_" . $instPageComponent->GetInstanceID();
+						
+					$relTitle = $instPageComponent->GetRelationship(KnownRelationships::get___Accordion_Page_Component__has_title__Translatable_Text_Constant());
+					if ($relTitle != null)
+					{
+						$instTitle = $relTitle->GetDestinationInstance();
+						$accordion->Title = $instTitle->ToString();
+					}
+			
+					$relComponents = $instPageComponent->GetRelationship(KnownRelationships::get___Container_Page_Component__has__Page_Component());
+					if ($relComponents != null)
+					{
+						$instComponents = $relComponents->GetDestinationInstances();
+						foreach ($instComponents as $instComponent)
+						{
+							$ctl1 = $this->CreateControlFromPageComponent($json, $instComponent);
+							if ($ctl1 != null) $accordion->Controls[] = $ctl1;
+						}
+					}
+					$ctl = $accordion;
+					break;
+				}
+				case "ParagraphPageComponent":
+				{
+					$para = new Paragraph();
+					
+					$rel = $instPageComponent->GetRelationship(KnownRelationships::get___Paragraph_Page_Component__has_text__Translatable_Text_Constant());
+					if ($rel != null)
+					{
+						$inst = $rel->GetDestinationInstance();
+						$para->Content = $inst->ToString();
+					}
+					$ctl = $para;
+					break;
+				}
+				case "HeadingPageComponent":
+				{
+					$hdr = new Heading();
+					$hdr->Level = $instPageComponent->GetAttributeValue("Level");
+			
+					$rel = $instPageComponent->GetRelationship(KnownRelationships::get___Heading_Page_Component__has_text__Translatable_Text_Constant());
+					if ($rel != null)
+					{
+						$inst = $rel->GetDestinationInstance();
+						if ($inst != null)
+						{
+							$hdr->Content = $inst->ToString();
+						}
+					}
+					$ctl = $hdr;
+					break;
+				}
+				case "PanelPageComponent":
+				{
+					$pnl = new Panel();
+					$relTitle = $instPageComponent->GetRelationship(KnownRelationships::get___Panel_Page_Component__has_title__Translatable_Text_Constant());
+					if ($relTitle != null)
+					{
+						$instTitle = $relTitle->GetDestinationInstance();
+						if ($instTitle != null)
+						{
+							$pnl->Title = $instTitle->ToString();
+						}
+					}
+					$ctl = $pnl;
+					break;
+				}
+				case "ImagePageComponent":
+				{
+					$img = new Image();
+					$img->ImageUrl = $instPageComponent->GetAttributeValue("ImageURL");
+					$ctl = $img;
+					break;
+				}
+				case "SequentialContainerPageComponent":
+				{
+					$orientation = "Vertical";
+					$rel = $instPageComponent->GetRelationship(KnownRelationships::get___Sequential_Container_Page_Component__has__Sequential_Container_Orientation());
+					if ($rel != null)
+					{
+						$inst = $rel->GetDestinationInstance();
+						if ($inst != null)
+						{
+								
+						}
+					}
+						
+					$divSequentialContainer = new HTMLControl("div");
+					$divSequentialContainer->ClassList[] = "SequentialContainer";
+					$divSequentialContainer->Attributes[] = new WebControlAttribute("data-orientation", $orientation);
+						
+					$ctl = $divSequentialContainer;
+					break;
+				}
+				default:
+				{
+					$comment = new HTMLControl("div");
+					$comment->Content = print_r($instPageComponent, true);
+					$ctl = $comment;
+					break;
 				}
 			}
-			else if ($instPageComponent->ParentObject->Name == "AccordionPageComponent")
+			
+			switch ($instPageComponent->ParentObject->Name)
 			{
-				$accordion = new Disclosure();
-				$accordion->ID = "Accordion_" . $instPageComponent->GetInstanceID();
-					
-				$relTitle = $instPageComponent->GetRelationship(KnownRelationships::get___Accordion_Page_Component__has_title__Translatable_Text_Constant());
-				if ($relTitle != null)
+				case "PanelPageComponent":
 				{
-					$instTitle = $relTitle->GetDestinationInstance();
-					$accordion->Title = $instTitle->ToString();
-				}
-	
-				$relComponents = $instPageComponent->GetRelationship(KnownRelationships::get___Container_Page_Component__has__Page_Component());
-				if ($relComponents != null)
-				{
-					$instComponents = $relComponents->GetDestinationInstances();
-					foreach ($instComponents as $instComponent)
+					$relHeaderComponents = $instPageComponent->GetRelationship(KnownRelationships::get___Panel_Page_Component__has_header__Page_Component());
+					if ($relHeaderComponents != null)
 					{
-						$ctl1 = $this->CreateControlFromPageComponent($json, $instComponent);
-						if ($ctl1 != null) $accordion->Controls[] = $ctl1;
+						$instHeaderComponents = $relHeaderComponents->GetDestinationInstances();
+						foreach ($instHeaderComponents as $instComponent1)
+						{
+							$ctl1 = $this->CreateControlFromPageComponent($json, $instComponent1);
+							$ctl->HeaderControls[] = $ctl1;
+						}
 					}
+
+					$relContentComponents = $instPageComponent->GetRelationship(KnownRelationships::get___Panel_Page_Component__has_content__Page_Component());
+					if ($relContentComponents != null)
+					{
+						$instContentComponents = $relContentComponents->GetDestinationInstances();
+						foreach ($instContentComponents as $instComponent1)
+						{
+							$ctl1 = $this->CreateControlFromPageComponent($json, $instComponent1);
+							$ctl->ContentControls[] = $ctl1;
+						}
+					}
+
+					$relFooterComponents = $instPageComponent->GetRelationship(KnownRelationships::get___Panel_Page_Component__has_footer__Page_Component());
+					if ($relFooterComponents != null)
+					{
+						$instFooterComponents = $relFooterComponents->GetDestinationInstances();
+						foreach ($instFooterComponents as $instComponent1)
+						{
+							$ctl1 = $this->CreateControlFromPageComponent($json, $instComponent1);
+							$ctl->FooterControls[] = $ctl1;
+						}
+					}
+					break;
 				}
-				$ctl = $accordion;
+				default:
+				{
+					$relComponents = $instPageComponent->GetRelationship(KnownRelationships::get___Container_Page_Component__has__Page_Component());
+					if ($relComponents != null)
+					{
+						$instComponents = $relComponents->GetDestinationInstances();
+						foreach ($instComponents as $instComponent1)
+						{
+							$ctl1 = $this->CreateControlFromPageComponent($json, $instComponent1);
+							$ctl->Controls[] = $ctl1;
+						}
+					}
+					break;
+				}
 			}
+			
 			if ($ctl != null)
 			{
 				$ctl->ClassList[] = "Mocha-Instance";
 				$ctl->Attributes[] = new WebControlAttribute("data-instance-id", $instPageComponent->GetInstanceID());
+				
+				$relStyles = $instPageComponent->GetRelationship(KnownRelationships::get___Page_Component__has__Style());
+				if ($relStyles != null)
+				{
+					$instStyles = $relStyles->GetDestinationInstances();
+					foreach ($instStyles as $instStyle)
+					{
+						$ctl->ClassList[] = $instStyle->GetAttributeValue(KnownAttributes::get___Text___CSSClassName());
+				
+						$rel = $instStyle->GetRelationship(KnownRelationships::get___Style__has__Style_Rule());
+						if ($rel != null)
+						{
+							$instRules = $rel->GetDestinationInstances();
+							foreach ($instRules as $instRule)
+							{
+								$relStyleProperty = $instRule->GetRelationship(KnownRelationships::get___Style_Rule__has__Style_Property());
+								if ($relStyleProperty != null)
+								{
+									$instStyleProperty = $relStyleProperty->GetDestinationInstance();
+									if ($instStyleProperty != null)
+									{
+										$cssPropertyName = $instStyleProperty->GetAttributeValue(KnownAttributes::get___Text___CSSValue());
+										$cssPropertyValue = $instRule->GetAttributeValue(KnownAttributes::get___Text___Value());
+										$ctl->StyleRules[] = new WebStyleSheetRule($cssPropertyName, $cssPropertyValue);
+									}
+								}
+							}
+						}
+					}
+				}
 			}
 			return $ctl;
 		}
@@ -333,6 +510,31 @@
 			if ($inst->ParentObject->Name == "UITask")
 			{
 				// execute teh report
+			}
+			else if ($inst->ParentObject->Name == "Page")
+			{
+				$relStyles = $inst->GetRelationship(KnownRelationships::get___Page__has__Style());
+				if ($relStyles != null)
+				{
+					$instStyles = $relStyles->GetDestinationInstances();
+					foreach ($instStyles as $instStyle)
+					{
+						$propClassName = $instStyle->GetAttributeValue(KnownAttributes::get___Text___CSSClassName());
+						if ($propClassName !== null) $this->Page->ClassList[] = $propClassName;
+					}
+				}
+				
+				$relHasPageComponent = $inst->GetRelationship(KnownRelationships::get___Page__has__Page_Component());
+				if ($relHasPageComponent != null)
+				{
+					$instPageComponents = $relHasPageComponent->GetDestinationInstances();
+					foreach ($instPageComponents as $instPageComponent)
+					{
+						$ctl = $this->CreateControlFromPageComponent($json, $instPageComponent);
+						if ($ctl != null) $layerContent->Controls[] = $ctl;
+					}
+				}
+				$layerFooter->EnableRender = false;
 			}
 			else if ($inst->ParentObject->Name == "RedirectTask")
 			{

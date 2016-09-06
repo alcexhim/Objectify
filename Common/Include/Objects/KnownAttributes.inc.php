@@ -38,6 +38,18 @@
 			}
 			return KnownAttributes::$Attribute___Text___CSSValue;
 		}
+
+		const GUID___Attribute___Text___CSSClassName = "{0F42BCB6-549A-4407-BB91-DD147443F68F}";
+		
+		private static $Attribute___Text___CSSClassName;
+		public static function get___Text___CSSClassName()
+		{
+			if (KnownAttributes::$Attribute___Text___CSSClassName == null)
+			{
+				KnownAttributes::$Attribute___Text___CSSClassName = Instance::GetByGlobalIdentifier(KnownAttributes::GUID___Attribute___Text___CSSClassName);
+			}
+			return KnownAttributes::$Attribute___Text___CSSClassName;
+		}
 		
 		const GUID___Attribute___Boolean___Render_as_Text = "{15DD9E49-AB6D-44F0-9039-27AF81736406}";
 		
