@@ -29,6 +29,7 @@ use Phast\WebControls\MenuItemCommand;
 			$div->ClassList[] = "ListViewControls";
 			
 			$cmdOptions = new Button();
+			$cmdOptions->DropDownDirection = "right";
 			$cmdOptions->DropDownRequired = true;
 			$cmdOptions->IconName = "cog";
 			
