@@ -693,6 +693,20 @@
 							"Value": "LoginPage" 
 						}
 					],
+					"TranslatableValues":
+					[
+						{
+							"Comment": ".has title",
+							"RelationshipID": "{7BE6522A-4BE8-4CD3-8701-C8353F7DF630}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Login Page"
+								}
+							]
+						}
+					],
 					"Relationships":
 					[
 						{
