@@ -1,0 +1,725 @@
+{
+	"Objects":
+	[
+		{
+			"Name": "StyleRule",
+			"Instances":
+			[
+				{
+					"ID": "{E753D577-90AA-44EE-90A9-99D002B43367}",
+					"Relationships":
+					[
+						{
+							"Comment": "Style Rule.has Style Property",
+							"RelationshipID": "{B69C2708-E78D-413A-B491-ABB6F1D2A6E0}",
+							"InverseRelationshipID": "{DF43F7A5-8175-4E23-9801-8299EA55B356}",
+							"DestinationInstances":
+							[
+								"{1AE4BE55-312D-461C-9A4B-5F3F13CCF7F9}"
+							]
+						}
+					],
+					"AttributeValues":
+					[
+						{
+							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+							"Value": "center"
+						}
+					]
+				},
+				{
+					"ID": "{372D78D0-ED49-4C16-9841-084AC3224A19}",
+					"Relationships":
+					[
+						{
+							"Comment": "Style Rule.has Style Property",
+							"RelationshipID": "{B69C2708-E78D-413A-B491-ABB6F1D2A6E0}",
+							"InverseRelationshipID": "{DF43F7A5-8175-4E23-9801-8299EA55B356}",
+							"DestinationInstances":
+							[
+								"{F936088C-8D65-4476-BDBC-421EE8BC41A9}"
+							]
+						}
+					],
+					"AttributeValues":
+					[
+						{
+							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+							"Value": "14pt"
+						}
+					]
+				},
+				{
+					"ID": "{C7C4790B-4D81-4E1E-965F-1DD1A7D788F0}",
+					"Relationships":
+					[
+						{
+							"Comment": "Style Rule.has Style Property",
+							"RelationshipID": "{B69C2708-E78D-413A-B491-ABB6F1D2A6E0}",
+							"InverseRelationshipID": "{DF43F7A5-8175-4E23-9801-8299EA55B356}",
+							"DestinationInstances":
+							[
+								"{354D0A44-6816-4E65-BC84-4910CE0CE6F5}"
+							]
+						}
+					],
+					"AttributeValues":
+					[
+						{
+							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+							"Value": "16px"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "TranslatableTextConstantValue",
+			"Instances":
+			[
+				{
+					"ID": "{B14DB3B7-4F72-4930-AD13-3E3CCD8F0C7F}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_Style_LoginHeaderTextStyle_Title" 
+						}
+					],
+					"Relationships":
+					[
+						{
+							"RelationshipID": "{3655AEC2-E2C9-4DDE-8D98-0C4D3CE1E569}",
+							"InverseRelationshipID": "{032C3549-C2FC-4512-B98A-C2D0BBCF78D0}",
+							"DestinationInstances":
+							[
+								"{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							]
+						}
+					],
+					"AttributeValues":
+					[
+						{
+							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+							"Value": "Login Header Text Style"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "Style",
+			"Instances":
+			[
+				{
+					"ID": "{EED15C64-0279-4219-A920-E9635AA84468}",
+					"Relationships":
+					[
+						{
+							"RelationshipID": "{B69C2708-E78D-413A-B491-ABB6F1D2A6E0}",
+							"InverseRelationshipID": "{DF43F7A5-8175-4E23-9801-8299EA55B356}",
+							"DestinationInstances":
+							[
+								"{E753D577-90AA-44EE-90A9-99D002B43367}",
+								"{372D78D0-ED49-4C16-9841-084AC3224A19}",
+								"{C7C4790B-4D81-4E1E-965F-1DD1A7D788F0}"
+							]
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{B14DB3B7-4F72-4930-AD13-3E3CCD8F0C7F}"
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "ParagraphPageComponent",
+			"Instances":
+			[
+				{
+					"ID": "{F0C52DD4-B074-49AE-A96F-5F907359DB6D}",
+					"Relationships":
+					[
+						{
+							"Comment": "Page Component.has Style",
+							"RelationshipID": "{818CFF50-7D42-43B2-B6A7-92C3C54D450D}",
+							"InverseRelationshipID": "{007563E7-7277-4436-8C82-06D5F156D8E1}",
+							"DestinationInstances":
+							[
+								"{EED15C64-0279-4219-A920-E9635AA84468}"
+							]
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{0E002E6F-AA79-457C-93B8-2CCE1AEF5F7E}",
+							"InverseRelationshipID": "{5E75000D-2421-4AD4-9E5F-B9FDD9CB4744}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "This is tenant login header text. You can put your own message here or build a string PAGEBUILDER TEST"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "ImagePageComponent",
+			"Instances":
+			[
+				{
+					"ID": "{A77F672B-7F9C-4F20-B5CE-1990529407F4}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{8E4924CC-F09D-488A-80A6-7000B21510C0}",
+							"Value": "~/Images/Header.png"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "HeadingPageComponent",
+			"Instances":
+			[
+				{
+					"ID": "{23164023-03A8-4DB2-9C15-DB8321F3486B}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{8C528FB0-4063-47B0-BC56-85E387A41BD2}",
+							"Value": 4
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{C5027DC2-53EE-4FC0-9BA6-F2B883F7DAD8}",
+							"InverseRelationshipID": "{29C02384-57B0-45F5-9C15-747F9DFD2C69}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Please sign in to access this feature PAGEBUILDER TEST"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "ParagraphPageComponent",
+			"Instances":
+			[
+				{
+					"ID": "{DF0FCBC5-E1E5-40AD-B1FF-FD001FB680F6}",
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{0E002E6F-AA79-457C-93B8-2CCE1AEF5F7E}",
+							"InverseRelationshipID": "{5E75000D-2421-4AD4-9E5F-B9FDD9CB4744}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Once you're logged in, you can customize the Tenant PAGEBUILDER TEST"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "TranslatableTextConstantValue",
+			"Instances":
+			[
+				{
+					"ID": "{B1A5F12F-2882-431E-A3E2-801FCA2114D2}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "TranslatableValueName",
+							"Value": "LanguageString_English_Style_PrimaryThemeColorStyle"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"RelationshipID": "{3655AEC2-E2C9-4DDE-8D98-0C4D3CE1E569}",
+							"InverseRelationshipID": "{032C3549-C2FC-4512-B98A-C2D0BBCF78D0}",
+							"DestinationInstances":
+							[
+								"{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+							]
+						}
+					],
+					"AttributeValues":
+					[
+						{
+							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+							"Value": "Primary Theme Color Style"
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "Style",
+			"Instances":
+			[
+				{
+					"ID": "{10C3078C-F2FC-4B8E-9875-450449549351}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "StyleName",
+							"Value": "LoginPage" 
+						}
+					],
+					"AttributeValues":
+					[
+						{
+							"ID": "{0F42BCB6-549A-4407-BB91-DD147443F68F}",
+							"Value": "Primary"
+						}
+					],
+					"PropertyValues":
+					[
+						{
+							"Name": "Title",
+							"Value":
+							{
+								"Instances":
+								[
+									"{B1A5F12F-2882-431E-A3E2-801FCA2114D2}"
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "PanelPageComponent",
+			"Instances":
+			[
+				{
+					"ID": "{8F9C429D-2FF5-46E1-B906-CD1D3DFF7BDE}",
+					"Relationships":
+					[
+						{
+							"RelationshipID": "{AD8C5FAE-2444-4700-896E-C5F968C0F85B}",
+							"InverseRelationshipID": "{1DD64A89-9947-4BA3-85AA-12D2EAED80DC}",
+							"DestinationInstances":
+							[
+								"{23164023-03A8-4DB2-9C15-DB8321F3486B}",
+								"{DF0FCBC5-E1E5-40AD-B1FF-FD001FB680F6}"
+							]
+						},
+						{
+							"Comment": "Page Component.has Style",
+							"RelationshipID": "{818CFF50-7D42-43B2-B6A7-92C3C54D450D}",
+							"InverseRelationshipID": "{007563E7-7277-4436-8C82-06D5F156D8E1}",
+							"DestinationInstances":
+							[
+								"{10C3078C-F2FC-4B8E-9875-450449549351}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "Relationship",
+			"Instances":
+			[
+				{
+					"Comment": "Page.has Page Component",
+					"ID": "{24F6C596-D77D-4754-B023-00321DEBA924}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Page`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{D9626359-48E3-4840-A089-CD8DA6731690}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Page Component`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{EF4D4027-6904-4773-9013-22CEDC169F00}"
+							]
+						}
+					]
+				},
+				{
+					"Comment": "Page Component.for Page",
+					"ID": "{2519A689-1184-4E24-8006-22FE3F7DB229}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Page Component`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{EF4D4027-6904-4773-9013-22CEDC169F00}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Page`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{D9626359-48E3-4840-A089-CD8DA6731690}"
+							]
+						}
+					]
+				},
+				{
+					"Comment": "Page.has Style",
+					"ID": "{6E6E1A85-3EA9-4939-B13E-CBF645CB8B59}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Page`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{D9626359-48E3-4840-A089-CD8DA6731690}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Style`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{A48C843A-B24B-4BC3-BE6F-E2D069229B0A}"
+							]
+						}
+					]
+				},
+				{
+					"Comment": "Style.for Page",
+					"ID": "{A608FC55-4D41-47F6-B021-38DFBAF29521}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Style`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{A48C843A-B24B-4BC3-BE6F-E2D069229B0A}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Page`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{D9626359-48E3-4840-A089-CD8DA6731690}"
+							]
+						}
+					]
+				},
+				{
+					"Comment": "Sequential Container Page Component.has Sequential Container Orientation",
+					"ID": "{DD55F506-8718-4240-A894-21346656E804}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Sequential Container Page Component`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{A66D9AE2-3BEC-4083-A5CB-7DE3B03A9CC7}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Sequential Container Orientation`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{DDC61BCA-022D-43EF-9A94-D79BA9FEC5C8}"
+							]
+						}
+					]
+				},
+				{
+					"Comment": "Sequential Container Orientation.for Sequential Container Page Component",
+					"ID": "{F8F4EBFE-605C-4F68-99F7-83AEF3FF1AF2}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Sequential Container Orientation`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{DDC61BCA-022D-43EF-9A94-D79BA9FEC5C8}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Sequential Container Page Component`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{A66D9AE2-3BEC-4083-A5CB-7DE3B03A9CC7}"
+							]
+						}
+					]
+				},
+				{
+					"Comment": "Container Page Component.has Page Component",
+					"ID": "{CB7B8162-1C9E-4E72-BBB8-C1C37CA69CD5}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Container Page Component`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{6AD6BD1C-7D1C-4AC9-9642-FEBC61E9D6FF}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Page Component`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{EF4D4027-6904-4773-9013-22CEDC169F00}"
+							]
+						}
+					]
+				},
+				{
+					"Comment": "Page Component.for Container Page Component",
+					"ID": "{E33F11EE-4417-4890-AD89-7BB3DB739918}",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Page Component`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{EF4D4027-6904-4773-9013-22CEDC169F00}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Sequential Container Page Component`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{6AD6BD1C-7D1C-4AC9-9642-FEBC61E9D6FF}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "SequentialContainerPageComponent",
+			"Instances":
+			[
+				{
+					"ID": "{E7C69CF3-CB71-43D8-91AB-B8F5030350AB}",
+					"Relationships":
+					[
+						{
+							"Comment": "Sequential Container Page Component.has Sequential Container Orientation",
+							"RelationshipID": "{DD55F506-8718-4240-A894-21346656E804}",
+							"InverseRelationshipID": "{F8F4EBFE-605C-4F68-99F7-83AEF3FF1AF2}",
+							"DestinationInstances":
+							[
+								"{9B7B7F14-0925-456D-98E6-E3FFEFDC272C}"
+							]
+						},
+						{
+							"Comment": "Container Page Component.has Page Component",
+							"RelationshipID": "{CB7B8162-1C9E-4E72-BBB8-C1C37CA69CD5}",
+							"InverseRelationshipID": "{E33F11EE-4417-4890-AD89-7BB3DB739918}",
+							"DestinationInstances":
+							[
+								"{A77F672B-7F9C-4F20-B5CE-1990529407F4}",
+								"{F0C52DD4-B074-49AE-A96F-5F907359DB6D}",
+								"{8F9C429D-2FF5-46E1-B906-CD1D3DFF7BDE}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "Style",
+			"Instances":
+			[
+				{
+					"ID": "{96B81CE8-DEDA-4EFF-BF5F-0F988ABCC3EC}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "StyleName",
+							"Value": "LoginPage" 
+						}
+					],
+					"AttributeValues":
+					[
+						{
+							"ID": "{0F42BCB6-549A-4407-BB91-DD147443F68F}",
+							"Value": "LoginPage"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{963233D5-88F6-41F0-9DE0-63BAB95FA228}",
+							"InverseRelationshipID": "{13CA9CF4-DAD3-48FB-9546-8929CF9DDA38}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Login Page Style"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "Page",
+			"Instances":
+			[
+				{
+					"ID": "{9E272BC3-0358-4EB7-8B3B-581964A59634}",
+					"IntegrationIDs":
+					[
+						{
+							"Name": "PageName",
+							"Value": "LoginPage" 
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": "Page.has Style",
+							"RelationshipID": "{6E6E1A85-3EA9-4939-B13E-CBF645CB8B59}",
+							"InverseRelationshipID": "{A608FC55-4D41-47F6-B021-38DFBAF29521}",
+							"DestinationInstances":
+							[
+								"{96B81CE8-DEDA-4EFF-BF5F-0F988ABCC3EC}"
+							]
+						},
+						{
+							"Comment": "Page.has Page Component",
+							"RelationshipID": "{24F6C596-D77D-4754-B023-00321DEBA924}",
+							"InverseRelationshipID": "{2519A689-1184-4E24-8006-22FE3F7DB229}",
+							"DestinationInstances":
+							[
+								"{E7C69CF3-CB71-43D8-91AB-B8F5030350AB}"
+							]
+						}
+					],
+					"AttributeValues":
+					[
+						{
+							"ID": "{970F79A0-9EFE-4E7D-9286-9908C6F06A67}",
+							"Value": "account/login"
+						}
+					]
+				}
+			]
+		}
+	]
+}
