@@ -516,22 +516,12 @@
 					{
 						$xqjsData[] = $this->LoadXQJSFile($tenantObjectFileName);
 					}
-					$tenantObjectFileNames = glob(dirname(__FILE__) . "/../TenantObjects/*/*.inc.php");
-					foreach ($tenantObjectFileNames as $tenantObjectFileName)
-					{
-						require($tenantObjectFileName);
-					}
 					
 					// Create the tenanted objects required before anything else takes place
 					$tenantObjectFileNames = glob(dirname(__FILE__) . "/../TenantObjects/*.xqjs");
 					foreach ($tenantObjectFileNames as $tenantObjectFileName)
 					{
 						$xqjsData[] = $this->LoadXQJSFile($tenantObjectFileName);
-					}
-					$tenantObjectFileNames = glob(dirname(__FILE__) . "/../TenantObjects/*.inc.php");
-					foreach ($tenantObjectFileNames as $tenantObjectFileName)
-					{
-						require($tenantObjectFileName);
 					}
 					
 					foreach ($xqjsData as $xqjsDataBlock)
