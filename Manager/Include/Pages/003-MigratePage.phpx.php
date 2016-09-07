@@ -4,11 +4,11 @@
 	use Phast\Parser\PhastPage;
 	use Phast\CancelEventArgs;
 	
+	use Objectify\Objects\Instance;
+	use Objectify\Objects\Relationship;
 	use Objectify\Objects\Tenant;
 	use Objectify\Objects\TenantObject;
-use Objectify\Objects\Relationship;
-use Objectify\Objects\Instance;
-			
+	
 	class MigratePage extends PhastPage
 	{
 		public function OnInitializing(CancelEventArgs $e)
@@ -57,6 +57,11 @@ use Objectify\Objects\Instance;
 					
 					Relationship::Create($relationshipInstance, $sourceInstance, $destinationInstances, $destinationTenant);
 				}
+				
+				// Set the tenant name for the newly-created tenant
+				$instTenant = Instance::GetByGlobalIdentifier("{F2C9D4A9-9EFB-4263-84DB-66A9DA65AD00}", $destinationTenant);
+				$instAttributeName = Instance::GetByGlobalIdentifier("{9153A637-992E-4712-ADF2-B03F0D9EDEA6}", $destinationTenant);
+				$instTenant->SetAttributeValue($instAttributeName, $destinationTenantName);
 			}
 		}
 	}
