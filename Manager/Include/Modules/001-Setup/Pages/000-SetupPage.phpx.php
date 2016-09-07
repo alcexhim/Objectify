@@ -360,13 +360,114 @@
 		 * @param string $tenantName The name (URL) of the tenant to create.
 		 * @return Instance the instance of the created Tenant
 		 */
-		private function CreateDefaultTenant($tenantName)
+		private function CreateDefaultTenant($tenantName, $Administrator_UserName, $Administrator_Password)
 		{
-			$objTenant = KnownObjects::get___Tenant();
+			$pdo = DataSystem::GetPDO();
 			
+			// First create the initial tenant
+			$tenant = Tenant::Create($tenantName, "{35BF9AC5-0212-4DBA-BB9B-D1A6E9955827}");	
+			$_SESSION["CurrentTenantID"] = $tenant->ID;
+			
+			$xqjsData = array();
+			
+			// Create the tenanted objects in directories required before anything else takes place
+			$tenantObjectFileNames = glob(dirname(__FILE__) . "/../TenantObjects/*/*.xqjs");
+			foreach ($tenantObjectFileNames as $tenantObjectFileName)
+			{
+				$xqjsData[] = $this->LoadXQJSFile($tenantObjectFileName);
+			}
+				
+			// Create the tenanted objects required before anything else takes place
+			$tenantObjectFileNames = glob(dirname(__FILE__) . "/../TenantObjects/*.xqjs");
+			foreach ($tenantObjectFileNames as $tenantObjectFileName)
+			{
+				$xqjsData[] = $this->LoadXQJSFile($tenantObjectFileName);
+			}
+				
+			foreach ($xqjsData as $xqjsDataBlock)
+			{
+				$this->LoadXQJS($xqjsDataBlock);
+			}
+			
+			// create the initial user
+			$Administrator_PasswordSalt = RandomStringGenerator::Generate(RandomStringGeneratorCharacterSets::AlphaNumericMixedCase, 32);
+			$Administrator_PasswordHash = hash("sha512", $Administrator_Password . $Administrator_PasswordSalt);
+			
+			$instDefaultUser = $this->CreateDefaultUser($Administrator_UserName, $Administrator_PasswordHash, $Administrator_PasswordSalt, "System Administrator");
+			
+			// Set the tenant name for the newly-created tenant
+			$objTenant = KnownObjects::get___Tenant();
 			$instTenant = $objTenant->GetInstanceByGlobalIdentifier("{F2C9D4A9-9EFB-4263-84DB-66A9DA65AD00}");
 			$instAttributeName = Instance::GetByGlobalIdentifier("{9153A637-992E-4712-ADF2-B03F0D9EDEA6}");
 			$instTenant->SetAttributeValue($instAttributeName, $tenantName);
+			
+			$objs = TenantObject::Get();
+			$instrel_Class__has_owner__User = KnownRelationships::get___Class__has_owner__User();
+			$instrel_User__owner_for__Class = KnownRelationships::get___User__owner_for__Class();
+				
+			$instRel_Class__has__Object_Source = KnownRelationships::get___Class__has__Object_Source();
+			$instRel_Object_Source__for__Class = KnownRelationships::get___Object_Source__for__Class();
+				
+			$instObjectSource_System = Instance::GetByGlobalIdentifier("{9547EB35-07FB-4B64-B82C-6DA1989B9165}");
+			$inst_xq_environments = Instance::GetByGlobalIdentifier("{B066A54B-B160-4510-A805-436D3F90C2E6}");
+			
+			foreach ($objs as $obj)
+			{
+				$instobj = $obj->GetThisInstance();
+			
+				Relationship::Create($instrel_Class__has_owner__User, $instobj, array($inst_xq_environments));
+				Relationship::Create($instrel_User__owner_for__Class, $inst_xq_environments, array($instobj));
+			
+				Relationship::Create($instRel_Class__has__Object_Source, $instobj, array($instObjectSource_System));
+				Relationship::Create($instRel_Object_Source__for__Class, $instObjectSource_System, array($instobj));
+			
+				$attCreationDate = $obj->GetAttribute("CreationDate");
+				if ($attCreationDate != null) {
+					$instobj->SetAttributeValue($attCreationDate, date());
+				}
+			
+				$dtNow = new \DateTime();
+				$insts = $obj->GetInstances();
+				foreach ($insts as $inst)
+				{
+					$inst->SetAttributeValue(KnownAttributes::get___Date___CreationDate(), $dtNow);
+				}
+			}
+			
+			foreach ($xqjsData as $xqjsDataBlock)
+			{
+				$this->LoadXQJSPost($xqjsDataBlock);
+			}
+			
+			// finally do some post-processing, such as adding attributes, etc.
+			$objClasses = TenantObject::Get();
+			
+			$instAttribute_Name = Instance::GetByGlobalIdentifier("{9153A637-992E-4712-ADF2-B03F0D9EDEA6}");
+			foreach ($objClasses as $obj)
+			{
+				$instThisClass = Instance::GetByGlobalIdentifier($obj->GlobalIdentifier);
+				if ($instThisClass == null)
+				{
+					trigger_error("inst with gid " . $obj->GlobalIdentifier . " not found");
+					continue;
+				}
+				$instThisClass->SetAttributeValue($instAttribute_Name, $obj->Name);
+			}
+			
+			// once all attribute value updates are completed, notify that xq-environments was the
+			// user that did the updating
+			$query = "UPDATE " . System::GetConfigurationValue("Database.TablePrefix") . "AttributeValues SET "
+				. "attval_UserTenantID = :attval_UserTenantID, "
+				. "attval_UserObjectID = :attval_UserObjectID, "
+				. "attval_UserInstanceID = :attval_UserInstanceID";
+			
+			$statement = $pdo->prepare($query);
+			$statement->execute(array
+			(
+				":attval_UserTenantID" => 1,
+				":attval_UserObjectID" => $inst_xq_environments->ParentObject->ID,
+				":attval_UserInstanceID" => $inst_xq_environments->ID
+			));
 			
 			return $instTenant;
 		}
@@ -496,110 +597,9 @@
 				}
 				else
 				{
-					// create the initial user
-					$Administrator_PasswordSalt = RandomStringGenerator::Generate(RandomStringGeneratorCharacterSets::AlphaNumericMixedCase, 32);
-					$Administrator_PasswordHash = hash("sha512", $Administrator_Password . $Administrator_PasswordSalt);
-					
 					// create a new global (non-tenanted) instance of the User object
 					// this can be set by User property IsGlobal - USE SPARINGLY!!!
-					
-					// First create the initial tenant
-					$tenant = Tenant::Create("default", "{35BF9AC5-0212-4DBA-BB9B-D1A6E9955827}");
-					
-					$_SESSION["CurrentTenantID"] = $tenant->ID;
-
-					$xqjsData = array();
-					
-					// Create the tenanted objects in directories required before anything else takes place
-					$tenantObjectFileNames = glob(dirname(__FILE__) . "/../TenantObjects/*/*.xqjs");
-					foreach ($tenantObjectFileNames as $tenantObjectFileName)
-					{
-						$xqjsData[] = $this->LoadXQJSFile($tenantObjectFileName);
-					}
-					
-					// Create the tenanted objects required before anything else takes place
-					$tenantObjectFileNames = glob(dirname(__FILE__) . "/../TenantObjects/*.xqjs");
-					foreach ($tenantObjectFileNames as $tenantObjectFileName)
-					{
-						$xqjsData[] = $this->LoadXQJSFile($tenantObjectFileName);
-					}
-					
-					foreach ($xqjsData as $xqjsDataBlock)
-					{
-						$this->LoadXQJS($xqjsDataBlock);
-					}
-					
-					$instDefaultUser = $this->CreateDefaultUser($Administrator_UserName, $Administrator_PasswordHash, $Administrator_PasswordSalt, "System Administrator");
-					$instDefaultTenant = $this->CreateDefaultTenant("default");
-					
-					$objs = TenantObject::Get();
-					$instrel_Class__has_owner__User = KnownRelationships::get___Class__has_owner__User();
-					$instrel_User__owner_for__Class = KnownRelationships::get___User__owner_for__Class();
-					
-					$instRel_Class__has__Object_Source = KnownRelationships::get___Class__has__Object_Source();
-					$instRel_Object_Source__for__Class = KnownRelationships::get___Object_Source__for__Class();
-					
-					$instObjectSource_System = Instance::GetByGlobalIdentifier("{9547EB35-07FB-4B64-B82C-6DA1989B9165}");
-					$inst_xq_environments = Instance::GetByGlobalIdentifier("{B066A54B-B160-4510-A805-436D3F90C2E6}");
-
-					foreach ($objs as $obj)
-					{
-						$instobj = $obj->GetThisInstance();
-						
-						Relationship::Create($instrel_Class__has_owner__User, $instobj, array($inst_xq_environments));
-						Relationship::Create($instrel_User__owner_for__Class, $inst_xq_environments, array($instobj));
-						
-						Relationship::Create($instRel_Class__has__Object_Source, $instobj, array($instObjectSource_System));
-						Relationship::Create($instRel_Object_Source__for__Class, $instObjectSource_System, array($instobj));
-						
-						$attCreationDate = $obj->GetAttribute("CreationDate");
-						if ($attCreationDate != null) {
-							$instobj->SetAttributeValue($attCreationDate, date());
-						}
-						
-						$dtNow = new \DateTime();
-						$insts = $obj->GetInstances();
-						foreach ($insts as $inst)
-						{
-							$inst->SetAttributeValue(KnownAttributes::get___Date___CreationDate(), $dtNow);
-						}
-					}
-
-
-					foreach ($xqjsData as $xqjsDataBlock)
-					{
-						$this->LoadXQJSPost($xqjsDataBlock);
-					}
-					
-					// finally do some post-processing, such as adding attributes, etc.
-					$objClasses = TenantObject::Get();
-					
-					$instAttribute_Name = Instance::GetByGlobalIdentifier("{9153A637-992E-4712-ADF2-B03F0D9EDEA6}");
-					foreach ($objClasses as $obj)
-					{
-						$instThisClass = Instance::GetByGlobalIdentifier($obj->GlobalIdentifier);
-						if ($instThisClass == null)
-						{
-							trigger_error("inst with gid " . $obj->GlobalIdentifier . " not found");
-							continue;
-						}
-						$instThisClass->SetAttributeValue($instAttribute_Name, $obj->Name);
-					}
-					
-					// once all attribute value updates are completed, notify that xq-environments was the
-					// user that did the updating
-					$query = "UPDATE " . System::GetConfigurationValue("Database.TablePrefix") . "AttributeValues SET "
-						. "attval_UserTenantID = :attval_UserTenantID, "
-						. "attval_UserObjectID = :attval_UserObjectID, "
-						. "attval_UserInstanceID = :attval_UserInstanceID";
-					
-					$statement = $pdo->prepare($query);
-					$statement->execute(array
-					(
-						":attval_UserTenantID" => 1,
-						":attval_UserObjectID" => $inst_xq_environments->ParentObject->ID,
-						":attval_UserInstanceID" => $inst_xq_environments->ID
-					));
+					$instDefaultTenant = $this->CreateDefaultTenant("prod_sys", $Administrator_UserName, $Administrator_Password);
 					
 					echo("{");
 					echo("\"Result\": \"Success\"");
