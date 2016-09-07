@@ -91,7 +91,7 @@
 				$versionString = $instTenant->GetAttributeValue($attVersionString, "1.0.17.263");
 				$madiRevision = $instTenant->GetAttributeValue($attMADIRevision, "15365");
 				
-				$val = "<div style=\"border-radius: 8px; background-color: " . $attTenantTypeBackgroundColor . "; padding: 8px; color: " . $attTenantTypeForegroundColor . "; display: inline-block;\">";
+				$val = "<div style=\"border-radius: 8px; background-color: " . $attTenantTypeBackgroundColor . "; padding: 8px; color: " . $attTenantTypeForegroundColor . "; display: inline-block; min-width: 100px; text-align: center;\">";
 				$val .= "<strong>" . $instTenantType->ToString() . "</strong>";
 				if ($instTenantType->GetAttributeValue($attDisplayVersionInBadge, false))
 				{
