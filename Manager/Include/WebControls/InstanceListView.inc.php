@@ -60,7 +60,7 @@
 			{
 				$lvi = new ListViewItem(array
 				(
-					new ListViewItemColumn("lvcID", $inst->ID),
+					new ListViewItemColumn("lvcID", $inst->GetInstanceID()),
 					new ListViewItemColumn("lvcInstance", function($col)
 					{
 						$idw = new InstanceDisplayWidget($col->ExtraData);
