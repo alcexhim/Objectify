@@ -186,12 +186,17 @@ use Phast\Data\DataSystem;
 			// $item->IsSingular = ($values["relationship_IsSingular"] == 1);
 			return $item;
 		}
-		public static function Get()
+		public static function Get($tenant = null)
 		{
+			if ($tenant == null) $tenant = Tenant::GetCurrent();
+			
 			$pdo = DataSystem::GetPDO();
-			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Relationships";
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Relationships WHERE relationship_TenantID = :relationship_TenantID";
 			$statement = $pdo->prepare($query);
-			$result = $statement->execute();
+			$result = $statement->execute(array
+			(
+				":relationship_TenantID" => $tenant->ID
+			));
 			
 			$retval = array();
 			$count = $statement->rowCount();
@@ -203,7 +208,8 @@ use Phast\Data\DataSystem;
 			}
 			return $retval;
 		}
-		public static function GetByID($id)
+		
+		private static function GetByID($id)
 		{
 			if (!is_numeric($id)) return null;
 			
@@ -230,15 +236,18 @@ use Phast\Data\DataSystem;
 		 * @param boolean $includeParentObjects DO NOT SET THIS TO TRUE. YOU WILL BREAK EVERYTHING.
 		 * @return Relationship[]
 		 */
-		public static function GetBySourceInstance($inst, $relationshipInstance = null, $includeParentObjects = false, $maxParentObjectLevels = 1)
+		public static function GetBySourceInstance($inst, $relationshipInstance = null, $includeParentObjects = false, $maxParentObjectLevels = 1, $tenant = null)
 		{
+			if ($tenant == null) $tenant = Tenant::GetCurrent();
+			
 			$pdo = DataSystem::GetPDO();
 			$paramz = array
 			(
 				":relationship_SourceObjectID" => $inst->ParentObject->ID,
-				":relationship_SourceInstanceID" => $inst->ID
+				":relationship_SourceInstanceID" => $inst->ID,
+				":relationship_TenantID" => $tenant->ID
 			);
-			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Relationships WHERE (relationship_SourceObjectID = :relationship_SourceObjectID AND relationship_SourceInstanceID = :relationship_SourceInstanceID";
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Relationships WHERE relationship_TenantID = :relationship_TenantID AND (relationship_SourceObjectID = :relationship_SourceObjectID AND relationship_SourceInstanceID = :relationship_SourceInstanceID";
 			/*
 			if ($includeParentObjects)
 			{
@@ -333,7 +342,7 @@ use Phast\Data\DataSystem;
 				return false;
 			}
 			
-			$rel = Relationship::GetBySourceInstance($sourceInstance, $relationshipInstance);
+			$rel = Relationship::GetBySourceInstance($sourceInstance, $relationshipInstance, false, 1, $tenant);
 			if ($rel != null)
 			{
 				$rel = $rel[0];

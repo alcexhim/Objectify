@@ -105,7 +105,9 @@
 					if ($inst != null)
 					{
 						$user_LoginToken = RandomStringGenerator::Generate(RandomStringGeneratorCharacterSets::AlphaNumericMixedCase, 32);
-						$_SESSION["Authentication.LoginToken"] = $user_LoginToken;
+						
+						$tenant = Tenant::GetCurrent();
+						$_SESSION[$tenant->Name . ":Authentication.LoginToken"] = $user_LoginToken;
 						
 						$objUserLogin = KnownObjects::get___User_Login();
 						$instUserLogin = $objUserLogin->CreateInstance();
@@ -130,9 +132,9 @@
 							return true;
 						}
 						*/
-						if (isset($_SESSION["LoginRedirectURL"]))
+						if (isset($_SESSION[$tenant->Name . ":LoginRedirectURL"]))
 						{
-							System::Redirect($_SESSION["LoginRedirectURL"]);
+							System::Redirect($_SESSION[$tenant->Name . ":LoginRedirectURL"]);
 						}
 						else
 						{
@@ -154,8 +156,9 @@
 	{
 		public function OnInitializing(CancelEventArgs $e)
 		{
-			unset($_SESSION["Authentication.LoginToken"]);
-			unset($_SESSION["LoginRedirectURL"]);
+			$tenant = Tenant::GetCurrent();
+			unset($_SESSION[$tenant->Name . ":Authentication.LoginToken"]);
+			unset($_SESSION[$tenant->Name . ":LoginRedirectURL"]);
 			System::Redirect("~/");
 		}
 	}

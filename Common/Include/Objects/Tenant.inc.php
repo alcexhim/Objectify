@@ -154,7 +154,7 @@
 			$statement = $pdo->prepare($query);
 			$result = $statement->execute(array
 			(
-				":tenant_ID" => $this->ID
+				":object_TenantID" => $this->ID
 			));
 			$count = $statement->rowCount();
 			$retval = array();

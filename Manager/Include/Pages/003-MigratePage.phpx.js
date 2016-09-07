@@ -1,14 +1,8 @@
 window.addEventListener("load", function(e)
 {
 	var FormView_fv_txtSource_SpecificPackages_Packages = document.getElementById("FormView_fv_txtSource_SpecificPackages_Packages");
-	var FormView_fv_txtSource_EntireTenant_TenantName = document.getElementById("FormView_fv_txtSource_EntireTenant_TenantName");
-	var FormView_fv_txtDestination_NewTenant_TenantName = document.getElementById("FormView_fv_txtDestination_NewTenant_TenantName");
-	var FormView_fv_txtDestination_ExistingTenant_TenantName = document.getElementById("FormView_fv_txtDestination_ExistingTenant_TenantName");
 	
 	FormView_fv_txtSource_SpecificPackages_Packages.style.display = "none";
-	FormView_fv_txtSource_EntireTenant_TenantName.style.display = "none";
-	FormView_fv_txtDestination_NewTenant_TenantName.style.display = "none";
-	FormView_fv_txtDestination_ExistingTenant_TenantName.style.display = "none";
 	
 	var cboSource = document.getElementById("cboSource").NativeObject;
 	cboSource.EventHandlers.SelectionChanged.Add(function(sender)
@@ -19,36 +13,50 @@ window.addEventListener("load", function(e)
 			case "1":
 			{
 				FormView_fv_txtSource_SpecificPackages_Packages.style.display = "table-row";
-				FormView_fv_txtSource_EntireTenant_TenantName.style.display = "none";
 				break;
 			}
 			case "2":
 			{
 				FormView_fv_txtSource_SpecificPackages_Packages.style.display = "none";
-				FormView_fv_txtSource_EntireTenant_TenantName.style.display = "table-row";
 				break;
 			}
 		}
 	});
 	
-	var cboDestination = document.getElementById("cboDestination").NativeObject;
-	cboDestination.EventHandlers.SelectionChanged.Add(function(sender)
+	var txtDestination = document.getElementById("txtDestination");
+	
+	var cmdOK = document.getElementById("cmdOK");
+	cmdOK.addEventListener("click", function()
 	{
-		var item = sender.GetSelectedItems()[0];
-		switch (item.Value)
+		var reqmissing = [];
+		if (cboSource.GetSelectedItems().length == 0)
 		{
-			case "1":
-			{
-				FormView_fv_txtDestination_NewTenant_TenantName.style.display = "table-row";
-				FormView_fv_txtDestination_ExistingTenant_TenantName.style.display = "none";
-				break;
-			}
-			case "2":
-			{
-				FormView_fv_txtDestination_NewTenant_TenantName.style.display = "none";
-				FormView_fv_txtDestination_ExistingTenant_TenantName.style.display = "table-row";
-				break;
-			}
+			reqmissing.push("Source");
 		}
+		if (txtDestination.value == "")
+		{
+			reqmissing.push("Destination Tenant Name");
+		}
+		
+		if (reqmissing.length > 0)
+		{
+			var strreqmissing = "<ul>";
+			for (var i = 0; i < reqmissing.length; i++)
+			{
+				strreqmissing += "<li>" + reqmissing[i] + "</li>";
+			}
+			strreqmissing += "</ul>";
+			
+			Notification.Show(strreqmissing, "Required information missing", "Danger");
+			
+			e.preventDefault();
+			e.stopPropagation();
+			return false;
+		}
+		
+		var mainForm = document.getElementById("mainForm");
+		
+		System.ClassList.Add(document.body, "Loading");
+		mainForm.submit();
 	});
 });

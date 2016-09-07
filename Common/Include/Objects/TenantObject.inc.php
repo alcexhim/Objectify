@@ -283,7 +283,7 @@
 		 * @param string $globalIdentifier The global identifier for this instance.
 		 * @return Instance
 		 */
-		public function CreateInstance($properties = null, $globalIdentifier = null)
+		public function CreateInstance($properties = null, $globalIdentifier = null, $tenant = null)
 		{
 			$inst = new Instance($this);
 			if ($globalIdentifier == null)
@@ -296,15 +296,18 @@
 				));
 			}
 			$inst->GlobalIdentifier = $globalIdentifier;
-			$inst->Tenant = $this->Tenant;
+			
+			if ($tenant == null) $tenant = Tenant::GetCurrent();
+			$inst->Tenant = $tenant;
+			
 			$inst->Update();
 			
 			$inst->SetAttributeValue(KnownAttributes::get___Date___CreationDate(), new \DateTime());
 			
 			$instThisObject = $this->GetThisInstance();
 			
-			Relationship::Create(KnownRelationships::get___Class__has__Instance(), $instThisObject, array($inst));
-			Relationship::Create(KnownRelationships::get___Instance__for__Class(), $inst, array($instThisObject));
+			Relationship::Create(KnownRelationships::get___Class__has__Instance(), $instThisObject, array($inst), $tenant);
+			Relationship::Create(KnownRelationships::get___Instance__for__Class(), $inst, array($instThisObject), $tenant);
 			
 			if (is_array($properties))
 			{
@@ -538,20 +541,25 @@
 		 * Gets all instances of the current TenantObject.
 		 * @return Instance[]
 		 */
-		public function GetInstances()
+		public function GetInstances($tenant = null, $includeSubClasses = true)
 		{
 			$pdo = DataSystem::GetPDO();
-			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Instances WHERE instance_ObjectID = :instance_ObjectID AND instance_TenantID = :instance_TenantID";
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Instances WHERE instance_TenantID = :instance_TenantID AND (instance_ObjectID = :instance_ObjectID";
+			
+			if ($tenant == null) $tenant = Tenant::GetCurrent();
+			
 			$paramz = array
 			(
 				":instance_ObjectID" => $this->ID,
-				":instance_TenantID" => $this->Tenant->ID
+				":instance_TenantID" => $tenant->ID
 			);
 			
-			if ($this->ID != 1)
+			if ($this->ID != 1 && $includeSubClasses)
 			{
 				TenantObject::Build_Subclass_Query($query, $paramz, $this, "instance_");
 			}
+			
+			$query .= ")";
 			
 			$statement = $pdo->prepare($query);
 			$result = $statement->execute($paramz);

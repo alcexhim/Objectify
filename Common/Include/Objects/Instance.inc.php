@@ -94,7 +94,7 @@
 		}
 		
 		private static $instancesByID;
-		public static function GetByID($id, $parentObjectID)
+		public static function GetByID($id, $parentObjectID, $tenant = null)
 		{
 			if (Instance::$instancesByID == null)
 			{
@@ -102,24 +102,26 @@
 			}
 			if (!is_numeric($id)) return null;
 			if (!is_numeric($parentObjectID)) return null;
+			if ($tenant == null) $tenant = Tenant::GetCurrent();
 			
-			if (!array_key_exists($parentObjectID . "_" . $id, Instance::$instancesByID))
+			if (!array_key_exists($tenant->ID . "_" . $parentObjectID . "_" . $id, Instance::$instancesByID))
 			{
 				$pdo = DataSystem::GetPDO();
-				$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Instances WHERE instance_ID = :instance_ID AND instance_ObjectID = :instance_ObjectID";
+				$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Instances WHERE instance_ID = :instance_ID AND instance_ObjectID = :instance_ObjectID AND instance_TenantID = :instance_TenantID";
 				$statement = $pdo->prepare($query);
 				$result = $statement->execute(array
 				(
 					":instance_ID" => $id,
-					":instance_ObjectID" => $parentObjectID
+					":instance_ObjectID" => $parentObjectID,
+					":instance_TenantID" => $tenant->ID
 				));
 				if ($result === false) return null;
 				if ($statement->rowCount() == 0) return null;
 				
 				$values = $statement->fetch(PDO::FETCH_ASSOC);
-				Instance::$instancesByID[$parentObjectID . "_" . $id] = Instance::GetByAssoc($values);
+				Instance::$instancesByID[$tenant->ID . "_" . $parentObjectID . "_" . $id] = Instance::GetByAssoc($values);
 			}
-			return Instance::$instancesByID[$parentObjectID . "_" . $id];
+			return Instance::$instancesByID[$tenant->ID . "_" . $parentObjectID . "_" . $id];
 		}
 		
 		public static function GetByInstanceID($instanceID, $tenant = null)
@@ -149,31 +151,35 @@
 		}
 		
 		private static $instancesByGID;
-		public static function GetByGlobalIdentifier($globalIdentifier)
+		public static function GetByGlobalIdentifier($globalIdentifier, $tenant = null)
 		{
 			if (Instance::$instancesByGID == null)
 			{
 				Instance::$instancesByGID = array();
 			}
 			
+			if ($tenant == null) $tenant = Tenant::GetCurrent();
+			
 			$globalIdentifier = Objectify::SanitizeGlobalIdentifier($globalIdentifier);
 			
-			if (!array_key_exists($globalIdentifier, Instance::$instancesByGID))
+			if (!array_key_exists($tenant->ID . "_" . $globalIdentifier, Instance::$instancesByGID))
 			{
 				$pdo = DataSystem::GetPDO();
-				$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Instances WHERE instance_GlobalIdentifier = :instance_GlobalIdentifier";
+				$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Instances WHERE instance_GlobalIdentifier = :instance_GlobalIdentifier AND instance_TenantID = :instance_TenantID";
 				$statement = $pdo->prepare($query);
 				$result = $statement->execute(array
 				(
-					":instance_GlobalIdentifier" => $globalIdentifier
+					":instance_GlobalIdentifier" => $globalIdentifier,
+					":instance_TenantID" => $tenant->ID
 				));
+				
 				if ($result === false) return null;
 				if ($statement->rowCount() == 0) return null;
 				
 				$values = $statement->fetch(PDO::FETCH_ASSOC);
-				Instance::$instancesByGID[$globalIdentifier] = Instance::GetByAssoc($values);
+				Instance::$instancesByGID[$tenant->ID . "_" . $globalIdentifier] = Instance::GetByAssoc($values);
 			}
-			return Instance::$instancesByGID[$globalIdentifier]; 
+			return Instance::$instancesByGID[$tenant->ID . "_" . $globalIdentifier]; 
 		}
 		
 		/* ********** BEGIN: New Attribute functions to replace deprecated Property functions ********** */
@@ -298,9 +304,9 @@
 			
 			$pdo = DataSystem::GetPDO();
 			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "AttributeValues ("
-				. "attval_TenantID, attval_AttributeTenantID, attval_AttributeObjectID, attval_AttributeInstanceID, attval_ObjectID, attval_InstanceID, attval_EffectiveDateTime, attval_UserInstanceID, attval_Value"
+				. "attval_TenantID, attval_ObjectID, attval_InstanceID, attval_AttributeTenantID, attval_AttributeObjectID, attval_AttributeInstanceID, attval_EffectiveDateTime, attval_UserInstanceID, attval_Value"
 				. ") VALUES ("
-				. ":attval_TenantID, :attval_AttributeTenantID, :attval_AttributeObjectID, :attval_AttributeInstanceID, :attval_ObjectID, :attval_InstanceID, NOW(), :attval_UserInstanceID, :attval_Value"
+				. ":attval_TenantID, :attval_ObjectID, :attval_InstanceID, :attval_AttributeTenantID, :attval_AttributeObjectID, :attval_AttributeInstanceID, NOW(), :attval_UserInstanceID, :attval_Value"
 				. ")";
 			
 			$user = User::GetCurrent();
@@ -309,11 +315,11 @@
 			$result = $statement->execute(array
 			(
 				":attval_TenantID" => $this->Tenant->ID,
-				":attval_AttributeTenantID" => ($attribute->Tenant == null ? null : $attribute->Tenant->ID),
-				":attval_AttributeObjectID" => $attribute->ParentObject->ID,
-				":attval_AttributeInstanceID" => $attribute->ID,
 				":attval_ObjectID" => $this->ParentObject->ID,
 				":attval_InstanceID" => $this->ID,
+				":attval_AttributeTenantID" => $this->Tenant->ID, // ($attribute->Tenant == null ? null : $attribute->Tenant->ID),
+				":attval_AttributeObjectID" => $attribute->ParentObject->ID,
+				":attval_AttributeInstanceID" => $attribute->ID,
 				":attval_UserInstanceID" => ($user == null ? null : $user->ID),
 				":attval_Value" => $value
 			));
@@ -345,7 +351,7 @@
 			$paramz = array
 			(
 				":instance_ID" => $this->ID,
-				":instance_TenantID" => $this->ParentObject->Tenant->ID,
+				":instance_TenantID" => $this->Tenant->ID,
 				":instance_ObjectID" => $this->ParentObject->ID,
 				":instance_GlobalIdentifier" => $this->GlobalIdentifier
 			);

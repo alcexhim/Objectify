@@ -4,26 +4,18 @@
 			<Content>
 				<wfx:Section ID="Content">
 					<h1>Migrate Packages</h1>
-					<form method="POST">
+					<form method="POST" id="mainForm">
 						<wfx:FormView ID="fv">
 							<Items>
-								<wfx:FormViewItemChoice ID="cboSource" Title="Source" EnableMultipleSelection="false" RequireSelectionFromChoices="true">
+								<wfx:FormViewItemChoice ID="cboSource" Name="migration_Source" Title="Source" EnableMultipleSelection="false" RequireSelectionFromChoices="true">
 									<Items>
 										<wfx:FormViewItemChoiceValue Title="Specific packages" Value="1" />
 										<wfx:FormViewItemChoiceValue Title="Entire tenant" Value="2" />
 									</Items>
 								</wfx:FormViewItemChoice>
-								<ofx:FormViewItemInstance ID="txtSource_SpecificPackages_Packages" Title="Source Package(s)" MultiSelect="true" ValidObjectNames="Package" />
-								<ofx:FormViewItemInstance ID="txtSource_EntireTenant_TenantName" Title="Source Tenant" MultiSelect="true" ValidObjectNames="Tenant" />
+								<ofx:FormViewItemInstance ID="txtSource_SpecificPackages_Packages" Name="migration_Packages" Title="Source Package(s)" MultiSelect="true" ValidObjectNames="Package" />
 								
-								<wfx:FormViewItemChoice ID="cboDestination" Title="Destination" EnableMultipleSelection="false" RequireSelectionFromChoices="true">
-									<Items>
-										<wfx:FormViewItemChoiceValue Title="New Tenant" Value="1" />
-										<wfx:FormViewItemChoiceValue Title="Existing Tenant" Value="2" />
-									</Items>
-								</wfx:FormViewItemChoice>
-								<wfx:FormViewItemText ID="txtDestination_NewTenant_TenantName" Title="New Tenant Name" />
-								<ofx:FormViewItemInstance ID="txtDestination_ExistingTenant_TenantName" Title="Destination Tenant" MultiSelect="true" ValidObjectNames="Tenant" />
+								<wfx:FormViewItemText ID="txtDestination" Name="migration_Destination" Title="Destination Tenant Name" />
 							</Items>
 						</wfx:FormView>
 						<div class="PageFooter">
