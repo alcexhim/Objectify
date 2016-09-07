@@ -151,6 +151,12 @@
 		}
 		
 		private static $instancesByGID;
+		/**
+		 * Gets the Instance with the specified global identifier on the specified tenant (or the default tenant if no tenant is specified).
+		 * @param string $globalIdentifier
+		 * @param Tenant $tenant
+		 * @return Instance
+		 */
 		public static function GetByGlobalIdentifier($globalIdentifier, $tenant = null)
 		{
 			if (Instance::$instancesByGID == null)
