@@ -268,12 +268,10 @@
 						$instDest = $relHasInstance->GetDestinationInstance();
 						
 						$obj = TenantObject::GetByGlobalIdentifier($instDest->GlobalIdentifier);
-						$inst = new Instance($obj);
-						$inst->GlobalIdentifier = $guid;
-						
-						$inst->Update();
+						$instCreated = $obj->CreateInstance(null, $guid);
+						return $instCreated;
 					}
-					return;
+					return null;
 				}
 			}
 			
