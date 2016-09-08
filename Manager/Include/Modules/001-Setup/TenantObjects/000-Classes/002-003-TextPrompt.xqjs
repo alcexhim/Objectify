@@ -1,0 +1,41 @@
+{
+	"Objects":
+	[
+		{
+			"ID": "{195DDDD7-0B74-4498-BF61-B0549FE05CF3}",
+			"Name": "TextPrompt",
+			"ParentObjects":
+			[
+				{
+					"Name": "Prompt"
+				}
+			],
+			"Relationships":
+			[
+				{
+					"Comment": "Class `Prompt`.instance labeled by String",
+					"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+					"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+					"DestinationInstances":
+					[
+						"{DB43F472-5DDA-4D6D-983E-929A06EF0112}"
+					]
+				}
+			],
+			"TranslatableValues":
+			[
+				{
+					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+					"InverseRelationshipID": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
+					"Values":
+					[
+						{
+							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+							"Value": "Text Prompt"
+						}
+					]
+				}
+			]
+		}
+	]
+}

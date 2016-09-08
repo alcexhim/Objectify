@@ -1,0 +1,111 @@
+{
+	"Objects":
+	[
+		{
+			"Name": "Relationship",
+			"Instances":
+			[
+				{
+					"ID": "{C9472658-9E50-48FD-BF7F-ED31A72DEF39}",
+					"Comment": "Reference Prompt Value.has source Prompt",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has source"
+						},
+						{
+							"ID": "{F1A06573-C447-4D85-B4E7-54A438C4A960}",
+							"Value": true
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Reference Prompt Value`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{056B2384-F841-4562-886B-F7AFB6D272F2}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Prompt`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{EC889225-416A-4F73-B8D1-2A42B37AF43E}"
+							]
+						},
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{D573044A-4E7F-490C-864E-BD9EC0188A78}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{D573044A-4E7F-490C-864E-BD9EC0188A78}",
+					"Comment": "Prompt.source for Reference Prompt Value",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "source for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Prompt`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{EC889225-416A-4F73-B8D1-2A42B37AF43E}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Reference Prompt Value`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{056B2384-F841-4562-886B-F7AFB6D272F2}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"ID": "{056B2384-F841-4562-886B-F7AFB6D272F2}",
+			"Name": "ReferencePromptValue",
+			"ParentObjects":
+			[
+				{
+					"Name": "PromptValue"
+				}
+			],
+			"TranslatableValues":
+			[
+				{
+					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+					"InverseRelationshipID": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
+					"Values":
+					[
+						{
+							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+							"Value": "Reference Prompt Value"
+						}
+					]
+				}
+			]
+		}
+	]
+}
