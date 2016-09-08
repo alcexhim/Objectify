@@ -435,6 +435,17 @@
 						if ($ctl != null) $layerContent->Controls[] = $ctl;
 					}
 				}
+				
+				// execute method calls for Tasks that have them
+				$relExecutesMethodCall = $inst->GetRelationship(KnownRelationships::get___Task__executes__Method_Call());
+				if ($relExecutesMethodCall != null)
+				{
+					$instsExecutesMethodCall = $relExecutesMethodCall->GetDestinationInstances();
+					foreach ($instsExecutesMethodCall as $instMethodCall)
+					{
+						Objectify::ExecuteMethodCall($instMethodCall);
+					}
+				}
 			}
 			else
 			{
