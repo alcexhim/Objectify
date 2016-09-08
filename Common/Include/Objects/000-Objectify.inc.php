@@ -93,6 +93,7 @@
 				
 				$val = "<div style=\"border-radius: 8px; background-color: " . $attTenantTypeBackgroundColor . "; padding: 8px; color: " . $attTenantTypeForegroundColor . "; display: inline-block; min-width: 100px; text-align: center;\">";
 				$val .= "<strong>" . $instTenantType->ToString() . "</strong>";
+				$val .= " - " . System::GetTenantName();
 				if ($instTenantType->GetAttributeValue($attDisplayVersionInBadge, false))
 				{
 					$val .= " - " . $versionString . " (MADI revision: " . $madiRevision . ")";
