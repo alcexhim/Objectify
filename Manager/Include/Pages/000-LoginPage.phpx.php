@@ -132,14 +132,7 @@
 							return true;
 						}
 						*/
-						if (isset($_SESSION[$tenant->Name . ":LoginRedirectURL"]))
-						{
-							System::Redirect($_SESSION[$tenant->Name . ":LoginRedirectURL"]);
-						}
-						else
-						{
-							System::Redirect("~/");
-						}
+						System::RedirectFromLoginPage();
 						return true;
 					}
 					else
