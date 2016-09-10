@@ -1,1 +1,6 @@
 @import "DisplayWidget.css";
+
+body > div.Content > div.PageHeader > div#fvPrompts
+{
+	margin-top: 16px;
+}

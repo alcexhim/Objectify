@@ -2,23 +2,26 @@
 	<Pages>
 		<Page FileName="reset" MasterPageFileName="Default" CodeBehindClassName="Objectify\Manager\Modules\TestingModule\Pages\ResetPage">
 			<Content>
-				<wfx:Section PlaceholderID="Content">
+				<wfx:Section PlaceholderID="Header">
 					<h1>Reset Server</h1>
+					<h2>Return the server to a clean slate, losing all tenants and configurations</h2>
+				</wfx:Section>
+				<wfx:Section PlaceholderID="Content">
 					<p>
 						This will return the server to a clean slate. YOU WILL LOSE EVERYTHING, INCLUDING ALL TENANTS. Only do this if you truly understand and are prepared for the consequences.
 					</p>
-					<form method="POST">
+					<form method="POST" id="formMain">
 						<table>
 							<tr>
 								<td><label for="chkConfirmation">Confirm</label></td>
 								<td><input id="chkConfirmation" type="checkbox" name="Confirmation" value="1" /></td>
 							</tr>
 						</table>
-						<div class="PageFooter">
-							<input type="submit" value="Continue" />
-							<wfx:Button Text="Cancel" TargetURL="~/" />
-						</div>
 					</form>
+				</wfx:Section>
+				<wfx:Section PlaceholderID="Footer">
+					<wfx:Button CssClass="Danger" ID="cmdSubmit" Text="Continue" />
+					<wfx:Button Text="Cancel" TargetURL="~/" />
 				</wfx:Section>
 			</Content>
 		</Page>

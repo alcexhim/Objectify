@@ -2,16 +2,17 @@
 	<Pages>
 		<Page FileName="instances/modify/$(instanceID)" CodeBehindClassName="Objectify\Manager\Modules\InstanceEditor\Pages\ModifyInstancePage" MasterPageFileName="Default">
 			<Content>
+				<wfx:Section PlaceholderID="Header">
+					<html:Heading Level="1">Edit Instance: <ofx:InstanceDisplayWidget ID="idwMain" /></html:Heading>
+					<html:Heading Level="2">Modify attributes and relationships for this Instance</html:Heading>
+				</wfx:Section>
 				<wfx:Section PlaceholderID="Content">
-					<html:Heading Level="1">Edit Instance: <html:Literal ID="litInstanceObjectID" /></html:Heading>
-					<html:Heading Level="2"><ofx:InstanceDisplayWidget ID="idwMain" ShowURL="false" /></html:Heading>
-					
-					<table>
-						<tr>
-							<td>Global identifier:</td>
-							<td><html:Literal ID="litGlobalIdentifier" /></td>
-						</tr>
-					</table>
+					<div class="FormView">
+						<div class="Field">
+							<label>Global identifier</label>
+							<div><html:Literal ID="litGlobalIdentifier" /></div>
+						</div>
+					</div>
 					
 					<wfx:TabContainer ID="tbsTabs" SelectedTabID="tabAttributes">
 						<TabPages>
@@ -36,11 +37,10 @@
 							</wfx:TabPage>
 						</TabPages>
 					</wfx:TabContainer>
-					
-					<div class="PageFooter">
-						<wfx:Button ID="cmdSaveChanges" CssClass="Primary" Text="Save Changes" />
-						<wfx:Button ID="cmdDiscardChanges" TargetURL="~/objects" TargetScript="history.back(); return false;" Text="Discard Changes" />
-					</div>
+				</wfx:Section>
+				<wfx:Section PlaceholderID="Footer">
+					<wfx:Button ID="cmdSaveChanges" CssClass="Primary" Text="Save Changes" />
+					<wfx:Button ID="cmdDiscardChanges" TargetURL="~/objects" TargetScript="history.back(); return false;" Text="Discard Changes" />
 				</wfx:Section>
 			</Content>
 		</Page>

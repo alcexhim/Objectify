@@ -3,127 +3,19 @@
 	<Pages>
 		<Page Title="Dashboard" FileName="dashboard" CodeBehindClassName="Objectify\Tenant\Pages\DashboardPage" MasterPageFileName="Default">
 			<Content>
-				<wfx:Section PlaceholderID="Content">
-					<wfx:Window ID="wndCreateTenant" Title="Create Tenant">
-						<ContentControls>
-							<wfx:FormView ID="fvCreateTenant">
-								<Items>
-									<wfx:FormViewItemText ID="txtTenantName" Title="Tenant base name" />
-									<wfx:FormViewItemNumber ID="txtTenantCount" Title="Number of tenants" MinimumValue="1" DefaultValue="1" />
-								</Items>
-							</wfx:FormView>
-						</ContentControls>
-						<FooterControls>
-							<wfx:Button ID="cmdCreate" CssClass="Primary" Text="Create" OnClientClick="return wndCreateTenant_cmdCreate_Click();" />
-							<wfx:Button ID="cmdClose" Text="Close" OnClientClick="wndCreateTenant.Hide(); return false;" />
-						</FooterControls>
-					</wfx:Window>
-					
-					<div class="ColumnContainer TwoColumn">
-						<div class="Column">
-							<wfx:Panel CssClass="Primary" Title="Tenants">
-								<ContentControls>
-									<wfx:Disclosure ID="dscActiveTenants" Title="Active Tenants (0)" Expanded="true">
-										<!--
-											below should be an ofx:ListView with the properties:
-												{
-													objects: [ Tenant ],
-													columns:
-													[
-														{ field: Name },
-														{ field: Activation Date },
-														{ field: Termination Date }
-													]
-												}
-											 
-											 where	"Name" is a "Text Attribute" on Tenant object,
-											 		"Activation Date" is a "Date Attribute" on Tenant object,
-											 	and "Termination Date" is a "Date Attribute" on Tenant object
-										-->
-										<wfx:ListView ID="lvTenantsActive" Width="100%">
-											<Columns>
-												<wfx:ListViewColumn ID="lvcTenantName" Title="Tenant name" />
-												<!--
-													<wfx:ListViewColumn ID="lvcTenantType" Title="Tenant type" />
-												 -->
-												<wfx:ListViewColumn ID="lvcActivationDate" Title="Activation date" />
-												<wfx:ListViewColumn ID="lvcTerminationDate" Title="Termination date" />
-												<!--
-													<wfx:ListViewColumn ID="lvcDescription" Title="Description" />
-													<wfx:ListViewColumn ID="lvcActions" Title="Actions" />
-												-->
-											</Columns>
-										</wfx:ListView>
-									</wfx:Disclosure>
-									<wfx:Disclosure ID="dscInactiveTenants" Title="Inactive Tenants (0)">
-										<wfx:ListView ID="lvTenantsInactive" Width="100%">
-											<Columns>
-												<wfx:ListViewColumn ID="lvcTenantName" Title="Tenant name" />
-												<!--
-													<wfx:ListViewColumn ID="lvcTenantType" Title="Tenant type" />
-												-->
-												<wfx:ListViewColumn ID="lvcActivationDate" Title="Activation date" />
-												<wfx:ListViewColumn ID="lvcTerminationDate" Title="Termination date" />
-												<!--
-													<wfx:ListViewColumn ID="lvcDescription" Title="Description" />
-													<wfx:ListViewColumn ID="lvcActions" Title="Actions" />
-												-->
-											</Columns>
-										</wfx:ListView>
-									</wfx:Disclosure>
-								</ContentControls>
-								<FooterControls>
-									<wfx:Button ID="cmdNewTenant" Text="New Tenant" TargetURL="~/tenants/create" TargetScript="wndCreateTenant.ShowDialog(); return false;" />
-									<ofx:TaskButton ID="cmdNewTenant_Tasked" Text="New Tenant (Task)" InstanceGlobalIdentifier="170908E4E3CD4854BB2FC7815BBD1990" />
-								</FooterControls>
-							</wfx:Panel>
-						</div>
-						<div class="Column">
-							<wfx:Panel CssClass="Success" Title="Organizations">
-								<ContentControls>
-									<wfx:ListView ID="lvOrganizations" Width="100%">
-										<Columns>
-											<wfx:ListViewColumn ID="lvcOrganizationName" Title="Organization name" />
-										</Columns>
-										<Items>
-											<wfx:ListViewItem>
-												<Columns>
-													<wfx:ListViewItemColumn ID="lvcOrganizationName" Content="Mike Becker's Software" />
-												</Columns>
-											</wfx:ListViewItem>
-										</Items>
-									</wfx:ListView>
-								</ContentControls>
-								<FooterControls>
-									<wfx:Button ID="cmdOrganizationCreate" Text="Create Organization" TargetURL="~/tenants/create" TargetScript="wndCreateTenant.ShowDialog(); return false;" />
-								</FooterControls>
-							</wfx:Panel>
-						</div>
+				<wfx:Section PlaceholderID="Header">
+					<h1>Dashboard title goes here</h1>
+					<h2>Provide a short description of your Dashboard so users know what they can do</h2>
+					<div class="PageControls" style="position: absolute; right: 32px; top: 8px;">
+						<a href="#"><i class="fa fa-cog"></i></a>
 					</div>
-					<wfx:Panel CssClass="Warning" Title="Issues">
-						<ContentControls>
-							<wfx:ListView ID="lvIssues" Width="100%" PlaceholderText="There are no outstanding issues">
-								<Columns>
-									<wfx:ListViewColumn ID="lvcOpenedBy" Title="Opened by" />
-									<wfx:ListViewColumn ID="lvcType" Title="Type" />
-									<wfx:ListViewColumn ID="lvcPriority" Title="Priority" />
-									<wfx:ListViewColumn ID="lvcDescription" Title="Description" />
-									<wfx:ListViewColumn ID="lvcAssignedTo" Title="Assigned to" />
-								</Columns>
-								<Items>
-									<wfx:ListViewItem>
-										<Columns>
-											<wfx:ListViewItemColumn ID="lvcOpenedBy" Content="Haku Kithri" />
-											<wfx:ListViewItemColumn ID="lvcType" Content="Feature Request" />
-											<wfx:ListViewItemColumn ID="lvcPriority" Content="High" />
-											<wfx:ListViewItemColumn ID="lvcDescription" Content="I can't accept a friend request" />
-											<wfx:ListViewItemColumn ID="lvcAssignedTo" Content="Michael Becker" />
-										</Columns>
-									</wfx:ListViewItem>
-								</Items>
-							</wfx:ListView>
-						</ContentControls>
-					</wfx:Panel>
+				</wfx:Section>
+				<wfx:Section PlaceholderID="Content">
+					<div style="padding: 128px; text-align: center;">
+						<i class="fa fa-shield" style="font-size: 96px;"></i>
+						<h1>Your dashboard has nothing on it!</h1>
+						<h2>You can fix that by <a href="#">adding some content</a> or <a href="#">changing your default page</a></h2>
+					</div>
 				</wfx:Section>
 			</Content>
 		</Page>

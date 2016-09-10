@@ -61,7 +61,15 @@
 					</wfx:Menu>
 				</wfx:Sidebar>
 				<div class="Content">
-					<wfx:SectionPlaceholder ID="Content" />
+					<div class="PageHeader">
+						<wfx:SectionPlaceholder ID="Header" />
+					</div>
+					<div class="PageContent">
+						<wfx:SectionPlaceholder ID="Content" />
+					</div>
+					<div class="PageFooter">
+						<wfx:SectionPlaceholder ID="Footer" />
+					</div>
 				</div>
 				<footer>
 					<div style="position: absolute; right: 16px; bottom: 8px;">

@@ -2,8 +2,11 @@
 	<Pages>
 		<Page Title="Migrate Packages" MasterPageFileName="Default" FileName="migrate" CodeBehindClassName="Objectify\Tenant\Pages\MigratePage">
 			<Content>
-				<wfx:Section ID="Content">
+				<wfx:Section PlaceholderID="Header">
 					<h1>Migrate Packages</h1>
+					<h2>Select the packages you want to migrate, or migrate an entire tenant</h2>
+				</wfx:Section>
+				<wfx:Section PlaceholderID="Content">
 					<form method="POST" id="mainForm">
 						<wfx:FormView ID="fv">
 							<Items>
@@ -18,12 +21,12 @@
 								<wfx:FormViewItemText ID="txtDestination" Name="migration_Destination" Title="Destination Tenant Name" />
 							</Items>
 						</wfx:FormView>
-						<div class="PageFooter">
-							<wfx:Button ID="cmdOK" Text="Migrate Now" CssClass="Primary" />
-							<wfx:Button ID="cmdSaveForLater" Text="Save Migration for Later" />
-							<wfx:Button ID="cmdCancel" Text="Cancel" TargetURL="~/" TargetScript="history.back(); return false;" />
-						</div>
 					</form>
+				</wfx:Section>
+				<wfx:Section PlaceholderID="Footer">
+					<wfx:Button ID="cmdOK" Text="Migrate Now" CssClass="Primary" />
+					<wfx:Button ID="cmdSaveForLater" Text="Save Migration for Later" />
+					<wfx:Button ID="cmdCancel" Text="Cancel" TargetURL="~/" TargetScript="history.back(); return false;" />
 				</wfx:Section>
 			</Content>
 		</Page>

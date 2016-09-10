@@ -5,16 +5,18 @@
 				<Script ContentType="text/javascript" FileName="~/../Include/Modules/003-InstanceEditor/Pages/001-ExecuteInstancePage.phpx.js" />
 			</Scripts>
 			<Content>
-				<wfx:Section PlaceholderID="Content">
+				<wfx:Section PlaceholderID="Header">
 					<h1><ofx:InstanceDisplayWidget ID="idwObjectTitleHeading" /></h1>
-					
+					<html:Heading Level="2" ID="hdrInstructions">A short, informative description of this Task or Report should be displayed here</html:Heading>
+				</wfx:Section>
+				<wfx:Section PlaceholderID="Content">
 					<wfx:FormView ID="fvPrompts">
 					</wfx:FormView>
-					
 					<html:Layer ID="layerContent">
 					</html:Layer>
-					
-					<html:Layer CssClass="PageFooter" ID="layerFooter">
+				</wfx:Section>
+				<wfx:Section PlaceholderID="Footer">
+					<html:Layer ID="layerFooter">
 						<wfx:Button ID="cmdSubmit" Text="Submit" CssClass="Primary" />
 						<wfx:Button ID="cmdCancel" Text="Cancel" />
 					</html:Layer>
