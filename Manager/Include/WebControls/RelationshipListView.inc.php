@@ -21,6 +21,12 @@
 		
 		protected function BeforeContent()
 		{
+			if ($this->Relationship == null)
+			{
+				parent::BeforeContent();
+				return;
+			}
+			
 			$relDestClass = $this->Relationship->GetRelationship(KnownRelationships::get___Relationship__has_destination__Class());
 			if ($relDestClass != null)
 			{
