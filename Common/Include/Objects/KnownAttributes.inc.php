@@ -14,6 +14,12 @@
 		{
 			return Instance::GetByGlobalIdentifier(KnownAttributes::GUID___Attribute___Text___Value);
 		}
+		
+		const GUID___Attribute___Text___Content_Type = "{34142FCB-172C-490A-AF03-FF8451D00CAF}";
+		public static function get___Text___Content_Type()
+		{
+			return Instance::GetByGlobalIdentifier(KnownAttributes::GUID___Attribute___Text___Content_Type);
+		}
 
 		const GUID___Attribute___Text___CSSValue = "{C0DD4A42-F503-4EB3-8034-7C428B1B8803}";
 		public static function get___Text___CSSValue()
