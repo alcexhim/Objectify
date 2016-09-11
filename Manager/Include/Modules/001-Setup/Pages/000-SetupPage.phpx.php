@@ -231,6 +231,7 @@
 										}
 									}
 									
+									// Set up attribute values (Instance)
 									if (isset($pobj_data->AttributeValues))
 									{
 										if (is_array($pobj_data->AttributeValues))
@@ -280,6 +281,30 @@
 										Relationship::Create(KnownRelationships::get___Translatable_Text_Constant__has__Translatable_Text_Constant_Value(), $instTTC_Value, array($instLanguage_Value));
 									}
 									Relationship::Create($instRelationship, $instObj, $instTTC_Value);
+								}
+							}
+						}
+						
+						// Set up attribute values (Object)
+						if (isset($obj_data->AttributeValues))
+						{
+							if (is_array($obj_data->AttributeValues))
+							{
+								foreach ($obj_data->AttributeValues as $attval)
+								{
+									if (isset($attval->ID))
+									{
+										$instatt = Instance::GetByGlobalIdentifier($attval->ID);
+										if ($instatt == null)
+										{
+											trigger_error("[FAIL] setting attribute with id '" . $attval->ID . "' on inst '" . $instObj->GlobalIdentifier . "' to '" . $attval->Value . "'");
+										}
+										else
+										{
+											$value = $attval->Value;
+											$instObj->SetAttributeValue($instatt, $value);
+										}
+									}
 								}
 							}
 						}
