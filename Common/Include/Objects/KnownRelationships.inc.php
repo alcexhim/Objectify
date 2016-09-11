@@ -479,6 +479,17 @@
 			return Instance::GetByGlobalIdentifier(self::Relationship___Translatable_Text_Constant__title_for__Report);
 		}
 		
+		const Relationship___Report__has_instructions__Translatable_Text_Constant = "{D5AA18A7-7ACD-4792-B039-6C620A151BAD}";
+		const Relationship___Translatable_Text_Constant__instructions_for__Report = "{C2B3A2FA-25A0-45B4-91F2-22D00C4008AF}";
+		public static function get___Report__has_instructions__Translatable_Text_Constant()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Report__has_instructions__Translatable_Text_Constant);
+		}
+		public static function get___Translatable_Text_Constant__instructions_for__Report()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Translatable_Text_Constant__instructions_for__Report);
+		}
+		
 		const Relationship___Report__has__Report_Column = "{7A8F57F1-A4F3-4BAF-84A5-E893FD79447D}";
 		const Relationship___Report_Column__for__Report = "{3FA19854-CF0F-4656-B80B-54EF633503E0}";
 		public static function get___Report__has__Report_Column()
@@ -598,6 +609,17 @@
 		public static function get___Translatable_Text_Constant__title_for__Task()
 		{
 			return Instance::GetByGlobalIdentifier(self::Relationship___Translatable_Text_Constant__title_for__Task);
+		}
+		
+		const Relationship___Task__has_instructions__Translatable_Text_Constant = "{A9387898-9DC0-4006-94F1-1FB02EB3ECD7}";
+		const Relationship___Translatable_Text_Constant__instructions_for__Task = "{686DD398-709D-48D6-9229-3C79D617EC23}";
+		public static function get___Task__has_instructions__Translatable_Text_Constant()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Task__has_instructions__Translatable_Text_Constant);
+		}
+		public static function get___Translatable_Text_Constant__instructions_for__Task()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Translatable_Text_Constant__instructions_for__Task);
 		}
 		
 		const Relationship___UI_Task__has__Page_Component = "{D2949AF7-249A-4FFB-9A54-252CD9D06C51}";

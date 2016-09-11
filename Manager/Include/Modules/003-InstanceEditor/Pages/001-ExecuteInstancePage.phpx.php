@@ -57,7 +57,7 @@
 					if ($relHasTargetRelationship != null)
 					{
 						$instTargetRelationship = $relHasTargetRelationship->GetDestinationInstance();
-							
+						
 						$lv = new RelationshipListView();
 						$lv->EnableAddRemoveRows = true;
 						$lv->Instance = $instPrimary;
@@ -386,6 +386,9 @@
 			$layerFooter = $e->RenderingPage->GetControlByID("layerFooter");
 			
 			$fvPrompts = $e->RenderingPage->GetControlByID("fvPrompts");
+			$hdrInstructions = $e->RenderingPage->GetControlByID("hdrInstructions");
+			$hdrInstructions->EnableRender = false;
+			
 			if ($paramstr != null)
 			{
 				$paramstr = base64_decode($paramstr);
@@ -531,9 +534,21 @@
 				}				
 			}
 			
+			if (count($fvPrompts->Items) == null)
+			{
+				$fvPrompts->EnableRender = false;
+			}
+			
 			if ($inst->ParentObject->Name == "UITask")
 			{
 				// execute teh report
+				$relInstructions = $inst->GetRelationship(KnownRelationships::get___Task__has_instructions__Translatable_Text_Constant());
+				if ($relInstructions != null)
+				{
+					$instInstructions = $relInstructions->GetDestinationInstance();
+					$hdrInstructions->Content = $instInstructions->ToString();
+					$hdrInstructions->EnableRender = true;
+				}
 			}
 			else if ($inst->ParentObject->Name == "Page")
 			{
@@ -570,6 +585,14 @@
 			{
 				// execute teh report
 				$layerFooter->EnableRender = false;
+				
+				$relInstructions = $inst->GetRelationship(KnownRelationships::get___Report__has_instructions__Translatable_Text_Constant());
+				if ($relInstructions != null)
+				{
+					$instInstructions = $relInstructions->GetDestinationInstance();
+					$hdrInstructions->Content = $instInstructions->ToString();
+					$hdrInstructions->EnableRender = true;
+				}
 				
 				$table = new HTMLControlTable();
 				$table->Width = "100%";

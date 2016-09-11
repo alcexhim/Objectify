@@ -314,6 +314,17 @@
 									"Value": "All Objects"
 								}
 							]
+						},
+						{
+							"Comment": "Report `All Objects`.has instructions Translatable Text Constant",
+							"RelationshipID": "{D5AA18A7-7ACD-4792-B039-6C620A151BAD}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "View all objects, their superclasses, and instances available on this tenant"
+								}
+							]
 						}
 					],
 					"Relationships":

@@ -98,6 +98,14 @@
 							[
 								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
 							]
+						},
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{686DD398-709D-48D6-9229-3C79D617EC23}"
+							]
 						}
 					]
 				},
