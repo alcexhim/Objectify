@@ -277,6 +277,17 @@
 			return Instance::GetByGlobalIdentifier(self::Relationship___Prompt__for__Method);
 		}
 
+		const Relationship___Assign_Attribute_Method__has__Attribute = "{BC4B71B9-6168-4B58-95D4-A56ED78CA965}";
+		const Relationship___Attribute__for__Assign_Attribute_Method = "{C238C7D8-B8C8-419F-9F71-35C1B96FB724}";
+		public static function get___Assign_Attribute_Method__has__Attribute()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Assign_Attribute_Method__has__Attribute);
+		}
+		public static function get___Attribute__for__Assign_Attribute_Method()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Attribute__for__Assign_Attribute_Method);
+		}
+		
 		const Relationship___Return_Instance_Set_Method_Binding__has_source__Class = "{EE7A3049-8E09-410C-84CB-C2C0D652CF40}";
 		const Relationship___Class__source_for__Return_Instance_Set_Method_Binding = "{AA3C3ECA-9963-4877-9D9E-139724B59E14}";
 		public static function get___Return_Instance_Set_Method_Binding__has_source__Class()

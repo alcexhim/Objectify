@@ -274,6 +274,46 @@
 					return null;
 				}
 			}
+			else if ($method->ParentObject->Name == "AssignAttributeMethod")
+			{
+				$relAttribute = $method->GetRelationship(KnownRelationships::get___Assign_Attribute_Method__has__Attribute());
+				if ($relAttribute != null)
+				{
+					$instAttribute = $relAttribute->GetDestinationInstance();
+					if ($instAttribute != null)
+					{
+						echo ("AA assigning attribute " . $instAttribute->GetInstanceID() . " on instance ??? value ???\n");
+						foreach ($parameters as $parm)
+						{
+							echo ("Parm " . $parm->GetInstanceID() . "\n");
+							$relPrompt = $parm->GetRelationship(KnownRelationships::get___Prompt_Value__has__Prompt());
+							if ($relPrompt != null)
+							{
+								$instPrompt = $relPrompt->GetDestinationInstance();
+								echo ("Has prompt `" . $instPrompt->ToString() . "`\n");
+							}
+							
+							switch ($parm->ParentObject->Name)
+							{
+								case "ReferencePromptValue":
+								{
+									$relSourcePrompt = $parm->GetRelationship(KnownRelationships::get___Reference_Prompt_Value__has_source__Prompt());
+									if ($relSourcePrompt != null)
+									{
+										$instSourcePrompt = $relSourcePrompt->GetDestinationInstance();
+										if ($instSourcePrompt != null)
+										{
+											echo ("Reference Prompt Value has source Prompt `" . $instSourcePrompt->ToString() . "`\n");
+										}
+									}
+									break;
+								}
+							}
+						}
+						die();
+					}
+				}
+			}
 			
 			$relBinding = $method->GetRelationship(KnownRelationships::get___Method__has__Method_Binding());
 			if ($relBinding != null)

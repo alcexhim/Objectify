@@ -115,12 +115,37 @@
 							]
 						},
 						{
-							"Comment": "Relationship Editor Page Component.has Report Field `Report Field for Report Prompt`",
+							"Comment": "Relationship Editor Page Component.has Report Field `Report Field for Report Prompt`, `Prompt Qualifier for Report Prompt`, `Value Source`, `Value`",
 							"RelationshipID": "{1540634D-EB44-48F8-88B8-17B7DCBBD006}",
 							"InverseRelationshipID": "{51C8837D-FF85-4647-A0F6-BE5D0AED51B5}",
 							"DestinationInstances":
 							[
-								"{0F13D646-13C6-4588-85BF-98F09206C97F}"
+								"{0F13D646-13C6-4588-85BF-98F09206C97F}",
+								"{BD08F308-00EE-41D5-8254-8053940144F2}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{102CA3D5-E765-4CCE-A05A-89BC310C05ED}",
+					"Relationships":
+					[
+						{
+							"Comment": "Relationship Editor Page Component.has target Relationship `Report.has Report Filter`",
+							"RelationshipID": "{54FBD056-0BD4-44F4-921C-11FB0C77996E}",
+							"InverseRelationshipID": "{5296BC07-15F4-4B84-B94A-D4FBF0228983}",
+							"DestinationInstances":
+							[
+								""
+							]
+						},
+						{
+							"Comment": "Relationship Editor Page Component.has Report Field `And/Or for Report Filter`, `Open Paren for Report Filter`, `Field for Report Filter`, `Operator for Report Filter`, `Comparison Type for Report Filter`, `Comparison Value for Report Filter`",
+							"RelationshipID": "{1540634D-EB44-48F8-88B8-17B7DCBBD006}",
+							"InverseRelationshipID": "{51C8837D-FF85-4647-A0F6-BE5D0AED51B5}",
+							"DestinationInstances":
+							[
+								""
 							]
 						}
 					]
@@ -232,6 +257,7 @@
 							"RelationshipID": "{CB7B8162-1C9E-4E72-BBB8-C1C37CA69CD5}",
 							"DestinationInstances":
 							[
+								"{102CA3D5-E765-4CCE-A05A-89BC310C05ED}"
 							]
 						}
 					]
