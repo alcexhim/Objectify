@@ -265,6 +265,17 @@
 		{
 			return Instance::GetByGlobalIdentifier(self::Relationship___Method_Binding__for__Method);
 		}
+		
+		const Relationship___Method__has__Prompt = "{5B715276-8F3C-4E3F-9FF4-27E766A91154}";
+		const Relationship___Prompt__for__Method = "{B271A437-32C7-4E99-8498-FC1B36A7AE11}";
+		public static function get___Method__has__Prompt()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Method__has__Prompt);
+		}
+		public static function get___Prompt__for__Method()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Prompt__for__Method);
+		}
 
 		const Relationship___Return_Instance_Set_Method_Binding__has_source__Class = "{EE7A3049-8E09-410C-84CB-C2C0D652CF40}";
 		const Relationship___Class__source_for__Return_Instance_Set_Method_Binding = "{AA3C3ECA-9963-4877-9D9E-139724B59E14}";
@@ -622,6 +633,17 @@
 			return Instance::GetByGlobalIdentifier(self::Relationship___Translatable_Text_Constant__instructions_for__Task);
 		}
 		
+		const Relationship___Task__executes__Method_Call = "{D8C0D4D4-F8C6-4B92-A2C1-8BF16B16203D}";
+		const Relationship___Method_Call__executed_by__Task = "{8FB46A15-DE06-4F50-95EB-3A5AD71C89B6}";
+		public static function get___Task__executes__Method_Call()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Task__executes__Method_Call);
+		}
+		public static function get___Method_Call__executed_by__Task()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Method_Call__executed_by__Task);
+		}
+		
 		const Relationship___UI_Task__has__Page_Component = "{D2949AF7-249A-4FFB-9A54-252CD9D06C51}";
 		const Relationship___Page_Component__for__UI_Task = "{C76E8C98-5C54-48DF-B1F0-637DB84B5989}";
 		public static function get___UI_Task__has__Page_Component()
@@ -675,6 +697,28 @@
 		public static function get___Translatable_Text_Constant__title_for__Prompt_Value()
 		{
 			return Instance::GetByGlobalIdentifier(self::Relationship___Translatable_Text_Constant__title_for__Prompt_Value);
+		}
+		
+		const Relationship___Prompt_Value__has__Prompt = "{7CD62362-DDCE-4BFC-87B9-B5499B0BC141}";
+		const Relationship___Prompt__for__Prompt_Value = "{0E0F60F9-ABA2-4460-BD35-85CC4085F101}";
+		public static function get___Prompt_Value__has__Prompt()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Prompt_Value__has__Prompt);
+		}
+		public static function get___Prompt__for__Prompt_Value()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Prompt__for__Prompt_Value);
+		}
+		
+		const Relationship___Reference_Prompt_Value__has_source__Prompt = "{C9472658-9E50-48FD-BF7F-ED31A72DEF39}";
+		const Relationship___Prompt__source_for__Reference_Prompt_Value = "{D573044A-4E7F-490C-864E-BD9EC0188A78}";
+		public static function get___Reference_Prompt_Value__has_source__Prompt()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Reference_Prompt_Value__has_source__Prompt);
+		}
+		public static function get___Prompt__source_for__Reference_Prompt_Value()
+		{
+			return Instance::GetByGlobalIdentifier(self::Relationship___Prompt__source_for__Reference_Prompt_Value);
 		}
 		
 		const Relationship___Instance_Prompt__has_valid__Class = "{D5BD754B-F401-4FD8-A707-82684E7E25F0}";

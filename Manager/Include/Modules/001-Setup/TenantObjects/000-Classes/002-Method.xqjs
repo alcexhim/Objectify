@@ -473,6 +473,78 @@
 					]
 				},
 				{
+					"ID": "{5B715276-8F3C-4E3F-9FF4-27E766A91154}",
+					"Comment": "Method.has Prompt",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "has"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Method`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{D2813913-80B6-4DD6-9AD6-56D989169734}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Prompt`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{EC889225-416A-4F73-B8D1-2A42B37AF43E}"
+							]
+						},
+						{
+							"Comment": ".has sibling Relationship",
+							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"DestinationInstances":
+							[
+								"{B271A437-32C7-4E99-8498-FC1B36A7AE11}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{B271A437-32C7-4E99-8498-FC1B36A7AE11}",
+					"Comment": "Prompt.for Method",
+					"AttributeValues":
+					[
+						{
+							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+							"Value": "for"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": ".has source Class `Prompt`",
+							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"DestinationInstances":
+							[
+								"{EC889225-416A-4F73-B8D1-2A42B37AF43E}"
+							]
+						},
+						{
+							"Comment": ".has destination Class `Method`",
+							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"DestinationInstances":
+							[
+								"{D2813913-80B6-4DD6-9AD6-56D989169734}"
+							]
+						}
+					]
+				},
+				{
 					"ID": "{73471769-5445-4EF4-ADFA-3E08DE139A3D}",
 					"Comment": "Method Binding.has Condition",
 					"AttributeValues":

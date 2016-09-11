@@ -130,6 +130,30 @@
 							]
 						}
 					]
+				},
+				{
+					"ID": "{1245ECDF-883F-4C1A-8A9F-27505A5EA3D6}",
+					"Relationships":
+					[
+						{
+							"Comment": "Relationship Editor Page Component.has target Relationship `Method.has Prompt`",
+							"RelationshipID": "{54FBD056-0BD4-44F4-921C-11FB0C77996E}",
+							"InverseRelationshipID": "{5296BC07-15F4-4B84-B94A-D4FBF0228983}",
+							"DestinationInstances":
+							[
+								"{5B715276-8F3C-4E3F-9FF4-27E766A91154}"
+							]
+						},
+						{
+							"Comment": "Relationship Editor Page Component.has Report Field `Report Field for Prompt`, `Value Source for Prompt`, `Value for Prompt`",
+							"RelationshipID": "{1540634D-EB44-48F8-88B8-17B7DCBBD006}",
+							"InverseRelationshipID": "{51C8837D-FF85-4647-A0F6-BE5D0AED51B5}",
+							"DestinationInstances":
+							[
+								
+							]
+						}
+					]
 				}
 			]
 		},
@@ -146,7 +170,8 @@
 							"RelationshipID": "{5D22EC45-9E6B-4B77-B79A-E59AEBAECFB9}",
 							"DestinationInstances":
 							[
-								"{6B159158-501C-4E32-8C6B-07D133A6A1FB}"
+								"{6B159158-501C-4E32-8C6B-07D133A6A1FB}",
+								"{2DBF7DE2-C8B5-4F88-B856-D3C82DFC4EA4}"
 							]
 						}
 					]
@@ -180,6 +205,33 @@
 							"DestinationInstances":
 							[
 								"{0C14B4B8-F7D4-4D70-9623-F3815FE9B154}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{2DBF7DE2-C8B5-4F88-B856-D3C82DFC4EA4}",
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{447375EF-2FF6-4869-B9C8-0523B5123430}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Prompts"
+								}
+							]
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": "Container Page Component.has Page Component",
+							"RelationshipID": "{CB7B8162-1C9E-4E72-BBB8-C1C37CA69CD5}",
+							"DestinationInstances":
+							[
+								"{1245ECDF-883F-4C1A-8A9F-27505A5EA3D6}"
 							]
 						}
 					]
@@ -236,7 +288,7 @@
 							[
 								{
 									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Edits a Method"
+									"Value": "Manage method bindings and prompts for Methods"
 								}
 							]
 						}
