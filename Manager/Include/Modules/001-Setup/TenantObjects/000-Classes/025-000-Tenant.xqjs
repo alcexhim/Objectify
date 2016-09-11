@@ -405,6 +405,10 @@
 							"Value": "Header.png"
 						},
 						{
+							"ID": "{34142FCB-172C-490A-AF03-FF8451D00CAF}",
+							"Value": "image/png"
+						},
+						{
 							"ID": "{0DD670AF-498D-4FEC-A2CF-20E3E56EB732}",
 							"Value": "2016-01-01"
 						},
