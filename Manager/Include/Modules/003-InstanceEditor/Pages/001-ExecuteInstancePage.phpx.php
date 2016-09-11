@@ -550,6 +550,18 @@
 					$hdrInstructions->EnableRender = true;
 				}
 			}
+			else if ($inst->ParentObject->Name == "File")
+			{
+				// download the file
+				$fileName = $inst->GetAttributeValue(KnownAttributes::get___Text___Name());
+				$mimetype = $inst->GetAttributeValue(KnownAttributes::get___Text___Content_Type());
+				$value = $inst->GetAttributeValue(KnownAttributes::get___Text___Value());
+				
+				header("Content-Disposition: attachment,filename=" . $fileName);
+				header("Content-Type: " . $mimetype);
+				echo (base64_decode($value));
+				die();
+			}
 			else if ($inst->ParentObject->Name == "Page")
 			{
 				$relStyles = $inst->GetRelationship(KnownRelationships::get___Page__has__Style());
