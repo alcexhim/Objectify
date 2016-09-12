@@ -1,25 +1,31 @@
 {
-	"Objects":
+	"Tenants":
 	[
 		{
-			"ID": "{B324D93A-738C-48BF-854F-A1C038BE5BA5}",
-			"Name": "Global",
-			"ParentObjects":
+			"ID": "{35BF9AC5-0212-4DBA-BB9B-D1A6E9955827}",
+			"Objects":
 			[
 				{
-					"Name": "Class"
-				}
-			],
-			"TranslatableValues":
-			[
-				{
-					"Comment": "Class `Instance`.has title Translatable Text Constant",
-					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
-					"Values":
+					"ID": "{B324D93A-738C-48BF-854F-A1C038BE5BA5}",
+					"Name": "Global",
+					"ParentObjects":
 					[
 						{
-							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-							"Value": "Global"
+							"Name": "Class"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"Comment": "Class `Instance`.has title Translatable Text Constant",
+							"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Global"
+								}
+							]
 						}
 					]
 				}

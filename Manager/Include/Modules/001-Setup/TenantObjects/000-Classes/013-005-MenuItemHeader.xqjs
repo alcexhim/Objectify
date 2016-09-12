@@ -1,37 +1,43 @@
 {
-	"Objects":
+	"Tenants":
 	[
 		{
-			"ID": "{1F148873-8A97-4409-A79B-C19D5D380CA4}",
-			"Name": "MenuItemHeader",
-			"ParentObjects":
+			"ID": "{35BF9AC5-0212-4DBA-BB9B-D1A6E9955827}",
+			"Objects":
 			[
 				{
-					"Name": "MenuItem"
-				}
-			],
-			"TranslatableValues":
-			[
-				{
-					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
-					"Values":
+					"ID": "{1F148873-8A97-4409-A79B-C19D5D380CA4}",
+					"Name": "MenuItemHeader",
+					"ParentObjects":
 					[
 						{
-							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-							"Value": "Header Menu Item"
+							"Name": "MenuItem"
 						}
-					]
-				}
-			],
-			"Relationships":
-			[
-				{
-					"Comment": "Class `Menu Item Header`.instance labeled by String",
-					"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
-					"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
-					"DestinationInstances":
+					],
+					"TranslatableValues":
 					[
-						"{E2E48032-DF8D-45F5-8865-A4A8DE8F28B2}"
+						{
+							"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Header Menu Item"
+								}
+							]
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": "Class `Menu Item Header`.instance labeled by String",
+							"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+							"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+							"DestinationInstances":
+							[
+								"{E2E48032-DF8D-45F5-8865-A4A8DE8F28B2}"
+							]
+						}
 					]
 				}
 			]

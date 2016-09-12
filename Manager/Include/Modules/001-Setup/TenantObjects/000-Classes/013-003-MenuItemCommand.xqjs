@@ -1,115 +1,121 @@
 {
-	"Objects":
+	"Tenants":
 	[
 		{
-			"Name": "Relationship",
-			"Instances":
+			"ID": "{35BF9AC5-0212-4DBA-BB9B-D1A6E9955827}",
+			"Objects":
 			[
 				{
-					"ID": "{8859DAEF-01F7-46FA-8F3E-7B2F28E0A520}",
-					"Comment": "Command Menu Item.has Icon",
-					"AttributeValues":
+					"Name": "Relationship",
+					"Instances":
 					[
 						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "has"
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `Command Menu Item`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-							"DestinationInstances":
+							"ID": "{8859DAEF-01F7-46FA-8F3E-7B2F28E0A520}",
+							"Comment": "Command Menu Item.has Icon",
+							"AttributeValues":
 							[
-								"{9D3EDE23-6DB9-4664-9145-ABCBD3A0A2C2}"
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "has"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `Command Menu Item`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{9D3EDE23-6DB9-4664-9145-ABCBD3A0A2C2}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Icon`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{67BD594B-E8B0-4752-8796-D7A369513FBF}"
+									]
+								}
 							]
 						},
 						{
-							"Comment": ".has destination Class `Icon`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-							"DestinationInstances":
+							"ID": "{6D3D6F9E-CDAE-4D0E-B5B2-BC2BA333F746}",
+							"Comment": "Icon.for Command Menu Item",
+							"AttributeValues":
 							[
-								"{67BD594B-E8B0-4752-8796-D7A369513FBF}"
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "for"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `Icon`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{67BD594B-E8B0-4752-8796-D7A369513FBF}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Command Menu Item`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{9D3EDE23-6DB9-4664-9145-ABCBD3A0A2C2}"
+									]
+								}
 							]
 						}
 					]
 				},
 				{
-					"ID": "{6D3D6F9E-CDAE-4D0E-B5B2-BC2BA333F746}",
-					"Comment": "Icon.for Command Menu Item",
-					"AttributeValues":
+					"ID": "{9D3EDE23-6DB9-4664-9145-ABCBD3A0A2C2}",
+					"Name": "MenuItemCommand",
+					"ParentObjects":
 					[
 						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "for"
+							"Name": "MenuItem"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Command Menu Item"
+								}
+							]
 						}
 					],
 					"Relationships":
 					[
 						{
-							"Comment": ".has source Class `Icon`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"Comment": "Class `Menu Item Command`.has Attribute `Target URL` [Text Attribute]",
+							"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
 							"DestinationInstances":
 							[
-								"{67BD594B-E8B0-4752-8796-D7A369513FBF}"
+								"{970F79A0-9EFE-4E7D-9286-9908C6F06A67}"
 							]
 						},
 						{
-							"Comment": ".has destination Class `Command Menu Item`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"Comment": "Class `Menu Item Command`.instance labeled by String",
+							"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+							"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
 							"DestinationInstances":
 							[
-								"{9D3EDE23-6DB9-4664-9145-ABCBD3A0A2C2}"
+								"{E2E48032-DF8D-45F5-8865-A4A8DE8F28B2}"
 							]
 						}
-					]
-				}
-			]
-		},
-		{
-			"ID": "{9D3EDE23-6DB9-4664-9145-ABCBD3A0A2C2}",
-			"Name": "MenuItemCommand",
-			"ParentObjects":
-			[
-				{
-					"Name": "MenuItem"
-				}
-			],
-			"TranslatableValues":
-			[
-				{
-					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
-					"Values":
-					[
-						{
-							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-							"Value": "Command Menu Item"
-						}
-					]
-				}
-			],
-			"Relationships":
-			[
-				{
-					"Comment": "Class `Menu Item Command`.has Attribute `Target URL` [Text Attribute]",
-					"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
-					"DestinationInstances":
-					[
-						"{970F79A0-9EFE-4E7D-9286-9908C6F06A67}"
-					]
-				},
-				{
-					"Comment": "Class `Menu Item Command`.instance labeled by String",
-					"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
-					"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
-					"DestinationInstances":
-					[
-						"{E2E48032-DF8D-45F5-8865-A4A8DE8F28B2}"
 					]
 				}
 			]

@@ -1,394 +1,605 @@
 {
-	"Objects":
+	"Tenants":
 	[
 		{
-			"Name": "Relationship",
-			"Instances":
+			"ID": "{35BF9AC5-0212-4DBA-BB9B-D1A6E9955827}",
+			"Objects":
 			[
 				{
-					"ID": "{4D8E2040-55EE-4693-94B3-4D9C110E6189}",
-					"Comment": "Date Time Format.has title Translatable Text Constant",
-					"AttributeValues":
+					"Name": "Relationship",
+					"Instances":
 					[
 						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "has title"
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `Date Time Format`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-							"DestinationInstances":
+							"ID": "{4D8E2040-55EE-4693-94B3-4D9C110E6189}",
+							"Comment": "Date Time Format.has title Translatable Text Constant",
+							"AttributeValues":
 							[
-								"{D2327061-9381-45A5-BE7B-C97A4532492D}"
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "has title"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `Date Time Format`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{D2327061-9381-45A5-BE7B-C97A4532492D}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Translatable Text Constant`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+									]
+								},
+								{
+									"Comment": ".has sibling Relationship",
+									"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+									"DestinationInstances":
+									[
+										"{4E2AF6A5-A771-417A-A45D-0FDF59246008}"
+									]
+								}
 							]
 						},
 						{
-							"Comment": ".has destination Class `Translatable Text Constant`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-							"DestinationInstances":
+							"Comment": "Translatable Text Constant.title for Date Time Format",
+							"ID": "{4E2AF6A5-A771-417A-A45D-0FDF59246008}",
+							"AttributeValues":
 							[
-								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "title for"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `Translatable Text Constant`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Date Time Format`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{D2327061-9381-45A5-BE7B-C97A4532492D}"
+									]
+								}
 							]
 						},
 						{
-							"Comment": ".has sibling Relationship",
-							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
-							"DestinationInstances":
+							"ID": "{078A7BD7-4874-4B82-9A9A-827C1A25175E}",
+							"Comment": "Date Time Format.has Date Time Format Segment",
+							"AttributeValues":
 							[
-								"{4E2AF6A5-A771-417A-A45D-0FDF59246008}"
-							]
-						}
-					]
-				},
-				{
-					"Comment": "Translatable Text Constant.title for Date Time Format",
-					"ID": "{4E2AF6A5-A771-417A-A45D-0FDF59246008}",
-					"AttributeValues":
-					[
-						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "title for"
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `Translatable Text Constant`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-							"DestinationInstances":
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "has"
+								}
+							],
+							"Relationships":
 							[
-								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+								{
+									"Comment": ".has source Class `Date Time Format`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{D2327061-9381-45A5-BE7B-C97A4532492D}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Date Time Format Segment`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{49663C8B-04DE-48F0-94CB-1C35B31A941E}"
+									]
+								},
+								{
+									"Comment": ".has sibling Relationship",
+									"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+									"DestinationInstances":
+									[
+										"{841DC5F4-8CF5-4D36-A8A0-095F1DC7CC8E}"
+									]
+								}
 							]
 						},
 						{
-							"Comment": ".has destination Class `Date Time Format`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-							"DestinationInstances":
+							"Comment": "Date Time Format Segment.for Date Time Format",
+							"ID": "{841DC5F4-8CF5-4D36-A8A0-095F1DC7CC8E}",
+							"AttributeValues":
 							[
-								"{D2327061-9381-45A5-BE7B-C97A4532492D}"
-							]
-						}
-					]
-				},
-				{
-					"ID": "{078A7BD7-4874-4B82-9A9A-827C1A25175E}",
-					"Comment": "Date Time Format.has Date Time Format Segment",
-					"AttributeValues":
-					[
-						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "has"
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `Date Time Format`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-							"DestinationInstances":
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "for"
+								}
+							],
+							"Relationships":
 							[
-								"{D2327061-9381-45A5-BE7B-C97A4532492D}"
+								{
+									"Comment": ".has source Class `Date Time Format Segment`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{49663C8B-04DE-48F0-94CB-1C35B31A941E}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Date Time Format`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{D2327061-9381-45A5-BE7B-C97A4532492D}"
+									]
+								}
 							]
 						},
 						{
-							"Comment": ".has destination Class `Date Time Format Segment`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-							"DestinationInstances":
+							"ID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+							"Comment": "Date Time Format Segment.has title Translatable Text Constant",
+							"AttributeValues":
 							[
-								"{49663C8B-04DE-48F0-94CB-1C35B31A941E}"
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "has title"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `Date Time Format Segment`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{49663C8B-04DE-48F0-94CB-1C35B31A941E}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Translatable Text Constant`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+									]
+								},
+								{
+									"Comment": ".has sibling Relationship",
+									"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+									"DestinationInstances":
+									[
+										"{0E3C50E8-7A14-44B8-9A14-CEC55D579012}"
+									]
+								}
 							]
 						},
 						{
-							"Comment": ".has sibling Relationship",
-							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
-							"DestinationInstances":
+							"Comment": "Translatable Text Constant.title for Date Time Format Segment",
+							"ID": "{0E3C50E8-7A14-44B8-9A14-CEC55D579012}",
+							"AttributeValues":
 							[
-								"{841DC5F4-8CF5-4D36-A8A0-095F1DC7CC8E}"
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "title for"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `Translatable Text Constant`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Date Time Format Segment`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{49663C8B-04DE-48F0-94CB-1C35B31A941E}"
+									]
+								}
 							]
 						}
 					]
 				},
 				{
-					"Comment": "Date Time Format Segment.for Date Time Format",
-					"ID": "{841DC5F4-8CF5-4D36-A8A0-095F1DC7CC8E}",
-					"AttributeValues":
+					"Name": "ExtractSingleInstanceStringComponent",
+					"Instances":
 					[
 						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "for"
+							"ID": "{DADA6FF8-6D13-43FD-9518-55A6899AEEE8}",
+							"Relationships":
+							[
+								{
+									"Comment": "Extract Single Instance String Component.has Relationship",
+									"RelationshipID": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
+									"DestinationInstances":
+									[
+										"{4D8E2040-55EE-4693-94B3-4D9C110E6189}"
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"Name": "String",
+					"Instances":
+					[
+						{
+							"ID": "{AD646E23-885F-46A4-985E-7C04A2710D20}",
+							"Relationships":
+							[
+								{
+									"Comment": "String.has String Component",
+									"RelationshipID": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
+									"DestinationInstances":
+									[
+										"{DADA6FF8-6D13-43FD-9518-55A6899AEEE8}"
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"ID": "{D2327061-9381-45A5-BE7B-C97A4532492D}",
+					"Name": "DateTimeFormat",
+					"ParentObjects":
+					[
+						{
+							"Name": "Class"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"Comment": "Class.has title Translatable Text Constant",
+							"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+							"InverseRelationshipID": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Date Time Format"
+								}
+							]
 						}
 					],
 					"Relationships":
 					[
 						{
-							"Comment": ".has source Class `Date Time Format Segment`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"Comment": "Class `Date Time Format`.instance labeled by String",
+							"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
 							"DestinationInstances":
 							[
-								"{49663C8B-04DE-48F0-94CB-1C35B31A941E}"
+								"{AD646E23-885F-46A4-985E-7C04A2710D20}"
+							]
+						}
+					],
+					"Instances":
+					[
+						{
+							"ID": "{A08E9999-5E69-4E25-ABC3-5BD82C442EB8}",
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{4D8E2040-55EE-4693-94B3-4D9C110E6189}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "RFC 3339 / Atom / W3C"
+										}
+									]
+								}
+							],
+							"Relationships":
+							[
+								{
+									"RelationshipID": "{078A7BD7-4874-4B82-9A9A-827C1A25175E}",
+									"DestinationInstances":
+									[
+										"{6C47F7E1-A470-4A99-8F4D-4E709DF5E4FB}",
+										"{81D4EE1B-B329-4C00-B685-8D2E144B3A0A}",
+										"{75A34627-8776-43AA-908C-233B634959B3}",
+										"{81D4EE1B-B329-4C00-B685-8D2E144B3A0A}",
+										"{49711459-7374-496C-B63E-D1FAD517E85A}",
+										"{C3717BC1-91FD-4BA0-9B2F-BC1AEAA46E83}",
+										"{4A00327D-6DCC-4E70-B22A-8D9CDAB80124}",
+										"{DC21D2EE-3FCE-4F8E-A3A3-F91D45D3F66A}",
+										"{54689D84-5497-44EB-9AAD-5C83E25F24E1}",
+										"{DC21D2EE-3FCE-4F8E-A3A3-F91D45D3F66A}",
+										"{0008BB61-2602-497A-893B-50EC6A0713EC}",
+										"{124F61F2-A5AA-4770-A2B1-BF50EA77E9B8}"
+									]
+								}
 							]
 						},
 						{
-							"Comment": ".has destination Class `Date Time Format`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-							"DestinationInstances":
+							"ID": "{1B44581F-575A-44C3-9D78-F7480FBF2613}",
+							"TranslatableValues":
 							[
-								"{D2327061-9381-45A5-BE7B-C97A4532492D}"
-							]
-						}
-					]
-				},
-				{
-					"ID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-					"Comment": "Date Time Format Segment.has title Translatable Text Constant",
-					"AttributeValues":
-					[
-						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "has title"
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `Date Time Format Segment`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-							"DestinationInstances":
+								{
+									"RelationshipID": "{4D8E2040-55EE-4693-94B3-4D9C110E6189}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Cookie"
+										}
+									]
+								}
+							],
+							"Relationships":
 							[
-								"{49663C8B-04DE-48F0-94CB-1C35B31A941E}"
+								{
+									"RelationshipID": "{078A7BD7-4874-4B82-9A9A-827C1A25175E}",
+									"DestinationInstances":
+									[
+										"{9C2D3EA5-E85C-4D01-B6CE-CA514A638D82}",
+										"{1F145D22-6A08-4172-B20F-3B4C2A547AE4}",
+										"{3E328537-9E5C-45E3-A6F5-69E50FF0163D}",
+										"{49711459-7374-496C-B63E-D1FAD517E85A}",
+										"{81D4EE1B-B329-4C00-B685-8D2E144B3A0A}",
+										"{72DD3942-7270-493D-AA84-BD12546D55CA}",
+										"{81D4EE1B-B329-4C00-B685-8D2E144B3A0A}",
+										"{6C47F7E1-A470-4A99-8F4D-4E709DF5E4FB}",
+										"{3E328537-9E5C-45E3-A6F5-69E50FF0163D}",
+										"{4A00327D-6DCC-4E70-B22A-8D9CDAB80124}",
+										"{DC21D2EE-3FCE-4F8E-A3A3-F91D45D3F66A}",
+										"{54689D84-5497-44EB-9AAD-5C83E25F24E1}",
+										"{DC21D2EE-3FCE-4F8E-A3A3-F91D45D3F66A}",
+										"{0008BB61-2602-497A-893B-50EC6A0713EC}",
+										"{3E328537-9E5C-45E3-A6F5-69E50FF0163D}",
+										"{F4C09915-53B0-4684-AF13-C0CF95F07E8B}"
+									]
+								}
 							]
 						},
 						{
-							"Comment": ".has destination Class `Translatable Text Constant`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-							"DestinationInstances":
+							"ID": "{314CD3FF-AA66-4679-BEA1-3D1BA6EE59EF}",
+							"TranslatableValues":
 							[
-								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+								{
+									"RelationshipID": "{4D8E2040-55EE-4693-94B3-4D9C110E6189}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "ISO-8601"
+										}
+									]
+								}
+							],
+							"Relationships":
+							[
+								{
+									"RelationshipID": "{078A7BD7-4874-4B82-9A9A-827C1A25175E}",
+									"DestinationInstances":
+									[
+										"{6C47F7E1-A470-4A99-8F4D-4E709DF5E4FB}",
+										"{81D4EE1B-B329-4C00-B685-8D2E144B3A0A}",
+										"{75A34627-8776-43AA-908C-233B634959B3}",
+										"{81D4EE1B-B329-4C00-B685-8D2E144B3A0A}",
+										"{49711459-7374-496C-B63E-D1FAD517E85A}",
+										"{C3717BC1-91FD-4BA0-9B2F-BC1AEAA46E83}",
+										"{4A00327D-6DCC-4E70-B22A-8D9CDAB80124}",
+										"{DC21D2EE-3FCE-4F8E-A3A3-F91D45D3F66A}",
+										"{54689D84-5497-44EB-9AAD-5C83E25F24E1}",
+										"{DC21D2EE-3FCE-4F8E-A3A3-F91D45D3F66A}",
+										"{0008BB61-2602-497A-893B-50EC6A0713EC}",
+										"{3F21578D-20CF-4088-A884-748CA8689F60}"
+									]
+								}
 							]
 						},
 						{
-							"Comment": ".has sibling Relationship",
-							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
-							"DestinationInstances":
+							"ID": "{90C30CBD-045C-4C5B-A6D7-F6973C7BDC45}",
+							"TranslatableValues":
 							[
-								"{0E3C50E8-7A14-44B8-9A14-CEC55D579012}"
-							]
-						}
-					]
-				},
-				{
-					"Comment": "Translatable Text Constant.title for Date Time Format Segment",
-					"ID": "{0E3C50E8-7A14-44B8-9A14-CEC55D579012}",
-					"AttributeValues":
-					[
-						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "title for"
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `Translatable Text Constant`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-							"DestinationInstances":
+								{
+									"RelationshipID": "{4D8E2040-55EE-4693-94B3-4D9C110E6189}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "RFC 822 / RFC 1036 / RFC 1123 / RFC 2822 / RSS"
+										}
+									]
+								}
+							],
+							"Relationships":
 							[
-								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+								{
+									"RelationshipID": "{078A7BD7-4874-4B82-9A9A-827C1A25175E}",
+									"DestinationInstances":
+									[
+										"{073A9EC6-1268-40E2-89E2-620C50757669}",
+										"{1F145D22-6A08-4172-B20F-3B4C2A547AE4}",
+										"{3E328537-9E5C-45E3-A6F5-69E50FF0163D}",
+										"{49711459-7374-496C-B63E-D1FAD517E85A}",
+										"{3E328537-9E5C-45E3-A6F5-69E50FF0163D}",
+										"{72DD3942-7270-493D-AA84-BD12546D55CA}",
+										"{3E328537-9E5C-45E3-A6F5-69E50FF0163D}",
+										"{6BCD463E-64B1-478F-B456-7CBBFBC7561E}",
+										"{3E328537-9E5C-45E3-A6F5-69E50FF0163D}",
+										"{4A00327D-6DCC-4E70-B22A-8D9CDAB80124}",
+										"{DC21D2EE-3FCE-4F8E-A3A3-F91D45D3F66A}",
+										"{54689D84-5497-44EB-9AAD-5C83E25F24E1}",
+										"{DC21D2EE-3FCE-4F8E-A3A3-F91D45D3F66A}",
+										"{0008BB61-2602-497A-893B-50EC6A0713EC}",
+										"{3E328537-9E5C-45E3-A6F5-69E50FF0163D}",
+										"{3F21578D-20CF-4088-A884-748CA8689F60}"
+									]
+								}
 							]
 						},
 						{
-							"Comment": ".has destination Class `Date Time Format Segment`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-							"DestinationInstances":
-							[
-								"{49663C8B-04DE-48F0-94CB-1C35B31A941E}"
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"Name": "ExtractSingleInstanceStringComponent",
-			"Instances":
-			[
-				{
-					"ID": "{DADA6FF8-6D13-43FD-9518-55A6899AEEE8}",
-					"Relationships":
-					[
-						{
-							"Comment": "Extract Single Instance String Component.has Relationship",
-							"RelationshipID": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
-							"DestinationInstances":
-							[
-								"{4D8E2040-55EE-4693-94B3-4D9C110E6189}"
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"Name": "String",
-			"Instances":
-			[
-				{
-					"ID": "{AD646E23-885F-46A4-985E-7C04A2710D20}",
-					"Relationships":
-					[
-						{
-							"Comment": "String.has String Component",
-							"RelationshipID": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
-							"DestinationInstances":
-							[
-								"{DADA6FF8-6D13-43FD-9518-55A6899AEEE8}"
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"ID": "{D2327061-9381-45A5-BE7B-C97A4532492D}",
-			"Name": "DateTimeFormat",
-			"ParentObjects":
-			[
-				{
-					"Name": "Class"
-				}
-			],
-			"TranslatableValues":
-			[
-				{
-					"Comment": "Class.has title Translatable Text Constant",
-					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
-					"InverseRelationshipID": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
-					"Values":
-					[
-						{
-							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-							"Value": "Date Time Format"
-						}
-					]
-				}
-			],
-			"Relationships":
-			[
-				{
-					"Comment": "Class `Date Time Format`.instance labeled by String",
-					"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
-					"DestinationInstances":
-					[
-						"{AD646E23-885F-46A4-985E-7C04A2710D20}"
-					]
-				}
-			],
-			"Instances":
-			[
-				{
-					"ID": "{A08E9999-5E69-4E25-ABC3-5BD82C442EB8}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{4D8E2040-55EE-4693-94B3-4D9C110E6189}",
-							"Values":
+							"ID": "{234E06DF-645A-4B80-9232-A633A2B399F9}",
+							"TranslatableValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "RFC 3339 / Atom / W3C"
+									"RelationshipID": "{4D8E2040-55EE-4693-94B3-4D9C110E6189}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "RFC 850"
+										}
+									]
+								}
+							],
+							"Relationships":
+							[
+								{
+									"RelationshipID": "{078A7BD7-4874-4B82-9A9A-827C1A25175E}",
+									"DestinationInstances":
+									[
+										"{9C2D3EA5-E85C-4D01-B6CE-CA514A638D82}",
+										"{1F145D22-6A08-4172-B20F-3B4C2A547AE4}",
+										"{3E328537-9E5C-45E3-A6F5-69E50FF0163D}",
+										"{49711459-7374-496C-B63E-D1FAD517E85A}",
+										"{81D4EE1B-B329-4C00-B685-8D2E144B3A0A}",
+										"{72DD3942-7270-493D-AA84-BD12546D55CA}",
+										"{81D4EE1B-B329-4C00-B685-8D2E144B3A0A}",
+										"{6BCD463E-64B1-478F-B456-7CBBFBC7561E}",
+										"{3E328537-9E5C-45E3-A6F5-69E50FF0163D}",
+										"{4A00327D-6DCC-4E70-B22A-8D9CDAB80124}",
+										"{DC21D2EE-3FCE-4F8E-A3A3-F91D45D3F66A}",
+										"{54689D84-5497-44EB-9AAD-5C83E25F24E1}",
+										"{DC21D2EE-3FCE-4F8E-A3A3-F91D45D3F66A}",
+										"{0008BB61-2602-497A-893B-50EC6A0713EC}",
+										"{3E328537-9E5C-45E3-A6F5-69E50FF0163D}",
+										"{F4C09915-53B0-4684-AF13-C0CF95F07E8B}"
+									]
 								}
 							]
-						}
-					],
-					"Relationships":
-					[
+						},
 						{
-							"RelationshipID": "{078A7BD7-4874-4B82-9A9A-827C1A25175E}",
-							"DestinationInstances":
+							"ID": "{7C9837FF-8C31-44FB-9C09-E9C262DE9425}",
+							"TranslatableValues":
 							[
-								"{6C47F7E1-A470-4A99-8F4D-4E709DF5E4FB}",
-								"{81D4EE1B-B329-4C00-B685-8D2E144B3A0A}",
-								"{75A34627-8776-43AA-908C-233B634959B3}",
-								"{81D4EE1B-B329-4C00-B685-8D2E144B3A0A}",
-								"{49711459-7374-496C-B63E-D1FAD517E85A}",
-								"{C3717BC1-91FD-4BA0-9B2F-BC1AEAA46E83}",
-								"{4A00327D-6DCC-4E70-B22A-8D9CDAB80124}",
-								"{DC21D2EE-3FCE-4F8E-A3A3-F91D45D3F66A}",
-								"{54689D84-5497-44EB-9AAD-5C83E25F24E1}",
-								"{DC21D2EE-3FCE-4F8E-A3A3-F91D45D3F66A}",
-								"{0008BB61-2602-497A-893B-50EC6A0713EC}",
-								"{124F61F2-A5AA-4770-A2B1-BF50EA77E9B8}"
+								{
+									"RelationshipID": "{4D8E2040-55EE-4693-94B3-4D9C110E6189}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "RFC 3339 Extended"
+										}
+									]
+								}
+							],
+							"Relationships":
+							[
+								{
+									"RelationshipID": "{078A7BD7-4874-4B82-9A9A-827C1A25175E}",
+									"DestinationInstances":
+									[
+										"{6C47F7E1-A470-4A99-8F4D-4E709DF5E4FB}",
+										"{81D4EE1B-B329-4C00-B685-8D2E144B3A0A}",
+										"{75A34627-8776-43AA-908C-233B634959B3}",
+										"{81D4EE1B-B329-4C00-B685-8D2E144B3A0A}",
+										"{49711459-7374-496C-B63E-D1FAD517E85A}",
+										"{C3717BC1-91FD-4BA0-9B2F-BC1AEAA46E83}",
+										"{4A00327D-6DCC-4E70-B22A-8D9CDAB80124}",
+										"{DC21D2EE-3FCE-4F8E-A3A3-F91D45D3F66A}",
+										"{54689D84-5497-44EB-9AAD-5C83E25F24E1}",
+										"{DC21D2EE-3FCE-4F8E-A3A3-F91D45D3F66A}",
+										"{0008BB61-2602-497A-893B-50EC6A0713EC}",
+										"{8BEBCD8E-E009-40E0-AF95-07FB4FA75C2A}",
+										"{7DE118FA-5439-4CF3-8293-6567D167068C}",
+										"{124F61F2-A5AA-4770-A2B1-BF50EA77E9B8}"
+									]
+								}
 							]
 						}
 					]
 				},
 				{
-					"ID": "{1B44581F-575A-44C3-9D78-F7480FBF2613}",
-					"TranslatableValues":
+					"Name": "ExtractSingleInstanceStringComponent",
+					"Instances":
 					[
 						{
-							"RelationshipID": "{4D8E2040-55EE-4693-94B3-4D9C110E6189}",
-							"Values":
+							"ID": "{DEA22BE8-B545-442B-ACF6-DB5C48C8D6FB}",
+							"Relationships":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Cookie"
+									"Comment": "Extract Single Instance String Component.has Relationship",
+									"RelationshipID": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
+									"DestinationInstances":
+									[
+										"{EE943EDE-805E-442E-A282-56CEF5BAE7AA}"
+									]
 								}
-							]
-						}
-					],
-					"Relationships":
-					[
-						{
-							"RelationshipID": "{078A7BD7-4874-4B82-9A9A-827C1A25175E}",
-							"DestinationInstances":
-							[
-								"{9C2D3EA5-E85C-4D01-B6CE-CA514A638D82}",
-								"{1F145D22-6A08-4172-B20F-3B4C2A547AE4}",
-								"{3E328537-9E5C-45E3-A6F5-69E50FF0163D}",
-								"{49711459-7374-496C-B63E-D1FAD517E85A}",
-								"{81D4EE1B-B329-4C00-B685-8D2E144B3A0A}",
-								"{72DD3942-7270-493D-AA84-BD12546D55CA}",
-								"{81D4EE1B-B329-4C00-B685-8D2E144B3A0A}",
-								"{6C47F7E1-A470-4A99-8F4D-4E709DF5E4FB}",
-								"{3E328537-9E5C-45E3-A6F5-69E50FF0163D}",
-								"{4A00327D-6DCC-4E70-B22A-8D9CDAB80124}",
-								"{DC21D2EE-3FCE-4F8E-A3A3-F91D45D3F66A}",
-								"{54689D84-5497-44EB-9AAD-5C83E25F24E1}",
-								"{DC21D2EE-3FCE-4F8E-A3A3-F91D45D3F66A}",
-								"{0008BB61-2602-497A-893B-50EC6A0713EC}",
-								"{3E328537-9E5C-45E3-A6F5-69E50FF0163D}",
-								"{F4C09915-53B0-4684-AF13-C0CF95F07E8B}"
 							]
 						}
 					]
 				},
 				{
-					"ID": "{314CD3FF-AA66-4679-BEA1-3D1BA6EE59EF}",
+					"Name": "String",
+					"Instances":
+					[
+						{
+							"ID": "{B5695BBB-CE88-4049-B64F-02B4B9129AEF}",
+							"Relationships":
+							[
+								{
+									"Comment": "String.has String Component",
+									"RelationshipID": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
+									"DestinationInstances":
+									[
+										"{DEA22BE8-B545-442B-ACF6-DB5C48C8D6FB}"
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"ID": "{49663C8B-04DE-48F0-94CB-1C35B31A941E}",
+					"Name": "DateTimeFormatSegment",
+					"ParentObjects":
+					[
+						{
+							"Name": "Class"
+						}
+					],
 					"TranslatableValues":
 					[
 						{
-							"RelationshipID": "{4D8E2040-55EE-4693-94B3-4D9C110E6189}",
+							"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 							"Values":
 							[
 								{
 									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "ISO-8601"
+									"Value": "Date Time Format Segment"
 								}
 							]
 						}
@@ -396,1240 +607,1035 @@
 					"Relationships":
 					[
 						{
-							"RelationshipID": "{078A7BD7-4874-4B82-9A9A-827C1A25175E}",
+							"Comment": "Class `Date Time Format Segment`.has Attribute `Value`",
+							"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
 							"DestinationInstances":
 							[
-								"{6C47F7E1-A470-4A99-8F4D-4E709DF5E4FB}",
-								"{81D4EE1B-B329-4C00-B685-8D2E144B3A0A}",
-								"{75A34627-8776-43AA-908C-233B634959B3}",
-								"{81D4EE1B-B329-4C00-B685-8D2E144B3A0A}",
-								"{49711459-7374-496C-B63E-D1FAD517E85A}",
-								"{C3717BC1-91FD-4BA0-9B2F-BC1AEAA46E83}",
-								"{4A00327D-6DCC-4E70-B22A-8D9CDAB80124}",
-								"{DC21D2EE-3FCE-4F8E-A3A3-F91D45D3F66A}",
-								"{54689D84-5497-44EB-9AAD-5C83E25F24E1}",
-								"{DC21D2EE-3FCE-4F8E-A3A3-F91D45D3F66A}",
-								"{0008BB61-2602-497A-893B-50EC6A0713EC}",
-								"{3F21578D-20CF-4088-A884-748CA8689F60}"
+								"{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}"
 							]
-						}
-					]
-				},
-				{
-					"ID": "{90C30CBD-045C-4C5B-A6D7-F6973C7BDC45}",
-					"TranslatableValues":
-					[
+						},
 						{
-							"RelationshipID": "{4D8E2040-55EE-4693-94B3-4D9C110E6189}",
-							"Values":
-							[
-								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "RFC 822 / RFC 1036 / RFC 1123 / RFC 2822 / RSS"
-								}
-							]
-						}
-					],
-					"Relationships":
-					[
-						{
-							"RelationshipID": "{078A7BD7-4874-4B82-9A9A-827C1A25175E}",
+							"Comment": "Class `Date Time Format Segment`.instance labeled by String",
+							"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
 							"DestinationInstances":
 							[
-								"{073A9EC6-1268-40E2-89E2-620C50757669}",
-								"{1F145D22-6A08-4172-B20F-3B4C2A547AE4}",
-								"{3E328537-9E5C-45E3-A6F5-69E50FF0163D}",
-								"{49711459-7374-496C-B63E-D1FAD517E85A}",
-								"{3E328537-9E5C-45E3-A6F5-69E50FF0163D}",
-								"{72DD3942-7270-493D-AA84-BD12546D55CA}",
-								"{3E328537-9E5C-45E3-A6F5-69E50FF0163D}",
-								"{6BCD463E-64B1-478F-B456-7CBBFBC7561E}",
-								"{3E328537-9E5C-45E3-A6F5-69E50FF0163D}",
-								"{4A00327D-6DCC-4E70-B22A-8D9CDAB80124}",
-								"{DC21D2EE-3FCE-4F8E-A3A3-F91D45D3F66A}",
-								"{54689D84-5497-44EB-9AAD-5C83E25F24E1}",
-								"{DC21D2EE-3FCE-4F8E-A3A3-F91D45D3F66A}",
-								"{0008BB61-2602-497A-893B-50EC6A0713EC}",
-								"{3E328537-9E5C-45E3-A6F5-69E50FF0163D}",
-								"{3F21578D-20CF-4088-A884-748CA8689F60}"
-							]
-						}
-					]
-				},
-				{
-					"ID": "{234E06DF-645A-4B80-9232-A633A2B399F9}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{4D8E2040-55EE-4693-94B3-4D9C110E6189}",
-							"Values":
-							[
-								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "RFC 850"
-								}
+								"{B5695BBB-CE88-4049-B64F-02B4B9129AEF}"
 							]
 						}
 					],
-					"Relationships":
+					"Instances":
 					[
 						{
-							"RelationshipID": "{078A7BD7-4874-4B82-9A9A-827C1A25175E}",
-							"DestinationInstances":
-							[
-								"{9C2D3EA5-E85C-4D01-B6CE-CA514A638D82}",
-								"{1F145D22-6A08-4172-B20F-3B4C2A547AE4}",
-								"{3E328537-9E5C-45E3-A6F5-69E50FF0163D}",
-								"{49711459-7374-496C-B63E-D1FAD517E85A}",
-								"{81D4EE1B-B329-4C00-B685-8D2E144B3A0A}",
-								"{72DD3942-7270-493D-AA84-BD12546D55CA}",
-								"{81D4EE1B-B329-4C00-B685-8D2E144B3A0A}",
-								"{6BCD463E-64B1-478F-B456-7CBBFBC7561E}",
-								"{3E328537-9E5C-45E3-A6F5-69E50FF0163D}",
-								"{4A00327D-6DCC-4E70-B22A-8D9CDAB80124}",
-								"{DC21D2EE-3FCE-4F8E-A3A3-F91D45D3F66A}",
-								"{54689D84-5497-44EB-9AAD-5C83E25F24E1}",
-								"{DC21D2EE-3FCE-4F8E-A3A3-F91D45D3F66A}",
-								"{0008BB61-2602-497A-893B-50EC6A0713EC}",
-								"{3E328537-9E5C-45E3-A6F5-69E50FF0163D}",
-								"{F4C09915-53B0-4684-AF13-C0CF95F07E8B}"
-							]
-						}
-					]
-				},
-				{
-					"ID": "{7C9837FF-8C31-44FB-9C09-E9C262DE9425}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{4D8E2040-55EE-4693-94B3-4D9C110E6189}",
-							"Values":
+							"ID": "{3E328537-9E5C-45E3-A6F5-69E50FF0163D}",
+							"TranslatableValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "RFC 3339 Extended"
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Literal space ( )"
+										}
+									]
 								}
-							]
-						}
-					],
-					"Relationships":
-					[
-						{
-							"RelationshipID": "{078A7BD7-4874-4B82-9A9A-827C1A25175E}",
-							"DestinationInstances":
-							[
-								"{6C47F7E1-A470-4A99-8F4D-4E709DF5E4FB}",
-								"{81D4EE1B-B329-4C00-B685-8D2E144B3A0A}",
-								"{75A34627-8776-43AA-908C-233B634959B3}",
-								"{81D4EE1B-B329-4C00-B685-8D2E144B3A0A}",
-								"{49711459-7374-496C-B63E-D1FAD517E85A}",
-								"{C3717BC1-91FD-4BA0-9B2F-BC1AEAA46E83}",
-								"{4A00327D-6DCC-4E70-B22A-8D9CDAB80124}",
-								"{DC21D2EE-3FCE-4F8E-A3A3-F91D45D3F66A}",
-								"{54689D84-5497-44EB-9AAD-5C83E25F24E1}",
-								"{DC21D2EE-3FCE-4F8E-A3A3-F91D45D3F66A}",
-								"{0008BB61-2602-497A-893B-50EC6A0713EC}",
-								"{8BEBCD8E-E009-40E0-AF95-07FB4FA75C2A}",
-								"{7DE118FA-5439-4CF3-8293-6567D167068C}",
-								"{124F61F2-A5AA-4770-A2B1-BF50EA77E9B8}"
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"Name": "ExtractSingleInstanceStringComponent",
-			"Instances":
-			[
-				{
-					"ID": "{DEA22BE8-B545-442B-ACF6-DB5C48C8D6FB}",
-					"Relationships":
-					[
-						{
-							"Comment": "Extract Single Instance String Component.has Relationship",
-							"RelationshipID": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
-							"DestinationInstances":
-							[
-								"{EE943EDE-805E-442E-A282-56CEF5BAE7AA}"
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"Name": "String",
-			"Instances":
-			[
-				{
-					"ID": "{B5695BBB-CE88-4049-B64F-02B4B9129AEF}",
-					"Relationships":
-					[
-						{
-							"Comment": "String.has String Component",
-							"RelationshipID": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
-							"DestinationInstances":
-							[
-								"{DEA22BE8-B545-442B-ACF6-DB5C48C8D6FB}"
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"ID": "{49663C8B-04DE-48F0-94CB-1C35B31A941E}",
-			"Name": "DateTimeFormatSegment",
-			"ParentObjects":
-			[
-				{
-					"Name": "Class"
-				}
-			],
-			"TranslatableValues":
-			[
-				{
-					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
-					"Values":
-					[
-						{
-							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-							"Value": "Date Time Format Segment"
-						}
-					]
-				}
-			],
-			"Relationships":
-			[
-				{
-					"Comment": "Class `Date Time Format Segment`.has Attribute `Value`",
-					"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
-					"DestinationInstances":
-					[
-						"{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}"
-					]
-				},
-				{
-					"Comment": "Class `Date Time Format Segment`.instance labeled by String",
-					"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
-					"DestinationInstances":
-					[
-						"{B5695BBB-CE88-4049-B64F-02B4B9129AEF}"
-					]
-				}
-			],
-			"Instances":
-			[
-				{
-					"ID": "{3E328537-9E5C-45E3-A6F5-69E50FF0163D}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							],
+							"AttributeValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Literal space ( )"
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": " "
 								}
 							]
-						}
-					],
-					"AttributeValues":
-					[
+						},
 						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": " "
-						}
-					]
-				},
-				{
-					"ID": "{8BEBCD8E-E009-40E0-AF95-07FB4FA75C2A}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							"ID": "{8BEBCD8E-E009-40E0-AF95-07FB4FA75C2A}",
+							"TranslatableValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Literal period (.)"
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Literal period (.)"
+										}
+									]
 								}
-							]
-						}
-					],
-					"AttributeValues":
-					[
-						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": " "
-						}
-					]
-				},
-				{
-					"ID": "{7DE118FA-5439-4CF3-8293-6567D167068C}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							],
+							"AttributeValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Literal lowercase V (v)"
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": " "
 								}
 							]
-						}
-					],
-					"AttributeValues":
-					[
+						},
 						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "v"
-						}
-					]
-				},
-				{
-					"ID": "{1F145D22-6A08-4172-B20F-3B4C2A547AE4}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							"ID": "{7DE118FA-5439-4CF3-8293-6567D167068C}",
+							"TranslatableValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Literal comma (,)"
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Literal lowercase V (v)"
+										}
+									]
 								}
-							]
-						}
-					],
-					"AttributeValues":
-					[
-						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": " "
-						}
-					]
-				},
-				{
-					"ID": "{81D4EE1B-B329-4C00-B685-8D2E144B3A0A}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							],
+							"AttributeValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Literal dash (-)"
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "v"
 								}
 							]
-						}
-					],
-					"AttributeValues":
-					[
+						},
 						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "-"
-						}
-					]
-				},
-				{
-					"ID": "{C3717BC1-91FD-4BA0-9B2F-BC1AEAA46E83}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							"ID": "{1F145D22-6A08-4172-B20F-3B4C2A547AE4}",
+							"TranslatableValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Literal capital T (\\T)"
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Literal comma (,)"
+										}
+									]
 								}
-							]
-						}
-					],
-					"AttributeValues":
-					[
-						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "\\T"
-						}
-					]
-				},
-				{
-					"ID": "{DC21D2EE-3FCE-4F8E-A3A3-F91D45D3F66A}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							],
+							"AttributeValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Literal colon (:)"
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": " "
 								}
 							]
-						}
-					],
-					"AttributeValues":
-					[
+						},
 						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": ":"
-						}
-					]
-				},
-				{
-					"ID": "{49711459-7374-496C-B63E-D1FAD517E85A}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							"ID": "{81D4EE1B-B329-4C00-B685-8D2E144B3A0A}",
+							"TranslatableValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Day of the month, 2 digits with leading zeros"
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Literal dash (-)"
+										}
+									]
 								}
-							]
-						}
-					],
-					"AttributeValues":
-					[
-						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "d"
-						}
-					]
-				},
-				{
-					"ID": "{073A9EC6-1268-40E2-89E2-620C50757669}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							],
+							"AttributeValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Textual representation of a day, three letters"
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "-"
 								}
 							]
-						}
-					],
-					"AttributeValues":
-					[
+						},
 						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "D"
-						}
-					]
-				},
-				{
-					"ID": "{8B2C1091-94C7-4A18-AC05-9C9717D508F5}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							"ID": "{C3717BC1-91FD-4BA0-9B2F-BC1AEAA46E83}",
+							"TranslatableValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Day of the month without leading zeros"
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Literal capital T (\\T)"
+										}
+									]
 								}
-							]
-						}
-					],
-					"AttributeValues":
-					[
-						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "j"
-						}
-					]
-				},
-				{
-					"ID": "{9C2D3EA5-E85C-4D01-B6CE-CA514A638D82}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							],
+							"AttributeValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Full textual representation of the day of the week"
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "\\T"
 								}
 							]
-						}
-					],
-					"AttributeValues":
-					[
+						},
 						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "l"
-						}
-					]
-				},
-				{
-					"ID": "{8D0B7518-DE2D-45E8-AF95-277D78A1FDFE}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							"ID": "{DC21D2EE-3FCE-4F8E-A3A3-F91D45D3F66A}",
+							"TranslatableValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "ISO-8601 numeric representation of the day of the week (added in PHP 5.1.0)"
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Literal colon (:)"
+										}
+									]
 								}
-							]
-						}
-					],
-					"AttributeValues":
-					[
-						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "N"
-						}
-					]
-				},
-				{
-					"ID": "{D0D0B49F-6D41-4587-878A-2EFF68978AD2}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							],
+							"AttributeValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "English ordinal suffix for the day of the month, 2 characters"
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": ":"
 								}
 							]
-						}
-					],
-					"AttributeValues":
-					[
+						},
 						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "S"
-						}
-					]
-				},
-				{
-					"ID": "{F21899E0-C2C9-485A-B4B8-DBA73395B331}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							"ID": "{49711459-7374-496C-B63E-D1FAD517E85A}",
+							"TranslatableValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Numeric representation of the day of the week"
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Day of the month, 2 digits with leading zeros"
+										}
+									]
 								}
-							]
-						}
-					],
-					"AttributeValues":
-					[
-						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "w"
-						}
-					]
-				},
-				{
-					"ID": "{5685DE79-9BB4-42A9-94BB-70EBE69476AC}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							],
+							"AttributeValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "The day of the year (starting from 0)"
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "d"
 								}
 							]
-						}
-					],
-					"AttributeValues":
-					[
+						},
 						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "z"
-						}
-					]
-				},
-				{
-					"ID": "{1354D829-8F0B-4967-AFBA-AEC72EFC2682}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							"ID": "{073A9EC6-1268-40E2-89E2-620C50757669}",
+							"TranslatableValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "ISO-8601 week number of year, weeks starting on Monday (added in PHP 4.1.0)"
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Textual representation of a day, three letters"
+										}
+									]
 								}
-							]
-						}
-					],
-					"AttributeValues":
-					[
-						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "W"
-						}
-					]
-				},
-				{
-					"ID": "{55130093-F54E-49B5-85A4-86F2E7A0887A}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							],
+							"AttributeValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "A full textual representation of a month, such as January or March"
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "D"
 								}
 							]
-						}
-					],
-					"AttributeValues":
-					[
+						},
 						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "F"
-						}
-					]
-				},
-				{
-					"ID": "{75A34627-8776-43AA-908C-233B634959B3}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							"ID": "{8B2C1091-94C7-4A18-AC05-9C9717D508F5}",
+							"TranslatableValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Numeric representation of a month, with leading zeros"
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Day of the month without leading zeros"
+										}
+									]
 								}
-							]
-						}
-					],
-					"AttributeValues":
-					[
-						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "m"
-						}
-					]
-				},
-				{
-					"ID": "{72DD3942-7270-493D-AA84-BD12546D55CA}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							],
+							"AttributeValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "A short textual representation of a month, three letters"
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "j"
 								}
 							]
-						}
-					],
-					"AttributeValues":
-					[
+						},
 						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "M"
-						}
-					]
-				},
-				{
-					"ID": "{9C6E29E3-63DD-4BD8-B19D-1BA6C2AE618F}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							"ID": "{9C2D3EA5-E85C-4D01-B6CE-CA514A638D82}",
+							"TranslatableValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Numeric representation of a month, without leading zeros"
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Full textual representation of the day of the week"
+										}
+									]
 								}
-							]
-						}
-					],
-					"AttributeValues":
-					[
-						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "n"
-						}
-					]
-				},
-				{
-					"ID": "{E2ACE134-46C7-435B-B985-C95789B2828E}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							],
+							"AttributeValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Number of days in the given month"
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "l"
 								}
 							]
-						}
-					],
-					"AttributeValues":
-					[
+						},
 						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "t"
-						}
-					]
-				},
-				{
-					"ID": "{4F858604-0744-4AD8-96DE-E527B38DC85A}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							"ID": "{8D0B7518-DE2D-45E8-AF95-277D78A1FDFE}",
+							"TranslatableValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Whether it's a leap year"
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "ISO-8601 numeric representation of the day of the week (added in PHP 5.1.0)"
+										}
+									]
 								}
-							]
-						}
-					],
-					"AttributeValues":
-					[
-						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "L"
-						}
-					]
-				},
-				{
-					"ID": "{4412EA55-2B1A-4BB2-864F-85BB7FB3EE55}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							],
+							"AttributeValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "ISO-8601 week-numbering year. This has the same value as Y, except that if the ISO week number (W) belongs to the previous or next year, that year is used instead. (added in PHP 5.1.0)"
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "N"
 								}
 							]
-						}
-					],
-					"AttributeValues":
-					[
+						},
 						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "o"
-						}
-					]
-				},
-				{
-					"ID": "{6C47F7E1-A470-4A99-8F4D-4E709DF5E4FB}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							"ID": "{D0D0B49F-6D41-4587-878A-2EFF68978AD2}",
+							"TranslatableValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "A full numeric representation of a year, 4 digits"
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "English ordinal suffix for the day of the month, 2 characters"
+										}
+									]
 								}
-							]
-						}
-					],
-					"AttributeValues":
-					[
-						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "Y"
-						}
-					]
-				},
-				{
-					"ID": "{6BCD463E-64B1-478F-B456-7CBBFBC7561E}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							],
+							"AttributeValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "A two digit representation of a year"
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "S"
 								}
 							]
-						}
-					],
-					"AttributeValues":
-					[
+						},
 						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "y"
-						}
-					]
-				},
-				{
-					"ID": "{C630C093-A01C-498A-ABC5-EAF0DDF7E7CD}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							"ID": "{F21899E0-C2C9-485A-B4B8-DBA73395B331}",
+							"TranslatableValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Lowercase Ante meridiem and Post meridiem"
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Numeric representation of the day of the week"
+										}
+									]
 								}
-							]
-						}
-					],
-					"AttributeValues":
-					[
-						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "a"
-						}
-					]
-				},
-				{
-					"ID": "{CDDC029B-9FE0-4622-A529-10268B44B20B}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							],
+							"AttributeValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Uppercase Ante meridiem and Post meridiem"
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "w"
 								}
 							]
-						}
-					],
-					"AttributeValues":
-					[
+						},
 						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "A"
-						}
-					]
-				},
-				{
-					"ID": "{24AC9466-24E0-4BC0-9933-0A71DC8203A4}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							"ID": "{5685DE79-9BB4-42A9-94BB-70EBE69476AC}",
+							"TranslatableValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Swatch Internet time"
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "The day of the year (starting from 0)"
+										}
+									]
 								}
-							]
-						}
-					],
-					"AttributeValues":
-					[
-						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "B"
-						}
-					]
-				},
-				{
-					"ID": "{47B4E6AE-8064-418F-8B75-76A772C5FB38}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							],
+							"AttributeValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "12-hour format of an hour without leading zeros"
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "z"
 								}
 							]
-						}
-					],
-					"AttributeValues":
-					[
+						},
 						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "g"
-						}
-					]
-				},
-				{
-					"ID": "{11B451BC-F7E6-4056-9022-BF0CDE1C8CB5}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							"ID": "{1354D829-8F0B-4967-AFBA-AEC72EFC2682}",
+							"TranslatableValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "24-hour format of an hour without leading zeros"
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "ISO-8601 week number of year, weeks starting on Monday (added in PHP 4.1.0)"
+										}
+									]
 								}
-							]
-						}
-					],
-					"AttributeValues":
-					[
-						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "G"
-						}
-					]
-				},
-				{
-					"ID": "{9DE66B78-FC10-4960-B561-0D64C78C1240}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							],
+							"AttributeValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "12-hour format of an hour with leading zeros"
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "W"
 								}
 							]
-						}
-					],
-					"AttributeValues":
-					[
+						},
 						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "h"
-						}
-					]
-				},
-				{
-					"ID": "{4A00327D-6DCC-4E70-B22A-8D9CDAB80124}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							"ID": "{55130093-F54E-49B5-85A4-86F2E7A0887A}",
+							"TranslatableValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "24-hour format of an hour with leading zeros"
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "A full textual representation of a month, such as January or March"
+										}
+									]
 								}
-							]
-						}
-					],
-					"AttributeValues":
-					[
-						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "H"
-						}
-					]
-				},
-				{
-					"ID": "{54689D84-5497-44EB-9AAD-5C83E25F24E1}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							],
+							"AttributeValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Minutes with leading zeros"
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "F"
 								}
 							]
-						}
-					],
-					"AttributeValues":
-					[
+						},
 						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "i"
-						}
-					]
-				},
-				{
-					"ID": "{0008BB61-2602-497A-893B-50EC6A0713EC}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							"ID": "{75A34627-8776-43AA-908C-233B634959B3}",
+							"TranslatableValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Seconds, with leading zeros"
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Numeric representation of a month, with leading zeros"
+										}
+									]
 								}
-							]
-						}
-					],
-					"AttributeValues":
-					[
-						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "s"
-						}
-					]
-				},
-				{
-					"ID": "{6ADC7F5C-ADAA-48E5-9CB3-A7E25369E36C}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							],
+							"AttributeValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Microseconds (added in PHP 5.2.2). Note that date() will always generate 000000 since it takes an integer parameter, whereas DateTime::format() does support microseconds if DateTime was created with microseconds."
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "m"
 								}
 							]
-						}
-					],
-					"AttributeValues":
-					[
+						},
 						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "u"
-						}
-					]
-				},
-				{
-					"ID": "{4C850E3F-8933-4A46-BCAF-1216B8FA8F10}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							"ID": "{72DD3942-7270-493D-AA84-BD12546D55CA}",
+							"TranslatableValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Timezone identifier (added in PHP 5.1.0)"
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "A short textual representation of a month, three letters"
+										}
+									]
 								}
-							]
-						}
-					],
-					"AttributeValues":
-					[
-						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "e"
-						}
-					]
-				},
-				{
-					"ID": "{095898A3-DC60-4DAC-8CEB-5AC0EC99E372}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							],
+							"AttributeValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Whether or not the date is in daylight saving time"
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "M"
 								}
 							]
-						}
-					],
-					"AttributeValues":
-					[
+						},
 						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "I"
-						}
-					]
-				},
-				{
-					"ID": "{3F21578D-20CF-4088-A884-748CA8689F60}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							"ID": "{9C6E29E3-63DD-4BD8-B19D-1BA6C2AE618F}",
+							"TranslatableValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Difference to Greenwich time (GMT) in hours"
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Numeric representation of a month, without leading zeros"
+										}
+									]
 								}
-							]
-						}
-					],
-					"AttributeValues":
-					[
-						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "O"
-						}
-					]
-				},
-				{
-					"ID": "{124F61F2-A5AA-4770-A2B1-BF50EA77E9B8}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							],
+							"AttributeValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Difference to Greenwich time (GMT) with colon between hours and minutes (added in PHP 5.1.3)"
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "n"
 								}
 							]
-						}
-					],
-					"AttributeValues":
-					[
+						},
 						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "P"
-						}
-					]
-				},
-				{
-					"ID": "{F4C09915-53B0-4684-AF13-C0CF95F07E8B}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							"ID": "{E2ACE134-46C7-435B-B985-C95789B2828E}",
+							"TranslatableValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Timezone abbreviation"
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Number of days in the given month"
+										}
+									]
 								}
-							]
-						}
-					],
-					"AttributeValues":
-					[
-						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "T"
-						}
-					]
-				},
-				{
-					"ID": "{93D88303-3B0A-4CC9-B5C0-6BDE0B49695E}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							],
+							"AttributeValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Timezone offset in seconds. The offset for timezones west of UTC is always negative, and for those east of UTC is always positive."
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "t"
 								}
 							]
-						}
-					],
-					"AttributeValues":
-					[
+						},
 						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "Z"
-						}
-					]
-				},
-				{
-					"ID": "{A11031DB-CF52-40E0-BD6C-9BEC702BFA3A}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							"ID": "{4F858604-0744-4AD8-96DE-E527B38DC85A}",
+							"TranslatableValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "ISO 8601 date (added in PHP 5)"
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Whether it's a leap year"
+										}
+									]
 								}
-							]
-						}
-					],
-					"AttributeValues":
-					[
-						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "c"
-						}
-					]
-				},
-				{
-					"ID": "{B7850EF7-4F9A-4377-8DB5-E7A12C4DCC22}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							],
+							"AttributeValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "RFC 2822 formatted date"
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "L"
 								}
 							]
-						}
-					],
-					"AttributeValues":
-					[
+						},
 						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "r"
-						}
-					]
-				},
-				{
-					"ID": "{CA69E174-C475-4A06-8695-92A5E9C3B91D}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
-							"Values":
+							"ID": "{4412EA55-2B1A-4BB2-864F-85BB7FB3EE55}",
+							"TranslatableValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Seconds since the Unix Epoch"
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "ISO-8601 week-numbering year. This has the same value as Y, except that if the ISO week number (W) belongs to the previous or next year, that year is used instead. (added in PHP 5.1.0)"
+										}
+									]
+								}
+							],
+							"AttributeValues":
+							[
+								{
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "o"
 								}
 							]
-						}
-					],
-					"AttributeValues":
-					[
+						},
 						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "U"
+							"ID": "{6C47F7E1-A470-4A99-8F4D-4E709DF5E4FB}",
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "A full numeric representation of a year, 4 digits"
+										}
+									]
+								}
+							],
+							"AttributeValues":
+							[
+								{
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "Y"
+								}
+							]
+						},
+						{
+							"ID": "{6BCD463E-64B1-478F-B456-7CBBFBC7561E}",
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "A two digit representation of a year"
+										}
+									]
+								}
+							],
+							"AttributeValues":
+							[
+								{
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "y"
+								}
+							]
+						},
+						{
+							"ID": "{C630C093-A01C-498A-ABC5-EAF0DDF7E7CD}",
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Lowercase Ante meridiem and Post meridiem"
+										}
+									]
+								}
+							],
+							"AttributeValues":
+							[
+								{
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "a"
+								}
+							]
+						},
+						{
+							"ID": "{CDDC029B-9FE0-4622-A529-10268B44B20B}",
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Uppercase Ante meridiem and Post meridiem"
+										}
+									]
+								}
+							],
+							"AttributeValues":
+							[
+								{
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "A"
+								}
+							]
+						},
+						{
+							"ID": "{24AC9466-24E0-4BC0-9933-0A71DC8203A4}",
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Swatch Internet time"
+										}
+									]
+								}
+							],
+							"AttributeValues":
+							[
+								{
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "B"
+								}
+							]
+						},
+						{
+							"ID": "{47B4E6AE-8064-418F-8B75-76A772C5FB38}",
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "12-hour format of an hour without leading zeros"
+										}
+									]
+								}
+							],
+							"AttributeValues":
+							[
+								{
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "g"
+								}
+							]
+						},
+						{
+							"ID": "{11B451BC-F7E6-4056-9022-BF0CDE1C8CB5}",
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "24-hour format of an hour without leading zeros"
+										}
+									]
+								}
+							],
+							"AttributeValues":
+							[
+								{
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "G"
+								}
+							]
+						},
+						{
+							"ID": "{9DE66B78-FC10-4960-B561-0D64C78C1240}",
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "12-hour format of an hour with leading zeros"
+										}
+									]
+								}
+							],
+							"AttributeValues":
+							[
+								{
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "h"
+								}
+							]
+						},
+						{
+							"ID": "{4A00327D-6DCC-4E70-B22A-8D9CDAB80124}",
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "24-hour format of an hour with leading zeros"
+										}
+									]
+								}
+							],
+							"AttributeValues":
+							[
+								{
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "H"
+								}
+							]
+						},
+						{
+							"ID": "{54689D84-5497-44EB-9AAD-5C83E25F24E1}",
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Minutes with leading zeros"
+										}
+									]
+								}
+							],
+							"AttributeValues":
+							[
+								{
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "i"
+								}
+							]
+						},
+						{
+							"ID": "{0008BB61-2602-497A-893B-50EC6A0713EC}",
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Seconds, with leading zeros"
+										}
+									]
+								}
+							],
+							"AttributeValues":
+							[
+								{
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "s"
+								}
+							]
+						},
+						{
+							"ID": "{6ADC7F5C-ADAA-48E5-9CB3-A7E25369E36C}",
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Microseconds (added in PHP 5.2.2). Note that date() will always generate 000000 since it takes an integer parameter, whereas DateTime::format() does support microseconds if DateTime was created with microseconds."
+										}
+									]
+								}
+							],
+							"AttributeValues":
+							[
+								{
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "u"
+								}
+							]
+						},
+						{
+							"ID": "{4C850E3F-8933-4A46-BCAF-1216B8FA8F10}",
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Timezone identifier (added in PHP 5.1.0)"
+										}
+									]
+								}
+							],
+							"AttributeValues":
+							[
+								{
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "e"
+								}
+							]
+						},
+						{
+							"ID": "{095898A3-DC60-4DAC-8CEB-5AC0EC99E372}",
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Whether or not the date is in daylight saving time"
+										}
+									]
+								}
+							],
+							"AttributeValues":
+							[
+								{
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "I"
+								}
+							]
+						},
+						{
+							"ID": "{3F21578D-20CF-4088-A884-748CA8689F60}",
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Difference to Greenwich time (GMT) in hours"
+										}
+									]
+								}
+							],
+							"AttributeValues":
+							[
+								{
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "O"
+								}
+							]
+						},
+						{
+							"ID": "{124F61F2-A5AA-4770-A2B1-BF50EA77E9B8}",
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Difference to Greenwich time (GMT) with colon between hours and minutes (added in PHP 5.1.3)"
+										}
+									]
+								}
+							],
+							"AttributeValues":
+							[
+								{
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "P"
+								}
+							]
+						},
+						{
+							"ID": "{F4C09915-53B0-4684-AF13-C0CF95F07E8B}",
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Timezone abbreviation"
+										}
+									]
+								}
+							],
+							"AttributeValues":
+							[
+								{
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "T"
+								}
+							]
+						},
+						{
+							"ID": "{93D88303-3B0A-4CC9-B5C0-6BDE0B49695E}",
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Timezone offset in seconds. The offset for timezones west of UTC is always negative, and for those east of UTC is always positive."
+										}
+									]
+								}
+							],
+							"AttributeValues":
+							[
+								{
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "Z"
+								}
+							]
+						},
+						{
+							"ID": "{A11031DB-CF52-40E0-BD6C-9BEC702BFA3A}",
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "ISO 8601 date (added in PHP 5)"
+										}
+									]
+								}
+							],
+							"AttributeValues":
+							[
+								{
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "c"
+								}
+							]
+						},
+						{
+							"ID": "{B7850EF7-4F9A-4377-8DB5-E7A12C4DCC22}",
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "RFC 2822 formatted date"
+										}
+									]
+								}
+							],
+							"AttributeValues":
+							[
+								{
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "r"
+								}
+							]
+						},
+						{
+							"ID": "{CA69E174-C475-4A06-8695-92A5E9C3B91D}",
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{EE943EDE-805E-442E-A282-56CEF5BAE7AA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Seconds since the Unix Epoch"
+										}
+									]
+								}
+							],
+							"AttributeValues":
+							[
+								{
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "U"
+								}
+							]
 						}
 					]
 				}

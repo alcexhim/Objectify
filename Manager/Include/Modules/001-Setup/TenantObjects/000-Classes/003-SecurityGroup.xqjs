@@ -1,275 +1,248 @@
 {
-	"Objects":
+	"Tenants":
 	[
 		{
-			"Name": "Relationship",
-			"Instances":
+			"ID": "{35BF9AC5-0212-4DBA-BB9B-D1A6E9955827}",
+			"Objects":
 			[
 				{
-					"ID": "{6EF090CF-DF98-4DC6-83A9-364A3FA25E9B}",
-					"Comment": "Security Permission.has title Translatable Text Constant",
-					"AttributeValues":
+					"Name": "Relationship",
+					"Instances":
 					[
 						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "has title"
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `Security Permission`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-							"DestinationInstances":
-							[
-								"{8EA7D1D3-6FC8-40C9-98C6-F72798307E9F}"
-							]
-						},
-						{
-							"Comment": ".has destination Class `Translatable Text Constant`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-							"DestinationInstances":
-							[
-								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
-							]
-						}
-					]
-				},
-				{
-					"ID": "{616E5840-4DA4-4C99-B470-8F464465C2DB}",
-					"Comment": "Translatable Text Constant.title for Security Permission",
-					"AttributeValues":
-					[
-						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "title for"
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `Translatable Text Constant`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-							"DestinationInstances":
-							[
-								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
-							]
-						},
-						{
-							"Comment": ".has destination Class `Security Permission`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-							"DestinationInstances":
-							[
-								"{8EA7D1D3-6FC8-40C9-98C6-F72798307E9F}"
-							]
-						}
-					]
-				},
-				{
-					"ID": "{099B644B-76D4-4654-BDE7-3CBCCA418169}",
-					"Comment": "Security Group.has title Translatable Text Constant",
-					"AttributeValues":
-					[
-						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "has title"
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `Security Group`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-							"DestinationInstances":
-							[
-								"{498CCFD4-8D94-4EF4-B947-1D07ECC9342B}"
-							]
-						},
-						{
-							"Comment": ".has destination Class `Translatable Text Constant`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-							"DestinationInstances":
-							[
-								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
-							]
-						}
-					]
-				},
-				{
-					"ID": "{62E94B4E-1A7A-48F1-9812-2AC6AF5B0170}",
-					"Comment": "Translatable Text Constant.title for Security Group",
-					"AttributeValues":
-					[
-						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "title for"
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `Translatable Text Constant`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-							"DestinationInstances":
-							[
-								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
-							]
-						},
-						{
-							"Comment": ".has destination Class `Security Group`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-							"DestinationInstances":
-							[
-								"{498CCFD4-8D94-4EF4-B947-1D07ECC9342B}"
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"ID": "{8EA7D1D3-6FC8-40C9-98C6-F72798307E9F}",
-			"Name": "SecurityPermission",
-			"ParentObjects":
-			[
-				{
-					"Name": "Class"
-				}
-			],
-			"TranslatableValues":
-			[
-				{
-					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
-					"Values":
-					[
-						{
-							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-							"Value": "Security Privilege"
-						}
-					]
-				}
-			],
-			"Instances":
-			[
-				{
-					"ID": "{36156720-B166-47E8-AA45-073EE789AD59}",
-					"Name": "Provision Tenants",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{6EF090CF-DF98-4DC6-83A9-364A3FA25E9B}",
-							"InverseRelationshipID": "{616E5840-4DA4-4C99-B470-8F464465C2DB}",
-							"Values":
+							"ID": "{6EF090CF-DF98-4DC6-83A9-364A3FA25E9B}",
+							"Comment": "Security Permission.has title Translatable Text Constant",
+							"AttributeValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Provision Tenants"
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "has title"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `Security Permission`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{8EA7D1D3-6FC8-40C9-98C6-F72798307E9F}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Translatable Text Constant`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+									]
+								}
+							]
+						},
+						{
+							"ID": "{616E5840-4DA4-4C99-B470-8F464465C2DB}",
+							"Comment": "Translatable Text Constant.title for Security Permission",
+							"AttributeValues":
+							[
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "title for"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `Translatable Text Constant`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Security Permission`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{8EA7D1D3-6FC8-40C9-98C6-F72798307E9F}"
+									]
+								}
+							]
+						},
+						{
+							"ID": "{099B644B-76D4-4654-BDE7-3CBCCA418169}",
+							"Comment": "Security Group.has title Translatable Text Constant",
+							"AttributeValues":
+							[
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "has title"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `Security Group`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{498CCFD4-8D94-4EF4-B947-1D07ECC9342B}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Translatable Text Constant`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+									]
+								}
+							]
+						},
+						{
+							"ID": "{62E94B4E-1A7A-48F1-9812-2AC6AF5B0170}",
+							"Comment": "Translatable Text Constant.title for Security Group",
+							"AttributeValues":
+							[
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "title for"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `Translatable Text Constant`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Security Group`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{498CCFD4-8D94-4EF4-B947-1D07ECC9342B}"
+									]
 								}
 							]
 						}
 					]
-				}
-			]
-		},
-		{
-			"Name": "ExtractSingleInstanceStringComponent",
-			"Instances":
-			[
+				},
 				{
-					"ID": "{4E73EEA2-BD64-4ECD-B328-99A2779B2FB5}",
-					"Relationships":
+					"ID": "{8EA7D1D3-6FC8-40C9-98C6-F72798307E9F}",
+					"Name": "SecurityPermission",
+					"ParentObjects":
 					[
 						{
-							"Comment": "Extract Single Instance String Component.has Relationship",
-							"RelationshipID": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
-							"InverseRelationshipID": "{B0111132-8721-405C-967B-0BEFA92CFE9A}",
-							"DestinationInstances":
-							[
-								"{099B644B-76D4-4654-BDE7-3CBCCA418169}"
-							]
+							"Name": "Class"
 						}
-					]
-				}
-			]
-		},
-		{
-			"Name": "String",
-			"Instances":
-			[
-				{
-					"ID": "{30965725-28BA-45FA-8578-804A4FDDA149}",
-					"Relationships":
-					[
-						{
-							"Comment": "String.has String Component",
-							"RelationshipID": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
-							"InverseRelationshipID": "{40E17597-0AEB-4C56-BBAB-FC600E1196DD}",
-							"DestinationInstances":
-							[
-								"{4E73EEA2-BD64-4ECD-B328-99A2779B2FB5}"
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"ID": "{498CCFD4-8D94-4EF4-B947-1D07ECC9342B}",
-			"Name": "SecurityGroup",
-			"ParentObjects":
-			[
-				{
-					"Name": "Class"
-				}
-			],
-			"TranslatableValues":
-			[
-				{
-					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
-					"Values":
-					[
-						{
-							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-							"Value": "Security Group"
-						}
-					]
-				}
-			],
-			"Relationships":
-			[
-				{
-					"Comment": ".instance labeled by String",
-					"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
-					"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
-					"DestinationInstances":
-					[
-						"{30965725-28BA-45FA-8578-804A4FDDA149}"
-					]
-				}
-			],
-			"Instances":
-			[
-				{
-					"ID": "{0E57B7A3-FE6D-4B40-843B-F20580441242}",
-					"Name": "System Administrator",
+					],
 					"TranslatableValues":
 					[
 						{
-							"RelationshipID": "{099B644B-76D4-4654-BDE7-3CBCCA418169}",
-							"InverseRelationshipID": "{62E94B4E-1A7A-48F1-9812-2AC6AF5B0170}",
+							"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 							"Values":
 							[
 								{
 									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "System Administrator"
+									"Value": "Security Privilege"
+								}
+							]
+						}
+					],
+					"Instances":
+					[
+						{
+							"ID": "{36156720-B166-47E8-AA45-073EE789AD59}",
+							"Name": "Provision Tenants",
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{6EF090CF-DF98-4DC6-83A9-364A3FA25E9B}",
+									"InverseRelationshipID": "{616E5840-4DA4-4C99-B470-8F464465C2DB}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Provision Tenants"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"Name": "ExtractSingleInstanceStringComponent",
+					"Instances":
+					[
+						{
+							"ID": "{4E73EEA2-BD64-4ECD-B328-99A2779B2FB5}",
+							"Relationships":
+							[
+								{
+									"Comment": "Extract Single Instance String Component.has Relationship",
+									"RelationshipID": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
+									"InverseRelationshipID": "{B0111132-8721-405C-967B-0BEFA92CFE9A}",
+									"DestinationInstances":
+									[
+										"{099B644B-76D4-4654-BDE7-3CBCCA418169}"
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"Name": "String",
+					"Instances":
+					[
+						{
+							"ID": "{30965725-28BA-45FA-8578-804A4FDDA149}",
+							"Relationships":
+							[
+								{
+									"Comment": "String.has String Component",
+									"RelationshipID": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
+									"InverseRelationshipID": "{40E17597-0AEB-4C56-BBAB-FC600E1196DD}",
+									"DestinationInstances":
+									[
+										"{4E73EEA2-BD64-4ECD-B328-99A2779B2FB5}"
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"ID": "{498CCFD4-8D94-4EF4-B947-1D07ECC9342B}",
+					"Name": "SecurityGroup",
+					"ParentObjects":
+					[
+						{
+							"Name": "Class"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Security Group"
 								}
 							]
 						}
@@ -277,11 +250,44 @@
 					"Relationships":
 					[
 						{
-							"Comment": "Security Group `System Administrator`.has Security Permission `Provision Tenants`",
-							"RelationshipID": "{5E305133-1380-4736-93E4-6B280B35FCE3}",
+							"Comment": ".instance labeled by String",
+							"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+							"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
 							"DestinationInstances":
 							[
-								"{36156720-B166-47E8-AA45-073EE789AD59}"
+								"{30965725-28BA-45FA-8578-804A4FDDA149}"
+							]
+						}
+					],
+					"Instances":
+					[
+						{
+							"ID": "{0E57B7A3-FE6D-4B40-843B-F20580441242}",
+							"Name": "System Administrator",
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{099B644B-76D4-4654-BDE7-3CBCCA418169}",
+									"InverseRelationshipID": "{62E94B4E-1A7A-48F1-9812-2AC6AF5B0170}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "System Administrator"
+										}
+									]
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": "Security Group `System Administrator`.has Security Permission `Provision Tenants`",
+									"RelationshipID": "{5E305133-1380-4736-93E4-6B280B35FCE3}",
+									"DestinationInstances":
+									[
+										"{36156720-B166-47E8-AA45-073EE789AD59}"
+									]
+								}
 							]
 						}
 					]

@@ -1,180 +1,118 @@
 {
-	"Objects":
+	"Tenants":
 	[
 		{
-			"Name": "InstanceAttributeStringComponent",
-			"Instances":
+			"ID": "{35BF9AC5-0212-4DBA-BB9B-D1A6E9955827}",
+			"Objects":
 			[
 				{
-					"ID": "{91EB4F16-9E36-4EED-8E02-921DF802DC15}",
-					"AttributeValues":
+					"Name": "InstanceAttributeStringComponent",
+					"Instances":
 					[
 						{
-							"ID": "{A294F77C-8A89-419E-B494-8BFCC80DB634}",
-							"Value": "UserName"
-						}
-					]
-				}
-			]
-		},
-		{
-			"Name": "ExtractSingleInstanceStringComponent",
-			"Instances":
-			[
-				{
-					"ID": "{BAE9E054-ED1E-4DE7-A70B-33A437591D80}",
-					"Relationships":
-					[
-						{
-							"Comment": "Extract Single Instance String Component.has Relationship",
-							"RelationshipID": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
-							"DestinationInstances":
-							[
-								"{6C29856C-3B10-4F5B-A291-DD3CA4C04A2F}"
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"Name": "String",
-			"Instances":
-			[
-				{
-					"ID": "{344CC8C6-EC17-4568-BACA-D55C77B2B0BF}",
-					"Relationships":
-					[
-						{
-							"Comment": "String.has String Component",
-							"RelationshipID": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
-							"InverseRelationshipID": "{40E17597-0AEB-4C56-BBAB-FC600E1196DD}",
-							"DestinationInstances":
-							[
-								"{91EB4F16-9E36-4EED-8E02-921DF802DC15}",
-								"{936E4426-5995-4713-BDEE-BF4F7BA2AFAE}",
-								"{FEE39766-9A0D-49A2-A29F-45C17989DCF6}",
-								"{936E4426-5995-4713-BDEE-BF4F7BA2AFAE}",
-								"{BAE9E054-ED1E-4DE7-A70B-33A437591D80}"
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"Name": "BooleanAttribute",
-			"Instances":
-			[
-				{
-					"ID": "{AA602558-7E12-4F5A-8F38-B0E3AB933AF4}",
-					"AttributeValues":
-					[
-						{
-							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
-							"Value": "AccountDisabled"
-						}
-					],
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
-							"Values":
+							"ID": "{91EB4F16-9E36-4EED-8E02-921DF802DC15}",
+							"AttributeValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Account Disabled"
+									"ID": "{A294F77C-8A89-419E-B494-8BFCC80DB634}",
+									"Value": "UserName"
 								}
 							]
 						}
 					]
-				}
-			]
-		},
-		{
-			"ID": "{9C6871C1-9A7F-4A3A-900E-69D1D9E24486}",
-			"Name": "User",
-			"ParentObjects":
-			[
+				},
 				{
-					"Name": "Class"
-				}
-			],
-			"TranslatableValues":
-			[
-				{
-					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
-					"Values":
+					"Name": "ExtractSingleInstanceStringComponent",
+					"Instances":
 					[
 						{
-							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-							"Value": "User"
+							"ID": "{BAE9E054-ED1E-4DE7-A70B-33A437591D80}",
+							"Relationships":
+							[
+								{
+									"Comment": "Extract Single Instance String Component.has Relationship",
+									"RelationshipID": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
+									"DestinationInstances":
+									[
+										"{6C29856C-3B10-4F5B-A291-DD3CA4C04A2F}"
+									]
+								}
+							]
 						}
 					]
-				}
-			],
-			"Relationships":
-			[
-				{
-					"Comment": "Class.has Attribute `User Name`, `Password Hash`, `Password Salt`, `Global`",
-					"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
-					"DestinationInstances":
-					[
-						"{960FAF02-5C59-40F7-91A7-20012A99D9ED}",
-						"{F377FC29-4DF1-4AFB-9643-4191F37A00A9}",
-						"{8C5A99BC-40ED-4FA2-B23F-F373C1F3F4BE}",
-						"{40A05D59-4F7B-46BF-9352-67FC3E5FB2C1}"
-					]
 				},
 				{
-					"Comment": "Class.instance labeled by String",
-					"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
-					"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
-					"DestinationInstances":
-					[
-						"{344CC8C6-EC17-4568-BACA-D55C77B2B0BF}"
-					]
-				},
-				{
-					"Comment": "Class `User`.has Attribute `Account Disabled` [Boolean Attribute]",
-					"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
-					"InverseRelationshipID": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
-					"DestinationInstances":
-					[
-						"{AA602558-7E12-4F5A-8F38-B0E3AB933AF4}"
-					]
-				},
-				{
-					"Comment": "Class `User`.has summary Report Field `Account Disabled`",
-					"RelationshipID": "{D11050AD-7376-4AB7-84DE-E8D0336B74D2}",
-					"InverseRelationshipID": "{FAD8F8B8-B0E2-4852-A6E9-A272C041DC4E}",
-					"DestinationInstances":
-					[
-						"{FE5BEBE7-5B56-4C2E-B85E-611B3F448815"
-					]
-				}
-			],
-			"Instances":
-			[
-				{
-					"ID": "{B066A54B-B160-4510-A805-436D3F90C2E6}",
-					"AttributeValues":
+					"Name": "String",
+					"Instances":
 					[
 						{
-							"ID": "{960FAF02-5C59-40F7-91A7-20012A99D9ED}",
-							"Value": "xq-environments"
+							"ID": "{344CC8C6-EC17-4568-BACA-D55C77B2B0BF}",
+							"Relationships":
+							[
+								{
+									"Comment": "String.has String Component",
+									"RelationshipID": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
+									"InverseRelationshipID": "{40E17597-0AEB-4C56-BBAB-FC600E1196DD}",
+									"DestinationInstances":
+									[
+										"{91EB4F16-9E36-4EED-8E02-921DF802DC15}",
+										"{936E4426-5995-4713-BDEE-BF4F7BA2AFAE}",
+										"{FEE39766-9A0D-49A2-A29F-45C17989DCF6}",
+										"{936E4426-5995-4713-BDEE-BF4F7BA2AFAE}",
+										"{BAE9E054-ED1E-4DE7-A70B-33A437591D80}"
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"Name": "BooleanAttribute",
+					"Instances":
+					[
+						{
+							"ID": "{AA602558-7E12-4F5A-8F38-B0E3AB933AF4}",
+							"AttributeValues":
+							[
+								{
+									"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+									"Value": "AccountDisabled"
+								}
+							],
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Account Disabled"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"ID": "{9C6871C1-9A7F-4A3A-900E-69D1D9E24486}",
+					"Name": "User",
+					"ParentObjects":
+					[
+						{
+							"Name": "Class"
 						}
 					],
 					"TranslatableValues":
 					[
 						{
-							"RelationshipID": "{6C29856C-3B10-4F5B-A291-DD3CA4C04A2F}",
-							"InverseRelationshipID": "{C0B4140B-92C1-4D52-B6DA-8E818A83F3FA}",
+							"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 							"Values":
 							[
 								{
 									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "XquizIT Environment Automation"
+									"Value": "User"
 								}
 							]
 						}
@@ -182,289 +120,357 @@
 					"Relationships":
 					[
 						{
-							"Comment": "User.has Security Group",
-							"RelationshipID": "{1921D642-84EC-4E16-B568-9C333909C018}",
-							"InverseRelationshipID": "{EDC79A23-3324-472D-B2F8-8CB9D2CF9C5D}",
+							"Comment": "Class.has Attribute `User Name`, `Password Hash`, `Password Salt`, `Global`",
+							"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
 							"DestinationInstances":
 							[
-								"{0E57B7A3-FE6D-4B40-843B-F20580441242}"
-							]
-						}
-					]
-				},
-				{
-					"ID": "{098DDA82-CD04-4B53-8C75-89D420EA6902}",
-					"AttributeValues":
-					[
-						{
-							"ID": "{960FAF02-5C59-40F7-91A7-20012A99D9ED}",
-							"Value": "xq-developer"
-						}
-					],
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{6C29856C-3B10-4F5B-A291-DD3CA4C04A2F}",
-							"InverseRelationshipID": "{C0B4140B-92C1-4D52-B6DA-8E818A83F3FA}",
-							"Values":
-							[
-								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Developer Generic User"
-								}
-							]
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": "User.has Security Group",
-							"RelationshipID": "{1921D642-84EC-4E16-B568-9C333909C018}",
-							"InverseRelationshipID": "{EDC79A23-3324-472D-B2F8-8CB9D2CF9C5D}",
-							"DestinationInstances":
-							[
-								"{0E57B7A3-FE6D-4B40-843B-F20580441242}"
-							]
-						}
-					]
-				},
-				{
-					"ID": "{232A8CBF-0D2B-4BDA-BE86-3E2FA25A3FB5}",
-					"AttributeValues":
-					[
-						{
-							"ID": "{960FAF02-5C59-40F7-91A7-20012A99D9ED}",
-							"Value": "xq-support"
-						}
-					],
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{6C29856C-3B10-4F5B-A291-DD3CA4C04A2F}",
-							"InverseRelationshipID": "{C0B4140B-92C1-4D52-B6DA-8E818A83F3FA}",
-							"Values":
-							[
-								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "XquizIT Support"
-								}
-							]
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": "User.has Security Group",
-							"RelationshipID": "{1921D642-84EC-4E16-B568-9C333909C018}",
-							"InverseRelationshipID": "{EDC79A23-3324-472D-B2F8-8CB9D2CF9C5D}",
-							"DestinationInstances":
-							[
-								"{0E57B7A3-FE6D-4B40-843B-F20580441242}"
-							]
-						}
-					]
-				},
-				{
-					"ID": "{FB20A79C-EAA2-4A98-A1DA-BDC351854694}",
-					"AttributeValues":
-					[
-						{
-							"ID": "{960FAF02-5C59-40F7-91A7-20012A99D9ED}",
-							"Value": "xq-configurator"
-						}
-					],
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{6C29856C-3B10-4F5B-A291-DD3CA4C04A2F}",
-							"InverseRelationshipID": "{C0B4140B-92C1-4D52-B6DA-8E818A83F3FA}",
-							"Values":
-							[
-								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "XquizIT Configurator"
-								}
-							]
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": "User.has Security Group",
-							"RelationshipID": "{1921D642-84EC-4E16-B568-9C333909C018}",
-							"InverseRelationshipID": "{EDC79A23-3324-472D-B2F8-8CB9D2CF9C5D}",
-							"DestinationInstances":
-							[
-								"{0E57B7A3-FE6D-4B40-843B-F20580441242}"
-							]
-						}
-					]
-				},
-				{
-					"ID": "{63F2EF51-DC73-48EC-856A-6FBBEDE01A8A}",
-					"AttributeValues":
-					[
-						{
-							"ID": "{960FAF02-5C59-40F7-91A7-20012A99D9ED}",
-							"Value": "xq-implementer"
-						}
-					],
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{6C29856C-3B10-4F5B-A291-DD3CA4C04A2F}",
-							"InverseRelationshipID": "{C0B4140B-92C1-4D52-B6DA-8E818A83F3FA}",
-							"Values":
-							[
-								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "XquizIT Implementer"
-								}
-							]
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": "User.has Security Group",
-							"RelationshipID": "{1921D642-84EC-4E16-B568-9C333909C018}",
-							"InverseRelationshipID": "{EDC79A23-3324-472D-B2F8-8CB9D2CF9C5D}",
-							"DestinationInstances":
-							[
-								"{0E57B7A3-FE6D-4B40-843B-F20580441242}"
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"Name": "Relationship",
-			"Instances":
-			[
-				{
-					"ID": "{D1A25625-C90F-4A73-A6F2-AFB530687705}",
-					"Comment": "Class.has owner User",
-					"AttributeValues":
-					[
-						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "has owner"
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `Class`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-							"DestinationInstances":
-							[
-								"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+								"{960FAF02-5C59-40F7-91A7-20012A99D9ED}",
+								"{F377FC29-4DF1-4AFB-9643-4191F37A00A9}",
+								"{8C5A99BC-40ED-4FA2-B23F-F373C1F3F4BE}",
+								"{40A05D59-4F7B-46BF-9352-67FC3E5FB2C1}"
 							]
 						},
 						{
-							"Comment": ".has destination Class `User`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"Comment": "Class.instance labeled by String",
+							"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+							"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
 							"DestinationInstances":
 							[
-								"{9C6871C1-9A7F-4A3A-900E-69D1D9E24486}"
+								"{344CC8C6-EC17-4568-BACA-D55C77B2B0BF}"
 							]
 						},
 						{
-							"Comment": ".has sibling Relationship",
-							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+							"Comment": "Class `User`.has Attribute `Account Disabled` [Boolean Attribute]",
+							"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+							"InverseRelationshipID": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
 							"DestinationInstances":
 							[
-								"{04DD2E6B-EA57-4840-8DD5-F0AA943C37BB}"
+								"{AA602558-7E12-4F5A-8F38-B0E3AB933AF4}"
+							]
+						},
+						{
+							"Comment": "Class `User`.has summary Report Field `Account Disabled`",
+							"RelationshipID": "{D11050AD-7376-4AB7-84DE-E8D0336B74D2}",
+							"InverseRelationshipID": "{FAD8F8B8-B0E2-4852-A6E9-A272C041DC4E}",
+							"DestinationInstances":
+							[
+								"{FE5BEBE7-5B56-4C2E-B85E-611B3F448815"
+							]
+						}
+					],
+					"Instances":
+					[
+						{
+							"ID": "{B066A54B-B160-4510-A805-436D3F90C2E6}",
+							"AttributeValues":
+							[
+								{
+									"ID": "{960FAF02-5C59-40F7-91A7-20012A99D9ED}",
+									"Value": "xq-environments"
+								}
+							],
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{6C29856C-3B10-4F5B-A291-DD3CA4C04A2F}",
+									"InverseRelationshipID": "{C0B4140B-92C1-4D52-B6DA-8E818A83F3FA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "XquizIT Environment Automation"
+										}
+									]
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": "User.has Security Group",
+									"RelationshipID": "{1921D642-84EC-4E16-B568-9C333909C018}",
+									"InverseRelationshipID": "{EDC79A23-3324-472D-B2F8-8CB9D2CF9C5D}",
+									"DestinationInstances":
+									[
+										"{0E57B7A3-FE6D-4B40-843B-F20580441242}"
+									]
+								}
+							]
+						},
+						{
+							"ID": "{098DDA82-CD04-4B53-8C75-89D420EA6902}",
+							"AttributeValues":
+							[
+								{
+									"ID": "{960FAF02-5C59-40F7-91A7-20012A99D9ED}",
+									"Value": "xq-developer"
+								}
+							],
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{6C29856C-3B10-4F5B-A291-DD3CA4C04A2F}",
+									"InverseRelationshipID": "{C0B4140B-92C1-4D52-B6DA-8E818A83F3FA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Developer Generic User"
+										}
+									]
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": "User.has Security Group",
+									"RelationshipID": "{1921D642-84EC-4E16-B568-9C333909C018}",
+									"InverseRelationshipID": "{EDC79A23-3324-472D-B2F8-8CB9D2CF9C5D}",
+									"DestinationInstances":
+									[
+										"{0E57B7A3-FE6D-4B40-843B-F20580441242}"
+									]
+								}
+							]
+						},
+						{
+							"ID": "{232A8CBF-0D2B-4BDA-BE86-3E2FA25A3FB5}",
+							"AttributeValues":
+							[
+								{
+									"ID": "{960FAF02-5C59-40F7-91A7-20012A99D9ED}",
+									"Value": "xq-support"
+								}
+							],
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{6C29856C-3B10-4F5B-A291-DD3CA4C04A2F}",
+									"InverseRelationshipID": "{C0B4140B-92C1-4D52-B6DA-8E818A83F3FA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "XquizIT Support"
+										}
+									]
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": "User.has Security Group",
+									"RelationshipID": "{1921D642-84EC-4E16-B568-9C333909C018}",
+									"InverseRelationshipID": "{EDC79A23-3324-472D-B2F8-8CB9D2CF9C5D}",
+									"DestinationInstances":
+									[
+										"{0E57B7A3-FE6D-4B40-843B-F20580441242}"
+									]
+								}
+							]
+						},
+						{
+							"ID": "{FB20A79C-EAA2-4A98-A1DA-BDC351854694}",
+							"AttributeValues":
+							[
+								{
+									"ID": "{960FAF02-5C59-40F7-91A7-20012A99D9ED}",
+									"Value": "xq-configurator"
+								}
+							],
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{6C29856C-3B10-4F5B-A291-DD3CA4C04A2F}",
+									"InverseRelationshipID": "{C0B4140B-92C1-4D52-B6DA-8E818A83F3FA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "XquizIT Configurator"
+										}
+									]
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": "User.has Security Group",
+									"RelationshipID": "{1921D642-84EC-4E16-B568-9C333909C018}",
+									"InverseRelationshipID": "{EDC79A23-3324-472D-B2F8-8CB9D2CF9C5D}",
+									"DestinationInstances":
+									[
+										"{0E57B7A3-FE6D-4B40-843B-F20580441242}"
+									]
+								}
+							]
+						},
+						{
+							"ID": "{63F2EF51-DC73-48EC-856A-6FBBEDE01A8A}",
+							"AttributeValues":
+							[
+								{
+									"ID": "{960FAF02-5C59-40F7-91A7-20012A99D9ED}",
+									"Value": "xq-implementer"
+								}
+							],
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{6C29856C-3B10-4F5B-A291-DD3CA4C04A2F}",
+									"InverseRelationshipID": "{C0B4140B-92C1-4D52-B6DA-8E818A83F3FA}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "XquizIT Implementer"
+										}
+									]
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": "User.has Security Group",
+									"RelationshipID": "{1921D642-84EC-4E16-B568-9C333909C018}",
+									"InverseRelationshipID": "{EDC79A23-3324-472D-B2F8-8CB9D2CF9C5D}",
+									"DestinationInstances":
+									[
+										"{0E57B7A3-FE6D-4B40-843B-F20580441242}"
+									]
+								}
 							]
 						}
 					]
 				},
 				{
-					"ID": "{04DD2E6B-EA57-4840-8DD5-F0AA943C37BB}",
-					"Comment": "User.owner for Class",
-					"AttributeValues":
+					"Name": "Relationship",
+					"Instances":
 					[
 						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "owner for"
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `User`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-							"DestinationInstances":
+							"ID": "{D1A25625-C90F-4A73-A6F2-AFB530687705}",
+							"Comment": "Class.has owner User",
+							"AttributeValues":
 							[
-								"{9C6871C1-9A7F-4A3A-900E-69D1D9E24486}"
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "has owner"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `Class`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `User`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{9C6871C1-9A7F-4A3A-900E-69D1D9E24486}"
+									]
+								},
+								{
+									"Comment": ".has sibling Relationship",
+									"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+									"DestinationInstances":
+									[
+										"{04DD2E6B-EA57-4840-8DD5-F0AA943C37BB}"
+									]
+								}
 							]
 						},
 						{
-							"Comment": ".has destination Class `Class`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-							"DestinationInstances":
-							[
-								"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
-							]
-						}
-					]
-				}
-			]
-		},
-		
-		{
-			"Name": "ReturnInstanceSetMethodBinding",
-			"Instances":
-			[
-				{
-					"ID": "{{6933F902-9C87-4D9B-8B25-AD4214A87420}}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{940EBFDB-B064-48D7-A55B-873947F4D19A}",
-							"Values":
+							"ID": "{04DD2E6B-EA57-4840-8DD5-F0AA943C37BB}",
+							"Comment": "User.owner for Class",
+							"AttributeValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "get User instance for Login Token parm"
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "owner for"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `User`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{9C6871C1-9A7F-4A3A-900E-69D1D9E24486}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Class`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+									]
 								}
 							]
 						}
 					]
-				}
-			]
-		},
-		{
-			"Name": "SelectInstanceSetMethod",
-			"Instances":
-			[
+				},
+				
 				{
-					"ID": "{2E113B59-CFF0-4F08-A5B2-1E5061491AC5}",
-					"TranslatableValues":
+					"Name": "ReturnInstanceSetMethodBinding",
+					"Instances":
 					[
 						{
-							"RelationshipID": "{52B65829-4A3F-44FB-BEE8-D9A240F1E9C9}",
-							"Values":
+							"ID": "{{6933F902-9C87-4D9B-8B25-AD4214A87420}}",
+							"TranslatableValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "get User instance for Login Token parm"
+									"RelationshipID": "{940EBFDB-B064-48D7-A55B-873947F4D19A}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "get User instance for Login Token parm"
+										}
+									]
 								}
 							]
 						}
-					],
-					"Relationships":
+					]
+				},
+				{
+					"Name": "SelectInstanceSetMethod",
+					"Instances":
 					[
 						{
-							"RelationshipID": "{D52500F1-1421-4B73-9987-223163BC9C04}",
-							"DestinationInstances":
+							"ID": "{2E113B59-CFF0-4F08-A5B2-1E5061491AC5}",
+							"TranslatableValues":
 							[
-								"{6933F902-9C87-4D9B-8B25-AD4214A87420}"
+								{
+									"RelationshipID": "{52B65829-4A3F-44FB-BEE8-D9A240F1E9C9}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "get User instance for Login Token parm"
+										}
+									]
+								}
+							],
+							"Relationships":
+							[
+								{
+									"RelationshipID": "{D52500F1-1421-4B73-9987-223163BC9C04}",
+									"DestinationInstances":
+									[
+										"{6933F902-9C87-4D9B-8B25-AD4214A87420}"
+									]
+								}
 							]
 						}
 					]

@@ -1,760 +1,766 @@
 {
-	"Objects":
+	"Tenants":
 	[
 		{
-			"Name": "ExtractSingleInstanceStringComponent",
-			"Instances":
+			"ID": "{35BF9AC5-0212-4DBA-BB9B-D1A6E9955827}",
+			"Objects":
 			[
 				{
-					"ID": "{449A8115-C21B-4E60-B02B-95D7FA2B54FF}",
-					"Relationships":
+					"Name": "ExtractSingleInstanceStringComponent",
+					"Instances":
 					[
 						{
-							"Comment": "Extract Single Instance String Component.has Relationship",
-							"RelationshipID": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
-							"InverseRelationshipID": "{B0111132-8721-405C-967B-0BEFA92CFE9A}",
-							"DestinationInstances":
+							"ID": "{449A8115-C21B-4E60-B02B-95D7FA2B54FF}",
+							"Relationships":
 							[
-								"{84032F2C-B347-4529-8D2E-FA68F4497D7C}"
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"Name": "String",
-			"Instances":
-			[
-				{
-					"ID": "{8075025F-E80C-4FF0-9E59-024C39A2109B}",
-					"Comment": "Language.instance labeled by String",
-					"Relationships":
-					[
-						{
-							"Comment": "String.has String Component",
-							"RelationshipID": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
-							"InverseRelationshipID": "{40E17597-0AEB-4C56-BBAB-FC600E1196DD}",
-							"DestinationInstances":
-							[
-								"{449A8115-C21B-4E60-B02B-95D7FA2B54FF}"
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"ID": "{61102B47-9B2F-4CF3-9840-D168B84CF1E5}",
-			"Name": "Language",
-			"ParentObjects":
-			[
-				{
-					"Name": "Class"
-				}
-			],
-			"TranslatableValues":
-			[
-				{
-					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
-					"Values":
-					[
-						{
-							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-							"Value": "Language"
-						}
-					]
-				}
-			],
-			"Relationships":
-			[
-				{
-					"Comment": "Class `Language`.instance labeled by String",
-					"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
-					"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
-					"DestinationInstances":
-					[
-						"{8075025F-E80C-4FF0-9E59-024C39A2109B}"
-					]
-				},
-				{
-					"Comment": "Language.has Attribute 'LocaleID' [Numeric Attribute], 'Code' [Text Attribute]",
-					"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
-					"InverseRelationshipID": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
-					"DestinationInstances":
-					[
-						"{B31887C6-B16E-457F-814A-071C9CBCAB98}",
-						"{93742C80-CDF7-4700-A03B-718F92B2666C}"
-					]
-				}
-			]
-		},
-		{
-			"ID": "{6D38E757-EC18-43AD-9C35-D15BB446C0E1}",
-			"Name": "TranslatableTextConstantValue",
-			"ParentObjects":
-			[
-				{
-					"Name": "Class"
-				}
-			],
-			"TranslatableValues":
-			[
-				{
-					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
-					"Values":
-					[
-						{
-							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-							"Value": "Translatable Text Constant Value"
-						}
-					]
-				}
-			],
-			"Relationships":
-			[
-				{
-					"Comment": "Class.instance labeled by String",
-					"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
-					"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
-					"DestinationInstances":
-					[
-						"{BBE5E586-FC28-451A-8495-B0CDA6203E03}"
-					]
-				},
-				{
-					"Comment": "Class `Translatable Text Constant Value`.has summary Report Field `Language`",
-					"RelationshipID": "{D11050AD-7376-4AB7-84DE-E8D0336B74D2}",
-					"InverseRelationshipID": "{FAD8F8B8-B0E2-4852-A6E9-A272C041DC4E}",
-					"DestinationInstances":
-					[
-						"{9DA34BD8-AEC3-4CA0-B0B0-6E9F65595B2A}"
-					] 
-				}
-			]
-		},
-		{
-			"Name": "ExtractSingleInstanceStringComponent",
-			"Instances":
-			[
-				{
-					"ID": "{03166067-EBEA-4153-80B4-E0847D166EB2}",
-					"Relationships":
-					[
-						{
-							"Comment": "Extract Single Instance String Component.has Relationship",
-							"RelationshipID": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
-							"DestinationInstances":
-							[
-								"{F9B60C00-FF1D-438F-AC74-6EDFA8DD7324}"
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"Name": "String",
-			"Instances":
-			[
-				{
-					"ID": "{BBE5E586-FC28-451A-8495-B0CDA6203E03}",
-					"Comment": "Translatable Text Constant Value.get Value",
-					"Relationships":
-					[
-						{
-							"Comment": "String.has String Component",
-							"RelationshipID": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
-							"InverseRelationshipID": "{40E17597-0AEB-4C56-BBAB-FC600E1196DD}",
-							"DestinationInstances":
-							[
-								"{9CE143E4-410F-4373-9BAF-778CEB794C66}"
+								{
+									"Comment": "Extract Single Instance String Component.has Relationship",
+									"RelationshipID": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
+									"InverseRelationshipID": "{B0111132-8721-405C-967B-0BEFA92CFE9A}",
+									"DestinationInstances":
+									[
+										"{84032F2C-B347-4529-8D2E-FA68F4497D7C}"
+									]
+								}
 							]
 						}
 					]
 				},
 				{
-					"ID": "{AA37C17F-CDB8-4ED2-BE87-3388DF4825BB}",
-					"Comment": "Translatable Text Constant.has Translatable Text Constant Value",
-					"Relationships":
+					"Name": "String",
+					"Instances":
 					[
 						{
-							"Comment": "String.has String Component",
-							"RelationshipID": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
-							"DestinationInstances":
+							"ID": "{8075025F-E80C-4FF0-9E59-024C39A2109B}",
+							"Comment": "Language.instance labeled by String",
+							"Relationships":
 							[
-								"{03166067-EBEA-4153-80B4-E0847D166EB2}"
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"ID": "{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}",
-			"Name": "TranslatableTextConstant",
-			"ParentObjects":
-			[
-				{
-					"Name": "Class"
-				}
-			],
-			"Relationships":
-			[
-				{
-					"Comment": "Class `Translatable Text Constant`.instance labeled by String",
-					"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
-					"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
-					"DestinationInstances":
-					[
-						"{AA37C17F-CDB8-4ED2-BE87-3388DF4825BB}"
-					]
-				}
-			],
-			"TranslatableValues":
-			[
-				{
-					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
-					"InverseRelationshipID": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
-					"Values":
-					[
-						{
-							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-							"Value": "Translatable Text Constant"
-						}
-					]
-				}
-			]
-		},
-		{
-			"Name": "Relationship",
-			"Instances":
-			[
-				{
-					"ID": "{F9B60C00-FF1D-438F-AC74-6EDFA8DD7324}",
-					"Comment": "Translatable Text Constant.has Translatable Text Constant Value",
-					"AttributeValues":
-					[
-						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "has"
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `Translatable Text Constant`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-							"DestinationInstances":
-							[
-								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
-							]
-						},
-						{
-							"Comment": ".has destination Class `Translatable Text Constant Value`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-							"DestinationInstances":
-							[
-								"{6D38E757-EC18-43AD-9C35-D15BB446C0E1}"
+								{
+									"Comment": "String.has String Component",
+									"RelationshipID": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
+									"InverseRelationshipID": "{40E17597-0AEB-4C56-BBAB-FC600E1196DD}",
+									"DestinationInstances":
+									[
+										"{449A8115-C21B-4E60-B02B-95D7FA2B54FF}"
+									]
+								}
 							]
 						}
 					]
 				},
 				{
-					"ID": "{20C70FA4-5258-480D-A61A-4A5BC9C5F990}",
-					"Comment": "Translatable Text Constant Value.for Translatable Text Constant",
-					"AttributeValues":
+					"ID": "{61102B47-9B2F-4CF3-9840-D168B84CF1E5}",
+					"Name": "Language",
+					"ParentObjects":
 					[
 						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "for"
+							"Name": "Class"
 						}
 					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `Translatable Text Constant Value`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-							"DestinationInstances":
-							[
-								"{6D38E757-EC18-43AD-9C35-D15BB446C0E1}"
-							]
-						},
-						{
-							"Comment": ".has destination Class `Translatable Text Constant`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-							"DestinationInstances":
-							[
-								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
-							]
-						}
-					]
-				},
-				{
-					"ID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
-					"Comment": "Class.has title Translatable Text Constant",
-					"AttributeValues":
-					[
-						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "has title"
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `Class`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-							"DestinationInstances":
-							[
-								"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
-							]
-						},
-						{
-							"Comment": ".has destination Class `Translatable Text Constant`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-							"DestinationInstances":
-							[
-								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
-							]
-						}
-					]
-				},
-				{
-					"ID": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
-					"Comment": "Translatable Text Constant.title for Class",
-					"AttributeValues":
-					[
-						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "title for"
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `Translatable Text Constant`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-							"DestinationInstances":
-							[
-								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
-							]
-						},
-						{
-							"Comment": ".has destination Class `Class`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-							"DestinationInstances":
-							[
-								"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
-							]
-						}
-					]
-				},
-				{
-					"ID": "{3B29DC78-B30A-46AA-9B20-2573239CECD9}",
-					"Comment": "Class.has description Translatable Text Constant",
-					"AttributeValues":
-					[
-						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "has description"
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `Class`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-							"DestinationInstances":
-							[
-								"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
-							]
-						},
-						{
-							"Comment": ".has destination Class `Translatable Text Constant`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-							"DestinationInstances":
-							[
-								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
-							]
-						}
-					]
-				},
-				{
-					"ID": "{D4592057-BACF-44D0-9BB9-348B42A49D96}",
-					"Comment": "Translatable Text Constant.description for Class",
-					"AttributeValues":
-					[
-						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "description for"
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `Translatable Text Constant`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-							"DestinationInstances":
-							[
-								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
-							]
-						},
-						{
-							"Comment": ".has destination Class `Class`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-							"DestinationInstances":
-							[
-								"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
-							]
-						}
-					]
-				},
-				{
-					"Comment": "Translatable Text Constant String Component.has Translatable Text Constant",
-					"ID": "{738527E0-70CB-4839-B127-806533662900}",
-					"AttributeValues":
-					[
-						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "has"
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `Translatable Text Constant String Component`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-							"DestinationInstances":
-							[
-								"{895AF8DB-1138-40FF-94ED-13E5FA2AB9BA}"
-							]
-						},
-						{
-							"Comment": ".has destination Class `Translatable Text Constant`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-							"DestinationInstances":
-							[
-								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
-							]
-						}
-					]
-				},
-				{
-					"Comment": "Translatable Text Constant.for Translatable Text Constant String Component",
-					"ID": "{70B9E2BC-8E81-4E42-8B98-760267D79CA4}",
-					"AttributeValues":
-					[
-						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "has"
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `Translatable Text Constant`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-							"DestinationInstances":
-							[
-								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
-							]
-						},
-						{
-							"Comment": ".has destination Class `Translatable Text Constant String Component`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-							"DestinationInstances":
-							[
-								"{895AF8DB-1138-40FF-94ED-13E5FA2AB9BA}"
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"Name": "InstanceAttributeStringComponent",
-			"Instances":
-			[
-				{
-					"ID": "{9CE143E4-410F-4373-9BAF-778CEB794C66}",
-					"AttributeValues":
-					[
-						{
-							"ID": "{A294F77C-8A89-419E-B494-8BFCC80DB634}",
-							"Value": "Value"
-						}
-					]
-				}
-			]
-		},
-		{
-			"Name": "Language",
-			"Instances":
-			[
-				{
-					"ID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-					"AttributeValues":
-					[
-						{
-							"ID": "{B31887C6-B16E-457F-814A-071C9CBCAB98}",
-							"Value": "1033"
-						},
-						{
-							"ID": "{93742C80-CDF7-4700-A03B-718F92B2666C}",
-							"Value": "en-US"
-						}
-					]
-				}
-			]
-		},
-		{
-			"Name": "Relationship",
-			"Instances":
-			[
-				{
-					"Comment": "Translatable Text Constant Value.has Language",
-					"ID": "{3655AEC2-E2C9-4DDE-8D98-0C4D3CE1E569}",
-					"AttributeValues":
-					[
-						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "has"
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `Translatable Text Constant Value`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-							"DestinationInstances":
-							[
-								"{6D38E757-EC18-43AD-9C35-D15BB446C0E1}"
-							]
-						},
-						{
-							"Comment": ".has destination Class `Language`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-							"DestinationInstances":
-							[
-								"{61102B47-9B2F-4CF3-9840-D168B84CF1E5}"
-							]
-						}
-					]
-				},
-				{
-					"Comment": "Language.for Translatable Text Constant Value",
-					"ID": "{032C3549-C2FC-4512-B98A-C2D0BBCF78D0}",
-					"AttributeValues":
-					[
-						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "for"
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `Language`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-							"DestinationInstances":
-							[
-								"{61102B47-9B2F-4CF3-9840-D168B84CF1E5}"
-							]
-						},
-						{
-							"Comment": ".has destination Class `Translatable Text Constant Value`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-							"DestinationInstances":
-							[
-								"{6D38E757-EC18-43AD-9C35-D15BB446C0E1}"
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"Name": "TranslatableTextConstantValue",
-			"Relationships":
-			[
-				{
-					"Comment": "Class `Translatable Text Constant Value`.has Attribute `Value` [Text Attribute]",
-					"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
-					"InverseRelationshipID": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
-					"DestinationInstances":
-					[
-						"{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}"
-					]
-				}
-			],
-			"Instances":
-			[
-				{
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_RelationshipType_Title" 
-						}
-					],
-					"ID": "{A22FF150-68C4-4A0C-B8C7-8FD86FD8CC68}",
-					"Relationships":
-					[
-						{
-							"RelationshipID": "{3655AEC2-E2C9-4DDE-8D98-0C4D3CE1E569}",
-							"InverseRelationshipID": "{032C3549-C2FC-4512-B98A-C2D0BBCF78D0}",
-							"DestinationInstances":
-							[
-								"{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							]
-						}
-					],
-					"AttributeValues":
-					[
-						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "Relationship Type"
-						}
-					]
-				},
-				{
-					"IntegrationIDs":
-					[
-						{
-							"Name": "TranslatableValueName",
-							"Value": "LanguageString_English_Property_Title" 
-						}
-					],
-					"ID": "{1CFD48D1-C680-429B-B6FA-831AE57A6DB8}",
-					"Relationships":
-					[
-						{
-							"RelationshipID": "{3655AEC2-E2C9-4DDE-8D98-0C4D3CE1E569}",
-							"InverseRelationshipID": "{032C3549-C2FC-4512-B98A-C2D0BBCF78D0}",
-							"DestinationInstances":
-							[
-								"{68BB6038-A4B5-4EE1-AAE9-326494942062}"
-							]
-						}
-					],
-					"AttributeValues":
-					[
-						{
-							"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
-							"Value": "Attribute"
-						}
-					]
-				}
-			]
-		},
-		{
-			"Name": "Relationship",
-			"Instances":
-			[
-				{
-					"ID": "{84032F2C-B347-4529-8D2E-FA68F4497D7C}",
-					"Comment": "Language.has title Translatable Text Constant",
-					"AttributeValues":
-					[
-						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "has title"
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `Language`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-							"DestinationInstances":
-							[
-								"{61102B47-9B2F-4CF3-9840-D168B84CF1E5}"
-							]
-						},
-						{
-							"Comment": ".has destination Class `Translatable Text Constant`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-							"DestinationInstances":
-							[
-								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
-							]
-						}
-					]
-				},
-				{
-					"ID": "{142296C4-22CE-4996-ACE4-E2DB9B83A706}",
-					"Comment": "Translatable Text Constant.title for Language",
-					"AttributeValues":
-					[
-						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "title for"
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `Translatable Text Constant`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-							"DestinationInstances":
-							[
-								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
-							]
-						},
-						{
-							"Comment": ".has destination Class `Language`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-							"DestinationInstances":
-							[
-								"{61102B47-9B2F-4CF3-9840-D168B84CF1E5}"
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"Name": "Language",
-			"Instances":
-			[
-				{
-					"ID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
 					"TranslatableValues":
 					[
 						{
-							"Comment": "Language.has title Translatable Text Constant `English (United States)`",
-							"RelationshipID": "{84032F2C-B347-4529-8D2E-FA68F4497D7C}",
-							"InverseRelationshipID": "{142296C4-22CE-4996-ACE4-E2DB9B83A706}",
+							"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 							"Values":
 							[
 								{
 									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "English (United States)"
+									"Value": "Language"
+								}
+							]
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": "Class `Language`.instance labeled by String",
+							"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+							"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+							"DestinationInstances":
+							[
+								"{8075025F-E80C-4FF0-9E59-024C39A2109B}"
+							]
+						},
+						{
+							"Comment": "Language.has Attribute 'LocaleID' [Numeric Attribute], 'Code' [Text Attribute]",
+							"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+							"InverseRelationshipID": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
+							"DestinationInstances":
+							[
+								"{B31887C6-B16E-457F-814A-071C9CBCAB98}",
+								"{93742C80-CDF7-4700-A03B-718F92B2666C}"
+							]
+						}
+					]
+				},
+				{
+					"ID": "{6D38E757-EC18-43AD-9C35-D15BB446C0E1}",
+					"Name": "TranslatableTextConstantValue",
+					"ParentObjects":
+					[
+						{
+							"Name": "Class"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Translatable Text Constant Value"
+								}
+							]
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": "Class.instance labeled by String",
+							"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+							"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+							"DestinationInstances":
+							[
+								"{BBE5E586-FC28-451A-8495-B0CDA6203E03}"
+							]
+						},
+						{
+							"Comment": "Class `Translatable Text Constant Value`.has summary Report Field `Language`",
+							"RelationshipID": "{D11050AD-7376-4AB7-84DE-E8D0336B74D2}",
+							"InverseRelationshipID": "{FAD8F8B8-B0E2-4852-A6E9-A272C041DC4E}",
+							"DestinationInstances":
+							[
+								"{9DA34BD8-AEC3-4CA0-B0B0-6E9F65595B2A}"
+							] 
+						}
+					]
+				},
+				{
+					"Name": "ExtractSingleInstanceStringComponent",
+					"Instances":
+					[
+						{
+							"ID": "{03166067-EBEA-4153-80B4-E0847D166EB2}",
+							"Relationships":
+							[
+								{
+									"Comment": "Extract Single Instance String Component.has Relationship",
+									"RelationshipID": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
+									"DestinationInstances":
+									[
+										"{F9B60C00-FF1D-438F-AC74-6EDFA8DD7324}"
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"Name": "String",
+					"Instances":
+					[
+						{
+							"ID": "{BBE5E586-FC28-451A-8495-B0CDA6203E03}",
+							"Comment": "Translatable Text Constant Value.get Value",
+							"Relationships":
+							[
+								{
+									"Comment": "String.has String Component",
+									"RelationshipID": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
+									"InverseRelationshipID": "{40E17597-0AEB-4C56-BBAB-FC600E1196DD}",
+									"DestinationInstances":
+									[
+										"{9CE143E4-410F-4373-9BAF-778CEB794C66}"
+									]
+								}
+							]
+						},
+						{
+							"ID": "{AA37C17F-CDB8-4ED2-BE87-3388DF4825BB}",
+							"Comment": "Translatable Text Constant.has Translatable Text Constant Value",
+							"Relationships":
+							[
+								{
+									"Comment": "String.has String Component",
+									"RelationshipID": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
+									"DestinationInstances":
+									[
+										"{03166067-EBEA-4153-80B4-E0847D166EB2}"
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"ID": "{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}",
+					"Name": "TranslatableTextConstant",
+					"ParentObjects":
+					[
+						{
+							"Name": "Class"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": "Class `Translatable Text Constant`.instance labeled by String",
+							"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+							"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+							"DestinationInstances":
+							[
+								"{AA37C17F-CDB8-4ED2-BE87-3388DF4825BB}"
+							]
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+							"InverseRelationshipID": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Translatable Text Constant"
+								}
+							]
+						}
+					]
+				},
+				{
+					"Name": "Relationship",
+					"Instances":
+					[
+						{
+							"ID": "{F9B60C00-FF1D-438F-AC74-6EDFA8DD7324}",
+							"Comment": "Translatable Text Constant.has Translatable Text Constant Value",
+							"AttributeValues":
+							[
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "has"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `Translatable Text Constant`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Translatable Text Constant Value`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{6D38E757-EC18-43AD-9C35-D15BB446C0E1}"
+									]
+								}
+							]
+						},
+						{
+							"ID": "{20C70FA4-5258-480D-A61A-4A5BC9C5F990}",
+							"Comment": "Translatable Text Constant Value.for Translatable Text Constant",
+							"AttributeValues":
+							[
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "for"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `Translatable Text Constant Value`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{6D38E757-EC18-43AD-9C35-D15BB446C0E1}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Translatable Text Constant`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+									]
+								}
+							]
+						},
+						{
+							"ID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+							"Comment": "Class.has title Translatable Text Constant",
+							"AttributeValues":
+							[
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "has title"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `Class`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Translatable Text Constant`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+									]
+								}
+							]
+						},
+						{
+							"ID": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
+							"Comment": "Translatable Text Constant.title for Class",
+							"AttributeValues":
+							[
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "title for"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `Translatable Text Constant`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Class`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+									]
+								}
+							]
+						},
+						{
+							"ID": "{3B29DC78-B30A-46AA-9B20-2573239CECD9}",
+							"Comment": "Class.has description Translatable Text Constant",
+							"AttributeValues":
+							[
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "has description"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `Class`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Translatable Text Constant`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+									]
+								}
+							]
+						},
+						{
+							"ID": "{D4592057-BACF-44D0-9BB9-348B42A49D96}",
+							"Comment": "Translatable Text Constant.description for Class",
+							"AttributeValues":
+							[
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "description for"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `Translatable Text Constant`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Class`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+									]
+								}
+							]
+						},
+						{
+							"Comment": "Translatable Text Constant String Component.has Translatable Text Constant",
+							"ID": "{738527E0-70CB-4839-B127-806533662900}",
+							"AttributeValues":
+							[
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "has"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `Translatable Text Constant String Component`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{895AF8DB-1138-40FF-94ED-13E5FA2AB9BA}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Translatable Text Constant`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+									]
+								}
+							]
+						},
+						{
+							"Comment": "Translatable Text Constant.for Translatable Text Constant String Component",
+							"ID": "{70B9E2BC-8E81-4E42-8B98-760267D79CA4}",
+							"AttributeValues":
+							[
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "has"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `Translatable Text Constant`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Translatable Text Constant String Component`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{895AF8DB-1138-40FF-94ED-13E5FA2AB9BA}"
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"Name": "InstanceAttributeStringComponent",
+					"Instances":
+					[
+						{
+							"ID": "{9CE143E4-410F-4373-9BAF-778CEB794C66}",
+							"AttributeValues":
+							[
+								{
+									"ID": "{A294F77C-8A89-419E-B494-8BFCC80DB634}",
+									"Value": "Value"
+								}
+							]
+						}
+					]
+				},
+				{
+					"Name": "Language",
+					"Instances":
+					[
+						{
+							"ID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+							"AttributeValues":
+							[
+								{
+									"ID": "{B31887C6-B16E-457F-814A-071C9CBCAB98}",
+									"Value": "1033"
+								},
+								{
+									"ID": "{93742C80-CDF7-4700-A03B-718F92B2666C}",
+									"Value": "en-US"
+								}
+							]
+						}
+					]
+				},
+				{
+					"Name": "Relationship",
+					"Instances":
+					[
+						{
+							"Comment": "Translatable Text Constant Value.has Language",
+							"ID": "{3655AEC2-E2C9-4DDE-8D98-0C4D3CE1E569}",
+							"AttributeValues":
+							[
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "has"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `Translatable Text Constant Value`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{6D38E757-EC18-43AD-9C35-D15BB446C0E1}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Language`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{61102B47-9B2F-4CF3-9840-D168B84CF1E5}"
+									]
+								}
+							]
+						},
+						{
+							"Comment": "Language.for Translatable Text Constant Value",
+							"ID": "{032C3549-C2FC-4512-B98A-C2D0BBCF78D0}",
+							"AttributeValues":
+							[
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "for"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `Language`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{61102B47-9B2F-4CF3-9840-D168B84CF1E5}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Translatable Text Constant Value`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{6D38E757-EC18-43AD-9C35-D15BB446C0E1}"
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"Name": "TranslatableTextConstantValue",
+					"Relationships":
+					[
+						{
+							"Comment": "Class `Translatable Text Constant Value`.has Attribute `Value` [Text Attribute]",
+							"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+							"InverseRelationshipID": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
+							"DestinationInstances":
+							[
+								"{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}"
+							]
+						}
+					],
+					"Instances":
+					[
+						{
+							"IntegrationIDs":
+							[
+								{
+									"Name": "TranslatableValueName",
+									"Value": "LanguageString_English_RelationshipType_Title" 
+								}
+							],
+							"ID": "{A22FF150-68C4-4A0C-B8C7-8FD86FD8CC68}",
+							"Relationships":
+							[
+								{
+									"RelationshipID": "{3655AEC2-E2C9-4DDE-8D98-0C4D3CE1E569}",
+									"InverseRelationshipID": "{032C3549-C2FC-4512-B98A-C2D0BBCF78D0}",
+									"DestinationInstances":
+									[
+										"{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+									]
+								}
+							],
+							"AttributeValues":
+							[
+								{
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "Relationship Type"
+								}
+							]
+						},
+						{
+							"IntegrationIDs":
+							[
+								{
+									"Name": "TranslatableValueName",
+									"Value": "LanguageString_English_Property_Title" 
+								}
+							],
+							"ID": "{1CFD48D1-C680-429B-B6FA-831AE57A6DB8}",
+							"Relationships":
+							[
+								{
+									"RelationshipID": "{3655AEC2-E2C9-4DDE-8D98-0C4D3CE1E569}",
+									"InverseRelationshipID": "{032C3549-C2FC-4512-B98A-C2D0BBCF78D0}",
+									"DestinationInstances":
+									[
+										"{68BB6038-A4B5-4EE1-AAE9-326494942062}"
+									]
+								}
+							],
+							"AttributeValues":
+							[
+								{
+									"ID": "{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}",
+									"Value": "Attribute"
+								}
+							]
+						}
+					]
+				},
+				{
+					"Name": "Relationship",
+					"Instances":
+					[
+						{
+							"ID": "{84032F2C-B347-4529-8D2E-FA68F4497D7C}",
+							"Comment": "Language.has title Translatable Text Constant",
+							"AttributeValues":
+							[
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "has title"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `Language`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{61102B47-9B2F-4CF3-9840-D168B84CF1E5}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Translatable Text Constant`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+									]
+								}
+							]
+						},
+						{
+							"ID": "{142296C4-22CE-4996-ACE4-E2DB9B83A706}",
+							"Comment": "Translatable Text Constant.title for Language",
+							"AttributeValues":
+							[
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "title for"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `Translatable Text Constant`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Language`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{61102B47-9B2F-4CF3-9840-D168B84CF1E5}"
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"Name": "Language",
+					"Instances":
+					[
+						{
+							"ID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+							"TranslatableValues":
+							[
+								{
+									"Comment": "Language.has title Translatable Text Constant `English (United States)`",
+									"RelationshipID": "{84032F2C-B347-4529-8D2E-FA68F4497D7C}",
+									"InverseRelationshipID": "{142296C4-22CE-4996-ACE4-E2DB9B83A706}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "English (United States)"
+										}
+									]
 								}
 							]
 						}

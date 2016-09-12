@@ -1,24 +1,30 @@
 {
-	"Objects":
+	"Tenants":
 	[
 		{
-			"ID": "{06E7806D-9384-4EA5-B5D1-350A51552773}",
-			"Name": "Menu",
-			"ParentObjects":
+			"ID": "{35BF9AC5-0212-4DBA-BB9B-D1A6E9955827}",
+			"Objects":
 			[
 				{
-					"Name": "Class"
-				}
-			],
-			"TranslatableValues":
-			[
-				{
-					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
-					"Values":
+					"ID": "{06E7806D-9384-4EA5-B5D1-350A51552773}",
+					"Name": "Menu",
+					"ParentObjects":
 					[
 						{
-							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-							"Value": "Menu"
+							"Name": "Class"
+						}
+					],
+					"TranslatableValues":
+					[
+						{
+							"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Menu"
+								}
+							]
 						}
 					]
 				}

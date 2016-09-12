@@ -1,52 +1,58 @@
 {
-	"Objects":
+	"Tenants":
 	[
 		{
-			"ID": "{F9CD7751-EF62-4F7C-8A28-EBE90B8F46AA}",
-			"Name": "Attribute",
-			"ParentObjects":
+			"ID": "{35BF9AC5-0212-4DBA-BB9B-D1A6E9955827}",
+			"Objects":
 			[
 				{
-					"Name": "Class"
-				}
-			],
-			"AttributeValues":
-			[
-				{
-					"ID": "{A1C0255D-3E8D-47D7-A186-1C93C93D4667}",
-					"Value": true
-				}
-			],
-			"TranslatableValues":
-			[
-				{
-					"Comment": "Class.has title Translatable Text Constant",
-					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
-					"Values":
+					"ID": "{F9CD7751-EF62-4F7C-8A28-EBE90B8F46AA}",
+					"Name": "Attribute",
+					"ParentObjects":
 					[
 						{
-							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-							"Value": "Attribute"
+							"Name": "Class"
 						}
-					]
-				}
-			],
-			"Relationships":
-			[
-				{
-					"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
-					"DestinationInstances":
+					],
+					"AttributeValues":
 					[
-						"{9153A637-992E-4712-ADF2-B03F0D9EDEA6}"
-					]
-				},
-				{
-					"Comment": "Class `Attribute`.instance labeled by String",
-					"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
-					"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
-					"DestinationInstances":
+						{
+							"ID": "{A1C0255D-3E8D-47D7-A186-1C93C93D4667}",
+							"Value": true
+						}
+					],
+					"TranslatableValues":
 					[
-						"{6894DC7E-F471-4F5C-88E6-B8016259817F}"
+						{
+							"Comment": "Class.has title Translatable Text Constant",
+							"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+							"Values":
+							[
+								{
+									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Attribute"
+								}
+							]
+						}
+					],
+					"Relationships":
+					[
+						{
+							"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+							"DestinationInstances":
+							[
+								"{9153A637-992E-4712-ADF2-B03F0D9EDEA6}"
+							]
+						},
+						{
+							"Comment": "Class `Attribute`.instance labeled by String",
+							"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+							"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+							"DestinationInstances":
+							[
+								"{6894DC7E-F471-4F5C-88E6-B8016259817F}"
+							]
+						}
 					]
 				}
 			]

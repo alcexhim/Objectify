@@ -1,307 +1,313 @@
 {
-	"Objects":
+	"Tenants":
 	[
 		{
-			"Name": "TextPrompt",
-			"Instances":
+			"ID": "{35BF9AC5-0212-4DBA-BB9B-D1A6E9955827}",
+			"Objects":
 			[
 				{
-					"Comment": "Class Name for Create Class",
-					"ID": "{ABA93F7C-63F1-49C1-804C-B935476E961A}",
-					"TranslatableValues":
+					"Name": "TextPrompt",
+					"Instances":
 					[
 						{
-							"Comment": "Prompt.has title Translatable Text Constant",
-							"RelationshipID": "{6B25BD5F-9B06-42D1-ACC6-2FA1A2248965}",
-							"InverseRelationshipID": "{9FE0E4B7-875A-4F43-9037-E1D443D4F798}",
-							"Values":
+							"Comment": "Class Name for Create Class",
+							"ID": "{ABA93F7C-63F1-49C1-804C-B935476E961A}",
+							"TranslatableValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Class Name"
+									"Comment": "Prompt.has title Translatable Text Constant",
+									"RelationshipID": "{6B25BD5F-9B06-42D1-ACC6-2FA1A2248965}",
+									"InverseRelationshipID": "{9FE0E4B7-875A-4F43-9037-E1D443D4F798}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Class Name"
+										}
+									]
 								}
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"Name": "InstancePromptValue",
-			"Instances":
-			[
-				{
-					"ID": "{E78EBE1E-870C-45C2-8DCD-C5F7AFC664BA}",
-					"Relationships":
-					[
-						{
-							"Comment": "Prompt Value.has Prompt `Class Instance ID`",
-							"RelationshipID": "{7CD62362-DDCE-4BFC-87B9-B5499B0BC141}",
-							"DestinationInstances":
-							[
-								"{06210C75-9093-4B3D-ACF2-124C84E95C2A}"
-							]
-						},
-						{
-							"Comment": "Instance Prompt Value.has Instance `Class`",
-							"RelationshipID": "{512B518E-A892-44AB-AC35-4E9DBCABFF0B}",
-							"DestinationInstances":
-							[
-								"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"Name": "AssignAttributeMethod",
-			"Instances":
-			[
-				{
-					"ID": "{05BE1694-9B42-4E6C-880F-B5EE1765EE44}",
-					"AttributeValues":
-					[
-						{
-							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
-							"Value": "assign_attribute_Name_to_Class_parm"
-						}
-					],
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{52B65829-4A3F-44FB-BEE8-D9A240F1E9C9}",
-							"InverseRelationshipID": "{8EBE8D2C-FB89-41A0-9AB6-FBA78323D5B9}",
-							"Values":
-							[
-								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "assign attribute Name to Class parm"
-								}
-							]
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": "Method.has Prompt `Attribute Value for Assign Attribute`, `Instance for Assign Attribute`",
-							"RelationshipID": "{5B715276-8F3C-4E3F-9FF4-27E766A91154}",
-							"DestinationInstances":
-							[
-								"{4B9417BB-2FEB-40D7-9A4E-6F36C4271F28}",
-								"{73AB917D-7C1A-49F2-B278-67AED75EF7D8}"
-							]
-						},
-						{
-							"Comment": "Assign Attribute Method.has Attribute `Name`",
-							"RelationshipID": "{BC4B71B9-6168-4B58-95D4-A56ED78CA965}",
-							"DestinationInstances":
-							[
-								"{9153A637-992E-4712-ADF2-B03F0D9EDEA6}"
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"Name": "InstancePrompt",
-			"Instances":
-			[
-				{
-					"ID": "{4B9417BB-2FEB-40D7-9A4E-6F36C4271F28}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{6B25BD5F-9B06-42D1-ACC6-2FA1A2248965}",
-							"Values":
-							[
-								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Target Instance"
-								}
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"Name": "TextPrompt",
-			"Instances":
-			[
-				{
-					"ID": "{73AB917D-7C1A-49F2-B278-67AED75EF7D8}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{6B25BD5F-9B06-42D1-ACC6-2FA1A2248965}",
-							"Values":
-							[
-								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Attribute Value"
-								}
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"Name": "ReferencePromptValue",
-			"Instances":
-			[
-				{
-					"ID": "{A505A755-3EB3-4D17-87D8-8332203F662C}",
-					"Relationships":
-					[
-						{
-							"Comment": "Prompt Value.has Prompt `Attribute Value for Assign Attribute`",
-							"RelationshipID": "{7CD62362-DDCE-4BFC-87B9-B5499B0BC141}",
-							"DestinationInstances":
-							[
-								"{73AB917D-7C1A-49F2-B278-67AED75EF7D8}"
-							]
-						},
-						{
-							"Comment": "Reference Prompt Value.has source Prompt `Class Name for Create Class",
-							"RelationshipID": "{C9472658-9E50-48FD-BF7F-ED31A72DEF39}",
-							"DestinationInstances":
-							[
-								"{A505A755-3EB3-4D17-87D8-8332203F662C}"
 							]
 						}
 					]
 				},
 				{
-					"ID": "{08AB6C76-7461-4F10-9131-E2B63CF404C3}",
-					"Relationships":
+					"Name": "InstancePromptValue",
+					"Instances":
 					[
 						{
-							"Comment": "Prompt Value.has Prompt `Target Instance for Assign Attribute`",
-							"RelationshipID": "{7CD62362-DDCE-4BFC-87B9-B5499B0BC141}",
-							"DestinationInstances":
+							"ID": "{E78EBE1E-870C-45C2-8DCD-C5F7AFC664BA}",
+							"Relationships":
 							[
-								"{4B9417BB-2FEB-40D7-9A4E-6F36C4271F28}"
-							]
-						},
-						{
-							"Comment": "Reference Prompt Value.has source Prompt `Newly Created Instance for Create Class",
-							"RelationshipID": "{C9472658-9E50-48FD-BF7F-ED31A72DEF39}",
-							"DestinationInstances":
-							[
-								""
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"Name": "MethodCall",
-			"Instances":
-			[
-				{
-					"ID": "{BEFAFDC4-358B-44E9-ACD9-FD253402EA22}",
-					"Comment": "create instance `Class`",
-					"Relationships":
-					[
-						{
-							"Comment": "Method Call.has Method",
-							"RelationshipID": "{3D3B601B-4EF0-49F3-AF05-86CEA0F00619}",
-							"DestinationInstances":
-							[
-								"{4E92D64E-AC91-4ABF-8052-96366DF93996}"
-							]
-						},
-						{
-							"Comment": "Method Call.has Prompt Value `Class for Create Instance`",
-							"RelationshipID": "{765BD0C9-117D-4D0E-88C9-2CEBD4898135}",
-							"DestinationInstances":
-							[
-								"{E78EBE1E-870C-45C2-8DCD-C5F7AFC664BA}"
+								{
+									"Comment": "Prompt Value.has Prompt `Class Instance ID`",
+									"RelationshipID": "{7CD62362-DDCE-4BFC-87B9-B5499B0BC141}",
+									"DestinationInstances":
+									[
+										"{06210C75-9093-4B3D-ACF2-124C84E95C2A}"
+									]
+								},
+								{
+									"Comment": "Instance Prompt Value.has Instance `Class`",
+									"RelationshipID": "{512B518E-A892-44AB-AC35-4E9DBCABFF0B}",
+									"DestinationInstances":
+									[
+										"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+									]
+								}
 							]
 						}
 					]
 				},
 				{
-					"ID": "{0D4E84E7-84CD-431D-BB2A-6B8E08C202FD}",
-					"Comment": "assign attribute `Name` to Instance parm (newly created) using Value parm (from prompt `Class Name`)",
-					"Relationships":
+					"Name": "AssignAttributeMethod",
+					"Instances":
 					[
 						{
-							"Comment": "Method Call.has Method",
-							"RelationshipID": "{3D3B601B-4EF0-49F3-AF05-86CEA0F00619}",
-							"DestinationInstances":
+							"ID": "{05BE1694-9B42-4E6C-880F-B5EE1765EE44}",
+							"AttributeValues":
 							[
-								"{05BE1694-9B42-4E6C-880F-B5EE1765EE44}"
-							]
-						},
-						{
-							"Comment": "Method Call.has Prompt Value `Target Instance for Assign Attribute` = the newly created instance from create instance method; `Attribute Value for Assign Attribute` = value (from prompt `Class Name`)",
-							"RelationshipID": "{765BD0C9-117D-4D0E-88C9-2CEBD4898135}",
-							"DestinationInstances":
+								{
+									"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+									"Value": "assign_attribute_Name_to_Class_parm"
+								}
+							],
+							"TranslatableValues":
 							[
-								"{08AB6C76-7461-4F10-9131-E2B63CF404C3}",
-								"{A505A755-3EB3-4D17-87D8-8332203F662C}"
+								{
+									"RelationshipID": "{52B65829-4A3F-44FB-BEE8-D9A240F1E9C9}",
+									"InverseRelationshipID": "{8EBE8D2C-FB89-41A0-9AB6-FBA78323D5B9}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "assign attribute Name to Class parm"
+										}
+									]
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": "Method.has Prompt `Attribute Value for Assign Attribute`, `Instance for Assign Attribute`",
+									"RelationshipID": "{5B715276-8F3C-4E3F-9FF4-27E766A91154}",
+									"DestinationInstances":
+									[
+										"{4B9417BB-2FEB-40D7-9A4E-6F36C4271F28}",
+										"{73AB917D-7C1A-49F2-B278-67AED75EF7D8}"
+									]
+								},
+								{
+									"Comment": "Assign Attribute Method.has Attribute `Name`",
+									"RelationshipID": "{BC4B71B9-6168-4B58-95D4-A56ED78CA965}",
+									"DestinationInstances":
+									[
+										"{9153A637-992E-4712-ADF2-B03F0D9EDEA6}"
+									]
+								}
 							]
 						}
 					]
-				}
-			]
-		},
-		{
-			"Name": "UITask",
-			"Instances":
-			[
+				},
 				{
-					"ID": "{A5BF6B1C-AF0F-42F0-9506-EAE0D5183B56}",
-					"Comment": "Create Class",
-					"Relationships":
+					"Name": "InstancePrompt",
+					"Instances":
 					[
 						{
-							"Comment": "Task.has Parameter `Class Name`",
-							"RelationshipID": "{929B106F-7E3E-4D30-BB84-E450A4FED063}",
-							"InverseRelationshipID": "{146616A0-A64A-402B-99FB-7548D92E5CBC}",
-							"DestinationInstances":
-							[
-								"{ABA93F7C-63F1-49C1-804C-B935476E961A}"
-							]
-						},
-						{
-							"Comment": "Task.executes Method Call",
-							"RelationshipID": "{D8C0D4D4-F8C6-4B92-A2C1-8BF16B16203D}",
-							"DestinationInstances":
-							[
-								"{BEFAFDC4-358B-44E9-ACD9-FD253402EA22}",
-								"{0D4E84E7-84CD-431D-BB2A-6B8E08C202FD}"
-							]
-						}
-					],
-					"TranslatableValues":
-					[
-						{
-							"Comment": ".has title Translatable Text Constant",
-							"RelationshipID": "{D97AE03C-261F-4060-A06D-985E26FA662C}",
-							"InverseRelationshipID": "{4E5D363F-6984-4BD5-8E76-AAB598C1B09D}",
-							"Values":
+							"ID": "{4B9417BB-2FEB-40D7-9A4E-6F36C4271F28}",
+							"TranslatableValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Create Class"
+									"RelationshipID": "{6B25BD5F-9B06-42D1-ACC6-2FA1A2248965}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Target Instance"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"Name": "TextPrompt",
+					"Instances":
+					[
+						{
+							"ID": "{73AB917D-7C1A-49F2-B278-67AED75EF7D8}",
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{6B25BD5F-9B06-42D1-ACC6-2FA1A2248965}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Attribute Value"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"Name": "ReferencePromptValue",
+					"Instances":
+					[
+						{
+							"ID": "{A505A755-3EB3-4D17-87D8-8332203F662C}",
+							"Relationships":
+							[
+								{
+									"Comment": "Prompt Value.has Prompt `Attribute Value for Assign Attribute`",
+									"RelationshipID": "{7CD62362-DDCE-4BFC-87B9-B5499B0BC141}",
+									"DestinationInstances":
+									[
+										"{73AB917D-7C1A-49F2-B278-67AED75EF7D8}"
+									]
+								},
+								{
+									"Comment": "Reference Prompt Value.has source Prompt `Class Name for Create Class",
+									"RelationshipID": "{C9472658-9E50-48FD-BF7F-ED31A72DEF39}",
+									"DestinationInstances":
+									[
+										"{A505A755-3EB3-4D17-87D8-8332203F662C}"
+									]
 								}
 							]
 						},
 						{
-							"Comment": ".has instructions Translatable Text Constant",
-							"RelationshipID": "{A9387898-9DC0-4006-94F1-1FB02EB3ECD7}",
-							"InverseRelationshipID": "{686DD398-709D-48D6-9229-3C79D617EC23}",
-							"Values":
+							"ID": "{08AB6C76-7461-4F10-9131-E2B63CF404C3}",
+							"Relationships":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Creates a new instance of a Class"
+									"Comment": "Prompt Value.has Prompt `Target Instance for Assign Attribute`",
+									"RelationshipID": "{7CD62362-DDCE-4BFC-87B9-B5499B0BC141}",
+									"DestinationInstances":
+									[
+										"{4B9417BB-2FEB-40D7-9A4E-6F36C4271F28}"
+									]
+								},
+								{
+									"Comment": "Reference Prompt Value.has source Prompt `Newly Created Instance for Create Class",
+									"RelationshipID": "{C9472658-9E50-48FD-BF7F-ED31A72DEF39}",
+									"DestinationInstances":
+									[
+										""
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"Name": "MethodCall",
+					"Instances":
+					[
+						{
+							"ID": "{BEFAFDC4-358B-44E9-ACD9-FD253402EA22}",
+							"Comment": "create instance `Class`",
+							"Relationships":
+							[
+								{
+									"Comment": "Method Call.has Method",
+									"RelationshipID": "{3D3B601B-4EF0-49F3-AF05-86CEA0F00619}",
+									"DestinationInstances":
+									[
+										"{4E92D64E-AC91-4ABF-8052-96366DF93996}"
+									]
+								},
+								{
+									"Comment": "Method Call.has Prompt Value `Class for Create Instance`",
+									"RelationshipID": "{765BD0C9-117D-4D0E-88C9-2CEBD4898135}",
+									"DestinationInstances":
+									[
+										"{E78EBE1E-870C-45C2-8DCD-C5F7AFC664BA}"
+									]
+								}
+							]
+						},
+						{
+							"ID": "{0D4E84E7-84CD-431D-BB2A-6B8E08C202FD}",
+							"Comment": "assign attribute `Name` to Instance parm (newly created) using Value parm (from prompt `Class Name`)",
+							"Relationships":
+							[
+								{
+									"Comment": "Method Call.has Method",
+									"RelationshipID": "{3D3B601B-4EF0-49F3-AF05-86CEA0F00619}",
+									"DestinationInstances":
+									[
+										"{05BE1694-9B42-4E6C-880F-B5EE1765EE44}"
+									]
+								},
+								{
+									"Comment": "Method Call.has Prompt Value `Target Instance for Assign Attribute` = the newly created instance from create instance method; `Attribute Value for Assign Attribute` = value (from prompt `Class Name`)",
+									"RelationshipID": "{765BD0C9-117D-4D0E-88C9-2CEBD4898135}",
+									"DestinationInstances":
+									[
+										"{08AB6C76-7461-4F10-9131-E2B63CF404C3}",
+										"{A505A755-3EB3-4D17-87D8-8332203F662C}"
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"Name": "UITask",
+					"Instances":
+					[
+						{
+							"ID": "{A5BF6B1C-AF0F-42F0-9506-EAE0D5183B56}",
+							"Comment": "Create Class",
+							"Relationships":
+							[
+								{
+									"Comment": "Task.has Parameter `Class Name`",
+									"RelationshipID": "{929B106F-7E3E-4D30-BB84-E450A4FED063}",
+									"InverseRelationshipID": "{146616A0-A64A-402B-99FB-7548D92E5CBC}",
+									"DestinationInstances":
+									[
+										"{ABA93F7C-63F1-49C1-804C-B935476E961A}"
+									]
+								},
+								{
+									"Comment": "Task.executes Method Call",
+									"RelationshipID": "{D8C0D4D4-F8C6-4B92-A2C1-8BF16B16203D}",
+									"DestinationInstances":
+									[
+										"{BEFAFDC4-358B-44E9-ACD9-FD253402EA22}",
+										"{0D4E84E7-84CD-431D-BB2A-6B8E08C202FD}"
+									]
+								}
+							],
+							"TranslatableValues":
+							[
+								{
+									"Comment": ".has title Translatable Text Constant",
+									"RelationshipID": "{D97AE03C-261F-4060-A06D-985E26FA662C}",
+									"InverseRelationshipID": "{4E5D363F-6984-4BD5-8E76-AAB598C1B09D}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Create Class"
+										}
+									]
+								},
+								{
+									"Comment": ".has instructions Translatable Text Constant",
+									"RelationshipID": "{A9387898-9DC0-4006-94F1-1FB02EB3ECD7}",
+									"InverseRelationshipID": "{686DD398-709D-48D6-9229-3C79D617EC23}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Creates a new instance of a Class"
+										}
+									]
 								}
 							]
 						}

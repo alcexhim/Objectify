@@ -1,424 +1,383 @@
 {
-	"Objects":
+	"Tenants":
 	[
 		{
-			"Name": "Relationship",
-			"Instances":
+			"ID": "{35BF9AC5-0212-4DBA-BB9B-D1A6E9955827}",
+			"Objects":
 			[
 				{
-					"ID": "{D97AE03C-261F-4060-A06D-985E26FA662C}",
-					"Comment": "Task.has title Translatable Text Constant",
-					"AttributeValues":
+					"Name": "Relationship",
+					"Instances":
 					[
 						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "has title"
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `Task`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-							"DestinationInstances":
+							"ID": "{D97AE03C-261F-4060-A06D-985E26FA662C}",
+							"Comment": "Task.has title Translatable Text Constant",
+							"AttributeValues":
 							[
-								"{D4F2564B-2D11-4A5C-8AA9-AF52D4EACC13}"
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "has title"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `Task`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{D4F2564B-2D11-4A5C-8AA9-AF52D4EACC13}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Translatable Text Constant`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+									]
+								}
 							]
 						},
 						{
-							"Comment": ".has destination Class `Translatable Text Constant`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-							"DestinationInstances":
+							"ID": "{4E5D363F-6984-4BD5-8E76-AAB598C1B09D}",
+							"Comment": "Translatable Text Constant.title for Task",
+							"AttributeValues":
 							[
-								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "title for"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `Translatable Text Constant`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Task`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{D4F2564B-2D11-4A5C-8AA9-AF52D4EACC13}"
+									]
+								}
+							]
+						},
+						{
+							"ID": "{A9387898-9DC0-4006-94F1-1FB02EB3ECD7}",
+							"Comment": "Task.has instructions Translatable Text Constant",
+							"AttributeValues":
+							[
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "has instructions"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `Task`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{D4F2564B-2D11-4A5C-8AA9-AF52D4EACC13}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Translatable Text Constant`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+									]
+								},
+								{
+									"Comment": ".has sibling Relationship",
+									"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+									"DestinationInstances":
+									[
+										"{686DD398-709D-48D6-9229-3C79D617EC23}"
+									]
+								}
+							]
+						},
+						{
+							"ID": "{686DD398-709D-48D6-9229-3C79D617EC23}",
+							"Comment": "Translatable Text Constant.instructions for Task",
+							"AttributeValues":
+							[
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "instructions for"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `Translatable Text Constant`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Task`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{D4F2564B-2D11-4A5C-8AA9-AF52D4EACC13}"
+									]
+								}
+							]
+						},
+						{
+							"ID": "{A1264E04-93FD-47C1-BE00-CA42CD0AAD55}",
+							"Comment": "Task.secured by Security Group",
+							"AttributeValues":
+							[
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "secured by"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `Task`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{D4F2564B-2D11-4A5C-8AA9-AF52D4EACC13}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Security Group`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{498CCFD4-8D94-4EF4-B947-1D07ECC9342B}"
+									]
+								}
+							]
+						},
+						{
+							"ID": "{F93509A7-7DB1-443E-A669-4A34E318C695}",
+							"Comment": "Security Group.secures Task",
+							"AttributeValues":
+							[
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "secures"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `Security Group`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{498CCFD4-8D94-4EF4-B947-1D07ECC9342B}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Task`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{D4F2564B-2D11-4A5C-8AA9-AF52D4EACC13}"
+									]
+								}
+							]
+						},
+						{
+							"ID": "{D8C0D4D4-F8C6-4B92-A2C1-8BF16B16203D}",
+							"Comment": "Task.executes Method Call",
+							"AttributeValues":
+							[
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "executes"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `Task`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{D4F2564B-2D11-4A5C-8AA9-AF52D4EACC13}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Method Call`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{084A6D58-32C9-4A5F-9D2B-86C46F74E522}"
+									]
+								}
+							]
+						},
+						{
+							"ID": "{8FB46A15-DE06-4F50-95EB-3A5AD71C89B6}",
+							"Comment": "Method Call.executed by Task",
+							"AttributeValues":
+							[
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "executed by"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `Method Call`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{084A6D58-32C9-4A5F-9D2B-86C46F74E522}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Task`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{D4F2564B-2D11-4A5C-8AA9-AF52D4EACC13}"
+									]
+								}
 							]
 						}
 					]
 				},
 				{
-					"ID": "{4E5D363F-6984-4BD5-8E76-AAB598C1B09D}",
-					"Comment": "Translatable Text Constant.title for Task",
-					"AttributeValues":
+					"Name": "ExtractSingleInstanceStringComponent",
+					"Instances":
 					[
 						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "title for"
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `Translatable Text Constant`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-							"DestinationInstances":
+							"ID": "{B9BF252A-C81B-425E-A925-ED86CEB208AF}",
+							"Relationships":
 							[
-								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
-							]
-						},
-						{
-							"Comment": ".has destination Class `Task`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-							"DestinationInstances":
-							[
-								"{D4F2564B-2D11-4A5C-8AA9-AF52D4EACC13}"
+								{
+									"Comment": "Extract Single Instance String Component.has Relationship",
+									"RelationshipID": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
+									"InverseRelationshipID": "{B0111132-8721-405C-967B-0BEFA92CFE9A}",
+									"DestinationInstances":
+									[
+										"{D97AE03C-261F-4060-A06D-985E26FA662C}"
+									]
+								}
 							]
 						}
 					]
 				},
 				{
-					"ID": "{A9387898-9DC0-4006-94F1-1FB02EB3ECD7}",
-					"Comment": "Task.has instructions Translatable Text Constant",
-					"AttributeValues":
+					"Name": "String",
+					"Instances":
 					[
 						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "has instructions"
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `Task`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-							"DestinationInstances":
+							"ID": "{2866D5F0-6722-471A-875C-FD99E789AA3A}",
+							"Comment": "Task.instance labeled by String",
+							"Relationships":
 							[
-								"{D4F2564B-2D11-4A5C-8AA9-AF52D4EACC13}"
-							]
-						},
-						{
-							"Comment": ".has destination Class `Translatable Text Constant`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-							"DestinationInstances":
-							[
-								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
-							]
-						},
-						{
-							"Comment": ".has sibling Relationship",
-							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
-							"DestinationInstances":
-							[
-								"{686DD398-709D-48D6-9229-3C79D617EC23}"
+								{
+									"Comment": "String.has String Component",
+									"RelationshipID": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
+									"InverseRelationshipID": "{40E17597-0AEB-4C56-BBAB-FC600E1196DD}",
+									"DestinationInstances":
+									[
+										"{B9BF252A-C81B-425E-A925-ED86CEB208AF}"
+									]
+								}
 							]
 						}
 					]
 				},
 				{
-					"ID": "{686DD398-709D-48D6-9229-3C79D617EC23}",
-					"Comment": "Translatable Text Constant.instructions for Task",
-					"AttributeValues":
+					"Name": "ExtractSingleInstanceStringComponent",
+					"Instances":
 					[
 						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "instructions for"
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `Translatable Text Constant`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-							"DestinationInstances":
+							"ID": "{12AFD8F6-14E3-4248-B890-C013958E6886}",
+							"Relationships":
 							[
-								"{04A53CC8-3206-4A97-99C5-464DB8CAA6E6}"
-							]
-						},
-						{
-							"Comment": ".has destination Class `Task`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-							"DestinationInstances":
-							[
-								"{D4F2564B-2D11-4A5C-8AA9-AF52D4EACC13}"
+								{
+									"Comment": ".has Relationship",
+									"RelationshipID": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
+									"InverseRelationshipID": "{B0111132-8721-405C-967B-0BEFA92CFE9A}",
+									"DestinationInstances":
+									[
+										"{6B25BD5F-9B06-42D1-ACC6-2FA1A2248965}"
+									]
+								}
 							]
 						}
 					]
 				},
 				{
-					"ID": "{A1264E04-93FD-47C1-BE00-CA42CD0AAD55}",
-					"Comment": "Task.secured by Security Group",
-					"AttributeValues":
+					"Name": "String",
+					"Instances":
 					[
 						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "secured by"
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `Task`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-							"DestinationInstances":
+							"ID": "{DB43F472-5DDA-4D6D-983E-929A06EF0112}",
+							"Relationships":
 							[
-								"{D4F2564B-2D11-4A5C-8AA9-AF52D4EACC13}"
-							]
-						},
-						{
-							"Comment": ".has destination Class `Security Group`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-							"DestinationInstances":
-							[
-								"{498CCFD4-8D94-4EF4-B947-1D07ECC9342B}"
+								{
+									"Comment": "String.has String Component",
+									"RelationshipID": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
+									"InverseRelationshipID": "{40E17597-0AEB-4C56-BBAB-FC600E1196DD}",
+									"DestinationInstances":
+									[
+										"{12AFD8F6-14E3-4248-B890-C013958E6886}"
+									]
+								}
 							]
 						}
 					]
 				},
 				{
-					"ID": "{F93509A7-7DB1-443E-A669-4A34E318C695}",
-					"Comment": "Security Group.secures Task",
-					"AttributeValues":
+					"ID": "{D4F2564B-2D11-4A5C-8AA9-AF52D4EACC13}",
+					"Name": "Task",
+					"ParentObjects":
 					[
 						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "secures"
+							"Name": "Class"
 						}
 					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `Security Group`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-							"DestinationInstances":
-							[
-								"{498CCFD4-8D94-4EF4-B947-1D07ECC9342B}"
-							]
-						},
-						{
-							"Comment": ".has destination Class `Task`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-							"DestinationInstances":
-							[
-								"{D4F2564B-2D11-4A5C-8AA9-AF52D4EACC13}"
-							]
-						}
-					]
-				},
-				{
-					"ID": "{D8C0D4D4-F8C6-4B92-A2C1-8BF16B16203D}",
-					"Comment": "Task.executes Method Call",
-					"AttributeValues":
-					[
-						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "executes"
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `Task`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-							"DestinationInstances":
-							[
-								"{D4F2564B-2D11-4A5C-8AA9-AF52D4EACC13}"
-							]
-						},
-						{
-							"Comment": ".has destination Class `Method Call`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-							"DestinationInstances":
-							[
-								"{084A6D58-32C9-4A5F-9D2B-86C46F74E522}"
-							]
-						}
-					]
-				},
-				{
-					"ID": "{8FB46A15-DE06-4F50-95EB-3A5AD71C89B6}",
-					"Comment": "Method Call.executed by Task",
-					"AttributeValues":
-					[
-						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "executed by"
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `Method Call`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-							"DestinationInstances":
-							[
-								"{084A6D58-32C9-4A5F-9D2B-86C46F74E522}"
-							]
-						},
-						{
-							"Comment": ".has destination Class `Task`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-							"DestinationInstances":
-							[
-								"{D4F2564B-2D11-4A5C-8AA9-AF52D4EACC13}"
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"Name": "ExtractSingleInstanceStringComponent",
-			"Instances":
-			[
-				{
-					"ID": "{B9BF252A-C81B-425E-A925-ED86CEB208AF}",
-					"Relationships":
-					[
-						{
-							"Comment": "Extract Single Instance String Component.has Relationship",
-							"RelationshipID": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
-							"InverseRelationshipID": "{B0111132-8721-405C-967B-0BEFA92CFE9A}",
-							"DestinationInstances":
-							[
-								"{D97AE03C-261F-4060-A06D-985E26FA662C}"
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"Name": "String",
-			"Instances":
-			[
-				{
-					"ID": "{2866D5F0-6722-471A-875C-FD99E789AA3A}",
-					"Comment": "Task.instance labeled by String",
-					"Relationships":
-					[
-						{
-							"Comment": "String.has String Component",
-							"RelationshipID": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
-							"InverseRelationshipID": "{40E17597-0AEB-4C56-BBAB-FC600E1196DD}",
-							"DestinationInstances":
-							[
-								"{B9BF252A-C81B-425E-A925-ED86CEB208AF}"
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"Name": "ExtractSingleInstanceStringComponent",
-			"Instances":
-			[
-				{
-					"ID": "{12AFD8F6-14E3-4248-B890-C013958E6886}",
-					"Relationships":
-					[
-						{
-							"Comment": ".has Relationship",
-							"RelationshipID": "{5E499753-F50F-4A9E-BF53-DC013820499C}",
-							"InverseRelationshipID": "{B0111132-8721-405C-967B-0BEFA92CFE9A}",
-							"DestinationInstances":
-							[
-								"{6B25BD5F-9B06-42D1-ACC6-2FA1A2248965}"
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"Name": "String",
-			"Instances":
-			[
-				{
-					"ID": "{DB43F472-5DDA-4D6D-983E-929A06EF0112}",
-					"Relationships":
-					[
-						{
-							"Comment": "String.has String Component",
-							"RelationshipID": "{3B6C4C25-B7BC-4242-8ED1-BA6D01B834BA}",
-							"InverseRelationshipID": "{40E17597-0AEB-4C56-BBAB-FC600E1196DD}",
-							"DestinationInstances":
-							[
-								"{12AFD8F6-14E3-4248-B890-C013958E6886}"
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"ID": "{D4F2564B-2D11-4A5C-8AA9-AF52D4EACC13}",
-			"Name": "Task",
-			"ParentObjects":
-			[
-				{
-					"Name": "Class"
-				}
-			],
-			"TranslatableValues":
-			[
-				{
-					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
-					"Values":
-					[
-						{
-							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-							"Value": "Task"
-						}
-					]
-				}
-			],
-			"Relationships":
-			[
-				{
-					"Comment": "Class `Task`.has Attribute `Name` [Text Attribute]",
-					"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
-					"InverseRelationshipID": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
-					"DestinationInstances":
-					[
-						"{9153A637-992E-4712-ADF2-B03F0D9EDEA6}"
-					]
-				},
-				{
-					"Comment": "Class `Task`.instance labeled by String",
-					"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
-					"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
-					"DestinationInstances":
-					[
-						"{2866D5F0-6722-471A-875C-FD99E789AA3A}"
-					]
-				}
-			]
-		},
-		
-		{
-			"Name": "Prompt",
-			"Instances":
-			[
-				{
-					"Comment": "Report Name for Create Report",
-					"ID": "{A6D2BA30-3B73-4915-8D3A-BE8AA0506739}",
 					"TranslatableValues":
 					[
 						{
-							"Comment": "Prompt.has title Translatable Text Constant",
-							"RelationshipID": "{6B25BD5F-9B06-42D1-ACC6-2FA1A2248965}",
-							"InverseRelationshipID": "{9FE0E4B7-875A-4F43-9037-E1D443D4F798}",
+							"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 							"Values":
 							[
 								{
 									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Report Name"
+									"Value": "Task"
 								}
 							]
 						}
@@ -426,491 +385,538 @@
 					"Relationships":
 					[
 						{
-							"Comment": "Prompt.has valid Prompt Value" 
-						}
-					]
-				}
-			]
-		},
-		
-		{
-			"Name": "Relationship",
-			"Instances":
-			[
-				{
-					"Comment": "Task.has Prompt",
-					"ID": "{929B106F-7E3E-4D30-BB84-E450A4FED063}",
-					"AttributeValues":
-					[
-						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "has"
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `Task`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"Comment": "Class `Task`.has Attribute `Name` [Text Attribute]",
+							"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+							"InverseRelationshipID": "{FFC8E435-B9F8-4495-8C85-4DDA67F7E2A8}",
 							"DestinationInstances":
 							[
-								"{D4F2564B-2D11-4A5C-8AA9-AF52D4EACC13}"
+								"{9153A637-992E-4712-ADF2-B03F0D9EDEA6}"
 							]
 						},
 						{
-							"Comment": ".has destination Class `Prompt`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"Comment": "Class `Task`.instance labeled by String",
+							"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+							"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
 							"DestinationInstances":
 							[
-								"{EC889225-416A-4F73-B8D1-2A42B37AF43E}"
+								"{2866D5F0-6722-471A-875C-FD99E789AA3A}"
 							]
 						}
 					]
 				},
+				
 				{
-					"Comment": "Prompt.for Task",
-					"ID": "{146616A0-A64A-402B-99FB-7548D92E5CBC}",
-					"AttributeValues":
+					"Name": "Prompt",
+					"Instances":
 					[
 						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "for"
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `Prompt`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-							"DestinationInstances":
-							[
-								"{EC889225-416A-4F73-B8D1-2A42B37AF43E}"
-							]
-						},
-						{
-							"Comment": ".has destination Class `Task`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-							"DestinationInstances":
-							[
-								"{D4F2564B-2D11-4A5C-8AA9-AF52D4EACC13}"
-							]
-						}
-					]
-				}
-			]
-		},
-		
-		{
-			"Name": "Relationship",
-			"Instances":
-			[
-				{
-					"Comment": "UI Task.has Page Component",
-					"ID": "{D2949AF7-249A-4FFB-9A54-252CD9D06C51}",
-					"AttributeValues":
-					[
-						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "has"
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `UI Task`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-							"DestinationInstances":
-							[
-								"{BFD07772-178C-4885-A6CE-C85076C8461C}"
-							]
-						},
-						{
-							"Comment": ".has destination Class `Page Component`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"DestinationInstances":
-							[
-								"{EF4D4027-6904-4773-9013-22CEDC169F00}"
-							]
-						}
-					]
-				},
-				{
-					"Comment": "Page Component.for UI Task",
-					"ID": "{C76E8C98-5C54-48DF-B1F0-637DB84B5989}",
-					"AttributeValues":
-					[
-						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "for"
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `Page Component`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-							"DestinationInstances":
-							[
-								"{EF4D4027-6904-4773-9013-22CEDC169F00}"
-							]
-						},
-						{
-							"Comment": ".has destination Class `UI Task`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-							"DestinationInstances":
-							[
-								"{BFD07772-178C-4885-A6CE-C85076C8461C}"
-							]
-						}
-					]
-				}
-			]
-		},
-		
-		
-		{
-			"ID": "{BFD07772-178C-4885-A6CE-C85076C8461C}",
-			"Name": "UITask",
-			"ParentObjects":
-			[
-				{
-					"Name": "Task"
-				}
-			],
-			"Relationships":
-			[
-				{
-					"Comment": "Class `Task`.instance labeled by String",
-					"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
-					"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
-					"DestinationInstances":
-					[
-						"{2866D5F0-6722-471A-875C-FD99E789AA3A}"
-					]
-				}
-			],
-			"TranslatableValues":
-			[
-				{
-					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
-					"InverseRelationshipID": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
-					"Values":
-					[
-						{
-							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-							"Value": "UI Task"
-						}
-					]
-				}
-			],
-			"Instances":
-			[
-				{
-					"ID": "{170908E4-E3CD-4854-BB2F-C7815BBD1990}",
-					"AttributeValues":
-					[
-						{
-							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
-							"Value": "Tenant_Create"
-						}
-					],
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{D97AE03C-261F-4060-A06D-985E26FA662C}",
-							"InverseRelationshipID": "{4E5D363F-6984-4BD5-8E76-AAB598C1B09D}",
-							"Values":
+							"Comment": "Report Name for Create Report",
+							"ID": "{A6D2BA30-3B73-4915-8D3A-BE8AA0506739}",
+							"TranslatableValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Create Tenant"
+									"Comment": "Prompt.has title Translatable Text Constant",
+									"RelationshipID": "{6B25BD5F-9B06-42D1-ACC6-2FA1A2248965}",
+									"InverseRelationshipID": "{9FE0E4B7-875A-4F43-9037-E1D443D4F798}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Report Name"
+										}
+									]
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": "Prompt.has valid Prompt Value" 
 								}
 							]
 						}
 					]
 				},
+				
 				{
-					"ID": "{9FCF4CA6-F8FA-40CD-B94E-FFED78707A2C}",
-					"AttributeValues":
+					"Name": "Relationship",
+					"Instances":
 					[
 						{
-							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
-							"Value": "Tenant_Delete"
-						}
-					],
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{D97AE03C-261F-4060-A06D-985E26FA662C}",
-							"InverseRelationshipID": "{4E5D363F-6984-4BD5-8E76-AAB598C1B09D}",
-							"Values":
+							"Comment": "Task.has Prompt",
+							"ID": "{929B106F-7E3E-4D30-BB84-E450A4FED063}",
+							"AttributeValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Delete Tenant"
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "has"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `Task`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{D4F2564B-2D11-4A5C-8AA9-AF52D4EACC13}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Prompt`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{EC889225-416A-4F73-B8D1-2A42B37AF43E}"
+									]
+								}
+							]
+						},
+						{
+							"Comment": "Prompt.for Task",
+							"ID": "{146616A0-A64A-402B-99FB-7548D92E5CBC}",
+							"AttributeValues":
+							[
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "for"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `Prompt`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{EC889225-416A-4F73-B8D1-2A42B37AF43E}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Task`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{D4F2564B-2D11-4A5C-8AA9-AF52D4EACC13}"
+									]
 								}
 							]
 						}
 					]
 				},
+				
 				{
-					"ID": "{7344A8C9-79B8-433A-AC3A-304590A8C2F6}",
-					"Relationships":
+					"Name": "Relationship",
+					"Instances":
 					[
 						{
-							"Comment": "Task.has Parameter `Report Name`, `Report Type`, `Data Source`, `Temporary Report`, `Web Service Enable`",
-							"RelationshipID": "{929B106F-7E3E-4D30-BB84-E450A4FED063}",
-							"InverseRelationshipID": "{146616A0-A64A-402B-99FB-7548D92E5CBC}",
-							"DestinationInstances":
+							"Comment": "UI Task.has Page Component",
+							"ID": "{D2949AF7-249A-4FFB-9A54-252CD9D06C51}",
+							"AttributeValues":
 							[
-								"{A6D2BA30-3B73-4915-8D3A-BE8AA0506739}",
-								"{021207FD-F9DE-4B26-9CBD-B4E31C1602B6}"
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "has"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `UI Task`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{BFD07772-178C-4885-A6CE-C85076C8461C}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Page Component`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"DestinationInstances":
+									[
+										"{EF4D4027-6904-4773-9013-22CEDC169F00}"
+									]
+								}
 							]
 						},
 						{
-							"Comment": ".executes Method Call",
-							"RelationshipID": "{D8C0D4D4-F8C6-4B92-A2C1-8BF16B16203D}",
+							"Comment": "Page Component.for UI Task",
+							"ID": "{C76E8C98-5C54-48DF-B1F0-637DB84B5989}",
+							"AttributeValues":
+							[
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "for"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `Page Component`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{EF4D4027-6904-4773-9013-22CEDC169F00}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `UI Task`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{BFD07772-178C-4885-A6CE-C85076C8461C}"
+									]
+								}
+							]
+						}
+					]
+				},
+				
+				
+				{
+					"ID": "{BFD07772-178C-4885-A6CE-C85076C8461C}",
+					"Name": "UITask",
+					"ParentObjects":
+					[
+						{
+							"Name": "Task"
+						}
+					],
+					"Relationships":
+					[
+						{
+							"Comment": "Class `Task`.instance labeled by String",
+							"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+							"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
 							"DestinationInstances":
 							[
-								"{795DD1D3-0744-459D-87BD-62C70F1F5CBA}"
+								"{2866D5F0-6722-471A-875C-FD99E789AA3A}"
 							]
 						}
 					],
 					"TranslatableValues":
 					[
 						{
-							"Comment": ".has title Translatable Text Constant",
-							"RelationshipID": "{D97AE03C-261F-4060-A06D-985E26FA662C}",
-							"InverseRelationshipID": "{4E5D363F-6984-4BD5-8E76-AAB598C1B09D}",
+							"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
+							"InverseRelationshipID": "{DCE14ABD-835A-407F-85C6-D5559BA05D9C}",
 							"Values":
 							[
 								{
 									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Create Report"
+									"Value": "UI Task"
 								}
 							]
-						},
-						{
-							"Comment": ".has instructions Translatable Text Constant",
-							"RelationshipID": "{A9387898-9DC0-4006-94F1-1FB02EB3ECD7}",
-							"InverseRelationshipID": "{686DD398-709D-48D6-9229-3C79D617EC23}",
-							"Values":
-							[
-								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Creates a Report to display data in a variety of different formats."
-								}
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"ID": "{B9C1E04A-FABB-4DEE-A56A-E3AA308237A1}",
-			"Name": "RedirectTask",
-			"ParentObjects":
-			[
-				{
-					"Name": "Task"
-				}
-			],
-			"TranslatableValues":
-			[
-				{
-					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
-					"Values":
-					[
-						{
-							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-							"Value": "Redirect Task"
-						}
-					]
-				}
-			],
-			"Relationships":
-			[
-				{
-					"Comment": "Class `Task`.instance labeled by String",
-					"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
-					"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
-					"DestinationInstances":
-					[
-						"{2866D5F0-6722-471A-875C-FD99E789AA3A}"
-					]
-				},
-				{
-					"Comment": "Class `Redirect Task`.has Attribute `Target URL` [Text Attribute]",
-					"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
-					"DestinationInstances":
-					[
-						"{970F79A0-9EFE-4E7D-9286-9908C6F06A67}"
-					]
-				}
-			],
-			"Instances":
-			[
-				{
-					"ID": "{04B1F030-3DB1-4EAF-AE8E-88A886CAE299}",
-					"AttributeValues":
-					[
-						{
-							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
-							"Value": "User_Logout"
-						},
-						{
-							"ID": "{970F79A0-9EFE-4E7D-9286-9908C6F06A67}",
-							"Value": "~/account/logout"
 						}
 					],
-					"TranslatableValues":
+					"Instances":
 					[
 						{
-							"RelationshipID": "{D97AE03C-261F-4060-A06D-985E26FA662C}",
-							"InverseRelationshipID": "{4E5D363F-6984-4BD5-8E76-AAB598C1B09D}",
-							"Values":
+							"ID": "{170908E4-E3CD-4854-BB2F-C7815BBD1990}",
+							"AttributeValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Log Out"
+									"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+									"Value": "Tenant_Create"
+								}
+							],
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{D97AE03C-261F-4060-A06D-985E26FA662C}",
+									"InverseRelationshipID": "{4E5D363F-6984-4BD5-8E76-AAB598C1B09D}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Create Tenant"
+										}
+									]
 								}
 							]
-						}
-					]
-				},
-				{
-					"ID": "{8E3AA6C2-BA06-4D50-85A6-908D5397AE02}",
-					"AttributeValues":
-					[
-						{
-							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
-							"Value": "System_Reset"
 						},
 						{
-							"ID": "{970F79A0-9EFE-4E7D-9286-9908C6F06A67}",
-							"Value": "~/reset"
-						}
-					],
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{D97AE03C-261F-4060-A06D-985E26FA662C}",
-							"InverseRelationshipID": "{4E5D363F-6984-4BD5-8E76-AAB598C1B09D}",
-							"Values":
+							"ID": "{9FCF4CA6-F8FA-40CD-B94E-FFED78707A2C}",
+							"AttributeValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Reset System"
+									"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+									"Value": "Tenant_Delete"
+								}
+							],
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{D97AE03C-261F-4060-A06D-985E26FA662C}",
+									"InverseRelationshipID": "{4E5D363F-6984-4BD5-8E76-AAB598C1B09D}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Delete Tenant"
+										}
+									]
+								}
+							]
+						},
+						{
+							"ID": "{7344A8C9-79B8-433A-AC3A-304590A8C2F6}",
+							"Relationships":
+							[
+								{
+									"Comment": "Task.has Parameter `Report Name`, `Report Type`, `Data Source`, `Temporary Report`, `Web Service Enable`",
+									"RelationshipID": "{929B106F-7E3E-4D30-BB84-E450A4FED063}",
+									"InverseRelationshipID": "{146616A0-A64A-402B-99FB-7548D92E5CBC}",
+									"DestinationInstances":
+									[
+										"{A6D2BA30-3B73-4915-8D3A-BE8AA0506739}",
+										"{021207FD-F9DE-4B26-9CBD-B4E31C1602B6}"
+									]
+								},
+								{
+									"Comment": ".executes Method Call",
+									"RelationshipID": "{D8C0D4D4-F8C6-4B92-A2C1-8BF16B16203D}",
+									"DestinationInstances":
+									[
+										"{795DD1D3-0744-459D-87BD-62C70F1F5CBA}"
+									]
+								}
+							],
+							"TranslatableValues":
+							[
+								{
+									"Comment": ".has title Translatable Text Constant",
+									"RelationshipID": "{D97AE03C-261F-4060-A06D-985E26FA662C}",
+									"InverseRelationshipID": "{4E5D363F-6984-4BD5-8E76-AAB598C1B09D}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Create Report"
+										}
+									]
+								},
+								{
+									"Comment": ".has instructions Translatable Text Constant",
+									"RelationshipID": "{A9387898-9DC0-4006-94F1-1FB02EB3ECD7}",
+									"InverseRelationshipID": "{686DD398-709D-48D6-9229-3C79D617EC23}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Creates a Report to display data in a variety of different formats."
+										}
+									]
 								}
 							]
 						}
 					]
 				},
 				{
-					"ID": "{16D35AE0-5F0A-4D06-A14A-8D08E85BFA37}",
-					"AttributeValues":
+					"ID": "{B9C1E04A-FABB-4DEE-A56A-E3AA308237A1}",
+					"Name": "RedirectTask",
+					"ParentObjects":
 					[
 						{
-							"ID": "{970F79A0-9EFE-4E7D-9286-9908C6F06A67}",
-							"Value": "~/objects/#/delete"
+							"Name": "Task"
 						}
 					],
 					"TranslatableValues":
 					[
 						{
-							"RelationshipID": "{D97AE03C-261F-4060-A06D-985E26FA662C}",
-							"InverseRelationshipID": "{4E5D363F-6984-4BD5-8E76-AAB598C1B09D}",
+							"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 							"Values":
 							[
 								{
 									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Delete Object"
+									"Value": "Redirect Task"
 								}
 							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"Name": "Relationship",
-			"Instances":
-			[
-				{
-					"ID": "{4D8670E1-2AF1-4E7C-9C87-C910BD7B319B}",
-					"Comment": "Class.has Task",
-					"AttributeValues":
-					[
-						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "has"
 						}
 					],
 					"Relationships":
 					[
 						{
-							"Comment": ".has source Class `Class`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+							"Comment": "Class `Task`.instance labeled by String",
+							"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+							"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
 							"DestinationInstances":
 							[
-								"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+								"{2866D5F0-6722-471A-875C-FD99E789AA3A}"
 							]
 						},
 						{
-							"Comment": ".has destination Class `Task`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+							"Comment": "Class `Redirect Task`.has Attribute `Target URL` [Text Attribute]",
+							"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
 							"DestinationInstances":
 							[
-								"{D4F2564B-2D11-4A5C-8AA9-AF52D4EACC13}"
+								"{970F79A0-9EFE-4E7D-9286-9908C6F06A67}"
+							]
+						}
+					],
+					"Instances":
+					[
+						{
+							"ID": "{04B1F030-3DB1-4EAF-AE8E-88A886CAE299}",
+							"AttributeValues":
+							[
+								{
+									"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+									"Value": "User_Logout"
+								},
+								{
+									"ID": "{970F79A0-9EFE-4E7D-9286-9908C6F06A67}",
+									"Value": "~/account/logout"
+								}
+							],
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{D97AE03C-261F-4060-A06D-985E26FA662C}",
+									"InverseRelationshipID": "{4E5D363F-6984-4BD5-8E76-AAB598C1B09D}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Log Out"
+										}
+									]
+								}
 							]
 						},
 						{
-							"Comment": ".has sibling Relationship",
-							"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
-							"DestinationInstances":
+							"ID": "{8E3AA6C2-BA06-4D50-85A6-908D5397AE02}",
+							"AttributeValues":
 							[
-								"{F6D05235-AAA8-4DC0-8D3A-A0F336B39F01}"
+								{
+									"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+									"Value": "System_Reset"
+								},
+								{
+									"ID": "{970F79A0-9EFE-4E7D-9286-9908C6F06A67}",
+									"Value": "~/reset"
+								}
+							],
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{D97AE03C-261F-4060-A06D-985E26FA662C}",
+									"InverseRelationshipID": "{4E5D363F-6984-4BD5-8E76-AAB598C1B09D}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Reset System"
+										}
+									]
+								}
+							]
+						},
+						{
+							"ID": "{16D35AE0-5F0A-4D06-A14A-8D08E85BFA37}",
+							"AttributeValues":
+							[
+								{
+									"ID": "{970F79A0-9EFE-4E7D-9286-9908C6F06A67}",
+									"Value": "~/objects/#/delete"
+								}
+							],
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{D97AE03C-261F-4060-A06D-985E26FA662C}",
+									"InverseRelationshipID": "{4E5D363F-6984-4BD5-8E76-AAB598C1B09D}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Delete Object"
+										}
+									]
+								}
 							]
 						}
 					]
 				},
 				{
-					"ID": "{F6D05235-AAA8-4DC0-8D3A-A0F336B39F01}",
-					"Comment": "Task.for Class",
-					"AttributeValues":
+					"Name": "Relationship",
+					"Instances":
 					[
 						{
-							"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
-							"Value": "for"
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": ".has source Class `Task`",
-							"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
-							"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
-							"DestinationInstances":
+							"ID": "{4D8670E1-2AF1-4E7C-9C87-C910BD7B319B}",
+							"Comment": "Class.has Task",
+							"AttributeValues":
 							[
-								"{D4F2564B-2D11-4A5C-8AA9-AF52D4EACC13}"
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "has"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `Class`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Task`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{D4F2564B-2D11-4A5C-8AA9-AF52D4EACC13}"
+									]
+								},
+								{
+									"Comment": ".has sibling Relationship",
+									"RelationshipID": "{656110FF-4502-48B8-A7F3-D07F017AEA3F}",
+									"DestinationInstances":
+									[
+										"{F6D05235-AAA8-4DC0-8D3A-A0F336B39F01}"
+									]
+								}
 							]
 						},
 						{
-							"Comment": ".has destination Class `Class`",
-							"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
-							"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
-							"DestinationInstances":
+							"ID": "{F6D05235-AAA8-4DC0-8D3A-A0F336B39F01}",
+							"Comment": "Task.for Class",
+							"AttributeValues":
 							[
-								"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+								{
+									"ID": "{71106B12-1934-4834-B0F6-D894637BAEED}",
+									"Value": "for"
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": ".has source Class `Task`",
+									"RelationshipID": "{7FB5D234-042E-45CB-B11D-AD72F8D45BD3}",
+									"InverseRelationshipID": "{20FFFDE8-11A5-48D6-894B-21C6B234B811}",
+									"DestinationInstances":
+									[
+										"{D4F2564B-2D11-4A5C-8AA9-AF52D4EACC13}"
+									]
+								},
+								{
+									"Comment": ".has destination Class `Class`",
+									"RelationshipID": "{F220F1C2-0499-4E87-A32E-BDBF80C1F8A4}",
+									"InverseRelationshipID": "{A66CD08C-A155-42AF-8995-A1D96C5A0C06}",
+									"DestinationInstances":
+									[
+										"{B9C9B9B7-AD8A-4CBD-AA6B-E05784630B6B}"
+									]
+								}
 							]
 						}
 					]

@@ -1,113 +1,119 @@
 {
-	"Objects":
+	"Tenants":
 	[
 		{
-			"ID": "{9DE86AF1-EFD6-4B71-9DCC-202F247C94CB}",
-			"Name": "NumericAttribute",
-			"ParentObjects":
+			"ID": "{35BF9AC5-0212-4DBA-BB9B-D1A6E9955827}",
+			"Objects":
 			[
 				{
-					"Name": "Attribute"
-				}
-			],
-			"TranslatableValues":
-			[
-				{
-					"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
-					"Values":
+					"ID": "{9DE86AF1-EFD6-4B71-9DCC-202F247C94CB}",
+					"Name": "NumericAttribute",
+					"ParentObjects":
 					[
 						{
-							"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-							"Value": "Numeric Attribute"
-						}
-					]
-				}
-			],
-			"Relationships":
-			[
-				{
-					"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
-					"DestinationInstances":
-					[
-						"{9153A637-992E-4712-ADF2-B03F0D9EDEA6}"
-					]
-				},
-				{
-					"Comment": "Class `Attribute`.instance labeled by String",
-					"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
-					"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
-					"DestinationInstances":
-					[
-						"{6894DC7E-F471-4F5C-88E6-B8016259817F}"
-					]
-				}
-			],
-			"Instances":
-			[
-				{
-					"ID": "{B88E5262-6B99-401C-896C-34283AB58AED}",
-					"AttributeValues":
-					[
-						{
-							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
-							"Value": "Value"
+							"Name": "Attribute"
 						}
 					],
 					"TranslatableValues":
 					[
 						{
-							"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
+							"RelationshipID": "{B8BDB905-69DD-49CD-B557-0781F7EF2C50}",
 							"Values":
 							[
 								{
 									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"Value": "Numeric Attribute"
+								}
+							]
+						}
+					],
+					"Relationships":
+					[
+						{
+							"RelationshipID": "{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}",
+							"DestinationInstances":
+							[
+								"{9153A637-992E-4712-ADF2-B03F0D9EDEA6}"
+							]
+						},
+						{
+							"Comment": "Class `Attribute`.instance labeled by String",
+							"RelationshipID": "{F52FC851-D655-48A9-B526-C5FE0D7A29D2}",
+							"InverseRelationshipID": "{6CB2BDF2-01E0-40E7-8E23-7EB2E6476634}",
+							"DestinationInstances":
+							[
+								"{6894DC7E-F471-4F5C-88E6-B8016259817F}"
+							]
+						}
+					],
+					"Instances":
+					[
+						{
+							"ID": "{B88E5262-6B99-401C-896C-34283AB58AED}",
+							"AttributeValues":
+							[
+								{
+									"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 									"Value": "Value"
 								}
-							]
-						}
-					]
-				},
-				{
-					"ID": "{B31887C6-B16E-457F-814A-071C9CBCAB98}",
-					"AttributeValues":
-					[
-						{
-							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
-							"Value": "LocaleID"
-						}
-					],
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
-							"Values":
+							],
+							"TranslatableValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Locale ID"
+									"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Value"
+										}
+									]
 								}
 							]
-						}
-					]
-				},
-				{
-					"ID": "{8C528FB0-4063-47B0-BC56-85E387A41BD2}",
-					"AttributeValues":
-					[
+						},
 						{
-							"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
-							"Value": "Level"
-						}
-					],
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
-							"Values":
+							"ID": "{B31887C6-B16E-457F-814A-071C9CBCAB98}",
+							"AttributeValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+									"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
+									"Value": "LocaleID"
+								}
+							],
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Locale ID"
+										}
+									]
+								}
+							]
+						},
+						{
+							"ID": "{8C528FB0-4063-47B0-BC56-85E387A41BD2}",
+							"AttributeValues":
+							[
+								{
+									"ID": "{9153A637-992E-4712-ADF2-B03F0D9EDEA6}",
 									"Value": "Level"
+								}
+							],
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{72EF8007-B309-4DDE-A9F3-05BC0F61197F}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Level"
+										}
+									]
 								}
 							]
 						}

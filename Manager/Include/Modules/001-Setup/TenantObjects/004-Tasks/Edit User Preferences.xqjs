@@ -1,131 +1,137 @@
 {
-	"Objects":
+	"Tenants":
 	[
 		{
-			"Name": "InstancePrompt",
-			"Instances":
+			"ID": "{35BF9AC5-0212-4DBA-BB9B-D1A6E9955827}",
+			"Objects":
 			[
 				{
-					"ID": "{95305300-A200-4773-9CB3-7FA985039B76}",
-					"TranslatableValues":
+					"Name": "InstancePrompt",
+					"Instances":
 					[
 						{
-							"Comment": "Prompt.has title Translatable Text Constant",
-							"RelationshipID": "{6B25BD5F-9B06-42D1-ACC6-2FA1A2248965}",
-							"Values":
+							"ID": "{95305300-A200-4773-9CB3-7FA985039B76}",
+							"TranslatableValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "User"
+									"Comment": "Prompt.has title Translatable Text Constant",
+									"RelationshipID": "{6B25BD5F-9B06-42D1-ACC6-2FA1A2248965}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "User"
+										}
+									]
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": "Instance Prompt.has valid Class",
+									"RelationshipID": "{D5BD754B-F401-4FD8-A707-82684E7E25F0}",
+									"DestinationInstances":
+									[
+										"{9C6871C1-9A7F-4A3A-900E-69D1D9E24486}"
+									]
 								}
 							]
 						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": "Instance Prompt.has valid Class",
-							"RelationshipID": "{D5BD754B-F401-4FD8-A707-82684E7E25F0}",
-							"DestinationInstances":
-							[
-								"{9C6871C1-9A7F-4A3A-900E-69D1D9E24486}"
-							]
-						}
 					]
-				}
-			]
-		},
-		{
-			"Name": "TabContainerPageComponent",
-			"Instances":
-			[
+				},
 				{
-					"ID": "{6458BE37-8562-4857-A2B1-0F6D73EFC20A}",
-					"Relationships":
+					"Name": "TabContainerPageComponent",
+					"Instances":
 					[
 						{
-							"Comment": "Tab Container Page Component.has Tab Container Tab",
-							"RelationshipID": "{5D22EC45-9E6B-4B77-B79A-E59AEBAECFB9}",
-							"DestinationInstances":
-							[
-								"{9762EC48-9470-4032-8ED5-F06E37BF8B2B}"
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"Name": "TabContainerTab",
-			"Instances":
-			[
-				{
-					"ID": "{9762EC48-9470-4032-8ED5-F06E37BF8B2B}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{447375EF-2FF6-4869-B9C8-0523B5123430}",
-							"Values":
+							"ID": "{6458BE37-8562-4857-A2B1-0F6D73EFC20A}",
+							"Relationships":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Profile"
+									"Comment": "Tab Container Page Component.has Tab Container Tab",
+									"RelationshipID": "{5D22EC45-9E6B-4B77-B79A-E59AEBAECFB9}",
+									"DestinationInstances":
+									[
+										"{9762EC48-9470-4032-8ED5-F06E37BF8B2B}"
+									]
 								}
 							]
 						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": "Container Page Component.has Page Component",
-							"RelationshipID": "{CB7B8162-1C9E-4E72-BBB8-C1C37CA69CD5}",
-							"DestinationInstances":
-							[
-								""
-							]
-						}
 					]
-				}
-			]
-		},
-		{
-			"Name": "UITask",
-			"Instances":
-			[
+				},
 				{
-					"ID": "{96044B18-86E4-4D84-90E6-CB16361C4BE8}",
-					"TranslatableValues":
+					"Name": "TabContainerTab",
+					"Instances":
 					[
 						{
-							"Comment": "Task.has title Translatable Text Constant",
-							"RelationshipID": "{D97AE03C-261F-4060-A06D-985E26FA662C}",
-							"Values":
+							"ID": "{9762EC48-9470-4032-8ED5-F06E37BF8B2B}",
+							"TranslatableValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Edit User Preferences"
+									"RelationshipID": "{447375EF-2FF6-4869-B9C8-0523B5123430}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Profile"
+										}
+									]
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": "Container Page Component.has Page Component",
+									"RelationshipID": "{CB7B8162-1C9E-4E72-BBB8-C1C37CA69CD5}",
+									"DestinationInstances":
+									[
+										""
+									]
 								}
 							]
 						}
-					],
-					"Relationships":
+					]
+				},
+				{
+					"Name": "UITask",
+					"Instances":
 					[
 						{
-							"Comment": "Task.has Prompt `User`",
-							"RelationshipID": "{929B106F-7E3E-4D30-BB84-E450A4FED063}",
-							"InverseRelationshipID": "{146616A0-A64A-402B-99FB-7548D92E5CBC}",
-							"DestinationInstances":
+							"ID": "{96044B18-86E4-4D84-90E6-CB16361C4BE8}",
+							"TranslatableValues":
 							[
-								"{95305300-A200-4773-9CB3-7FA985039B76}"
-							]
-						},
-						{
-							"Comment": "UI Task.has Page Component",
-							"RelationshipID": "{D2949AF7-249A-4FFB-9A54-252CD9D06C51}",
-							"InverseRelationshipID": "{C76E8C98-5C54-48DF-B1F0-637DB84B5989}",
-							"DestinationInstances":
+								{
+									"Comment": "Task.has title Translatable Text Constant",
+									"RelationshipID": "{D97AE03C-261F-4060-A06D-985E26FA662C}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Edit User Preferences"
+										}
+									]
+								}
+							],
+							"Relationships":
 							[
-								"{6458BE37-8562-4857-A2B1-0F6D73EFC20A}"
+								{
+									"Comment": "Task.has Prompt `User`",
+									"RelationshipID": "{929B106F-7E3E-4D30-BB84-E450A4FED063}",
+									"InverseRelationshipID": "{146616A0-A64A-402B-99FB-7548D92E5CBC}",
+									"DestinationInstances":
+									[
+										"{95305300-A200-4773-9CB3-7FA985039B76}"
+									]
+								},
+								{
+									"Comment": "UI Task.has Page Component",
+									"RelationshipID": "{D2949AF7-249A-4FFB-9A54-252CD9D06C51}",
+									"InverseRelationshipID": "{C76E8C98-5C54-48DF-B1F0-637DB84B5989}",
+									"DestinationInstances":
+									[
+										"{6458BE37-8562-4857-A2B1-0F6D73EFC20A}"
+									]
+								}
 							]
 						}
 					]

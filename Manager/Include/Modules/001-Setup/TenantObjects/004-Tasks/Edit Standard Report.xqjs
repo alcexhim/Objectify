@@ -1,425 +1,431 @@
 {
-	"Objects":
+	"Tenants":
 	[
 		{
-			"Name": "InstancePrompt",
-			"Instances":
+			"ID": "{35BF9AC5-0212-4DBA-BB9B-D1A6E9955827}",
+			"Objects":
 			[
 				{
-					"Comment": "Standard Report for Edit Standard Report",
-					"ID": "{EF81973E-F33A-41C4-B395-3820F25B02B7}",
-					"TranslatableValues":
+					"Name": "InstancePrompt",
+					"Instances":
 					[
 						{
-							"Comment": "Prompt.has title Translatable Text Constant",
-							"RelationshipID": "{6B25BD5F-9B06-42D1-ACC6-2FA1A2248965}",
-							"InverseRelationshipID": "{9FE0E4B7-875A-4F43-9037-E1D443D4F798}",
-							"Values":
+							"Comment": "Standard Report for Edit Standard Report",
+							"ID": "{EF81973E-F33A-41C4-B395-3820F25B02B7}",
+							"TranslatableValues":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Standard Report"
+									"Comment": "Prompt.has title Translatable Text Constant",
+									"RelationshipID": "{6B25BD5F-9B06-42D1-ACC6-2FA1A2248965}",
+									"InverseRelationshipID": "{9FE0E4B7-875A-4F43-9037-E1D443D4F798}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Standard Report"
+										}
+									]
 								}
-							]
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": "Instance Prompt.has valid Class",
-							"RelationshipID": "{D5BD754B-F401-4FD8-A707-82684E7E25F0}",
-							"InverseRelationshipID": "{9D7628CC-D888-4311-A5F7-6EEA17FF6A86}",
-							"DestinationInstances":
-							[
-								"{FDF4A498-DE83-417D-BA01-707372125C8D}"
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"Name": "RelationshipReportField",
-			"Instances":
-			[
-				{
-					"ID": "{B33BDA60-8A88-483F-AA70-3F5B3E20DE06}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{6780BFC2-DBC0-40AE-83EE-BFEF979F0054}",
-							"InverseRelationshipID": "{8AAAEF67-2CB8-4CC1-B854-F95E353848D1}",
-							"Values":
+							],
+							"Relationships":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Report Field"
+									"Comment": "Instance Prompt.has valid Class",
+									"RelationshipID": "{D5BD754B-F401-4FD8-A707-82684E7E25F0}",
+									"InverseRelationshipID": "{9D7628CC-D888-4311-A5F7-6EEA17FF6A86}",
+									"DestinationInstances":
+									[
+										"{FDF4A498-DE83-417D-BA01-707372125C8D}"
+									]
 								}
-							]
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": "Relationship Report Field.has target Relationship",
-							"RelationshipID": "{134B2790-F6DF-4F97-9AB5-9878C4A715E5}",
-							"InverseRelationshipID": "{AF8AB7F2-5581-4891-8C6F-92ACD8AFB1B4}",
-							"DestinationInstances":
-							[
-								"{B9026910-7E91-4EE1-B5F2-D7B740614831}"
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"Name": "RelationshipEditorPageComponent",
-			"Instances":
-			[
-				{
-					"ID": "{AE360D99-E303-437D-8F57-9C1A7FA44549}",
-					"Relationships":
-					[
-						{
-							"Comment": "Relationship Editor Page Component.has target Relationship",
-							"RelationshipID": "{54FBD056-0BD4-44F4-921C-11FB0C77996E}",
-							"InverseRelationshipID": "{5296BC07-15F4-4B84-B94A-D4FBF0228983}",
-							"DestinationInstances":
-							[
-								"{7A8F57F1-A4F3-4BAF-84A5-E893FD79447D}"
-							]
-						},
-						{
-							"Comment": "Relationship Editor Page Component.has Report Field `Report Field for Report Column`",
-							"RelationshipID": "{1540634D-EB44-48F8-88B8-17B7DCBBD006}",
-							"InverseRelationshipID": "{51C8837D-FF85-4647-A0F6-BE5D0AED51B5}",
-							"DestinationInstances":
-							[
-								"{B33BDA60-8A88-483F-AA70-3F5B3E20DE06}"
 							]
 						}
 					]
 				},
 				{
-					"ID": "{3F662C87-C3EC-470D-BB74-FC580194948D}",
-					"Relationships":
+					"Name": "RelationshipReportField",
+					"Instances":
 					[
 						{
-							"Comment": "Relationship Editor Page Component.has target Relationship `Report.has Report Prompt`",
-							"RelationshipID": "{54FBD056-0BD4-44F4-921C-11FB0C77996E}",
-							"InverseRelationshipID": "{5296BC07-15F4-4B84-B94A-D4FBF0228983}",
-							"DestinationInstances":
+							"ID": "{B33BDA60-8A88-483F-AA70-3F5B3E20DE06}",
+							"TranslatableValues":
 							[
-								"{5D112697-303F-419F-886F-3F09F0670B07}"
-							]
-						},
-						{
-							"Comment": "Relationship Editor Page Component.has Report Field `Report Field for Report Prompt`, `Prompt Qualifier for Report Prompt`, `Value Source`, `Value`",
-							"RelationshipID": "{1540634D-EB44-48F8-88B8-17B7DCBBD006}",
-							"InverseRelationshipID": "{51C8837D-FF85-4647-A0F6-BE5D0AED51B5}",
-							"DestinationInstances":
+								{
+									"RelationshipID": "{6780BFC2-DBC0-40AE-83EE-BFEF979F0054}",
+									"InverseRelationshipID": "{8AAAEF67-2CB8-4CC1-B854-F95E353848D1}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Report Field"
+										}
+									]
+								}
+							],
+							"Relationships":
 							[
-								"{0F13D646-13C6-4588-85BF-98F09206C97F}",
-								"{BD08F308-00EE-41D5-8254-8053940144F2}"
+								{
+									"Comment": "Relationship Report Field.has target Relationship",
+									"RelationshipID": "{134B2790-F6DF-4F97-9AB5-9878C4A715E5}",
+									"InverseRelationshipID": "{AF8AB7F2-5581-4891-8C6F-92ACD8AFB1B4}",
+									"DestinationInstances":
+									[
+										"{B9026910-7E91-4EE1-B5F2-D7B740614831}"
+									]
+								}
 							]
 						}
 					]
 				},
 				{
-					"ID": "{102CA3D5-E765-4CCE-A05A-89BC310C05ED}",
-					"Relationships":
+					"Name": "RelationshipEditorPageComponent",
+					"Instances":
 					[
 						{
-							"Comment": "Relationship Editor Page Component.has target Relationship `Report.has Report Filter`",
-							"RelationshipID": "{54FBD056-0BD4-44F4-921C-11FB0C77996E}",
-							"InverseRelationshipID": "{5296BC07-15F4-4B84-B94A-D4FBF0228983}",
-							"DestinationInstances":
-							[
-								""
-							]
-						},
-						{
-							"Comment": "Relationship Editor Page Component.has Report Field `And/Or for Report Filter`, `Open Paren for Report Filter`, `Field for Report Filter`, `Operator for Report Filter`, `Comparison Type for Report Filter`, `Comparison Value for Report Filter`",
-							"RelationshipID": "{1540634D-EB44-48F8-88B8-17B7DCBBD006}",
-							"InverseRelationshipID": "{51C8837D-FF85-4647-A0F6-BE5D0AED51B5}",
-							"DestinationInstances":
-							[
-								""
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"Name": "TabContainerPageComponent",
-			"Instances":
-			[
-				{
-					"ID": "{7645DB69-A6AE-45AE-AD39-9ED75ECB9B9D}",
-					"Relationships":
-					[
-						{
-							"Comment": "Tab Container Page Component.has Tab Container Tab",
-							"RelationshipID": "{5D22EC45-9E6B-4B77-B79A-E59AEBAECFB9}",
-							"DestinationInstances":
-							[
-								"{B7DC270D-6CE4-49C6-A274-58141F6C1DD0}",
-								"{6E875A80-910D-4E3A-8E83-8CC0997551C3}",
-								"{09A8998B-4A93-43B1-9C88-E46B269B89F7}",
-								"{35433998-6453-43E4-9A47-1341F13965DB}",
-								"{35BEBC3A-A3DB-41F6-A646-51964CC02BB5}",
-								"{6FCA5984-D956-4158-A433-882A1D71818B}",
-								"{58F08DAF-1576-4970-9D69-E0C5F28B0AF1}"
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"Name": "TabContainerTab",
-			"Instances":
-			[
-				{
-					"ID": "{B7DC270D-6CE4-49C6-A274-58141F6C1DD0}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{447375EF-2FF6-4869-B9C8-0523B5123430}",
-							"Values":
+							"ID": "{AE360D99-E303-437D-8F57-9C1A7FA44549}",
+							"Relationships":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Columns"
-								}
-							]
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": "Container Page Component.has Page Component",
-							"RelationshipID": "{CB7B8162-1C9E-4E72-BBB8-C1C37CA69CD5}",
-							"DestinationInstances":
-							[
-								"{AE360D99-E303-437D-8F57-9C1A7FA44549}"
-							]
-						}
-					]
-				},
-				{
-					"ID": "{6E875A80-910D-4E3A-8E83-8CC0997551C3}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{447375EF-2FF6-4869-B9C8-0523B5123430}",
-							"Values":
-							[
+									"Comment": "Relationship Editor Page Component.has target Relationship",
+									"RelationshipID": "{54FBD056-0BD4-44F4-921C-11FB0C77996E}",
+									"InverseRelationshipID": "{5296BC07-15F4-4B84-B94A-D4FBF0228983}",
+									"DestinationInstances":
+									[
+										"{7A8F57F1-A4F3-4BAF-84A5-E893FD79447D}"
+									]
+								},
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Sort"
-								}
-							]
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": "Container Page Component.has Page Component",
-							"RelationshipID": "{CB7B8162-1C9E-4E72-BBB8-C1C37CA69CD5}",
-							"DestinationInstances":
-							[
-							]
-						}
-					]
-				},
-				{
-					"ID": "{09A8998B-4A93-43B1-9C88-E46B269B89F7}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{447375EF-2FF6-4869-B9C8-0523B5123430}",
-							"Values":
-							[
-								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Filter"
-								}
-							]
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": "Container Page Component.has Page Component",
-							"RelationshipID": "{CB7B8162-1C9E-4E72-BBB8-C1C37CA69CD5}",
-							"DestinationInstances":
-							[
-								"{102CA3D5-E765-4CCE-A05A-89BC310C05ED}"
-							]
-						}
-					]
-				},
-				{
-					"ID": "{35433998-6453-43E4-9A47-1341F13965DB}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{447375EF-2FF6-4869-B9C8-0523B5123430}",
-							"Values":
-							[
-								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Prompts"
-								}
-							]
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": "Container Page Component.has Page Component",
-							"RelationshipID": "{CB7B8162-1C9E-4E72-BBB8-C1C37CA69CD5}",
-							"DestinationInstances":
-							[
-								"{3F662C87-C3EC-470D-BB74-FC580194948D}"
-							]
-						}
-					]
-				},
-				{
-					"ID": "{35BEBC3A-A3DB-41F6-A646-51964CC02BB5}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{447375EF-2FF6-4869-B9C8-0523B5123430}",
-							"Values":
-							[
-								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Output"
-								}
-							]
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": "Container Page Component.has Page Component",
-							"RelationshipID": "{CB7B8162-1C9E-4E72-BBB8-C1C37CA69CD5}",
-							"DestinationInstances":
-							[
-							]
-						}
-					]
-				},
-				{
-					"ID": "{6FCA5984-D956-4158-A433-882A1D71818B}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{447375EF-2FF6-4869-B9C8-0523B5123430}",
-							"Values":
-							[
-								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Share"
-								}
-							]
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": "Container Page Component.has Page Component",
-							"RelationshipID": "{CB7B8162-1C9E-4E72-BBB8-C1C37CA69CD5}",
-							"DestinationInstances":
-							[
-							]
-						}
-					]
-				},
-				{
-					"ID": "{58F08DAF-1576-4970-9D69-E0C5F28B0AF1}",
-					"TranslatableValues":
-					[
-						{
-							"RelationshipID": "{447375EF-2FF6-4869-B9C8-0523B5123430}",
-							"Values":
-							[
-								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Advanced"
-								}
-							]
-						}
-					],
-					"Relationships":
-					[
-						{
-							"Comment": "Container Page Component.has Page Component",
-							"RelationshipID": "{CB7B8162-1C9E-4E72-BBB8-C1C37CA69CD5}",
-							"DestinationInstances":
-							[
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"Name": "UITask",
-			"Instances":
-			[
-				{
-					"ID": "{5E0E39F2-FEA8-473A-B11C-B9CE42C42B02}",
-					"Comment": "Edit Standard Report",
-					"Relationships":
-					[
-						{
-							"Comment": "Task.has Parameter `Standard Report`",
-							"RelationshipID": "{929B106F-7E3E-4D30-BB84-E450A4FED063}",
-							"InverseRelationshipID": "{146616A0-A64A-402B-99FB-7548D92E5CBC}",
-							"DestinationInstances":
-							[
-								"{EF81973E-F33A-41C4-B395-3820F25B02B7}"
-							]
-						},
-						{
-							"Comment": "UI Task.has Page Component",
-							"RelationshipID": "{D2949AF7-249A-4FFB-9A54-252CD9D06C51}",
-							"InverseRelationshipID": "{C76E8C98-5C54-48DF-B1F0-637DB84B5989}",
-							"DestinationInstances":
-							[
-								"{7645DB69-A6AE-45AE-AD39-9ED75ECB9B9D}"
-							]
-						}
-					],
-					"TranslatableValues":
-					[
-						{
-							"Comment": ".has title Translatable Text Constant",
-							"RelationshipID": "{D97AE03C-261F-4060-A06D-985E26FA662C}",
-							"InverseRelationshipID": "{4E5D363F-6984-4BD5-8E76-AAB598C1B09D}",
-							"Values":
-							[
-								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Edit Standard Report"
+									"Comment": "Relationship Editor Page Component.has Report Field `Report Field for Report Column`",
+									"RelationshipID": "{1540634D-EB44-48F8-88B8-17B7DCBBD006}",
+									"InverseRelationshipID": "{51C8837D-FF85-4647-A0F6-BE5D0AED51B5}",
+									"DestinationInstances":
+									[
+										"{B33BDA60-8A88-483F-AA70-3F5B3E20DE06}"
+									]
 								}
 							]
 						},
 						{
-							"Comment": ".has instructions Translatable Text Constant",
-							"RelationshipID": "{A9387898-9DC0-4006-94F1-1FB02EB3ECD7}",
-							"InverseRelationshipID": "{686DD398-709D-48D6-9229-3C79D617EC23}",
-							"Values":
+							"ID": "{3F662C87-C3EC-470D-BB74-FC580194948D}",
+							"Relationships":
 							[
 								{
-									"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
-									"Value": "Edits a Standard Report to display data in a variety of different formats."
+									"Comment": "Relationship Editor Page Component.has target Relationship `Report.has Report Prompt`",
+									"RelationshipID": "{54FBD056-0BD4-44F4-921C-11FB0C77996E}",
+									"InverseRelationshipID": "{5296BC07-15F4-4B84-B94A-D4FBF0228983}",
+									"DestinationInstances":
+									[
+										"{5D112697-303F-419F-886F-3F09F0670B07}"
+									]
+								},
+								{
+									"Comment": "Relationship Editor Page Component.has Report Field `Report Field for Report Prompt`, `Prompt Qualifier for Report Prompt`, `Value Source`, `Value`",
+									"RelationshipID": "{1540634D-EB44-48F8-88B8-17B7DCBBD006}",
+									"InverseRelationshipID": "{51C8837D-FF85-4647-A0F6-BE5D0AED51B5}",
+									"DestinationInstances":
+									[
+										"{0F13D646-13C6-4588-85BF-98F09206C97F}",
+										"{BD08F308-00EE-41D5-8254-8053940144F2}"
+									]
+								}
+							]
+						},
+						{
+							"ID": "{102CA3D5-E765-4CCE-A05A-89BC310C05ED}",
+							"Relationships":
+							[
+								{
+									"Comment": "Relationship Editor Page Component.has target Relationship `Report.has Report Filter`",
+									"RelationshipID": "{54FBD056-0BD4-44F4-921C-11FB0C77996E}",
+									"InverseRelationshipID": "{5296BC07-15F4-4B84-B94A-D4FBF0228983}",
+									"DestinationInstances":
+									[
+										""
+									]
+								},
+								{
+									"Comment": "Relationship Editor Page Component.has Report Field `And/Or for Report Filter`, `Open Paren for Report Filter`, `Field for Report Filter`, `Operator for Report Filter`, `Comparison Type for Report Filter`, `Comparison Value for Report Filter`",
+									"RelationshipID": "{1540634D-EB44-48F8-88B8-17B7DCBBD006}",
+									"InverseRelationshipID": "{51C8837D-FF85-4647-A0F6-BE5D0AED51B5}",
+									"DestinationInstances":
+									[
+										""
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"Name": "TabContainerPageComponent",
+					"Instances":
+					[
+						{
+							"ID": "{7645DB69-A6AE-45AE-AD39-9ED75ECB9B9D}",
+							"Relationships":
+							[
+								{
+									"Comment": "Tab Container Page Component.has Tab Container Tab",
+									"RelationshipID": "{5D22EC45-9E6B-4B77-B79A-E59AEBAECFB9}",
+									"DestinationInstances":
+									[
+										"{B7DC270D-6CE4-49C6-A274-58141F6C1DD0}",
+										"{6E875A80-910D-4E3A-8E83-8CC0997551C3}",
+										"{09A8998B-4A93-43B1-9C88-E46B269B89F7}",
+										"{35433998-6453-43E4-9A47-1341F13965DB}",
+										"{35BEBC3A-A3DB-41F6-A646-51964CC02BB5}",
+										"{6FCA5984-D956-4158-A433-882A1D71818B}",
+										"{58F08DAF-1576-4970-9D69-E0C5F28B0AF1}"
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"Name": "TabContainerTab",
+					"Instances":
+					[
+						{
+							"ID": "{B7DC270D-6CE4-49C6-A274-58141F6C1DD0}",
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{447375EF-2FF6-4869-B9C8-0523B5123430}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Columns"
+										}
+									]
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": "Container Page Component.has Page Component",
+									"RelationshipID": "{CB7B8162-1C9E-4E72-BBB8-C1C37CA69CD5}",
+									"DestinationInstances":
+									[
+										"{AE360D99-E303-437D-8F57-9C1A7FA44549}"
+									]
+								}
+							]
+						},
+						{
+							"ID": "{6E875A80-910D-4E3A-8E83-8CC0997551C3}",
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{447375EF-2FF6-4869-B9C8-0523B5123430}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Sort"
+										}
+									]
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": "Container Page Component.has Page Component",
+									"RelationshipID": "{CB7B8162-1C9E-4E72-BBB8-C1C37CA69CD5}",
+									"DestinationInstances":
+									[
+									]
+								}
+							]
+						},
+						{
+							"ID": "{09A8998B-4A93-43B1-9C88-E46B269B89F7}",
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{447375EF-2FF6-4869-B9C8-0523B5123430}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Filter"
+										}
+									]
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": "Container Page Component.has Page Component",
+									"RelationshipID": "{CB7B8162-1C9E-4E72-BBB8-C1C37CA69CD5}",
+									"DestinationInstances":
+									[
+										"{102CA3D5-E765-4CCE-A05A-89BC310C05ED}"
+									]
+								}
+							]
+						},
+						{
+							"ID": "{35433998-6453-43E4-9A47-1341F13965DB}",
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{447375EF-2FF6-4869-B9C8-0523B5123430}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Prompts"
+										}
+									]
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": "Container Page Component.has Page Component",
+									"RelationshipID": "{CB7B8162-1C9E-4E72-BBB8-C1C37CA69CD5}",
+									"DestinationInstances":
+									[
+										"{3F662C87-C3EC-470D-BB74-FC580194948D}"
+									]
+								}
+							]
+						},
+						{
+							"ID": "{35BEBC3A-A3DB-41F6-A646-51964CC02BB5}",
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{447375EF-2FF6-4869-B9C8-0523B5123430}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Output"
+										}
+									]
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": "Container Page Component.has Page Component",
+									"RelationshipID": "{CB7B8162-1C9E-4E72-BBB8-C1C37CA69CD5}",
+									"DestinationInstances":
+									[
+									]
+								}
+							]
+						},
+						{
+							"ID": "{6FCA5984-D956-4158-A433-882A1D71818B}",
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{447375EF-2FF6-4869-B9C8-0523B5123430}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Share"
+										}
+									]
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": "Container Page Component.has Page Component",
+									"RelationshipID": "{CB7B8162-1C9E-4E72-BBB8-C1C37CA69CD5}",
+									"DestinationInstances":
+									[
+									]
+								}
+							]
+						},
+						{
+							"ID": "{58F08DAF-1576-4970-9D69-E0C5F28B0AF1}",
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{447375EF-2FF6-4869-B9C8-0523B5123430}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Advanced"
+										}
+									]
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": "Container Page Component.has Page Component",
+									"RelationshipID": "{CB7B8162-1C9E-4E72-BBB8-C1C37CA69CD5}",
+									"DestinationInstances":
+									[
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"Name": "UITask",
+					"Instances":
+					[
+						{
+							"ID": "{5E0E39F2-FEA8-473A-B11C-B9CE42C42B02}",
+							"Comment": "Edit Standard Report",
+							"Relationships":
+							[
+								{
+									"Comment": "Task.has Parameter `Standard Report`",
+									"RelationshipID": "{929B106F-7E3E-4D30-BB84-E450A4FED063}",
+									"InverseRelationshipID": "{146616A0-A64A-402B-99FB-7548D92E5CBC}",
+									"DestinationInstances":
+									[
+										"{EF81973E-F33A-41C4-B395-3820F25B02B7}"
+									]
+								},
+								{
+									"Comment": "UI Task.has Page Component",
+									"RelationshipID": "{D2949AF7-249A-4FFB-9A54-252CD9D06C51}",
+									"InverseRelationshipID": "{C76E8C98-5C54-48DF-B1F0-637DB84B5989}",
+									"DestinationInstances":
+									[
+										"{7645DB69-A6AE-45AE-AD39-9ED75ECB9B9D}"
+									]
+								}
+							],
+							"TranslatableValues":
+							[
+								{
+									"Comment": ".has title Translatable Text Constant",
+									"RelationshipID": "{D97AE03C-261F-4060-A06D-985E26FA662C}",
+									"InverseRelationshipID": "{4E5D363F-6984-4BD5-8E76-AAB598C1B09D}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Edit Standard Report"
+										}
+									]
+								},
+								{
+									"Comment": ".has instructions Translatable Text Constant",
+									"RelationshipID": "{A9387898-9DC0-4006-94F1-1FB02EB3ECD7}",
+									"InverseRelationshipID": "{686DD398-709D-48D6-9229-3C79D617EC23}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Edits a Standard Report to display data in a variety of different formats."
+										}
+									]
 								}
 							]
 						}
