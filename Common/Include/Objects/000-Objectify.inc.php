@@ -16,11 +16,10 @@
 	
 	class Objectify
 	{
-		public static function Build_Tenant_Subclass_Query(&$query, $tenant, $prefix)
+		public static function Build_Tenant_Subclass_Query(&$query, &$parms, $tenant, $prefix)
 		{
 			$i = 0;
 			$tenant = $tenant->ParentTenant;
-			$parms = array();
 			while ($tenant != null)
 			{
 				$query .= " OR " . $prefix . " = :" . $prefix . $i;
@@ -29,7 +28,6 @@
 				$i++;
 				$tenant = $tenant->ParentTenant;
 			}
-			return $parms;
 		}
 		
 		public static function HTML_FormatValue($value)

@@ -544,7 +544,7 @@
 		public function GetInstances($tenant = null, $includeSubClasses = true)
 		{
 			$pdo = DataSystem::GetPDO();
-			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Instances WHERE instance_TenantID = :instance_TenantID AND (instance_ObjectID = :instance_ObjectID";
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Instances WHERE (instance_ObjectID = :instance_ObjectID";
 			
 			if ($tenant == null) $tenant = Tenant::GetCurrent();
 			
@@ -559,6 +559,8 @@
 				TenantObject::Build_Subclass_Query($query, $paramz, $this, "instance_");
 			}
 			
+			$query .= ") AND (instance_TenantID = :instance_TenantID";
+			Objectify::Build_Tenant_Subclass_Query($query, $paramz, $tenant, "instance_TenantID"); 
 			$query .= ")";
 			
 			$statement = $pdo->prepare($query);

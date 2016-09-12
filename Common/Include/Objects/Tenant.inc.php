@@ -3,7 +3,6 @@
 	
 	use Phast\Data\DataSystem;
 	use Phast\System;
-	use Phast\UUID;
 	use PDO;
 		
 	class Tenant
@@ -167,28 +166,25 @@
 			return $retval;
 		}
 		
-		private $_nextObjectID;
 		public function GetNextObjectID()
 		{
-			if ($this->_nextObjectID == null)
-			{
-				$pdo = DataSystem::GetPDO();
-				$query = "SELECT MAX(object_ID) FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjects WHERE object_TenantID = :object_TenantID";
-				$statement = $pdo->prepare($query);
-				$result = $statement->execute(array
-				(
-					":object_TenantID" => $this->ID
-				));
-				
-				$values = $statement->fetch(PDO::FETCH_NUM);
-				$value = $values[0];
-				
-				if ($value == null) $value = 0;
-				$this->_nextObjectID = $value;
-			}
+			$pdo = DataSystem::GetPDO();
+			$query = "SELECT MAX(object_ID) FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjects WHERE (object_TenantID = :object_TenantID";
+			$parms = array
+			(
+				":object_TenantID" => $this->ID
+			);
+			Objectify::Build_Tenant_Subclass_Query($query, $parms, $this, "object_TenantID");
+			$query .= ")";
 			
-			$this->_nextObjectID++;
-			return $this->_nextObjectID;
+			$statement = $pdo->prepare($query);
+			$result = $statement->execute($parms);
+			
+			$values = $statement->fetch(PDO::FETCH_NUM);
+			$value = $values[0];
+			
+			if ($value == null) $value = 0;
+			return $value + 1;
 		}
 		
 	}

@@ -412,13 +412,13 @@
 						{
 							// Now create the initial tenant
 							$tenant = Tenant::GetByGlobalIdentifier($tenantInfo->ID);
-							if ($tenant == null) $tenant = Tenant::Create($tenantInfo->Name, $tenantInfo->ID);
-							$_SESSION["CurrentTenantID"] = $tenant->ID;
-							
+							$parentTenant = null;
 							if (isset($tenantInfo->ParentTenantID))
 							{
-								$tenant->ParentTenant = Tenant::GetByGlobalIdentifier($tenantInfo->ParentTenantID);
+								$parentTenant = Tenant::GetByGlobalIdentifier($tenantInfo->ParentTenantID);
 							}
+							if ($tenant == null) $tenant = Tenant::Create($tenantInfo->Name, $tenantInfo->ID, $parentTenant);
+							$_SESSION["CurrentTenantID"] = $tenant->ID;
 							
 							$this->LoadXQJS($tenantInfo);
 						}
@@ -477,13 +477,13 @@
 						{
 							// Now create the initial tenant
 							$tenant = Tenant::GetByGlobalIdentifier($tenantInfo->ID);
-							if ($tenant == null) $tenant = Tenant::Create($tenantInfo->Name, $tenantInfo->ID);
-							$_SESSION["CurrentTenantID"] = $tenant->ID;
-
+							$parentTenant = null;
 							if (isset($tenantInfo->ParentTenantID))
 							{
-								$tenant->ParentTenant = Tenant::GetByGlobalIdentifier($tenantInfo->ParentTenantID);
+								$parentTenant = Tenant::GetByGlobalIdentifier($tenantInfo->ParentTenantID);
 							}
+							if ($tenant == null) $tenant = Tenant::Create($tenantInfo->Name, $tenantInfo->ID, $parentTenant);
+							$_SESSION["CurrentTenantID"] = $tenant->ID;
 							
 							$this->LoadXQJSPost($tenantInfo);
 						}
@@ -502,7 +502,7 @@
 				
 				$instDefaultUser = Instance::GetByGlobalIdentifier("{739C26BC-740F-4CB0-BCB1-2A28FA570E7D}");
 				$this->UpdateDefaultUser($instDefaultUser, $Administrator_UserName, $Administrator_PasswordHash, $Administrator_PasswordSalt);
-					
+				
 				// Set the tenant name for the newly-created tenant
 				$instTenant = Instance::GetByGlobalIdentifier("{F2C9D4A9-9EFB-4263-84DB-66A9DA65AD00}");
 				$instAttributeName = Instance::GetByGlobalIdentifier("{9153A637-992E-4712-ADF2-B03F0D9EDEA6}");
