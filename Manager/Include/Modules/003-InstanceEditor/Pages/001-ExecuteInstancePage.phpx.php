@@ -377,6 +377,7 @@
 			
 			$iidParts = explode("$", $iid);
 			$inst = Instance::GetByID($iidParts[1], $iidParts[0]);
+			$this->Page->Title = $inst->ToString();
 			
 			$idwObjectTitleHeading = $e->RenderingPage->GetControlByID("idwObjectTitleHeading");
 			$idwObjectTitleHeading->CurrentInstance = $inst;

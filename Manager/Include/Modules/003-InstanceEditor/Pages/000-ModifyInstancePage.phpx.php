@@ -23,6 +23,7 @@
 			$iid = $this->Page->GetPathVariableValue("instanceID");
 			$iidParts = explode("$", $iid);
 			$inst = Instance::GetByID($iidParts[1], $iidParts[0]);
+			$this->Page->Title = "Edit Instance: " . $inst->ToString();
 			
 			$idwMain = $e->RenderingPage->GetControlByID("idwMain");
 			$idwMain->ShowURL = false;
