@@ -501,7 +501,10 @@
 				$Administrator_PasswordHash = hash("sha512", $Administrator_Password . $Administrator_PasswordSalt);
 				
 				$instDefaultUser = Instance::GetByGlobalIdentifier("{739C26BC-740F-4CB0-BCB1-2A28FA570E7D}");
-				$this->UpdateDefaultUser($instDefaultUser, $Administrator_UserName, $Administrator_PasswordHash, $Administrator_PasswordSalt);
+				if ($instDefaultUser != null)
+				{
+					$this->UpdateDefaultUser($instDefaultUser, $Administrator_UserName, $Administrator_PasswordHash, $Administrator_PasswordSalt);
+				}
 				
 				// Set the tenant name for the newly-created tenant
 				$instTenant = Instance::GetByGlobalIdentifier("{F2C9D4A9-9EFB-4263-84DB-66A9DA65AD00}");

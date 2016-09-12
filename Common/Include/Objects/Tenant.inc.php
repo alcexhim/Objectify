@@ -4,7 +4,7 @@
 	use Phast\Data\DataSystem;
 	use Phast\System;
 	use PDO;
-		
+	
 	class Tenant
 	{
 		public $ID;
@@ -22,7 +22,7 @@
 		public static function Get()
 		{
 			$pdo = DataSystem::GetPDO();
-			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix");
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Tenants";
 			
 			$statement = $pdo->prepare($query);
 			$result = $statement->execute();
@@ -59,6 +59,9 @@
 			$pdo = DataSystem::GetPDO();
 			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Tenants WHERE tenant_GlobalIdentifier = :tenant_GlobalIdentifier";
 			$statement = $pdo->prepare($query);
+			
+			$globalIdentifier = Objectify::SanitizeGlobalIdentifier($globalIdentifier);
+			
 			$result = $statement->execute(array
 			(
 				":tenant_GlobalIdentifier" => $globalIdentifier
@@ -120,10 +123,11 @@
 		
 		public static function Create($name, $globalIdentifier = null, $parentTenant = null)
 		{
-			if (Tenant::GetByName($name) != null)
+			$existingTenant = Tenant::GetByName($name); 
+			if ($existingTenant != null)
 			{
 				// prevent creation of tenants with same name
-				return false;
+				return $existingTenant;
 			}
 			
 			$pdo = DataSystem::GetPDO();
