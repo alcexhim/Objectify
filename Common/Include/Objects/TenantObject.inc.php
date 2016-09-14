@@ -144,21 +144,13 @@
 		{
 			$instRel_Class__has_super_Class = Instance::GetByGlobalIdentifier("{100F0308-855D-4EC5-99FA-D8976CA20053}");
 			$instThisClass = Instance::GetByGlobalIdentifier($this->GlobalIdentifier);
-			$rels = Relationship::GetBySourceInstance($instThisClass, $instRel_Class__has_super_Class, false);
+			$instTargets = $instThisClass->GetRelatedInstances($instRel_Class__has_super_Class);
 			
 			$retval = array();
 			
-			if (count($rels) > 0)
+			foreach ($instTargets as $inst)
 			{
-				$rels = $rels[0];
-				if ($rels != null)
-				{
-					$instTargets = $rels->GetDestinationInstances();
-					foreach ($instTargets as $inst)
-					{
-						$retval[] = TenantObject::GetByGlobalIdentifier($inst->GlobalIdentifier);
-					}
-				}
+				$retval[] = TenantObject::GetByGlobalIdentifier($inst->GlobalIdentifier);
 			}
 			return $retval;
 		}
@@ -167,18 +159,13 @@
 		{
 			$instRel_Class__has_sub_Class = Instance::GetByGlobalIdentifier("{C14BC80D-879C-4E6F-9123-E8DFB13F4666}");
 			$instThisClass = Instance::GetByGlobalIdentifier($this->GlobalIdentifier);
-			$rels = Relationship::GetBySourceInstance($instThisClass, $instRel_Class__has_sub_Class);
+			$instTargets = $instThisClass->GetRelatedInstances($instRel_Class__has_sub_Class);
 			$rels = $rels[0];
 			
 			$retval = array();
-			
-			if ($rels != null)
+			foreach ($instTargets as $inst)
 			{
-				$instTargets = $rels->GetDestinationInstances();
-				foreach ($instTargets as $inst)
-				{
-					$retval[] = TenantObject::GetByGlobalIdentifier($inst->GlobalIdentifier);
-				}
+				$retval[] = TenantObject::GetByGlobalIdentifier($inst->GlobalIdentifier);
 			}
 			return $retval;
 		}
@@ -475,28 +462,7 @@
 		}
 		public function GetAttributes()
 		{
-			$instrel_Tenant_has_Attribute = Instance::GetByGlobalIdentifier("{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}");
-			$rels = Relationship::GetBySourceInstance($this->GetThisInstance(), $instrel_Tenant_has_Attribute);
-			if (count($rels) > 0)
-			{
-				$rel = $rels[0];
-				$insts = $rel->GetDestinationInstances();
-			}
-			else
-			{
-				$insts = array();
-			}
-			/*
-			$parentObjects = $this->GetParentObjects();
-			foreach ($parentObjects as $pobj)
-			{
-				$insts2 = $pobj->GetAttributes();
-				foreach ($insts2 as $inst)
-				{
-					$insts[] = $inst;
-				}
-			}
-			*/
+			$insts = $this->GetThisInstance()->GetRelatedInstances(KnownRelationships::get___Class__has__Attribute());
 			return $insts;
 		}
 		

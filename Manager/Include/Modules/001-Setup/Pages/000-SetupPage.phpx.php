@@ -28,7 +28,7 @@
 				{
 					$destinst = Instance::GetByGlobalIdentifier($destinstID);
 					$array[] = $destinst;
-						
+					
 					if ($instInverseRelationship != null)
 					{
 						Relationship::Create($instInverseRelationship, $destinst, array($instObj));
@@ -145,11 +145,7 @@
 									}
 									if ($instInverseRelationship == null)
 									{
-										$relSibling = $instRelationship->GetRelationship(KnownRelationships::get___Relationship__has_sibling__Relationship());
-										if ($relSibling != null)
-										{
-											$instInverseRelationship = $relSibling->GetDestinationInstance();
-										}
+										$instInverseRelationship = $instRelationship->GetRelatedInstance(KnownRelationships::get___Relationship__has_sibling__Relationship());
 									}
 									
 									if (isset($rel->DestinationInstances))
@@ -188,11 +184,7 @@
 												{
 													if ($instRelationship != null)
 													{
-														$relSibling = $instRelationship->GetRelationship(KnownRelationships::get___Relationship__has_sibling__Relationship());
-														if ($relSibling != null)
-														{
-															$instInverseRelationship = $relSibling->GetDestinationInstance();
-														}
+														$instInverseRelationship = $instRelationship->GetRelatedInstance(KnownRelationships::get___Relationship__has_sibling__Relationship());
 													}
 												}
 												

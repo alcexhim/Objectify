@@ -27,29 +27,19 @@
 				return;
 			}
 			
-			$relDestClass = $this->Relationship->GetRelationship(KnownRelationships::get___Relationship__has_destination__Class());
-			if ($relDestClass != null)
+			$instDestClass = $this->Relationship->GetRelatedInstance(KnownRelationships::get___Relationship__has_destination__Class());
+			if ($instDestClass != null)
 			{
-				$instDestClass = $relDestClass->GetDestinationInstance();
-				
 				if (isset($this->ReportColumns))
 				{
 					if (is_array($this->ReportColumns))
 					{
 						foreach ($this->ReportColumns as $instReportColumn)
 						{
-							$relReportField = $instReportColumn->GetRelationship(KnownRelationships::get___Report_Column__has__Report_Field());
-							if ($relReportField != null)
+							$instReportField = $instReportColumn->GetRelatedInstance(KnownRelationships::get___Report_Column__has__Report_Field());
+							if ($instReportField != null)
 							{
-								$instReportField = $relReportField->GetDestinationInstance();
-								if ($instReportField != null)
-								{
-									$title = $instReportField->ToString();
-								}
-								else
-								{
-									$title = "(no Report Field for inst " . $instReportColumn->GetInstanceID() . ")";
-								}
+								$title = $instReportField->ToString();
 							}
 							else
 							{
@@ -61,56 +51,49 @@
 					}
 				}
 				
-				$relThis = $this->Instance->GetRelationship($this->Relationship);
-				if ($relThis != null)
+				$instsThis = $this->Instance->GetRelatedInstances($this->Relationship);
+				foreach ($instsThis as $instThis)
 				{
-					$instsThis = $relThis->GetDestinationInstances();
-					
-					foreach ($instsThis as $instThis)
+					$lvi = new ListViewItem();
+					$lvi->Columns[] = new ListViewItemColumn("lvcLanguage", function($sender)
 					{
-						$lvi = new ListViewItem();
-						$lvi->Columns[] = new ListViewItemColumn("lvcLanguage", function($sender)
+						$inst = $sender->ExtraData->GetRelatedInstance(KnownRelationships::get___Translatable_Text_Constant_Value__has__Language());
+						$adw = new InstanceDisplayWidget($inst);
+						$adw->Render();
+					}, null, $instThis);
+					
+					if (isset($this->ReportColumns))
+					{
+						if (is_array($this->ReportColumns))
 						{
-							$rel = $sender->ExtraData->GetRelationship(KnownRelationships::get___Translatable_Text_Constant_Value__has__Language());
-							$inst = $rel->GetDestinationInstance();
-							$adw = new InstanceDisplayWidget($inst);
-							$adw->Render();
-						}, null, $instThis);
-						
-						if (isset($this->ReportColumns))
-						{
-							if (is_array($this->ReportColumns))
+							foreach ($this->ReportColumns as $instReportColumn)
 							{
-								foreach ($this->ReportColumns as $instReportColumn)
+								$instReportField = $instReportColumn->GetRelatedInstance(KnownRelationships::get___Report_Column__has__Report_Field());
+								if ($instReportField == null) continue;
+								
+								$val = Objectify::GetReportFieldValue($instReportField, $instThis);
+								
+								$lvi->Columns[] = new ListViewItemColumn("lvc" . $instReportField->GetInstanceID(), function($sender)
 								{
-									$relReportField = $instReportColumn->GetRelationship(KnownRelationships::get___Report_Column__has__Report_Field());
-									if ($relReportField == null) continue;
-									
-									$instReportField = $relReportField->GetDestinationInstance();
-									$val = Objectify::GetReportFieldValue($instReportField, $instThis);
-									
-									$lvi->Columns[] = new ListViewItemColumn("lvc" . $instReportField->GetInstanceID(), function($sender)
+									if (is_array($sender->ExtraData))
 									{
-										if (is_array($sender->ExtraData))
+										foreach ($sender->ExtraData as $instTarg)
 										{
-											foreach ($sender->ExtraData as $instTarg)
-											{
-												$adw = new InstanceDisplayWidget($instTarg);
-												$adw->Render();
-												echo ("<br />");
-											}
-										}
-										else if (is_object($sender->ExtraData))
-										{
-											$adw = new InstanceDisplayWidget($sender->ExtraData);
+											$adw = new InstanceDisplayWidget($instTarg);
 											$adw->Render();
+											echo ("<br />");
 										}
-									}, $val, $val);
-								}
+									}
+									else if (is_object($sender->ExtraData))
+									{
+										$adw = new InstanceDisplayWidget($sender->ExtraData);
+										$adw->Render();
+									}
+								}, $val, $val);
 							}
 						}
-						$this->Items[] = $lvi;
 					}
+					$this->Items[] = $lvi;
 				}
 			}
 			

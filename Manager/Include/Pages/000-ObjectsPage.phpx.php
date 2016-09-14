@@ -62,37 +62,30 @@
 			$lvAttributes = $tabAttributes->GetControlByID("lvAttributes");
 
 			$instRelAtt = Instance::GetByGlobalIdentifier("{DECBB61A-2C6C-4BC8-9042-0B5B701E08DE}");
-			$relsAtts = Relationship::GetBySourceInstance($instThisObject, $instRelAtt);
-			$rel = $relsAtts[0];
-			
-			if ($rel != null)
+			$insts = $instThisObject->GetRelatedInstances($instRelAtt);
+			foreach ($insts as $inst)
 			{
-				$insts = $rel->GetDestinationInstances();
-				
-				foreach ($insts as $inst)
-				{
-					$lvi = new ListViewItem(array
-					(
-						new ListViewItemColumn("lvcAttribute", function($sender)
+				$lvi = new ListViewItem(array
+				(
+					new ListViewItemColumn("lvcAttribute", function($sender)
+					{
+						$iv = new InstanceDisplayWidget($sender->ExtraData);
+						$iv->Render();
+					}, null, $inst),
+					new ListViewItemColumn("lvcValue", function($sender)
+					{
+						$val = $sender->ExtraData["ThisObject"]->GetAttributeValue($sender->ExtraData["ThisAttribute"]);
+						if ($val == null)
 						{
-							$iv = new InstanceDisplayWidget($sender->ExtraData);
-							$iv->Render();
-						}, null, $inst),
-						new ListViewItemColumn("lvcValue", function($sender)
+							echo("<!-- (empty) -->");
+						}
+						else
 						{
-							$val = $sender->ExtraData["ThisObject"]->GetAttributeValue($sender->ExtraData["ThisAttribute"]);
-							if ($val == null)
-							{
-								echo("<!-- (empty) -->");
-							}
-							else
-							{
-								echo (Objectify::HTML_FormatValue($val));
-							}
-						}, null, array("ThisObject" => $instThisObject, "ThisAttribute" => $inst))
-					));
-					$lvAttributes->Items[] = $lvi;
-				}
+							echo (Objectify::HTML_FormatValue($val));
+						}
+					}, null, array("ThisObject" => $instThisObject, "ThisAttribute" => $inst))
+				));
+				$lvAttributes->Items[] = $lvi;
 			}
 			
 			$tabRelationships = $tbsTabs->GetTabByID("tabRelationships");

@@ -51,126 +51,113 @@ use Phast\WebControls\MenuItemCommand;
 			
 			$div->Render();
 			
-			$rel = $this->Report->GetRelationship(KnownRelationships::get___Report__has__Report_Column());
-			if ($rel != null)
-			{
-				$relDataSource = $this->Report->GetRelationship(KnownRelationships::get___Report__has__Report_Data_Source());
-				if ($relDataSource == null) return;
+			$instsReportColumn = $this->Report->GetRelatedInstances(KnownRelationships::get___Report__has__Report_Column());
+			
+			$instDataSource = $this->Report->GetRelatedInstance(KnownRelationships::get___Report__has__Report_Data_Source());
+			if ($instDataSource == null) return;
 				
-				$instDataSource = $relDataSource->GetDestinationInstance();
-				if ($instDataSource == null) return;
-				
-				$relSourceMethod = $instDataSource->GetRelationship(KnownRelationships::get___Report_Data_Source__has_source__Method());
-				if ($relSourceMethod == null) return;
-				
-				$instSourceMethod = $relSourceMethod->GetDestinationInstance();
-				$instsRow = Objectify::ExecuteMethod($instSourceMethod);
+			$instSourceMethod = $instDataSource->GetRelatedInstance(KnownRelationships::get___Report_Data_Source__has_source__Method());
+			if ($instSourceMethod == null) return;
+			
+			$instsRow = Objectify::ExecuteMethod($instSourceMethod);
 
-				$instsReportColumn = $rel->GetDestinationInstances();
-				foreach ($instsReportColumn as $instReportColumn)
+			foreach ($instsReportColumn as $instReportColumn)
+			{
+				$instReportField = $instReportColumn->GetRelatedInstance(KnownRelationships::get___Report_Column__has__Report_Field());
+				if ($instReportField != null)
 				{
-					$relReportField = $instReportColumn->GetRelationship(KnownRelationships::get___Report_Column__has__Report_Field());
-					if ($relReportField != null)
+					$title = $instReportField->ToString();
+					if ($instReportField->ParentObject->Name == "PrimaryObjectReportField")
 					{
-						$instReportField = $relReportField->GetDestinationInstance();
-						$title = $instReportField->ToString();
-						if ($instReportField->ParentObject->Name == "PrimaryObjectReportField")
-						{
-							$title = $instsRow[0]->ParentObject->Name;
-						}
-						$this->Columns[] = new ListViewColumn("ch" . $instReportField->ID, $title);
+						$title = $instsRow[0]->ParentObject->Name;
 					}
+					$this->Columns[] = new ListViewColumn("ch" . $instReportField->ID, $title);
 				}
-				
-				foreach ($instsRow as $instRow)
+			}
+			
+			foreach ($instsRow as $instRow)
+			{
+				$lvi = new ListViewItem();
+				$countReportColumn= count($instsReportColumn);
+				for ($i = 0; $i < $countReportColumn; $i++)
 				{
-					$lvi = new ListViewItem();
-					$countReportColumn= count($instsReportColumn);
-					for ($i = 0; $i < $countReportColumn; $i++)
+					$instReportColumn = $instsReportColumn[$i];
+					
+					$instReportField = $instReportColumn->GetRelatedInstance(KnownRelationships::get___Report_Column__has__Report_Field());
+					
+					$lvi->Columns[] = new ListViewItemColumn($this->Columns[$i]->ID, function($sender)
 					{
-						$instReportColumn = $instsReportColumn[$i];
-							
-						$relReportField = $instReportColumn->GetRelationship(KnownRelationships::get___Report_Column__has__Report_Field());
-						$instReportField = $relReportField->GetDestinationInstance();
-							
-						$lvi->Columns[] = new ListViewItemColumn($this->Columns[$i]->ID, function($sender)
+						$instRow = $sender->ExtraData[0];
+						$instReportField = $sender->ExtraData[1];
+						$instReportColumn = $sender->ExtraData[2];
+						
+						$displayAsCount = false;
+						$instsHas_Report_Column_Option = $instReportColumn->GetRelatedInstances(KnownRelationships::get___Report_Column__has__Report_Column_Option());
+						foreach ($instsHas_Report_Column_Option as $instRCO)
 						{
-							$instRow = $sender->ExtraData[0];
-							$instReportField = $sender->ExtraData[1];
-							$instReportColumn = $sender->ExtraData[2];
-			
-							$displayAsCount = false;
-							$relHas_Report_Column_Option = $instReportColumn->GetRelationship(KnownRelationships::get___Report_Column__has__Report_Column_Option());
-							if ($relHas_Report_Column_Option != null)
+							if ($instRCO->GlobalIdentifier == "5C9B4C79995B4E6A81C039C174BF9F6D")
 							{
-								$instsHas_Report_Column_Option = $relHas_Report_Column_Option->GetDestinationInstances();
-								foreach ($instsHas_Report_Column_Option as $instRCO)
-								{
-									if ($instRCO->GlobalIdentifier == "5C9B4C79995B4E6A81C039C174BF9F6D")
-									{
-										$displayAsCount = true;
-									}
-								}
+								$displayAsCount = true;
 							}
-			
-							$value = Objectify::GetReportFieldValue($instReportField, $instRow);
-							if (is_object($value))
+						}
+						
+						$value = Objectify::GetReportFieldValue($instReportField, $instRow);
+						if (is_object($value))
+						{
+							if (get_class($value) == "Objectify\\Objects\\Instance")
 							{
-								if (get_class($value) == "Objectify\\Objects\\Instance")
-								{
-									/*
-									 if ($value->HasParentObject(KnownObjects::get___Attribute()))
-									 {
-									 echo($instRow->GetAttributeValue($instAttribute, "(empty)"));
-									 }
-									 else
-									 {
-									 */
-			
-									if ($displayAsCount)
-									{
-										echo ("1");
-									}
-									else
-									{
-										$idw = new InstanceDisplayWidget($value);
-										$idw->Render();
-									}
-								}
-							}
-							else if (is_array($value))
-							{
+								/*
+								 if ($value->HasParentObject(KnownObjects::get___Attribute()))
+								 {
+								 echo($instRow->GetAttributeValue($instAttribute, "(empty)"));
+								 }
+								 else
+								 {
+								 */
+		
 								if ($displayAsCount)
 								{
-									echo("<a href=\"#\" class=\"InstanceListDropDown\" data-row-instance-id=\"" . $instRow->GetInstanceID() . "\" data-field-instance-id=\"" . $instReportField->GetInstanceID() . "\">");
-									echo (count($value));
-									echo (" <i class=\"fa fa-caret-down\"></i></a>");
+									echo ("1");
 								}
 								else
 								{
-									foreach ($value as $val)
-									{
-										if (get_class($val) == "Objectify\\Objects\\Instance")
-										{
-											$idw = new InstanceDisplayWidget($val);
-											$idw->Render();
-											echo ("<br />");
-										}
-										else
-										{
-											echo ("<!-- GetReportFieldValue not defined for class `" . get_class($val) . "` -->");
-										}
-									}
+									$idw = new InstanceDisplayWidget($value);
+									$idw->Render();
 								}
+							}
+						}
+						else if (is_array($value))
+						{
+							if ($displayAsCount)
+							{
+								echo("<a href=\"#\" class=\"InstanceListDropDown\" data-row-instance-id=\"" . $instRow->GetInstanceID() . "\" data-field-instance-id=\"" . $instReportField->GetInstanceID() . "\">");
+								echo (count($value));
+								echo (" <i class=\"fa fa-caret-down\"></i></a>");
 							}
 							else
 							{
-								echo ($value);
+								foreach ($value as $val)
+								{
+									if (get_class($val) == "Objectify\\Objects\\Instance")
+									{
+										$idw = new InstanceDisplayWidget($val);
+										$idw->Render();
+										echo ("<br />");
+									}
+									else
+									{
+										echo ("<!-- GetReportFieldValue not defined for class `" . get_class($val) . "` -->");
+									}
+								}
 							}
-						}, $instRow->ToString(), array($instRow, $instReportField, $instReportColumn));
-					}
-					$this->Items[] = $lvi;
+						}
+						else
+						{
+							echo ($value);
+						}
+					}, $instRow->ToString(), array($instRow, $instReportField, $instReportColumn));
 				}
+				$this->Items[] = $lvi;
 			}
 			
 			parent::RenderContent();

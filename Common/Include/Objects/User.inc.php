@@ -9,7 +9,8 @@
 		 */
 		public static function GetCurrent()
 		{
-			$loginToken = Objectify::ExecuteMethod("GetLoginTokenForCurrentUser");
+			$tenant = Tenant::GetCurrent();
+			$loginToken = $_SESSION[$tenant->Name . ":Authentication.LoginToken"]; // Objectify::ExecuteMethod("GetLoginTokenForCurrentUser");
 			
 			if ($loginToken == null) return null;
 			$instUser = self::GetByLoginToken($loginToken);
@@ -33,12 +34,9 @@
 				$tokenCompare = $instUserLogin->GetAttributeValue("Token");
 				if ($tokenCompare == $token)
 				{
-					$rels = Relationship::GetBySourceInstance($instUserLogin, KnownRelationships::get___User_Login__has__User());
-					$rel = $rels[0];
-					if ($rel == null) continue;
+					$inst = $instUserLogin->GetRelatedInstance(KnownRelationships::get___User_Login__has__User());
+					if ($inst == null) continue;
 					
-					$insts = $rel->GetDestinationInstances();
-					$inst = $insts[0];
 					return $inst;
 				}
 			}

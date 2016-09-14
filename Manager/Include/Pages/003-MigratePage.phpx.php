@@ -31,7 +31,7 @@
 					
 					if ($obj->ID == 1) continue;
 					
-					$atts = $objDest->GetAttributes();
+					$atts = $obj->GetAttributes();
 					$insts = $obj->GetInstances(null, false);
 					foreach ($insts as $instOld)
 					{
@@ -42,7 +42,7 @@
 						}
 					}
 				}
-				
+
 				$rels = Relationship::Get($sourceTenant);
 				foreach ($rels as $rel)
 				{
@@ -54,7 +54,7 @@
 					{
 						$destinationInstances[] = Instance::GetByID($destInst->ID, $destInst->ParentObject->ID, $destinationTenant);
 					}
-					
+						
 					Relationship::Create($relationshipInstance, $sourceInstance, $destinationInstances, $destinationTenant);
 				}
 				

@@ -33,10 +33,9 @@
 				$litTenantType->Value = Objectify::GenerateTenantBadgeHTML($instTenant);
 				
 				$imageHeader = $e->RenderingPage->GetControlByID("imageHeader");
-				$relLogoImage = $instTenant->GetRelationship(KnownRelationships::get___Tenant__has_logo_image__File());
-				if ($relLogoImage != null)
+				$instLogoImage = $instTenant->GetRelatedInstance(KnownRelationships::get___Tenant__has_logo_image__File());
+				if ($instLogoImage != null)
 				{
-					$instLogoImage = $relLogoImage->GetDestinationInstance();
 					$value = $instLogoImage->GetAttributeValue(KnownAttributes::get___Text___Value());
 					$imageHeader->ImageUrl = "data:image/png;base64," . $value;
 				}
@@ -46,25 +45,13 @@
 				
 				$paraTopText = $e->RenderingPage->GetControlByID("paraTopText");
 
-				$relHeader = $instTenant->GetRelationship($instRel_Tenant__has_login_header_TTC);
-				if ($relHeader != null) {
-					$instLoginHeaderText = $relHeader->GetDestinationInstance();
-					if ($instLoginHeaderText != null)
-					{
-						$paraTopText->Content = $instLoginHeaderText->ToString();
-					}
-				}
+				$instLoginHeaderText = $instTenant->GetRelatedInstance($instRel_Tenant__has_login_header_TTC);
+				if ($instLoginHeaderText != null) $paraTopText->Content = $instLoginHeaderText->ToString();
 				
 				$paraBottomText = $e->RenderingPage->GetControlByID("paraBottomText");
 				
-				$relFooter = $instTenant->GetRelationship($instRel_Tenant__has_login_footer_TTC);
-				if ($relFooter != null) {
-					$instLoginFooterText = $relFooter->GetDestinationInstance();
-					if ($instLoginFooterText != null)
-					{
-						$paraBottomText->Content = $instLoginFooterText->ToString();
-					}
-				}
+				$instLoginFooterText = $instTenant->GetRelatedInstance($instRel_Tenant__has_login_footer_TTC);
+				if ($instLoginFooterText != null) $paraBottomText->Content = $instLoginFooterText->ToString();
 			}
 			
 			if ($_SERVER["REQUEST_METHOD"] == "POST")

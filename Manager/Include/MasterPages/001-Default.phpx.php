@@ -74,15 +74,13 @@
 			$divColumnContainer = new Layer();
 			$divColumnContainer->ClassList[] = "ColumnContainer";
 			
-			$relsTenant__has_application__Menu_Item = $instTenant->GetRelationship(KnownRelationships::get___Tenant__has_application__Menu_Item());
-			if ($relsTenant__has_application__Menu_Item != null)
+			$instsApplicationMenuItem = $instTenant->GetRelatedInstances(KnownRelationships::get___Tenant__has_application__Menu_Item());
+			if (count($instsApplicationMenuItem) > 0)
 			{
 				$divColumn = new Layer();
 				$divColumn->ClassList[] = "Column";
 					
 				$menu = new Menu();
-				
-				$instsApplicationMenuItem = $relsTenant__has_application__Menu_Item->GetDestinationInstances();
 				
 				foreach ($instsApplicationMenuItem as $instMenuItem)
 				{
@@ -120,11 +118,10 @@
 				}
 				
 				$divColumn->Controls[] = $menu;
-					
 				$divColumnContainer->Controls[] = $divColumn;
+				
+				$layerApplicationMenu->Controls[] = $divColumnContainer;
 			}
-			
-			$layerApplicationMenu->Controls[] = $divColumnContainer;
 			// END: load the application menu items
 			
 			$litTenantType = $this->Page->GetControlByID("litTenantType");
@@ -137,12 +134,7 @@
 			}
 			*/
 			
-			$instRel__Tenant__has__Sidebar_Menu_Items = KnownRelationships::get___Tenant__has_sidebar__Menu_Item();
-			$rels = Relationship::GetBySourceInstance($instTenant, $instRel__Tenant__has__Sidebar_Menu_Items);
-			$rel = $rels[0];
-			
-			$instSidebarMenuItems = $rel->GetDestinationInstances();
-			
+			$instSidebarMenuItems = $instTenant->GetRelatedInstances(KnownRelationships::get___Tenant__has_sidebar__Menu_Item());
 			foreach ($instSidebarMenuItems as $instSidebarMenuItem)
 			{
 				switch ($instSidebarMenuItem->ParentObject->Name)
@@ -152,25 +144,18 @@
 					{
 						$mi = new MenuItemCommand();
 						
-						$rels = Relationship::GetBySourceInstance($instSidebarMenuItem, KnownRelationships::get___Menu_Item_Command__has_title__Translatable_Text_Constant());
-						$insts = $rels[0]->GetDestinationInstances();
-						$inst = $insts[0];
+						$inst = $instSidebarMenuItem->GetRelatedInstance(KnownRelationships::get___Menu_Item_Command__has_title__Translatable_Text_Constant());
+						if ($inst != null) $mi->Title = $inst->ToString();
 						
-						$mi->Title = $inst->ToString();
-						
-						$relIcon = $instSidebarMenuItem->GetRelationship(KnownRelationships::get___Command_Menu_Item__has__Icon());
-						if ($relIcon != null)
+						$instIcon = $instSidebarMenuItem->GetRelatedInstance(KnownRelationships::get___Command_Menu_Item__has__Icon());
+						if ($instIcon != null)
 						{
-							$instIcon = $relIcon->GetDestinationInstance();
-							if ($instIcon != null)
+							switch ($instIcon->ParentObject->Name)
 							{
-								switch ($instIcon->ParentObject->Name)
+								case "IconFontAwesome":
 								{
-									case "IconFontAwesome":
-									{
-										$mi->IconName = $instIcon->GetAttributeValue(KnownAttributes::get___Text___Name());
-										break;
-									}
+									$mi->IconName = $instIcon->GetAttributeValue(KnownAttributes::get___Text___Name());
+									break;
 								}
 							}
 						}
@@ -184,12 +169,8 @@
 							}
 							case "MenuItemInstance":
 							{
-								$relTarget = $instSidebarMenuItem->GetRelationship(KnownRelationships::get___Instance_Menu_Item__has_target__Instance());
-								if ($relTarget != null)
-								{
-									$instTarget = $relTarget->GetDestinationInstance();
-									$mi->TargetURL = "~/instances/execute/" . $instTarget->GetInstanceID();
-								}
+								$instTarget = $instSidebarMenuItem->GetRelatedInstance(KnownRelationships::get___Instance_Menu_Item__has_target__Instance());
+								if ($instTarget != null) $mi->TargetURL = "~/instances/execute/" . $instTarget->GetInstanceID();
 								break;
 							}
 						}
@@ -204,11 +185,8 @@
 					{
 						$mi = new MenuItemHeader();
 						
-						$rels = Relationship::GetBySourceInstance($instSidebarMenuItem, KnownRelationships::get___Menu_Item_Command__has_title__Translatable_Text_Constant());
-						$insts = $rels[0]->GetDestinationInstances();
-						$inst = $insts[0];
-						
-						$mi->Title = $inst->ToString();
+						$inst = $instSidebarMenuItem->GetRelatedInstance(KnownRelationships::get___Menu_Item_Command__has_title__Translatable_Text_Constant());
+						if ($inst != null) $mi->Title = $inst->ToString();
 						break;
 					}
 				}

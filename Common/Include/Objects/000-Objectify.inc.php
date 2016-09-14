@@ -75,10 +75,9 @@
 		
 		public static function GenerateTenantBadgeHTML($instTenant)
 		{
-			$relTenantType = $instTenant->GetRelationship(KnownRelationships::get___Tenant__has__Tenant_Type());
-			if ($relTenantType != null)
+			$instTenantType = $instTenant->GetRelatedInstance(KnownRelationships::get___Tenant__has__Tenant_Type());
+			if ($instTenantType != null)
 			{
-				$instTenantType = $relTenantType->GetDestinationInstance();
 				$attTenantTypeBackgroundColor = $instTenantType->GetAttributeValue(KnownAttributes::get___Text___BackgroundColor());
 				$attTenantTypeForegroundColor = $instTenantType->GetAttributeValue(KnownAttributes::get___Text___ForegroundColor());
 				
@@ -120,51 +119,29 @@
 				}
 				case "AttributeReportField":
 				{
-					$relTarget = $instReportField->GetRelationship(KnownRelationships::get___Attribute_Report_Field__has_target__Attribute());
-					if ($relTarget == null)
-					{
-						return null;
-					}
-					else
-					{
-						$instAttribute = $relTarget->GetDestinationInstance();
-						return $instAttribute;
-					}
-					break;
+					$instAttribute = $instReportField->GetRelatedInstance(KnownRelationships::get___Attribute_Report_Field__has_target__Attribute());
+					return $instAttribute;
 				}
 				case "RelationshipReportField":
 				{
-					$relTarget = $instReportField->GetRelationship(KnownRelationships::get___Relationship_Report_Field__has_target__Relationship());
-					if ($relTarget == null)
+					$instTarget = $instReportField->GetRelatedInstance(KnownRelationships::get___Relationship_Report_Field__has_target__Relationship());
+					if ($instTarget != null)
 					{
-						return null;
-					}
-					else
-					{
-						$instTarget = $relTarget->GetDestinationInstance();
-						$rel = $instRow->GetRelationship($instTarget);
-						if ($rel == null)
+						$relinsts = $instRow->GetRelatedInstances($instTarget);
+						$renderAsText = $instReportField->GetAttributeValue(KnownAttributes::get___Boolean___Render_as_Text(), false);
+						if ($renderAsText)
 						{
-							return null;
+							$text = "";
+							foreach ($relinsts as $relinst)
+							{
+								$text .= $relinst->ToString();
+								$text .= "\n";
+							}
+							return $text;
 						}
 						else
 						{
-							$relinsts = $rel->GetDestinationInstances();
-							$renderAsText = $instReportField->GetAttributeValue(KnownAttributes::get___Boolean___Render_as_Text(), false);
-							if ($renderAsText)
-							{
-								$text = "";
-								foreach ($relinsts as $relinst)
-								{
-									$text .= $relinst->ToString();
-									$text .= "\n";
-								}
-								return $text;
-							}
-							else
-							{
-								return $relinsts;
-							}
+							return $relinsts;
 						}
 					}
 					break;
@@ -196,6 +173,11 @@
 						}
 						return $instRet;
 					}
+					else
+					{
+						$instRet = Instance::Get();
+						return $instRet;
+					}
 					break;
 				}
 			}
@@ -207,17 +189,11 @@
 		 */
 		public static function ExecuteMethodCall($instMethodCall)
 		{
-			$relMethod = $instMethodCall->GetRelationship(Instance::GetByGlobalIdentifier("3D3B601B4EF049F3AF0586CEA0F00619"));
-			if ($relMethod != null)
+			$instMethod = $instMethodCall->GetRelatedInstance(Instance::GetByGlobalIdentifier("3D3B601B4EF049F3AF0586CEA0F00619"));
+			if ($instMethod != null)
 			{
-				$instMethod = $relMethod->GetDestinationInstance();
-				
-				$relPromptValue = $instMethodCall->GetRelationship(Instance::GetByGlobalIdentifier("765BD0C9117D4D0E88C92CEBD4898135"));
-				if ($relPromptValue != null)
-				{
-					$instPromptValues = $relPromptValue->GetDestinationInstances();
-					return Objectify::ExecuteMethod($instMethod, $instPromptValues);
-				}
+				$instPromptValues = $instMethodCall->GetRelatedInstances(Instance::GetByGlobalIdentifier("765BD0C9117D4D0E88C92CEBD4898135"));
+				return Objectify::ExecuteMethod($instMethod, $instPromptValues);
 			}
 			return null;
 		}
@@ -260,11 +236,9 @@
 					$guid = UUID::Generate();
 					
 					$instPromptValue = $parameters[0];
-					$relHasInstance = $instPromptValue->GetRelationship(Instance::GetByGlobalIdentifier("512B518EA89244ABAC354E9DBCABFF0B"));
-					if ($relHasInstance != null)
+					$instDest = $instPromptValue->GetRelatedInstance(Instance::GetByGlobalIdentifier("512B518EA89244ABAC354E9DBCABFF0B"));
+					if ($instDest != null)
 					{
-						$instDest = $relHasInstance->GetDestinationInstance();
-						
 						$obj = TenantObject::GetByGlobalIdentifier($instDest->GlobalIdentifier);
 						$instCreated = $obj->CreateInstance(null, $guid);
 						return $instCreated;
@@ -274,55 +248,42 @@
 			}
 			else if ($method->ParentObject->Name == "AssignAttributeMethod")
 			{
-				$relAttribute = $method->GetRelationship(KnownRelationships::get___Assign_Attribute_Method__has__Attribute());
-				if ($relAttribute != null)
+				$instAttribute = $method->GetRelatedInstance(KnownRelationships::get___Assign_Attribute_Method__has__Attribute());
+				if ($instAttribute != null)
 				{
-					$instAttribute = $relAttribute->GetDestinationInstance();
-					if ($instAttribute != null)
+					echo ("AA assigning attribute " . $instAttribute->GetInstanceID() . " on instance ??? value ???\n");
+					foreach ($parameters as $parm)
 					{
-						echo ("AA assigning attribute " . $instAttribute->GetInstanceID() . " on instance ??? value ???\n");
-						foreach ($parameters as $parm)
+						echo ("Parm " . $parm->GetInstanceID() . "\n");
+						$instPrompt = $parm->GetRelatedInstance(KnownRelationships::get___Prompt_Value__has__Prompt());
+						if ($instPrompt != null)
 						{
-							echo ("Parm " . $parm->GetInstanceID() . "\n");
-							$relPrompt = $parm->GetRelationship(KnownRelationships::get___Prompt_Value__has__Prompt());
-							if ($relPrompt != null)
+							echo ("Has prompt `" . $instPrompt->ToString() . "`\n");
+						}
+						
+						switch ($parm->ParentObject->Name)
+						{
+							case "ReferencePromptValue":
 							{
-								$instPrompt = $relPrompt->GetDestinationInstance();
-								echo ("Has prompt `" . $instPrompt->ToString() . "`\n");
-							}
-							
-							switch ($parm->ParentObject->Name)
-							{
-								case "ReferencePromptValue":
+								$instSourcePrompt = $parm->GetRelatedInstance(KnownRelationships::get___Reference_Prompt_Value__has_source__Prompt());
+								if ($instSourcePrompt != null)
 								{
-									$relSourcePrompt = $parm->GetRelationship(KnownRelationships::get___Reference_Prompt_Value__has_source__Prompt());
-									if ($relSourcePrompt != null)
-									{
-										$instSourcePrompt = $relSourcePrompt->GetDestinationInstance();
-										if ($instSourcePrompt != null)
-										{
-											echo ("Reference Prompt Value has source Prompt `" . $instSourcePrompt->ToString() . "`\n");
-										}
-									}
-									break;
+									echo ("Reference Prompt Value has source Prompt `" . $instSourcePrompt->ToString() . "`\n");
 								}
+								break;
 							}
 						}
-						die();
 					}
+					die();
 				}
 			}
 			
-			$relBinding = $method->GetRelationship(KnownRelationships::get___Method__has__Method_Binding());
-			if ($relBinding != null)
+			$instsBinding = $method->GetRelatedInstances(KnownRelationships::get___Method__has__Method_Binding());
+			foreach ($instsBinding as $instBinding)
 			{
-				$instsBinding = $relBinding->GetDestinationInstances();
-				foreach ($instsBinding as $instBinding)
-				{
-					return Objectify::ExecuteMethodBinding($instBinding);
-				}
-				return null;
+				return Objectify::ExecuteMethodBinding($instBinding);
 			}
+			return null;
 			
 			if ($parameters == null) $parameters = array();
 			$codeblob = $method->GetAttributeValue("CodeBlob");

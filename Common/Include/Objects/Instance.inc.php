@@ -57,6 +57,59 @@
 			return $this->ParentObject->ID . "$" . $this->ID;
 		}
 		
+		private $relatedInstances = array();
+		
+		public function GetRelatedInstance($relationshipInstance)
+		{
+			$insts = $this->GetRelatedInstances($relationshipInstance);
+			if (count($insts) > 0) return $insts[0];
+			return null;
+		}
+		
+		/**
+		 * Gets the instances related to this instance by the specified relationship.
+		 * @param Instance $relationshipInstance
+		 */
+		public function GetRelatedInstances($relationshipInstance)
+		{
+			$tenant = Tenant::GetCurrent();
+			if (!array_key_exists($tenant->ID . "_" . $relationshipInstance->GetInstanceID(), $this->relatedInstances))
+			{
+				$pdo = DataSystem::GetPDO();
+				
+				$query = "SELECT relationship_DestinationInstanceID, relationship_DestinationObjectID FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Relationships WHERE "
+					. "relationship_SourceTenantID = :relationship_SourceTenantID"
+					. " AND relationship_SourceObjectID = :relationship_SourceObjectID"
+					. " AND relationship_SourceInstanceID = :relationship_SourceInstanceID"
+					. " AND relationship_RelationshipTenantID = :relationship_RelationshipTenantID"
+					. " AND relationship_RelationshipObjectID = :relationship_RelationshipObjectID"
+					. " AND relationship_RelationshipInstanceID = :relationship_RelationshipInstanceID"
+					. " ORDER BY relationship_Order ASC";
+				
+				$statement = $pdo->prepare($query);
+				$statement->execute(array
+				(
+					":relationship_SourceTenantID" => $this->Tenant->ID,
+					":relationship_SourceObjectID" => $this->ParentObject->ID,
+					":relationship_SourceInstanceID" => $this->ID,
+					":relationship_RelationshipTenantID" => $relationshipInstance->Tenant->ID,
+					":relationship_RelationshipObjectID" => $relationshipInstance->ParentObject->ID,
+					":relationship_RelationshipInstanceID" => $relationshipInstance->ID
+				));
+				
+				$count = $statement->rowCount();
+				$array = array();
+				for ($i = 0; $i < $count; $i++)
+				{
+					$values = $statement->fetch(PDO::FETCH_ASSOC);
+					$relinst = Instance::GetByID($values["relationship_DestinationInstanceID"], $values["relationship_DestinationObjectID"]);
+					$array[] = $relinst;
+				}
+				$this->relatedInstances[$tenant->ID . "_" . $relationshipInstance->GetInstanceID()] = $array;
+			}
+			return $this->relatedInstances[$tenant->ID . "_" . $relationshipInstance->GetInstanceID()];
+		}
+		
 		/**
 		 * 
 		 * @param Instance $relationshipInstance
@@ -91,6 +144,28 @@
 			$item->ID = $values["instance_ID"];
 			$item->GlobalIdentifier = $values["instance_GlobalIdentifier"];
 			return $item;
+		}
+		
+		public static function Get($tenant = null)
+		{
+			$pdo = DataSystem::GetPDO();
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Instances WHERE instance_TenantID = :instance_TenantID";
+			if ($tenant == null) $tenant = Tenant::GetCurrent();
+			$statement = $pdo->prepare($query);
+			$retval = array();
+			$result = $statement->execute(array
+			(
+				":instance_TenantID" => $tenant->ID
+			));
+			if ($result === false) return $retval;
+			
+			$count = $statement->rowCount();
+			for ($i = 0; $i < $count; $i++)
+			{
+				$values = $statement->fetch(PDO::FETCH_ASSOC);
+				$retval[] = Instance::GetByAssoc($values);
+			}
+			return $retval;
 		}
 		
 		private static $instancesByID;
@@ -386,125 +461,57 @@
 		{
 			// First get the Instance Display Title on the parent object and see if we have a format
 			$parentObjectInstance = Instance::GetByGlobalIdentifier($this->ParentObject->GlobalIdentifier);
-			$rels = Relationship::GetBySourceInstance($parentObjectInstance, KnownRelationships::get___Class__instance_labeled_by__String());
+			$inst = $parentObjectInstance->GetRelatedInstance(KnownRelationships::get___Class__instance_labeled_by__String());
 			
-			if (count($rels) > 0)
+			if ($inst->ParentObject->Name == "String")
 			{
-				$rels = $rels[0];
-				$insts = $rels->GetDestinationInstances();
-				$inst = $insts[0];
-				
-				if ($inst->ParentObject->Name == "String")
+				$componentInsts = $inst->GetRelatedInstances(KnownRelationships::get___String__has__String_Component());
+				foreach ($componentInsts as $componentInst)
 				{
-					$rels = Relationship::GetBySourceInstance($inst, KnownRelationships::get___String__has__String_Component());
-					$rels = $rels[0];
-					$componentInsts = $rels->GetDestinationInstances();
-					
-					foreach ($componentInsts as $componentInst)
+					switch ($componentInst->ParentObject->Name)
 					{
-						switch ($componentInst->ParentObject->Name)
+						case "TextConstantStringComponent":
 						{
-							case "TextConstantStringComponent":
+							$attValue = Instance::GetByGlobalIdentifier("{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}");
+							$value = $componentInst->GetAttributeValue($attValue);
+							$retval .= $value;
+							break;
+						}
+						case "InstanceAttributeStringComponent":
+						{
+							$instAttribute = $componentInst->GetRelatedInstance(KnownRelationships::get___Instance_Attribute_String_Component__has__Attribute());
+							if ($instAttribute != null)
 							{
-								$attValue = Instance::GetByGlobalIdentifier("{041DD7FD-2D9C-412B-8B9D-D7125C166FE0}");
-								$value = $componentInst->GetAttributeValue($attValue);
-								$retval .= $value;
-								break;
-							}
-							case "InstanceAttributeStringComponent":
-							{
-								$relAttributes = $componentInst->GetRelationship(KnownRelationships::get___Instance_Attribute_String_Component__has__Attribute());
-								if ($relAttributes != null)
-								{
-									$instAttribute = $relAttributes->GetDestinationInstance();
-									if ($instAttribute != null)
-									{
-										$propertyValue = $this->GetAttributeValue($instAttribute);
-										$retval .= $propertyValue;
-									}
-								}
-								else
-								{
-									$propertyName = $componentInst->GetAttributeValue("PropertyName");
-									$propertyValue = $this->GetAttributeValue($propertyName, "[ATT: " . $propertyName . " on " . $this->ParentObject->Name . "]");
-									$retval .= $propertyValue;
-								}
-								break;
-							}
-							case "ExtractSingleInstanceStringComponent":
-							{
-								// Extracts a single instance from the given Relationship.
-								
-								$rels = Relationship::GetBySourceInstance($componentInst, KnownRelationships::get___Extract_Single_Instance_String_Component__has__Relationship());
-								$rel = $rels[0];
-								$insts = $rel->GetDestinationInstances();
-								$instRel = $insts[0];
-								
-								// $propertyName = $inst->GetAttributeValue("PropertyName");
-								
-								// $instRel = Instance::GetByGlobalIdentifier($propertyName);
-								$rels = Relationship::GetBySourceInstance($this, $instRel);
-								$rel = $rels[0];
-								if ($rel == null)
-								{
-									$retval .= "[ESI: no rels found for " . $instRel->GetInstanceID() . " on " . $this->GetInstanceID() . "]";
-									break;
-								}
-								$insts = $rel->GetDestinationInstances();
-								$inst = $insts[0];
-								if ($inst == null)
-								{
-									$retval .= "[ESI: no insts found for " . $instRel->GetInstanceID() . " on " . $this->GetInstanceID() . "]";
-									break;
-								}
-								
-								$propertyValue = $inst->ToString();
+								$propertyValue = $this->GetAttributeValue($instAttribute);
 								$retval .= $propertyValue;
+							}
+							else
+							{
+								$propertyName = $componentInst->GetAttributeValue("PropertyName");
+								$propertyValue = $this->GetAttributeValue($propertyName, "[ATT: " . $propertyName . " on " . $this->ParentObject->Name . "]");
+								$retval .= $propertyValue;
+							}
+							break;
+						}
+						case "ExtractSingleInstanceStringComponent":
+						{	
+							// Extracts a single instance from the given Relationship.
+							$instRel = $componentInst->GetRelatedInstance(KnownRelationships::get___Extract_Single_Instance_String_Component__has__Relationship());
+							$inst = $this->GetRelatedInstance($instRel);
+							if ($inst == null)
+							{
+								$retval .= "[ESI: no insts found for " . $instRel->GetInstanceID() . " on " . $this->GetInstanceID() . "]";
 								break;
 							}
+							
+							$propertyValue = $inst->ToString();
+							$retval .= $propertyValue;
+							break;
 						}
 					}
 				}
-				return $retval;
 			}
-			else
-			{
-				// HACK HACK HACK UGLY HACK REMOVE WHEN WE HAVE ATTRIBUTES WORKING CORRECTLY
-				$instAttName = Instance::GetByGlobalIdentifier("{9153A637-992E-4712-ADF2-B03F0D9EDEA6}");
-				$propval_Name = $this->GetAttributeValue($instAttName);
-				if ($propval_Name != null) return $propval_Name;
-				// end ugly hack
-				
-				return "[" . $this->ParentObject->Name . "]";
-			}
-			
-			/*
-			// If we do not have an Instance Display Title for the parent object, see
-			// if we have an instance property named Title and use that
-			$propTitle = $this->GetPropertyValue("Title");
-			if ($propTitle != null)
-			{
-				$insts = $propTitle->GetInstances();
-				
-				$objLanguage = KnownObjects::get___Language();
-				$defaultLanguage = $objLanguage->GetInstance(array
-				(
-					new TenantObjectInstancePropertyValue("Code", "en-US")
-				));
-				
-				foreach ($insts as $inst)
-				{
-					if ($inst->GetPropertyValue("Language")->GetInstance() == $defaultLanguage) return $inst->GetPropertyValue("Value");
-				}
-			}
-			*/
-			
-			// When all else fails, use the Name property
-			
-			// TODO: DON'T RELY ON THIS!!!
-			// this works for LanguageString but we really need to implement Instance Display Title ASAP!
-			if ($this->HasPropertyValue("Value")) return $this->GetPropertyValue("Value");
-			return "";
+			return $retval;
 		}
 	}
 ?>
