@@ -520,7 +520,7 @@
 				
 				// once all attribute value updates are completed, notify that xq-environments was the
 				// user that did the updating
-				$query = "UPDATE " . System::GetConfigurationValue("Database.TablePrefix") . "AttributeValues SET "
+				$query = "UPDATE " . System::GetConfigurationValue("Database.TablePrefix") . "Attributes SET "
 					. "attval_UserTenantID = :attval_UserTenantID, "
 					. "attval_UserObjectID = :attval_UserObjectID, "
 					. "attval_UserInstanceID = :attval_UserInstanceID";

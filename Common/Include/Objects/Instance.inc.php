@@ -302,7 +302,7 @@
 				":attval_AttributeObjectID" => $attribute->ParentObject->ID,
 				":attval_AttributeInstanceID" => $attribute->ID
 			);
-			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "AttributeValues WHERE "
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Attributes WHERE "
 				. "attval_TenantID = :attval_TenantID"
 				. " AND attval_ObjectID = :attval_ObjectID"
 				. " AND attval_InstanceID = :attval_InstanceID"
@@ -384,7 +384,7 @@
 			}
 			
 			$pdo = DataSystem::GetPDO();
-			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "AttributeValues ("
+			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "Attributes ("
 				. "attval_TenantID, attval_ObjectID, attval_InstanceID, attval_AttributeTenantID, attval_AttributeObjectID, attval_AttributeInstanceID, attval_EffectiveDateTime, attval_UserInstanceID, attval_Value"
 				. ") VALUES ("
 				. ":attval_TenantID, :attval_ObjectID, :attval_InstanceID, :attval_AttributeTenantID, :attval_AttributeObjectID, :attval_AttributeInstanceID, NOW(), :attval_UserInstanceID, :attval_Value"

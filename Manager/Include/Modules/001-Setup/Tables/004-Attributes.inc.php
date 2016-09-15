@@ -11,7 +11,7 @@
 	use Phast\Data\TableForeignKeyReferenceOption;
 	
 	// Instances of the objects.
-	$tblAttributeValues = new Table("AttributeValues", "attval_", array
+	$tblAttributes = new Table("Attributes", "attval_", array
 	(
 		// 			$name, $dataType, $size, $value, $allowNull, $primaryKey, $autoIncrement
 		new Column("TenantID", "INT", null, null, false),
@@ -26,7 +26,7 @@
 		new Column("UserInstanceID", "INT", null, null, true),
 		new Column("Value", "LONGTEXT", null, null, false)
 	));
-	$tblAttributeValues->PrimaryKey = new TableKey(array
+	$tblAttributes->PrimaryKey = new TableKey(array
 	(
 		new TableKeyColumn("TenantID"),
 		new TableKeyColumn("AttributeTenantID"),
@@ -36,11 +36,11 @@
 		new TableKeyColumn("InstanceID"),
 		new TableKeyColumn("EffectiveDateTime")
 	));
-	$tblAttributeValues->ForeignKeys = array
+	$tblAttributes->ForeignKeys = array
 	(
 		new TableForeignKey(array("AttributeTenantID", "AttributeObjectID", "AttributeInstanceID"), new TableForeignKeyColumn($tblInstances, array("TenantID", "ObjectID", "ID"))),
 		new TableForeignKey(array("UserTenantID", "UserObjectID", "UserInstanceID"), new TableForeignKeyColumn($tblInstances, array("TenantID", "ObjectID", "ID"))),
 		new TableForeignKey(array("TenantID", "ObjectID", "InstanceID"), new TableForeignKeyColumn($tblInstances, array("TenantID", "ObjectID", "ID")))
 	);
-	$tables[] = $tblAttributeValues;
+	$tables[] = $tblAttributes;
 ?>
