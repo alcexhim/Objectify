@@ -92,16 +92,18 @@
 			return TenantObject::GetByAssoc($values);
 		}
 		
-		public static function GetByGlobalIdentifier($globalIdentifier)
+		public static function GetByGlobalIdentifier($globalIdentifier, $tenant = null)
 		{
 			$pdo = DataSystem::GetPDO();
-			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjects WHERE object_GlobalIdentifier = :object_GlobalIdentifier";
+			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "TenantObjects WHERE object_GlobalIdentifier = :object_GlobalIdentifier AND object_TenantID = :object_TenantID";
+			if ($tenant == null) $tenant = Tenant::GetCurrent();
 			$statement = $pdo->prepare($query);
 			
 			$globalIdentifier = Objectify::SanitizeGlobalIdentifier($globalIdentifier);
 			$result = $statement->execute(array
 			(
-				":object_GlobalIdentifier" => $globalIdentifier
+				":object_GlobalIdentifier" => $globalIdentifier,
+				":object_TenantID" => $tenant->ID
 			));
 			if ($result === false) return null;
 			
