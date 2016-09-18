@@ -19,6 +19,9 @@
 	
 	class SetupPage extends PhastPage
 	{
+		private $startTimestamp;
+		private $endTimestamp;
+		
 		private function ProcessRelationshipsXQJS($instRelationship, $destinationInstances, $instObj, $instInverseRelationship = null)
 		{
 			if (is_array($destinationInstances))
@@ -612,6 +615,80 @@
 						$errorsFound = true;
 					}
 				}
+				
+				// Create the Get_Next_Instance_ID stored procedure
+				$query = "DROP FUNCTION IF EXISTS Get_Next_Instance_ID";
+				$statement = $pdo->prepare($query);
+				$statement->execute();
+				$ei = $statement->errorInfo();
+				
+				$query = "CREATE FUNCTION `Get_Next_Instance_ID`(`TenantID` INT, `ObjectID` INT) RETURNS int(11) NO SQL "
+					. "RETURN (SELECT CASE "
+					. "WHEN MAX(instance_ID) IS NULL THEN 1 "
+					. "ELSE MAX(instance_ID) + 1 "
+					. "END "
+					. "FROM ofx_Instances WHERE instance_TenantID = TenantID AND instance_ObjectID = ObjectID)";
+				$statement = $pdo->prepare($query);
+				$statement->execute();
+				$ei = $statement->errorInfo();
+				
+				// Create the Create_Instance stored procedure
+				$query = "DROP FUNCTION IF EXISTS Create_Instance";
+				$statement = $pdo->prepare($query);
+				$statement->execute();
+				$ei = $statement->errorInfo();
+				
+				$query = "CREATE FUNCTION `Create_Instance`(`instance_TenantID` INT, `instance_ObjectID` INT, `instance_GlobalIdentifier` CHAR(32)) RETURNS int(11) MODIFIES SQL DATA "
+					. "BEGIN "
+					. "INSERT INTO ofx_Instances (instance_TenantID, instance_ObjectID, instance_ID, instance_GlobalIdentifier) VALUES (instance_TenantID, instance_ObjectID, `Get_Next_Instance_ID`(instance_TenantID, instance_ObjectID), instance_GlobalIdentifier); "
+					. "RETURN `Get_Next_Instance_ID`(instance_TenantID, instance_ObjectID) - 1; "
+					. "END";
+				$statement = $pdo->prepare($query);
+				$statement->execute();
+				
+				// Create the Update_Attribute stored procedure
+				$query = "DROP PROCEDURE IF EXISTS `Update_Attribute`";
+				$statement = $pdo->prepare($query);
+				$statement->execute();
+				
+				$query = "CREATE PROCEDURE `Update_Attribute`(`attval_TenantID` INT, `attval_ObjectID` INT, `attval_InstanceID` INT, `attval_AttributeTenantID` INT, `attval_AttributeObjectID` INT, `attval_AttributeInstanceID` INT, `attval_UserInstanceID` INT, `attval_Value` LONGTEXT) MODIFIES SQL DATA "
+					. "BEGIN "
+					. "INSERT INTO ofx_Attributes ("
+					. "attval_TenantID, attval_ObjectID, attval_InstanceID, attval_AttributeTenantID, attval_AttributeObjectID, attval_AttributeInstanceID, attval_EffectiveDateTime, attval_UserInstanceID, attval_Value"
+					. ") VALUES ("
+					. "attval_TenantID, attval_ObjectID, attval_InstanceID, attval_AttributeTenantID, attval_AttributeObjectID, attval_AttributeInstanceID, NOW(), attval_UserInstanceID, attval_Value"
+					. "); END";
+				$statement = $pdo->prepare($query);
+				$statement->execute();
+				
+				// Create the Retrieve_Instance stored procedure
+				$query = "DROP PROCEDURE IF EXISTS `Retrieve_Instance`";
+				$statement = $pdo->prepare($query);
+				$statement->execute();
+				
+				$query = "CREATE PROCEDURE `Retrieve_Instance`(`TenantID` INT, `ObjectID` INT, `InstanceID` INT) NO SQL "
+					. "BEGIN "
+					. "SELECT instance_TenantID, instance_ObjectID, instance_ID, instance_GlobalIdentifier FROM ofx_Instances WHERE (TenantID IS NULL OR instance_TenantID = TenantID) AND (ObjectID IS NULL OR instance_ObjectID = ObjectID) AND ((ObjectID IS NULL AND InstanceID IS NULL) OR (instance_ObjectID = ObjectID AND instance_ID = InstanceID)); "
+					. "END";
+				$statement = $pdo->prepare($query);
+				$statement->execute();
+				$ei = $statement->errorInfo();
+				
+				// Create the Retrieve_Attribute stored procedure
+				$query = "DROP PROCEDURE IF EXISTS `Retrieve_Attribute`";
+				$statement = $pdo->prepare($query);
+				$statement->execute();
+				
+				// FIXME: for some reason, we can't handle Effective Date parameter in stored procedure
+				// so the sproc always returns the value as of the most recent effective date
+				$query = "CREATE PROCEDURE `Retrieve_Attribute`(`TenantID` INT, `ObjectID` INT, `InstanceID` INT, `AttributeTenantID` INT, `AttributeObjectID` INT, `AttributeInstanceID` INT, `EffectiveDateTime` DATETIME) NO SQL "
+					. "BEGIN "
+					. "SELECT attval_Value FROM ofx_Attributes WHERE attval_TenantID = TenantID AND attval_ObjectID = ObjectID AND attval_InstanceID = InstanceID AND attval_AttributeTenantID = AttributeTenantID AND attval_AttributeObjectID = AttributeObjectID AND attval_AttributeInstanceID = AttributeInstanceID ORDER BY attval_EffectiveDateTime DESC LIMIT 1; "
+					. "END";
+				$statement = $pdo->prepare($query);
+				$statement->execute();
+				$ei = $statement->errorInfo();
+				trigger_error("xq-proc-create: " . $ei[2]);
 				
 				if ($errorsFound)
 				{

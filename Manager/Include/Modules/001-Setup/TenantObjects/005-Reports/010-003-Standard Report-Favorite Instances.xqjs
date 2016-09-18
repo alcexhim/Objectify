@@ -1,0 +1,189 @@
+{
+	"Tenants":
+	[
+		{
+			"ID": "{35BF9AC5-0212-4DBA-BB9B-D1A6E9955827}",
+			"Objects":
+			[
+				{
+					"Name": "Class",
+					"Relationships":
+					[
+						{
+							"Comment": "Class `Class`.has Method `get user favorite instances for Class parm`",
+							"RelationshipID": "{2DA28271-5E46-4472-A6F5-910B5DD6F608}",
+							"DestinationInstances":
+							[
+								"{4EA2E04C-E059-42E7-B6F1-71DC894A3277}"
+							]
+						}
+					]
+				},
+				{
+					"Name": "ReturnInstanceSetMethodBinding",
+					"Instances":
+					[
+						{
+							"ID": "{4825AF68-CCB7-40B2-A1A5-D2AEFD332317}",
+							"Comment": "return all instances [rsmb]",
+							"TranslatableValues":
+							[
+								{
+									"Comment": "Method Binding.has title Translatable Text Constant",
+									"RelationshipID": "{940EBFDB-B064-48D7-A55B-873947F4D19A}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "return all instances"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"Name": "SelectInstanceSetMethod",
+					"Instances":
+					[
+						{
+							"ID": "{4EA2E04C-E059-42E7-B6F1-71DC894A3277}",
+							"TranslatableValues":
+							[
+								{
+									"RelationshipID": "{52B65829-4A3F-44FB-BEE8-D9A240F1E9C9}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "get all instances"
+										}
+									]
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": "Method.has Method Binding return instance set method binding [rsmb]",
+									"RelationshipID": "{D52500F1-1421-4B73-9987-223163BC9C04}",
+									"DestinationInstances":
+									[
+										"{4825AF68-CCB7-40B2-A1A5-D2AEFD332317}"
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"Name": "ReportDataSource",
+					"Instances":
+					[
+						{
+							"ID": "{CB7BE34B-5580-4EFA-B541-F298D940C2F4}",
+							"TranslatableValues":
+							[
+								{
+									"Comment": "Report Data Source.has title Translatable Text Constant",
+									"RelationshipID": "{0B698B22-1E66-46E2-B152-1259333091F2}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "All Instances"
+										}
+									]
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": "Report Data Source.has source Method",
+									"RelationshipID": "{2D5CB496-5839-46A0-9B94-30D4E2227B56}",
+									"DestinationInstances":
+									[
+										"{4EA2E04C-E059-42E7-B6F1-71DC894A3277}"
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"Name": "ReportColumn",
+					"Instances":
+					[
+						{
+							"ID": "{EA51DF31-33A7-4561-9514-439FDB257463}",
+							"Relationships":
+							[
+								{
+									"Comment": "Report Column.has Report Field",
+									"RelationshipID": "{B9026910-7E91-4EE1-B5F2-D7B740614831}",
+									"DestinationInstances":
+									[
+										"{0D2CC9BE-160D-4D62-A5AE-DAE8AC45DB9B}"
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"Name": "StandardReport",
+					"Instances":
+					[
+						{
+							"ID": "{98D153FB-6CC2-4A03-AA42-9CD782FBCEEE}",
+							"TranslatableValues":
+							[
+								{
+									"Comment": "Report `Favorite Instances`.has title Translatable Text Constant",
+									"RelationshipID": "{DF93EFB0-8B5E-49E7-8BC0-553F9E7602F9}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "Favorite Instances"
+										}
+									]
+								},
+								{
+									"Comment": "Report `Favorite Instances`.has instructions Translatable Text Constant",
+									"RelationshipID": "{D5AA18A7-7ACD-4792-B039-6C620A151BAD}",
+									"Values":
+									[
+										{
+											"LanguageInstanceID": "{68BB6038-A4B5-4EE1-AAE9-326494942062}",
+											"Value": "View your favorite bookmarked instances"
+										}
+									]
+								}
+							],
+							"Relationships":
+							[
+								{
+									"Comment": "Report.has Report Data Source `All Instances`",
+									"RelationshipID": "{1DE7B484-F9E3-476A-A9D3-7D2A86B55845}",
+									"DestinationInstances":
+									[
+										"{CB7BE34B-5580-4EFA-B541-F298D940C2F4}"
+									]
+								},
+								{
+									"Comment": "Standard Report.has Report Column `Primary Object`",
+									"RelationshipID": "{7A8F57F1-A4F3-4BAF-84A5-E893FD79447D}",
+									"DestinationInstances":
+									[
+										"{EA51DF31-33A7-4561-9514-439FDB257463}"
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

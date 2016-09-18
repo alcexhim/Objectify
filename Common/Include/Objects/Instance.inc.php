@@ -149,7 +149,7 @@
 		public static function Get($tenant = null)
 		{
 			$pdo = DataSystem::GetPDO();
-			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Instances WHERE instance_TenantID = :instance_TenantID";
+			$query = "SELECT `Retrieve_Instance`(:instance_TenantID, NULL, NULL)";
 			if ($tenant == null) $tenant = Tenant::GetCurrent();
 			$statement = $pdo->prepare($query);
 			$retval = array();
@@ -182,18 +182,28 @@
 			if (!array_key_exists($tenant->ID . "_" . $parentObjectID . "_" . $id, Instance::$instancesByID))
 			{
 				$pdo = DataSystem::GetPDO();
-				$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Instances WHERE instance_ID = :instance_ID AND instance_ObjectID = :instance_ObjectID AND instance_TenantID = :instance_TenantID";
+				$query = "CALL `Retrieve_Instance`(:instance_TenantID, :instance_ObjectID, :instance_InstanceID)";
 				$statement = $pdo->prepare($query);
 				$result = $statement->execute(array
 				(
-					":instance_ID" => $id,
+					":instance_TenantID" => $tenant->ID,
 					":instance_ObjectID" => $parentObjectID,
-					":instance_TenantID" => $tenant->ID
+					":instance_InstanceID" => $id
 				));
-				if ($result === false) return null;
+				if ($result === false)
+				{
+					$ei = $statement->errorInfo();
+					trigger_error("xq-proc [SS]: " . $ei[2]);
+					return null;
+				}
 				if ($statement->rowCount() == 0) return null;
 				
 				$values = $statement->fetch(PDO::FETCH_ASSOC);
+				
+				// TODO: Figure out why this line vvv needs to be here... it doesnt seem to really do anything
+				Instance::GetByAssoc($values);
+				// BUT BEWARE... if you remove it, things stop working, now that we are using Stored Procedures ???
+				
 				Instance::$instancesByID[$tenant->ID . "_" . $parentObjectID . "_" . $id] = Instance::GetByAssoc($values);
 			}
 			return Instance::$instancesByID[$tenant->ID . "_" . $parentObjectID . "_" . $id];
@@ -265,6 +275,8 @@
 		
 		/* ********** BEGIN: New Attribute functions to replace deprecated Property functions ********** */
 		
+		private $attributes;
+		
 		/**
 		 * Gets the value of the specified Attribute for this Instance as of the given date.
 		 * @param Instance|string $attribute
@@ -275,81 +287,95 @@
 		{
 			if ($attribute == null) return false;
 			
-			$pdo = DataSystem::GetPDO();
+			if (!isset($this->attributes)) $this->attributes = array();
 			
-			if (is_string($attribute))
+			$index = $attribute->Tenant->ID . "_" . $attribute->ParentObject->ID . "_" . $attribute->ID;
+			if (!isset($this->attributes[$index]))
 			{
-				$attribute = $this->ParentObject->GetAttribute($attribute);
-			}
-			
-			if (is_object($attribute))
-			{
-				if (get_class($attribute) != "Objectify\\Objects\\Instance")
+				$pdo = DataSystem::GetPDO();
+				
+				if (is_string($attribute))
 				{
+					$attribute = $this->ParentObject->GetAttribute($attribute);
+				}
+				
+				if (is_object($attribute))
+				{
+					if (get_class($attribute) != "Objectify\\Objects\\Instance")
+					{
+					}
+				}
+				else
+				{
+					return false;
+				}
+				
+				// FIXME: this actually seems to run SLOWER as a stored procedure than directly SELECTIng
+				// BUT WITH CACHING it's a little... just a little bit faster...
+				
+				if ($effectiveDateTime == null) $effectiveDateTime = date("Y-m-d H:i:s");			
+				$paramz = array
+				(
+					":attval_TenantID" => $this->Tenant->ID,
+					":attval_ObjectID" => $this->ParentObject->ID,
+					":attval_InstanceID" => $this->ID,
+					":attval_AttributeTenantID" => $attribute->Tenant->ID,
+					":attval_AttributeObjectID" => $attribute->ParentObject->ID,
+					":attval_AttributeInstanceID" => $attribute->ID,
+					":attval_EffectiveDateTime" => $effectiveDateTime
+				);
+				$query = "CALL `Retrieve_Attribute`(:attval_TenantID, :attval_ObjectID, :attval_InstanceID, :attval_AttributeTenantID, :attval_AttributeObjectID, :attval_AttributeInstanceID, :attval_EffectiveDateTime)";
+				
+				$statement = $pdo->prepare($query);
+				$result = $statement->execute($paramz);
+				
+				if ($result === false)
+				{
+					return false;
+				}
+				
+				$count = $statement->rowCount();
+				if ($count == 0) return $defaultValue;
+				
+				$values = $statement->fetch(PDO::FETCH_NUM);
+				if ($attribute->ParentObject->Name == "BooleanAttribute")
+				{
+					if ($values[0] == null)
+					{
+						$this->attributes[$index] = null;
+					}
+					else if ($values[0] == 1)
+					{
+						$this->attributes[$index] = true;
+					}
+					else
+					{
+						$this->attributes[$index] = false;
+					}
+				}
+				else if ($attribute->ParentObject->Name == "DateAttribute")
+				{
+					if ($values[0] == null)
+					{
+						$this->attributes[$index] = null;
+					}
+					else
+					{
+						$dt = new \DateTime($values[0]);
+						$this->attributes[$index] = $dt;
+					}
+				}
+				else if ($attribute->ParentObject->Name == "NumericAttribute")
+				{
+					// we use floatval here instead of intval because Numeric Attributes can store Float values
+					$this->attributes[$index] = floatval($values[0]);
+				}
+				else
+				{
+					$this->attributes[$index] = $values[0];
 				}
 			}
-			else
-			{
-				return false;
-			}
-			
-			$paramz = array
-			(
-				":attval_TenantID" => $this->Tenant->ID,
-				":attval_ObjectID" => $this->ParentObject->ID,
-				":attval_InstanceID" => $this->ID,
-				":attval_AttributeTenantID" => $attribute->Tenant->ID,
-				":attval_AttributeObjectID" => $attribute->ParentObject->ID,
-				":attval_AttributeInstanceID" => $attribute->ID
-			);
-			$query = "SELECT * FROM " . System::GetConfigurationValue("Database.TablePrefix") . "Attributes WHERE "
-				. "attval_TenantID = :attval_TenantID"
-				. " AND attval_ObjectID = :attval_ObjectID"
-				. " AND attval_InstanceID = :attval_InstanceID"
-				. " AND attval_AttributeTenantID = :attval_AttributeTenantID"
-				. " AND attval_AttributeObjectID = :attval_AttributeObjectID"
-				. " AND attval_AttributeInstanceID = :attval_AttributeInstanceID";
-
-			if ($effectiveDateTime == null) $effectiveDateTime = date("Y-m-d H:i:s");
-			if ($effectiveDateTime != null)
-			{
-				$query .= " AND attval_EffectiveDateTime <= :attval_EffectiveDateTime";
-				$paramz[":attval_EffectiveDateTime"] = $effectiveDateTime;
-			}
-			
-			$query .= " ORDER BY attval_EffectiveDateTime DESC";
-			
-			$statement = $pdo->prepare($query);
-			$result = $statement->execute($paramz);
-			
-			if ($result === false)
-			{
-				return false;
-			}
-			
-			$count = $statement->rowCount();
-			if ($count == 0) return $defaultValue;
-			
-			$values = $statement->fetch(PDO::FETCH_ASSOC);
-			if ($attribute->ParentObject->Name == "BooleanAttribute")
-			{
-				if ($values["attval_Value"] == null) return null;
-				if ($values["attval_Value"] == 1) return true;
-				return false;
-			}
-			else if ($attribute->ParentObject->Name == "DateAttribute")
-			{
-				if ($values["attval_Value"] == null) return null;
-				$dt = new \DateTime($values["attval_Value"]);
-				return $dt;
-			}
-			else if ($attribute->ParentObject->Name == "NumericAttribute")
-			{
-				// we use floatval here instead of intval because Numeric Attributes can store Float values
-				return floatval($values["attval_Value"]);
-			}
-			
-			return $values["attval_Value"];
+			return $this->attributes[$index];
 		}
 		
 		/**
@@ -384,12 +410,7 @@
 			}
 			
 			$pdo = DataSystem::GetPDO();
-			$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "Attributes ("
-				. "attval_TenantID, attval_ObjectID, attval_InstanceID, attval_AttributeTenantID, attval_AttributeObjectID, attval_AttributeInstanceID, attval_EffectiveDateTime, attval_UserInstanceID, attval_Value"
-				. ") VALUES ("
-				. ":attval_TenantID, :attval_ObjectID, :attval_InstanceID, :attval_AttributeTenantID, :attval_AttributeObjectID, :attval_AttributeInstanceID, NOW(), :attval_UserInstanceID, :attval_Value"
-				. ")";
-			
+			$query = "CALL `Update_Attribute`(:attval_TenantID, :attval_ObjectID, :attval_InstanceID, :attval_AttributeTenantID, :attval_AttributeObjectID, :attval_AttributeInstanceID, :attval_UserInstanceID, :attval_Value)";
 			$user = User::GetCurrent();
 			
 			$statement = $pdo->prepare($query);
@@ -419,19 +440,20 @@
 			$pdo = DataSystem::GetPDO();
 			if ($this->ID == null)
 			{
-				$query = "INSERT INTO " . System::GetConfigurationValue("Database.TablePrefix") . "Instances (instance_ID, instance_TenantID, instance_ObjectID, instance_GlobalIdentifier) VALUES (:instance_ID, :instance_TenantID, :instance_ObjectID, :instance_GlobalIdentifier)";
+				// TODO: Fix Get_Next_Instance_ID - when no instances of the particular object exist,
+				//									the function returns NULL instead of the expected 1
+				$query = "SELECT `Create_Instance`(:instance_TenantID, :instance_ObjectID, :instance_GlobalIdentifier)";
 			}
 			else
 			{
 				$query = "UPDATE " . System::GetConfigurationValue("Database.TablePrefix") . "Instances SET instance_GlobalIdentifier = :instance_GlobalIdentifier WHERE instance_ObjectID = :instance_ObjectID AND instance_ID = :instance_ID AND instance_TenantID = :instance_TenantID";
 			}
 			
-			if ($this->ID == null) $this->ID = $this->ParentObject->GetNextInstanceID();
+			// if ($this->ID == null) $this->ID = $this->ParentObject->GetNextInstanceID();
 			
 			$statement = $pdo->prepare($query);
 			$paramz = array
 			(
-				":instance_ID" => $this->ID,
 				":instance_TenantID" => $this->Tenant->ID,
 				":instance_ObjectID" => $this->ParentObject->ID,
 				":instance_GlobalIdentifier" => $this->GlobalIdentifier
@@ -447,12 +469,14 @@
 					"Query" => $query,
 					"Tenant Object Instance ID" => $this->ID
 				));
+				trigger_error("xq-sql-func[CREATE INST @ " . $this->ParentObject->ID .  "_" . $this->ID . "]: " . $ei[2]);
 				return false;
 			}
 			
 			if ($this->ID == null)
 			{
-				// $this->ID = $pdo->lastInsertId();
+				$values = $statement->fetch(\PDO::FETCH_NUM);
+				$this->ID = $values[0];
 			}
 			return true;
 		}
