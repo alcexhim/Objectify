@@ -1,0 +1,16 @@
+Method building a Response
+CT - Control Transaction Method
+
+
+So apparently XpressO has "Conditional Method Bindings". Instead of if/then/else nonsense, I imagine a layout something like this:
+
+	( General )
+	Method Name	[ Get Login Token for Currently Logged-in User ]
+	
+	( Method Bindings )
+	--------------- --------------------------------------- ----------------------------------------------------
+	(+)		Condition				Method Binding
+	--------------- --------------------------------------- ----------------------------------------------------
+	[+] [-] ^v	User is logged in			return user with session id Current User [rsmb]
+	[+] [-] ^v	any is True				default method binding for New Method [rsmb]
+	
